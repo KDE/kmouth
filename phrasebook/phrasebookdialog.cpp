@@ -542,7 +542,7 @@ void PhraseBookDialog::selectionChanged () {
 bool PhraseBookDialog::queryClose() {
    if (phrasebookChanged) {
       int answer = KMessageBox::questionYesNoCancel (this,
-          i18n("There are unsaved changes.<br>Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?"),
+              i18n("<qt>There are unsaved changes.<br>Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
           i18n("Closing \"Phrase Book\" Window"),
           KStdGuiItem::apply(), KStdGuiItem::discard(), "AutomaticSave");
       if (answer == KMessageBox::Yes) {
@@ -692,7 +692,7 @@ void PhraseBookDialog::slotMoved (QListViewItem *item, QListViewItem *, QListVie
 
 void PhraseBookDialog::slotAddPhrasebook () {
    PhraseBook book;
-   Phrase phrase(i18n("(New phrase book)"), "");
+   Phrase phrase(i18n("(New Phrase Book)"), "");
    book += PhraseBookEntry(phrase, 0, false);
 
    QListViewItem *item = addBook (treeView->currentItem(), &book);
@@ -703,7 +703,7 @@ void PhraseBookDialog::slotAddPhrasebook () {
 
 void PhraseBookDialog::slotAddPhrase () {
    PhraseBook book;
-   Phrase phrase(i18n("(New phrase)"), "");
+   Phrase phrase(i18n("(New Phrase)"), "");
    book += PhraseBookEntry(phrase, 0, true);
 
    addBook (treeView->currentItem(), &book);
