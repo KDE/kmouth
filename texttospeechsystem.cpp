@@ -68,7 +68,7 @@ void TextToSpeechSystem::speak (const QString &text, const QString &language) {
 
 void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup) {
   config->setGroup(langGroup);
-  ttsCommand = config->readEntry("Command");
+  ttsCommand = config->readPathEntry("Command");
   stdIn = config->readBoolEntry("StdIn", true);
   useKttsd = config->readBoolEntry("useKttsd", true);
 
@@ -89,7 +89,7 @@ void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup)
 
 void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup) {
   config->setGroup(langGroup);
-  config->writeEntry("Command", ttsCommand);
+  config->writePathEntry("Command", ttsCommand);
   config->writeEntry("StdIn", stdIn);
   config->writeEntry("useKttsd", useKttsd);
   if (codec == Speech::Local)
