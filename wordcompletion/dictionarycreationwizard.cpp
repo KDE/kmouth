@@ -49,25 +49,25 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    buildCodecList ();
    
    creationSource = new CreationSourceUI (this, "source page");
-   addPage (creationSource, i18n("Source of the new dictionary (1)"));
+   addPage (creationSource, i18n("Source of New Dictionary (1)"));
    setHelpEnabled (creationSource, false);
    setFinishEnabled (creationSource, false);
-   
+
    fileWidget= new CreationSourceDetailsUI (this, "file source page");
-   addPage (fileWidget, i18n("Source of the new dictionary (2)"));
+   addPage (fileWidget, i18n("Source of New Dictionary (2)"));
    buildCodecCombo (fileWidget->encodingCombo);
-   
+
    dirWidget= new CreationSourceDetailsUI (this, "directory source page");
-   addPage (dirWidget, i18n("Source of the new dictionary (2)"));
+   addPage (dirWidget, i18n("Source of New Dictionary (2)"));
    dirWidget->urlLabel->setText (i18n("&Directory:"));
    dirWidget->url->setMode(KFile::Directory);
    buildCodecCombo (dirWidget->encodingCombo);
 
    kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
-   addPage (kdeDocWidget, i18n("Source of the new dictionary (2)"));
-   
+   addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
+
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
-   addPage (mergeWidget, i18n("Source of the new dictionary (2)"));
+   addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
    
    connect (creationSource->fileButton,    SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
    connect (creationSource->directoryButton,SIGNAL(toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
@@ -111,7 +111,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       removePage (fileWidget);
       removePage (dirWidget);
       removePage (kdeDocWidget);
-      addPage (mergeWidget, i18n("Source of the new dictionary (2)"));
+      addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
       setHelpEnabled (mergeWidget, false);
       setFinishEnabled (mergeWidget, true);
    }
@@ -127,7 +127,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       removePage (dirWidget);
       removePage (kdeDocWidget);
       removePage (mergeWidget);
-      addPage (fileWidget, i18n("Source of the new dictionary (2)"));
+      addPage (fileWidget, i18n("Source of New Dictionary (2)"));
       setHelpEnabled (fileWidget, false);
       setFinishEnabled (fileWidget, true);
    }
@@ -136,7 +136,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       removePage (fileWidget);
       removePage (kdeDocWidget);
       removePage (mergeWidget);
-      addPage (dirWidget, i18n("Source of the new dictionary (2)"));
+      addPage (dirWidget, i18n("Source of New Dictionary (2)"));
       setHelpEnabled (dirWidget, false);
       setFinishEnabled (dirWidget, true);
    }
@@ -145,7 +145,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       removePage (fileWidget);
       removePage (dirWidget);
       removePage (mergeWidget);
-      addPage (kdeDocWidget, i18n("Source of the new dictionary (2)"));
+      addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
       setHelpEnabled (kdeDocWidget, false);
       setFinishEnabled (kdeDocWidget, true);
    }
