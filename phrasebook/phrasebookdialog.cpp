@@ -389,7 +389,7 @@ void PhraseBookDialog::initActions() {
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
    QStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
-                          "data", "kmouth/books/*.stdbook", true, true);
+                          "data", "kmouth/books/*.desktop", true, true);
    QStringList bookNames;
    QMap<QString,StandardBook> bookMap;
    QStringList::iterator it;
@@ -735,6 +735,9 @@ void PhraseBookDialog::slotPrint()
 
 /*
  * $Log$
+ * Revision 1.3  2003/01/18 15:47:46  gunnar
+ * Two small changes
+ *
  * Revision 1.2  2003/01/18 07:29:12  binner
  * CVS_SILENT i18n style guide fixes
  *
