@@ -152,7 +152,7 @@
                 <string>&amp;Use KTTSD speech service if possible</string>
             </property>
             <property name="whatsThis" stdset="0">
-                <string>This check box specifies KMouth tries to use the KTTSD speech service prior to call the speech synthesizer directly. The KTTSD speech service is a KDE daemon which gives KDE applications a standardized interface for speech synthesis and is currently developed in CVS.</string>
+                <string>This check box specifies KMouth tries to use the KTTSD speech service prior to calling the speech synthesizer directly. The KTTSD speech service is a KDE daemon which gives KDE applications a standardized interface for speech synthesis and is currently developed in CVS.</string>
             </property>
         </widget>
     </vbox>
