@@ -12,6 +12,7 @@ void CreationSourceUI::init() {
    group1 = new QButtonGroup (0);
    group1->insert (createButton);
    group1->insert (mergeButton);
+   group1->insert (emptyButton);
    group2 = new QButtonGroup (0);
    group2->insert (kdeDocButton);
    group2->insert (fileButton);

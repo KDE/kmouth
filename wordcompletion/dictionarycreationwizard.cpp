@@ -73,6 +73,7 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    connect (creationSource->directoryButton,SIGNAL(toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
    connect (creationSource->kdeDocButton,  SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
    connect (creationSource->mergeButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->emptyButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
 
    calculateAppropriate (true);
 }
@@ -106,6 +107,7 @@ void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
 
 void DictionaryCreationWizard::calculateAppropriate (bool) {
    if (creationSource->mergeButton->isChecked()) {
+      setFinishEnabled (creationSource, false);
       removePage (fileWidget);
       removePage (dirWidget);
       removePage (kdeDocWidget);
@@ -113,7 +115,15 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       setHelpEnabled (mergeWidget, false);
       setFinishEnabled (mergeWidget, true);
    }
+   else if (creationSource->emptyButton->isChecked()) {
+      removePage (fileWidget);
+      removePage (dirWidget);
+      removePage (kdeDocWidget);
+      removePage (mergeWidget);
+      setFinishEnabled (creationSource, true);
+   }
    else if (creationSource->fileButton->isChecked()) {
+      setFinishEnabled (creationSource, false);
       removePage (dirWidget);
       removePage (kdeDocWidget);
       removePage (mergeWidget);
@@ -122,6 +132,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       setFinishEnabled (fileWidget, true);
    }
    else if (creationSource->directoryButton->isChecked()) {
+      setFinishEnabled (creationSource, false);
       removePage (fileWidget);
       removePage (kdeDocWidget);
       removePage (mergeWidget);
@@ -130,6 +141,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
       setFinishEnabled (dirWidget, true);
    }
    else { // creationSource->kdeDocButton must be checked
+      setFinishEnabled (creationSource, false);
       removePage (fileWidget);
       removePage (dirWidget);
       removePage (mergeWidget);
@@ -146,6 +158,9 @@ QString DictionaryCreationWizard::createDictionary() {
 
    if (creationSource->mergeButton->isChecked()) {
       map = WordList::mergeFiles (mergeWidget->mergeParameters(), pdlg);
+      dicFile = QString::null;
+   }
+   else if (creationSource->emptyButton->isChecked()) {
       dicFile = QString::null;
    }
    else if (creationSource->fileButton->isChecked()) {
@@ -219,6 +234,9 @@ QString DictionaryCreationWizard::name() {
    if (creationSource->mergeButton->isChecked()) {
       return i18n("Merge result");
    }
+   else if (creationSource->emptyButton->isChecked()) {
+      return i18n("Empty list");
+   }
    else if (creationSource->fileButton->isChecked()) {
       return fileWidget->url->url();
    }
@@ -233,6 +251,12 @@ QString DictionaryCreationWizard::name() {
 QString DictionaryCreationWizard::language() {
    if (creationSource->mergeButton->isChecked()) {
       return mergeWidget->language();
+   }
+   else if (creationSource->emptyButton->isChecked()) {
+      if (KGlobal::locale())
+         return KGlobal::locale()->language();
+      else
+         return KLocale::defaultLanguage();
    }
    else if (creationSource->fileButton->isChecked()) {
       return fileWidget->languageButton->currentTag();

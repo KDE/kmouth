@@ -56,4 +56,9 @@ void loadLanguageList(KLanguageButton *combo)
     QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
     combo->insertLanguage(nid, name, QString::fromLatin1("l10n/"), QString::null);
   }
+  
+  if (KGlobal::locale())
+     combo->setCurrentItem (KGlobal::locale()->language());
+  else
+     combo->setCurrentItem (KLocale::defaultLanguage());
 }
