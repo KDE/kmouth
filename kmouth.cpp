@@ -253,9 +253,9 @@ void KMouthApp::readOptions()
   toolBar("phrasebookBar")->applySettings (config, "phrasebookBar");
 
   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
-  if (!standardBook.isNull() && !standardBook.isEmpty()) {
+  if (!standardBook.isEmpty()) {
      PhraseBook book;
-     book.open(standardBook);
+     book.open(KURL::fromPathOrURL( standardBook ));
      slotPhrasebookConfirmed(book);
   }
   if (phraseList != 0)
@@ -420,7 +420,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
 
    QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (bookLocation + "standard.phrasebook");
+      book.save (KURL::fromPathOrURL( bookLocation + "standard.phrasebook" ));
    }
 }
 

@@ -249,8 +249,9 @@ void WordCompletionWidget::exportDictionary() {
             return;
          }
       }
-      QString srcfile = KGlobal::dirs()->findResource ("appdata", item->filename());
-      KIO::NetAccess::copy (srcfile, url);
+      KURL src;
+      src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
+      KIO::NetAccess::copy (src, url);
    }
 }
 

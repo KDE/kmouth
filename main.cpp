@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
 		if (args->count())
 		{
-        kmouth->openDocumentFile(args->arg(0));
+        kmouth->openDocumentFile(args->url(0));
 		}
 		args->clear();
   }
