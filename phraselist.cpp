@@ -370,7 +370,7 @@ void PhraseList::save () {
 
 void PhraseList::open () {
    KURL url=KFileDialog::getOpenURL(QString::null,
-        i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files"), this, i18n("Open File as History"));
+        i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())
       open (url);
