@@ -135,7 +135,7 @@ void KMouthApp::initActions() {
    viewStatusBar->setStatusText(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 
-   configureTTS = new KAction (i18n("&Confige KMouth..."), "configure", 0, this, SLOT(slotConfigureTTS()), actionCollection(), "configureTTS");
+   configureTTS = new KAction (i18n("&Configure KMouth..."), "configure", 0, this, SLOT(slotConfigureTTS()), actionCollection(), "configureTTS");
    configureTTS->setStatusText(i18n("Opens the configuration dialog"));
    configureTTS->setWhatsThis (i18n("Opens the configuration dialog"));
 
@@ -433,6 +433,9 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
 
 /*
  * $Log$
+ * Revision 1.4  2003/01/19 21:53:08  gunnar
+ * corrected version number of KMouth
+ *
  * Revision 1.3  2003/01/18 15:47:46  gunnar
  * Two small changes
  *
