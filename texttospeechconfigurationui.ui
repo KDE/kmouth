@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>texttospeechconfigurationui</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>265</width>
-            <height>142</height>
+            <width>379</width>
+            <height>204</height>
         </rect>
     </property>
     <property name="caption">
@@ -20,48 +20,104 @@
             <cstring>unnamed</cstring>
         </property>
         <property name="margin">
-            <number>0</number>
+            <number>11</number>
         </property>
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLabel">
+        <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>urlLabel</cstring>
+                <cstring>Layout4</cstring>
             </property>
-            <property name="text">
-                <string>C&amp;ommand for speaking texts:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>urlReq</cstring>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>urlLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>C&amp;ommand for speaking texts:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>urlReq</cstring>
+                    </property>
+                </widget>
+                <widget class="KURLRequester">
+                    <property name="name">
+                        <cstring>urlReq</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This field specifies both the command used for speaking texts and its parameters. If you want to pass the text as a parameter, write %t at the place where the text should be inserted.</string>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="KURLRequester">
+        <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>urlReq</cstring>
+                <cstring>Layout5</cstring>
             </property>
-            <property name="whatsThis" stdset="0">
-                <string>This field specifies both the command used for speaking texts and its parameters. If you want to pass the text as a parameter, write %t at the place where the text should be inserted.</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>characterCodingLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Chatacter &amp;encoding:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>characterCodingBox</cstring>
-            </property>
-        </widget>
-        <widget class="KComboBox">
-            <property name="name">
-                <cstring>characterCodingBox</cstring>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>This combo box specifies which character encoding is used for passing the text.</string>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>characterCodingLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>Chatacter &amp;encoding:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>characterCodingBox</cstring>
+                    </property>
+                </widget>
+                <widget class="KComboBox">
+                    <property name="name">
+                        <cstring>characterCodingBox</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies which character encoding is used for passing the text.</string>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
         <widget class="QCheckBox">
             <property name="name">
@@ -74,16 +130,18 @@
                 <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
             </property>
         </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>useKttsd</cstring>
+            </property>
+            <property name="text">
+                <string>Use kttsd speech service if possible</string>
+            </property>
+        </widget>
     </vbox>
 </widget>
 <signals>
     <signal>configurationChanged()</signal>
 </signals>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

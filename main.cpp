@@ -26,7 +26,7 @@
 #include "version.h"
 
 static const char *description =
-	I18N_NOOP("KMouth");
+	I18N_NOOP("A type-and-say front end for speech synthesizers");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 	
 	
@@ -42,11 +42,12 @@ int main(int argc, char *argv[])
 
 	KAboutData aboutData( "kmouth", I18N_NOOP("KMouth"),
 		KMOUTH_VERSION, description, KAboutData::License_GPL,
-		"(c) 2002, Gunnar Schmi Dt", 0, 0, "kmouth@schmi-dt.de");
+		"(c) 2002/2003, Gunnar Schmi Dt", 0, "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
 	aboutData.addAuthor("Gunnar Schmi Dt",0, "kmouth@schmi-dt.de");
 	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
+	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
   KApplication app;
  
   if (app.isRestored())
@@ -74,6 +75,9 @@ int main(int argc, char *argv[])
 
 /*
  * $Log$
+ * Revision 1.3  2003/01/19 21:53:08  gunnar
+ * corrected version number of KMouth
+ *
  * Revision 1.2  2003/01/18 07:29:11  binner
  * CVS_SILENT i18n style guide fixes
  *

@@ -55,12 +55,14 @@ void TextToSpeechConfigurationWidget::cancel() {
   urlReq->setURL (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
   characterCodingBox->setCurrentItem(ttsSystem->codec);
+  useKttsd->setChecked (ttsSystem->useKttsd);
 }
 
 void TextToSpeechConfigurationWidget::ok() {
   ttsSystem->ttsCommand = urlReq->url();
   ttsSystem->stdIn = stdInButton->isChecked();
   ttsSystem->codec = characterCodingBox->currentItem();
+  ttsSystem->useKttsd = useKttsd->isChecked();
 }
 
 TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const {
@@ -72,6 +74,7 @@ void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QStrin
   urlReq->setURL (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
   characterCodingBox->setCurrentItem(ttsSystem->codec);
+  useKttsd->setChecked (ttsSystem->useKttsd);
 }
 
 void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const QString &langGroup) {
@@ -80,6 +83,9 @@ void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const QStrin
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.2  2002/11/25 16:24:53  gunnar
  * Changes on the way to version 0.7.99.1rc1
  *

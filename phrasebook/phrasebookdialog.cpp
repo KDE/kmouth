@@ -206,13 +206,10 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
 
 void InitialPhraseBookWidget::createBook () {
    PhraseBook book;
-   QValueStack<PhraseBook> stack;
    QListViewItem *item = books->firstChild();
    while (item != 0) {
       if (item->firstChild() != 0) {
          item = item->firstChild();
-         stack.push (book);
-         book.clear();
       }
       else {
          if (((QCheckListItem*)item)->isOn()) {
@@ -223,12 +220,6 @@ void InitialPhraseBookWidget::createBook () {
          
          while ((item != 0) && (item->nextSibling() == 0)) {
             item = item->parent();
-            if (item != 0) {
-               PhraseBook parent = stack.pop();
-               if (book.count() != 0)
-                  parent.insert (item->text(PhraseBookPrivate::name), book);
-               book = parent;
-            }
          }
          if (item != 0)
             item = item->nextSibling();
@@ -334,7 +325,7 @@ void PhraseBookDialog::initActions() {
    fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (i18n("New Phrase&book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
    fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
@@ -751,6 +742,9 @@ void PhraseBookDialog::slotPrint()
 
 /*
  * $Log$
+ * Revision 1.5  2003/01/19 21:42:58  gunnar
+ * Eliminated need for a .desktop file for each standard phrase book file
+ *
  * Revision 1.4  2003/01/18 18:25:34  gunnar
  * Renamed .stdbook files to .desktop files and added extended versions of the standard phrasebooks
  *

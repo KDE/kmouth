@@ -22,11 +22,16 @@
 #include <qtextcodec.h>
 #include <qptrlist.h>
 #include <stdlib.h>
+
+#include <kapplication.h>
+#include <dcopclient.h>
+
 #include "speech.h"
 
 TextToSpeechSystem::TextToSpeechSystem() {
-   ttsCommand = "cat -";
+   ttsCommand = "";
    stdIn = true;
+   useKttsd = true;
    codec = Speech::Local; // local encoding;
    buildCodecList();
 }
@@ -34,19 +39,37 @@ TextToSpeechSystem::TextToSpeechSystem() {
 TextToSpeechSystem::~TextToSpeechSystem() {
 }
 
+bool kttsdSay (const QString &text) {
+   DCOPClient *client = kapp->dcopClient();
+   QByteArray  data;
+   QCString replyType;
+   QByteArray  replyData;
+   QDataStream arg(data, IO_WriteOnly);
+   arg << text << "";
+   return client->call("proklam", "kspeech", "sayWarning(QString,QString)",
+                       data, replyType, replyData, true);
+}
+
 void TextToSpeechSystem::speak (QString text) {
-   if (text.length() > 0)
+   if (text.length() > 0) {
+      if (useKttsd) {
+         if (kttsdSay(text))
+            return;
+      }
+      
       if (codec < Speech::UseCodec)
          (new Speech())->speak(ttsCommand, stdIn, text, codec, 0);
       else
          (new Speech())->speak(ttsCommand, stdIn, text, Speech::UseCodec,
                                codecList->at (codec - Speech::UseCodec));
+   }
 }
 
 void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup) {
   config->setGroup(langGroup);
-  ttsCommand = config->readEntry("Command", "cat -");
+  ttsCommand = config->readEntry("Command");
   stdIn = config->readBoolEntry("StdIn", true);
+  useKttsd = config->readBoolEntry("useKttsd", true);
 
   QString codecString = config->readEntry("Codec", "Local");
   if (codecString == "Local")
@@ -67,6 +90,7 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
   config->setGroup(langGroup);
   config->writeEntry("Command", ttsCommand);
   config->writeEntry("StdIn", stdIn);
+  config->writeEntry("useKttsd", useKttsd);
   if (codec == Speech::Local)
      config->writeEntry("Codec", "Local");
   else if (codec == Speech::Latin1)
@@ -90,6 +114,9 @@ void TextToSpeechSystem::buildCodecList () {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.6  2002/12/04 16:22:02  gunnar
  * Include *.moc files
  *

@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>PreferencesUI</class>
 <widget class="QWidget">
     <property name="name">
@@ -9,13 +9,21 @@
             <x>0</x>
             <y>0</y>
             <width>339</width>
-            <height>138</height>
+            <height>148</height>
         </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
     </property>
     <property name="caption">
         <string>Preferences</string>
     </property>
-    <grid>
+    <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
@@ -25,80 +33,124 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLabel" row="0" column="0">
+        <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>speakLabel</cstring>
+                <cstring>Layout1</cstring>
             </property>
-            <property name="text">
-                <string>&amp;Selection of phrases in the phrase book:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>speakCombo</cstring>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>speakLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Selection of phrases in the phrase book:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>speakCombo</cstring>
+                    </property>
+                </widget>
+                <widget class="KComboBox">
+                    <item>
+                        <property name="text">
+                            <string>Speak Immediately</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Insert Into Edit Field</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>speakCombo</cstring>
+                    </property>
+                    <property name="currentItem">
+                        <number>1</number>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies whether selected phrases of the phrase book are immedialely spoken or just inserted into the edit field.</string>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>closeLabel</cstring>
+                <cstring>Layout2</cstring>
             </property>
-            <property name="text">
-                <string>&amp;Closing the phrase book edit window:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>closeCombo</cstring>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>closeLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Closing the phrase book edit window:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>closeCombo</cstring>
+                    </property>
+                </widget>
+                <widget class="KComboBox">
+                    <item>
+                        <property name="text">
+                            <string>Save Phrase Book</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Discard Changes</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Ask Whether to Save</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>closeCombo</cstring>
+                    </property>
+                    <property name="currentItem">
+                        <number>2</number>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies whether the phrase book is automatically saved when the edit window is closed.</string>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="KComboBox" row="1" column="0">
-            <item>
-                <property name="text">
-                    <string>Speak Immediately</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Insert Into Edit Field</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>speakCombo</cstring>
-            </property>
-            <property name="currentItem">
-                <number>1</number>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>This combo box specifies whether selected phrases of the phrase book are immedialely spoken or just inserted into the edit field.</string>
-            </property>
-        </widget>
-        <widget class="KComboBox" row="3" column="0">
-            <item>
-                <property name="text">
-                    <string>Save Phrase Book</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Discard Changes</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Ask Whether to Save</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>closeCombo</cstring>
-            </property>
-            <property name="currentItem">
-                <number>2</number>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>This combo box specifies whether the phrase book is automatically saved when the edit window is closed.</string>
-            </property>
-        </widget>
-    </grid>
+    </vbox>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kcombobox.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

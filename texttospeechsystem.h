@@ -49,12 +49,16 @@ private:
    int codec;
    QString ttsCommand;
    bool stdIn;
+   bool useKttsd;
 };
 
 #endif
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.4  2002/11/25 16:24:53  gunnar
  * Changes on the way to version 0.7.99.1rc1
  *
