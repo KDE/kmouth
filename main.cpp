@@ -72,34 +72,3 @@ int main(int argc, char *argv[])
   }
   return app.exec();
 }  
-
-/*
- * $Log$
- * Revision 1.3  2003/01/19 21:53:08  gunnar
- * corrected version number of KMouth
- *
- * Revision 1.2  2003/01/18 07:29:11  binner
- * CVS_SILENT i18n style guide fixes
- *
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.6  2002/12/30 12:08:07  gunnar
- * Configuration wizard improved
- *
- * Revision 1.5  2002/11/21 15:40:28  gunnar
- * changed KMouth back to be a standard KApplication
- *
- * Revision 1.4  2002/11/19 17:48:14  gunnar
- * Prevented both the parallel start of multiple KMouth instances and the parallel opening of multiple Phrase book edit windows
- *
- * Revision 1.3  2002/10/02 16:55:17  gunnar
- * Removed some compiler warnings and implementing the feature of opening a history at the start of KMouth
- *
- * Revision 1.2  2002/10/02 14:55:33  gunnar
- * Fixed Speak-empty-phrase-crash bug and added some i18n() encodings
- *
- * Revision 1.1.1.1  2002/08/26 14:09:49  gunnar
- * New project started
- *
- */

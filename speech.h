@@ -69,25 +69,3 @@ private:
 };
 
 #endif
-
-/*
- * $Log$
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.3  2002/12/11 18:57:31  gunnar
- * Incorporated changes for version 0.5.2 into head branch
- *
- * Revision 1.1.2.2  2002/12/11 18:31:23  gunnar
- * Security fix
- *
- * Revision 1.2  2002/11/04 16:38:42  gunnar
- * Incorporated changes for version 0.5.1 into head branch
- *
- * Revision 1.1.2.1  2002/11/04 15:36:37  gunnar
- * combo box for character encoding added
- *
- * Revision 1.1  2002/09/08 17:12:55  gunnar
- * Configuration dialog added
- *
- */
