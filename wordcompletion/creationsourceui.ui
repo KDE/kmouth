@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>CreationSourceUI</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>216</width>
-            <height>167</height>
+            <width>318</width>
+            <height>223</height>
         </rect>
     </property>
     <property name="caption">
@@ -54,7 +54,10 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>From &amp;File</string>
+                <string>From &amp;file</string>
+            </property>
+            <property name="accel">
+                <string>Alt+F</string>
             </property>
         </widget>
         <widget class="QRadioButton" row="1" column="1">
@@ -95,7 +98,10 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>From &amp;Directory</string>
+                <string>From &amp;directory</string>
+            </property>
+            <property name="accel">
+                <string>Alt+D</string>
             </property>
         </widget>
         <spacer row="1" column="0" rowspan="3" colspan="1">
