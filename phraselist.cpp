@@ -73,6 +73,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    lineEdit->setAutoDeleteCompletionObject(true);
    QWhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
    rowLayout->addWidget(lineEdit);
+   lineEdit->setFocus();
 
    QIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
@@ -151,6 +152,11 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
    dictionaryCombo->clear();
    if (list.isEmpty())
       dictionaryCombo->hide();
+   else if (list.count() == 1) {
+      dictionaryCombo->insertStringList (list);
+      dictionaryCombo->setCurrentItem (0);
+      dictionaryCombo->hide();
+   }
    else {
       dictionaryCombo->insertStringList (list);
       dictionaryCombo->show();
@@ -165,6 +171,7 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
       }
    }
 }
+
 void PhraseList::saveCompletionOptions(KConfig *config) {
       config->setGroup("Completion");
       config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
