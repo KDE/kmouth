@@ -433,6 +433,9 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
 
 /*
  * $Log$
+ * Revision 1.3  2003/01/18 15:47:46  gunnar
+ * Two small changes
+ *
  * Revision 1.2  2003/01/18 07:29:11  binner
  * CVS_SILENT i18n style guide fixes
  *
@@ -440,7 +443,7 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
  * Imported KMouth into kdeaccessibility
  *
  * Revision 1.39  2003/01/17 16:03:00  gunnar
- * Help buutons added and small bug when aborting the wizard fixed
+ * Help buttons added and small bug when aborting the wizard fixed
  *
  * Revision 1.38  2003/01/12 11:37:05  gunnar
  * Improved format list of file selectors / several small changes

@@ -23,6 +23,7 @@
 #include <kuniqueapplication.h>
 
 #include "kmouth.h"
+#include "version.h"
 
 static const char *description =
 	I18N_NOOP("KMouth");
@@ -40,7 +41,7 @@ int main(int argc, char *argv[])
 {
 
 	KAboutData aboutData( "kmouth", I18N_NOOP("KMouth"),
-		VERSION, description, KAboutData::License_GPL,
+		KMOUTH_VERSION, description, KAboutData::License_GPL,
 		"(c) 2002, Gunnar Schmi Dt", 0, 0, "kmouth@schmi-dt.de");
 	aboutData.addAuthor("Gunnar Schmi Dt",0, "kmouth@schmi-dt.de");
 	KCmdLineArgs::init( argc, argv, &aboutData );
@@ -73,6 +74,9 @@ int main(int argc, char *argv[])
 
 /*
  * $Log$
+ * Revision 1.2  2003/01/18 07:29:11  binner
+ * CVS_SILENT i18n style guide fixes
+ *
  * Revision 1.1  2003/01/17 23:09:36  gunnar
  * Imported KMouth into kdeaccessibility
  *
