@@ -1,6 +1,8 @@
 # KDE Config File  
 [Desktop Entry]
 Name=English
+Name[ar]=إنجليزية
+Name[bs]=Engleski
 Name[ca]=Anglès
 Name[cs]=Anglicky
 Name[cy]=Saesneg
@@ -22,6 +24,7 @@ Name[ja]=英語
 Name[mn]=Англи
 Name[ms]=Inggeris
 Name[mt]=Ingliż
+Name[nb]=Engelsk
 Name[nl]=Engels
 Name[nn]=Engelsk
 Name[pl]=Angielska
