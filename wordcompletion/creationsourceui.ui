@@ -29,6 +29,9 @@
             <property name="checked">
                 <bool>true</bool>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a new dictionary is created by either loading a dictionary file or by counting the individual words in a text.</string>
+            </property>
         </widget>
         <widget class="QRadioButton" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
@@ -36,6 +39,9 @@
             </property>
             <property name="text">
                 <string>&amp;Merge dictionaries</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a new dictionary is created by merging existing dictionaries.</string>
             </property>
         </widget>
         <widget class="QRadioButton" row="2" column="1">
@@ -55,6 +61,9 @@
             </property>
             <property name="text">
                 <string>From &amp;file</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a new dictionary is created by loading a file. You may either select an XML file, a standard text file or a file containing a word completion dictionary. If you select a standard text file or an XML file the frequentness of the individual words is detected by simply counting the occurrences of each word.</string>
             </property>
         </widget>
         <widget class="QRadioButton" row="1" column="1">
@@ -78,6 +87,9 @@
             <property name="checked">
                 <bool>true</bool>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a new dictionary is created by parsing the KDE documentation. The frequentness of the individual words is detect by simply counting the occurrences of each word.</string>
+            </property>
         </widget>
         <widget class="QRadioButton" row="3" column="1">
             <property name="name">
@@ -96,6 +108,9 @@
             </property>
             <property name="text">
                 <string>From f&amp;older</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a new dictionary is created by loading all files all files in a folder and its subdirectories.</string>
             </property>
         </widget>
         <spacer row="1" column="0" rowspan="3" colspan="1">
@@ -121,6 +136,9 @@
             </property>
             <property name="text">
                 <string>Create an &amp;empty wordlist</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this box a blank dictionary without any entries is created. As KMouth automatically adds newly typed words to the dictionaries it will learn your vocabulary with the time.</string>
             </property>
         </widget>
     </grid>

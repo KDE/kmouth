@@ -42,6 +42,9 @@
                     <property name="text">
                         <string>Add D&amp;ictionary...</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this button you can add a new dictionary to the list of available dictionaries.</string>
+                    </property>
                 </widget>
                 <widget class="KPushButton">
                     <property name="name">
@@ -60,6 +63,9 @@
                     </property>
                     <property name="text">
                         <string>&amp;Delete Dictionary</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this button you delete the selected dictionary.</string>
                     </property>
                 </widget>
                 <widget class="KPushButton">
@@ -80,6 +86,9 @@
                     <property name="text">
                         <string>Move &amp;Up</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this button you move the selected dictionary up.</string>
+                    </property>
                 </widget>
                 <widget class="KPushButton">
                     <property name="name">
@@ -99,6 +108,9 @@
                     <property name="text">
                         <string>&amp;Move Down</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this button you move the selected dictionary down.</string>
+                    </property>
                 </widget>
                 <widget class="KPushButton">
                     <property name="name">
@@ -117,6 +129,9 @@
                     </property>
                     <property name="text">
                         <string>&amp;Export Dictionary...</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this button you export the selected dictionary to a file.</string>
                     </property>
                 </widget>
                 <spacer>
@@ -175,6 +190,9 @@
                     <property name="allColumnsShowFocus">
                         <bool>true</bool>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This list contains all available dictionaries for the word completion. KMouth will display a combo box next to the edit field in the main window if this list contains more than one dictionary. You can use this combo box in order to select the dictionary that actually gets used for the word completion.</string>
+                    </property>
                 </widget>
                 <widget class="QGroupBox">
                     <property name="name">
@@ -205,6 +223,9 @@
                             <property name="text">
                                 <string>&amp;Language:</string>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>With this combo box you select the language associated with the selected dictionary.</string>
+                            </property>
                         </widget>
                         <widget class="QLabel" row="0" column="0">
                             <property name="name">
@@ -216,10 +237,16 @@
                             <property name="buddy" stdset="0">
                                 <cstring>dictionaryName</cstring>
                             </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>With this input field you specify the name of the selected dictionary.</string>
+                            </property>
                         </widget>
                         <widget class="KLineEdit" row="0" column="1">
                             <property name="name">
                                 <cstring>dictionaryName</cstring>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>With this input field you specify the name of the selected dictionary.</string>
                             </property>
                         </widget>
                     </grid>

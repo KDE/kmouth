@@ -29,6 +29,9 @@
             <property name="checked">
                 <bool>false</bool>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>If you select this check box the words are spell-checked before they are inserted into the new dictionary.</string>
+            </property>
         </widget>
         <widget class="QLabel" row="1" column="0">
             <property name="name">
@@ -47,6 +50,9 @@
             </property>
             <property name="buddy" stdset="0">
                 <cstring>encodingCombo</cstring>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this combo box you select the character encoding used to load text files. This combo box is not used for XML files or for dictionary files.</string>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="0">
@@ -67,6 +73,9 @@
             <property name="buddy" stdset="0">
                 <cstring>url</cstring>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this input field you specify which file you want to load for creating the new dictionary.</string>
+            </property>
         </widget>
         <widget class="KURLRequester" row="0" column="1">
             <property name="name">
@@ -80,6 +89,9 @@
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this input field you specify which file you want to load for creating the new dictionary.</string>
+            </property>
         </widget>
         <widget class="KComboBox" row="1" column="1">
             <property name="name">
@@ -92,6 +104,9 @@
                     <horstretch>1</horstretch>
                     <verstretch>0</verstretch>
                 </sizepolicy>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this combo box you select the character encoding used to load text files. This combo box is not used for XML files or for dictionary files.</string>
             </property>
         </widget>
         <widget class="KURLRequester" row="4" column="1">
@@ -109,6 +124,9 @@
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this input field you select the OpenOffice.org directory that will be used to spellcheck the words of the new dictionary.</string>
+            </property>
         </widget>
         <widget class="QLabel" row="2" column="0">
             <property name="name">
@@ -124,6 +142,9 @@
             </property>
             <property name="text">
                 <string>&amp;Language:</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>With this combo box you decide which language should be associated with the new dictionary.</string>
             </property>
         </widget>
     </grid>

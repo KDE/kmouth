@@ -12,6 +12,7 @@ void WordCompletionUI::init() {
     languageButton = new KLanguageButton (selectedDictionaryDetails, "languageButton");
     selectedDictionaryDetailsLayout->addWidget (languageButton, 1, 1);
     languageLabel->setBuddy (languageButton);
+    QWhatsThis::add (languageButton, i18n("With this combo box you select the language associated with the selected dictionary."));
     
     loadLanguageList(languageButton);
     languageButton->insertLanguage("??", i18n("Other"), QString::fromLatin1("l10n/"), QString::null);

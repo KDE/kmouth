@@ -12,6 +12,7 @@ void CreationSourceDetailsUI::init() {
     languageButton = new KLanguageButton (this, "languageButton");
     CreationSourceDetailsUILayout->addWidget (languageButton, 2, 1);
     languageLabel->setBuddy (languageButton);
+    QWhatsThis::add (languageButton, i18n("With this combo box you decide which language should be associated with the new dictionary."));
     
     loadLanguageList(languageButton);
 }

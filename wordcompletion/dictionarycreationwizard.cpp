@@ -22,6 +22,7 @@
 #include <qlineedit.h>
 #include <qcombobox.h>
 #include <qtextcodec.h>
+#include <qwhatsthis.h>
 
 #include <klistview.h>
 #include <klineedit.h>
@@ -60,7 +61,9 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    dirWidget= new CreationSourceDetailsUI (this, "directory source page");
    addPage (dirWidget, i18n("Source of New Dictionary (2)"));
    dirWidget->urlLabel->setText (i18n("&Directory:"));
+    QWhatsThis::add (dirWidget->urlLabel, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    dirWidget->url->setMode(KFile::Directory);
+    QWhatsThis::add (dirWidget->url, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    buildCodecCombo (dirWidget->encodingCombo);
 
    kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
