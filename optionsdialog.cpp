@@ -126,11 +126,11 @@ OptionsDialog::OptionsDialog (QWidget *parent)
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (behaviourWidget, i18n("Preferences"));
+   tabCtl->addTab (behaviourWidget, i18n("&Preferences"));
    
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
    commandWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
+   tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
    QGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), QString::null, iconCompletion);

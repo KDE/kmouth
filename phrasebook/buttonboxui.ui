@@ -30,7 +30,7 @@
                 <cstring>phrasebox</cstring>
             </property>
             <property name="title">
-                <string>Currently Selected Phrase or Phrase Book</string>
+                <string>&amp;Currently Selected Phrase or Phrase Book</string>
             </property>
             <grid>
                 <property name="name">

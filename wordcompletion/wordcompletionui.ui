@@ -40,7 +40,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>&amp;Add Dictionary...</string>
+                        <string>Add D&amp;ictionary...</string>
                     </property>
                 </widget>
                 <widget class="KPushButton">
@@ -97,7 +97,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>Move &amp;Down</string>
+                        <string>&amp;Move Down</string>
                     </property>
                 </widget>
                 <widget class="KPushButton">
@@ -192,7 +192,7 @@
                         </sizepolicy>
                     </property>
                     <property name="title">
-                        <string>Selected Dictionary</string>
+                        <string>&amp;Selected Dictionary</string>
                     </property>
                     <grid>
                         <property name="name">
@@ -203,7 +203,7 @@
                                 <cstring>languageLabel</cstring>
                             </property>
                             <property name="text">
-                                <string>&amp;Language</string>
+                                <string>&amp;Language:</string>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="0">
@@ -231,8 +231,11 @@
 <tabstops>
     <tabstop>dictionaryList</tabstop>
     <tabstop>addButton</tabstop>
-    <tabstop>exportButton</tabstop>
     <tabstop>deleteButton</tabstop>
+    <tabstop>moveUpButton</tabstop>
+    <tabstop>moveDownButton</tabstop>
+    <tabstop>exportButton</tabstop>
+    <tabstop>selectedDictionaryDetails</tabstop>
 </tabstops>
 <includes>
     <include location="local" impldecl="in implementation">klanguagebutton.h</include>

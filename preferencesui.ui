@@ -116,7 +116,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>&amp;Closing the phrase book edit window:</string>
+                        <string>Closing the phrase &amp;book edit window:</string>
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>closeCombo</cstring>

@@ -339,7 +339,7 @@ void PhraseBookDialog::initActions() {
    toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   fileImportStandardBook = new KActionMenu (i18n("Import &Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
+   fileImportStandardBook = new KActionMenu (i18n("I&mport Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
    fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 

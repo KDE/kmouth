@@ -96,7 +96,7 @@ void KMouthApp::initActions() {
    fileOpen->setStatusText(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = new KAction(i18n("&Save History As..."), "phrasehistory_save", KStdAccel::key(KStdAccel::Save), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
+   fileSaveAs = new KAction(i18n("Save &History As..."), "phrasehistory_save", KStdAccel::key(KStdAccel::Save), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
    fileSaveAs->setStatusText(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
@@ -153,7 +153,7 @@ void KMouthApp::initActions() {
    phraseListRemove->setStatusText(i18n("Removes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Removes the currently selected phrases from the history"));
 
-   phraseListCut = new KAction (i18n("&Cut"),   "editcut", 0, phraseList, SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
+   phraseListCut = new KAction (i18n("Cu&t"),   "editcut", 0, phraseList, SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
    phraseListCut->setStatusText(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
@@ -161,7 +161,7 @@ void KMouthApp::initActions() {
    phraseListCut->setStatusText(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
-   phraselistSelectAll = new KAction (i18n("&Select All Entries"), 0, 0, phraseList, SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
+   phraselistSelectAll = new KAction (i18n("Select &All Entries"), 0, 0, phraseList, SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
    phraselistSelectAll->setStatusText(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 

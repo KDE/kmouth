@@ -124,7 +124,7 @@
                 <cstring>stdInButton</cstring>
             </property>
             <property name="text">
-                <string>&amp;Send the data as standard input</string>
+                <string>Send the data as standard &amp;input</string>
             </property>
             <property name="whatsThis" stdset="0">
                 <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
@@ -135,7 +135,7 @@
                 <cstring>useKttsd</cstring>
             </property>
             <property name="text">
-                <string>Use kttsd speech service if possible</string>
+                <string>&amp;Use kttsd speech service if possible</string>
             </property>
         </widget>
     </vbox>
