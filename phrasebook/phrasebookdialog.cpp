@@ -27,6 +27,7 @@
 #include <qpopupmenu.h>
 #include <qvaluestack.h>
 #include <qptrstack.h>
+#include <qwhatsthis.h>
 
 // include files for KDE
 #include <kpopupmenu.h>
@@ -238,6 +239,7 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
 
    keyButton = new KKeyButton (keyButtonPlace, "key");
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
+   QWhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
    group = new QButtonGroup (phrasebox);
    group->hide();
@@ -300,6 +302,7 @@ void PhraseBookDialog::initGUI () {
    treeView->setRootIsDecorated (true);
    treeView->setAllColumnsShowFocus (true);
    treeView->setSelectionMode (QListView::Extended); 
+   QWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
    connect (treeView, SIGNAL(currentChanged(QListViewItem *)), this, SLOT(currentChanged(QListViewItem *)));
    connect (treeView, SIGNAL(contextMenuRequested (QListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (QListViewItem *, const QPoint &, int)));
    connect (treeView, SIGNAL(dropped (QDropEvent *, QListViewItem *, QListViewItem *)), this, SLOT(slotDropped (QDropEvent *, QListViewItem *, QListViewItem *)));

@@ -51,6 +51,9 @@
                     <property name="name">
                         <cstring>lineEdit</cstring>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
+                    </property>
                 </widget>
                 <widget class="QRadioButton" row="3" column="0">
                     <property name="name">
@@ -59,6 +62,9 @@
                     <property name="text">
                         <string>&amp;None</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>If you select this option then the selected phrase will not be reachable by a keyboard shortcut.</string>
+                    </property>
                 </widget>
                 <widget class="QRadioButton" row="3" column="1">
                     <property name="name">
@@ -66,6 +72,9 @@
                     </property>
                     <property name="text">
                         <string>C&amp;ustom</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>If you select this option then the selected phrase will be reachable by a keyboard shortcut. You can change the shortcut with the button next to this option.</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
@@ -85,6 +94,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>lineEdit</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
                     </property>
                 </widget>
             </grid>
