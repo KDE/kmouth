@@ -171,7 +171,7 @@ class PhraseAction : public KAction {
    Q_OBJECT
 public:
    PhraseAction (const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, 0) {
+   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {
       this->phrase = phrase;
       connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
    };
@@ -195,6 +195,9 @@ private:
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.5  2003/01/12 20:26:02  gunnar
  * Printing phrase book added
  *

@@ -405,7 +405,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    }
    delete phrases;
 
-   phrases = new KActionCollection (this);
+   phrases = new KActionCollection (this, actionCollection());
    book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected (const QString &)));
 
    QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
@@ -433,6 +433,9 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
 
 /*
  * $Log$
+ * Revision 1.2  2003/01/18 07:29:11  binner
+ * CVS_SILENT i18n style guide fixes
+ *
  * Revision 1.1  2003/01/17 23:09:36  gunnar
  * Imported KMouth into kdeaccessibility
  *

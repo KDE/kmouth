@@ -700,17 +700,9 @@ void PhraseBookDialog::slotImportPhrasebook (const KURL &url, const QString &pat
       PhraseBook book;
       if (book.open (url)) {
          if (!path.isEmpty() && !path.isNull()) {
-            QStringList dirs = QStringList::split("/", path);
-            QValueStack<QString> stack;
-            QStringList::iterator it=dirs.begin();
-            for (; it != dirs.end(); ++it) {
-               stack.push (*it);
-            }
-            while (!stack.isEmpty()) {
-               PhraseBook nBook;
-               nBook.insert (stack.pop(), book);
-               book = nBook;
-            }
+            PhraseBook nBook;
+            nBook.insert (path, book);
+            book = nBook;
          }
          addBook(treeView->currentItem(), &book);
       }
@@ -743,6 +735,9 @@ void PhraseBookDialog::slotPrint()
 
 /*
  * $Log$
+ * Revision 1.2  2003/01/18 07:29:12  binner
+ * CVS_SILENT i18n style guide fixes
+ *
  * Revision 1.1  2003/01/17 23:09:36  gunnar
  * Imported KMouth into kdeaccessibility
  *
