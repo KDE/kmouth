@@ -44,15 +44,17 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
 {
    isConfigured = false;
    config=kapp->config();
-   phraseList = 0;
 
    ///////////////////////////////////////////////////////////////////
    // call inits to invoke all other construction parts
    initStatusBar();
+   initPhraseList();
    initActions();
    optionsDialog = new OptionsDialog(this);
    connect (optionsDialog, SIGNAL(configurationChanged ()),
             this, SLOT(slotConfigurationChanged ()));
+   connect (optionsDialog, SIGNAL(configurationChanged ()),
+            phraseList, SLOT(configureCompletion ()));
 
    phrases = new KActionCollection (this);
 
@@ -73,9 +75,6 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    delete wizard;
 
    if (isConfigured) {
-      initPhraseList();
-      connect (optionsDialog, SIGNAL(configurationChanged ()),
-               phraseList, SLOT(configureCompletion ()));
       phraseList->configureCompletion();
    }
 
