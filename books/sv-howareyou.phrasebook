@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phrasebook>
+<phrasebook name="Hur mår du?">
+<phrase shortcut="">Hur står det till?</phrase>
+<phrase shortcut="">Hur mår du?</phrase>
+<phrase shortcut="">Jag mår bra.</phrase>
+<phrase shortcut="">Det är en trevlig dag.</phrase>
+<phrase shortcut="">Jag är upprörd idag.</phrase>
+<phrase shortcut="">Jag är uttråkad, men annars mår jag bra.</phrase>
+<phrase shortcut="">Jag har riktigt ont idag.</phrase>
+<phrase shortcut="">Jag känner mig verkligt dålig idag.</phrase>
+</phrasebook>

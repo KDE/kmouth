@@ -1,8 +1,8 @@
-EXTRA_DIST = de.desktop                  en.desktop \
-             de-courteousness.phrasebook en-courteousness.phrasebook \
-             de-greetings.phrasebook     en-greetings.phrasebook \
-             de-howareyou.phrasebook     en-howareyou.phrasebook \
-             de-personal.phrasebook      en-personal.phrasebook
+EXTRA_DIST = de.desktop                  en.desktop                  sv.desktop \
+             de-courteousness.phrasebook en-courteousness.phrasebook sv-courteousness.phrasebook \
+             de-greetings.phrasebook     en-greetings.phrasebook     sv-greetings.phrasebook \
+             de-howareyou.phrasebook     en-howareyou.phrasebook     sv-howareyou.phrasebook \
+             de-personal.phrasebook      en-personal.phrasebook      sv-personal.phrasebook
 
 install-data-local:
 	$(mkinstalldirs) $(kde_datadir)/kmouth/books/de/
@@ -17,6 +17,12 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/en-greetings.phrasebook $(kde_datadir)/kmouth/books/en/greetings.phrasebook
 	$(INSTALL_DATA) $(srcdir)/en-howareyou.phrasebook $(kde_datadir)/kmouth/books/en/howareyou.phrasebook
 	$(INSTALL_DATA) $(srcdir)/en-personal.phrasebook $(kde_datadir)/kmouth/books/en/personal.phrasebook
+	$(mkinstalldirs) $(kde_datadir)/kmouth/books/sv/
+	$(INSTALL_DATA) $(srcdir)/sv.desktop $(kde_datadir)/kmouth/books/sv/.directory
+	$(INSTALL_DATA) $(srcdir)/sv-courteousness.phrasebook $(kde_datadir)/kmouth/books/sv/courteousness.phrasebook
+	$(INSTALL_DATA) $(srcdir)/sv-greetings.phrasebook $(kde_datadir)/kmouth/books/sv/greetings.phrasebook
+	$(INSTALL_DATA) $(srcdir)/sv-howareyou.phrasebook $(kde_datadir)/kmouth/books/sv/howareyou.phrasebook
+	$(INSTALL_DATA) $(srcdir)/sv-personal.phrasebook $(kde_datadir)/kmouth/books/sv/personal.phrasebook
 
 uninstall-local:
 	-rm -f $(kde_datadir)/kmouth/books/de/.directory
@@ -29,3 +35,8 @@ uninstall-local:
 	-rm -f $(kde_datadir)/kmouth/books/en/greetings.phrasebook
 	-rm -f $(kde_datadir)/kmouth/books/en/howareyou.phrasebook
 	-rm -f $(kde_datadir)/kmouth/books/en/personal.phrasebook
+	-rm -f $(kde_datadir)/kmouth/books/sv/.directory
+	-rm -f $(kde_datadir)/kmouth/books/sv/courteousness.phrasebook
+	-rm -f $(kde_datadir)/kmouth/books/sv/greetings.phrasebook
+	-rm -f $(kde_datadir)/kmouth/books/sv/howareyou.phrasebook
+	-rm -f $(kde_datadir)/kmouth/books/sv/personal.phrasebook

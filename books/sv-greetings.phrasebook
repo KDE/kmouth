@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phrasebook>
+<phrasebook name="Hälsningar">
+<phrase shortcut="">Hallå.</phrase>
+<phrase shortcut="">Hej!</phrase>
+<phrase shortcut="">God morgon.</phrase>
+<phrase shortcut="">God eftermiddag.</phrase>
+<phrase shortcut="">God kväll.</phrase>
+<phrase shortcut="">Hej då!</phrase>
+<phrase shortcut="">Adjö!</phrase>
+<phrase shortcut="">Hejsan!</phrase>
+<phrase shortcut="">Vi ses!</phrase>
+<phrase shortcut="">Ha det bra!</phrase>
+</phrasebook>
