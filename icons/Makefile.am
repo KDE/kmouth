@@ -2,7 +2,7 @@
 
 SUBDIRS = history phrase phrasebook app 
 
-EXTRA_DIST = hi16-action-speak.png hi16-app-kmouth.png hi22-app-kmouth.png hi32-action-speak.png hi32-app-kmouth.png hi48-action-speak.png hi48-app-kmouth.png lo16-app-kmouth.png lo22-app-kmouth.png lo32-app-kmouth.png hi22-action-speak.png 
+EXTRA_DIST = hi16-action-speak.png hi32-action-speak.png hi48-action-speak.png hi22-action-speak.png 
 
 ####### kdevelop will overwrite this part!!! (end)############
 
