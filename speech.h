@@ -47,7 +47,7 @@ public:
     * @param stdin true if the program shall recieve its data via standard input
     * @param text The text that shall be spoken
     */
-   void speak(QString command, bool stdin, QString text, int encoding, QTextCodec *codec);
+   void speak(QString command, bool use_stdin, QString text, int encoding, QTextCodec *codec);
 
    /**
     * Prepares a command for being executed. During the preparation the
@@ -72,6 +72,9 @@ private:
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.3  2002/12/11 18:57:31  gunnar
  * Incorporated changes for version 0.5.2 into head branch
  *
