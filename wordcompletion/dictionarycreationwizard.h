@@ -85,7 +85,7 @@ public:
    QMap <QString, int> mergeParameters ();
    QString language ();
 
-private:;
+private:
    QDict<QCheckBox> dictionaries;
    QDict<KIntNumInput> weights;
    QMap<QString,QString> languages;
