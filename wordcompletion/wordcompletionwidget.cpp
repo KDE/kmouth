@@ -30,7 +30,7 @@
 #include <ksimpleconfig.h>
 #include <kfiledialog.h>
 #include <kio/netaccess.h>
-#include <kmessagebox.h> 
+#include <kmessagebox.h>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletionwidget.h"
@@ -72,13 +72,13 @@ public:
    void setLanguage (QString languageCode) {
       QString filename = KGlobal::dirs()->findResource("locale",
 			languageCode + QString::fromLatin1("/entry.desktop"));
-      
+
       KSimpleConfig entry(filename);
       entry.setGroup(QString::fromLatin1("KCM Locale"));
       QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ")", languageCode);
    }
-   
+
    void setLanguage (QString name, QString languageCode) {
       myLanguageCode = languageCode;
       setText (1, name);
@@ -110,12 +110,13 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name) : 
 
     // Load the configuration from the file
     load();
-} 
+}
 
 /**
  * Destructor
  */
 WordCompletionWidget::~WordCompletionWidget() {
+    delete config;
 }
 
 /***************************************************************************/
@@ -134,7 +135,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         config->readEntry("Language"));
       }
-   
+
    // Clean up disc space
    for (QStringList::Iterator it = newDictionaryFiles.begin(); it != newDictionaryFiles.end(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
@@ -164,7 +165,7 @@ void WordCompletionWidget::save() {
       ++it;
    }
    config->sync();
-   
+
    // Clean up disc space
    for (QStringList::Iterator it = removedDictionaryFiles.begin(); it != removedDictionaryFiles.end(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
@@ -203,7 +204,7 @@ void WordCompletionWidget::addDictionary() {
 
 void WordCompletionWidget::deleteDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
-   
+
    if (item != 0) {
       removedDictionaryFiles += item->filename();
       delete item;
@@ -212,10 +213,10 @@ void WordCompletionWidget::deleteDictionary() {
 
 void WordCompletionWidget::moveUp() {
    QListViewItem *item = dictionaryList->selectedItem ();
-   
+
    if (item != 0) {
       QListViewItem *above = item->itemAbove();
-      
+
       if (above != 0) {
          above->moveItem (item);
       }
@@ -224,10 +225,10 @@ void WordCompletionWidget::moveUp() {
 
 void WordCompletionWidget::moveDown() {
    QListViewItem *item = dictionaryList->selectedItem ();
-   
+
    if (item != 0) {
       QListViewItem *next = item->itemBelow();
-      
+
       if (next != 0) {
          item->moveItem (next);
       }
@@ -236,7 +237,7 @@ void WordCompletionWidget::moveDown() {
 
 void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
-   
+
    if (item != 0) {
       KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export Dictionary"));
       if (url.isEmpty() || url.isMalformed())
@@ -266,7 +267,7 @@ void WordCompletionWidget::selectionChanged() {
       dictionaryNameLabel->setEnabled(true);
       dictionaryName->setEnabled(true);
       languageButton->setEnabled(true);
-      
+
       dictionaryName->setText(item->text(0));
       languageButton->setCurrentItem(item->languageCode());
    }
@@ -280,7 +281,7 @@ void WordCompletionWidget::selectionChanged() {
       dictionaryNameLabel->setEnabled(false);
       dictionaryName->setEnabled(false);
       languageButton->setEnabled(false);
-      
+
       dictionaryName->setText("");
       languageButton->setText("");
    }
@@ -288,10 +289,10 @@ void WordCompletionWidget::selectionChanged() {
 
 void WordCompletionWidget::nameChanged (const QString &text) {
    QListViewItem *item = dictionaryList->selectedItem ();
-   
+
    if (item != 0) {
       QString old = item->text(0);
-      
+
       if (old != text) {
          item->setText(0, text);
          emit changed(true);
@@ -301,11 +302,11 @@ void WordCompletionWidget::nameChanged (const QString &text) {
 
 void WordCompletionWidget::languageSelected (int) {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
-   
+
    if (item != 0) {
       QString old = item->text(1);
       QString text = languageButton->currentTag();
-      
+
       if (old != text) {
          item->setLanguage(languageButton->text(), text);
          emit changed(true);
