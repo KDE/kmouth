@@ -23,13 +23,26 @@
 #include <qxml.h>
 #include <qvaluestack.h>
 #include <qstring.h>
+#include <qobject.h>
 #include <qmap.h>
+
+class QTextCodec;
+class KProgressDialog;
 
 namespace WordList {
 
 typedef QMap<QString,int> WordMap;
 
-WordMap createWordList (QString language, QString dictionary);
+KProgressDialog *progressDialog();
+
+WordMap parseKDEDoc (QString language, KProgressDialog *pdlg);
+WordMap parseFile   (QString filename,  QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
+WordMap parseDir    (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
+WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg);
+
+WordMap spellCheck  (WordMap wordlist,  QString dictionary,   KProgressDialog *pdlg);
+
+bool saveWordList (WordMap map, QString filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word
@@ -67,10 +80,10 @@ public:
    bool endDocument();
 
    /** returns a list of words */
-   QStringList getList();
+   WordMap getList();
 
 private:
-   QStringList list;
+   WordMap list;
    QString text;
 };
 

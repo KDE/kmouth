@@ -31,6 +31,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kfiledialog.h>
+#include <kcombobox.h>
 #include <kmessagebox.h>
 
 #include <stdlib.h>
@@ -44,7 +45,7 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(WordCompletion *completion, QWidget *parent, const char *name) : QWidget(parent,name) {
+PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
    QVBoxLayout *layout = new QVBoxLayout (this);
@@ -57,6 +58,12 @@ PhraseList::PhraseList(WordCompletion *completion, QWidget *parent, const char *
 
    QHBoxLayout *rowLayout = new QHBoxLayout ();
    layout->addLayout(rowLayout);
+
+   completion = new WordCompletion();
+
+   dictionaryCombo = new KComboBox (this, "Dictionary Combo");
+   configureCompletionCombo(completion->wordLists());
+   rowLayout->addWidget(dictionaryCombo);
 
    lineEdit = new PhraseEdit ("", this);
    lineEdit->setFocusPolicy(QWidget::StrongFocus);
@@ -74,6 +81,8 @@ PhraseList::PhraseList(WordCompletion *completion, QWidget *parent, const char *
    QWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
+   connect(dictionaryCombo, SIGNAL (activated (const QString &)), completion, SLOT (setWordList(const QString &)));
+   connect(completion, SIGNAL (wordListsChanged (const QStringList &)), this, SLOT (configureCompletionCombo (const QStringList &)));
    connect(listBox,  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
    connect(listBox,  SIGNAL(contextMenuRequested (QListBoxItem *, const QPoint &)), SLOT(contextMenuRequested (QListBoxItem *, const QPoint &)));
    connect(lineEdit, SIGNAL(returnPressed(const QString &)), SLOT(lineEntered(const QString &)));
@@ -133,9 +142,29 @@ void PhraseList::enableMenuEntries() {
    theApp->enableMenuEntries (selected, deselected);
 }
 
+void PhraseList::configureCompletion() {
+   completion->configure();
+}
+
+void PhraseList::configureCompletionCombo(const QStringList &list) {
+   QString current = completion->currentWordList();
+   dictionaryCombo->clear();
+   dictionaryCombo->insertStringList (list);
+   
+   QStringList::ConstIterator it;
+   int i = 0;
+   for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
+      if (current == *it) {
+         dictionaryCombo->setCurrentItem (i);
+         return;
+      }
+   }
+}
+
 void PhraseList::selectAllEntries () {
    listBox->selectAll (true);
 }
+
 void PhraseList::deselectAllEntries () {
    listBox->selectAll (false);
 }

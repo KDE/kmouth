@@ -3,23 +3,31 @@
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
+#include <kconfig.h>
 
 #include "wordcompletion.h"
-#include "wordlist.h"
-
-#include <kdebug.h>
 
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;
 private:
+   typedef QMap<QString,int> WordMap;
+   struct DictionaryDetails {
+      QString filename;
+      QString language;
+   };
+
    QString lastText;
-   WordList::WordMap map;
+   QMap<QString,int> map;
+   QMap<QString,DictionaryDetails> dictDetails;
+   QStringList dictionaries;
+   QString current;
+   bool blockCurrentListSignal;
 };
 
-WordCompletion::WordCompletion(const QString &dictionary) : KCompletion () {
+WordCompletion::WordCompletion() : KCompletion () {
    d = new WordCompletionPrivate();
-
-   configure (dictionary, QString::null, QString::null);
+   d->blockCurrentListSignal = false;
+   configure ();
 }
 
 WordCompletion::~WordCompletion() {
@@ -40,7 +48,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
 
       if (suffix.length() > 0) {
          MatchList matches;
-         WordList::WordMap::ConstIterator it;
+         QMap<QString,int>::ConstIterator it;
          for (it = d->map.begin(); it != d->map.end(); ++it)
             if (it.key().startsWith(suffix))
                matches += Match (-it.data(), it.key());
@@ -58,14 +66,73 @@ QString WordCompletion::makeCompletion(const QString &text) {
    return KCompletion::makeCompletion (text);
 }
 
-bool WordCompletion::isConfigured() const {
-   return d->map.count() > 0;
+QStringList WordCompletion::wordLists() {
+   return d->dictionaries;
 }
 
-void WordCompletion::configure( const QString &dictionary, const QString &language, const QString &dicFile) {
-   kdDebug() << dictionary << endl;
-   QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", dictionary);
-   kdDebug() << QString(dictionaryFile + " ") << endl;
+QStringList WordCompletion::wordLists(const QString &language) {
+   QStringList result;
+   for (QStringList::Iterator it = d->dictionaries.begin();
+         it != d->dictionaries.end(); ++it)
+      if (d->dictDetails[*it].language == language)
+         result += *it;
+   return result;
+}
+
+QString WordCompletion::languageOfWordList(const QString &wordlist) {
+   if (d->dictDetails.contains(wordlist))
+      return d->dictDetails[wordlist].language;
+   else
+      return QString::null;
+}
+
+QString WordCompletion::currentWordList() {
+   return d->current;
+}
+
+bool WordCompletion::isConfigured() {
+   KConfig *config = new KConfig("kmouthrc");
+   bool result = config->hasGroup("Dictionary 0");
+   delete config;
+
+   return result;
+}
+
+void WordCompletion::configure() {
+   d->dictionaries.clear();
+   d->dictDetails.clear();
+
+   KConfig *config = new KConfig("kmouthrc");
+   QStringList groups = config->groupList();
+   for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
+      if ((*it).startsWith ("Dictionary ")) {
+         config->setGroup(*it);
+         WordCompletionPrivate::DictionaryDetails details;
+         details.filename = config->readEntry("Filename");
+         details.language = config->readEntry("Language");
+         QString name = config->readEntry("Name");
+         d->dictDetails[name] = details;
+         d->dictionaries += name;
+      }
+   delete config;
+   
+   d->blockCurrentListSignal = true;
+   setWordList(d->current);
+   d->blockCurrentListSignal = false;
+   emit wordListsChanged (wordLists());
+   emit currentListChanged (d->current);
+}
+
+bool WordCompletion::setWordList(const QString &wordlist) {
+   d->map.clear();
+   bool result = d->dictDetails.contains (wordlist);
+   if (result)
+      d->current = wordlist;
+   else
+      d->current = d->dictionaries[0];
+   
+   QString filename = d->dictDetails[d->current].filename;
+   QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    QFile file(dictionaryFile);
    if (file.exists() && file.open(IO_ReadOnly)) {
       QTextStream stream(&file);
@@ -86,24 +153,10 @@ void WordCompletion::configure( const QString &dictionary, const QString &langua
       }
       file.close();
    }
-
-   if (!isConfigured() && !language.isNull() && !language.isEmpty()) {
-      d->map = WordList::createWordList (language, dicFile);
-
-      dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + dictionary;;
-      file.setName(dictionaryFile);
-      if(!file.open(IO_WriteOnly))
-         return;
-
-      QTextStream stream(&file);
-      stream.setEncoding (QTextStream::UnicodeUTF8);
-
-      stream << "WPDictFile\n";
-      WordList::WordMap::ConstIterator it;
-      for (it = d->map.begin(); it != d->map.end(); ++it)
-         stream << it.key() << "\t" << it.data() << "\t2\n";
-      file.close();
-   }
+   if (!d->blockCurrentListSignal)
+      emit currentListChanged (d->current);
+   d->lastText = "";
+   return result;
 }
 
 #include "wordcompletion.moc"

@@ -24,7 +24,7 @@ INCLUDES= -Iphrasebook -Iwordcompletion $(all_includes)
 METASOURCES = AUTO
 
 # the library search path. 
-kmouth_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+kmouth_LDFLAGS = $(all_libraries) -lkspell $(KDE_RPATH)
 
 rcdir = $(kde_datadir)/kmouth
 rc_DATA = kmouthui.rc

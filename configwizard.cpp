@@ -23,21 +23,22 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
+#include <ksconfig.h>
 #include <kconfig.h>
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/phrasebookdialog.h"
 #include "wordcompletion/wordcompletion.h"
-#include "wordcompletion/wordcompletionwidget.h"
+#include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (WordCompletion *completion, QWidget *parent, const char *name, KConfig *config)
+ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
              : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
 
    initCommandPage (config);
    initBookPage ();
-   initCompletion (completion);
+   initCompletion (config);
 }
 
 ConfigWizard::~ConfigWizard() {
@@ -77,12 +78,26 @@ void ConfigWizard::initBookPage() {
       bookWidget = 0;
 }
 
-void ConfigWizard::initCompletion (WordCompletion *completion) {
-   if (!completion->isConfigured()) {
-      completionWidget = new WordCompletionWidget(completion, this, "completionPage");
+void ConfigWizard::initCompletion (KConfig *config) {
+   if (!WordCompletion::isConfigured()) {
+      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
+      QFile file(dictionaryFile);
+      if (file.exists()) {
+         // If there is a word completion dictionary but no entry in the
+         // configuration file, we need to add it there.
+         config->setGroup("Dictionary 0");
+         config->writeEntry ("Filename", "dictionary.txt");
+         config->writeEntry ("Name",     "Default");
+         config->writeEntry ("Language", QString::null);
+         config->sync();
+      }
+   }
+   if (!WordCompletion::isConfigured()) {
+      completionWidget = new CompletionWizardWidget(this, "completionPage");
       addPage (completionWidget, i18n("Word Completion"));
       setHelpEnabled (completionWidget, true);
       setFinishEnabled (completionWidget, true);
+   
       if (commandWidget != 0)
          setFinishEnabled (commandWidget, false);
       if (bookWidget != 0)
@@ -102,7 +117,7 @@ void ConfigWizard::saveConfig (KConfig *config) {
       bookWidget->createBook();
 
    if (completionWidget != 0)
-      completionWidget->ok();
+      completionWidget->ok (config);
 }
 
 bool ConfigWizard::requestConfiguration () {

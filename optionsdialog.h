@@ -25,6 +25,7 @@
 #include "texttospeechconfigurationwidget.h"
 class QTabWidget;
 class KCModule;
+class WordCompletionWidget;
 
 /**This class represents a configuration widget for user preferences.
   *@author Gunnar Schmi Dt
@@ -78,6 +79,7 @@ private:
    TextToSpeechConfigurationWidget *commandWidget;
    PreferencesWidget *behaviourWidget;
    KCModule *kttsd;
+   WordCompletionWidget *completionWidget;
 
    KCModule *loadKttsd ();
    void unloadKttsd ();

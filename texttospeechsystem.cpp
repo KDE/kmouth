@@ -37,6 +37,7 @@ TextToSpeechSystem::TextToSpeechSystem() {
 }
 
 TextToSpeechSystem::~TextToSpeechSystem() {
+   delete codecList;
 }
 
 bool kttsdSay (const QString &text) {

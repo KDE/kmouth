@@ -26,8 +26,7 @@
 class KConfig;
 class TextToSpeechConfigurationWidget;
 class InitialPhraseBookWidget;
-class WordCompletion;
-class WordCompletionWidget;
+class CompletionWizardWidget;
 
 /**The class ConfigWizard is used when the user starts KMouth for the first
  * time. It asks the user to provide a first set of configuration data.
@@ -37,7 +36,7 @@ class WordCompletionWidget;
 class ConfigWizard : public KWizard  {
    Q_OBJECT
 public:
-   ConfigWizard (WordCompletion *completion, QWidget *parent, const char *name, KConfig *config);
+   ConfigWizard (QWidget *parent, const char *name, KConfig *config);
    ~ConfigWizard();
 
    bool configurationNeeded ();
@@ -48,13 +47,13 @@ protected:
    void help();
 
 private:
-   void initCommandPage(KConfig *config);
+   void initCommandPage (KConfig *config);
    void initBookPage();
-   void initCompletion(WordCompletion *completion);
+   void initCompletion (KConfig *config);
 
    TextToSpeechConfigurationWidget *commandWidget;
    InitialPhraseBookWidget *bookWidget;
-   WordCompletionWidget *completionWidget;
+   CompletionWizardWidget *completionWidget;
 };
 
 #endif

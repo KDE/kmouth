@@ -39,7 +39,6 @@ class OptionsDialog;
 class TextToSpeechSystem;
 class PhraseBookDialog;
 class PhraseBook;
-class WordCompletion;
 
 /**
   * The base class for KMouth application windows. It sets up the main
@@ -148,7 +147,6 @@ class KMouthApp : public KMainWindow
     KConfig *config;
     /** The phrase list */
     PhraseList *phraseList;
-    WordCompletion *completion;
     /** The configuration dialog */
     OptionsDialog *optionsDialog;
 

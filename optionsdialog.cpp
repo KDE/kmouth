@@ -34,6 +34,7 @@
 #include <kparts/componentfactory.h>
 
 #include "optionsdialog.h"
+#include "wordcompletion/wordcompletionwidget.h"
 
 #include "texttospeechconfigurationwidget.h"
 #include "speech.h"
@@ -130,6 +131,10 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
+   
+   QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
+   QGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), QString::null, iconCompletion);
+   completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
@@ -145,11 +150,11 @@ OptionsDialog::~OptionsDialog() {
    unloadKttsd();
 }
 
-
 void OptionsDialog::slotCancel() {
    KDialogBase::slotCancel();
    commandWidget->cancel();
    behaviourWidget->cancel();
+   completionWidget->load();
    if (kttsd != 0)
       kttsd->load ();
 }
@@ -158,15 +163,18 @@ void OptionsDialog::slotOk() {
    KDialogBase::slotOk();
    commandWidget->ok();
    behaviourWidget->ok();
+   completionWidget->save();
    emit configurationChanged();
    if (kttsd != 0)
       kttsd->save ();
+   
 }
 
 void OptionsDialog::slotApply() {
    KDialogBase::slotApply();
    commandWidget->ok();
    behaviourWidget->ok();
+   completionWidget->save();
    emit configurationChanged();
    if (kttsd != 0)
       kttsd->save ();

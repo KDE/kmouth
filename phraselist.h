@@ -41,7 +41,7 @@ class WordCompletion;
 class PhraseList : public QWidget  {
    Q_OBJECT
 public:
-   PhraseList(WordCompletion *completion, QWidget *parent=0, const char *name=0);
+   PhraseList(QWidget *parent=0, const char *name=0);
    ~PhraseList();
    
    /** contains the implementation for printing functionality */
@@ -77,18 +77,23 @@ public slots:
    void selectAllEntries ();
    void deselectAllEntries ();
 
+   void configureCompletion();
+
 protected slots:
    void lineEntered (const QString &phrase);
    void contextMenuRequested (QListBoxItem *, const QPoint &pos);
    void textChanged (const QString &s);
    void selectionChanged ();
    void keyPressEvent (QKeyEvent *e);
+   void configureCompletionCombo(const QStringList &list);
 
 private:
    KListBox *listBox;
+   KComboBox *dictionaryCombo;
    KLineEdit *lineEdit;
    QPushButton *speakButton;
    QString line;
+   WordCompletion *completion;
   
    bool isInSlot;
    
