@@ -238,6 +238,7 @@
     <tabstop>selectedDictionaryDetails</tabstop>
 </tabstops>
 <includes>
+    <include location="global" impldecl="in implementation">klineeditdlg.h</include>
     <include location="local" impldecl="in implementation">klanguagebutton.h</include>
     <include location="local" impldecl="in implementation">klanguagebuttonhelper.h</include>
     <include location="local" impldecl="in implementation">wordcompletionui.ui.h</include>
@@ -248,6 +249,9 @@
 <variables>
     <variable access="public">KLanguageButton *languageButton;</variable>
 </variables>
+<slots>
+    <slot access="protected" specifier="non virtual">languageButton_activated( int index )</slot>
+</slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
 </functions>

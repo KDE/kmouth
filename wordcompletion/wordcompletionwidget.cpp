@@ -130,10 +130,13 @@ void WordCompletionWidget::load() {
    for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
          config->setGroup(*it);
+         QString languageTag = config->readEntry("Language");
          last = new DictionaryListItem (dictionaryList, last,
                                         config->readEntry("Filename"),
                                         config->readEntry("Name"),
-                                        config->readEntry("Language"));
+                                        languageTag);
+         if (!languageButton->containsTag(languageTag))
+            languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
       }
 
    // Clean up disc space
