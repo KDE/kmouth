@@ -3,6 +3,6 @@
 #ifndef kmouth_version_h
 #define kmouth_version_h
 
-#define KMOUTH_VERSION "1.0.0rc1"
+#define KMOUTH_VERSION "1.0.0rc2"
 
 #endif /*version_h*/
