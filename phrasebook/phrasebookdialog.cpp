@@ -494,7 +494,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setText("");
       buttonBox->lineEdit->setEnabled(false);
       buttonBox->shortcutLabel->setEnabled(false);
-      buttonBox->keyButton->setShortcut("");
+      buttonBox->keyButton->setShortcut("", false);
       buttonBox->keyButton->setEnabled(false);
       buttonBox->noKey->setChecked (false);
       buttonBox->noKey->setEnabled (false);
@@ -509,7 +509,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(true);
       QString shortcut = currentItem->text(1);
-      buttonBox->keyButton->setShortcut(currentItem->cut());
+      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
       if (shortcut.isEmpty() || shortcut.isNull()) {
          buttonBox->noKey->setChecked (true);
          buttonBox->customKey->setChecked (false);
@@ -529,7 +529,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setText(currentItem->text(0));
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(false);
-      buttonBox->keyButton->setShortcut("");
+      buttonBox->keyButton->setShortcut("", false);
       buttonBox->keyButton->setEnabled(false);
       buttonBox->noKey->setChecked (false);
       buttonBox->noKey->setEnabled (false);
@@ -568,7 +568,7 @@ void PhraseBookDialog::slotNoKey() {
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
       currentItem->setCut (KShortcut(QString::null));
-      buttonBox->keyButton->setShortcut(currentItem->cut());
+      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
 }
@@ -611,7 +611,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       // Update display
       buttonBox->noKey->setChecked (false);
       buttonBox->customKey->setChecked (true);
-      buttonBox->keyButton->setShortcut(currentItem->cut());
+      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
 }
 

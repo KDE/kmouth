@@ -269,7 +269,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
 
    url = fdlg.selectedURL();
 
-   if (url.isEmpty() || url.isMalformed()) {
+   if (url.isEmpty() || !url.isValid()) {
       return -1;
    }
 
