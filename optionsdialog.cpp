@@ -19,10 +19,19 @@
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qwhatsthis.h>
-#include <ktabctl.h>
+#include <qgrid.h>
+#include <qtabwidget.h>
+#include <qpixmap.h>
+#include <qfile.h>
+
 #include <kcombobox.h>
 #include <klocale.h>
 #include <kconfig.h>
+#include <kglobal.h>
+#include <kiconloader.h>
+#include <kcmodule.h>
+#include <klibloader.h>
+#include <kparts/componentfactory.h>
 
 #include "optionsdialog.h"
 
@@ -104,20 +113,23 @@ bool PreferencesWidget::isSpeakImmediately () {
 /***************************************************************************/
 
 OptionsDialog::OptionsDialog (QWidget *parent)
-   : KDialogBase(parent, "configuration", false,
-                 i18n("Configuration"), Ok|Apply|Cancel|Help, Ok, true)
+   : KDialogBase(IconList, i18n("Configuration"), Ok|Apply|Cancel|Help, Ok,
+                  parent, "configuration", false, true)
 {
-   tabCtl = new KTabCtl (this, "tabs");
-   setMainWidget(tabCtl);
    setHelp ("config-dialog");
 
-   commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
-   commandWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
+   QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
+   QGrid *pageGeneral = addGridPage (1, Qt::Horizontal, i18n("General Options"), QString::null, iconGeneral);
+   
+   tabCtl = new QTabWidget (pageGeneral, "general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (behaviourWidget, i18n("Preferences"));
+   
+   commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
+   commandWidget->layout()->setMargin(KDialog::marginHint());
+   tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
 }
 
 OptionsDialog::~OptionsDialog() {

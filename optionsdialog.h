@@ -23,7 +23,7 @@
 #include <qobject.h>
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
-class KTabCtl;
+class QTabWidget;
 
 /**This class represents a configuration widget for user preferences.
   *@author Gunnar Schmi Dt
@@ -73,7 +73,7 @@ signals:
    void configurationChanged ();
 
 private:
-   KTabCtl *tabCtl;
+   QTabWidget *tabCtl;
    TextToSpeechConfigurationWidget *commandWidget;
    PreferencesWidget *behaviourWidget;
 };
