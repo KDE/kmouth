@@ -247,10 +247,10 @@ void WordCompletionWidget::exportDictionary() {
 
    if (item != 0) {
       KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export Dictionary"));
-      if (url.isEmpty() || url.isMalformed())
+      if (url.isEmpty() || !url.isValid())
          return;
 
-      if (KIO::NetAccess::exists(url)) {
+      if (KIO::NetAccess::exists(url, false, this)) {
          if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                           "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
@@ -258,7 +258,7 @@ void WordCompletionWidget::exportDictionary() {
       }
       KURL src;
       src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
-      KIO::NetAccess::copy (src, url);
+      KIO::NetAccess::copy (src, url, this);
    }
 }
 

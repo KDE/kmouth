@@ -22,7 +22,7 @@ void CreationSourceDetailsUI::init() {
 
 void CreationSourceDetailsUI::languageButton_activated (int) {
    if (languageButton->currentTag() == "??") {
-     QString customLanguage = KLineEditDlg::getText(i18n("Create Custom Language"), i18n("Please enter the code for the custom language:"));
+     QString customLanguage = KInputDialog::getText(i18n("Create Custom Language"), i18n("Please enter the code for the custom language:"));
      
      if (languageButton->containsTag(customLanguage)) {
         languageButton->setCurrentItem(customLanguage);
