@@ -46,7 +46,7 @@ bool kttsdSay (const QString &text) {
    QByteArray  replyData;
    QDataStream arg(data, IO_WriteOnly);
    arg << text << "";
-   return client->call("proklam", "kspeech", "sayWarning(QString,QString)",
+   return client->call("kttsd", "kspeech", "sayWarning(QString,QString)",
                        data, replyType, replyData, true);
 }
 
