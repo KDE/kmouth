@@ -1,3 +1,3 @@
 KDE_LANG = en
-KDE_DOCS = kmouth
+KDE_DOCS = AUTO
 
