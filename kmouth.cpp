@@ -90,15 +90,15 @@ bool KMouthApp::configured() {
 
 void KMouthApp::initActions() {
 // The "File" menu
-   fileOpen = new KAction(i18n("&Open as history..."), "phrasehistory_open", KShortcut("Ctrl+O"), this, SLOT(slotFileOpen()), actionCollection(),"file_open");
+   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KShortcut("Ctrl+O"), this, SLOT(slotFileOpen()), actionCollection(),"file_open");
    fileOpen->setStatusText(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = new KAction(i18n("&Save history As..."), "phrasehistory_save", KShortcut("Ctrl+S"), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
+   fileSaveAs = new KAction(i18n("&Save History As..."), "phrasehistory_save", KShortcut("Ctrl+S"), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
    fileSaveAs->setStatusText(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
-   filePrint = new KAction(i18n("&Print history..."), "phrasehistory_print", KShortcut("Ctrl+P"), this, SLOT(slotFilePrint()), actionCollection(),"file_print");
+   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KShortcut("Ctrl+P"), this, SLOT(slotFilePrint()), actionCollection(),"file_print");
    filePrint->setStatusText(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
 
@@ -159,11 +159,11 @@ void KMouthApp::initActions() {
    phraseListCut->setStatusText(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
-   phraselistSelectAll = new KAction (i18n("&Select all entries"), 0, 0, phraseList, SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
+   phraselistSelectAll = new KAction (i18n("&Select All Entries"), 0, 0, phraseList, SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
    phraselistSelectAll->setStatusText(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 
-   phraselistDeselectAll = new KAction (i18n("&Deselect all entries"), 0, 0, phraseList, SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
+   phraselistDeselectAll = new KAction (i18n("&Deselect All Entries"), 0, 0, phraseList, SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
    phraselistDeselectAll->setStatusText(i18n("Deselects all phrases in the history"));
    phraselistDeselectAll->setWhatsThis (i18n("Deselects all phrases in the history"));
 
@@ -433,6 +433,9 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.39  2003/01/17 16:03:00  gunnar
  * Help buutons added and small bug when aborting the wizard fixed
  *

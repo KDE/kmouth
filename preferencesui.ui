@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
 <class>PreferencesUI</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>269</width>
-            <height>128</height>
+            <width>339</width>
+            <height>138</height>
         </rect>
     </property>
     <property name="caption">
@@ -50,12 +50,12 @@
         <widget class="KComboBox" row="1" column="0">
             <item>
                 <property name="text">
-                    <string>Speak immediately</string>
+                    <string>Speak Immediately</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>Insert into edit field</string>
+                    <string>Insert Into Edit Field</string>
                 </property>
             </item>
             <property name="name">
@@ -71,17 +71,17 @@
         <widget class="KComboBox" row="3" column="0">
             <item>
                 <property name="text">
-                    <string>Save phrase book</string>
+                    <string>Save Phrase Book</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>Discard changes</string>
+                    <string>Discard Changes</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>Ask whether to save</string>
+                    <string>Ask Whether to Save</string>
                 </property>
             </item>
             <property name="name">
@@ -97,4 +97,8 @@
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kcombobox.h</includehint>
+    <includehint>kcombobox.h</includehint>
+</includehints>
 </UI>

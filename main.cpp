@@ -31,7 +31,7 @@ static const char *description =
 	
 static KCmdLineOptions options[] =
 {
-  { "+[File]", I18N_NOOP("history file to open"), 0 },
+  { "+[File]", I18N_NOOP("History file to open"), 0 },
   { 0, 0, 0 }
   // INSERT YOUR COMMANDLINE OPTIONS HERE
 };
@@ -73,6 +73,9 @@ int main(int argc, char *argv[])
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.6  2002/12/30 12:08:07  gunnar
  * Configuration wizard improved
  *

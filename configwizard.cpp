@@ -28,7 +28,7 @@
 ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
              : KWizard(parent, name, true)
 {
-   setCaption (i18n("Initial configuration - KMouth"));
+   setCaption (i18n("Initial Configuration - KMouth"));
    
    initCommandPage(config);
    initBookPage();
@@ -47,7 +47,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
    if (displayCommand) {
       commandWidget = new TextToSpeechConfigurationWidget (this, "ttsPage");
       commandWidget->readOptions (config, "TTS System");
-      addPage (commandWidget, i18n("Text-to-speech configuration"));
+      addPage (commandWidget, i18n("Text-to-Speech Configuration"));
       setHelpEnabled (commandWidget, true);
       setFinishEnabled (commandWidget, true);
    }
@@ -61,7 +61,7 @@ void ConfigWizard::initBookPage() {
 
    if (displayBook) {
       bookWidget = new InitialPhraseBookWidget (this, "pbPage");
-      addPage (bookWidget, i18n("Initial phrase book"));
+      addPage (bookWidget, i18n("Initial Phrase Book"));
       setHelpEnabled (bookWidget, true);
       setFinishEnabled (bookWidget, true);
       if (commandWidget != 0)
@@ -100,6 +100,9 @@ void ConfigWizard::help () {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.6  2003/01/17 16:03:00  gunnar
  * Help buutons added and small bug when aborting the wizard fixed
  *

@@ -359,13 +359,13 @@ void PhraseList::save () {
    }
 
    KURL url;
-   if (book.save (this, i18n("Save as..."), url, false) == -1);
+   if (book.save (this, i18n("Save As"), url, false) == -1);
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
 void PhraseList::open () {
    KURL url=KFileDialog::getOpenURL(QString::null,
-        i18n("*.txt|Plain text files (*.txt)\n*.phrasebook|Phrase books (*.phrasebook)\n*|All files"), this, i18n("Open File as history..."));
+        i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())
       open (url);
@@ -393,6 +393,9 @@ void PhraseList::open (KURL url) {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.18  2003/01/12 21:52:50  gunnar
  * Printing improved.
  *

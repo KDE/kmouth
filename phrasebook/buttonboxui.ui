@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Currently selected phrase or phrase book</string>
+        <string>Currently Selected Phrase or Phrase Book</string>
     </property>
     <grid>
         <property name="name">
@@ -30,7 +30,7 @@
                 <cstring>phrasebox</cstring>
             </property>
             <property name="title">
-                <string>Currently selected phrase or phrase book</string>
+                <string>Currently Selected Phrase or Phrase Book</string>
             </property>
             <grid>
                 <property name="name">

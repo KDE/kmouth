@@ -269,7 +269,7 @@ namespace PhraseBookPrivate {
 PhraseBookDialog::PhraseBookDialog ()
  : KMainWindow (0, "phraseEditDialog")
 {
-   setCaption (i18n("Phrase book"));
+   setCaption (i18n("Phrase Book"));
    initGUI();
    initActions();
    initStandardPhraseBooks();
@@ -330,11 +330,11 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new KAction (i18n("&New phrase"), "phrase_new", 0, this, SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
+   fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, this, SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
    fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (i18n("New phrase&book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new KAction (i18n("New Phrase&book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
    fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
@@ -350,7 +350,7 @@ void PhraseBookDialog::initActions() {
    toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   fileImportStandardBook = new KActionMenu (i18n("Import &standard phrase book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
+   fileImportStandardBook = new KActionMenu (i18n("Import &Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
    fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
@@ -690,7 +690,7 @@ void PhraseBookDialog::slotSave () {
 
 void PhraseBookDialog::slotImportPhrasebook () {
    KURL url=KFileDialog::getOpenURL(QString::null,
-        i18n("*.phrasebook|Phrase books (*.phrasebook)\n*.txt|Plain text files (*.txt)\n*|All files"), this, i18n("Import phrasebook..."));
+        i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
 
    slotImportPhrasebook (url, QString::null);
 }
@@ -724,7 +724,7 @@ void PhraseBookDialog::slotExportPhrasebook () {
    treeView->fillBook (&book, treeView->hasSelectedItems());
    
    KURL url;
-   if (book.save (this, i18n("Export phrase book..."), url) == -1);
+   if (book.save (this, i18n("Export Phrase Book"), url) == -1);
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
@@ -743,6 +743,9 @@ void PhraseBookDialog::slotPrint()
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.20  2003/01/13 09:18:07  gunnar
  * Import of standard phrase books improved.
  *

@@ -113,7 +113,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
    commandWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (commandWidget, i18n("Text-to-speech"));
+   tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
    
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());
@@ -167,6 +167,9 @@ bool OptionsDialog::isSpeakImmediately () {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.5  2003/01/17 16:03:00  gunnar
  * Help buutons added and small bug when aborting the wizard fixed
  *

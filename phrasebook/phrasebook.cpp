@@ -235,9 +235,9 @@ int PhraseBook::save (QWidget *parent, QString title, KURL &url, bool phrasebook
    
    QString filters;
    if (phrasebookFirst)
-      filters = i18n("*.phrasebook|Phrase books (*.phrasebook)\n*.txt|Plain text files (*.txt)\n*|All files");
+      filters = i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files");
    else
-      filters = i18n("*.txt|Plain text files (*.txt)\n*.phrasebook|Phrase books (*.phrasebook)\n*|All files");
+      filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
    
    KFileDialog fdlg(QString::null,filters, parent, "filedialog", true);
    fdlg.setCaption(title);
@@ -452,6 +452,9 @@ bool PhraseBookDrag::decode (const QMimeSource *e, PhraseBook *book) {
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.6  2003/01/12 21:52:50  gunnar
  * Printing improved.
  *
