@@ -314,7 +314,7 @@ void KMouthApp::slotFileOpen() {
 }
 
 void KMouthApp::slotFileSaveAs() {
-   slotStatusMsg(i18n("Saving history with a new filename..."));
+   slotStatusMsg(i18n("Saving history with a new file name..."));
 
    phraseList->save();
 

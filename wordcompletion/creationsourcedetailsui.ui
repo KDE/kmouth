@@ -65,7 +65,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>&amp;Filename:</string>
+                <string>&amp;File name:</string>
             </property>
             <property name="buddy" stdset="0">
                 <cstring>url</cstring>
