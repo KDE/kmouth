@@ -174,7 +174,7 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
 
 void PhraseList::saveCompletionOptions(KConfig *config) {
    config->setGroup("General Options");
-   config->writeEntry("Show speak button", speakButton->isVisible());
+   config->writeEntry("Show speak button", speakButton->isVisible() || !lineEdit->isVisible());
       
    config->setGroup("Completion");
    config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
