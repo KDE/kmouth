@@ -215,18 +215,38 @@ bool PhraseBook::save (const KURL &url) {
    return save (url, pattern.exactMatch(url.filename()));
 }
 
-bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
-   KTempFile tempFile;
-   tempFile.setAutoDelete(true);
 
+void PhraseBook::save (QTextStream &stream, bool asPhrasebook) {
    if (asPhrasebook)
-      *tempFile.textStream() << encode();
-   else {
-      *tempFile.textStream() << toStringList().join("\n");
-   }
-   tempFile.close();
+      stream << encode();
+   else
+      stream << toStringList().join("\n");
+}
 
-   return KIO::NetAccess::upload(tempFile.name(), url);
+bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
+   if (url.isLocalFile()) {
+      QFile file(url.path());
+      if(!file.open(IO_WriteOnly))
+         return false;
+      
+      QTextStream stream(&file);
+      save (stream, asPhrasebook);
+      file.close();
+
+      if (file.status() != IO_Ok)
+         return false;
+      else
+         return true;
+   }
+   else {
+      KTempFile tempFile;
+      tempFile.setAutoDelete(true);
+
+      save (*tempFile.textStream(), asPhrasebook);
+      tempFile.close();
+
+      return KIO::NetAccess::upload(tempFile.name(), url);
+   }
 }
 
 int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst) {
@@ -257,8 +277,9 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
 
       if (result)
          return 1;
-      else
+      else {
          return -1;
+      }
    }
    return 0;
 }
@@ -452,6 +473,10 @@ bool PhraseBookDrag::decode (const QMimeSource *e, PhraseBook *book) {
 
 /*
  * $Log$
+ * Revision 1.3  2003/02/02 21:05:51  mlaurent
+ * Fix include/header
+ * Add some const
+ *
  * Revision 1.2  2003/01/18 07:29:12  binner
  * CVS_SILENT i18n style guide fixes
  *

@@ -286,6 +286,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
       if (!selected) {
          listBox->setCurrentItem (listBox->count() - 1);
          listBox->setSelected (listBox->count() - 1, true);
+         listBox->ensureCurrentVisible ();
       }
       else {
          int curr = listBox->currentItem();
@@ -297,6 +298,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             curr = listBox->count() - 1;
             listBox->setCurrentItem (curr);
             listBox->setSelected (curr, true);
+            listBox->ensureCurrentVisible ();
          }
          else if (curr != 0) {
             isInSlot = true;
@@ -304,6 +306,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             isInSlot = false;
             listBox->setCurrentItem (curr - 1);
             listBox->setSelected (curr - 1, true);
+            listBox->ensureCurrentVisible ();
          }
       }
       
@@ -329,6 +332,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             isInSlot = false;
             listBox->setCurrentItem (curr + 1);
             listBox->setSelected (curr + 1, true);
+            listBox->ensureCurrentVisible ();
          }
       }
       e->accept();
@@ -393,6 +397,9 @@ void PhraseList::open (KURL url) {
 
 /*
  * $Log$
+ * Revision 1.2  2003/01/18 07:29:11  binner
+ * CVS_SILENT i18n style guide fixes
+ *
  * Revision 1.1  2003/01/17 23:09:36  gunnar
  * Imported KMouth into kdeaccessibility
  *

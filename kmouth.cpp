@@ -44,6 +44,7 @@
 
 KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
 {
+   isConfigured = false;
    config=kapp->config();
 
    ///////////////////////////////////////////////////////////////////
@@ -61,10 +62,10 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config);
    if (wizard->configurationNeeded ()) {
       if (wizard->requestConfiguration ()) {
+         isConfigured = true;
          saveOptions();
          wizard->saveConfig (config);
          readOptions();
-         isConfigured = true;
       }
       else
          isConfigured = false;
@@ -433,6 +434,9 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const {
 
 /*
  * $Log$
+ * Revision 1.5  2003/02/08 23:01:05  mfranz
+ * fix typo
+ *
  * Revision 1.4  2003/01/19 21:53:08  gunnar
  * corrected version number of KMouth
  *

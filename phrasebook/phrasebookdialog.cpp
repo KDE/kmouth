@@ -461,7 +461,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       currentNamePath = dirs;
       
       KAction *book = new StandardPhraseBookInsertAction (
-          url, (*it).name, this, SLOT(slotImportPhrasebook (const KURL &)), 0);
+          url, (*it).name, this, SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
       parent->insert(book);
       if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());

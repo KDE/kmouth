@@ -109,6 +109,9 @@ public:
    /** Writes the phrases to a file. Returns true if successfull. */
    bool save (const KURL &url, bool asPhrasebook);
 
+   /** Writes the phrases to a QTextStream. */
+   void save (QTextStream &stream, bool asPhrasebook);
+
    /** Prints the phrases. */
    void print (KPrinter *pPrinter);
 
@@ -195,6 +198,10 @@ private:
 
 /*
  * $Log$
+ * Revision 1.3  2003/02/02 21:05:51  mlaurent
+ * Fix include/header
+ * Add some const
+ *
  * Revision 1.2  2003/01/18 15:47:46  gunnar
  * Two small changes
  *
