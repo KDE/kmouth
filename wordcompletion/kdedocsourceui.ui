@@ -24,7 +24,7 @@
                 <cstring>spellCheckBox</cstring>
             </property>
             <property name="text">
-                <string>&amp;compare to OpenOffice.org dictionary:</string>
+                <string>&amp;Compare to OpenOffice.org dictionary:</string>
             </property>
             <property name="checked">
                 <bool>false</bool>

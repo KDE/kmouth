@@ -3,9 +3,7 @@
 <MenuBar>
   <Menu name="file" noMerge="1"><text>&amp;File</text>
     <Action name="file_open"/>
-    <Separator />
     <Action name="file_save_as"/>
-    <Separator />
     <Action name="file_print"/>
     <Separator />
     <Action name="file_quit"/>

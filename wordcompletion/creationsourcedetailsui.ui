@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>356</width>
-            <height>165</height>
+            <width>421</width>
+            <height>189</height>
         </rect>
     </property>
     <property name="caption">
@@ -24,7 +24,7 @@
                 <cstring>spellCheckBox</cstring>
             </property>
             <property name="text">
-                <string>&amp;compare to OpenOffice.org dictionary:</string>
+                <string>&amp;Compare to OpenOffice.org dictionary:</string>
             </property>
             <property name="checked">
                 <bool>false</bool>
@@ -43,7 +43,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>Character &amp;Encoding:</string>
+                <string>Character &amp;encoding:</string>
             </property>
             <property name="buddy" stdset="0">
                 <cstring>encodingCombo</cstring>

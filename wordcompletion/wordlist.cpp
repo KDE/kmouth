@@ -106,7 +106,7 @@ WordMap XMLParser::getList() {
 /***************************************************************************/
 
 KProgressDialog *progressDialog() {
-   KProgressDialog *pdlg = new KProgressDialog(0, "progressDialog", i18n("Creating word list"), i18n("Parsing the KDE documentation..."), false);
+   KProgressDialog *pdlg = new KProgressDialog(0, "progressDialog", i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), false);
    pdlg->setAllowCancel (false);
    pdlg->showCancelButton (false);
    pdlg->setAutoReset(false);

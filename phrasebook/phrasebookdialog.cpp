@@ -526,7 +526,7 @@ bool PhraseBookDialog::queryClose() {
       KGuiItem no = KGuiItem (i18n("Do &Not Save"));
       int answer = KMessageBox::questionYesNoCancel (this,
           i18n("Do you want to save the changes of the phrase book?"),
-          i18n("Closing \"Phrase book\" Window"),
+          i18n("Closing \"Phrase Book\" Window"),
           KStdGuiItem::yes(), no, "AutomaticSave");
       if (answer == KMessageBox::Yes) {
          slotSave();

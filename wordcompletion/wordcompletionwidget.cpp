@@ -238,7 +238,7 @@ void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
    
    if (item != 0) {
-      KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export dictionary..."));
+      KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export Dictionary"));
       if (url.isEmpty() || url.isMalformed())
          return;
 
@@ -255,7 +255,7 @@ void WordCompletionWidget::exportDictionary() {
 
 void WordCompletionWidget::selectionChanged() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
-   
+
    if (item != 0) {
       deleteButton->setEnabled(true);
       moveUpButton->setEnabled(true);
