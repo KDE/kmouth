@@ -31,8 +31,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2003-01-30</date>
-  <releaseinfo>1.00.00</releaseinfo>
+  <date>2003-09-16</date>
+  <releaseinfo>1.1</releaseinfo>
 
   <abstract>
     <para>
@@ -440,11 +440,11 @@
           <varlistentry>
             <term><menuchoice>
               <guimenu>Settings</guimenu>
-              <guimenuitem>Text-to-speech configuration</guimenuitem>
+              <guimenuitem>Configure KMouth...</guimenuitem>
             </menuchoice></term>
             <listitem><para>
               Opens the <link linkend="config-dialog">configuration dialog for
-              the speech synthesizer</link>.
+              the speech synthesizer</link> and other &kmouth; settings.
             </para></listitem>
           </varlistentry>
         </variablelist>
@@ -508,6 +508,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
+              <shortcut><keycombo>&Ctrl;<keycap>O</keycap></keycombo></shortcut> 
               <guimenuitem>Open as history...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -516,6 +517,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
+<shortcut><keycombo>&Ctrl;<keycap>S</keycap></keycombo></shortcut> 
               <guimenuitem>Save history as...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -656,7 +658,7 @@
     </sect2>
 
     <sect2 id="pbe-popup-menu">
-      <title>The popup menu of history entries</title>
+      <title>The Popup Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -787,7 +789,7 @@
 
     <para>
       In order to successfully use &kmouth;, you need a speech synthesizer
-      (and off course &kde; 3.x). &kmouth; uses about 15 megs of memory to
+      (and of course &kde; 3.x). &kmouth; uses about 15 megs of memory to
       run (plus the amount of memory needed by your speech synthesizer),
       but this may vary depending on your platform and configuration.
     </para>
