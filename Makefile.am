@@ -8,7 +8,7 @@ kmouth_LDADD   = ./phrasebook/libphrasebook.a -lkdeprint $(LIB_KFILE) $(LIB_KDEU
 
 SUBDIRS = icons phrasebook books  . 
 
-EXTRA_DIST = main.cpp kmouth.cpp kmouth.h kmouthui.rc kmouth.desktop phraselistitem.cpp phraselistitem.h texttospeechsystem.cpp texttospeechsystem.h speech.cpp speech.h phraselist.cpp phraselist.h phraseedit.cpp phraseedit.h kmouthrc configwizard.cpp configwizard.h optionsdialog.cpp optionsdialog.h texttospeechconfigurationwidget.h texttospeechconfigurationwidget.cpp texttospeechconfigurationui.ui preferencesui.ui 
+EXTRA_DIST = main.cpp version.h kmouth.cpp kmouth.h kmouthui.rc kmouth.desktop phraselistitem.cpp phraselistitem.h texttospeechsystem.cpp texttospeechsystem.h speech.cpp speech.h phraselist.cpp phraselist.h phraseedit.cpp phraseedit.h kmouthrc configwizard.cpp configwizard.h optionsdialog.cpp optionsdialog.h texttospeechconfigurationwidget.h texttospeechconfigurationwidget.cpp texttospeechconfigurationui.ui preferencesui.ui 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
