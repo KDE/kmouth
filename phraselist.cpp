@@ -149,14 +149,19 @@ void PhraseList::configureCompletion() {
 void PhraseList::configureCompletionCombo(const QStringList &list) {
    QString current = completion->currentWordList();
    dictionaryCombo->clear();
-   dictionaryCombo->insertStringList (list);
+   if (list.isEmpty())
+      dictionaryCombo->hide();
+   else {
+      dictionaryCombo->insertStringList (list);
+      dictionaryCombo->show();
    
-   QStringList::ConstIterator it;
-   int i = 0;
-   for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
-      if (current == *it) {
-         dictionaryCombo->setCurrentItem (i);
-         return;
+      QStringList::ConstIterator it;
+      int i = 0;
+      for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
+         if (current == *it) {
+            dictionaryCombo->setCurrentItem (i);
+            return;
+         }
       }
    }
 }
