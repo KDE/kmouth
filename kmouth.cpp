@@ -136,6 +136,10 @@ void KMouthApp::initActions() {
    viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
    viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
+   viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), 0, 0, this, SLOT(slotViewPhrasebookBar()), actionCollection(), "showPhrasebookBar");
+   viewPhrasebookBar->setStatusText(i18n("Enables/disables the phrasebook bar"));
+   viewPhrasebookBar->setWhatsThis (i18n("Enables/disables the phrasebook bar"));
+
    viewStatusBar = KStdAction::showStatusbar(this, SLOT(slotViewStatusBar()), actionCollection());
    viewStatusBar->setStatusText(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
@@ -210,6 +214,7 @@ void KMouthApp::saveOptions() {
       config->setGroup("General Options");
       config->writeEntry("Geometry", size());
       config->writeEntry("Show Toolbar", viewToolBar->isChecked());
+      config->writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
       config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
       config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
@@ -230,6 +235,9 @@ void KMouthApp::readOptions()
   bool bViewToolbar = config->readBoolEntry("Show Toolbar", true);
   viewToolBar->setChecked(bViewToolbar);
   slotViewToolBar();
+
+  bool bViewPhrasebookbar = config->readBoolEntry("Show Phrasebook Bar", true);
+  viewPhrasebookBar->setChecked(bViewPhrasebookbar);
 
   bool bViewStatusbar = config->readBoolEntry("Show Statusbar", true);
   viewStatusBar->setChecked(bViewStatusbar);
@@ -367,6 +375,23 @@ void KMouthApp::slotViewToolBar()
   else
   {
     toolBar("mainToolBar")->show();
+  }		
+
+  slotStatusMsg(i18n("Ready."));
+}
+
+void KMouthApp::slotViewPhrasebookBar()
+{
+  slotStatusMsg(i18n("Toggling phrasebook bar..."));
+  ///////////////////////////////////////////////////////////////////
+  // turn Toolbar on or off
+  if(!viewPhrasebookBar->isChecked())
+  {
+    toolBar("phrasebookBar")->hide();
+  }
+  else
+  {
+    toolBar("phrasebookBar")->show();
   }		
 
   slotStatusMsg(i18n("Ready."));

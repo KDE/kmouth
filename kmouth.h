@@ -124,6 +124,9 @@ class KMouthApp : public KMainWindow
     /** toggles the toolbar
      */
     void slotViewToolBar();
+    /** toggles the phrasebook bar
+     */
+    void slotViewPhrasebookBar();
     /** toggles the statusbar
      */
     void slotViewStatusBar();
@@ -165,6 +168,7 @@ class KMouthApp : public KMainWindow
     KAction* phrasebookEdit;
 
     KToggleAction* viewToolBar;
+    KToggleAction* viewPhrasebookBar;
     KToggleAction* viewStatusBar;
     KAction*       configureTTS;
 
