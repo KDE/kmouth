@@ -199,7 +199,7 @@
     <sect2 id="preferences">
       <title>The <guilabel>Preferences</guilabel> tab</title>
       <para>
-        The <guilabel>Preferences</guilabel> tab contains options that alter the behaviour of
+        The <guilabel>Preferences</guilabel> tab contains options that alter the behavior of
         &kmouth; in certain situations.
       </para>
       <para>
