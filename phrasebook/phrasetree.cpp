@@ -255,6 +255,8 @@ bool PhraseTree::hasSelectedItems() {
 
 void PhraseTree::deleteSelectedItems() {
    QListViewItem *i = firstChild();
+   if ( !i )
+       return;
    QListViewItem *deleteItem = 0;
    do {
       if (i->isSelected())
@@ -403,7 +405,8 @@ QListViewItem *PhraseTree::addBook (QListViewItem *parent, QListViewItem *after,
 void PhraseTree::fillBook (PhraseBook *book, bool respectSelection) {
    QListViewItem *i = firstChild();
    int level = 0;
-
+   if ( !i )
+       return;
    do {
       if (i->isSelected() || !respectSelection || level > 0) {
          PhraseTreeItem *it = (PhraseTreeItem *)i;
