@@ -24,7 +24,7 @@
                 <cstring>createButton</cstring>
             </property>
             <property name="text">
-                <string>&amp;Create new dictionary:</string>
+                <string>C&amp;reate new dictionary:</string>
             </property>
             <property name="checked">
                 <bool>true</bool>
@@ -56,9 +56,6 @@
             <property name="text">
                 <string>From &amp;file</string>
             </property>
-            <property name="accel">
-                <string>Alt+F</string>
-            </property>
         </widget>
         <widget class="QRadioButton" row="1" column="1">
             <property name="name">
@@ -76,7 +73,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>&amp;From &amp;KDE documentation</string>
+                <string>From &amp;KDE documentation</string>
             </property>
             <property name="checked">
                 <bool>true</bool>
@@ -98,10 +95,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>From &amp;directory</string>
-            </property>
-            <property name="accel">
-                <string>Alt+D</string>
+                <string>From f&amp;older</string>
             </property>
         </widget>
         <spacer row="1" column="0" rowspan="3" colspan="1">
