@@ -302,7 +302,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
          result = save (url, false);
       }
       else {
-         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>."
+         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
                                                            "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
