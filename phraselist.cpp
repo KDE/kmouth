@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 // include files for Qt
 #include <qprinter.h>
 #include <qpainter.h>

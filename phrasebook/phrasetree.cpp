@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #include <klocale.h>
 #include <kconfig.h>
 #include <kaction.h>
@@ -551,31 +549,3 @@ void PhraseTree::itemCollapsed (QListViewItem *item) {
 // ***************************************************************************
 
 #include "phrasetree.moc"
-
-/*
- * $Log$
- * Revision 1.6  2003/01/08 16:58:40  gunnar
- * Selection of multiple phrase book entres in the editor added
- *
- * Revision 1.5  2002/12/04 16:22:02  gunnar
- * Include *.moc files
- *
- * Revision 1.4  2002/11/20 10:55:44  gunnar
- * Improved the keyboard accessibility
- *
- * Revision 1.3  2002/11/20 10:11:49  gunnar
- * Keyboard drag of entries within the phrase book edit window implementated
- *
- * Revision 1.2  2002/11/17 17:13:18  gunnar
- * Several small changes in the phrase book edit window
- *
- * Revision 1.1  2002/11/11 21:25:44  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.2  2002/11/06 17:28:02  gunnar
- * Code for preventing double keyboard shortcuts extended for imported/dragged/pasted phrasebooks
- *
- * Revision 1.1  2002/10/24 19:54:42  gunnar
- * Drag and drop support in the phrase book edit dialog improved
- *
- */

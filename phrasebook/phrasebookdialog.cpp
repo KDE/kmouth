@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 // include files for QT
 #include <qapplication.h>
 #include <qlayout.h>

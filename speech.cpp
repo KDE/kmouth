@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #include "speech.h"
 #include <qstring.h>
 #include <qvaluelist.h>

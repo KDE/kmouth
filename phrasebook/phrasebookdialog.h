@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 

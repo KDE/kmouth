@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #ifndef PHRASEBOOKPARSER_H
 #define PHRASEBOOKPARSER_H
 
@@ -73,16 +71,3 @@ private:
 };
 
 #endif
-
-/*
- * $Log$
- * Revision 1.1  2002/11/11 21:25:44  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.2  2002/10/29 20:29:22  gunnar
- * Small changes
- *
- * Revision 1.1  2002/10/21 16:13:30  gunnar
- * phrase book format implemented
- *
- */
