@@ -38,33 +38,33 @@
 Phrase::Phrase() {
    this->phrase = "";
    this->shortcut = "";
-};
+}
 
 Phrase::Phrase (const QString &phrase) {
    this->phrase = phrase;
    this->shortcut = "";
-};
+}
 
 Phrase::Phrase (const QString &phrase, const QString &shortcut) {
    this->phrase = phrase;
    this->shortcut = shortcut;
-};
+}
 
 QString Phrase::getPhrase() const {
    return phrase;
-};
+}
 
 QString Phrase::getShortcut() const {
    return shortcut;
-};
+}
 
 void Phrase::setPhrase (const QString &phrase) {
    this->phrase = phrase;
-};
+}
 
 void Phrase::setShortcut (const QString &shortcut) {
    this->shortcut = shortcut;
-};
+}
 
 // ***************************************************************************
 
