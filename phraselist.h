@@ -78,6 +78,7 @@ public slots:
    void deselectAllEntries ();
 
    void configureCompletion();
+   void saveWordCompletion();
 
 protected slots:
    void lineEntered (const QString &phrase);

@@ -46,11 +46,6 @@ public:
     */
    void addSentence (const QString &sentence);
    
-   /**
-    * Saves the added words to disk.
-    */
-   void save ();
-
 public slots:
    /**
     * Re-reads the configuration.
@@ -64,6 +59,11 @@ public slots:
     * The method returns true if the specified word list was found.
     */
    bool setWordList(const QString &wordlist);
+
+   /**
+    * Saves the added words to disk.
+    */
+   void save ();
 
 signals:
    void wordListsChanged (const QStringList &wordLists);

@@ -28,6 +28,9 @@
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <ksimpleconfig.h>
+#include <kfiledialog.h>
+#include <kio/netaccess.h>
+#include <kmessagebox.h> 
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletionwidget.h"
@@ -232,6 +235,22 @@ void WordCompletionWidget::moveDown() {
 }
 
 void WordCompletionWidget::exportDictionary() {
+   DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
+   
+   if (item != 0) {
+      KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export dictionary..."));
+      if (url.isEmpty() || url.isMalformed())
+         return;
+
+      if (KIO::NetAccess::exists(url)) {
+         if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+            return;
+         }
+      }
+      QString srcfile = KGlobal::dirs()->findResource ("appdata", item->filename());
+      KIO::NetAccess::copy (srcfile, url);
+   }
 }
 
 void WordCompletionWidget::selectionChanged() {

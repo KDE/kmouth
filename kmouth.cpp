@@ -383,6 +383,7 @@ void KMouthApp::slotViewStatusBar()
 }
 
 void KMouthApp::slotConfigureTTS() {
+   phraseList->saveWordCompletion();
    optionsDialog->show();
 }
 

@@ -161,6 +161,11 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
    }
 }
 
+void PhraseList::saveWordCompletion () {
+   completion->save();
+}
+
+
 void PhraseList::selectAllEntries () {
    listBox->selectAll (true);
 }
