@@ -273,17 +273,47 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    }
 
    if (KIO::NetAccess::exists(url)) {
-      if(KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                         "Do you want to overwrite it?").arg(url.url())),i18n("Warning"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+      if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+                                                       "Do you want to overwrite it?").arg(url.url())),i18n("File exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
          return 0;
       }
    }
 
    bool result;
-   if (fdlg.currentFilter() == "*.phrasebook")
+   if (fdlg.currentFilter() == "*.phrasebook") {
+      if (url.fileName (false).contains('.') == 0) {
+         url.setFileName (url.fileName(false) + ".phrasebook");
+      }
+      else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
+         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extention than <i>.phrasebook</i>. "
+                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File extension"));
+         if (filetype == KMessageBox::Cancel) {
+            return 0;
+         }
+         if (filetype == KMessageBox::Yes) {
+            url.setFileName (url.fileName(false) + ".phrasebook");
+         }
+      }
       result = save (url, true);
-   else if (fdlg.currentFilter() == "*.txt")
-      result = save (url, false);
+   }
+   else if (fdlg.currentFilter() == "*.txt") {
+      if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
+         result = save (url, false);
+      }
+      else {
+         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extention <i>.phrasebook</i>."
+                                                           "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File extension"),i18n("As phrasebook"),i18n("As plain text"));
+         if (filetype == KMessageBox::Cancel) {
+            return 0;
+         }
+         if (filetype == KMessageBox::Yes) {
+            result = save (url, true);
+         }
+         else {
+            result = save (url, false);
+         }
+      }
+   }
    else // file format "All files" requested, so decide by extension
       result = save (url);
    
