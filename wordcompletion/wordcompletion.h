@@ -10,7 +10,7 @@ class WordCompletion : public KCompletion {
    friend class WordListWidget;
    Q_OBJECT
 public:
-   WordCompletion(QString dictionary);
+   WordCompletion(const QString &dictionary);
    virtual ~WordCompletion();
 
    /**
@@ -18,8 +18,8 @@ public:
     */
    virtual QString makeCompletion(const QString&);
 
-   bool isConfigured();
-   void configure(QString dictionary, QString language, QString dicFile);
+   bool isConfigured() const;
+   void configure(const QString &dictionary, const QString &language, const QString &dicFile);
 
 private:
    class WordCompletionPrivate;

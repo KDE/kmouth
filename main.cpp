@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
@@ -28,12 +27,12 @@
 static const char *description =
 	I18N_NOOP("A type-and-say front end for speech synthesizers");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-	
-	
+
+
 static KCmdLineOptions options[] =
 {
   { "+[File]", I18N_NOOP("History file to open"), 0 },
-  { 0, 0, 0 }
+  KCmdLineLastOption
   // INSERT YOUR COMMANDLINE OPTIONS HERE
 };
 
@@ -49,12 +48,12 @@ int main(int argc, char *argv[])
 
 	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
   KApplication app;
- 
+
   if (app.isRestored())
   {
     RESTORE(KMouthApp);
   }
-  else 
+  else
   {
     KMouthApp *kmouth = new KMouthApp();
     if (!kmouth->configured())
@@ -63,7 +62,7 @@ int main(int argc, char *argv[])
     kmouth->show();
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-		
+
 		if (args->count())
 		{
         kmouth->openDocumentFile(args->arg(0));
@@ -71,4 +70,4 @@ int main(int argc, char *argv[])
 		args->clear();
   }
   return app.exec();
-}  
+}

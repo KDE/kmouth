@@ -7,7 +7,7 @@
 #include "wordcompletion.h"
 #include "wordlist.h"
 
-#include <iostream>
+#include <kdebug.h>
 
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;
@@ -16,7 +16,7 @@ private:
    WordList::WordMap map;
 };
 
-WordCompletion::WordCompletion(QString dictionary) : KCompletion () {
+WordCompletion::WordCompletion(const QString &dictionary) : KCompletion () {
    d = new WordCompletionPrivate();
 
    configure (dictionary, QString::null, QString::null);
@@ -58,14 +58,14 @@ QString WordCompletion::makeCompletion(const QString &text) {
    return KCompletion::makeCompletion (text);
 }
 
-bool WordCompletion::isConfigured() {
+bool WordCompletion::isConfigured() const {
    return d->map.count() > 0;
 }
 
-void WordCompletion::configure(QString dictionary, QString language, QString dicFile) {
-   std::cout << dictionary.latin1() << std::endl;
+void WordCompletion::configure( const QString &dictionary, const QString &language, const QString &dicFile) {
+   kdDebug() << dictionary << endl;
    QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", dictionary);
-   std::cout << (dictionaryFile + " ").latin1() << std::endl;
+   kdDebug() << QString(dictionaryFile + " ") << endl;
    QFile file(dictionaryFile);
    if (file.exists() && file.open(IO_ReadOnly)) {
       QTextStream stream(&file);
