@@ -132,6 +132,7 @@ void KMouthApp::initActions() {
    phrasebookEdit = new KAction(i18n("&Edit..."), 0, 0, this, SLOT(slotEditPhrasebook()), actionCollection(),"phrasebook_edit");
 
 // The "Options" menu
+   viewMenuBar = KStdAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
    viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
    viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
    viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
@@ -213,6 +214,7 @@ void KMouthApp::saveOptions() {
    if (isConfigured) {
       config->setGroup("General Options");
       config->writeEntry("Geometry", size());
+      config->writeEntry("Show Menubar", viewMenuBar->isChecked());
       config->writeEntry("Show Toolbar", viewToolBar->isChecked());
       config->writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
       config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
@@ -232,6 +234,10 @@ void KMouthApp::readOptions()
   config->setGroup("General Options");
 
   // bar status settings
+  bool bViewMenubar = config->readBoolEntry("Show Menubar", true);
+  viewMenuBar->setChecked(bViewMenubar);
+  slotViewMenuBar();
+
   bool bViewToolbar = config->readBoolEntry("Show Toolbar", true);
   viewToolBar->setChecked(bViewToolbar);
   slotViewToolBar();
@@ -361,6 +367,17 @@ void KMouthApp::slotEditPhrasebook () {
    // we first open and then raise it, so that it is surely the top window.
    phraseBookDialog->show();
    phraseBookDialog->raise();
+}
+
+void KMouthApp::slotViewMenuBar() {
+   slotStatusMsg(i18n("Toggling menubar..."));
+
+   if(!viewMenuBar->isChecked())
+      menuBar()->hide();
+   else
+      menuBar()->show();
+
+  slotStatusMsg(i18n("Ready."));
 }
 
 void KMouthApp::slotViewToolBar()

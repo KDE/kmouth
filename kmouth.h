@@ -121,6 +121,9 @@ class KMouthApp : public KMainWindow
     /** edits the phrase books
      */
     void slotEditPhrasebook ();
+    /** toggles the menu bar
+     */
+    void slotViewMenuBar();
     /** toggles the toolbar
      */
     void slotViewToolBar();
@@ -167,6 +170,7 @@ class KMouthApp : public KMainWindow
     KActionCollection *phrases;
     KAction* phrasebookEdit;
 
+    KToggleAction* viewMenuBar;
     KToggleAction* viewToolBar;
     KToggleAction* viewPhrasebookBar;
     KToggleAction* viewStatusBar;
