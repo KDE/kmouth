@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
@@ -195,50 +193,3 @@ private:
 };
 
 #endif
-
-/*
- * $Log$
- * Revision 1.3  2003/02/02 21:05:51  mlaurent
- * Fix include/header
- * Add some const
- *
- * Revision 1.2  2003/01/18 15:47:46  gunnar
- * Two small changes
- *
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.5  2003/01/12 20:26:02  gunnar
- * Printing phrase book added
- *
- * Revision 1.4  2003/01/12 11:37:05  gunnar
- * Improved format list of file selectors / several small changes
- *
- * Revision 1.3  2002/12/06 08:55:05  gunnar
- * Improved the algorithm for creating the initial phrasebook
- *
- * Revision 1.2  2002/11/19 17:48:14  gunnar
- * Prevented both the parallel start of multiple KMouth instances and the parallel opening of multiple Phrase book edit windows
- *
- * Revision 1.1  2002/11/11 21:25:44  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.6  2002/10/29 16:16:05  gunnar
- * Connection from the phrase book to the phrase edit field added
- *
- * Revision 1.5  2002/10/28 16:58:34  gunnar
- * Import and export of phrase books implemented
- *
- * Revision 1.4  2002/10/24 19:36:29  gunnar
- * Drag and drop support in the phrase book edit dialog improved
- *
- * Revision 1.3  2002/10/23 22:19:30  gunnar
- * Cut, copy and paste features of the phrase book edit dialog improved
- *
- * Revision 1.2  2002/10/22 20:10:29  gunnar
- * Cut and copy of phrase book entries implemented
- *
- * Revision 1.1  2002/10/21 16:13:30  gunnar
- * phrase book format implemented
- *
- */

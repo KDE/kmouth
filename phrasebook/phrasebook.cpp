@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
-
 #include <qprinter.h>
 #include <qpainter.h>
 #include <qfile.h>
@@ -470,53 +468,3 @@ bool PhraseBookDrag::decode (const QMimeSource *e, PhraseBook *book) {
 }
 
 #include "phrasebook.moc"
-
-/*
- * $Log$
- * Revision 1.3  2003/02/02 21:05:51  mlaurent
- * Fix include/header
- * Add some const
- *
- * Revision 1.2  2003/01/18 07:29:12  binner
- * CVS_SILENT i18n style guide fixes
- *
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.6  2003/01/12 21:52:50  gunnar
- * Printing improved.
- *
- * Revision 1.5  2003/01/12 20:26:02  gunnar
- * Printing phrase book added
- *
- * Revision 1.4  2003/01/12 11:37:05  gunnar
- * Improved format list of file selectors / several small changes
- *
- * Revision 1.3  2002/12/06 08:55:05  gunnar
- * Improved the algorithm for creating the initial phrasebook
- *
- * Revision 1.2  2002/12/04 16:22:02  gunnar
- * Include *.moc files
- *
- * Revision 1.1  2002/11/11 21:25:44  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.6  2002/10/29 20:29:22  gunnar
- * Small changes
- *
- * Revision 1.5  2002/10/29 18:11:17  gunnar
- * Implemented opening and saving of a standard phrasebook
- *
- * Revision 1.4  2002/10/28 16:58:34  gunnar
- * Import and export of phrase books implemented
- *
- * Revision 1.3  2002/10/23 22:19:30  gunnar
- * Cut, copy and paste features of the phrase book edit dialog improved
- *
- * Revision 1.2  2002/10/22 20:10:29  gunnar
- * Cut and copy of phrase book entries implemented
- *
- * Revision 1.1  2002/10/21 16:13:30  gunnar
- * phrase book format implemented
- *
- */
