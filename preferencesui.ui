@@ -84,7 +84,7 @@
                         <number>1</number>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>This combo box specifies whether selected phrases of the phrase book are immedialely spoken or just inserted into the edit field.</string>
+                        <string>This combo box specifies whether selected phrases of the phrase book are immediately spoken or just inserted into the edit field.</string>
                     </property>
                 </widget>
             </vbox>
