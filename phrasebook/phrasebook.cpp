@@ -275,7 +275,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
 
    if (KIO::NetAccess::exists(url)) {
       if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                       "Do you want to overwrite it?").arg(url.url())),i18n("File exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+                                                       "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
          return 0;
       }
    }
@@ -287,7 +287,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
       }
       else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
          int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
-                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File extension"));
+                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File Extension"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
@@ -303,7 +303,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
       }
       else {
          int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>."
-                                                           "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File extension"),i18n("As phrasebook"),i18n("As plain text"));
+                                                           "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }

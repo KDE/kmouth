@@ -244,7 +244,7 @@ void WordCompletionWidget::exportDictionary() {
 
       if (KIO::NetAccess::exists(url)) {
          if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
          }
       }
