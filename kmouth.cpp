@@ -39,6 +39,7 @@
 #include "phrasebook/phrasebookdialog.h"
 #include "optionsdialog.h"
 #include "configwizard.h"
+#include "wordcompletion/wordcompletion.h"
 
 #define ID_STATUS_MSG 1
 
@@ -59,7 +60,7 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    phrases = new KActionCollection (this);
 
    readOptions();
-   ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config);
+   ConfigWizard *wizard = new ConfigWizard (completion, this, "ConfigWizard", config);
    if (wizard->configurationNeeded ()) {
       if (wizard->requestConfiguration ()) {
          isConfigured = true;
@@ -189,8 +190,9 @@ void KMouthApp::initPhraseList()
   // create the main widget here that is managed by KTMainWindow's view-region and
   // connect the widget to your document to display document contents.
 
-  phraseList = new PhraseList(this);
-  setCentralWidget(phraseList);
+   completion = new WordCompletion("dictionary.txt");
+   phraseList = new PhraseList(completion, this);
+   setCentralWidget(phraseList);
 }
 
 void KMouthApp::openDocumentFile(const KURL& url)

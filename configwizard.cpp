@@ -27,14 +27,17 @@
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/phrasebookdialog.h"
+#include "wordcompletion/wordcompletion.h"
+#include "wordcompletion/wordcompletionwidget.h"
 
-ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
+ConfigWizard::ConfigWizard (WordCompletion *completion, QWidget *parent, const char *name, KConfig *config)
              : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
 
-   initCommandPage(config);
-   initBookPage();
+   initCommandPage (config);
+   initBookPage ();
+   initCompletion (completion);
 }
 
 ConfigWizard::~ConfigWizard() {
@@ -74,6 +77,21 @@ void ConfigWizard::initBookPage() {
       bookWidget = 0;
 }
 
+void ConfigWizard::initCompletion (WordCompletion *completion) {
+   if (!completion->isConfigured()) {
+      completionWidget = new WordCompletionWidget(completion, this, "completionPage");
+      addPage (completionWidget, i18n("Word Completion"));
+      setHelpEnabled (completionWidget, true);
+      setFinishEnabled (completionWidget, true);
+      if (commandWidget != 0)
+         setFinishEnabled (commandWidget, false);
+      if (bookWidget != 0)
+         setFinishEnabled (bookWidget, false);
+   }
+   else
+      completionWidget = 0;
+}
+
 void ConfigWizard::saveConfig (KConfig *config) {
    if (commandWidget != 0) {
       commandWidget->ok();
@@ -82,17 +100,20 @@ void ConfigWizard::saveConfig (KConfig *config) {
 
    if (bookWidget != 0)
       bookWidget->createBook();
+
+   if (completionWidget != 0)
+      completionWidget->ok();
 }
 
 bool ConfigWizard::requestConfiguration () {
-   if (commandWidget != 0 || bookWidget != 0)
+   if (commandWidget != 0 || bookWidget != 0 || completionWidget != 0)
       return (exec() == QDialog::Accepted);
    else
       return false;
 }
 
 bool ConfigWizard::configurationNeeded () {
-   return (commandWidget != 0 || bookWidget != 0);
+   return (commandWidget != 0 || bookWidget != 0 || completionWidget != 0);
 }
 
 void ConfigWizard::help () {

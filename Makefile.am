@@ -1,9 +1,9 @@
 bin_PROGRAMS = kmouth
 
 kmouth_SOURCES = preferencesui.ui texttospeechconfigurationui.ui texttospeechconfigurationwidget.cpp optionsdialog.cpp configwizard.cpp phraseedit.cpp phraselist.cpp speech.cpp texttospeechsystem.cpp phraselistitem.cpp kmouth.cpp main.cpp 
-kmouth_LDADD   = ./phrasebook/libphrasebook.a -lkdeprint $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+kmouth_LDADD   = ./phrasebook/libphrasebook.a ./wordcompletion/libwordcompletion.a -lkdeprint $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 
-SUBDIRS = icons phrasebook books  . 
+SUBDIRS = icons phrasebook wordcompletion books . 
 
 EXTRA_DIST = main.cpp version.h kmouth.cpp kmouth.h kmouthui.rc kmouth.desktop phraselistitem.cpp phraselistitem.h texttospeechsystem.cpp texttospeechsystem.h speech.cpp speech.h phraselist.cpp phraselist.h phraseedit.cpp phraseedit.h kmouthrc configwizard.cpp configwizard.h optionsdialog.cpp optionsdialog.h texttospeechconfigurationwidget.h texttospeechconfigurationwidget.cpp texttospeechconfigurationui.ui preferencesui.ui 
 
@@ -19,7 +19,7 @@ uninstall-local:
 
 
 # set the include path for X, qt and KDE
-INCLUDES= -Iphrasebook $(all_includes)
+INCLUDES= -Iphrasebook -Iwordcompletion $(all_includes)
 
 METASOURCES = AUTO
 

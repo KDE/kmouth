@@ -29,6 +29,8 @@
 #include <qwidget.h>
 #include <qpushbutton.h>
 
+class WordCompletion;
+
 /**
  * This class represents a phrase list. It contains methods for manipulating
  * the phraselist and also methods for viewing the list.
@@ -41,7 +43,7 @@
 class PhraseList : public QWidget  {
    Q_OBJECT
 public:
-   PhraseList(QWidget *parent=0, const char *name=0);
+   PhraseList(WordCompletion *completion, QWidget *parent=0, const char *name=0);
    ~PhraseList();
    
    /** contains the implementation for printing functionality */

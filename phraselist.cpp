@@ -44,8 +44,9 @@
 #include "kmouth.h"
 #include "texttospeechsystem.h"
 #include "phrasebook/phrasebook.h"
+#include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(QWidget *parent, const char *name ) : QWidget(parent,name) {
+PhraseList::PhraseList(WordCompletion *completion, QWidget *parent, const char *name) : QWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
    QVBoxLayout *layout = new QVBoxLayout (this);
@@ -63,6 +64,8 @@ PhraseList::PhraseList(QWidget *parent, const char *name ) : QWidget(parent,name
    lineEdit->setFocusPolicy(QWidget::StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(QLineEdit::Normal);
+   lineEdit->setCompletionObject (completion);
+   lineEdit->setAutoDeleteCompletionObject(true);
    QWhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
    rowLayout->addWidget(lineEdit);
 
