@@ -722,7 +722,7 @@ void PhraseBookDialog::slotExportPhrasebook () {
    treeView->fillBook (&book, treeView->hasSelectedItems());
    
    KURL url;
-   if (book.save (this, i18n("Export Phrase Book"), url) == -1);
+   if (book.save (this, i18n("Export Phrase Book"), url) == -1)
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
