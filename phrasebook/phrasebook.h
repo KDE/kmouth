@@ -92,19 +92,19 @@ public:
    PhraseBook() : PhraseBookEntryList() {};
    ~PhraseBook() {};
 
-   /** opens a file containing a phrase book. Returns true if successfull. */
+   /** opens a file containing a phrase book. Returns true if successful. */
    bool open (const KURL &url);
 
-   /** decodes a phrase book. Returns true if successfull. */
+   /** decodes a phrase book. Returns true if successful. */
    bool decode (const QString &xml);
 
-   /** decodes a phrase book. Returns true if successfull. */
+   /** decodes a phrase book. Returns true if successful. */
    bool decode (QXmlInputSource &source);
 
-   /** Writes the phrases to a file. Returns true if successfull. */
+   /** Writes the phrases to a file. Returns true if successful. */
    bool save (const KURL &url);
 
-   /** Writes the phrases to a file. Returns true if successfull. */
+   /** Writes the phrases to a file. Returns true if successful. */
    bool save (const KURL &url, bool asPhrasebook);
 
    /** Writes the phrases to a QTextStream. */

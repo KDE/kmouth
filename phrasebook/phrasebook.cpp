@@ -250,7 +250,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
 }
 
 int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst) {
-   // KFileDialog::getSaveURL(...) is not usefull here as we need
+   // KFileDialog::getSaveURL(...) is not useful here as we need
    // to know the requested file type.
 
    QString filters;
@@ -286,7 +286,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
          url.setFileName (url.fileName(false) + ".phrasebook");
       }
       else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
-         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extention than <i>.phrasebook</i>. "
+         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                                                            "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File extension"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
@@ -302,7 +302,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
          result = save (url, false);
       }
       else {
-         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extention <i>.phrasebook</i>."
+         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>."
                                                            "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File extension"),i18n("As phrasebook"),i18n("As plain text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;

@@ -42,14 +42,14 @@ public:
    /**
     * Speaks the given text.
     * @param command the program that shall be executed for speaking
-    * @param stdin true if the program shall recieve its data via standard input
+    * @param stdin true if the program shall receive its data via standard input
     * @param text The text that shall be spoken
     */
    void speak(QString command, bool use_stdin, QString text, int encoding, QTextCodec *codec);
 
    /**
     * Prepares a command for being executed. During the preparation the
-    * command is parsed and occurences of "%t" are replaced by text.
+    * command is parsed and occurrences of "%t" are replaced by text.
     * @param command the command that shall be executed for speaking
     * @param text the quoted text that can be inserted into the command
     */
