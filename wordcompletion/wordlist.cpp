@@ -19,13 +19,13 @@
 
 #include <qregexp.h>
 #include <qdir.h>
-#include "wordlist.h"
 
-#include <qapplication.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kprogress.h>
 #include <klocale.h>
+
+#include "wordlist.h"
 
 namespace WordList {
 void addWords (WordMap &map, QString line);
@@ -548,4 +548,3 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
 
 }
 
-#include "wordlist.moc"
