@@ -198,8 +198,12 @@ void WordCompletionWidget::addDictionary() {
    if (wizard->exec() == QDialog::Accepted) {
       QString filename = wizard->createDictionary();
       newDictionaryFiles += filename;
+      QString languageTag = wizard->language();
+      if (!languageButton->containsTag(languageTag)) {
+         languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
+      }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
-                      filename, wizard->name(), wizard->language());
+                      filename, wizard->name(), languageTag);
       dictionaryList->setSelected(item, true);
    }
    delete wizard;
