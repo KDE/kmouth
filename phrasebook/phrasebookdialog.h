@@ -97,11 +97,10 @@ private:
 class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KURL &url, const QString &path, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+   StandardPhraseBookInsertAction (const KURL &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
-      this->path = path;
-      connect (this, SIGNAL(slotActivated (const KURL &, const QString &)), receiver, slot);
+      connect (this, SIGNAL(slotActivated (const KURL &)), receiver, slot);
    };
    ~StandardPhraseBookInsertAction () {
    };
@@ -109,15 +108,14 @@ public:
 public slots:
    void slotActivated () {
       KAction::slotActivated();
-      emit slotActivated (url, path);
+      emit slotActivated (url);
    };
 
 signals:
-   void slotActivated (const KURL &url, const QString &path);
+   void slotActivated (const KURL &url);
 
 private:
    KURL url;
-   QString path;
 };
 
 /**
@@ -184,7 +182,7 @@ public slots:
 
    void slotSave ();
    void slotImportPhrasebook ();
-   void slotImportPhrasebook (const KURL &url, const QString &path);
+   void slotImportPhrasebook (const KURL &url);
    void slotExportPhrasebook ();
    void slotPrint ();
 
@@ -236,91 +234,3 @@ private:
 };
 
 #endif
-
-/*
- * $Log$
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.17  2003/01/12 20:26:02  gunnar
- * Printing phrase book added
- *
- * Revision 1.16  2003/01/12 11:37:05  gunnar
- * Improved format list of file selectors / several small changes
- *
- * Revision 1.15  2003/01/08 16:58:40  gunnar
- * Selection of multiple phrase book entres in the editor added
- *
- * Revision 1.14  2002/12/30 11:45:29  gunnar
- * Wizard page for initial phrase book improved
- *
- * Revision 1.13  2002/12/29 12:10:38  gunnar
- * Wizard page for initial phrase book improved
- *
- * Revision 1.12  2002/12/06 08:55:05  gunnar
- * Improved the algorithm for creating the initial phrasebook
- *
- * Revision 1.11  2002/11/25 16:24:53  gunnar
- * Changes on the way to version 0.7.99.1rc1
- *
- * Revision 1.10  2002/11/22 14:51:39  gunnar
- * Wizard for first start extended
- *
- * Revision 1.9  2002/11/22 09:29:12  gunnar
- * Small changes
- *
- * Revision 1.8  2002/11/22 08:48:34  gunnar
- * Implemented functionality that belongs to the new options in the options dialog
- *
- * Revision 1.7  2002/11/20 10:55:44  gunnar
- * Improved the keyboard accessibility
- *
- * Revision 1.6  2002/11/19 19:45:06  gunnar
- * Added "Do you want to save?"-question to the phrase book edit window
- *
- * Revision 1.5  2002/11/19 19:11:28  gunnar
- * Extended the tool bar of the phrase book edit window
- *
- * Revision 1.4  2002/11/19 17:48:14  gunnar
- * Prevented both the parallel start of multiple KMouth instances and the parallel opening of multiple Phrase book edit windows
- *
- * Revision 1.3  2002/11/17 17:13:18  gunnar
- * Several small changes in the phrase book edit window
- *
- * Revision 1.2  2002/11/14 21:19:57  gunnar
- * Extended the menu bar of the phrase book dialog
- *
- * Revision 1.1  2002/11/11 21:25:44  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.10  2002/11/06 19:15:08  gunnar
- * import of standard phrase books added
- *
- * Revision 1.9  2002/11/06 17:28:02  gunnar
- * Code for preventing double keyboard shortcuts extended for imported/dragged/pasted phrasebooks
- *
- * Revision 1.8  2002/11/04 21:13:08  gunnar
- * added code to prevent double shortcuts
- *
- * Revision 1.7  2002/10/29 16:16:06  gunnar
- * Connection from the phrase book to the phrase edit field added
- *
- * Revision 1.6  2002/10/24 19:36:29  gunnar
- * Drag and drop support in the phrase book edit dialog improved
- *
- * Revision 1.5  2002/10/23 22:19:30  gunnar
- * Cut, copy and paste features of the phrase book edit dialog improved
- *
- * Revision 1.4  2002/10/23 17:42:53  gunnar
- * Icons added to the items of the phrase book edit dialog
- *
- * Revision 1.3  2002/10/22 20:10:29  gunnar
- * Cut and copy of phrase book entries implemented
- *
- * Revision 1.2  2002/10/22 16:13:24  gunnar
- * Popup menu in the phrase book dialog added
- *
- * Revision 1.1  2002/10/21 18:30:50  gunnar
- * First version of the phrase book edit dialog added
- *
- */
