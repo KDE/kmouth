@@ -65,6 +65,9 @@
                     <property name="buddy" stdset="0">
                         <cstring>speakCombo</cstring>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies whether selected phrases of the phrase book are immediately spoken or just inserted into the edit field.</string>
+                    </property>
                 </widget>
                 <widget class="KComboBox">
                     <item>
@@ -120,6 +123,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>closeCombo</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies whether the phrase book is automatically saved when the edit window is closed.</string>
                     </property>
                 </widget>
                 <widget class="KComboBox">

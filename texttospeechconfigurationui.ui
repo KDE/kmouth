@@ -57,6 +57,13 @@
                     <property name="buddy" stdset="0">
                         <cstring>urlReq</cstring>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
+%t -- the text that should be spoken
+%f -- the name of a file containing the text
+%l -- the language code
+%% -- a percent sign</string>
+                    </property>
                 </widget>
                 <widget class="KURLRequester">
                     <property name="name">
@@ -71,7 +78,11 @@
                         </sizepolicy>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>This field specifies both the command used for speaking texts and its parameters. If you want to pass the text as a parameter, write %t at the place where the text should be inserted.</string>
+                        <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
+%t -- the text that should be spoken
+%f -- the name of a file containing the text
+%l -- the language code
+%% -- a percent sign</string>
                     </property>
                 </widget>
             </vbox>
@@ -108,6 +119,9 @@
                     <property name="buddy" stdset="0">
                         <cstring>characterCodingBox</cstring>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This combo box specifies which character encoding is used for passing the text.</string>
+                    </property>
                 </widget>
                 <widget class="KComboBox">
                     <property name="name">
@@ -135,7 +149,10 @@
                 <cstring>useKttsd</cstring>
             </property>
             <property name="text">
-                <string>&amp;Use kttsd speech service if possible</string>
+                <string>&amp;Use KTTSD speech service if possible</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>This check box specifies KMouth tries to use the KTTSD speech service prior to call the speech synthesizer directly. The KTTSD speech service is a KDE daemon which gives KDE applications a standardized interface for speech synthesis and is currently developed in CVS.</string>
             </property>
         </widget>
     </vbox>
