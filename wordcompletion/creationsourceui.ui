@@ -120,7 +120,7 @@
                 <cstring>emptyButton</cstring>
             </property>
             <property name="text">
-                <string>&amp;Empty wordlist</string>
+                <string>Create an &amp;empty wordlist</string>
             </property>
         </widget>
     </grid>
