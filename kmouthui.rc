@@ -1,0 +1,94 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="kmouth" version="0.1">
+<MenuBar>
+  <Menu name="file" noMerge="1"><text>&amp;File</text>
+    <Action name="file_open"/>
+    <Separator />
+    <Action name="file_save_as"/>
+    <Separator />
+    <Action name="file_print"/>
+    <Separator />
+    <Action name="file_quit"/>
+  </Menu>
+  <Menu name="edit"><text>&amp;Edit</text>
+    <Action name="edit_speak"/>
+  </Menu>
+  <Menu name="phrasebooks"><text>&amp;Phrase books</text>
+    <Action name="phrasebook_edit"/>
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+    <Action name="configureTTS"/>
+  </Menu>
+</MenuBar>
+
+<Menu name="phraselist_selection_popup" noMerge="1">
+    <Action name="phraselist_speak"/>
+    <!-- Separator / -->
+    <!-- Action name="phraselist_into_phrasebook"/ -->
+    <Separator />
+    <Action name="phraselist_remove"/>
+    <Separator />
+    <Action name="phraselist_cut"/>
+    <Action name="phraselist_copy"/>
+    <Separator />
+    <Action name="phraselist_select_all"/>
+    <Action name="phraselist_deselect_all"/>
+    <Separator />
+    <Action name="file_open"/>
+    <Action name="file_save_as"/>
+</Menu>
+
+<Menu name="phraselist_popup" noMerge="1">
+    <Action name="phraselist_select_all"/>
+    <Action name="phraselist_deselect_all"/>
+    <Separator />
+    <Action name="file_open"/>
+    <Action name="file_save_as"/>
+</Menu>
+
+<Menu name="phrasebook_popup" noMerge="1">
+    <Action name="phrasebook_paste"/>
+    <Separator />
+    <Action name="phrasebook_add_chapter"/>
+    <Action name="phrasebook_add_phrase"/>
+    <Separator />
+    <Action name="phrasebook_import"/>
+    <Action name="phrasebook_import_standard_book"/>
+    <Action name="phrasebook_export"/>
+</Menu>
+
+<Menu name="phrasebook_book_popup" noMerge="1">
+    <Action name="phrasebook_remove"/>
+    <Separator />
+    <Action name="phrasebook_cut"/>
+    <Action name="phrasebook_copy"/>
+    <Action name="phrasebook_paste"/>
+    <Separator />
+    <Action name="phrasebook_add_chapter"/>
+    <Action name="phrasebook_add_phrase"/>
+    <Separator />
+    <Action name="phrasebook_import"/>
+    <Action name="phrasebook_import_standard_book"/>
+    <Action name="phrasebook_export"/>
+</Menu>
+
+<Menu name="phrasebook_phrase_popup" noMerge="1">
+    <Action name="phrasebook_remove"/>
+    <Separator />
+    <Action name="phrasebook_cut"/>
+    <Action name="phrasebook_copy"/>
+    <Separator />
+    <Action name="phrase_export"/>
+</Menu>
+
+<ToolBar name="mainToolBar" noMerge="1">
+    <Action name="file_open"/>
+    <Action name="file_open_history"/>
+    <Action name="file_save_as"/>
+    <Action name="file_print"/>
+    <Separator />
+    <Action name="edit_cut"/>
+    <Action name="edit_copy"/>
+    <Action name="edit_paste"/>
+</ToolBar>
+</kpartgui>

@@ -1,0 +1,64 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="kmouth" version="0.1">
+
+<MenuBar>
+  <Menu name="file" noMerge="1"><text>&amp;File</text>
+    <Action name="file_new_phrase"/>
+    <Action name="file_new_book"/>
+    <Separator />
+    <Action name="file_save"/>
+    <Separator />
+    <Action name="file_import"/>
+    <Action name="file_import_standard_book"/>
+    <Action name="file_export"/>
+    <Separator />
+    <Action name="file_print"/>
+    <Separator />
+    <Action name="file_close"/>
+  </Menu>
+  <Menu name="edit"><text>&amp;Edit</text>
+    <Action name="edit_delete"/>
+  </Menu>
+</MenuBar>
+
+<Menu name="phrasebook_popup_nosel" noMerge="1">
+    <Action name="file_new_phrase"/>
+    <Action name="file_new_book"/>
+    <Separator />
+    <Action name="file_import"/>
+    <Action name="file_import_standard_book"/>
+    <Action name="file_export"/>
+    <Separator />
+    <Action name="edit_paste"/>
+</Menu>
+
+<Menu name="phrasebook_popup_sel" noMerge="1">
+    <Action name="file_new_phrase"/>
+    <Action name="file_new_book"/>
+    <Separator />
+    <Action name="file_import"/>
+    <Action name="file_import_standard_book"/>
+    <Action name="file_export"/>
+    <Separator />
+    <Action name="edit_cut"/>
+    <Action name="edit_copy"/>
+    <Action name="edit_paste"/>
+    <Separator />
+    <Action name="edit_delete"/>
+</Menu>
+
+<ToolBar name="mainToolBar" noMerge="1">
+    <Action name="file_new_phrase"/>
+    <Action name="file_new_book"/>
+    <Action name="file_save"/>
+    <Action name="toolbar_import"/>
+    <Action name="file_export"/>
+    <Action name="file_print"/>
+    <Separator />
+    <Action name="edit_cut"/>
+    <Action name="edit_copy"/>
+    <Action name="edit_paste"/>
+    <Action name="edit_delete"/>
+</ToolBar>
+
+</kpartgui>

@@ -1,0 +1,83 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>texttospeechconfigurationui</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>texttospeechconfigurationui</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>227</width>
+            <height>123</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Text-to-speech</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>urlLabel</cstring>
+            </property>
+            <property name="text">
+                <string>C&amp;ommand for speaking texts:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>urlReq</cstring>
+            </property>
+        </widget>
+        <widget class="KURLRequester">
+            <property name="name">
+                <cstring>urlReq</cstring>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>This field specifies both the command used for speaking texts and its parameters. If you want to pass the text as a parameter, write %t at the place where the text should be inserted.</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>characterCodingLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Chatacter &amp;encoding:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>characterCodingBox</cstring>
+            </property>
+        </widget>
+        <widget class="KComboBox">
+            <property name="name">
+                <cstring>characterCodingBox</cstring>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>This combo box specifies which character encoding is used for passing the text.</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>stdInButton</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Send the data as standard input</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<signals>
+    <signal>configurationChanged()</signal>
+</signals>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

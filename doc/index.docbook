@@ -1,0 +1,493 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+  <!ENTITY kmouth '<application>KMouth</application>'>
+  <!ENTITY kapp "&kmouth;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+<bookinfo>
+  <title>The KMouth Handbook</title>
+
+  <authorgroup>
+    <author>
+      <firstname>Gunnar</firstname>
+      <surname>Schmi Dt</surname>
+      <affiliation>
+        <address><email>gunnar@schmi-dt.de</email></address>
+      </affiliation>
+    </author>
+  </authorgroup>
+
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+  <copyright>
+    <year>2002</year>
+    <holder>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice>&FDLNotice;</legalnotice>
+
+  <!-- Date and version information of the documentation
+       Don't forget to include this last date and this last revision number, we
+       need them for translation coordination !
+       Please respect the format of the date (DD/MM/YYYY) and of the version
+       (V.MM.LL), it could be used by automation scripts.
+       Do NOT change these in the translation. -->
+
+  <date>03/10/2002</date>
+  <releaseinfo>0.05.00</releaseinfo>
+
+  <abstract>
+    <para>
+      &kmouth; is an application that enables persons that cannot speak to let their
+      computers speak.
+    </para>
+  </abstract>
+
+  <keywordset>
+    <keyword>KDE</keyword>
+    <keyword>kdeutils</keyword>
+    <keyword>KMouth</keyword>
+    <keyword>text-to-speach conversion</keyword>
+    <keyword>mutal persons</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title>Introduction</title>
+
+  <para>
+    &kmouth; is a program that enables persons that cannot speak to let their
+    computers speak. It includes a history of spoken sentences from which the
+    user can select sentences to be re-spoken.
+  </para>
+  <para>
+    Note that &kmouth; does not include speech synthesizer. Instead it requires
+    a speach synthesizer installed in the system.
+  </para>
+  <para>
+    Please report any problems and feature requests to the author of &kmouth;.
+  </para>
+</chapter>
+
+<chapter id="using-kapp">
+  <title>Using KMouth</title>
+  <sect1 id="main-window">
+    <title>The main window</title>
+    <para>
+      The main window of KMouth is fairly simple. It consists basically of an
+      edit field into which you type your sentences (the lower white field in
+      the screen shot) and a history of spoken sentences (the upper white field
+      in the screen shot).
+    </para>
+    <para>
+     <screenshot>
+        <screeninfo>The main window of &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase>Screenshot</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para>
+      Assuming that you have correctly <link linkend="config-dialog">configured
+      &kmouth;</link> you can use the edit field for entering sentences you
+      want to hear. Once a sentence got spoken it will be appended to the
+      history. From the history you can select sentences to be re-spoken.
+    </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title>The configuration dialog</title>
+    <para>
+      By using the menu entry
+      <menuchoice>
+        <guimenu>Settings</guimenu><guimenuitem>Text-to-speech conversion</guimenuitem>
+      </menuchoice>
+      you open the configuration dialog for the text-to-speech conversion.
+    </para>
+    <para>
+     <screenshot>
+        <screeninfo>The configuration dilog of &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthctts.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthctts.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase>Screenshot</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para>
+      Into the edit field of the configuration dialog you enter the command
+      for calling the speech synthesizer.
+    </para>
+    <para>
+      &kmouth; knows two ways of passing the text: If the command expects the
+      text as standard input you select the check box.
+    </para>
+    <para>
+      The other way is to pass the text as a parameter:
+      Before calling the command &kmouth; replaces every occurane of %t in
+      the command by the text (write %% for passing a percent sign).
+    </para>
+    <para>
+      Off course the command for speaking texts is dependend on which speech
+      synthesizer you use. Please look into the documentation of your speech
+      synthesizer for the command for speaking texts.
+    </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title>Command Reference</title>
+
+    <sect1 id="file-menu">
+      <title>The <guimenuitem>File</guimenuitem> Menu</title>
+      <para>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Open as history...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Opens a text file into as history of spoken sentences.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Save history as...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Saves the history into a text file.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Print history...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Prints the history.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Quit</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Quits &kmouth;</action></para></listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect1>
+
+    <sect1 id="edit-menu">
+      <title>The <guimenuitem>Edit</guimenuitem> Menu</title>
+      <para>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Cut</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Cuts the selected section and puts it to the clipboard. If there
+              is some text selected in the edit field it is placed it on the
+              clipboard. Otherwise the selected sentences in the history (if
+              any) are placed on the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Copy</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Copies the selected section to the clipboard. If there is some
+              text selected in the edit field it is copied to the clipboard.
+              Otherwise the selected sentences in the history (if any) are
+              copied to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Paste</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Pastes the clipboard contents at the current cursor position into
+              the edit field.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Speak</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Speaks the currently active sentence(s). If there is some text in
+              the edit field it is spoken. Otherwise the selected sentences in
+              the istory (if any) are spoken.
+            </action></para></listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect1>
+
+    <sect1 id="settings-menu">
+      <title>The <guimenuitem>Settings</guimenuitem> Menu</title>
+      <para>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
+              <guimenuitem>Show Toolbar</guimenuitem>
+            </menuchoice></term>
+            <listitem><para>
+              <action>
+                When checked, this displays a movable toolbar containing
+                buttons used to initiate frequently used commands. The toobar
+                is most commonly located at the top of the editor just under
+                the menu. When unchecked the toolbar is hidden.
+              </action>
+              Clicking on the striated grip will hide or unhide the bar.
+              Clicking and dragging on this grip allows the user to move
+              the bar.
+            </para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
+              <guimenuitem>Show Statusbar</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              When checked, this displays a small bar at the bottom of the
+              main window containing information about the status of
+              &kmouth;. When unchecked the statusbar is hidden.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
+              <guimenuitem>Text-to-speech configuration</guimenuitem>
+            </menuchoice></term>
+            <listitem><para>
+              Opens the <link linkend="config-dialog">configuration dialog for
+              the speech synthesizer</link>.
+            </para></listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect1>
+
+    <sect1 id="help-menu">
+      <title>The <guimenuitem>Help</guimenuitem> Menu</title>
+      &help.menu.documentation;
+    </sect1>
+
+    <sect1 id="popup-menu">
+      <title>The popup menu of history entries</title>
+      <para>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Speak</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              The selected sentences are spoken.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Remove</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              The selected sentences are removed from the history.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Cut</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              The selected sentences are deleted and placed on the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Copy</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              The selected sentences are copied to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Select all entries</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              All history entries are selected.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Deselect all entries</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              All history entries are deselected.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Open as history...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Opens a text file into as history of spoken sentences.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Save history as...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Saves the history into a text file.
+            </action></para></listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect1>
+
+</chapter>
+
+<chapter id="faq">
+  <title>Questions and Answers</title>
+
+  &reporting.bugs;
+  &updating.documentation;
+
+  <qandaset id="faqlist">
+    <qandaentry>
+      <question>
+        <para>I do not hear anything.</para>
+      </question>
+      <answer>
+        <para>
+          Most likely you did not configure correctly (or not at all?) the
+          text-to-speech command. Use
+          <menuchoice>
+            <guimenu>Settings</guimenu><guimenuitem>Text-to-speech conversion</guimenuitem>
+          </menuchoice>
+          and enter the command for speaking texts.
+          (See section about the <link linkend="config-dialog">configuration
+          dialog for the speech synthesizer</link> for more details.)
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</chapter>
+
+<chapter id="credits">
+  <title>Credits and License</title>
+
+  <para>
+    &kapp;
+  </para>
+  <para>
+    Program copyright 2002 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+  </para>
+  <para>
+    Documentation copyright 2002 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+  </para>
+
+  <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+  &underFDL;
+  &underGPL;
+</chapter>
+
+<appendix id="installation">
+  <title>Installation</title>
+
+  <sect1 id="getting-kmouth">
+    <title>How to obtain KMouth</title>
+
+    <para>
+      &kmouth; can be downloaded from
+      <ulink url="http://www.schmi-dt.de/kmouth/">The &kmouth; home page</ulink>.
+    </para>
+  </sect1>
+
+  <sect1 id="requirements">
+    <title>Requirements</title>
+
+    <para>
+      In order to successfully use &kmouth;, you need a speech synthesizer
+      (and off course KDE 3.0). &kmouth; uses about 15 megs of memory to
+      run (plus the amount of memory needed by your speech synthesizer),
+      but this may vary depending on your platform and configuration.
+    </para>
+  </sect1>
+
+
+  <sect1 id="compilation">
+  <title>Compilation and Installation</title>
+
+  &install.compile.documentation;
+
+  </sect1>
+</appendix>
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

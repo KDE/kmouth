@@ -1,0 +1,6 @@
+[Standard Phrasebook]
+Name=Meals
+Name[de]=Mahlzeiten
+File=en/meals.phrasebook
+Path=English
+Path[de]=Englisch

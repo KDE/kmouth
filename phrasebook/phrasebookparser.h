@@ -1,0 +1,88 @@
+/***************************************************************************
+                          phrasebookparser.h  -  description
+                             -------------------
+    begin                : Don Sep 12 2002
+    copyright            : (C) 2002 by Gunnar Schmi Dt
+    email                : kmouth@schmi-dt.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+// $Id$
+
+#ifndef PHRASEBOOKPARSER_H
+#define PHRASEBOOKPARSER_H
+
+#include <qxml.h>
+#include <qvaluestack.h>
+#include "phrasebook.h"
+
+/**
+ * This class implements a parser for both the phrase list and for phrase
+ * books. It is intended to be used together with the Qt SAX2 framework.
+ * @author Gunnar Schmi Dt
+ */
+
+class PhraseBookParser : public QXmlDefaultHandler {
+public: 
+   PhraseBookParser();
+   ~PhraseBookParser();
+
+   bool warning (const QXmlParseException &exception);
+   bool error (const QXmlParseException &exception);
+   bool fatalError (const QXmlParseException &exception);
+   QString errorString();
+ 
+   /** Processes the start of the document. */
+   bool startDocument();
+                       
+   /** Processes the start tag of an element. */
+   bool startElement (const QString &, const QString &, const QString &name,
+                      const QXmlAttributes &attributes);
+
+   /** Processes a chunk of normal character data. */
+   bool characters (const QString &ch);
+
+   /** Processes whitespace. */
+   bool ignorableWhitespace (const QString &ch);
+
+   /** Processes the end tag of an element. */
+   bool endElement (const QString &, const QString &, const QString &name);
+   
+   /** Processes the end of the document. */
+   bool endDocument();
+
+   /** returns a list of phrase book entries */
+   PhraseBookEntryList getPhraseList();
+
+private:
+   bool isInPhrase;
+   bool starting;
+   int offset;
+   Phrase phrase;
+   
+   PhraseBookEntryList list;
+   int level;
+};
+
+#endif
+
+/*
+ * $Log$
+ * Revision 1.1  2002/11/11 21:25:44  gunnar
+ * Moved the parts concerning phrase books into a static library
+ *
+ * Revision 1.2  2002/10/29 20:29:22  gunnar
+ * Small changes
+ *
+ * Revision 1.1  2002/10/21 16:13:30  gunnar
+ * phrase book format implemented
+ *
+ */

@@ -1,0 +1,9 @@
+[General Options]
+Geometry=400,350
+
+[mainToolBar]
+Index=0
+
+[phrasebookBar]
+IconText=IconTextRight
+Index=1

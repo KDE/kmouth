@@ -1,0 +1,95 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>ButtonBoxUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ButtonBoxUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>278</width>
+            <height>141</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Currently selected phrase or phrase book</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>phrasebox</cstring>
+            </property>
+            <property name="title">
+                <string>Currently selected phrase or phrase book</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>11</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QWidget" row="3" column="2">
+                    <property name="name">
+                        <cstring>keyButtonPlace</cstring>
+                    </property>
+                </widget>
+                <widget class="KLineEdit" row="1" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>lineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="3" column="0">
+                    <property name="name">
+                        <cstring>noKey</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;None</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="3" column="1">
+                    <property name="name">
+                        <cstring>customKey</cstring>
+                    </property>
+                    <property name="text">
+                        <string>C&amp;ustom</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>shortcutLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Shortcut for the phrase:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>textLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Text of the &amp;phrase:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>lineEdit</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
