@@ -179,7 +179,7 @@
       </para>
       <para>
         The other way is to pass the text as a parameter:
-        Before calling the command &kmouth; replaces every occurance of <token>%t</token> in
+        Before calling the command &kmouth; replaces every occurrence of <token>%t</token> in
         the command by the text (write <token>%%</token> for passing a percent sign).
       </para>
       <para>
