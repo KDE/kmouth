@@ -22,7 +22,16 @@
 #include <qstringlist.h>
 #include <qregexp.h>
 #include <qtextcodec.h>
+#include <qfile.h>
 #include <kdebug.h>
+
+#include <kdeversion.h>
+#ifdef KDE_IS_VERSION
+#if KDE_IS_VERSION(3,2,0)
+   #define macroExpander
+   #include <kmacroexpander.h>
+#endif
+#endif
 
 Speech::Speech() {
 }
@@ -30,16 +39,25 @@ Speech::Speech() {
 Speech::~Speech() {
 }
 
-QString Speech::prepareCommand (QString command, const QString &text, const QString &language) {
+QString Speech::prepareCommand (QString command, const QString &text,
+                          const QString &filename, const QString &language) {
+#ifdef macroExpander
+   QMap<QChar,QString> map;
+   map['t'] = text;
+   map['f'] = filename;
+   map['l'] = language;
+   return KMacroExpander::expandMacrosShellQuote (command, map);
+#else
    QValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
+   QString escText = KShellProcess::quote(text);
 
    // character sequences that change the state or need to be otherwise processed
-   QRegExp re_singlequote("('|%%|%t|%l)");
-   QRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t|%l)");
-   QRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t|%l)");
+   QRegExp re_singlequote("('|%%|%t|%f|%l)");
+   QRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t|%f|%l)");
+   QRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t|%f|%l)");
 
    // parse the command:
    for (int i = re_noquote.search(command);
@@ -129,7 +147,9 @@ QString Speech::prepareCommand (QString command, const QString &text, const QStr
 
          // substitute %variables
          if (match=="%t")
-            v = text;
+            v = escText;
+         else if (match=="%f")
+            v = filename;
          else if (match=="%%")
             v = "%";
          else if (match=="%l")
@@ -146,6 +166,7 @@ QString Speech::prepareCommand (QString command, const QString &text, const QStr
       }
    }
    return command;
+#endif
 }
 
 void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, int encoding, QTextCodec *codec) {
@@ -163,11 +184,24 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
          ts.setCodec (codec);
       ts << text;
 
-      // 1.b) quote the text as one parameter
-      QString escText = KShellProcess::quote(encText);
+      // 1.b) create a temporary file for the text
+      tempFile.setAutoDelete(true);
+      QTextStream* fs = tempFile.textStream();
+      if (encoding == Local)
+         fs->setEncoding (QTextStream::Locale);
+      else if (encoding == Latin1)
+         fs->setEncoding (QTextStream::Latin1);
+      else if (encoding == Unicode)
+         fs->setEncoding (QTextStream::Unicode);
+      else
+         fs->setCodec (codec);
+      *fs << text;
+      *fs << endl;
+      QString filename = tempFile.file()->name();
+      tempFile.close();
 
       // 2. prepare the command:
-      command = prepareCommand (command, escText, language);
+      command = prepareCommand (command, encText, filename, language);
 
 
       // 3. create a new process

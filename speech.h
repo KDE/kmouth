@@ -21,6 +21,7 @@
 #include <qobject.h>
 #include <qstring.h>
 #include <kprocess.h>
+#include <ktempfile.h>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
   *@author Gunnar Schmi Dt
@@ -53,7 +54,8 @@ public:
     * @param command the command that shall be executed for speaking
     * @param text the quoted text that can be inserted into the command
     */
-   QString prepareCommand (QString command, const QString &text, const QString &language);
+   QString prepareCommand (QString command, const QString &text,
+                     const QString &filename, const QString &language);
 
 public slots:
    void wroteStdin (KProcess *p);
@@ -64,6 +66,7 @@ public slots:
 private:
    KShellProcess process;
    QByteArray encText;
+   KTempFile tempFile;
 };
 
 #endif
