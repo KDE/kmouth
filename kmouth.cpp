@@ -90,15 +90,15 @@ bool KMouthApp::configured() {
 
 void KMouthApp::initActions() {
 // The "File" menu
-   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KShortcut("Ctrl+O"), this, SLOT(slotFileOpen()), actionCollection(),"file_open");
+   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KStdAccel::key(KStdAccel::Open), this, SLOT(slotFileOpen()), actionCollection(),"file_open");
    fileOpen->setStatusText(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = new KAction(i18n("&Save History As..."), "phrasehistory_save", KShortcut("Ctrl+S"), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
+   fileSaveAs = new KAction(i18n("&Save History As..."), "phrasehistory_save", KStdAccel::key(KStdAccel::Save), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
    fileSaveAs->setStatusText(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
-   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KShortcut("Ctrl+P"), this, SLOT(slotFilePrint()), actionCollection(),"file_print");
+   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KStdAccel::key(KStdAccel::Print), this, SLOT(slotFilePrint()), actionCollection(),"file_print");
    filePrint->setStatusText(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
 
