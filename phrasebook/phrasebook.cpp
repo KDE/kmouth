@@ -29,6 +29,7 @@
 #include <ktempfile.h>
 #include <kio/netaccess.h>
 #include <kfiledialog.h>
+#include <kmessagebox.h>
 
 #include "phrasebookparser.h"
 #include "phrasebook.h"
@@ -261,25 +262,35 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
-   fdlg.exec();
+   if (fdlg.exec() != QDialog::Accepted) {
+     return 0;
+   }
+     
    url = fdlg.selectedURL();
 
-   if(!url.isEmpty()) {
-      bool result;
-      if (fdlg.currentFilter() == "*.phrasebook")
-         result = save (url, true);
-      else if (fdlg.currentFilter() == "*.txt")
-         result = save (url, false);
-      else // file format "All files" requested, so decide by extension
-         result = save (url);
+   if (url.isEmpty() || url.isMalformed()) {
+      return -1;
+   }
 
-      if (result)
-         return 1;
-      else {
-         return -1;
+   if (KIO::NetAccess::exists(url)) {
+      if(KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+                                                         "Do you want to overwrite it?").arg(url.url())),i18n("Warning"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+         return 0;
       }
    }
-   return 0;
+
+   bool result;
+   if (fdlg.currentFilter() == "*.phrasebook")
+      result = save (url, true);
+   else if (fdlg.currentFilter() == "*.txt")
+      result = save (url, false);
+   else // file format "All files" requested, so decide by extension
+      result = save (url);
+   
+   if (result)
+      return 1;
+   else
+      return -1;
 }
 
 bool PhraseBook::open (const KURL &url) {
