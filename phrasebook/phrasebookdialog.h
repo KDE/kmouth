@@ -151,6 +151,8 @@ private:
     */
    PhraseBookDialog ();
 
+   static QString displayPath (QString path);
+
 public:
    /** Returns a pointer to the instance of this dialog. As a part off the
     * singleton pattern it will make sure that there is at most one instance
@@ -237,6 +239,9 @@ private:
 
 /*
  * $Log$
+ * Revision 1.1  2003/01/17 23:09:36  gunnar
+ * Imported KMouth into kdeaccessibility
+ *
  * Revision 1.17  2003/01/12 20:26:02  gunnar
  * Printing phrase book added
  *

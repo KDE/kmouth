@@ -218,7 +218,7 @@ void InitialPhraseBookWidget::createBook () {
          if (((QCheckListItem*)item)->isOn()) {
             PhraseBook localBook;
             localBook.open(item->text(PhraseBookPrivate::filename));
-            book.insert(item->text(PhraseBookPrivate::name), localBook);
+            book += localBook;
          }
          
          while ((item != 0) && (item->nextSibling() == 0)) {
@@ -387,25 +387,47 @@ void PhraseBookDialog::initActions() {
    createGUI("phrasebookdialogui.rc");
 }
 
+QString PhraseBookDialog::displayPath (QString filename) {
+   QFileInfo file(filename);
+   QString path = file.dirPath();
+   QString dispPath = "";
+   uint position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
+
+   while (path.length() > position) {
+      file.setFile(path);
+
+      KDesktopFile *dirDesc = new KDesktopFile(path+"/.directory", true, "data");
+      QString name = dirDesc->readName();
+      delete dirDesc;
+
+      if (name.isNull() || name.isEmpty())
+         dispPath += "/" + file.fileName ();
+      else
+         dispPath += "/" + name;
+
+      path = file.dirPath();
+   }
+   return dispPath;
+}
+
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
    QStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
-                          "data", "kmouth/books/*.desktop", true, true);
+                          "data", "kmouth/books/*.phrasebook", true, true);
    QStringList bookNames;
    QMap<QString,StandardBook> bookMap;
    QStringList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
-      KDesktopFile *bookDesc = new KDesktopFile(*it, true, "data");
+      PhraseBook pbook;
+      if (pbook.open (*it)) {
+         StandardBook book;
+         book.name = (*pbook.begin()).getPhrase().getPhrase();
+         
+         book.path = displayPath(*it);
+         book.filename = *it;
       
-      bookDesc->setGroup("Standard Phrasebook");
-      StandardBook book;
-      book.name = bookDesc->readEntry("Name");
-      book.path = bookDesc->readEntry("Path");
-      book.filename = KGlobal::instance()->dirs()->findResource (
-                      "data", "kmouth/books/"+bookDesc->readEntry("File"));
-      delete bookDesc;
-      
-      bookNames += book.path + "/" + book.name;
-      bookMap [book.path + "/" + book.name] = book;
+         bookNames += book.path + "/" + book.name;
+         bookMap [book.path + "/" + book.name] = book;
+      }
    }
 
    bookNames.sort();
@@ -698,14 +720,8 @@ void PhraseBookDialog::slotImportPhrasebook () {
 void PhraseBookDialog::slotImportPhrasebook (const KURL &url, const QString &path) {
    if(!url.isEmpty()) {
       PhraseBook book;
-      if (book.open (url)) {
-         if (!path.isEmpty() && !path.isNull()) {
-            PhraseBook nBook;
-            nBook.insert (path, book);
-            book = nBook;
-         }
+      if (book.open (url))
          addBook(treeView->currentItem(), &book);
-      }
       else
          KMessageBox::sorry(this,i18n("There was an error loading file\n%1").arg( url.url() ));
    }
@@ -735,6 +751,9 @@ void PhraseBookDialog::slotPrint()
 
 /*
  * $Log$
+ * Revision 1.4  2003/01/18 18:25:34  gunnar
+ * Renamed .stdbook files to .desktop files and added extended versions of the standard phrasebooks
+ *
  * Revision 1.3  2003/01/18 15:47:46  gunnar
  * Two small changes
  *

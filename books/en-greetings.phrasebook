@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE phrasebook>
-<phrasebook>
+<phrasebook name="Greetings">
 <phrase shortcut="">Hello.</phrase>
 <phrase shortcut="">Hi!</phrase>
 <phrase shortcut="">Good morning.</phrase>

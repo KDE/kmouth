@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE phrasebook>
-<phrasebook>
+<phrasebook name="Wie geht's?">
 <phrase shortcut="">Wie geht es Ihnen?</phrase>
 <phrase shortcut="">Wie geht es euch?</phrase>
 <phrase shortcut="">Wie geht es dir?</phrase>

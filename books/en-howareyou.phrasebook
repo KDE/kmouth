@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE phrasebook>
-<phrasebook>
+<phrasebook name="How are you?">
 <phrase shortcut="">How are you?</phrase>
 <phrase shortcut="">How do you do?</phrase>
 <phrase shortcut="">I am fine.</phrase>

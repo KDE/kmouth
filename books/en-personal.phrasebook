@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE phrasebook>
-<phrasebook>
+<phrasebook name="Personal">
 <phrase shortcut="">I can only talk using this stupid machine.</phrase>
 <phrase shortcut="">Sorry, I am quite tired and need a rest now.</phrase>
 <phrase shortcut="">Thanks for your coming.</phrase>

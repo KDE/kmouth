@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE phrasebook>
-<phrasebook>
-<phrasebook>
+<phrasebook name="Pers&#246;nliches">
 <phrase shortcut="">Ich kann leider nur &#252;ber diesen dummen Computer sprechen.</phrase>
 <phrase shortcut="">Ich bin sehr m&#252;de und m&#246;chte jetzt etwas schlafen.</phrase>
 <phrase shortcut="">Sch&#246;n, dass du da bist.</phrase>
