@@ -130,9 +130,19 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
+
+   kttsd = loadKttsd();
+   if (kttsd != 0) {
+      QPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
+      QGrid *pageKttsd = addGridPage (1, Qt::Horizontal, i18n("KTTSD Speech Service"),
+                                      i18n("KDE Text-To-Speech Deamon Configuration"), iconKttsd);
+      
+      kttsd->reparent(pageKttsd,0,QPoint(0,0),true);
+   }
 }
 
 OptionsDialog::~OptionsDialog() {
+   unloadKttsd();
 }
 
 
@@ -140,6 +150,8 @@ void OptionsDialog::slotCancel() {
    KDialogBase::slotCancel();
    commandWidget->cancel();
    behaviourWidget->cancel();
+   if (kttsd != 0)
+      kttsd->load ();
 }
 
 void OptionsDialog::slotOk() {
@@ -147,6 +159,8 @@ void OptionsDialog::slotOk() {
    commandWidget->ok();
    behaviourWidget->ok();
    emit configurationChanged();
+   if (kttsd != 0)
+      kttsd->save ();
 }
 
 void OptionsDialog::slotApply() {
@@ -154,6 +168,8 @@ void OptionsDialog::slotApply() {
    commandWidget->ok();
    behaviourWidget->ok();
    emit configurationChanged();
+   if (kttsd != 0)
+      kttsd->save ();
 }
 
 TextToSpeechSystem *OptionsDialog::getTTSSystem() const {
@@ -173,6 +189,42 @@ void OptionsDialog::saveOptions (KConfig *config) {
 
 bool OptionsDialog::isSpeakImmediately () {
    return behaviourWidget->isSpeakImmediately ();
+}
+
+KCModule *OptionsDialog::loadKttsd () {
+   KLibLoader *loader = KLibLoader::self();
+
+   QString libname = "kcm_kttsd";
+   KLibrary *lib = loader->library(QFile::encodeName(libname));
+
+   if (lib == 0) {
+      libname = "libkcm_kttsd";
+      lib = loader->library(QFile::encodeName("libkcm_kttsd"));
+   }
+
+   if (lib != 0) {
+      QString initSym("init_");
+      initSym += libname;
+
+      if (lib->hasSymbol(QFile::encodeName(initSym))) {
+         // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
+         KLibFactory *factory = lib->factory();
+         if (factory != 0) {
+            KCModule *module = KParts::ComponentFactory::createInstanceFromFactory<KCModule> (factory);
+            if (module)
+                return module;
+         }
+      }
+
+      lib->unload();
+   }
+   return 0;
+}
+
+void OptionsDialog::unloadKttsd () {
+  KLibLoader *loader = KLibLoader::self();
+  loader->unloadLibrary(QFile::encodeName("libkcm_kttsd"));
+  loader->unloadLibrary(QFile::encodeName("kcm_kttsd"));
 }
 
 #include "optionsdialog.moc"

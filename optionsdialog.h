@@ -24,6 +24,7 @@
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
 class QTabWidget;
+class KCModule;
 
 /**This class represents a configuration widget for user preferences.
   *@author Gunnar Schmi Dt
@@ -76,6 +77,10 @@ private:
    QTabWidget *tabCtl;
    TextToSpeechConfigurationWidget *commandWidget;
    PreferencesWidget *behaviourWidget;
+   KCModule *kttsd;
+
+   KCModule *loadKttsd ();
+   void unloadKttsd ();
 };
 
 #endif
