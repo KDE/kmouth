@@ -271,7 +271,7 @@ PhraseBookDialog::PhraseBookDialog ()
       treeView->clear();
       treeView->addBook(0, 0, &book);
       treeView->setCurrentItem(treeView->firstChild());
-      currentChanged(treeView->currentItem());
+      selectionChanged();
       phrasebookChanged = false;
    }
    // i18n("Edit Phrase Book")
@@ -303,7 +303,7 @@ void PhraseBookDialog::initGUI () {
    treeView->setAllColumnsShowFocus (true);
    treeView->setSelectionMode (QListView::Extended); 
    QWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
-   connect (treeView, SIGNAL(currentChanged(QListViewItem *)), this, SLOT(currentChanged(QListViewItem *)));
+   connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
    connect (treeView, SIGNAL(contextMenuRequested (QListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (QListViewItem *, const QPoint &, int)));
    connect (treeView, SIGNAL(dropped (QDropEvent *, QListViewItem *, QListViewItem *)), this, SLOT(slotDropped (QDropEvent *, QListViewItem *, QListViewItem *)));
    connect (treeView, SIGNAL(moved (QListViewItem *, QListViewItem *, QListViewItem *)), this, SLOT(slotMoved (QListViewItem *, QListViewItem *, QListViewItem *)));
@@ -317,7 +317,7 @@ void PhraseBookDialog::initGUI () {
    mainLayout->addWidget (buttonBox);
 
    treeView->setFocus();
-   currentChanged(0);
+   selectionChanged();
 }
 
 void PhraseBookDialog::initActions() {
@@ -469,9 +469,24 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    }
 }
 
-void PhraseBookDialog::currentChanged (QListViewItem *item) {
+PhraseTreeItem *selectedItem (QListView *treeView) {
+   PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
+   if ((currentItem == 0) || (!currentItem->isSelected()))
+      return 0;
+
+   QListViewItemIterator it(treeView);
+   while (it.current()) {
+      QListViewItem *item = it.current();
+      if (item->isSelected() && (item != currentItem))
+         return 0;
+      ++it;
+   }
+   return currentItem;
+}
+
+void PhraseBookDialog::selectionChanged () {
    bool modified = phrasebookChanged;
-   PhraseTreeItem *currentItem = (PhraseTreeItem *)item;
+   PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem == 0) {
       buttonBox->textLabel->setText (i18n("Text of the &phrase:"));
       buttonBox->textLabel->setEnabled(false);
@@ -540,8 +555,8 @@ bool PhraseBookDialog::queryClose() {
 }
 
 void PhraseBookDialog::slotTextChanged (const QString &s) {
-   PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
-   if (currentItem != 0 && currentItem->isSelected())
+   PhraseTreeItem *currentItem = selectedItem (treeView);
+   if (currentItem != 0)
       currentItem->setText(0, s);
    phrasebookChanged = true;
 }
@@ -550,8 +565,8 @@ void PhraseBookDialog::slotNoKey() {
    buttonBox->noKey->setChecked (true);
    buttonBox->customKey->setChecked (false);
    
-   PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
-   if (currentItem != 0 && currentItem->isSelected()) {
+   PhraseTreeItem *currentItem = selectedItem (treeView);
+   if (currentItem != 0) {
       currentItem->setCut (KShortcut(QString::null));
       buttonBox->keyButton->setShortcut(currentItem->cut());
    }
@@ -588,7 +603,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       }
    }
 
-   PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
+   PhraseTreeItem *currentItem = selectedItem (treeView);
    // If key isn't already in use,
    if (!treeView->isKeyPresent (cut, currentItem, true)) {
       // Set new key code
@@ -603,7 +618,9 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
 QListViewItem *PhraseBookDialog::addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book) {
    QListViewItem *newItem = treeView->addBook(parent, after, book);
    if (newItem != 0) {
+      treeView->clearSelection();
       treeView->ensureItemVisible(newItem);
+      treeView->setCurrentItem (newItem);
       treeView->setSelected (newItem, true);
       phrasebookChanged = true;
    }
@@ -638,6 +655,7 @@ void PhraseBookDialog::contextMenuRequested(QListViewItem *, const QPoint &pos, 
 void PhraseBookDialog::slotRemove () {
    if (treeView->hasSelectedItems() != 0)
       treeView->deleteSelectedItems();
+   selectionChanged();
    phrasebookChanged = true;
 }
 

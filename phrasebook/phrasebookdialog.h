@@ -167,7 +167,7 @@ public slots:
    void slotCustomKey();
    void capturedShortcut (const KShortcut& cut);
    
-   void currentChanged (QListViewItem *item);
+   void selectionChanged ();
    void contextMenuRequested(QListViewItem *, const QPoint &pos, int);
 
    void slotRemove ();
