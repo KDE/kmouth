@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
-  <!ENTITY kmouth 'KMouth'>
+  <!ENTITY kmouth '<application>KMouth</application>'>
   <!ENTITY kappname "&kmouth;">
   <!ENTITY package "kdeaccessibility">
   <!ENTITY % addindex "IGNORE">
@@ -30,14 +30,8 @@
   <!-- Translators: put here the copyright notice of the translation -->
   <legalnotice>&FDLNotice;</legalnotice>
 
-  <!-- Date and version information of the documentation
-       Don't forget to include this last date and this last revision number, we
-       need them for translation coordination !
-       Please respect the format of the date (DD/MM/YYYY) and of the version
-       (V.MM.LL), it could be used by automation scripts.
-       Do NOT change these in the translation. -->
 
-  <date>30/01/2003</date>
+  <date>2003-01-30</date>
   <releaseinfo>1.00.00</releaseinfo>
 
   <abstract>
@@ -73,7 +67,7 @@
   </para>
 </chapter>
 
-<chapter id="using-kapp">
+<chapter id="using-kmouth">
   <title>Using &kmouth;</title>
   <sect1 id="Wizard">
     <title>The first start</title>
@@ -113,7 +107,7 @@
   <sect1 id="main-window">
     <title>The main window</title>
     <para>
-      The main window of KMouth is fairly simple. It consists basically of an
+      The main window of &kmouth; is fairly simple. It consists basically of an
       edit field into which you type your sentences (the lower white field in
       the screen shot) and a history of spoken sentences (the upper white field
       in the screen shot).
@@ -146,14 +140,14 @@
     </para>
   </sect1>
   <sect1 id="config-dialog">
-    <title>The configuration dialog</title>
+    <title>The Configuration Dialog</title>
     <para>
       By using the menu entry
       <menuchoice>
         <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
       </menuchoice>
       you open the configuration dialog of &kmouth;. This dialog consists of
-      two tabs (Text-to-Speech and Preferences).
+      two tabs, <guilabel>Text-to-Speech</guilabel> and <guilabel>Preferences</guilabel>.
     </para>
     <para>
       <screenshot>
@@ -174,7 +168,7 @@
     <sect2 id="tts-config">
       <title>The Text-to-Speech tab</title>
       <para>
-        Into the edit field of the Text-to-Speech tab you enter the command
+        Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
         for calling the speech synthesizer. With the combo box below the edit
         field you specify the character encoding that is used for passing the
         text to the speech synthesizer.
@@ -185,8 +179,8 @@
       </para>
       <para>
         The other way is to pass the text as a parameter:
-        Before calling the command &kmouth; replaces every occurance of %t in
-        the command by the text (write %% for passing a percent sign).
+        Before calling the command &kmouth; replaces every occurance of <token>%t</token> in
+        the command by the text (write <token>%%</token> for passing a percent sign).
       </para>
       <para>
         Off course the command for speaking texts is dependent on which speech
@@ -194,46 +188,50 @@
         synthesizer for the command for speaking texts.
       </para>
       <para>
-        By selecting "Use kttsd speech service if possible" you tell &kmouth;
+        By selecting <guilabel>Use kttsd speech service if possible</guilabel> you tell &kmouth;
         first to try to send the kttsd speech service. If this succeeds the
         other configuration entries on this tab are ignored. The kttsd speech
-        service is a KDE daemon which gives KDE applications a standardized
-        interface for speech synthesis and is currently developed in CVS. It
+        service is a &kde; daemon which gives &kde; applications a standardized
+        interface for speech synthesis and is currently developed in <acronym>CVS</acronym>. It
         is safe to select this option even if kttsd is not installed.
       </para>
     </sect2>
     <sect2 id="preferences">
-      <title>The Preferences tab</title>
+      <title>The <guilabel>Preferences</guilabel> tab</title>
       <para>
-        The Preferences tab contains options that alter the behaviour of
+        The <guilabel>Preferences</guilabel> tab contains options that alter the behaviour of
         &kmouth; in certain situations.
       </para>
       <para>
-        With the first combo box (Selection of phrases in the phrase book)
+        With the first combo box, <guilabel>Selection of phrases in the phrase book</guilabel>,
         you specify which action is triggered by typing the shortcut of a
         phrase or by selecting a phrase in the <guimenu>Phrase Book</guimenu>
         menu or in the phrase book bar.
       </para>
       <para>
-        By selecting "Speak immediately" the selected phrase gets immediately
-        spoken and is entered into the history. If you select "Insert Into
-        Edit Field" the selected phrase is just inserted into the edit field.
+        By selecting <guilabel>Speak immediately</guilabel> the
+        selected phrase gets immediately spoken and is entered into
+        the history. If you select <guilabel>Insert Into Edit
+        Field</guilabel> the selected phrase is just inserted into the
+        edit field. 
       </para>
       <para>
-        With the second combo box (Closing the phrase book edit window)
-        you specify whether the phrase book gets saved if you just close
-        the phrase book edit window.
+        With the second combo box, <guilabel>Closing the phrase book
+        edit window</guilabel>, you specify whether the phrase book
+        gets saved if you just close the phrase book edit window.
       </para>
       <para>
-        By selecting "Save Phrase Book" the phrase book gets saved. If you
-        select "Discard changes" the changes are discarded and the phrase
-        book is not saved. If you select "Ask whether to Save" &kmouth; will
-        ask you whether it shall save the phrase book.
+        By selecting <guilabel>Save Phrase Book</guilabel> the phrase
+        book gets saved. If you select <guilabel>Discard
+        changes</guilabel> the changes are discarded and the phrase 
+        book is not saved. If you select <guilabel>Ask whether to
+        Save</guilabel> &kmouth; will ask you whether it shall save
+        the phrase book.
       </para>
     </sect2>
   </sect1>
   <sect1 id="phrasebook-editor">
-    <title>The phrase book edit window</title>
+    <title>The Phrase Book Edit Window</title>
     <para>
       By using the menu entry
       <menuchoice>
@@ -275,8 +273,8 @@
     </para>
     <para>
       You can change the order of the phrase books and phrases by dragging
-      them to their new places or by using the arrow keys while the Alt-key
-      is pressed.
+      them to their new places or by using the arrow keys while the
+      &Alt; key is pressed.
     </para>
   </sect1>
 
@@ -286,14 +284,14 @@
   <title>Command Reference</title>
 
   <sect1 id="main-commands">
-    <title>Commands within the main window</title>
+    <title>Commands Within The Main Window</title>
     <sect2 id="file-menu">
       <title>The <guimenuitem>File</guimenuitem> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>O</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Open as history...</guimenuitem>
@@ -303,7 +301,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>S</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Save history as...</guimenuitem>
@@ -313,7 +311,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>P</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Print history...</guimenuitem>
@@ -323,7 +321,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>Q</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Quit</guimenuitem>
@@ -339,7 +337,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>X</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Cut</guimenuitem>
@@ -354,7 +352,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>C</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Copy</guimenuitem>
@@ -369,7 +367,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>V</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Paste</guimenuitem>
@@ -550,7 +548,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>S</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Save</guimenuitem>
@@ -581,7 +579,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>P</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Print...</guimenuitem>
@@ -591,7 +589,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>W</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
               <guimenuitem>Close</guimenuitem>
@@ -607,7 +605,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>X</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Cut</guimenuitem>
@@ -619,7 +617,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>C</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Copy</guimenuitem>
@@ -631,7 +629,7 @@
           <varlistentry>
             <term><menuchoice>
               <shortcut>
-                <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+                <keycombo>&Ctrl;<keycap>V</keycap></keycombo>
               </shortcut>
               <guimenu>Edit</guimenu>
               <guimenuitem>Paste</guimenuitem>
@@ -762,10 +760,10 @@
     &kappname;
   </para>
   <para>
-    Program copyright 2002/2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+    Program copyright 2002, 2003 Gunnar Schmi Dt<email>gunnar@schmi-dt.de</email>
   </para>
   <para>
-    Documentation copyright 2002/2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+    Documentation copyright 2002, 2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
   </para>
 
   <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -778,7 +776,7 @@
   <title>Installation</title>
 
   <sect1 id="getting-kmouth">
-    <title>How to obtain KMouth</title>
+    <title>How to obtain &kmouth;</title>
 
   &install.intro.documentation;
 
@@ -789,7 +787,7 @@
 
     <para>
       In order to successfully use &kmouth;, you need a speech synthesizer
-      (and off course KDE 3.x). &kmouth; uses about 15 megs of memory to
+      (and off course &kde; 3.x). &kmouth; uses about 15 megs of memory to
       run (plus the amount of memory needed by your speech synthesizer),
       but this may vary depending on your platform and configuration.
     </para>
