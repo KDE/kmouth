@@ -274,7 +274,7 @@ PhraseBookDialog::PhraseBookDialog ()
       currentChanged(treeView->currentItem());
       phrasebookChanged = false;
    }
-   // i18n("Edit phrase book")
+   // i18n("Edit Phrase Book")
 }
 
 PhraseBookDialog *PhraseBookDialog::get() {
@@ -525,10 +525,10 @@ void PhraseBookDialog::currentChanged (QListViewItem *item) {
 
 bool PhraseBookDialog::queryClose() {
    if (phrasebookChanged) {
-      KGuiItem no = KGuiItem (i18n("Do &not save"));
+      KGuiItem no = KGuiItem (i18n("Do &Not Save"));
       int answer = KMessageBox::questionYesNoCancel (this,
           i18n("Do you want to save the changes of the phrase book?"),
-          i18n("Closing the \"Phrase book\" window"),
+          i18n("Closing \"Phrase book\" Window"),
           KStdGuiItem::yes(), no, "AutomaticSave");
       if (answer == KMessageBox::Yes) {
          slotSave();
