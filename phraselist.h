@@ -79,6 +79,8 @@ public slots:
 
    void configureCompletion();
    void saveWordCompletion();
+   void saveCompletionOptions(KConfig *config);
+   void readCompletionOptions(KConfig *config);
 
 protected slots:
    void lineEntered (const QString &phrase);

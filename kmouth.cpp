@@ -44,17 +44,15 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
 {
    isConfigured = false;
    config=kapp->config();
+   phraseList = 0;
 
    ///////////////////////////////////////////////////////////////////
    // call inits to invoke all other construction parts
    initStatusBar();
-   initPhraseList();
    initActions();
    optionsDialog = new OptionsDialog(this);
    connect (optionsDialog, SIGNAL(configurationChanged ()),
             this, SLOT(slotConfigurationChanged ()));
-   connect (optionsDialog, SIGNAL(configurationChanged ()),
-            phraseList, SLOT(configureCompletion ()));
 
    phrases = new KActionCollection (this);
 
@@ -66,7 +64,6 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
          saveOptions();
          wizard->saveConfig (config);
          readOptions();
-         phraseList->configureCompletion();
       }
       else
          isConfigured = false;
@@ -74,6 +71,13 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    else
       isConfigured = true;
    delete wizard;
+
+   if (isConfigured) {
+      initPhraseList();
+      connect (optionsDialog, SIGNAL(configurationChanged ()),
+               phraseList, SLOT(configureCompletion ()));
+      phraseList->configureCompletion();
+   }
 
    ///////////////////////////////////////////////////////////////////
    // disable actions at startup
@@ -210,6 +214,8 @@ void KMouthApp::saveOptions() {
       config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
       config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
+      if (phraseList != 0)
+         phraseList->saveCompletionOptions(config);
       optionsDialog->saveOptions(config);
       toolBar("mainToolBar")->saveSettings (config, "mainToolBar");
       toolBar("phrasebookBar")->saveSettings (config, "phrasebookBar");
@@ -253,6 +259,8 @@ void KMouthApp::readOptions()
      book.open(standardBook);
      slotPhrasebookConfirmed(book);
   }
+  if (phraseList != 0)
+     phraseList->readCompletionOptions(config);
 }
 
 bool KMouthApp::queryClose()

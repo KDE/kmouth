@@ -92,6 +92,12 @@ void ConfigWizard::initCompletion (KConfig *config) {
          config->sync();
       }
    }
+   
+   if (config->hasGroup("Completion")) {
+      completionWidget = 0;
+      return;
+   }
+   
    if (!WordCompletion::isConfigured()) {
       completionWidget = new CompletionWizardWidget(this, "completionPage");
       addPage (completionWidget, i18n("Word Completion"));

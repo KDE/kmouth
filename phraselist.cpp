@@ -165,6 +165,30 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
       }
    }
 }
+void PhraseList::saveCompletionOptions(KConfig *config) {
+      config->setGroup("Completion");
+      config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
+      config->writeEntry("List", completion->currentWordList());
+}
+
+void PhraseList::readCompletionOptions(KConfig *config) {
+   if (config->hasGroup ("Completion")) {
+      config->setGroup("Completion");
+      int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
+      lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
+
+      QString current = config->readEntry ("List", QString::null);
+      QStringList list = completion->wordLists();
+      QStringList::ConstIterator it;
+      int i = 0;
+      for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
+         if (current == *it) {
+            dictionaryCombo->setCurrentItem (i);
+            return;
+         }
+      }
+   }
+}
 
 void PhraseList::saveWordCompletion () {
    completion->save();
