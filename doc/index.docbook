@@ -9,7 +9,7 @@
 
 <book lang="&language;">
 <bookinfo>
-  <title>The KMouth Handbook</title>
+  <title>The &kmouth; Handbook</title>
 
   <authorgroup>
     <author>
@@ -24,7 +24,7 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
   <copyright>
-    <year>2002</year>
+    <year>2002</year><year>2003</year>
     <holder>Gunnar Schmi Dt</holder>
   </copyright>
   <!-- Translators: put here the copyright notice of the translation -->
@@ -37,8 +37,8 @@
        (V.MM.LL), it could be used by automation scripts.
        Do NOT change these in the translation. -->
 
-  <date>03/10/2002</date>
-  <releaseinfo>0.05.00</releaseinfo>
+  <date>30/01/2003</date>
+  <releaseinfo>1.00.00</releaseinfo>
 
   <abstract>
     <para>
@@ -51,8 +51,8 @@
     <keyword>KDE</keyword>
     <keyword>kdeutils</keyword>
     <keyword>KMouth</keyword>
-    <keyword>text-to-speach conversion</keyword>
-    <keyword>mutal persons</keyword>
+    <keyword>text-to-speech conversion</keyword>
+    <keyword>mutual persons</keyword>
   </keywordset>
 </bookinfo>
 
@@ -66,7 +66,7 @@
   </para>
   <para>
     Note that &kmouth; does not include speech synthesizer. Instead it requires
-    a speach synthesizer installed in the system.
+    a speech synthesizer installed in the system.
   </para>
   <para>
     Please report any problems and feature requests to the author of &kmouth;.
@@ -74,7 +74,42 @@
 </chapter>
 
 <chapter id="using-kapp">
-  <title>Using KMouth</title>
+  <title>Using &kmouth;</title>
+  <sect1 id="Wizard">
+    <title>The first start</title>
+    <para>
+      During the first start of &kmouth;, a wizard is displayed into which you
+      can enter some basic configuration.
+    </para>
+    <para>
+      <screenshot>
+        <screeninfo>The wizard</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase>The wizard</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para>
+      With the first page of the wizard (the left screen shot) you specify
+      the command that shall later be used for the text-to-speech conversion.
+      For more details look into the <link linkend="config-dialog">description
+      of the configuration dialog.</link>
+    </para>
+    <para>
+      With the second page you select which standard phrase books you need.
+      From the phrase books you later can select often used phrases so that
+      you do not need to type them in. Off course &kmouth; also has an edit
+      dialog for the case that you later want to edit your phrase books.
+    </para>
+  </sect1>
   <sect1 id="main-window">
     <title>The main window</title>
     <para>
@@ -84,7 +119,7 @@
       in the screen shot).
     </para>
     <para>
-     <screenshot>
+      <screenshot>
         <screeninfo>The main window of &kmouth;</screeninfo>
         <mediaobject>
           <imageobject>
@@ -94,7 +129,7 @@
             <imagedata fileref="kmouthmain.eps" format="EPS"/>
           </imageobject>
           <textobject>
-            <phrase>Screenshot</phrase>
+            <phrase>Screen shot</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -105,19 +140,24 @@
       want to hear. Once a sentence got spoken it will be appended to the
       history. From the history you can select sentences to be re-spoken.
     </para>
+    <para>
+      From the phrase books (located in the line below the tool bar) you can
+      select often used phrases.
+    </para>
   </sect1>
   <sect1 id="config-dialog">
     <title>The configuration dialog</title>
     <para>
       By using the menu entry
       <menuchoice>
-        <guimenu>Settings</guimenu><guimenuitem>Text-to-speech conversion</guimenuitem>
+        <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
       </menuchoice>
-      you open the configuration dialog for the text-to-speech conversion.
+      you open the configuration dialog of &kmouth;. This dialog consists of
+      two tabs (Text-to-Speech and Preferences).
     </para>
     <para>
-     <screenshot>
-        <screeninfo>The configuration dilog of &kmouth;</screeninfo>
+      <screenshot>
+        <screeninfo>The configuration dialog of &kmouth;</screeninfo>
         <mediaobject>
           <imageobject>
             <imagedata fileref="kmouthctts.png" format="PNG"/>
@@ -126,28 +166,117 @@
             <imagedata fileref="kmouthctts.eps" format="EPS"/>
           </imageobject>
           <textobject>
+            <phrase>Screen shot</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <sect2 id="tts-config">
+      <title>The Text-to-Speech tab</title>
+      <para>
+        Into the edit field of the Text-to-Speech tab you enter the command
+        for calling the speech synthesizer. With the combo box below the edit
+        field you specify the character encoding that is used for passing the
+        text to the speech synthesizer.
+      </para>
+      <para>
+        &kmouth; knows two ways of passing the text: If the command expects the
+        text as standard input you select the check box.
+      </para>
+      <para>
+        The other way is to pass the text as a parameter:
+        Before calling the command &kmouth; replaces every occurance of %t in
+        the command by the text (write %% for passing a percent sign).
+      </para>
+      <para>
+        Off course the command for speaking texts is dependent on which speech
+        synthesizer you use. Please look into the documentation of your speech
+        synthesizer for the command for speaking texts.
+      </para>
+      <para>
+        By selecting "Use kttsd speech service if possible" you tell &kmouth;
+        first to try to send the kttsd speech service. If this succeeds the
+        other configuration entries on this tab are ignored. The kttsd speech
+        service is a KDE daemon which gives KDE applications a standardized
+        interface for speech synthesis and is currently developed in CVS. It
+        is safe to select this option even if kttsd is not installed.
+      </para>
+    </sect2>
+    <sect2 id="preferences">
+      <title>The Preferences tab</title>
+      <para>
+        The Preferences tab contains options that alter the behaviour of
+        &kmouth; in certain situations.
+      </para>
+      <para>
+        With the first combo box (Selection of phrases in the phrase book)
+        you specify which action is triggered by typing the shortcut of a
+        phrase or by selecting a phrase in the <guimenu>Phrase Book</guimenu>
+        menu or in the phrase book bar.
+      </para>
+      <para>
+        By selecting "Speak immediately" the selected phrase gets immediately
+        spoken and is entered into the history. If you select "Insert Into
+        Edit Field" the selected phrase is just inserted into the edit field.
+      </para>
+      <para>
+        With the second combo box (Closing the phrase book edit window)
+        you specify whether the phrase book gets saved if you just close
+        the phrase book edit window.
+      </para>
+      <para>
+        By selecting "Save Phrase Book" the phrase book gets saved. If you
+        select "Discard changes" the changes are discarded and the phrase
+        book is not saved. If you select "Ask whether to Save" &kmouth; will
+        ask you whether it shall save the phrase book.
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title>The phrase book edit window</title>
+    <para>
+      By using the menu entry
+      <menuchoice>
+        <guimenu>Phrase Books</guimenu><guimenuitem>Edit...</guimenuitem>
+      </menuchoice>
+      you open the phrase book edit window.
+    </para>
+    <para>
+      <screenshot>
+        <screeninfo>The phrase book edit window</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
             <phrase>Screenshot</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
     </para>
     <para>
-      Into the edit field of the configuration dialog you enter the command
-      for calling the speech synthesizer.
+      The main area of the phrase book edit window is divided into two parts.
+      Within the upper part the phrase books are displayed in some tree
+      structure.
     </para>
     <para>
-      &kmouth; knows two ways of passing the text: If the command expects the
-      text as standard input you select the check box.
+      Within the lower part you may modify a selected item. If you have
+      selected a phrase you can modify the contents of the phrase as well
+      as its shortcut. If you have selected a phrase book you can only
+      change its name.
     </para>
     <para>
-      The other way is to pass the text as a parameter:
-      Before calling the command &kmouth; replaces every occurane of %t in
-      the command by the text (write %% for passing a percent sign).
+      Actions like adding new phrases and phrase books and deleting selected
+      phrases and phrase books can be done by selecting them in either the
+      menu bar, the tool bar or a pop up menu.
     </para>
     <para>
-      Off course the command for speaking texts is dependend on which speech
-      synthesizer you use. Please look into the documentation of your speech
-      synthesizer for the command for speaking texts.
+      You can change the order of the phrase books and phrases by dragging
+      them to their new places or by using the arrow keys while the Alt-key
+      is pressed.
     </para>
   </sect1>
 
@@ -156,9 +285,10 @@
 <chapter id="commands">
   <title>Command Reference</title>
 
-    <sect1 id="file-menu">
+  <sect1 id="main-commands">
+    <title>Commands within the main window</title>
+    <sect2 id="file-menu">
       <title>The <guimenuitem>File</guimenuitem> Menu</title>
-      <para>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -201,12 +331,10 @@
             <listitem><para><action>Quits &kmouth;</action></para></listitem>
           </varlistentry>
         </variablelist>
-      </para>
-    </sect1>
+    </sect2>
 
-    <sect1 id="edit-menu">
+    <sect2 id="edit-menu">
       <title>The <guimenuitem>Edit</guimenuitem> Menu</title>
-      <para>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -263,12 +391,25 @@
             </action></para></listitem>
           </varlistentry>
         </variablelist>
-      </para>
-    </sect1>
+    </sect2>
 
-    <sect1 id="settings-menu">
+    <sect2 id="phrasebooks-menu">
+      <title>The <guimenuitem>Phrase Books</guimenuitem> Menu</title>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Phrase Books</guimenu>
+              <guimenuitem>Edit...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para>
+              Opens the <link linkend="phrasebook-editor">phrase book edit window</link>.
+            </para></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="settings-menu">
       <title>The <guimenuitem>Settings</guimenuitem> Menu</title>
-      <para>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -278,7 +419,7 @@
             <listitem><para>
               <action>
                 When checked, this displays a movable toolbar containing
-                buttons used to initiate frequently used commands. The toobar
+                buttons used to initiate frequently used commands. The toolbar
                 is most commonly located at the top of the editor just under
                 the menu. When unchecked the toolbar is hidden.
               </action>
@@ -309,17 +450,15 @@
             </para></listitem>
           </varlistentry>
         </variablelist>
-      </para>
-    </sect1>
+    </sect2>
 
-    <sect1 id="help-menu">
+    <sect2 id="help-menu">
       <title>The <guimenuitem>Help</guimenuitem> Menu</title>
       &help.menu.documentation;
-    </sect1>
+    </sect2>
 
-    <sect1 id="popup-menu">
+    <sect2 id="popup-menu">
       <title>The popup menu of history entries</title>
-      <para>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -386,8 +525,206 @@
             </action></para></listitem>
           </varlistentry>
         </variablelist>
-      </para>
-    </sect1>
+    </sect2>
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title>Commands within the phrase book edit window</title>
+    <sect2 id="pbe-file-menu">
+      <title>The <guimenuitem>File</guimenuitem> Menu</title>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>File</guimenu>
+              <guimenuitem>New Phrase</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Adds a new phrase.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>File</guimenu>
+              <guimenuitem>New Phrase Book</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Adds a new phrase book.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Save</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Saves the phrase book.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>File</guimenu>
+              <guimenuitem>Import...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Imports a file and adds its contents to the phrase book</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>File</guimenu>
+              <guimenuitem>Import Standard Phrase Book</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Imports a standard phrase book and adds its contents to the phrase book</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>File</guimenu>
+              <guimenuitem>Export...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Exports the currently selected phrase(s) or phrase book(s) to a file</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Print...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Prints the currently selected phrase(s) or phrase book(s)</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>
+              </shortcut>
+              <guimenu>File</guimenu>
+              <guimenuitem>Close</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Closes the window</action></para></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title>The <guimenuitem>Edit</guimenuitem> Menu</title>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Cut</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Cuts the selected items and puts it to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Copy</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Copies the selected items to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <shortcut>
+                <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+              </shortcut>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Paste</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Pastes the clipboard contents into the phrase book.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Edit</guimenu>
+              <guimenuitem>Delete</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Deletes the selected items.
+            </action></para></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title>The <guimenuitem>Help</guimenuitem> Menu</title>
+      &help.menu.documentation;
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title>The popup menu of history entries</title>
+        <variablelist>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>New Phrase</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Adds a new phrase.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>New Phrase Book</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Adds a new phrase book.</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Import...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Imports a file and adds its contents to the phrase book</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Import Standard Phrase Book</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Imports a standard phrase book and adds its contents to the phrase book</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Export...</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>Exports the currently selected phrase(s) or phrase book(s) to a file</action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Cut</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Cuts the selected items and puts it to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Copy</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Copies the selected items to the clipboard.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Paste</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Pastes the clipboard contents at this position into the phrase book.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenuitem>Delete</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              Deletes the selected items.
+            </action></para></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
 
 </chapter>
 
@@ -425,10 +762,10 @@
     &kappname;
   </para>
   <para>
-    Program copyright 2002 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+    Program copyright 2002/2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
   </para>
   <para>
-    Documentation copyright 2002 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+    Documentation copyright 2002/2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
   </para>
 
   <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -443,10 +780,8 @@
   <sect1 id="getting-kmouth">
     <title>How to obtain KMouth</title>
 
-    <para>
-      &kmouth; can be downloaded from
-      <ulink url="http://www.schmi-dt.de/kmouth/">The &kmouth; home page</ulink>.
-    </para>
+  &install.intro.documentation;
+
   </sect1>
 
   <sect1 id="requirements">
@@ -454,7 +789,7 @@
 
     <para>
       In order to successfully use &kmouth;, you need a speech synthesizer
-      (and off course KDE 3.0). &kmouth; uses about 15 megs of memory to
+      (and off course KDE 3.x). &kmouth; uses about 15 megs of memory to
       run (plus the amount of memory needed by your speech synthesizer),
       but this may vary depending on your platform and configuration.
     </para>
@@ -479,16 +814,3 @@ sgml-indent-step:0
 sgml-indent-data:nil
 End:
 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
