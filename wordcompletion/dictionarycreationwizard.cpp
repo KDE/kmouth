@@ -235,7 +235,7 @@ QString DictionaryCreationWizard::name() {
       return i18n("Merge result");
    }
    else if (creationSource->emptyButton->isChecked()) {
-      return i18n("Empty list");
+      return i18n("In the sense of a blank word list", "Empty list");
    }
    else if (creationSource->fileButton->isChecked()) {
       return fileWidget->url->url();
