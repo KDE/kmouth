@@ -31,8 +31,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2003-09-16</date>
-  <releaseinfo>1.1</releaseinfo>
+  <date>2004-05-31</date>
+  <releaseinfo>1.1.1</releaseinfo>
 
   <abstract>
     <para>
@@ -927,10 +927,10 @@
     &kappname;
   </para>
   <para>
-    Program copyright 2002, 2003 Gunnar Schmi Dt<email>gunnar@schmi-dt.de</email>
+    Program copyright 2002-2004 Gunnar Schmi Dt<email>gunnar@schmi-dt.de</email>
   </para>
   <para>
-    Documentation copyright 2002, 2003 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
+    Documentation copyright 2002-2004 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
   </para>
 
   <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
