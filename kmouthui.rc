@@ -15,9 +15,8 @@
     <Action name="phrasebook_edit"/>
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
-    <Action name="showPhrasebookBar"/>
-    <Separator />
-    <Action name="configureTTS"/>
+    <Action name="showPhrasebookBar" append="show_merge"/>
+    <Action name="configureTTS" append="configure_merge"/>
   </Menu>
 </MenuBar>
 
