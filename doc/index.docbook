@@ -218,12 +218,12 @@
         for the command in the <link linkend="tts">appendix</link>.
       </para>
       <para>
-        By selecting <guilabel>Use kttsd speech service if possible</guilabel> you tell &kmouth;
-        first to try to send the text to the kttsd speech service. If this succeeds the
-        other configuration entries on this tab are ignored. The kttsd speech
+        By selecting <guilabel>Use KTTSD speech service if possible</guilabel> you tell &kmouth;
+        first to try to send the text to the KTTSD speech service. If this succeeds the
+        other configuration entries on this tab are ignored. The KTTSD speech
         service is a &kde; daemon which gives &kde; applications a standardized
         interface for speech synthesis and is currently developed in <acronym>CVS</acronym>. It
-        is safe to select this option even if kttsd is not installed.
+        is safe to select this option even if KTTSD is not installed.
       </para>
     </sect2>
     <sect2 id="preferences">
@@ -1050,7 +1050,7 @@
         </para>
         <para>
           As the configuration of the speech synthesizer is done in KTTSD the only
-          &kmouth;-specific option you need to activate is <guilabel>Use kttsd speech
+          &kmouth;-specific option you need to activate is <guilabel>Use KTTSD speech
           service if possible</guilabel>.
         </para>
         <para>
