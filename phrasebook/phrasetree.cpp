@@ -95,7 +95,7 @@ namespace PhraseTreePrivate {
 
       if (above == parent)
          return 0;
-   
+
       while (above->parent() != parent)
          above = above->parent();
 
@@ -142,7 +142,7 @@ namespace PhraseTreePrivate {
 
       QListViewItem *parent = item->parent();
       QListViewItem *below  = item->nextSibling();
-      
+
       if (parent == 0 && below == 0)
          return false;
       else if (parent != 0 && below == 0) {
@@ -170,7 +170,7 @@ namespace PhraseTreePrivate {
          return false;
 
       QListViewItem *above = prevSibling (item);
-      
+
       if (above == 0)
          return false;
       else if (((PhraseTreeItem *)above)->isPhrase())
@@ -196,7 +196,7 @@ namespace PhraseTreePrivate {
          return false;
 
       QListViewItem *parent = item->parent();
-      
+
       if (parent == 0)
          return false;
       else {
@@ -228,6 +228,8 @@ void PhraseTree::moveItem (QListViewItem *item,
 
 bool PhraseTree::hasSelectedItems() {
    QListViewItem *i = firstChild();
+   if ( !i )
+       return false;
    int level = 0;
    do {
       if (i->isSelected())
@@ -283,7 +285,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          if ((item != 0) && (item->isSelected())) {
             QListViewItem *parent;
             QListViewItem *above;
-            
+
             if (PhraseTreePrivate::findAbovePosition (item, &parent, &above)) {
                moveItem(item, parent, above);
                setCurrentItem (item);
@@ -298,7 +300,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          if ((item != 0) && (item->isSelected())) {
             QListViewItem *parent;
             QListViewItem *above;
-            
+
             if (PhraseTreePrivate::findBelowPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
                setCurrentItem (item);
@@ -313,7 +315,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          if ((item != 0) && (item->isSelected())) {
             QListViewItem *parent;
             QListViewItem *above;
-            
+
             if (PhraseTreePrivate::findLeftPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
                setCurrentItem (item);
@@ -328,7 +330,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          if ((item != 0) && (item->isSelected())) {
             QListViewItem *parent;
             QListViewItem *above;
-            
+
             if (PhraseTreePrivate::findRightPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
                setCurrentItem (item);
@@ -377,7 +379,7 @@ QListViewItem *PhraseTree::addBook (QListViewItem *parent, QListViewItem *after,
             parent = parent->parent();
          level--;
       }
-      
+
       if ((*it).isPhrase()) {
          Phrase phrase = (*it).getPhrase();
          last = insertPhrase (parent, last, phrase.getPhrase(), phrase.getShortcut());
@@ -408,7 +410,7 @@ void PhraseTree::fillBook (PhraseBook *book, bool respectSelection) {
          Phrase phrase(it->text(0), it->cut().toStringInternal());
          *book += PhraseBookEntry(phrase, level, it->isPhrase());
       }
-      
+
       if (i->firstChild() != 0) {
          if (i->isSelected() || !respectSelection || level > 0)
             level++;
