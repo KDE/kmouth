@@ -250,7 +250,7 @@
             <imagedata fileref="kmouthedit.eps" format="EPS"/>
           </imageobject>
           <textobject>
-            <phrase>Screenshot</phrase>
+            <phrase>Screens hot</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -385,7 +385,7 @@
             <listitem><para><action>
               Speaks the currently active sentence(s). If there is some text in
               the edit field it is spoken. Otherwise the selected sentences in
-              the istory (if any) are spoken.
+              the history (if any) are spoken.
             </action></para></listitem>
           </varlistentry>
         </variablelist>
@@ -434,7 +434,7 @@
             <listitem><para><action>
               When checked, this displays a small bar at the bottom of the
               main window containing information about the status of
-              &kmouth;. When unchecked the statusbar is hidden.
+              &kmouth;. When unchecked the status bar is hidden.
             </action></para></listitem>
           </varlistentry>
           <varlistentry>
@@ -456,7 +456,7 @@
     </sect2>
 
     <sect2 id="popup-menu">
-      <title>The popup menu of history entries</title>
+      <title>The pop up menu of history entries</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -500,10 +500,10 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <guimenuitem>Deselect all entries</guimenuitem>
+              <guimenuitem>De-select all entries</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
-              All history entries are deselected.
+              All history entries are de-selected.
             </action></para></listitem>
           </varlistentry>
           <varlistentry>
@@ -658,7 +658,7 @@
     </sect2>
 
     <sect2 id="pbe-popup-menu">
-      <title>The Popup Menu</title>
+      <title>The Pop up Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -789,7 +789,7 @@
 
     <para>
       In order to successfully use &kmouth;, you need a speech synthesizer
-      (and of course &kde; 3.x). &kmouth; uses about 15 megs of memory to
+      (and of course &kde; 3.x). &kmouth; uses about 15 MB of memory to
       run (plus the amount of memory needed by your speech synthesizer),
       but this may vary depending on your platform and configuration.
     </para>
