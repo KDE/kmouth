@@ -45,7 +45,7 @@ public:
     * @param stdin true if the program shall receive its data via standard input
     * @param text The text that shall be spoken
     */
-   void speak(QString command, bool use_stdin, QString text, int encoding, QTextCodec *codec);
+   void speak(QString command, bool use_stdin, const QString &text, const QString &language, int encoding, QTextCodec *codec);
 
    /**
     * Prepares a command for being executed. During the preparation the
@@ -53,7 +53,7 @@ public:
     * @param command the command that shall be executed for speaking
     * @param text the quoted text that can be inserted into the command
     */
-   QString prepareCommand (QString command, QString text);
+   QString prepareCommand (QString command, const QString &text, const QString &language);
 
 public slots:
    void wroteStdin (KProcess *p);

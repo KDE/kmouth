@@ -40,7 +40,7 @@ public:
    void saveOptions (KConfig *config, const QString &langGroup);
 
 public slots:
-   void speak (QString text);
+   void speak (const QString &text, const QString &language);
 
 private:
    void buildCodecList ();

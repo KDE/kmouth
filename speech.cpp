@@ -30,16 +30,16 @@ Speech::Speech() {
 Speech::~Speech() {
 }
 
-QString Speech::prepareCommand (QString command, QString text) {
+QString Speech::prepareCommand (QString command, const QString &text, const QString &language) {
    QValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
 
    // character sequences that change the state or need to be otherwise processed
-   QRegExp re_singlequote("('|%%|%t)");
-   QRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t)");
-   QRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t)");
+   QRegExp re_singlequote("('|%%|%t|%l)");
+   QRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t|%l)");
+   QRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t|%l)");
 
    // parse the command:
    for (int i = re_noquote.search(command);
@@ -132,6 +132,8 @@ QString Speech::prepareCommand (QString command, QString text) {
             v = text;
          else if (match=="%%")
             v = "%";
+         else if (match=="%l")
+            v = language;
 
          // %variable inside of a quote?
          if (isdoublequote)
@@ -146,7 +148,7 @@ QString Speech::prepareCommand (QString command, QString text) {
    return command;
 }
 
-void Speech::speak(QString command, bool stdIn, QString text, int encoding, QTextCodec *codec) {
+void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, int encoding, QTextCodec *codec) {
    if (text.length () > 0) {
       // 1. prepare the text:
       // 1.a) encode the text
@@ -165,7 +167,7 @@ void Speech::speak(QString command, bool stdIn, QString text, int encoding, QTex
       QString escText = KShellProcess::quote(encText);
 
       // 2. prepare the command:
-      command = prepareCommand (command, escText);
+      command = prepareCommand (command, escText, language);
 
 
       // 3. create a new process

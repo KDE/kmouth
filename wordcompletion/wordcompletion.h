@@ -40,6 +40,16 @@ public:
    virtual QString makeCompletion(const QString&);
 
    static bool isConfigured();
+   
+   /**
+    * Adds the words from the given sentence to the list of words.
+    */
+   void addSentence (const QString &sentence);
+   
+   /**
+    * Saves the added words to disk.
+    */
+   void save ();
 
 public slots:
    /**

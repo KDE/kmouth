@@ -238,14 +238,18 @@ void PhraseList::lineEntered (const QString &phrase) {
 void PhraseList::speakPhrase (const QString &phrase) {
    QApplication::setOverrideCursor (KCursor::WaitCursor, false);
    KMouthApp *theApp=(KMouthApp *) parentWidget();
-   theApp->getTTSSystem()->speak(phrase);
+   QString language = completion->languageOfWordList (completion->currentWordList());
+   theApp->getTTSSystem()->speak(phrase, language);
    QApplication::restoreOverrideCursor ();
 }
 
 void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine) {
    int lastLine = listBox->count() - 1;
-   if ((lastLine == -1) || (phrase != listBox->text(lastLine)))
+   if ((lastLine == -1) || (phrase != listBox->text(lastLine))) {
       listBox->insertItem(new PhraseListItem(phrase));
+      if (clearEditLine)
+         completion->addSentence (phrase);
+   }
 
    if (clearEditLine) {
       lineEdit->selectAll();

@@ -18,19 +18,23 @@ private:
 
    QString lastText;
    QMap<QString,int> map;
+   QMap<QString,int> addedWords;
    QMap<QString,DictionaryDetails> dictDetails;
    QStringList dictionaries;
    QString current;
    bool blockCurrentListSignal;
+   bool wordsToSave;
 };
 
 WordCompletion::WordCompletion() : KCompletion () {
    d = new WordCompletionPrivate();
    d->blockCurrentListSignal = false;
+   d->wordsToSave = false;
    configure ();
 }
 
 WordCompletion::~WordCompletion() {
+   save ();
    delete d;
 }
 
@@ -99,6 +103,10 @@ bool WordCompletion::isConfigured() {
 }
 
 void WordCompletion::configure() {
+   if (d->wordsToSave)
+      save ();
+   d->wordsToSave = false;
+
    d->dictionaries.clear();
    d->dictDetails.clear();
 
@@ -124,6 +132,10 @@ void WordCompletion::configure() {
 }
 
 bool WordCompletion::setWordList(const QString &wordlist) {
+   if (d->wordsToSave)
+      save ();
+   d->wordsToSave = false;
+
    d->map.clear();
    bool result = d->dictDetails.contains (wordlist);
    if (result)
@@ -156,7 +168,56 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    if (!d->blockCurrentListSignal)
       emit currentListChanged (d->current);
    d->lastText = "";
+   d->wordsToSave = false;
    return result;
+}
+
+void WordCompletion::addSentence (const QString &sentence) {
+   QStringList words = QStringList::split(QRegExp("\\W"), sentence);
+   
+   QStringList::ConstIterator it;
+   for (it = words.begin(); it != words.end(); ++it) {
+      if (!(*it).contains(QRegExp("\\d|_"))) {
+         QString key = (*it).lower();
+         if (d->map.contains(key))
+            d->map[key] += 1;
+         else
+            d->map[key] = 1;
+         if (d->addedWords.contains(key))
+            d->addedWords[key] += 1;
+         else
+            d->addedWords[key] = 1;
+      }
+   }
+   d->wordsToSave = true;
+}
+
+void WordCompletion::save () {
+   if (d->wordsToSave) {
+      QString filename = d->dictDetails[d->current].filename;
+      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      QFile file(dictionaryFile);
+      if (!file.exists())
+         return;
+      if (!file.open(IO_WriteOnly))
+         return;
+
+      QTextStream stream(&file);
+      stream.setEncoding (QTextStream::UnicodeUTF8);
+
+      stream << "WPDictFile\n";
+      QMap<QString,int>::ConstIterator it;
+      for (it = d->map.begin(); it != d->map.end(); ++it) {
+         if (d->addedWords.contains(it.key())) {
+            stream << it.key() << "\t" << d->addedWords[it.key()] << "\t1\n";
+            stream << it.key() << "\t" << it.data() - d->addedWords[it.key()] << "\t2\n";
+         }
+         else
+            stream << it.key() << "\t" << it.data() << "\t2\n";
+      }
+      file.close();
+      d->wordsToSave = false;
+   }
 }
 
 #include "wordcompletion.moc"

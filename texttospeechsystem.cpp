@@ -40,28 +40,28 @@ TextToSpeechSystem::~TextToSpeechSystem() {
    delete codecList;
 }
 
-bool kttsdSay (const QString &text) {
+bool kttsdSay (const QString &text, const QString &language) {
    DCOPClient *client = kapp->dcopClient();
    QByteArray  data;
    QCString replyType;
    QByteArray  replyData;
    QDataStream arg(data, IO_WriteOnly);
-   arg << text << "";
+   arg << text << language;
    return client->call("kttsd", "kspeech", "sayWarning(QString,QString)",
                        data, replyType, replyData, true);
 }
 
-void TextToSpeechSystem::speak (QString text) {
+void TextToSpeechSystem::speak (const QString &text, const QString &language) {
    if (text.length() > 0) {
       if (useKttsd) {
-         if (kttsdSay(text))
+         if (kttsdSay(text, language))
             return;
       }
 
       if (codec < Speech::UseCodec)
-         (new Speech())->speak(ttsCommand, stdIn, text, codec, 0);
+         (new Speech())->speak(ttsCommand, stdIn, text, language, codec, 0);
       else
-         (new Speech())->speak(ttsCommand, stdIn, text, Speech::UseCodec,
+         (new Speech())->speak(ttsCommand, stdIn, text, language, Speech::UseCodec,
                                codecList->at (codec - Speech::UseCodec));
    }
 }
