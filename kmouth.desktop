@@ -6,7 +6,5 @@ Exec=kmouth -caption "%c" %i %m
 Icon=kmouth.png
 DocPath=kmouth/index.html
 Comment=
-Comment[de]=
 Terminal=0
 Name=KMouth
-Name[de]=KMouth
