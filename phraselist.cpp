@@ -364,7 +364,7 @@ void PhraseList::save () {
    }
 
    KURL url;
-   if (book.save (this, i18n("Save As"), url, false) == -1);
+   if (book.save (this, i18n("Save As"), url, false) == -1)
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
