@@ -45,7 +45,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
             if (it.key().startsWith(suffix))
                matches += Match (-it.data(), it.key());
          qHeapSort(matches);
-      
+
          MatchList::ConstIterator iter = matches.begin();
          for (int count = 0; (iter != matches.end()) && (count < 10); ++iter, ++count) {
             int length = (*iter).second.length() + prefix.length() - text.length();
@@ -67,7 +67,7 @@ void WordCompletion::configure(QString dictionary, QString language, QString dic
    QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", dictionary);
    std::cout << (dictionaryFile + " ").latin1() << std::endl;
    QFile file(dictionaryFile);
-   if (file.open(IO_ReadOnly)) {
+   if (file.exists() && file.open(IO_ReadOnly)) {
       QTextStream stream(&file);
       stream.setEncoding (QTextStream::UnicodeUTF8);
       if (!stream.atEnd()) {
@@ -86,7 +86,7 @@ void WordCompletion::configure(QString dictionary, QString language, QString dic
       }
       file.close();
    }
-   
+
    if (!isConfigured() && !language.isNull() && !language.isEmpty()) {
       d->map = WordList::createWordList (language, dicFile);
 

@@ -30,6 +30,7 @@
 #include <kio/netaccess.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
+#include <kglobalsettings.h>
 
 #include "phrasebookparser.h"
 #include "phrasebook.h"
@@ -101,7 +102,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
    int x = size.x();
    int y = size.y();
    int w = size.width();
-   printpainter.setFont (QFont ("Helvetica", 12));
+   printpainter.setFont (QFont (KGlobalSettings::generalFont().family(), 12));
    QFontMetrics metrics = printpainter.fontMetrics();
 
    PhraseBookEntryList::iterator it;
@@ -227,7 +228,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
       QFile file(url.path());
       if(!file.open(IO_WriteOnly))
          return false;
-      
+
       QTextStream stream(&file);
       save (stream, asPhrasebook);
       file.close();
@@ -265,7 +266,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    if (fdlg.exec() != QDialog::Accepted) {
      return 0;
    }
-     
+
    url = fdlg.selectedURL();
 
    if (url.isEmpty() || url.isMalformed()) {
@@ -316,7 +317,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    }
    else // file format "All files" requested, so decide by extension
       result = save (url);
-   
+
    if (result)
       return 1;
    else
