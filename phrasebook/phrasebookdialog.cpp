@@ -523,11 +523,10 @@ void PhraseBookDialog::currentChanged (QListViewItem *item) {
 
 bool PhraseBookDialog::queryClose() {
    if (phrasebookChanged) {
-      KGuiItem no = KGuiItem (i18n("Do &Not Save"));
       int answer = KMessageBox::questionYesNoCancel (this,
-          i18n("Do you want to save the changes of the phrase book?"),
+          i18n("There are unsaved changes.<br>Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?"),
           i18n("Closing \"Phrase Book\" Window"),
-          KStdGuiItem::yes(), no, "AutomaticSave");
+          KStdGuiItem::apply(), KStdGuiItem::discard(), "AutomaticSave");
       if (answer == KMessageBox::Yes) {
          slotSave();
          return true;
