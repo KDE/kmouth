@@ -157,9 +157,9 @@ void KMouthApp::initActions() {
    phraseListSpeak->setStatusText(i18n("Speaks the currently selected phrases in the history"));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
-   phraseListRemove = new KAction (i18n("&Remove"), "remove", 0, phraseList, SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
-   phraseListRemove->setStatusText(i18n("Removes the currently selected phrases from the history"));
-   phraseListRemove->setWhatsThis (i18n("Removes the currently selected phrases from the history"));
+   phraseListRemove = new KAction (i18n("&Delete"), "editdelete", 0, phraseList, SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
+   phraseListRemove->setStatusText(i18n("Deletes the currently selected phrases from the history"));
+   phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
    phraseListCut = new KAction (i18n("Cu&t"),   "editcut", 0, phraseList, SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
    phraseListCut->setStatusText(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
@@ -173,7 +173,7 @@ void KMouthApp::initActions() {
    phraselistSelectAll->setStatusText(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 
-   phraselistDeselectAll = new KAction (i18n("&Deselect All Entries"), 0, 0, phraseList, SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
+   phraselistDeselectAll = new KAction (i18n("D&eselect All Entries"), 0, 0, phraseList, SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
    phraselistDeselectAll->setStatusText(i18n("Deselects all phrases in the history"));
    phraselistDeselectAll->setWhatsThis (i18n("Deselects all phrases in the history"));
 
@@ -193,7 +193,7 @@ void KMouthApp::initStatusBar()
 }
 
 void KMouthApp::initPhraseList()
-{ 
+{
   ////////////////////////////////////////////////////////////////////
   // create the main widget here that is managed by KTMainWindow's view-region and
   // connect the widget to your document to display document contents.
@@ -291,9 +291,9 @@ void KMouthApp::enableMenuEntries(bool existSelectedEntries, bool existDeselecte
   bool existEntries = existSelectedEntries | existDeselectedEntries;
   fileSaveAs->setEnabled (existEntries);
   filePrint->setEnabled (existEntries);
-  
+
   phraselistSelectAll->setEnabled (existDeselectedEntries);
-  
+
   phraselistDeselectAll->setEnabled (existSelectedEntries);
   phraseListSpeak->setEnabled (existSelectedEntries);
   phraseListRemove->setEnabled (existSelectedEntries);
@@ -351,7 +351,7 @@ void KMouthApp::slotFileQuit()
          break;
       memberList->removeRef(w);
     }
-  }	
+  }
 }
 
 void KMouthApp::slotEditPhrasebook () {
@@ -392,7 +392,7 @@ void KMouthApp::slotViewToolBar()
   else
   {
     toolBar("mainToolBar")->show();
-  }		
+  }
 
   slotStatusMsg(i18n("Ready."));
 }
@@ -409,7 +409,7 @@ void KMouthApp::slotViewPhrasebookBar()
   else
   {
     toolBar("phrasebookBar")->show();
-  }		
+  }
 
   slotStatusMsg(i18n("Ready."));
 }
