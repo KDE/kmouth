@@ -173,12 +173,19 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
 }
 
 void PhraseList::saveCompletionOptions(KConfig *config) {
-      config->setGroup("Completion");
-      config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
-      config->writeEntry("List", completion->currentWordList());
+   config->setGroup("General Options");
+   config->writeEntry("Show speak button", speakButton->isVisible());
+      
+   config->setGroup("Completion");
+   config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
+   config->writeEntry("List", completion->currentWordList());
 }
 
 void PhraseList::readCompletionOptions(KConfig *config) {
+   config->setGroup("General Options");
+   if (!config->readBoolEntry("Show speak button", true))
+      speakButton->hide();
+
    if (config->hasGroup ("Completion")) {
       config->setGroup("Completion");
       int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
