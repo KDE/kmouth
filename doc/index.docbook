@@ -94,7 +94,7 @@
     <para>
       With the first page of the wizard (the left screen shot) you specify
       the command that shall later be used for the text-to-speech conversion.
-      For more details look into the <link linkend="config-dialog">description
+      For more details look into the <link linkend="tts-config">description
       of the configuration dialog.</link>
     </para>
     <para>
@@ -102,6 +102,14 @@
       From the phrase books you later can select often used phrases so that
       you do not need to type them in. Of course &kmouth; also has an edit
       dialog for the case that you later want to edit your phrase books.
+    </para>
+    <para>
+      With the third page (the right screen shot) you define the dictionary
+      for a word completion. &kmouth; will parse the KDE documentation of
+      the chosen language in order to detect the frequentness of individual
+      words. Optionally you can compare the word list to an OpenOffice.org
+      dictionary in order to only add correctly spelled words to the word
+      completion.
     </para>
   </sect1>
   <sect1 id="main-window">
@@ -149,24 +157,24 @@
       you open the configuration dialog of &kmouth;. This dialog consists of
       two tabs, <guilabel>Text-to-Speech</guilabel> and <guilabel>Preferences</guilabel>.
     </para>
-    <para>
-      <screenshot>
-        <screeninfo>The configuration dialog of &kmouth;</screeninfo>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="kmouthctts.png" format="PNG"/>
-          </imageobject>
-          <imageobject>
-            <imagedata fileref="kmouthctts.eps" format="EPS"/>
-          </imageobject>
-          <textobject>
-            <phrase>Screen shot</phrase>
-          </textobject>
-        </mediaobject>
-      </screenshot>
-    </para>
     <sect2 id="tts-config">
-      <title>The Text-to-Speech tab</title>
+      <title>The <guilabel>Text-to-Speech</guilabel> tab</title>
+      <para>
+        <screenshot>
+          <screeninfo>The <guilabel>Text-to-Speech</guilabel> tab</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase>Screen shot</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
       <para>
         Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
         for calling the speech synthesizer. With the combo box below the edit
@@ -179,17 +187,39 @@
       </para>
       <para>
         The other way is to pass the text as a parameter:
-        Before calling the command &kmouth; replaces every occurrence of <token>%t</token> in
-        the command by the text (write <token>%%</token> for passing a percent sign).
+        Before calling the command &kmouth; replaces certain placeholders with
+        actual content:
+        <informaltable frame="topbot">
+         <tgroup cols="2">
+          <thead>
+          <row><entry>Placeholder</entry><entry>Replaced with</entry></row>
+          </thead>
+            <tbody>
+              <row><entry><token>%t</token></entry>
+                   <entry>The actual text that should be spoken</entry>
+              </row>
+              <row><entry><token>%f</token></entry>
+                   <entry>The name of a temporary file that contains the text
+                          that should be spoken</entry>
+              </row>
+              <row><entry><token>%l</token></entry>
+                   <entry>The language code associated with the current word completion
+                          dictionary</entry>
+              </row>
+              <row><entry><token>%%</token></entry><entry>A percent sign</entry></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
       </para>
       <para>
         Off course the command for speaking texts is dependent on which speech
         synthesizer you use. Please look into the documentation of your speech
-        synthesizer for the command for speaking texts.
+        synthesizer for the command for speaking texts. You can find examples
+        for the command in the <link linkend="tts">appendix</link>.
       </para>
       <para>
         By selecting <guilabel>Use kttsd speech service if possible</guilabel> you tell &kmouth;
-        first to try to send the kttsd speech service. If this succeeds the
+        first to try to send the text to the kttsd speech service. If this succeeds the
         other configuration entries on this tab are ignored. The kttsd speech
         service is a &kde; daemon which gives &kde; applications a standardized
         interface for speech synthesis and is currently developed in <acronym>CVS</acronym>. It
@@ -198,6 +228,22 @@
     </sect2>
     <sect2 id="preferences">
       <title>The <guilabel>Preferences</guilabel> tab</title>
+      <para>
+        <screenshot>
+          <screeninfo>The <guilabel>Preferences</guilabel> tab</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase>Screen shot</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
       <para>
         The <guilabel>Preferences</guilabel> tab contains options that alter the behavior of
         &kmouth; in certain situations.
@@ -228,6 +274,98 @@
         Save</guilabel> &kmouth; will ask you whether it shall save
         the phrase book.
       </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title>The <guilabel>Word Completion</guilabel> page</title>
+      <para>
+        <screenshot>
+          <screeninfo>The <guilabel>Word Completion</guilabel> page</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase>Screen shot</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para>
+        The <guilabel>Word Completion</guilabel> page contains a list
+        of dictionaries used for the word completion. (&kmouth; will
+        display a combo box next to the edit field in the main window
+        if this list contains more than one dictionary. You can use this
+        combo box in order to select the dictionary that actually gets
+        used for the word completion.)
+      </para>
+      <para>
+        With the buttons on the right side of the page you can add and
+        delete dictionaries, change the order of the dictionaries or export
+        dictionaries to a file. With the edit field and the combo box below
+        the list you can change the name and the language associated with
+        the dictionary.
+      </para>
+      <para>
+        When you add a new dictionary you may choose between several sources:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>Create a new dictionary from the KDE documentation</para>
+          <para>
+            If you use this source &kmouth; will ask you for the intended
+            language and afterwards parse the KDE documentation. The
+            frequentness of the individual words is detect by simply counting
+            the occurrences of each word. Optionally you can compare the word
+            list to an OpenOffice.org dictionary in order to only add correctly
+            spelled words to the new dictionary.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Create a new dictionary from a file</para>
+          <para>
+            If you use this source &kmouth; will ask you for the intended
+            file. You may either select an XML file, a standard text file or
+            a file containing a word completion dictionary created by either
+            &kmouth; or GOK (the GNOME On-screen Keyboard). If you select a
+            standard text file or an XML file the frequentness of the individual
+            words is detected by simply counting the occurrences of each word.
+            Optionally you can compare the word list to an OpenOffice.org
+            dictionary in order to only add correctly spelled words to the new
+            dictionary.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Create a new dictionary from a folder</para>
+          <para>
+            If you use this source &kmouth; will ask you for the intended folder.
+            &kmouth; will open all files in that folder and its subdirectories.
+            Each file is either loaded as a completion dictionary, as an XML file
+            or as a standard text file. In the latter two cases the occurrences of
+            each individual word in the file is counted. Optionally you can compare
+            the word list to an OpenOffice.org dictionary in order to only add
+            correctly spelled words to the new dictionary.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Merge dictionaries</para>
+          <para>
+            You can use this option in order to merge the available dictionaries.
+            &kmouth; will ask you which dictionaries should be merged and how the
+            individual dictionaries should be weighted.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Create an empty word list</para>
+          <para>
+            You can use this option in order to create a blank dictionary without
+            any entries. As &kmouth; automatically adds newly typed words to the
+            dictionaries it will learn your vocabulary with the time.
+          </para>
+        </listitem>
+      </itemizedlist>
     </sect2>
   </sect1>
   <sect1 id="phrasebook-editor">
@@ -294,7 +432,7 @@
                 <keycombo>&Ctrl;<keycap>O</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
-              <guimenuitem>Open as history...</guimenuitem>
+              <guimenuitem>Open as History...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>Opens a text file into as history of spoken sentences.</action></para></listitem>
           </varlistentry>
@@ -304,7 +442,7 @@
                 <keycombo>&Ctrl;<keycap>S</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
-              <guimenuitem>Save history as...</guimenuitem>
+              <guimenuitem>Save History as...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>Saves the history into a text file.</action></para></listitem>
           </varlistentry>
@@ -314,7 +452,7 @@
                 <keycombo>&Ctrl;<keycap>P</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
-              <guimenuitem>Print history...</guimenuitem>
+              <guimenuitem>Print History...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>Prints the history.</action></para></listitem>
           </varlistentry>
@@ -412,6 +550,16 @@
           <varlistentry>
             <term><menuchoice>
               <guimenu>Settings</guimenu>
+              <guimenuitem>Show Menubar</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+                When checked, this displays the menubar. When unchecked the
+                menubar is hidden.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
               <guimenuitem>Show Toolbar</guimenuitem>
             </menuchoice></term>
             <listitem><para>
@@ -420,6 +568,23 @@
                 buttons used to initiate frequently used commands. The toolbar
                 is most commonly located at the top of the editor just under
                 the menu. When unchecked the toolbar is hidden.
+              </action>
+              Clicking on the striated grip will hide or unhide the bar.
+              Clicking and dragging on this grip allows the user to move
+              the bar.
+            </para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
+              <guimenuitem>Show Phrasebook Bar</guimenuitem>
+            </menuchoice></term>
+            <listitem><para>
+              <action>
+                When checked, this displays a movable phrasebook bar containing
+                buttons for the phrasebook entries. The phrasebook bar
+                is most commonly located at the top of the editor just under
+                the toolbar. When unchecked the phrasebook bar is hidden.
               </action>
               Clicking on the striated grip will hide or unhide the bar.
               Clicking and dragging on this grip allows the user to move
@@ -747,7 +912,7 @@
             <guimenu>Settings</guimenu><guimenuitem>Text-to-speech conversion</guimenuitem>
           </menuchoice>
           and enter the command for speaking texts.
-          (See section about the <link linkend="config-dialog">configuration
+          (See section about the <link linkend="tts-config">configuration
           dialog for the speech synthesizer</link> for more details.)
         </para>
       </answer>
@@ -773,6 +938,130 @@
   &underFDL;
   &underGPL;
 </chapter>
+
+<appendix id="tts">
+  <title>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+    <qandaentry>
+      <question>
+        <para>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory">/usr/local/festival/</filename>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen><userinput><command>/usr/local/festival/bin/festival</command> <option>--tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel>Send the data as standard input</guilabel> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the Java™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory">/usr/local/freetts/</filename>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel>Send the data as standard
+          input</guilabel> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory">/usr/local/hadifax/</filename> and
+          <filename class="directory">/usr/local/mbrola/</filename>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>artsplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel>Send the data as standard input</guilabel> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>The KDE Text-to-Speech Daemon</para>
+      </question>
+      <answer>
+        <para>
+          The KDE Text-to-Speech Daemon (KTTSD) is a &kde; wide text-to-speech service
+          which gives &kde; applications a standardized interface for speech synthesis
+          and is currently developed in <acronym>CVS</acronym>. It uses plug-ins in
+          order to support various text-to-speech systems.
+        </para>
+        <para>
+          As the configuration of the speech synthesizer is done in KTTSD the only
+          &kmouth;-specific option you need to activate is <guilabel>Use kttsd speech
+          service if possible</guilabel>.
+        </para>
+        <para>
+          Of course you need to configure KTTSD. You may do this with the configuration
+          page <guilabel>KTTSD Speech Service</guilabel> that is added to the configuration
+          dialog of &kmouth; if KTTSD is installed.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
 
 <appendix id="installation">
   <title>Installation</title>
