@@ -155,7 +155,7 @@
     </connection>
 </connections>
 <includes>
-    <include location="global" impldecl="in implementation">klineeditdlg.h</include>
+    <include location="global" impldecl="in implementation">kinputdialog.h</include>
     <include location="local" impldecl="in implementation">klanguagebutton.h</include>
     <include location="local" impldecl="in implementation">klanguagebuttonhelper.h</include>
     <include location="local" impldecl="in implementation">creationsourcedetailsui.ui.h</include>
@@ -174,11 +174,11 @@
 </functions>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>klineedit.h</includehint>
+    <includehint>kinputdialog.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kcombobox.h</includehint>
     <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
+    <includehint>kinputdialog.h</includehint>
     <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
