@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
 
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
@@ -27,6 +26,10 @@
 #include <klocale.h>
 #include <qlabel.h>
 #include "speech.h"
+#include <qlineedit.h>
+#include <qpushbutton.h>
+#include <qcheckbox.h>
+#include <kurlrequester.h>
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
    : texttospeechconfigurationui (parent, name)
@@ -81,36 +84,3 @@ void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const QStrin
   ttsSystem->saveOptions (config, langGroup);
 }
 
-/*
- * $Log$
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.2  2002/11/25 16:24:53  gunnar
- * Changes on the way to version 0.7.99.1rc1
- *
- * Revision 1.1  2002/11/21 21:33:27  gunnar
- * Extended parameter dialog and added wizard for the first start
- *
- * Revision 1.6  2002/11/20 10:55:44  gunnar
- * Improved the keyboard accessibility
- *
- * Revision 1.5  2002/11/04 16:38:42  gunnar
- * Incorporated changes for version 0.5.1 into head branch
- *
- * Revision 1.4.2.1  2002/11/04 15:36:37  gunnar
- * combo box for character encoding added
- *
- * Revision 1.4  2002/10/07 17:09:33  gunnar
- * What's this? texts added
- *
- * Revision 1.3  2002/10/02 14:55:33  gunnar
- * Fixed Speak-empty-phrase-crash bug and added some i18n() encodings
- *
- * Revision 1.2  2002/09/08 19:29:42  gunnar
- * Configuration dialog improved
- *
- * Revision 1.1  2002/09/08 17:12:55  gunnar
- * Configuration dialog added
- *
- */

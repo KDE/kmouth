@@ -37,14 +37,14 @@ class Phrase {
    friend class PhraseBookParser;
 public:
    Phrase();
-   Phrase (QString phrase);
-   Phrase (QString phrase, QString shortcut);
-   
+   Phrase (const QString &phrase);
+   Phrase (const QString &phrase, const QString &shortcut);
+
    QString getPhrase() const;
    QString getShortcut() const;
 
-   void setPhrase (QString &phrase);
-   void setShortcut (QString &shortcut);
+   void setPhrase (const QString &phrase);
+   void setShortcut (const QString &shortcut);
 
 private:
    QString phrase;
@@ -67,7 +67,7 @@ public:
    bool isPhrase() const;
    Phrase getPhrase() const;
    int getLevel() const;
-   
+
 private:
    bool isPhraseValue;
    Phrase phrase;
@@ -98,7 +98,7 @@ public:
    bool open (const KURL &url);
 
    /** decodes a phrase book. Returns true if successfull. */
-   bool decode (QString xml);
+   bool decode (const QString &xml);
 
    /** decodes a phrase book. Returns true if successfull. */
    bool decode (QXmlInputSource &source);
@@ -117,7 +117,7 @@ public:
     *          0, if the user canceled the operation,
     *         -1, if there was an error when saving the file.
     */
-   int save (QWidget *parent, QString title, KURL &url, bool phrasebookFirst = true);
+   int save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst = true);
 
    /** encodes the phrase book. Returns the encoded xml code. */
    QString encode ();
@@ -195,6 +195,9 @@ private:
 
 /*
  * $Log$
+ * Revision 1.2  2003/01/18 15:47:46  gunnar
+ * Two small changes
+ *
  * Revision 1.1  2003/01/17 23:09:36  gunnar
  * Imported KMouth into kdeaccessibility
  *

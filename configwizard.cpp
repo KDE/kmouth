@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
 
 #include "configwizard.h"
 #include <qlayout.h>
@@ -24,12 +23,16 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
+#include <kconfig.h>
+
+#include "texttospeechconfigurationwidget.h"
+#include "phrasebook/phrasebookdialog.h"
 
 ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
              : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
-   
+
    initCommandPage(config);
    initBookPage();
 }
@@ -97,28 +100,3 @@ void ConfigWizard::help () {
 }
 
 #include "configwizard.moc"
-
-/*
- * $Log$
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.6  2003/01/17 16:03:00  gunnar
- * Help buutons added and small bug when aborting the wizard fixed
- *
- * Revision 1.5  2002/12/30 12:08:07  gunnar
- * Configuration wizard improved
- *
- * Revision 1.4  2002/12/04 16:22:02  gunnar
- * Include *.moc files
- *
- * Revision 1.3  2002/11/25 16:24:53  gunnar
- * Changes on the way to version 0.7.99.1rc1
- *
- * Revision 1.2  2002/11/22 14:51:39  gunnar
- * Wizard for first start extended
- *
- * Revision 1.1  2002/11/21 21:33:26  gunnar
- * Extended parameter dialog and added wizard for the first start
- *
- */

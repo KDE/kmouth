@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
 
 #include <qlayout.h>
 #include <qlabel.h>
@@ -23,6 +22,7 @@
 #include <ktabctl.h>
 #include <kcombobox.h>
 #include <klocale.h>
+#include <kconfig.h>
 
 #include "optionsdialog.h"
 
@@ -36,7 +36,7 @@ PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
    speak = false;
 
    closeCombo->setCurrentItem (2);
-   save = 2;      
+   save = 2;
 }
 
 PreferencesWidget::~PreferencesWidget() {
@@ -110,11 +110,11 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    tabCtl = new KTabCtl (this, "tabs");
    setMainWidget(tabCtl);
    setHelp ("config-dialog");
-   
+
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("Text-to-Speech"));
-   
+
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (behaviourWidget, i18n("Preferences"));
@@ -164,46 +164,3 @@ bool OptionsDialog::isSpeakImmediately () {
 }
 
 #include "optionsdialog.moc"
-
-/*
- * $Log$
- * Revision 1.1  2003/01/17 23:09:36  gunnar
- * Imported KMouth into kdeaccessibility
- *
- * Revision 1.5  2003/01/17 16:03:00  gunnar
- * Help buutons added and small bug when aborting the wizard fixed
- *
- * Revision 1.4  2002/12/04 16:22:02  gunnar
- * Include *.moc files
- *
- * Revision 1.3  2002/11/25 16:24:53  gunnar
- * Changes on the way to version 0.7.99.1rc1
- *
- * Revision 1.2  2002/11/22 08:48:34  gunnar
- * Implemented functionality that belongs to the new options in the options dialog
- *
- * Revision 1.1  2002/11/21 21:33:26  gunnar
- * Extended parameter dialog and added wizard for the first start
- *
- * Revision 1.6  2002/11/20 10:55:44  gunnar
- * Improved the keyboard accessibility
- *
- * Revision 1.5  2002/11/04 16:38:42  gunnar
- * Incorporated changes for version 0.5.1 into head branch
- *
- * Revision 1.4.2.1  2002/11/04 15:36:37  gunnar
- * combo box for character encoding added
- *
- * Revision 1.4  2002/10/07 17:09:33  gunnar
- * What's this? texts added
- *
- * Revision 1.3  2002/10/02 14:55:33  gunnar
- * Fixed Speak-empty-phrase-crash bug and added some i18n() encodings
- *
- * Revision 1.2  2002/09/08 19:29:42  gunnar
- * Configuration dialog improved
- *
- * Revision 1.1  2002/09/08 17:12:55  gunnar
- * Configuration dialog added
- *
- */

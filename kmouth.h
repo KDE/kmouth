@@ -15,11 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-// $Id$
 
 #ifndef KMOUTH_H
 #define KMOUTH_H
- 
+
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -27,8 +26,8 @@
 
 // include files for Qt
 
-// include files for KDE 
-#include <kapp.h>
+// include files for KDE
+#include <kapplication.h>
 #include <kmainwindow.h>
 #include <kaccel.h>
 #include <kaction.h>
@@ -81,7 +80,7 @@ class KMouthApp : public KMainWindow
   protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
-     */ 	
+     */
     void saveOptions();
     /** read general Options again and initialize all variables like the recent file list
      */
@@ -101,7 +100,7 @@ class KMouthApp : public KMainWindow
      */
     virtual bool queryClose();
     /** queryExit is called by KTMainWindow when the last window of the application is going to be closed during the closeEvent().
-     * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's	
+     * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's
      * properties.
      * @see KTMainWindow#queryExit
      * @see KTMainWindow#closeEvent
@@ -156,7 +155,7 @@ class KMouthApp : public KMainWindow
     KAction* fileSaveAs;
     KAction* filePrint;
     KAction* fileQuit;
-    
+
     KAction* editCut;
     KAction* editCopy;
     KAction* editPaste;
@@ -176,63 +175,5 @@ class KMouthApp : public KMainWindow
     KAction* phraselistSelectAll;
     KAction* phraselistDeselectAll;
 };
- 
-#endif // KMOUTH_H
 
-/*
- * $Log$
- * Revision 1.18  2002/12/30 12:08:07  gunnar
- * Configuration wizard improved
- *
- * Revision 1.17  2002/11/22 08:48:34  gunnar
- * Implemented functionality that belongs to the new options in the options dialog
- *
- * Revision 1.16  2002/11/21 21:33:26  gunnar
- * Extended parameter dialog and added wizard for the first start
- *
- * Revision 1.15  2002/11/11 21:25:42  gunnar
- * Moved the parts concerning phrase books into a static library
- *
- * Revision 1.14  2002/11/06 19:15:08  gunnar
- * import of standard phrase books added
- *
- * Revision 1.13  2002/10/29 16:16:05  gunnar
- * Connection from the phrase book to the phrase edit field added
- *
- * Revision 1.12  2002/10/23 22:19:29  gunnar
- * Cut, copy and paste features of the phrase book edit dialog improved
- *
- * Revision 1.11  2002/10/23 17:42:52  gunnar
- * Icons added to the items of the phrase book edit dialog
- *
- * Revision 1.10  2002/10/22 16:13:24  gunnar
- * Popup menu in the phrase book dialog added
- *
- * Revision 1.9  2002/10/21 18:30:50  gunnar
- * First version of the phrase book edit dialog added
- *
- * Revision 1.8  2002/09/26 17:10:46  gunnar
- * Several small changes
- *
- * Revision 1.7  2002/09/18 09:30:40  gunnar
- * A nuber of small changes
- *
- * Revision 1.6  2002/09/13 09:40:37  gunnar
- * Added support for opening a file as history
- *
- * Revision 1.5  2002/09/12 15:28:09  gunnar
- * Loading (into the edit line) and saving (the phrase list) implemented
- *
- * Revision 1.4  2002/09/11 16:57:35  gunnar
- * added context menu, and moved the contents of KMouthView and KMouthDoc into a new class PhraseList
- *
- * Revision 1.3  2002/09/08 17:12:55  gunnar
- * Configuration dialog added
- *
- * Revision 1.2  2002/09/01 08:32:54  gunnar
- * toolbar icon and application icon added
- *
- * Revision 1.1.1.1  2002/08/26 14:09:49  gunnar
- * New project started
- *
- */
+#endif // KMOUTH_H
