@@ -24,7 +24,7 @@
 #include "kmouth.h"
 #include "version.h"
 
-static const char *description =
+static const char description[] =
 	I18N_NOOP("A type-and-say front end for speech synthesizers");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
