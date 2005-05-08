@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phrasebook>
+<phrasebook name="Groeten">
+<phrase shortcut="">Hallo.</phrase>
+<phrase shortcut="">Hoi!</phrase>
+<phrase shortcut="">Goedemorgen.</phrase>
+<phrase shortcut="">Goedemiddag.</phrase>
+<phrase shortcut="">Goedenavond.</phrase>
+<phrase shortcut="">Dag!</phrase>
+<phrase shortcut="">Doei!</phrase>
+<phrase shortcut="">Tot ziens!</phrase>
+<phrase shortcut="">Later!</phrase>
+<phrase shortcut="">Kijk je uit?</phrase>
+</phrasebook>
