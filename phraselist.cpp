@@ -19,9 +19,13 @@
 #include <qprinter.h>
 #include <qpainter.h>
 #include <qlayout.h>
-#include <qwhatsthis.h>
-#include <qpopupmenu.h>
+#include <q3whatsthis.h>
+#include <q3popupmenu.h>
 #include <qclipboard.h>
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QKeyEvent>
 
 // include files for KDE
 #include <klistbox.h>
@@ -52,8 +56,8 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
 
    listBox = new KListBox (this);
    listBox->setFocusPolicy(QWidget::NoFocus);
-   listBox->setSelectionMode (QListBox::Extended);
-   QWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
+   listBox->setSelectionMode (Q3ListBox::Extended);
+   Q3WhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
    layout->addWidget(listBox);
 
    QHBoxLayout *rowLayout = new QHBoxLayout ();
@@ -71,21 +75,21 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    lineEdit->setEchoMode(QLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
    lineEdit->setAutoDeleteCompletionObject(true);
-   QWhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
+   Q3WhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   QIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
+   QIcon icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(QWidget::NoFocus);
    speakButton->setAutoDefault(false);
-   QWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
+   Q3WhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
    connect(dictionaryCombo, SIGNAL (activated (const QString &)), completion, SLOT (setWordList(const QString &)));
    connect(completion, SIGNAL (wordListsChanged (const QStringList &)), this, SLOT (configureCompletionCombo (const QStringList &)));
    connect(listBox,  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
-   connect(listBox,  SIGNAL(contextMenuRequested (QListBoxItem *, const QPoint &)), SLOT(contextMenuRequested (QListBoxItem *, const QPoint &)));
+   connect(listBox,  SIGNAL(contextMenuRequested (Q3ListBoxItem *, const QPoint &)), SLOT(contextMenuRequested (Q3ListBoxItem *, const QPoint &)));
    connect(lineEdit, SIGNAL(returnPressed(const QString &)), SLOT(lineEntered(const QString &)));
    connect(lineEdit, SIGNAL(textChanged  (const QString &)), SLOT(textChanged(const QString &)));
    connect(speakButton, SIGNAL( clicked ()), SLOT(speak()));
@@ -99,7 +103,7 @@ PhraseList::~PhraseList() {
 
 void PhraseList::print(KPrinter *pPrinter) {
    PhraseBook book;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));
    }
    
@@ -109,7 +113,7 @@ void PhraseList::print(KPrinter *pPrinter) {
 QStringList PhraseList::getListSelection() {
    QStringList res = QStringList();
 
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          res += item->text();
    }
@@ -118,7 +122,7 @@ QStringList PhraseList::getListSelection() {
 }
 
 bool PhraseList::existListSelection() {
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          return true;
    }
@@ -133,7 +137,7 @@ bool PhraseList::existEditSelection() {
 void PhraseList::enableMenuEntries() {
    bool deselected = false;
    bool selected = false;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          selected = true;
       else
@@ -254,8 +258,8 @@ void PhraseList::speakListSelection () {
 }
 
 void PhraseList::removeListSelection () {
-   QListBoxItem *next;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
+   Q3ListBoxItem *next;
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
       next = item->next();
       
       if (item->isSelected()) {
@@ -306,7 +310,7 @@ void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine
    enableMenuEntries ();
 }
 
-void PhraseList::contextMenuRequested (QListBoxItem *, const QPoint &pos) {
+void PhraseList::contextMenuRequested (Q3ListBoxItem *, const QPoint &pos) {
    QString name;
    if (existListSelection())
       name = "phraselist_selection_popup";
@@ -315,7 +319,7 @@ void PhraseList::contextMenuRequested (QListBoxItem *, const QPoint &pos) {
    
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    KXMLGUIFactory *factory = theApp->factory();
-   QPopupMenu *popup = (QPopupMenu *)factory->container(name,theApp);
+   Q3PopupMenu *popup = (Q3PopupMenu *)factory->container(name,theApp);
    if (popup != 0) {
       popup->popup(pos, 0);
    }
@@ -359,7 +363,7 @@ void PhraseList::setEditLineText(const QString &s) {
 void PhraseList::keyPressEvent (QKeyEvent *e) {
    if (e->key() == Qt::Key_Up) {
       bool selected = false;
-      for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+      for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
             selected = true;
          }
@@ -396,7 +400,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
    }
    else if (e->key() == Qt::Key_Down) {
       bool selected = false;
-      for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+      for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
             selected = true;
          }
@@ -440,7 +444,7 @@ void PhraseList::save () {
    // format we use that method here.
    
    PhraseBook book;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));
    }
 

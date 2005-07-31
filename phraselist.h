@@ -26,6 +26,8 @@
 // include files for Qt
 #include <qwidget.h>
 #include <qpushbutton.h>
+//Added by qt3to4:
+#include <QKeyEvent>
 
 class WordCompletion;
 
@@ -84,7 +86,7 @@ public slots:
 
 protected slots:
    void lineEntered (const QString &phrase);
-   void contextMenuRequested (QListBoxItem *, const QPoint &pos);
+   void contextMenuRequested (Q3ListBoxItem *, const QPoint &pos);
    void textChanged (const QString &s);
    void selectionChanged ();
    void keyPressEvent (QKeyEvent *e);

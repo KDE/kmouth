@@ -17,12 +17,14 @@
 
 #include "speech.h"
 #include <qstring.h>
-#include <qvaluelist.h>
-#include <qvaluestack.h>
+#include <q3valuelist.h>
+#include <q3valuestack.h>
 #include <qstringlist.h>
 #include <qregexp.h>
 #include <qtextcodec.h>
 #include <qfile.h>
+//Added by qt3to4:
+#include <QTextStream>
 #include <kdebug.h>
 
 #include <kdeversion.h>
@@ -48,7 +50,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
    map['l'] = language;
    return KMacroExpander::expandMacrosShellQuote (command, map);
 #else
-   QValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
+   Q3ValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
@@ -173,7 +175,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
    if (text.length () > 0) {
       // 1. prepare the text:
       // 1.a) encode the text
-      QTextStream ts (encText, IO_WriteOnly);
+      QTextStream ts (encText, QIODevice::WriteOnly);
       if (encoding == Local)
          ts.setEncoding (QTextStream::Locale);
       else if (encoding == Latin1)

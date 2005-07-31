@@ -20,17 +20,17 @@
 #include <qpainter.h>
 
 PhraseListItem::PhraseListItem (const QString & text)
-   : QListBoxText::QListBoxText(text) {
+   : QListBoxText::Q3ListBoxText(text) {
 }
 
 PhraseListItem::~PhraseListItem() {
 }
 
 bool PhraseListItem::drawCursor() const {
-   if ((QListBoxItem *)this != listBox()->item (listBox()->currentItem()))
+   if ((Q3ListBoxItem *)this != listBox()->item (listBox()->currentItem()))
       return false;
    
-   for (QListBoxItem *item = listBox()->firstItem(); item != 0; item = item->next() ) {
+   for (Q3ListBoxItem *item = listBox()->firstItem(); item != 0; item = item->next() ) {
       if (item->isSelected())
          return true;
    }
@@ -42,7 +42,7 @@ int PhraseListItem::rtti() const {
 }
 
 void PhraseListItem::paint (QPainter *p) {
-   QListBoxText::paint (p);
+   Q3ListBoxText::paint (p);
 
    if (drawCursor()) {
       QRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));

@@ -18,7 +18,7 @@
 #ifndef PHRASELISTITEM_H
 #define PHRASELISTITEM_H
 
-#include <qlistbox.h>
+#include <q3listbox.h>
 
 /**
  * This class represents a phrase in the list of spoken phrases. It extends
@@ -26,7 +26,7 @@
  * @author Gunnar Schmi Dt
  */
 
-class PhraseListItem : public QListBoxText  {
+class PhraseListItem : public Q3ListBoxText  {
 public:
    PhraseListItem (const QString & text);
    ~PhraseListItem();

@@ -16,6 +16,8 @@
  ***************************************************************************/
 
 #include "phraseedit.h"
+//Added by qt3to4:
+#include <QKeyEvent>
 
 PhraseEdit::PhraseEdit(const QString &string, QWidget *parent)
  : KLineEdit (string, parent) {

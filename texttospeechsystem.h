@@ -21,7 +21,7 @@
 
 #include <qstring.h>
 #include <qobject.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 class KConfig;
 
@@ -45,7 +45,7 @@ public slots:
 private:
    void buildCodecList ();
 
-   QPtrList<QTextCodec> *codecList;
+   Q3PtrList<QTextCodec> *codecList;
    int codec;
    QString ttsCommand;
    bool stdIn;

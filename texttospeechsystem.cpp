@@ -19,7 +19,9 @@
 #include "texttospeechsystem.h"
 #include <qregexp.h>
 #include <qtextcodec.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
+//Added by qt3to4:
+#include <Q3CString>
 #include <stdlib.h>
 
 #include <kapplication.h>
@@ -43,9 +45,9 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 bool kttsdSay (const QString &text, const QString &language) {
    DCOPClient *client = kapp->dcopClient();
    QByteArray  data;
-   QCString replyType;
+   Q3CString replyType;
    QByteArray  replyData;
-   QDataStream arg(data, IO_WriteOnly);
+   QDataStream arg(data, QIODevice::WriteOnly);
    arg << text << language;
    return client->call("kttsd", "KSpeech", "sayWarning(QString,QString)",
                        data, replyType, replyData, true);
@@ -104,7 +106,7 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
 }
 
 void TextToSpeechSystem::buildCodecList () {
-   codecList = new QPtrList<QTextCodec>;
+   codecList = new Q3PtrList<QTextCodec>;
    QTextCodec *codec;
    int i;
    for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)

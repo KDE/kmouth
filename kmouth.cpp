@@ -18,6 +18,8 @@
 // include files for QT
 #include <qdir.h>
 #include <qpainter.h>
+//Added by qt3to4:
+#include <Q3PopupMenu>
 
 // include files for KDE
 #include <kiconloader.h>
@@ -447,7 +449,7 @@ void KMouthApp::slotStatusMsg(const QString &text)
 
 void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    QString name = "phrasebooks";
-   QPopupMenu *popup = (QPopupMenu *)factory()->container(name, this);
+   Q3PopupMenu *popup = (Q3PopupMenu *)factory()->container(name, this);
    KToolBar *toolbar = toolBar ("phrasebookBar");
 
    KActionPtrList actions = phrases->actions ();
