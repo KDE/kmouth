@@ -19,7 +19,7 @@
 #include <qprinter.h>
 #include <qpainter.h>
 #include <qlayout.h>
-#include <q3whatsthis.h>
+
 #include <q3popupmenu.h>
 #include <qclipboard.h>
 //Added by qt3to4:
@@ -57,7 +57,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    listBox = new KListBox (this);
    listBox->setFocusPolicy(QWidget::NoFocus);
    listBox->setSelectionMode (Q3ListBox::Extended);
-   Q3WhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
+   listBox->setWhatsThis( i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
    layout->addWidget(listBox);
 
    QHBoxLayout *rowLayout = new QHBoxLayout ();
@@ -75,7 +75,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    lineEdit->setEchoMode(QLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
    lineEdit->setAutoDeleteCompletionObject(true);
-   Q3WhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
+   lineEdit->setWhatsThis( i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
@@ -83,7 +83,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(QWidget::NoFocus);
    speakButton->setAutoDefault(false);
-   Q3WhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
+   speakButton->setWhatsThis( i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
    connect(dictionaryCombo, SIGNAL (activated (const QString &)), completion, SLOT (setWordList(const QString &)));

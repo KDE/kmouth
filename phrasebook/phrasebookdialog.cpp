@@ -27,7 +27,7 @@
 #include <q3popupmenu.h>
 #include <q3valuestack.h>
 #include <q3ptrstack.h>
-#include <q3whatsthis.h>
+
 //Added by qt3to4:
 #include <QGridLayout>
 #include <QDropEvent>
@@ -245,7 +245,7 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
 
    keyButton = new KKeyButton (keyButtonPlace, "key");
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
-   Q3WhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
+   keyButton->setWhatsThis( i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
    group = new Q3ButtonGroup (phrasebox);
    group->hide();
@@ -308,7 +308,7 @@ void PhraseBookDialog::initGUI () {
    treeView->setRootIsDecorated (true);
    treeView->setAllColumnsShowFocus (true);
    treeView->setSelectionMode (Q3ListView::Extended); 
-   Q3WhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
+   treeView->setWhatsThis( i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
    connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
    connect (treeView, SIGNAL(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)));
    connect (treeView, SIGNAL(dropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotDropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)));
