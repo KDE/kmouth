@@ -383,7 +383,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
 
                if (fields[4] != ".") {
                   QString condition = fields[4];
-                  for (uint idx = 0; idx < condition.length(); ++idx) {
+                  for (int idx = 0; idx < condition.length(); ++idx) {
                      if (condition[idx] == '[') {
                         QString code;
                         for (++idx; (idx < condition.length()) && condition[idx] != ']'; ++idx)
