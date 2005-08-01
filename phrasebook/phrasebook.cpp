@@ -20,7 +20,11 @@
 #include <qfile.h>
 #include <qxml.h>
 #include <qregexp.h>
-#include <qptrstack.h>
+#include <q3ptrstack.h>
+//Added by qt3to4:
+#include <Q3CString>
+#include <QTextStream>
+#include <Q3PopupMenu>
 
 #include <klocale.h>
 #include <kaction.h>
@@ -147,12 +151,12 @@ bool PhraseBook::decode (QXmlInputSource &source) {
       return false;
 }
 
-QCString encodeString (const QString str) {
-   QCString res = "";
+Q3CString encodeString (const QString str) {
+   Q3CString res = "";
    for (int i = 0; i < (int)str.length(); i++) {
       QChar ch = str.at(i);
       ushort uc = ch.unicode();
-      QCString number; number.setNum(uc);
+      Q3CString number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
          res = res + "&#" + number + ";";
       else
@@ -226,7 +230,7 @@ void PhraseBook::save (QTextStream &stream, bool asPhrasebook) {
 bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    if (url.isLocalFile()) {
       QFile file(url.path());
-      if(!file.open(IO_WriteOnly))
+      if(!file.open(QIODevice::WriteOnly))
          return false;
 
       QTextStream stream(&file);
@@ -348,7 +352,7 @@ bool PhraseBook::open (const KURL &url) {
          // Load each line of the plain text file as a new phrase
 
          QFile file(tempFile);
-         if (file.open(IO_ReadOnly)) {
+         if (file.open(QIODevice::ReadOnly)) {
             QTextStream stream(&file);
 
             while (!stream.atEnd()) {
@@ -370,14 +374,14 @@ bool PhraseBook::open (const KURL &url) {
       return false;
 }
 
-void PhraseBook::addToGUI (QPopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
+void PhraseBook::addToGUI (Q3PopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
                   QObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
-      QPtrStack<QWidget> stack;
+      Q3PtrStack<QWidget> stack;
       QWidget *parent = popup;
       int level = 0;
 
-      QValueListConstIterator<PhraseBookEntry> it;
+      Q3ValueListConstIterator<PhraseBookEntry> it;
       for (it = begin(); it != end(); ++it) {
          int newLevel = (*it).getLevel();
          while (newLevel > level) {
@@ -425,7 +429,7 @@ void PhraseBook::addToGUI (QPopupMenu *popup, KToolBar *toolbar, KActionCollecti
 void PhraseBook::insert (const QString &name, const PhraseBook &book) {
    *this += PhraseBookEntry(Phrase(name), 0, false);
 
-   QValueListConstIterator<PhraseBookEntry> it;
+   Q3ValueListConstIterator<PhraseBookEntry> it;
    for (it = book.begin(); it != book.end(); ++it) {
       *this += PhraseBookEntry ((*it).getPhrase(), (*it).getLevel()+1, (*it).isPhrase());
    }
@@ -434,13 +438,13 @@ void PhraseBook::insert (const QString &name, const PhraseBook &book) {
 // ***************************************************************************
 
 PhraseBookDrag::PhraseBookDrag (PhraseBook *book, QWidget *dragSource, const char *name)
-    : QDragObject (dragSource, name)
+    : Q3DragObject (dragSource, name)
 {
    setBook (book);
 }
 
 PhraseBookDrag::PhraseBookDrag (QWidget *dragSource, const char *name)
-    : QDragObject (dragSource, name)
+    : Q3DragObject (dragSource, name)
 {
    setBook (0);
 }
@@ -478,7 +482,7 @@ const char *PhraseBookDrag::format (int i) const {
 }
 
 QByteArray PhraseBookDrag::encodedData (const char* mime) const {
-   QCString m(mime);
+   Q3CString m(mime);
    m = m.lower();
    if (m.contains("xml-phrasebook"))
       return xmlphrasebook.encodedData(mime);
@@ -489,17 +493,17 @@ QByteArray PhraseBookDrag::encodedData (const char* mime) const {
 }
 
 bool PhraseBookDrag::canDecode (const QMimeSource* e) {
-   return QTextDrag::canDecode(e);
+   return Q3TextDrag::canDecode(e);
 }
 
 bool PhraseBookDrag::decode (const QMimeSource *e, PhraseBook *book) {
    QString string;
-   QCString subtype1 = "x-xml-phrasebook";
-   QCString subtype2 = "xml";
+   QString subtype1 = "x-xml-phrasebook";
+   QString subtype2 = "xml";
 
-   if (!QTextDrag::decode(e, string, subtype1))
-      if (!QTextDrag::decode(e, string, subtype2)) {
-         if (QTextDrag::decode(e, string)) {
+   if (!Q3TextDrag::decode(e, string, subtype1))
+      if (!Q3TextDrag::decode(e, string, subtype2)) {
+         if (Q3TextDrag::decode(e, string)) {
             *book += PhraseBookEntry(Phrase(string, ""), 0, true);
             return true;
          }

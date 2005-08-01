@@ -23,11 +23,16 @@
 #include <qevent.h>
 #include <qpainter.h>
 #include <qstyle.h>
-#include <qgroupbox.h>
-#include <qpopupmenu.h>
-#include <qvaluestack.h>
-#include <qptrstack.h>
-#include <qwhatsthis.h>
+#include <q3groupbox.h>
+#include <q3popupmenu.h>
+#include <q3valuestack.h>
+#include <q3ptrstack.h>
+#include <q3whatsthis.h>
+//Added by qt3to4:
+#include <QGridLayout>
+#include <QDropEvent>
+#include <QLabel>
+#include <QVBoxLayout>
 
 // include files for KDE
 #include <kpopupmenu.h>
@@ -53,9 +58,9 @@ namespace PhraseBookPrivate {
    };
 }
 
-CheckBookItem::CheckBookItem (QListViewItem *parent, QListViewItem *last,
+CheckBookItem::CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
              const QString &text, const QString &name, const QString &filename)
-   : QCheckListItem (parent, text, QCheckListItem::CheckBox)
+   : Q3CheckListItem (parent, text, Q3CheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -70,9 +75,9 @@ CheckBookItem::CheckBookItem (QListViewItem *parent, QListViewItem *last,
    ((CheckBookItem*)parent)->childChange (numberOfBooks, selectedBooks);
 }
 
-CheckBookItem::CheckBookItem (QListView *parent, QListViewItem *last,
+CheckBookItem::CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
              const QString &text, const QString &name, const QString &filename)
-   : QCheckListItem (parent, text, QCheckListItem::CheckBox)
+   : Q3CheckListItem (parent, text, Q3CheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -90,7 +95,7 @@ CheckBookItem::~CheckBookItem () {
 }
 
 void CheckBookItem::activate() {
-   QListView *lv = listView();
+   Q3ListView *lv = listView();
 
    if ((lv != 0) && (!lv->isEnabled()) || (!isEnabled()))
       return;
@@ -100,9 +105,9 @@ void CheckBookItem::activate() {
 }
 
 void CheckBookItem::stateChange (bool on) {
-   QListViewItem *item = firstChild();
+   Q3ListViewItem *item = firstChild();
    if (item == 0) {
-      QListViewItem *parent = this->parent();
+      Q3ListViewItem *parent = this->parent();
       if (parent != 0) {
          if (on)
             ((CheckBookItem*)parent)->childChange (0, 1);
@@ -114,10 +119,10 @@ void CheckBookItem::stateChange (bool on) {
 }
 
 void CheckBookItem::propagateStateChange () {
-   QListViewItem *item = firstChild();
+   Q3ListViewItem *item = firstChild();
    while (item != 0) {
-      if (isOn() != ((QCheckListItem*)item)->isOn())
-         ((QCheckListItem*)item)->setOn (isOn());
+      if (isOn() != ((Q3CheckListItem*)item)->isOn())
+         ((Q3CheckListItem*)item)->setOn (isOn());
       else
          ((CheckBookItem*)item)->propagateStateChange ();
       item = item->nextSibling();
@@ -127,7 +132,7 @@ void CheckBookItem::propagateStateChange () {
 void CheckBookItem::childChange (int numberDiff, int selDiff) {
    numberOfBooks += numberDiff;
    selectedBooks += selDiff;
-   QListViewItem *parent = this->parent();
+   Q3ListViewItem *parent = this->parent();
    if (parent != 0)
       ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
 
@@ -153,7 +158,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    books->addColumn (i18n("Book"));
    books->setRootIsDecorated (true);
    books->setAllColumnsShowFocus (true);
-   books->setSelectionMode (QListView::Multi);
+   books->setSelectionMode (Q3ListView::Multi);
    mainLayout->add (books);
 
    initStandardPhraseBooks();
@@ -165,10 +170,11 @@ InitialPhraseBookWidget::~InitialPhraseBookWidget () {
 void InitialPhraseBookWidget::initStandardPhraseBooks() {
    StandardBookList bookPaths = PhraseBookDialog::standardPhraseBooks();
 
-   QListViewItem *parent = 0;
-   QListViewItem *last = 0;
-   QStringList currentNamePath = "";
-   QPtrStack<QListViewItem> stack;
+   Q3ListViewItem *parent = 0;
+   Q3ListViewItem *last = 0;
+   QStringList currentNamePath;
+   currentNamePath<<"";
+   Q3PtrStack<Q3ListViewItem> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       QString namePath = (*it).path;
@@ -184,7 +190,7 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
       }
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
-         QListViewItem *newParent;
+         Q3ListViewItem *newParent;
          if (parent == 0)
             newParent = new CheckBookItem (books, last, *it2, *it2, QString::null);
          else
@@ -194,7 +200,7 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
       }
       currentNamePath = dirs;
       
-      QListViewItem *book;
+      Q3ListViewItem *book;
       if (parent == 0)
          book = new CheckBookItem (books, last, (*it).name, (*it).name, (*it).filename);
       else
@@ -205,13 +211,13 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
 
 void InitialPhraseBookWidget::createBook () {
    PhraseBook book;
-   QListViewItem *item = books->firstChild();
+   Q3ListViewItem *item = books->firstChild();
    while (item != 0) {
       if (item->firstChild() != 0) {
          item = item->firstChild();
       }
       else {
-         if (((QCheckListItem*)item)->isOn()) {
+         if (((Q3CheckListItem*)item)->isOn()) {
             PhraseBook localBook;
             localBook.open(KURL( item->text(PhraseBookPrivate::filename )));
             book += localBook;
@@ -239,9 +245,9 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
 
    keyButton = new KKeyButton (keyButtonPlace, "key");
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
-   QWhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
+   Q3WhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
-   group = new QButtonGroup (phrasebox);
+   group = new Q3ButtonGroup (phrasebox);
    group->hide();
    group->setExclusive (true);
    group->insert (noKey);
@@ -301,12 +307,12 @@ void PhraseBookDialog::initGUI () {
    treeView->addColumn (i18n("Shortcut"));
    treeView->setRootIsDecorated (true);
    treeView->setAllColumnsShowFocus (true);
-   treeView->setSelectionMode (QListView::Extended); 
-   QWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
+   treeView->setSelectionMode (Q3ListView::Extended); 
+   Q3WhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
    connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
-   connect (treeView, SIGNAL(contextMenuRequested (QListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (QListViewItem *, const QPoint &, int)));
-   connect (treeView, SIGNAL(dropped (QDropEvent *, QListViewItem *, QListViewItem *)), this, SLOT(slotDropped (QDropEvent *, QListViewItem *, QListViewItem *)));
-   connect (treeView, SIGNAL(moved (QListViewItem *, QListViewItem *, QListViewItem *)), this, SLOT(slotMoved (QListViewItem *, QListViewItem *, QListViewItem *)));
+   connect (treeView, SIGNAL(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)));
+   connect (treeView, SIGNAL(dropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotDropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)));
+   connect (treeView, SIGNAL(moved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotMoved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)));
    mainLayout->addWidget (treeView);
    
    buttonBox = new ButtonBoxWidget (page, "buttonbox");
@@ -383,7 +389,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
    QFileInfo file(filename);
    QString path = file.dirPath();
    QString dispPath = "";
-   uint position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
+   int position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
 
    while (path.length() > position) {
       file.setFile(path);
@@ -435,8 +441,9 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    StandardBookList bookPaths = standardPhraseBooks();
    
    KActionMenu *parent = fileImportStandardBook;
-   QStringList currentNamePath = "x";
-   QPtrStack<KActionMenu> stack;
+   QStringList currentNamePath;
+   currentNamePath<< "x";
+   Q3PtrStack<KActionMenu> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       KURL url;
@@ -469,14 +476,14 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    }
 }
 
-PhraseTreeItem *selectedItem (QListView *treeView) {
+PhraseTreeItem *selectedItem (Q3ListView *treeView) {
    PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
    if ((currentItem == 0) || (!currentItem->isSelected()))
       return 0;
 
-   QListViewItemIterator it(treeView);
+   Q3ListViewItemIterator it(treeView);
    while (it.current()) {
-      QListViewItem *item = it.current();
+      Q3ListViewItem *item = it.current();
       if (item->isSelected() && (item != currentItem))
          return 0;
       ++it;
@@ -615,8 +622,8 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    }
 }
 
-QListViewItem *PhraseBookDialog::addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book) {
-   QListViewItem *newItem = treeView->addBook(parent, after, book);
+Q3ListViewItem *PhraseBookDialog::addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book) {
+   Q3ListViewItem *newItem = treeView->addBook(parent, after, book);
    if (newItem != 0) {
       treeView->clearSelection();
       treeView->ensureItemVisible(newItem);
@@ -627,7 +634,7 @@ QListViewItem *PhraseBookDialog::addBook (QListViewItem *parent, QListViewItem *
    return newItem;
 }
 
-QListViewItem *PhraseBookDialog::addBook (QListViewItem *item, PhraseBook *book) {
+Q3ListViewItem *PhraseBookDialog::addBook (Q3ListViewItem *item, PhraseBook *book) {
    if (item == 0)
       return addBook(0, 0, book);
    else if (((PhraseTreeItem *)item)->isPhrase() || !item->isOpen())
@@ -639,14 +646,14 @@ QListViewItem *PhraseBookDialog::addBook (QListViewItem *item, PhraseBook *book)
       return addBook(item, 0, book);
 }
 
-void PhraseBookDialog::contextMenuRequested(QListViewItem *, const QPoint &pos, int) {
+void PhraseBookDialog::contextMenuRequested(Q3ListViewItem *, const QPoint &pos, int) {
    QString name;
    if (treeView->hasSelectedItems())
       name = "phrasebook_popup_sel";
    else
       name = "phrasebook_popup_nosel";
 
-   QPopupMenu *popup = (QPopupMenu *)factory()->container(name,this);
+   Q3PopupMenu *popup = (Q3PopupMenu *)factory()->container(name,this);
    if (popup != 0) {
       popup->popup(pos, 0);
    }
@@ -677,14 +684,14 @@ void PhraseBookDialog::slotPaste () {
    }
 }
 
-void PhraseBookDialog::slotDropped (QDropEvent *e, QListViewItem *parent, QListViewItem *after) {
+void PhraseBookDialog::slotDropped (QDropEvent *e, Q3ListViewItem *parent, Q3ListViewItem *after) {
    PhraseBook book;
    if (PhraseBookDrag::decode(e, &book)) {
       addBook(parent, after, &book);
    }
 }
 
-void PhraseBookDialog::slotMoved (QListViewItem *item, QListViewItem *, QListViewItem *) {
+void PhraseBookDialog::slotMoved (Q3ListViewItem *item, Q3ListViewItem *, Q3ListViewItem *) {
    treeView->ensureItemVisible(item);
    treeView->setSelected (item, true);
    phrasebookChanged = true;
@@ -695,7 +702,7 @@ void PhraseBookDialog::slotAddPhrasebook () {
    Phrase phrase(i18n("(New Phrase Book)"), "");
    book += PhraseBookEntry(phrase, 0, false);
 
-   QListViewItem *item = addBook (treeView->currentItem(), &book);
+   Q3ListViewItem *item = addBook (treeView->currentItem(), &book);
    item->setOpen (true);
    buttonBox->lineEdit->selectAll();
    buttonBox->lineEdit->setFocus();

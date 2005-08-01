@@ -27,8 +27,12 @@
 #include "phrasetree.h"
 #include "phrasebookdialog.h"
 #include "phrasebook.h"
+//Added by qt3to4:
+#include <QPixmap>
+#include <QKeyEvent>
+#include <QDropEvent>
 
-PhraseTreeItem::PhraseTreeItem (QListView *parent, QListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
+PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
    : KListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
@@ -38,7 +42,7 @@ PhraseTreeItem::PhraseTreeItem (QListView *parent, QListViewItem *after, QString
    setExpandable (false);
 }
 
-PhraseTreeItem::PhraseTreeItem (QListViewItem *parent, QListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
+PhraseTreeItem::PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
    : KListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
@@ -47,14 +51,14 @@ PhraseTreeItem::PhraseTreeItem (QListViewItem *parent, QListViewItem *after, QSt
    setPixmap(0, icon);
    setExpandable (false);
 }
-PhraseTreeItem::PhraseTreeItem (QListView *parent, QListViewItem *after, QString name, QPixmap icon)
+PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString name, QPixmap icon)
    : KListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
    setExpandable (true);
 }
-PhraseTreeItem::PhraseTreeItem (QListViewItem *parent, QListViewItem *after, QString name, QPixmap icon)
+PhraseTreeItem::PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString name, QPixmap icon)
    : KListViewItem (parent, after, name)
 {
    isPhraseValue = false;
@@ -81,17 +85,17 @@ PhraseTree::PhraseTree (QWidget *parent, const char *name)
    phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
    phrase            = KGlobal::iconLoader()->loadIcon("phrase",            KIcon::Small);
 
-   connect (this, SIGNAL(expanded (QListViewItem *)), this, SLOT(itemExpanded (QListViewItem *)));
-   connect (this, SIGNAL(collapsed (QListViewItem *)), this, SLOT(itemCollapsed (QListViewItem *)));
+   connect (this, SIGNAL(expanded (Q3ListViewItem *)), this, SLOT(itemExpanded (Q3ListViewItem *)));
+   connect (this, SIGNAL(collapsed (Q3ListViewItem *)), this, SLOT(itemCollapsed (Q3ListViewItem *)));
 }
 
 PhraseTree::~PhraseTree (){
 }
 
 namespace PhraseTreePrivate {
-   QListViewItem *prevSibling (QListViewItem *item) {
-      QListViewItem *parent = item->parent();
-      QListViewItem *above  = item->itemAbove();
+   Q3ListViewItem *prevSibling (Q3ListViewItem *item) {
+      Q3ListViewItem *parent = item->parent();
+      Q3ListViewItem *above  = item->itemAbove();
 
       if (above == parent)
          return 0;
@@ -102,15 +106,15 @@ namespace PhraseTreePrivate {
       return above;
    }
 
-   bool findAbovePosition (QListViewItem *item,
-                           QListViewItem **newParent,
-                           QListViewItem **newAbove)
+   bool findAbovePosition (Q3ListViewItem *item,
+                           Q3ListViewItem **newParent,
+                           Q3ListViewItem **newAbove)
    {
       if (item == 0)
          return false;
 
-      QListViewItem *parent = item->parent();
-      QListViewItem *above  = item->itemAbove();
+      Q3ListViewItem *parent = item->parent();
+      Q3ListViewItem *above  = item->itemAbove();
 
       if (above == 0)
          return false;
@@ -133,15 +137,15 @@ namespace PhraseTreePrivate {
       }
    }
 
-   bool findBelowPosition (QListViewItem *item,
-                           QListViewItem **newParent,
-                           QListViewItem **newAbove)
+   bool findBelowPosition (Q3ListViewItem *item,
+                           Q3ListViewItem **newParent,
+                           Q3ListViewItem **newAbove)
    {
       if (item == 0)
          return false;
 
-      QListViewItem *parent = item->parent();
-      QListViewItem *below  = item->nextSibling();
+      Q3ListViewItem *parent = item->parent();
+      Q3ListViewItem *below  = item->nextSibling();
 
       if (parent == 0 && below == 0)
          return false;
@@ -162,14 +166,14 @@ namespace PhraseTreePrivate {
       }
    }
 
-   bool findRightPosition (QListViewItem *item,
-                           QListViewItem **newParent,
-                           QListViewItem **newAbove)
+   bool findRightPosition (Q3ListViewItem *item,
+                           Q3ListViewItem **newParent,
+                           Q3ListViewItem **newAbove)
    {
       if (item == 0)
          return false;
 
-      QListViewItem *above = prevSibling (item);
+      Q3ListViewItem *above = prevSibling (item);
 
       if (above == 0)
          return false;
@@ -188,14 +192,14 @@ namespace PhraseTreePrivate {
       }
    }
 
-   bool findLeftPosition (QListViewItem *item,
-                          QListViewItem **newParent,
-                          QListViewItem **newAbove)
+   bool findLeftPosition (Q3ListViewItem *item,
+                          Q3ListViewItem **newParent,
+                          Q3ListViewItem **newAbove)
    {
       if (item == 0)
          return false;
 
-      QListViewItem *parent = item->parent();
+      Q3ListViewItem *parent = item->parent();
 
       if (parent == 0)
          return false;
@@ -207,9 +211,9 @@ namespace PhraseTreePrivate {
    }
 }
 
-void PhraseTree::moveItem (QListViewItem *item,
-                           QListViewItem *parent,
-                           QListViewItem *above)
+void PhraseTree::moveItem (Q3ListViewItem *item,
+                           Q3ListViewItem *parent,
+                           Q3ListViewItem *above)
 {
    if (item != 0) {
       if (item->parent() == 0)
@@ -227,7 +231,7 @@ void PhraseTree::moveItem (QListViewItem *item,
 }
 
 bool PhraseTree::hasSelectedItems() {
-   QListViewItem *i = firstChild();
+   Q3ListViewItem *i = firstChild();
    if ( !i )
        return false;
    int level = 0;
@@ -254,10 +258,10 @@ bool PhraseTree::hasSelectedItems() {
 }
 
 void PhraseTree::deleteSelectedItems() {
-   QListViewItem *i = firstChild();
+   Q3ListViewItem *i = firstChild();
    if ( !i )
        return;
-   QListViewItem *deleteItem = 0;
+   Q3ListViewItem *deleteItem = 0;
    do {
       if (i->isSelected())
          deleteItem = i;
@@ -283,10 +287,10 @@ void PhraseTree::deleteSelectedItems() {
 void PhraseTree::keyPressEvent (QKeyEvent *e) {
    if ((e->state() & Qt::KeyButtonMask) == Qt::AltButton) {
       if (e->key() == Qt::Key_Up) {
-         QListViewItem *item = currentItem();
+         Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            QListViewItem *parent;
-            QListViewItem *above;
+            Q3ListViewItem *parent;
+            Q3ListViewItem *above;
 
             if (PhraseTreePrivate::findAbovePosition (item, &parent, &above)) {
                moveItem(item, parent, above);
@@ -298,10 +302,10 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          return;
       }
       else if (e->key() == Qt::Key_Down) {
-         QListViewItem *item = currentItem();
+         Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            QListViewItem *parent;
-            QListViewItem *above;
+            Q3ListViewItem *parent;
+            Q3ListViewItem *above;
 
             if (PhraseTreePrivate::findBelowPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
@@ -313,10 +317,10 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          return;
       }
       else if (e->key() == Qt::Key_Left) {
-         QListViewItem *item = currentItem();
+         Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            QListViewItem *parent;
-            QListViewItem *above;
+            Q3ListViewItem *parent;
+            Q3ListViewItem *above;
 
             if (PhraseTreePrivate::findLeftPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
@@ -328,10 +332,10 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          return;
       }
       else if (e->key() == Qt::Key_Right) {
-         QListViewItem *item = currentItem();
+         Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            QListViewItem *parent;
-            QListViewItem *above;
+            Q3ListViewItem *parent;
+            Q3ListViewItem *above;
 
             if (PhraseTreePrivate::findRightPosition (item, &parent, &above)) {
                moveItem(item, parent, above);
@@ -346,7 +350,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
    KListView::keyPressEvent(e);
 }
 
-PhraseTreeItem *PhraseTree::insertPhrase (QListViewItem *parent, QListViewItem *after, QString phrase, QString shortcut) {
+PhraseTreeItem *PhraseTree::insertPhrase (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, QString shortcut) {
    KShortcut cut = KShortcut(shortcut);
    if (isKeyPresent (cut, 0, false))
       cut = KShortcut(QString::null);
@@ -357,15 +361,15 @@ PhraseTreeItem *PhraseTree::insertPhrase (QListViewItem *parent, QListViewItem *
       return new PhraseTreeItem (parent, after, phrase, cut, this->phrase);
 }
 
-PhraseTreeItem *PhraseTree::insertBook (QListViewItem *parent, QListViewItem *after, QString name) {
+PhraseTreeItem *PhraseTree::insertBook (Q3ListViewItem *parent, Q3ListViewItem *after, QString name) {
    if (parent == 0)
       return new PhraseTreeItem (this, after, name, phrasebook_closed);
    else
       return new PhraseTreeItem (parent, after, name, phrasebook_closed);
 }
 
-QListViewItem *PhraseTree::addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book) {
-   QListViewItem *last = after;
+Q3ListViewItem *PhraseTree::addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book) {
+   Q3ListViewItem *last = after;
    int level = 0;
    PhraseBookEntryList::iterator it;
    for (it = book->begin(); it != book->end(); ++it) {
@@ -403,7 +407,7 @@ QListViewItem *PhraseTree::addBook (QListViewItem *parent, QListViewItem *after,
 }
 
 void PhraseTree::fillBook (PhraseBook *book, bool respectSelection) {
-   QListViewItem *i = firstChild();
+   Q3ListViewItem *i = firstChild();
    int level = 0;
    if ( !i )
        return;
@@ -432,11 +436,11 @@ void PhraseTree::fillBook (PhraseBook *book, bool respectSelection) {
    while (i != 0);
 }
 
-QDragObject *PhraseTree::dragObject () {
+Q3DragObject *PhraseTree::dragObject () {
    return dragObject (true);
 }
 
-QDragObject *PhraseTree::dragObject (bool isDependent) {
+Q3DragObject *PhraseTree::dragObject (bool isDependent) {
    PhraseBook book;
    fillBook (&book, true);
    if (isDependent)
@@ -510,7 +514,7 @@ bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
 }
 
 bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser) {
-   for (QListViewItemIterator it(this); it.current(); ++it) {
+   for (Q3ListViewItemIterator it(this); it.current(); ++it) {
       PhraseTreeItem* item = dynamic_cast<PhraseTreeItem*>(it.current());
       if ((item != 0) && (item != cutItem)) {
          int iSeq = keyConflict (cut, item->cut());
@@ -539,13 +543,13 @@ bool PhraseTree::isKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bo
    return false;
 }
 
-void PhraseTree::itemExpanded (QListViewItem *item) {
+void PhraseTree::itemExpanded (Q3ListViewItem *item) {
    PhraseTreeItem *i = (PhraseTreeItem *)item;
    if (!i->isPhrase())
       i->setPixmap(0, phrasebook_open);
 }
 
-void PhraseTree::itemCollapsed (QListViewItem *item) {
+void PhraseTree::itemCollapsed (Q3ListViewItem *item) {
    PhraseTreeItem *i = (PhraseTreeItem *)item;
    if (!i->isPhrase())
       i->setPixmap(0, phrasebook_closed);

@@ -19,7 +19,7 @@
 #define PHRASEBOOKPARSER_H
 
 #include <qxml.h>
-#include <qvaluestack.h>
+#include <q3valuestack.h>
 #include "phrasebook.h"
 
 /**

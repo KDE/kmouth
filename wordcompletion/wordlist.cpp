@@ -19,6 +19,9 @@
 
 #include <qregexp.h>
 #include <qdir.h>
+//Added by qt3to4:
+#include <QTextStream>
+#include <Q3ValueList>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -118,7 +121,7 @@ KProgressDialog *progressDialog() {
 
 bool saveWordList (WordMap map, QString filename) {
    QFile file(filename);
-   if(!file.open(IO_WriteOnly))
+   if(!file.open(QIODevice::WriteOnly))
       return false;
 
    QTextStream stream(&file);
@@ -171,7 +174,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
       addWords(map, parser.getList());
    else {
       QFile wpdfile(filename);
-      if (wpdfile.open(IO_ReadOnly)) {
+      if (wpdfile.open(QIODevice::ReadOnly)) {
          QTextStream stream(&wpdfile);
          stream.setEncoding (QTextStream::UnicodeUTF8);
 
@@ -196,7 +199,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
             }
             else { // Count the words in an ordinary text file
                QFile file(filename);
-               if (file.open(IO_ReadOnly)) {
+               if (file.open(QIODevice::ReadOnly)) {
                   QTextStream stream(&file);
                   if (codec != 0)
                      stream.setCodec (codec);
@@ -350,7 +353,7 @@ struct AffEntry {
    QString add;
    QStringList condition;
 };
-typedef QValueList<AffEntry> AffList;
+typedef Q3ValueList<AffEntry> AffList;
 typedef QMap<QChar,AffList>  AffMap;
 
 /** Loads an *.aff file (part of OpenOffice.org dictionaries)
@@ -359,7 +362,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
    bool cross = false;
 
    QFile afile(filename);
-   if (afile.open(IO_ReadOnly)) {
+   if (afile.open(QIODevice::ReadOnly)) {
       QTextStream stream(&afile);
       while (!stream.atEnd()) {
          QString s = stream.readLine();
@@ -510,7 +513,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       int percent = 0;
 
       QFile dfile(dictionary);
-      if (dfile.open(IO_ReadOnly)) {
+      if (dfile.open(QIODevice::ReadOnly)) {
          QTextStream stream(&dfile);
          
          if (!stream.atEnd()) {

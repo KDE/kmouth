@@ -23,7 +23,9 @@
  */
 
 #define INCLUDE_MENUITEM_DEF
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
+//Added by qt3to4:
+#include <QPixmap>
 #include <kstandarddirs.h>
 
 #include "klanguagebutton.h"
@@ -31,7 +33,7 @@
 #include <kdebug.h>
 
 
-static inline void checkInsertPos( QPopupMenu *popup, const QString & str,
+static inline void checkInsertPos( Q3PopupMenu *popup, const QString & str,
                                    int &index )
 {
   if ( index == -2 )
@@ -57,12 +59,12 @@ static inline void checkInsertPos( QPopupMenu *popup, const QString & str,
   index = a; // it doesn't really matter ... a == b here.
 }
 
-static inline QPopupMenu * checkInsertIndex( QPopupMenu *popup,
+static inline Q3PopupMenu * checkInsertIndex( Q3PopupMenu *popup,
                             const QStringList *tags, const QString &submenu )
 {
   int pos = tags->findIndex( submenu );
 
-  QPopupMenu *pi = 0;
+  Q3PopupMenu *pi = 0;
   if ( pos != -1 )
   {
     QMenuItem *p = popup->findItem( pos );
@@ -90,10 +92,10 @@ KLanguageButton::KLanguageButton( QWidget * parent, const char *name )
   clear();
 }
 
-void KLanguageButton::insertItem( const QIconSet& icon, const QString &text,
+void KLanguageButton::insertItem( const QIcon& icon, const QString &text,
                       const QString &tag, const QString &submenu, int index )
 {
-  QPopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
+  Q3PopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
   checkInsertPos( pi, text, index );
   pi->insertItem( icon, text, count(), index );
   m_tags->append( tag );
@@ -102,7 +104,7 @@ void KLanguageButton::insertItem( const QIconSet& icon, const QString &text,
 void KLanguageButton::insertItem( const QString &text, const QString &tag,
                                   const QString &submenu, int index )
 {
-  QPopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
+  Q3PopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
   checkInsertPos( pi, text, index );
   pi->insertItem( text, count(), index );
   m_tags->append( tag );
@@ -110,7 +112,7 @@ void KLanguageButton::insertItem( const QString &text, const QString &tag,
 
 void KLanguageButton::insertSeparator( const QString &submenu, int index )
 {
-  QPopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
+  Q3PopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
   pi->insertSeparator( index );
   m_tags->append( QString::null );
 }
@@ -118,8 +120,8 @@ void KLanguageButton::insertSeparator( const QString &submenu, int index )
 void KLanguageButton::insertSubmenu( const QString &text, const QString &tag,
                                      const QString &submenu, int index )
 {
-  QPopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
-  QPopupMenu *p = new QPopupMenu( pi );
+  Q3PopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
+  Q3PopupMenu *p = new Q3PopupMenu( pi );
   checkInsertPos( pi, text, index );
   pi->insertItem( text, p, count(), index );
   m_tags->append( tag );
@@ -165,7 +167,7 @@ void KLanguageButton::clear()
 
   delete m_oldPopup;
   m_oldPopup = m_popup;
-  m_popup = new QPopupMenu( this );
+  m_popup = new Q3PopupMenu( this );
 
   setPopup( m_popup );
 
@@ -175,7 +177,7 @@ void KLanguageButton::clear()
                         SIGNAL( highlighted( int ) ) );
 
   setText( QString::null );
-  setIconSet( QIconSet() );
+  setIconSet( QIcon() );
 }
 
 /*void KLanguageButton::changeLanguage( const QString& name, int i )
@@ -219,7 +221,7 @@ void KLanguageButton::setCurrentItem( int i )
   m_current = i;
 
   setText( m_popup->text( m_current ) );
-  QIconSet *icon = m_popup->iconSet( m_current );
+  QIcon *icon = m_popup->iconSet( m_current );
   if( icon )
     setIconSet( *icon );
   else

@@ -19,8 +19,12 @@
 #define PHRASEBOOK_H
 
 #include <qobject.h>
-#include <qdragobject.h>
+#include <q3dragobject.h>
 #include <qxml.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QTextStream>
+#include <Q3PopupMenu>
 
 #include <kaction.h>
 #include <kprinter.h>
@@ -72,7 +76,7 @@ private:
    int level;
 };
 
-typedef QValueList<PhraseBookEntry> PhraseBookEntryList;
+typedef Q3ValueList<PhraseBookEntry> PhraseBookEntryList;
 
 /**
  * The class PhraseBook implements a phrase book. It mainly stores a
@@ -131,7 +135,7 @@ public:
    /** Adds the entries of the book to both the given popup menu and the given
     * toolbar. The corresponding actions will be inserted into phrases.
     */
-   void addToGUI (QPopupMenu *popup, KToolBar *toolbar,
+   void addToGUI (Q3PopupMenu *popup, KToolBar *toolbar,
                   KActionCollection *phrases,
                   QObject *receiver, const char *slot) const;
 
@@ -146,7 +150,7 @@ public:
  * The class PhraseBookDrag implements drag and drop support for phrase books.
  * @author Gunnar Schmi Dt
  */
-class PhraseBookDrag: public QDragObject {
+class PhraseBookDrag: public Q3DragObject {
    Q_OBJECT
 public:
    PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
@@ -163,9 +167,9 @@ public:
 
 private:
    bool isEmpty;
-   QTextDrag xmlphrasebook;
-   QTextDrag xml;
-   QTextDrag plain;
+   Q3TextDrag xmlphrasebook;
+   Q3TextDrag xml;
+   Q3TextDrag plain;
 };
 
 class PhraseAction : public KAction {

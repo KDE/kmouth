@@ -39,17 +39,17 @@
 
 class DictionaryListItem : public KListViewItem {
 public:
-   DictionaryListItem (QListView *parent, QString filename, QString name, QString language, QString languageCode)
+   DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString language, QString languageCode)
    : KListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
    };
-   DictionaryListItem (QListView *parent, QString filename, QString name, QString languageCode)
+   DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString languageCode)
    : KListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
-   DictionaryListItem (QListView *parent, QListViewItem *after, QString filename, QString name, QString languageCode)
+   DictionaryListItem (Q3ListView *parent, Q3ListViewItem *after, QString filename, QString name, QString languageCode)
    : KListViewItem (parent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
@@ -155,7 +155,7 @@ void WordCompletionWidget::save() {
          config->deleteGroup (*it);
 
    int number = 0;
-   QListViewItemIterator it(dictionaryList);
+   Q3ListViewItemIterator it(dictionaryList);
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
@@ -184,7 +184,7 @@ void WordCompletionWidget::addDictionary() {
    QStringList dictionaryNames;
    QStringList dictionaryFiles;
    QStringList dictionaryLanguages;
-   QListViewItemIterator it(dictionaryList);
+   Q3ListViewItemIterator it(dictionaryList);
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
@@ -219,10 +219,10 @@ void WordCompletionWidget::deleteDictionary() {
 }
 
 void WordCompletionWidget::moveUp() {
-   QListViewItem *item = dictionaryList->selectedItem ();
+   Q3ListViewItem *item = dictionaryList->selectedItem ();
 
    if (item != 0) {
-      QListViewItem *above = item->itemAbove();
+      Q3ListViewItem *above = item->itemAbove();
 
       if (above != 0) {
          above->moveItem (item);
@@ -231,10 +231,10 @@ void WordCompletionWidget::moveUp() {
 }
 
 void WordCompletionWidget::moveDown() {
-   QListViewItem *item = dictionaryList->selectedItem ();
+   Q3ListViewItem *item = dictionaryList->selectedItem ();
 
    if (item != 0) {
-      QListViewItem *next = item->itemBelow();
+      Q3ListViewItem *next = item->itemBelow();
 
       if (next != 0) {
          item->moveItem (next);
@@ -296,7 +296,7 @@ void WordCompletionWidget::selectionChanged() {
 }
 
 void WordCompletionWidget::nameChanged (const QString &text) {
-   QListViewItem *item = dictionaryList->selectedItem ();
+   Q3ListViewItem *item = dictionaryList->selectedItem ();
 
    if (item != 0) {
       QString old = item->text(0);

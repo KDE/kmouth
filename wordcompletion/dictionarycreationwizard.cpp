@@ -22,7 +22,11 @@
 #include <qlineedit.h>
 #include <qcombobox.h>
 #include <qtextcodec.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QTextStream>
+#include <QGridLayout>
+#include <Q3PtrList>
 
 #include <klistview.h>
 #include <klineedit.h>
@@ -61,9 +65,9 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    dirWidget= new CreationSourceDetailsUI (this, "directory source page");
    addPage (dirWidget, i18n("Source of New Dictionary (2)"));
    dirWidget->urlLabel->setText (i18n("&Directory:"));
-    QWhatsThis::add (dirWidget->urlLabel, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
+    dirWidget->urlLabel->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    dirWidget->url->setMode(KFile::Directory);
-    QWhatsThis::add (dirWidget->url, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
+    dirWidget->url->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    buildCodecCombo (dirWidget->encodingCombo);
 
    kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
@@ -90,7 +94,7 @@ DictionaryCreationWizard::~DictionaryCreationWizard () {
 }
 
 void DictionaryCreationWizard::buildCodecList () {
-   codecList = new QPtrList<QTextCodec>;
+   codecList = new Q3PtrList<QTextCodec>;
    QTextCodec *codec;
    int i;
    for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
@@ -277,14 +281,14 @@ QString DictionaryCreationWizard::language() {
 MergeWidget::MergeWidget(KWizard *parent, const char *name,
                QStringList dictionaryNames, QStringList dictionaryFiles,
                QStringList dictionaryLanguages)
-: QScrollView (parent, name) {
+: Q3ScrollView (parent, name) {
    dictionaries.setAutoDelete (false);
    weights.setAutoDelete (false);
 
    QWidget *contents = new QWidget(viewport());
    addChild(contents);
    QGridLayout *layout = new QGridLayout (contents);
-   setResizePolicy (QScrollView::AutoOneFit);
+   setResizePolicy (Q3ScrollView::AutoOneFit);
    layout->setColStretch (0, 0);
    layout->setColStretch (1, 1);
 
@@ -315,7 +319,7 @@ MergeWidget::~MergeWidget() {
 
 QMap <QString, int> MergeWidget::mergeParameters () {
    QMap <QString, int> files;
-   QDictIterator<QCheckBox> it(dictionaries);
+   Q3DictIterator<QCheckBox> it(dictionaries);
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
          QString name = it.currentKey();
@@ -328,7 +332,7 @@ QMap <QString, int> MergeWidget::mergeParameters () {
 }
 
 QString MergeWidget::language () {
-   QDictIterator<QCheckBox> it(dictionaries);
+   Q3DictIterator<QCheckBox> it(dictionaries);
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
          return languages [it.currentKey()];

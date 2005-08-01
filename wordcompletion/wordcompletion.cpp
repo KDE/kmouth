@@ -1,5 +1,8 @@
 #include <qregexp.h>
 #include <qfile.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QTextStream>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -39,7 +42,7 @@ WordCompletion::~WordCompletion() {
 }
 
 typedef QPair<int,QString> Match;
-typedef QValueList<Match> MatchList;
+typedef Q3ValueList<Match> MatchList;
 
 QString WordCompletion::makeCompletion(const QString &text) {
    if (d->lastText != text) {
@@ -146,7 +149,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    QString filename = d->dictDetails[d->current].filename;
    QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    QFile file(dictionaryFile);
-   if (file.exists() && file.open(IO_ReadOnly)) {
+   if (file.exists() && file.open(QIODevice::ReadOnly)) {
       QTextStream stream(&file);
       stream.setEncoding (QTextStream::UnicodeUTF8);
       if (!stream.atEnd()) {
@@ -199,7 +202,7 @@ void WordCompletion::save () {
       QFile file(dictionaryFile);
       if (!file.exists())
          return;
-      if (!file.open(IO_WriteOnly))
+      if (!file.open(QIODevice::WriteOnly))
          return;
 
       QTextStream stream(&file);

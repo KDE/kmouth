@@ -19,6 +19,9 @@
 #define PHRASETREE_H
 
 #include <qpixmap.h>
+//Added by qt3to4:
+#include <QKeyEvent>
+#include <QDropEvent>
 #include <kshortcut.h>
 #include <klistview.h>
 
@@ -33,13 +36,13 @@ class PhraseTreeItem : public KListViewItem {
    friend class PhraseTree;
 private:
    /** Creates a phrase item within a sub phrase book */
-   PhraseTreeItem (QListView *parent, QListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon);
+   PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon);
    /** Creates a phrase item at the top level */
-   PhraseTreeItem (QListViewItem *parent, QListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon);
+   PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon);
    /** Creates a phrase book item within a sub phrase book */
-   PhraseTreeItem (QListView *parent, QListViewItem *after, QString name, QPixmap icon);
+   PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString name, QPixmap icon);
    /** Creates a phrase book item at the top level */
-   PhraseTreeItem (QListViewItem *parent, QListViewItem *after, QString name, QPixmap icon);
+   PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString name, QPixmap icon);
 
 public:
    bool isPhrase();
@@ -66,16 +69,16 @@ public:
 
    void keyPressEvent (QKeyEvent *e);
 
-   PhraseTreeItem *insertPhrase (QListViewItem *parent, QListViewItem *after, QString phrase, QString shortcut);
-   PhraseTreeItem *insertBook (QListViewItem *parent, QListViewItem *after, QString name);
+   PhraseTreeItem *insertPhrase (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, QString shortcut);
+   PhraseTreeItem *insertBook (Q3ListViewItem *parent, Q3ListViewItem *after, QString name);
 
-   QListViewItem *addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book);
+   Q3ListViewItem *addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book);
    void fillBook (PhraseBook *book, bool respectSelection);
 
-   QDragObject *dragObject ();
-   QDragObject *dragObject (bool isDependent);
+   Q3DragObject *dragObject ();
+   Q3DragObject *dragObject (bool isDependent);
 
-   void moveItem (QListViewItem *item, QListViewItem *parent, QListViewItem *above);
+   void moveItem (Q3ListViewItem *item, Q3ListViewItem *parent, Q3ListViewItem *above);
 
    bool hasSelectedItems();
    void deleteSelectedItems();
@@ -93,8 +96,8 @@ public:
    bool isKeyPresent (const KShortcut& cut, PhraseTreeItem* cutItem, bool warnUser);
 
 public slots:
-   void itemExpanded (QListViewItem *item);
-   void itemCollapsed (QListViewItem *item);
+   void itemExpanded (Q3ListViewItem *item);
+   void itemCollapsed (Q3ListViewItem *item);
 
 signals:
    void shortcutRequest (PhraseShortcutRequest *request);

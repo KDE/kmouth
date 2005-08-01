@@ -18,11 +18,15 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <qbutton.h>
+#include <q3button.h>
 #include <qradiobutton.h>
-#include <qbuttongroup.h>
+#include <q3buttongroup.h>
 #include <qlabel.h>
-#include <qlistview.h> 
+#include <q3listview.h> 
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <QGridLayout>
+#include <QDropEvent>
 #include <kmainwindow.h>
 #include <klineedit.h>
 #include <kkeybutton.h>
@@ -30,7 +34,7 @@
 #include "phrasebook.h"
 #include "buttonboxui.h"
 
-class QListViewItem;
+class Q3ListViewItem;
 class PhraseTreeItem;
 class PhraseTree;
 class QStringList;
@@ -42,17 +46,17 @@ struct StandardBook {
    QString path;
    QString filename;
 };
-typedef QValueList<StandardBook> StandardBookList;
+typedef Q3ValueList<StandardBook> StandardBookList;
 
 /**The class PhraseTreeItem is an ListViewItem for either a phrase or a phrase book.
   *@author Gunnar Schmi Dt
   */
 
-class CheckBookItem : public QCheckListItem {
+class CheckBookItem : public Q3CheckListItem {
 public:
-   CheckBookItem (QListViewItem *parent, QListViewItem *last,
+   CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
             const QString &text, const QString &name, const QString &filename);
-   CheckBookItem (QListView *parent, QListViewItem *last,
+   CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
             const QString &text, const QString &name, const QString &filename);
    ~CheckBookItem();
 
@@ -127,7 +131,7 @@ public:
    ~ButtonBoxWidget ();
 
    KKeyButton *keyButton;
-   QButtonGroup *group;
+   Q3ButtonGroup *group;
 
 protected:
    QGridLayout *keyButtonPlaceLayout;
@@ -168,7 +172,7 @@ public slots:
    void capturedShortcut (const KShortcut& cut);
    
    void selectionChanged ();
-   void contextMenuRequested(QListViewItem *, const QPoint &pos, int);
+   void contextMenuRequested(Q3ListViewItem *, const QPoint &pos, int);
 
    void slotRemove ();
    void slotCut ();
@@ -184,8 +188,8 @@ public slots:
    void slotExportPhrasebook ();
    void slotPrint ();
 
-   void slotDropped (QDropEvent *e, QListViewItem *parent, QListViewItem *after);
-   void slotMoved (QListViewItem *item, QListViewItem *, QListViewItem *);
+   void slotDropped (QDropEvent *e, Q3ListViewItem *parent, Q3ListViewItem *after);
+   void slotMoved (Q3ListViewItem *item, Q3ListViewItem *, Q3ListViewItem *);
 
 signals:
    void phrasebookConfirmed (PhraseBook &book);
@@ -199,8 +203,8 @@ private:
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
    
-   QListViewItem *addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book);
-   QListViewItem *addBook (QListViewItem *item, PhraseBook *book);
+   Q3ListViewItem *addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book);
+   Q3ListViewItem *addBook (Q3ListViewItem *item, PhraseBook *book);
    
    void setShortcut (const KShortcut &cut);
 

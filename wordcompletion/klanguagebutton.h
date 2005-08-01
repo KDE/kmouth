@@ -28,6 +28,8 @@
 #define __KLANGBUTTON_H__
 
 #include "kpushbutton.h"
+//Added by qt3to4:
+#include <Q3PopupMenu>
 
 /*
  * Extended QPushButton that shows a menu with submenu for language selection.
@@ -45,7 +47,7 @@ public:
   KLanguageButton(QWidget *parent=0, const char *name=0);
   ~KLanguageButton();
 
-  void insertItem( const QIconSet& icon, const QString &text,
+  void insertItem( const QIcon& icon, const QString &text,
                    const QString &tag, const QString &submenu = QString::null,
                    int index = -1 );
   void insertItem( const QString &text, const QString &tag,
@@ -86,7 +88,7 @@ private slots:
 private:
   // work space for the new class
   QStringList *m_tags;  
-  QPopupMenu  *m_popup, *m_oldPopup;
+  Q3PopupMenu  *m_popup, *m_oldPopup;
   int         m_current;
 };
 

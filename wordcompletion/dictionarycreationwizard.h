@@ -20,7 +20,7 @@
 #ifndef DICTIONARYCREATIONWIZARD_H
 #define DICTIONARYCREATIONWIZARD_H
 
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <qmap.h>
 
 #include <kwizard.h>
@@ -66,7 +66,7 @@ private:
    KDEDocSourceUI *kdeDocWidget;
    MergeWidget *mergeWidget;
 
-   QPtrList<QTextCodec> *codecList;
+   Q3PtrList<QTextCodec> *codecList;
 };
 
 /**
@@ -74,7 +74,7 @@ private:
  * KDE documentation.
  * @author Gunnar Schmi Dt
  */
-class MergeWidget : public QScrollView {
+class MergeWidget : public Q3ScrollView {
    Q_OBJECT
 public:
    MergeWidget(KWizard *parent, const char *name,
@@ -87,8 +87,8 @@ public:
    QString language ();
 
 private:
-   QDict<QCheckBox> dictionaries;
-   QDict<KIntNumInput> weights;
+   Q3Dict<QCheckBox> dictionaries;
+   Q3Dict<KIntNumInput> weights;
    QMap<QString,QString> languages;
 };
 
