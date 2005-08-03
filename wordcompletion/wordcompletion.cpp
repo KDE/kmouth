@@ -7,6 +7,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
+#include <q3tl.h>
 
 #include "wordcompletion.h"
 

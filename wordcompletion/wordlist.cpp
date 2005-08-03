@@ -139,7 +139,7 @@ bool saveWordList (WordMap map, QString filename) {
 
 void addWords (WordMap &map, QString line) {
    QStringList words = QStringList::split(QRegExp("\\W"), line);
-   
+
    QStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
       if (!(*it).contains(QRegExp("\\d|_"))) {
@@ -168,7 +168,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
    QXmlSimpleReader reader;
    reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);
    reader.setContentHandler (&parser);
-   
+
    WordMap words;
    if (reader.parse(source)) // try to load the file as an xml-file
       addWords(map, parser.getList());
@@ -222,7 +222,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
    int progress = 0;
    int steps = files.count();
    int percent = 0;
-   
+
    WordMap map;
    QStringList::ConstIterator it;
    for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
@@ -241,13 +241,13 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Merging dictionaries..."));
    pdlg->show();
    qApp->processEvents (20);
-   
+
    int progress = 0;
    int steps = files.count();
    int percent = 0;
    float totalWeight = 0;
    long long maxWeight = 0;
-   
+
    QMap<QString,float> map;
    QMap<QString,int>::ConstIterator it;
    for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
@@ -262,7 +262,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
       totalWeight += it.data();
       if (weight > maxWeight)
          maxWeight = weight;
-      
+
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
          if (map.contains(iter.key()))
             map[iter.key()] += iter.data() * factor;
@@ -275,18 +275,18 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
          qApp->processEvents (20);
       }
    }
-   
+
    float factor;
    if (1.0 * maxWeight * totalWeight > 1000000000)
       factor = 1000000000 / totalWeight;
    else
       factor = 1.0 * maxWeight;
-   
+
    WordMap resultMap;
    QMap<QString,float>::ConstIterator iter;
    for (iter = map.begin(); iter != map.end(); ++iter)
       resultMap[iter.key()] = (int)(factor * iter.data() + 0.5);
-   
+
    return resultMap;
 }
 
@@ -294,7 +294,7 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing the KDE documentation..."));
    pdlg->show();
    qApp->processEvents (20);
-   
+
    QStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
       language = language.left(2);
@@ -308,7 +308,7 @@ WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec 
    pdlg->setLabel (i18n("Parsing file..."));
    pdlg->show();
    qApp->processEvents (20);
-   
+
    QStringList files = filename;
 
    return parseFiles (files, encoding, codec, pdlg);
@@ -318,31 +318,30 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
    pdlg->setLabel (i18n("Parsing directory..."));
    pdlg->show();
    qApp->processEvents (20);
-   
+
    QStringList directories;
    directories += directory;
    QStringList files;
    for (QStringList::Iterator it = directories.begin(); it != directories.end(); it = directories.remove(it)) {
       QDir dir(*it);
-      const QFileInfoList *entries = dir.entryInfoList ("*", QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
-      if (entries != 0) {
-         QFileInfoListIterator iter (*entries);
-         while ((iter.current()) != 0) {
-            QString name = iter.current()->fileName();
+      const QFileInfoList entries = dir.entryInfoList ("*", QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
+
+       for (int i = 0; i < entries.size(); ++i) {
+            QFileInfo fileInfo = entries.at(i);
+
+            QString name = fileInfo.fileName();
             if (name != "." && name != "..") {
-               if (iter.current()->isDir())
-                  directories += iter.current()->filePath ();
+               if (fileInfo.isDir())
+                  directories += fileInfo.filePath ();
                else
-                  files += iter.current()->filePath ();
-            }
-            ++iter;
-         }
-      }
+                  files += fileInfo.filePath ();
+
+       }
    }
 
    return parseFiles (files, encoding, codec, pdlg);
 }
-
+#include <q3valuelist.h>
 /***************************************************************************/
 
 /* Structures used for storing *.aff files (part of OpenOffice.org dictionaries)
@@ -394,7 +393,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
                         e.condition << QString(condition[idx]);
                   }
                }
-               
+
                if (s.startsWith("PFX")) {
                   AffList list;
                   if (prefixes.contains (fields[1][0]))
@@ -428,7 +427,7 @@ inline bool checkCondition (const QString &word, const QStringList &condition) {
 
    if (word.length() < condition.count())
       return false;
-   
+
    QStringList::ConstIterator it;
    int idx;
    for (it = condition.begin(), idx = word.length()-condition.count();
@@ -515,7 +514,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       QFile dfile(dictionary);
       if (dfile.open(QIODevice::ReadOnly)) {
          QTextStream stream(&dfile);
-         
+
          if (!stream.atEnd()) {
             QString s = stream.readLine(); // Number of words
             steps = s.toInt();
@@ -526,14 +525,14 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
             if (s.contains("/")) {
                QString word = s.left(s.find("/")).lower();
                QString modifiers = s.right(s.length() - s.find("/"));
-            
+
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }
             else {
                if (!s.isEmpty() && !s.isNull() && map.contains(s.lower()))
                   checkedMap[s.lower()] = map[s.lower()];
             }
-            
+
             progress++;
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
