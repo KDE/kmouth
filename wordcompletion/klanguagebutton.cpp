@@ -27,7 +27,7 @@
 //Added by qt3to4:
 #include <QPixmap>
 #include <kstandarddirs.h>
-
+#include <QMenuItem>
 #include "klanguagebutton.h"
 
 #include <kdebug.h>
@@ -196,7 +196,7 @@ bool KLanguageButton::containsTag( const QString &str ) const
 
 QString KLanguageButton::currentTag() const
 {
-  return *m_tags->at( currentItem() );
+  return m_tags->at( currentItem() );
 }
 
 QString KLanguageButton::tag( int i ) const
@@ -206,7 +206,7 @@ QString KLanguageButton::tag( int i ) const
     kdDebug() << "KLanguageButton::tag(), unknown tag " << i << endl;
     return QString::null;
   }
-  return *m_tags->at( i );
+  return m_tags->at( i );
 }
 
 int KLanguageButton::currentItem() const
