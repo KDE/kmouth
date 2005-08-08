@@ -9,7 +9,6 @@
 
 void KDEDocSourceUI::init() {
     languageButton = new KLanguageButton (this, "languageButton");
-    KDEDocSourceUILayout->addWidget (languageButton, 0, 1);
     languageLabel->setBuddy (languageButton);
     languageButton->setWhatsThis( i18n("With this combo box you select which of the installed languages is used for creating the new dictionary. KMouth will only parse documentation files of this language."));
     
