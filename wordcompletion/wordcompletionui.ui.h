@@ -10,7 +10,6 @@
 
 void WordCompletionUI::init() {
     languageButton = new KLanguageButton (selectedDictionaryDetails, "languageButton");
-    selectedDictionaryDetailsLayout->addWidget (languageButton, 1, 1);
     languageLabel->setBuddy (languageButton);
     languageButton->setWhatsThis( i18n("With this combo box you select the language associated with the selected dictionary."));
     
