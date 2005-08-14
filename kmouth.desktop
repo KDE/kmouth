@@ -64,4 +64,4 @@ GenericName[tr]=Konuşma Sentezleyici Arayüzü
 GenericName[xx]=xxSpeech Synthesizer Frontendxx
 GenericName[zh_CN]=语音合成器前端
 GenericName[zh_TW]=語音合成器前端
-Categories=Qt;KDE;Utility;X-KDE-More;
+Categories=Qt;KDE;Utility;Accessibility;
