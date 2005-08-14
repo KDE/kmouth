@@ -19,9 +19,9 @@
 #ifndef TEXTTOSPEECHSYSTEM_H
 #define TEXTTOSPEECHSYSTEM_H
 
-#include <qstring.h>
-#include <qobject.h>
-#include <q3ptrlist.h>
+#include <QString>
+#include <QList>
+#include <QObject>
 
 class KConfig;
 
@@ -45,7 +45,7 @@ public slots:
 private:
    void buildCodecList ();
 
-   Q3PtrList<QTextCodec> *codecList;
+   QList<QTextCodec*> *codecList;
    int codec;
    QString ttsCommand;
    bool stdIn;

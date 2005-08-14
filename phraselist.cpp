@@ -51,11 +51,12 @@
 
 PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name) {
    isInSlot = false;
-   setBackgroundMode(PaletteBase);
+   // FIXME: Remove or change PaletteBase to Qt::OpaqueMode?
+   // setBackgroundMode(PaletteBase);
    QVBoxLayout *layout = new QVBoxLayout (this);
 
    listBox = new KListBox (this);
-   listBox->setFocusPolicy(QWidget::NoFocus);
+   listBox->setFocusPolicy(Qt::NoFocus);
    listBox->setSelectionMode (Q3ListBox::Extended);
    listBox->setWhatsThis( i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
    layout->addWidget(listBox);
@@ -70,7 +71,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    rowLayout->addWidget(dictionaryCombo);
 
    lineEdit = new PhraseEdit ("", this);
-   lineEdit->setFocusPolicy(QWidget::StrongFocus);
+   lineEdit->setFocusPolicy(Qt::StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(QLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
@@ -81,7 +82,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
 
    QIcon icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
-   speakButton->setFocusPolicy(QWidget::NoFocus);
+   speakButton->setFocusPolicy(Qt::NoFocus);
    speakButton->setAutoDefault(false);
    speakButton->setWhatsThis( i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
@@ -288,7 +289,8 @@ void PhraseList::lineEntered (const QString &phrase) {
 }
 
 void PhraseList::speakPhrase (const QString &phrase) {
-   QApplication::setOverrideCursor (KCursor::WaitCursor, false);
+   // QApplication::setOverrideCursor (KCursor::WaitCursor, false);
+   QApplication::setOverrideCursor (Qt::WaitCursor, false);
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    QString language = completion->languageOfWordList (completion->currentWordList());
    theApp->getTTSSystem()->speak(phrase, language);

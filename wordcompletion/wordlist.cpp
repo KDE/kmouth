@@ -21,7 +21,6 @@
 #include <qdir.h>
 //Added by qt3to4:
 #include <QTextStream>
-#include <Q3ValueList>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -231,7 +230,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         qApp->processEvents (20);
+         qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
    return map;
@@ -240,7 +239,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
 WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Merging dictionaries..."));
    pdlg->show();
-   qApp->processEvents (20);
+   qApp->processEvents (QEventLoop::AllEvents, 20);
 
    int progress = 0;
    int steps = files.count();
@@ -272,7 +271,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         qApp->processEvents (20);
+         qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
 
@@ -293,7 +292,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing the KDE documentation..."));
    pdlg->show();
-   qApp->processEvents (20);
+   qApp->processEvents (QEventLoop::AllEvents, 20);
 
    QStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
@@ -307,9 +306,10 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
 WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing file..."));
    pdlg->show();
-   qApp->processEvents (20);
+   qApp->processEvents (QEventLoop::AllEvents, 20);
 
-   QStringList files = filename;
+   QStringList files;
+   files.append(filename);
 
    return parseFiles (files, encoding, codec, pdlg);
 }
@@ -317,7 +317,7 @@ WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec 
 WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing directory..."));
    pdlg->show();
-   qApp->processEvents (20);
+   qApp->processEvents (QEventLoop::AllEvents, 20);
 
    QStringList directories;
    directories += directory;
@@ -335,14 +335,15 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
                   directories += fileInfo.filePath ();
                else
                   files += fileInfo.filePath ();
-
+            }
        }
    }
 
    return parseFiles (files, encoding, codec, pdlg);
 }
-#include <q3valuelist.h>
 /***************************************************************************/
+
+#include <QList>
 
 /* Structures used for storing *.aff files (part of OpenOffice.org dictionaries)
  */
@@ -352,7 +353,8 @@ struct AffEntry {
    QString add;
    QStringList condition;
 };
-typedef Q3ValueList<AffEntry> AffList;
+
+typedef QList<AffEntry> AffList;
 typedef QMap<QChar,AffList>  AffMap;
 
 /** Loads an *.aff file (part of OpenOffice.org dictionaries)
@@ -446,7 +448,7 @@ inline bool checkCondition (const QString &word, const QStringList &condition) {
  * @param cross true if the word has a prefix
  */
 inline void checkWord(const QString &word, const QString &modifiers, bool cross, const WordMap &map, WordMap &checkedMap, const AffMap &suffixes) {
-   for (uint i = 0; i < modifiers.length(); i++) {
+   for (int i = 0; i < modifiers.length(); i++) {
       if (suffixes.contains(modifiers[i])) {
          AffList sList = suffixes[modifiers[i]];
 
@@ -474,7 +476,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
 
    checkWord(word, modifiers, true, map, checkedMap, suffixes);
 
-   for (uint i = 0; i < modifiers.length(); i++) {
+   for (int i = 0; i < modifiers.length(); i++) {
       if (prefixes.contains(modifiers[i])) {
          AffList pList = prefixes[modifiers[i]];
 
@@ -506,7 +508,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       pdlg->setLabel (i18n("Performing spell check..."));
       pdlg->progressBar()->setTotalSteps(100);
       pdlg->progressBar()->setProgress(0);
-      qApp->processEvents (20);
+      qApp->processEvents (QEventLoop::AllEvents, 20);
       int progress = 0;
       int steps = 0;
       int percent = 0;
@@ -537,7 +539,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
                pdlg->progressBar()->setProgress(percent);
-               qApp->processEvents (20);
+               qApp->processEvents (QEventLoop::AllEvents, 20);
             }
          }
       }

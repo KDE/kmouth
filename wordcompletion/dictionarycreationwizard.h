@@ -20,8 +20,8 @@
 #ifndef DICTIONARYCREATIONWIZARD_H
 #define DICTIONARYCREATIONWIZARD_H
 
-#include <q3ptrlist.h>
-#include <qmap.h>
+#include <QList>
+#include <QMap>
 
 #include <kwizard.h>
 #include <knuminput.h>
@@ -66,7 +66,7 @@ private:
    KDEDocSourceUI *kdeDocWidget;
    MergeWidget *mergeWidget;
 
-   Q3PtrList<QTextCodec> *codecList;
+   QList<QTextCodec*> *codecList;
 };
 
 /**

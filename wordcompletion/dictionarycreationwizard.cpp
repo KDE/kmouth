@@ -26,7 +26,6 @@
 //Added by qt3to4:
 #include <QTextStream>
 #include <QGridLayout>
-#include <Q3PtrList>
 
 #include <klistview.h>
 #include <klineedit.h>
@@ -94,7 +93,7 @@ DictionaryCreationWizard::~DictionaryCreationWizard () {
 }
 
 void DictionaryCreationWizard::buildCodecList () {
-   codecList = new Q3PtrList<QTextCodec>;
+   codecList = new QList<QTextCodec*>;
    QTextCodec *codec;
    int i;
    for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
@@ -108,7 +107,7 @@ void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
    combo->insertItem (local, 0);
    combo->insertItem (i18n("Latin1"), 1);
    combo->insertItem (i18n("Unicode"), 2);
-   for (uint i = 0; i < codecList->count(); i++ )
+   for (int i = 0; i < codecList->count(); i++ )
       combo->insertItem (codecList->at(i)->name(), i+3);
 }
 

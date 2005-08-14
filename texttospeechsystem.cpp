@@ -45,9 +45,9 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 bool kttsdSay (const QString &text, const QString &language) {
    DCOPClient *client = kapp->dcopClient();
    QByteArray  data;
-   Q3CString replyType;
+   DCOPCString replyType;
    QByteArray  replyData;
-   QDataStream arg(data, QIODevice::WriteOnly);
+   QDataStream arg(&data, QIODevice::WriteOnly);
    arg << text << language;
    return client->call("kttsd", "KSpeech", "sayWarning(QString,QString)",
                        data, replyType, replyData, true);
@@ -83,7 +83,7 @@ void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup)
      codec = Speech::Unicode;
   else {
      codec = Speech::Local;
-     for (uint i = 0; i < codecList->count(); i++ )
+     for (int i = 0; i < codecList->count(); i++ )
         if (codecString == codecList->at(i)->name())
            codec = Speech::UseCodec + i;
   }
@@ -100,13 +100,14 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
      config->writeEntry("Codec", "Latin1");
   else if (codec == Speech::Unicode)
      config->writeEntry("Codec", "Unicode");
-  else config->writeEntry("Codec",
-         codecList->at (codec-Speech::UseCodec)->name());
-
+  else {
+     QString codeName = codecList->at (codec-Speech::UseCodec)->name();
+     config->writeEntry("Codec", codeName);
+  }
 }
 
 void TextToSpeechSystem::buildCodecList () {
-   codecList = new Q3PtrList<QTextCodec>;
+   codecList = new QList<QTextCodec*>;
    QTextCodec *codec;
    int i;
    for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)

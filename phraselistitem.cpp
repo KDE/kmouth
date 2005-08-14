@@ -20,7 +20,7 @@
 #include <qpainter.h>
 
 PhraseListItem::PhraseListItem (const QString & text)
-   : QListBoxText::Q3ListBoxText(text) {
+   : Q3ListBoxText(text) {
 }
 
 PhraseListItem::~PhraseListItem() {
@@ -46,7 +46,7 @@ void PhraseListItem::paint (QPainter *p) {
 
    if (drawCursor()) {
       QRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
-      listBox()->style().drawPrimitive (QStyle::PE_FocusRect, p, r,
+      listBox()->style()->drawPrimitive (QStyle::PE_FocusRect, p, r,
                                         listBox()->colorGroup());
    }
 }
