@@ -46,7 +46,7 @@ void PhraseListItem::paint (QPainter *p) {
 
    if (drawCursor()) {
       QRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
-      listBox()->style()->drawPrimitive (QStyle::PE_FocusRect, p, r,
+      listBox()->style()->drawPrimitive (  QStyle::PE_FrameFocusRect, p, r,
                                         listBox()->colorGroup());
    }
 }
