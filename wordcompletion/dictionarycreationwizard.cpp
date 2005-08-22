@@ -208,7 +208,7 @@ QString DictionaryCreationWizard::createDictionary() {
       }
    }
    else { // creationSource->kdeDocButton must be checked
-      QString language = kdeDocWidget->languageButton->currentTag();
+      QString language = kdeDocWidget->languageButton->current();
       if (kdeDocWidget->spellCheckBox->isChecked())
          dicFile = kdeDocWidget->ooDictURL->url();
       map = WordList::parseKDEDoc (language, pdlg);
@@ -265,13 +265,13 @@ QString DictionaryCreationWizard::language() {
          return KLocale::defaultLanguage();
    }
    else if (creationSource->fileButton->isChecked()) {
-      return fileWidget->languageButton->currentTag();
+      return fileWidget->languageButton->current();
    }
    else if (creationSource->directoryButton->isChecked()) {
-      return dirWidget->languageButton->currentTag();
+      return dirWidget->languageButton->current();
    }
    else { // creationSource->kdeDocButton must be checked
-      return kdeDocWidget->languageButton->currentTag();
+      return kdeDocWidget->languageButton->current();
    }
 }
 
@@ -354,7 +354,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    WordList::WordMap map;
    KProgressDialog *pdlg = WordList::progressDialog();
 
-   QString language = languageButton->currentTag();
+   QString language = languageButton->current();
    map = WordList::parseKDEDoc (language, pdlg);
 
    if (spellCheckBox->isChecked())

@@ -135,7 +135,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Filename"),
                                         config->readEntry("Name"),
                                         languageTag);
-         if (!languageButton->containsTag(languageTag))
+         if (!languageButton->contains(languageTag))
             languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
       }
 
@@ -199,7 +199,7 @@ void WordCompletionWidget::addDictionary() {
       QString filename = wizard->createDictionary();
       newDictionaryFiles += filename;
       QString languageTag = wizard->language();
-      if (!languageButton->containsTag(languageTag)) {
+      if (!languageButton->contains(languageTag)) {
          languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
       }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
@@ -313,10 +313,10 @@ void WordCompletionWidget::languageSelected (int) {
 
    if (item != 0) {
       QString old = item->text(1);
-      QString text = languageButton->currentTag();
+      QString text = languageButton->current();
 
       if (old != text) {
-         item->setLanguage(languageButton->text(), text);
+         item->setLanguage(languageButton->current(), text);
          emit changed(true);
       }
    }
