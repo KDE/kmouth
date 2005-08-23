@@ -17,11 +17,7 @@
 
 
 #include "texttospeechsystem.h"
-#include <qregexp.h>
-#include <qtextcodec.h>
-#include <q3ptrlist.h>
-//Added by qt3to4:
-#include <Q3CString>
+#include <QTextCodec>
 #include <stdlib.h>
 
 #include <kapplication.h>
@@ -109,10 +105,9 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
 void TextToSpeechSystem::buildCodecList () {
    codecList = new QList<QTextCodec*>;
    QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
-   QTextCodec *codec;
    for (int i = 0; i < availableCodecs.count(); ++i) {
-      codec = QTextCodec::codecForName(availableCodecs[i]);
-      codecList->append (codec);
+       QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
+       codecList->append (codec);
    }
 }
 

@@ -94,10 +94,11 @@ DictionaryCreationWizard::~DictionaryCreationWizard () {
 
 void DictionaryCreationWizard::buildCodecList () {
    codecList = new QList<QTextCodec*>;
-   QTextCodec *codec;
-   int i;
-   for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
-      codecList->append (codec);
+   QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
+   for (int i = 0; i < availableCodecs.count(); ++i) {
+       QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
+       codecList->append (codec);
+   }
 }
 
 void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
