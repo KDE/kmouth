@@ -108,10 +108,12 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
 
 void TextToSpeechSystem::buildCodecList () {
    codecList = new QList<QTextCodec*>;
+   QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
    QTextCodec *codec;
-   int i;
-   for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
+   for (int i = 0; i < availableCodecs.count(); ++i) {
+      codec = QTextCodec::codecForName(availableCodecs[i]);
       codecList->append (codec);
+   }
 }
 
 #include "texttospeechsystem.moc"
