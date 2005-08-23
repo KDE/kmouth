@@ -144,9 +144,11 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    bool result = d->dictDetails.contains (wordlist);
    if (result)
       d->current = wordlist;
-   else
+   else {
+      if (d->dictionaries.isEmpty()) return false;
       d->current = d->dictionaries[0];
-   
+   }
+
    QString filename = d->dictDetails[d->current].filename;
    QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    QFile file(dictionaryFile);

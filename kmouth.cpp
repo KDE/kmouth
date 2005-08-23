@@ -135,9 +135,10 @@ void KMouthApp::initActions() {
 
 // The "Options" menu
    viewMenuBar = KStdAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
-   viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
-   viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
-   viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
+   // FIXME: Disable so it will compile.
+   // viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
+   // viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
+   // viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
    viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), 0, 0, this, SLOT(slotViewPhrasebookBar()), actionCollection(), "showPhrasebookBar");
    viewPhrasebookBar->setStatusText(i18n("Enables/disables the phrasebook bar"));
@@ -217,7 +218,8 @@ void KMouthApp::saveOptions() {
       config->setGroup("General Options");
       config->writeEntry("Geometry", size());
       config->writeEntry("Show Menubar", viewMenuBar->isChecked());
-      config->writeEntry("Show Toolbar", viewToolBar->isChecked());
+      // FIXME: Toolbar disabled so it will compile.
+      // config->writeEntry("Show Toolbar", viewToolBar->isChecked());
       config->writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
       config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
       config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
@@ -240,9 +242,10 @@ void KMouthApp::readOptions()
   viewMenuBar->setChecked(bViewMenubar);
   slotViewMenuBar();
 
-  bool bViewToolbar = config->readBoolEntry("Show Toolbar", true);
-  viewToolBar->setChecked(bViewToolbar);
-  slotViewToolBar();
+  // FIXME: Toolbar disabled so it will compile.
+  // bool bViewToolbar = config->readBoolEntry("Show Toolbar", true);
+  // viewToolBar->setChecked(bViewToolbar);
+  // slotViewToolBar();
 
   bool bViewPhrasebookbar = config->readBoolEntry("Show Phrasebook Bar", true);
   viewPhrasebookBar->setChecked(bViewPhrasebookbar);

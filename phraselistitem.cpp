@@ -17,6 +17,7 @@
 
 #include "phraselistitem.h"
 #include <qstyle.h>
+#include <QStyleOptionFocusRect>
 #include <qpainter.h>
 
 PhraseListItem::PhraseListItem (const QString & text)
@@ -46,7 +47,8 @@ void PhraseListItem::paint (QPainter *p) {
 
    if (drawCursor()) {
       QRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
-      listBox()->style()->drawPrimitive (  QStyle::PE_FrameFocusRect, p, r,
-                                        listBox()->colorGroup());
+      QStyleOptionFocusRect option;
+      option.rect = r;
+      listBox()->style()->drawPrimitive (  QStyle::PE_FrameFocusRect, &option, p);
    }
 }
