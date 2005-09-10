@@ -28,12 +28,8 @@
 #include <kdebug.h>
 
 #include <kdeversion.h>
-#ifdef KDE_IS_VERSION
-#if KDE_IS_VERSION(3,2,0)
    #define macroExpander
    #include <kmacroexpander.h>
-#endif
-#endif
 
 Speech::Speech() {
 }
