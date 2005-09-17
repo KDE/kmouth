@@ -24,7 +24,7 @@
 #include <qlabel.h>
 #include <q3listview.h> 
 //Added by qt3to4:
-#include <Q3ValueList>
+#include <QList>
 #include <QGridLayout>
 #include <QDropEvent>
 #include <kmainwindow.h>
@@ -46,7 +46,7 @@ struct StandardBook {
    QString path;
    QString filename;
 };
-typedef Q3ValueList<StandardBook> StandardBookList;
+typedef QList<StandardBook> StandardBookList;
 
 /**The class PhraseTreeItem is an ListViewItem for either a phrase or a phrase book.
   *@author Gunnar Schmi Dt

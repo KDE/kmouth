@@ -1,7 +1,7 @@
 #include <qregexp.h>
 #include <qfile.h>
 //Added by qt3to4:
-#include <Q3ValueList>
+#include <QList>
 #include <QTextStream>
 
 #include <kapplication.h>
@@ -43,7 +43,7 @@ WordCompletion::~WordCompletion() {
 }
 
 typedef QPair<int,QString> Match;
-typedef Q3ValueList<Match> MatchList;
+typedef QList<Match> MatchList;
 
 QString WordCompletion::makeCompletion(const QString &text) {
    if (d->lastText != text) {
