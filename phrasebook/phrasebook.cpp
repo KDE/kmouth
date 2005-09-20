@@ -21,8 +21,6 @@
 #include <qxml.h>
 #include <qregexp.h>
 #include <q3ptrstack.h>
-//Added by qt3to4:
-#include <Q3CString>
 #include <QTextStream>
 #include <Q3PopupMenu>
 
@@ -151,12 +149,12 @@ bool PhraseBook::decode (QXmlInputSource &source) {
       return false;
 }
 
-Q3CString encodeString (const QString str) {
-   Q3CString res = "";
+QByteArray encodeString (const QString str) {
+   QByteArray res = "";
    for (int i = 0; i < (int)str.length(); i++) {
       QChar ch = str.at(i);
       ushort uc = ch.unicode();
-      Q3CString number; number.setNum(uc);
+      QByteArray number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
          res = res + "&#" + number + ";";
       else
@@ -482,7 +480,7 @@ const char *PhraseBookDrag::format (int i) const {
 }
 
 QByteArray PhraseBookDrag::encodedData (const char* mime) const {
-   Q3CString m(mime);
+   QByteArray m(mime);
    m = m.lower();
    if (m.contains("xml-phrasebook"))
       return xmlphrasebook.encodedData(mime);
