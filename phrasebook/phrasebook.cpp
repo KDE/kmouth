@@ -214,7 +214,7 @@ QStringList PhraseBook::toStringList () {
 
 bool PhraseBook::save (const KURL &url) {
    QRegExp pattern("*.phrasebook",true,true);
-   return save (url, pattern.exactMatch(url.filename()));
+   return save (url, pattern.exactMatch(url.fileName()));
 }
 
 
@@ -289,7 +289,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
       }
       else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
          int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
-                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
+                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.fileName())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
@@ -305,7 +305,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
       }
       else {
          int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-                                                           "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
+                                                           "Do you wish to save in phrasebook format?").arg(url.fileName())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
