@@ -137,7 +137,7 @@ bool saveWordList (WordMap map, QString filename) {
 /***************************************************************************/
 
 void addWords (WordMap &map, QString line) {
-   QStringList words = QStringList::split(QRegExp("\\W"), line);
+   QStringList words = line.split( QRegExp("\\W"));
 
    QStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
@@ -184,7 +184,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
                while (!stream.atEnd()) {
                   QString s = stream.readLine();
                   if (!(s.isNull() || s.isEmpty())) {
-                     QStringList list = QStringList::split("\t", s);
+                     QStringList list = s.split( "\t");
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
@@ -367,7 +367,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
       QTextStream stream(&afile);
       while (!stream.atEnd()) {
          QString s = stream.readLine();
-         QStringList fields = QStringList::split(QRegExp("\\s"), s);
+         QStringList fields = s.split( QRegExp("\\s"));
 
          if (fields.count() == 4) {
             cross = (fields[2] == "Y");

@@ -178,7 +178,7 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       QString namePath = (*it).path;
-      QStringList dirs = QStringList::split("/", namePath);
+      QStringList dirs = namePath.split( "/");
 
       QStringList::iterator it1=currentNamePath.begin();
       QStringList::iterator it2=dirs.begin();
@@ -450,7 +450,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       url.setPath((*it).filename);
 
       QString namePath = "x/"+(*it).path;
-      QStringList dirs = QStringList::split("/", namePath);
+      QStringList dirs = namePath.split( "/");
 
       QStringList::iterator it1=currentNamePath.begin();
       QStringList::iterator it2=dirs.begin();

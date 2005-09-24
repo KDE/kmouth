@@ -160,7 +160,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
             while (!stream.atEnd()) {
                QString s = stream.readLine();
                if (!(s.isNull() || s.isEmpty())) {
-                  QStringList list = QStringList::split("\t", s);
+                  QStringList list = s.split( "\t");
                   bool ok;
                   int weight = list[1].toInt(&ok);
                   if (ok && (weight > 0))
@@ -179,7 +179,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
 }
 
 void WordCompletion::addSentence (const QString &sentence) {
-   QStringList words = QStringList::split(QRegExp("\\W"), sentence);
+   QStringList words = sentence.split( QRegExp("\\W"));
    
    QStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
