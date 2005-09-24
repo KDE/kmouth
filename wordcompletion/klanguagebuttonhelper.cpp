@@ -48,7 +48,7 @@ void loadLanguageList(KLanguageButton *combo)
 	it != langlist.end(); ++it )
   {
     QString fpath = (*it).left((*it).length() - 14);
-    int index = fpath.findRev('/');
+    int index = fpath.lastIndexOf('/');
     QString nid = fpath.mid(index + 1);
 
     KSimpleConfig entry(*it);

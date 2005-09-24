@@ -468,7 +468,7 @@ static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
 }
 
 void PhraseTree::_warning (const KKeySequence& cut, QString sAction, QString sTitle) {
-   sAction = sAction.stripWhiteSpace();
+   sAction = sAction.trimmed();
 
    QString s =
        i18n("The '%1' key combination has already been allocated "

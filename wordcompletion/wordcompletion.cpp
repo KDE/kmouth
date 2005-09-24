@@ -50,7 +50,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
       d->lastText = text;
       KCompletion::clear();
 
-      int border = text.findRev(QRegExp("\\W"));
+      int border = text.lastIndexOf(QRegExp("\\W"));
       QString suffix = text.right (text.length() - border - 1).lower();
       QString prefix = text.left (border + 1);
 
