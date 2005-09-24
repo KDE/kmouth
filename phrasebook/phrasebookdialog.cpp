@@ -387,7 +387,7 @@ void PhraseBookDialog::initActions() {
 
 QString PhraseBookDialog::displayPath (QString filename) {
    QFileInfo file(filename);
-   QString path = file.dirPath();
+   QString path = file.path();
    QString dispPath = "";
    int position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
 
@@ -403,7 +403,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
       else
          dispPath += "/" + name;
 
-      path = file.dirPath();
+      path = file.path();
    }
    return dispPath;
 }
