@@ -425,7 +425,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
       }
       e->accept();
    }
-   else if ((e->state() & Qt::KeyButtonMask) == Qt::ControlButton) {
+   else if ((e->state() & Qt::KeyboardModifierMask) == Qt::ControlModifier) {
       if (e->key() == Qt::Key_C) {
          copy();
          e->accept();

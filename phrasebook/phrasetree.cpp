@@ -285,7 +285,7 @@ void PhraseTree::deleteSelectedItems() {
 }
 
 void PhraseTree::keyPressEvent (QKeyEvent *e) {
-   if ((e->state() & Qt::KeyButtonMask) == Qt::AltButton) {
+   if ((e->state() & Qt::KeyboardModifierMask) == Qt::AltModifier) {
       if (e->key() == Qt::Key_Up) {
          Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
