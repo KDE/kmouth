@@ -51,7 +51,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
       KCompletion::clear();
 
       int border = text.lastIndexOf(QRegExp("\\W"));
-      QString suffix = text.right (text.length() - border - 1).lower();
+      QString suffix = text.right (text.length() - border - 1).toLower();
       QString prefix = text.left (border + 1);
 
       if (suffix.length() > 0) {
@@ -184,7 +184,7 @@ void WordCompletion::addSentence (const QString &sentence) {
    QStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
       if (!(*it).contains(QRegExp("\\d|_"))) {
-         QString key = (*it).lower();
+         QString key = (*it).toLower();
          if (d->map.contains(key))
             d->map[key] += 1;
          else

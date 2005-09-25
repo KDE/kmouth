@@ -142,7 +142,7 @@ void addWords (WordMap &map, QString line) {
    QStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
       if (!(*it).contains(QRegExp("\\d|_"))) {
-         QString key = (*it).lower();
+         QString key = (*it).toLower();
          if (map.contains(key))
             map[key] += 1;
          else
@@ -525,14 +525,14 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
          while (!stream.atEnd()) {
             QString s = stream.readLine();
             if (s.contains("/")) {
-               QString word = s.left(s.find("/")).lower();
+               QString word = s.left(s.find("/")).toLower();
                QString modifiers = s.right(s.length() - s.find("/"));
 
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }
             else {
-               if (!s.isEmpty() && !s.isNull() && map.contains(s.lower()))
-                  checkedMap[s.lower()] = map[s.lower()];
+               if (!s.isEmpty() && !s.isNull() && map.contains(s.toLower()))
+                  checkedMap[s.toLower()] = map[s.toLower()];
             }
 
             progress++;

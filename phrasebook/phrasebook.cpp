@@ -481,7 +481,7 @@ const char *PhraseBookDrag::format (int i) const {
 
 QByteArray PhraseBookDrag::encodedData (const char* mime) const {
    QByteArray m(mime);
-   m = m.lower();
+   m = m.toLower();
    if (m.contains("xml-phrasebook"))
       return xmlphrasebook.encodedData(mime);
    else if (m.contains("xml"))
