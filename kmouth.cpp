@@ -29,7 +29,7 @@
 #include <kconfig.h>
 #include <kstdaction.h>
 #include <kprinter.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <kstandarddirs.h>
 
 // application specific includes

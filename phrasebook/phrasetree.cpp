@@ -79,7 +79,7 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 // ***************************************************************************
 
 PhraseTree::PhraseTree (QWidget *parent, const char *name)
-   : KListView (parent, name)
+   : KListView (parent)
 {
    phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
    phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);

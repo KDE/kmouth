@@ -26,7 +26,7 @@
 
 #include <klocale.h>
 #include <kaction.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <ktoolbar.h>
 #include <ktempfile.h>
 #include <kio/netaccess.h>
