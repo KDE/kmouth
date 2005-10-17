@@ -35,7 +35,7 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <klocale.h>
 #include <kaction.h>
 #include <kapplication.h>
