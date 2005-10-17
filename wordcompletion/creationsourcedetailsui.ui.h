@@ -9,7 +9,7 @@
 
 
 void CreationSourceDetailsUI::init() {
-    languageButton = new KLanguageButton (this, "languageButton");
+    languageButton = new KLanguageButton (this);
     languageLabel->setBuddy (languageButton);
     languageButton->setWhatsThis( i18n("With this combo box you decide which language should be associated with the new dictionary."));
     

@@ -36,6 +36,7 @@
 
 // include files for KDE
 #include <kmenu.h>
+#include <kxmlguifactory.h>
 #include <klocale.h>
 #include <kaction.h>
 #include <kapplication.h>
@@ -150,7 +151,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
    mainLayout->add (label);
 
-   books = new KListView (this, "books");
+   books = new KListView (this);
    books->setSorting (-1);
    books->setItemsMovable (false);
    books->setDragEnabled (false);
@@ -329,56 +330,56 @@ void PhraseBookDialog::initGUI () {
 void PhraseBookDialog::initActions() {
 // The file menu
    fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, this, SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
-   fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
+   fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
    fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
-   fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
+   fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
    fileSave = KStdAction::save(this, SLOT(slotSave()), actionCollection());
-   fileSave->setStatusText(i18n("Saves the phrase book onto the hard disk"));
+   fileSave->setToolTip(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
    fileImport = new KAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
-   fileImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
+   fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
    toolbarImport = new KToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
-   toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
+   toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
    fileImportStandardBook = new KActionMenu (i18n("I&mport Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
-   fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
+   fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
    fileExport = new KAction (i18n("&Export..."), "phrasebook_save", 0, this, SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
-   fileExport->setStatusText(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
+   fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
    filePrint = KStdAction::print(this, SLOT(slotPrint()), actionCollection());
-   filePrint->setStatusText(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
+   filePrint->setToolTip(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
    filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
 
    fileClose = KStdAction::close(this, SLOT(close()), actionCollection());
-   fileClose->setStatusText(i18n("Closes the window"));
+   fileClose->setToolTip(i18n("Closes the window"));
    fileClose->setWhatsThis (i18n("Closes the window"));
 
 // The edit menu
    editCut = KStdAction::cut(this, SLOT(slotCut()), actionCollection());
-   editCut->setStatusText(i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
+   editCut->setToolTip(i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
 
    editCopy = KStdAction::copy(this, SLOT(slotCopy()), actionCollection());
-   editCopy->setStatusText(i18n("Copies the currently selected entry from the phrase book to the clipboard"));
+   editCopy->setToolTip(i18n("Copies the currently selected entry from the phrase book to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the currently selected entry from the phrase book to the clipboard"));
 
    editPaste = KStdAction::paste(this, SLOT(slotPaste()), actionCollection());
-   editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
+   editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
    editDelete = new KAction (i18n("&Delete"), "editdelete", 0, this, SLOT(slotRemove()), actionCollection(),"edit_delete");
-   editDelete->setStatusText(i18n("Deletes the selected entries from the phrase book"));
+   editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 
    // use the absolute path to your kmouthui.rc file for testing purpose in createGUI();
