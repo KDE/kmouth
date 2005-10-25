@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
   KApplication app;
 
-  if (app.isRestored())
+  if (app.isSessionRestored())
   {
     RESTORE(KMouthApp);
   }
