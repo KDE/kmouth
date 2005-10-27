@@ -111,7 +111,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
    for (it = begin(); it != end(); ++it) {
       QRect rect = metrics.boundingRect (x+16*(*it).getLevel(), y,
                                          w-16*(*it).getLevel(), 0,
-                                         Qt::AlignJustify | Qt::WordBreak,
+                                         Qt::AlignJustify | Qt::TextWordWrap,
                                          (*it).getPhrase().getPhrase());
 
       if (y+rect.height() > size.height()) {
@@ -120,7 +120,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
       }
       printpainter.drawText (x+16*(*it).getLevel(),y,
                              w-16*(*it).getLevel(),rect.height(),
-                             Qt::AlignJustify | Qt::WordBreak,
+                             Qt::AlignJustify | Qt::TextWordWrap,
                              (*it).getPhrase().getPhrase());
       y += rect.height();
    }
