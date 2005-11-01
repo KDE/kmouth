@@ -31,6 +31,7 @@
 #include <kprinter.h>
 #include <kmenu.h>
 #include <kstandarddirs.h>
+#include <kglobal.h>
 
 // application specific includes
 #include "kmouth.h"
@@ -45,7 +46,7 @@
 KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
 {
    isConfigured = false;
-   config=kapp->config();
+   config=KGlobal::config();
 
    ///////////////////////////////////////////////////////////////////
    // call inits to invoke all other construction parts

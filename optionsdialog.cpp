@@ -218,7 +218,7 @@ KCModule *OptionsDialog::loadKttsd () {
          // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
          KLibFactory *factory = lib->factory();
          if (factory != 0) {
-            KCModule *module = KParts::ComponentFactory::createInstanceFromFactory<KCModule> (factory);
+            KCModule *module = KLibFactory::create<KCModule> (factory);
             if (module)
                 return module;
          }
