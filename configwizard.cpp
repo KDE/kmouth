@@ -25,6 +25,7 @@
 #include <kstandarddirs.h>
 #include <ksconfig.h>
 #include <kconfig.h>
+#include <ktoolinvocation.h>
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/phrasebookdialog.h"
@@ -138,7 +139,7 @@ bool ConfigWizard::configurationNeeded () {
 }
 
 void ConfigWizard::help () {
-   KApplication::kApplication()->invokeHelp ("Wizard");
+   KToolInvocation::invokeHelp ("Wizard");
 }
 
 #include "configwizard.moc"
