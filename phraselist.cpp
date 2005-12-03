@@ -66,7 +66,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
 
    completion = new WordCompletion();
 
-   dictionaryCombo = new KComboBox (this, "Dictionary Combo");
+   dictionaryCombo = new KComboBox (this);
    configureCompletionCombo(completion->wordLists());
    rowLayout->addWidget(dictionaryCombo);
 
