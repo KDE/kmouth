@@ -120,7 +120,9 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    setHelp ("config-dialog");
 
    QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
-   Q3Grid *pageGeneral = addGridPage (1, Qt::Horizontal, i18n("General Options"), QString::null, iconGeneral);
+   KHBox *pageGeneral = addHBoxPage( i18n("General Options"), QString::null, iconGeneral);
+   
+	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString::null, iconGeneral);
    
    tabCtl = new QTabWidget (pageGeneral, "general");
 
@@ -133,13 +135,13 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
-   Q3Grid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), QString::null, iconCompletion);
+   KHBox *pageCompletion = addHBoxPage (i18n("Word Completion"), QString::null, iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
       QPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
-      Q3Grid *pageKttsd = addGridPage (1, Qt::Horizontal, i18n("KTTSD Speech Service"),
+      KHBox *pageKttsd = addHBoxPage (i18n("KTTSD Speech Service"),
                                       i18n("KDE Text-to-Speech Daemon Configuration"), iconKttsd);
       
       kttsd->reparent(pageKttsd,0,QPoint(0,0),true);
@@ -218,7 +220,7 @@ KCModule *OptionsDialog::loadKttsd () {
          // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
          KLibFactory *factory = lib->factory();
          if (factory != 0) {
-            KCModule *module = KLibFactory::create<KCModule> (factory);
+            KCModule *module = factory->create<KCModule> (factory);
             if (module)
                 return module;
          }

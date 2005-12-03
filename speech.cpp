@@ -23,6 +23,7 @@
 #include <qregexp.h>
 #include <qtextcodec.h>
 #include <qfile.h>
+#include <QHash>
 //Added by qt3to4:
 #include <QTextStream>
 #include <kdebug.h>
@@ -40,7 +41,7 @@ Speech::~Speech() {
 QString Speech::prepareCommand (QString command, const QString &text,
                           const QString &filename, const QString &language) {
 #ifdef macroExpander
-   QMap<QChar,QString> map;
+   QHash<QChar,QString> map;
    map['t'] = text;
    map['f'] = filename;
    map['l'] = language;

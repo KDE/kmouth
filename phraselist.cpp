@@ -37,6 +37,7 @@
 #include <kfiledialog.h>
 #include <kcombobox.h>
 #include <kmessagebox.h>
+#include <kxmlguifactory.h>
 
 #include <stdlib.h>
 
