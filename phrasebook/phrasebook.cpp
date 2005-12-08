@@ -379,7 +379,7 @@ void PhraseBook::addToGUI (Q3PopupMenu *popup, KToolBar *toolbar, KActionCollect
       QWidget *parent = popup;
       int level = 0;
 
-      Q3ValueListConstIterator<PhraseBookEntry> it;
+      QList<PhraseBookEntry>::ConstIterator it;
       for (it = begin(); it != end(); ++it) {
          int newLevel = (*it).getLevel();
          while (newLevel > level) {
@@ -427,7 +427,7 @@ void PhraseBook::addToGUI (Q3PopupMenu *popup, KToolBar *toolbar, KActionCollect
 void PhraseBook::insert (const QString &name, const PhraseBook &book) {
    *this += PhraseBookEntry(Phrase(name), 0, false);
 
-   Q3ValueListConstIterator<PhraseBookEntry> it;
+   QList<PhraseBookEntry>::ConstIterator it;
    for (it = book.begin(); it != book.end(); ++it) {
       *this += PhraseBookEntry ((*it).getPhrase(), (*it).getLevel()+1, (*it).isPhrase());
    }

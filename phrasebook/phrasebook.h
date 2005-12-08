@@ -22,7 +22,6 @@
 #include <q3dragobject.h>
 #include <qxml.h>
 //Added by qt3to4:
-#include <Q3ValueList>
 #include <QTextStream>
 #include <Q3PopupMenu>
 
@@ -76,7 +75,7 @@ private:
    int level;
 };
 
-typedef Q3ValueList<PhraseBookEntry> PhraseBookEntryList;
+typedef QList<PhraseBookEntry> PhraseBookEntryList;
 
 /**
  * The class PhraseBook implements a phrase book. It mainly stores a

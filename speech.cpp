@@ -17,8 +17,7 @@
 
 #include "speech.h"
 #include <qstring.h>
-#include <q3valuelist.h>
-#include <q3valuestack.h>
+#include <QStack>
 #include <qstringlist.h>
 #include <qregexp.h>
 #include <qtextcodec.h>
@@ -47,7 +46,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
    map['l'] = language;
    return KMacroExpander::expandMacrosShellQuote (command, map);
 #else
-   Q3ValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
+   QStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
