@@ -23,7 +23,7 @@
 #include <qxml.h>
 //Added by qt3to4:
 #include <QTextStream>
-#include <Q3PopupMenu>
+#include <QMenu>
 
 #include <kaction.h>
 #include <kprinter.h>
@@ -134,7 +134,7 @@ public:
    /** Adds the entries of the book to both the given popup menu and the given
     * toolbar. The corresponding actions will be inserted into phrases.
     */
-   void addToGUI (Q3PopupMenu *popup, KToolBar *toolbar,
+   void addToGUI (QMenu *popup, KToolBar *toolbar,
                   KActionCollection *phrases,
                   QObject *receiver, const char *slot) const;
 

@@ -372,7 +372,7 @@ bool PhraseBook::open (const KURL &url) {
       return false;
 }
 
-void PhraseBook::addToGUI (Q3PopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
+void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
                   QObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
       Q3PtrStack<QWidget> stack;
