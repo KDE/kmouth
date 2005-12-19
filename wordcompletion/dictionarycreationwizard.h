@@ -22,7 +22,7 @@
 
 #include <QList>
 #include <QMap>
-
+#include <Q3Dict>
 #include <kwizard.h>
 #include <knuminput.h>
 #include "kdedocsourceui.h"
