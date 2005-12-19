@@ -19,9 +19,9 @@
         <address><email>gunnar@schmi-dt.de</email></address>
       </affiliation>
     </author>
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
   </authorgroup>
 
-  <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
   <copyright>
     <year>2002</year><year>2003</year>
@@ -31,7 +31,7 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2004-05-31</date>
+  <date>2005-12-10</date>
   <releaseinfo>1.1.1</releaseinfo>
 
   <abstract>
@@ -105,7 +105,7 @@
     </para>
     <para>
       With the third page (the right screen shot) you define the dictionary
-      for a word completion. &kmouth; will parse the KDE documentation of
+      for a word completion. &kmouth; will parse the &kde; documentation of
       the chosen language in order to detect the frequentness of individual
       words. Optionally you can compare the word list to an OpenOffice.org
       dictionary in order to only add correctly spelled words to the word
@@ -113,7 +113,7 @@
     </para>
   </sect1>
   <sect1 id="main-window">
-    <title>The main window</title>
+    <title>The Main Window</title>
     <para>
       The main window of &kmouth; is fairly simple. It consists basically of an
       edit field into which you type your sentences (the lower white field in
@@ -155,7 +155,9 @@
         <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
       </menuchoice>
       you open the configuration dialog of &kmouth;. This dialog consists of
-      two tabs, <guilabel>Text-to-Speech</guilabel> and <guilabel>Preferences</guilabel>.
+      the pages <guilabel>General Options</guilabel> with the two tabs <guilabel>Text-to-Speech</guilabel> 
+      and <guilabel>Preferences</guilabel>, the page <guilabel>Word Completion</guilabel> and
+       the page <guilabel>KTTSD Speech Service</guilabel> 
     </para>
     <sect2 id="tts-config">
       <title>The <guilabel>Text-to-Speech</guilabel> tab</title>
@@ -249,13 +251,13 @@
         &kmouth; in certain situations.
       </para>
       <para>
-        With the first combo box, <guilabel>Selection of phrases in the phrase book</guilabel>,
+        With the first combo box, <guilabel>Selection of phrases in the phrase book:</guilabel>,
         you specify which action is triggered by typing the shortcut of a
         phrase or by selecting a phrase in the <guimenu>Phrase Book</guimenu>
         menu or in the phrase book bar.
       </para>
       <para>
-        By selecting <guilabel>Speak immediately</guilabel> the
+        By selecting <guilabel>Speak Immediately</guilabel> the
         selected phrase gets immediately spoken and is entered into
         the history. If you select <guilabel>Insert Into Edit
         Field</guilabel> the selected phrase is just inserted into the
@@ -263,14 +265,14 @@
       </para>
       <para>
         With the second combo box, <guilabel>Closing the phrase book
-        edit window</guilabel>, you specify whether the phrase book
+        edit window:</guilabel>, you specify whether the phrase book
         gets saved if you just close the phrase book edit window.
       </para>
       <para>
         By selecting <guilabel>Save Phrase Book</guilabel> the phrase
         book gets saved. If you select <guilabel>Discard
         changes</guilabel> the changes are discarded and the phrase 
-        book is not saved. If you select <guilabel>Ask whether to
+        book is not saved. If you select <guilabel>Ask Whether to
         Save</guilabel> &kmouth; will ask you whether it shall save
         the phrase book.
       </para>
@@ -313,10 +315,10 @@
       </para>
       <itemizedlist>
         <listitem>
-          <para>Create a new dictionary from the KDE documentation</para>
+          <para>Create a new dictionary from the &kde; documentation</para>
           <para>
             If you use this source &kmouth; will ask you for the intended
-            language and afterwards parse the KDE documentation. The
+            language and afterwards parse the &kde; documentation. The
             frequentness of the individual words is detect by simply counting
             the occurrences of each word. Optionally you can compare the word
             list to an OpenOffice.org dictionary in order to only add correctly
@@ -327,10 +329,10 @@
           <para>Create a new dictionary from a file</para>
           <para>
             If you use this source &kmouth; will ask you for the intended
-            file. You may either select an XML file, a standard text file or
+            file. You may either select an &XML; file, a standard text file or
             a file containing a word completion dictionary created by either
             &kmouth; or GOK (the GNOME On-screen Keyboard). If you select a
-            standard text file or an XML file the frequentness of the individual
+            standard text file or an &XML; file the frequentness of the individual
             words is detected by simply counting the occurrences of each word.
             Optionally you can compare the word list to an OpenOffice.org
             dictionary in order to only add correctly spelled words to the new
@@ -342,7 +344,7 @@
           <para>
             If you use this source &kmouth; will ask you for the intended folder.
             &kmouth; will open all files in that folder and its subdirectories.
-            Each file is either loaded as a completion dictionary, as an XML file
+            Each file is either loaded as a completion dictionary, as an &XML; file
             or as a standard text file. In the latter two cases the occurrences of
             each individual word in the file is counted. Optionally you can compare
             the word list to an OpenOffice.org dictionary in order to only add
@@ -366,6 +368,11 @@
           </para>
         </listitem>
       </itemizedlist>
+    </sect2>
+    <sect2 id="kttsd-speech-service-config">
+      <title>The <guilabel>KTTSD Speech Service</guilabel> page</title>
+      <para>The configuration of the &kde; Speech Service is described in detail in the 
+        <ulink url="help:kttsd">KTTS Handbook</ulink>.</para>
     </sect2>
   </sect1>
   <sect1 id="phrasebook-editor">
@@ -407,7 +414,7 @@
     <para>
       Actions like adding new phrases and phrase books and deleting selected
       phrases and phrase books can be done by selecting them in either the
-      menu bar, the tool bar or a pop up menu.
+      menu bar, the toolbar or a pop up menu.
     </para>
     <para>
       You can change the order of the phrase books and phrases by dragging
@@ -442,7 +449,7 @@
                 <keycombo>&Ctrl;<keycap>S</keycap></keycombo>
               </shortcut>
               <guimenu>File</guimenu>
-              <guimenuitem>Save History as...</guimenuitem>
+              <guimenuitem>Save History As...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>Saves the history into a text file.</action></para></listitem>
           </varlistentry>
@@ -549,7 +556,10 @@
         <variablelist>
           <varlistentry>
             <term><menuchoice>
-              <guimenu>Settings</guimenu>
+              <shortcut> 
+                <keycombo>&Ctrl;<keycap>M</keycap></keycombo> 
+              </shortcut> 
+               <guimenu>Settings</guimenu>
               <guimenuitem>Show Menubar</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -577,6 +587,17 @@
           <varlistentry>
             <term><menuchoice>
               <guimenu>Settings</guimenu>
+              <guimenuitem>Show Statusbar</guimenuitem>
+            </menuchoice></term>
+            <listitem><para><action>
+              When checked, this displays a small bar at the bottom of the
+              main window containing information about the status of
+              &kmouth;. When unchecked the status bar is hidden.
+            </action></para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><menuchoice>
+              <guimenu>Settings</guimenu>
               <guimenuitem>Show Phrasebook Bar</guimenuitem>
             </menuchoice></term>
             <listitem><para>
@@ -590,17 +611,6 @@
               Clicking and dragging on this grip allows the user to move
               the bar.
             </para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenu>Settings</guimenu>
-              <guimenuitem>Show Statusbar</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              When checked, this displays a small bar at the bottom of the
-              main window containing information about the status of
-              &kmouth;. When unchecked the status bar is hidden.
-            </action></para></listitem>
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
@@ -633,7 +643,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <guimenuitem>Remove</guimenuitem>
+              <guimenuitem>Delete</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
               The selected sentences are removed from the history.
@@ -657,7 +667,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <guimenuitem>Select all entries</guimenuitem>
+              <guimenuitem>Select All Entries</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
               All history entries are selected.
@@ -665,16 +675,16 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <guimenuitem>De-select all entries</guimenuitem>
+              <guimenuitem>Deselect All Entries</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
-              All history entries are de-selected.
+              All history entries are deselected.
             </action></para></listitem>
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
               <shortcut><keycombo>&Ctrl;<keycap>O</keycap></keycombo></shortcut> 
-              <guimenuitem>Open as history...</guimenuitem>
+              <guimenuitem>Open as History...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
               Opens a text file into as history of spoken sentences.
@@ -683,7 +693,7 @@
           <varlistentry>
             <term><menuchoice>
 <shortcut><keycombo>&Ctrl;<keycap>S</keycap></keycombo></shortcut> 
-              <guimenuitem>Save history as...</guimenuitem>
+              <guimenuitem>Save History As...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
               Saves the history into a text file.
@@ -857,7 +867,10 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <guimenuitem>Cut</guimenuitem>
+              <shortcut> 
+                <keycombo>&Ctrl;<keycap>X</keycap></keycombo> 
+              </shortcut> 
+               <guimenuitem>Cut</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
               Cuts the selected items and puts it to the clipboard.
@@ -865,6 +878,9 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
+              <shortcut> 
+                <keycombo>&Ctrl;<keycap>C</keycap></keycombo> 
+              </shortcut> 
               <guimenuitem>Copy</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -873,6 +889,9 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
+              <shortcut> 
+                <keycombo>&Ctrl;<keycap>V</keycap></keycombo> 
+              </shortcut> 
               <guimenuitem>Paste</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -909,9 +928,9 @@
           Most likely you did not configure correctly (or not at all?) the
           text-to-speech command. Use
           <menuchoice>
-            <guimenu>Settings</guimenu><guimenuitem>Text-to-speech conversion</guimenuitem>
-          </menuchoice>
-          and enter the command for speaking texts.
+            <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
+          </menuchoice>, open the page <guilabel>General Options</guilabel>
+          and enter the command for speaking texts on the tab <guilabel>Text-to-Speech</guilabel>.
           (See section about the <link linkend="tts-config">configuration
           dialog for the speech synthesizer</link> for more details.)
         </para>
@@ -974,7 +993,7 @@
       </question>
       <answer>
         <para>
-          FreeTTS is a speech synthesizer written entirely in the Java™
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
           programming language. It currently only has support for English
           pronounciation. Its license allows to use and distribute FreeTTS
           free of charge without restrictions.
@@ -1039,11 +1058,11 @@
     </qandaentry>
     <qandaentry>
       <question>
-        <para>The KDE Text-to-Speech Daemon</para>
+        <para>The &kde; Text-to-Speech Daemon</para>
       </question>
       <answer>
         <para>
-          The KDE Text-to-Speech Daemon (KTTSD) is a &kde; wide text-to-speech service
+          The &kde; Text-to-Speech Daemon (KTTSD) is a &kde; wide text-to-speech service
           which gives &kde; applications a standardized interface for speech synthesis
           and is currently developed in <acronym>CVS</acronym>. It uses plug-ins in
           order to support various text-to-speech systems.
