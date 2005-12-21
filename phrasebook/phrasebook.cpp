@@ -20,7 +20,7 @@
 #include <qfile.h>
 #include <qxml.h>
 #include <qregexp.h>
-#include <q3ptrstack.h>
+#include <qstack.h>
 #include <QTextStream>
 #include <Q3PopupMenu>
 
@@ -374,7 +374,7 @@ bool PhraseBook::open (const KURL &url) {
 void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
                   QObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
-      Q3PtrStack<QWidget> stack;
+      QStack<QWidget*> stack;
       QWidget *parent = popup;
       int level = 0;
 
