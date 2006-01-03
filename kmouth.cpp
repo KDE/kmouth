@@ -239,19 +239,19 @@ void KMouthApp::readOptions()
   config->setGroup("General Options");
 
   // bar status settings
-  bool bViewMenubar = config->readBoolEntry("Show Menubar", true);
+  bool bViewMenubar = config->readEntry("Show Menubar", QVariant(true)).toBool();
   viewMenuBar->setChecked(bViewMenubar);
   slotViewMenuBar();
 
   // FIXME: Toolbar disabled so it will compile.
-  // bool bViewToolbar = config->readBoolEntry("Show Toolbar", true);
+  // bool bViewToolbar = config->readEntry("Show Toolbar", QVariant(true)).toBool();
   // viewToolBar->setChecked(bViewToolbar);
   // slotViewToolBar();
 
-  bool bViewPhrasebookbar = config->readBoolEntry("Show Phrasebook Bar", true);
+  bool bViewPhrasebookbar = config->readEntry("Show Phrasebook Bar", QVariant(true)).toBool();
   viewPhrasebookBar->setChecked(bViewPhrasebookbar);
 
-  bool bViewStatusbar = config->readBoolEntry("Show Statusbar", true);
+  bool bViewStatusbar = config->readEntry("Show Statusbar", QVariant(true)).toBool();
   viewStatusBar->setChecked(bViewStatusbar);
   slotViewStatusBar();
 

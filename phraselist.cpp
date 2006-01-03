@@ -189,7 +189,7 @@ void PhraseList::saveCompletionOptions(KConfig *config) {
 
 void PhraseList::readCompletionOptions(KConfig *config) {
    config->setGroup("General Options");
-   if (!config->readBoolEntry("Show speak button", true))
+   if (!config->readEntry("Show speak button", QVariant(true)).toBool())
       speakButton->hide();
 
    if (config->hasGroup ("Completion")) {
