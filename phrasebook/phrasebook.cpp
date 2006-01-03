@@ -261,7 +261,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    else
       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
 
-   KFileDialog fdlg(QString::null,filters, parent, "filedialog", true);
+   KFileDialog fdlg(QString(),filters, parent, "filedialog", true);
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
@@ -452,9 +452,9 @@ PhraseBookDrag::~PhraseBookDrag () {
 void PhraseBookDrag::setBook (PhraseBook *book) {
    if (book == 0) {
       isEmpty = true;
-      xmlphrasebook.setText(QString::null);
-      xml.setText(QString::null);
-      plain.setText(QString::null);
+      xmlphrasebook.setText(QString());
+      xml.setText(QString());
+      plain.setText(QString());
    }
    else {
       isEmpty = false;

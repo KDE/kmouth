@@ -165,10 +165,10 @@ QString DictionaryCreationWizard::createDictionary() {
 
    if (creationSource->mergeButton->isChecked()) {
       map = WordList::mergeFiles (mergeWidget->mergeParameters(), pdlg);
-      dicFile = QString::null;
+      dicFile.clear();
    }
    else if (creationSource->emptyButton->isChecked()) {
-      dicFile = QString::null;
+      dicFile.clear();
    }
    else if (creationSource->fileButton->isChecked()) {
       QString filename = fileWidget->url->url();
@@ -339,7 +339,7 @@ QString MergeWidget::language () {
       }
    }
 
-   return QString::null;
+   return QString();
 }
 
 /***************************************************************************/

@@ -55,7 +55,7 @@ QString XMLParser::errorString() {
 }
 
 bool XMLParser::startDocument() {
-   text = QString::null;
+   text.clear();
    return true;
 }
 
@@ -65,7 +65,7 @@ bool XMLParser::startElement (const QString &, const QString &,
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text.clear();
    }
    return true;
 }
@@ -78,7 +78,7 @@ bool XMLParser::characters (const QString &ch) {
 bool XMLParser::ignorableWhitespace (const QString &) {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text.clear();
    }
    return true;
 }
@@ -88,7 +88,7 @@ bool XMLParser::endElement (const QString &, const QString &,
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text.clear();
    }
    return true;
 }
@@ -96,7 +96,7 @@ bool XMLParser::endElement (const QString &, const QString &,
 bool XMLParser::endDocument() {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text.clear();
    }
    return true;
 }

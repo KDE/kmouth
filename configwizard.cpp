@@ -89,7 +89,7 @@ void ConfigWizard::initCompletion (KConfig *config) {
          config->setGroup("Dictionary 0");
          config->writeEntry ("Filename", "dictionary.txt");
          config->writeEntry ("Name",     "Default");
-         config->writeEntry ("Language", QString::null);
+         config->writeEntry ("Language", QString());
          config->sync();
       }
    }

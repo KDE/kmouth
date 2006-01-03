@@ -353,7 +353,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
 PhraseTreeItem *PhraseTree::insertPhrase (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, QString shortcut) {
    KShortcut cut = KShortcut(shortcut);
    if (isKeyPresent (cut, 0, false))
-      cut = KShortcut(QString::null);
+      cut = KShortcut(QString());
 
    if (parent == 0)
       return new PhraseTreeItem (this, after, phrase, cut, this->phrase);

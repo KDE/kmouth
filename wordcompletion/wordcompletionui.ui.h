@@ -14,7 +14,7 @@ void WordCompletionUI::init() {
     languageButton->setWhatsThis( i18n("With this combo box you select the language associated with the selected dictionary."));
     
     loadLanguageList(languageButton);
-    languageButton->insertLanguage("??", i18n("Other"), QString::fromLatin1("l10n/"), QString::null);
+    languageButton->insertLanguage("??", i18n("Other"), QString::fromLatin1("l10n/"), QString());
     
    connect (languageButton, SIGNAL(activated(int)), this, SLOT(languageButton_activated(int)));
 }
@@ -27,7 +27,7 @@ void WordCompletionUI::languageButton_activated (int) {
         languageButton->setCurrentItem(customLanguage);
      }
      else {
-        languageButton->insertLanguage(customLanguage, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
+        languageButton->insertLanguage(customLanguage, i18n("without name"), QString::fromLatin1("l10n/"), QString());
         languageButton->setCurrentItem(customLanguage);
      }
    }

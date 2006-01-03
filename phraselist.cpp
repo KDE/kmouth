@@ -197,7 +197,7 @@ void PhraseList::readCompletionOptions(KConfig *config) {
       int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
-      QString current = config->readEntry ("List", QString::null);
+      QString current = config->readEntry ("List", QString());
       QStringList list = completion->wordLists();
       QStringList::ConstIterator it;
       int i = 0;
@@ -457,7 +457,7 @@ void PhraseList::save () {
 }
 
 void PhraseList::open () {
-   KURL url=KFileDialog::getOpenURL(QString::null,
+   KURL url=KFileDialog::getOpenURL(QString(),
         i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())

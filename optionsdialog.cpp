@@ -120,9 +120,9 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    setHelp ("config-dialog");
 
    QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
-   KHBox *pageGeneral = addHBoxPage( i18n("General Options"), QString::null, iconGeneral);
+   KHBox *pageGeneral = addHBoxPage( i18n("General Options"), QString(), iconGeneral);
    
-	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString::null, iconGeneral);
+	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
    
    tabCtl = new QTabWidget (pageGeneral, "general");
 
@@ -135,7 +135,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
-   KHBox *pageCompletion = addHBoxPage (i18n("Word Completion"), QString::null, iconCompletion);
+   KHBox *pageCompletion = addHBoxPage (i18n("Word Completion"), QString(), iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();

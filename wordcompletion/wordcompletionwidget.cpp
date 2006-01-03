@@ -136,7 +136,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         languageTag);
          if (!languageButton->contains(languageTag))
-            languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
+            languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString());
       }
 
    // Clean up disc space
@@ -200,7 +200,7 @@ void WordCompletionWidget::addDictionary() {
       newDictionaryFiles += filename;
       QString languageTag = wizard->language();
       if (!languageButton->contains(languageTag)) {
-         languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
+         languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString());
       }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
@@ -246,7 +246,7 @@ void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
 
    if (item != 0) {
-      KURL url = KFileDialog::getSaveURL(QString::null, QString::null, this, i18n("Export Dictionary"));
+      KURL url = KFileDialog::getSaveURL(QString(), QString(), this, i18n("Export Dictionary"));
       if (url.isEmpty() || !url.isValid())
          return;
 

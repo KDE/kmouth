@@ -193,9 +193,9 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
          stack.push (parent);
          Q3ListViewItem *newParent;
          if (parent == 0)
-            newParent = new CheckBookItem (books, last, *it2, *it2, QString::null);
+            newParent = new CheckBookItem (books, last, *it2, *it2, QString());
          else
-            newParent = new CheckBookItem (parent, last, *it2, *it2, QString::null);
+            newParent = new CheckBookItem (parent, last, *it2, *it2, QString());
          parent = newParent;
          last = 0;
       }
@@ -575,7 +575,7 @@ void PhraseBookDialog::slotNoKey() {
    
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
-      currentItem->setCut (KShortcut(QString::null));
+      currentItem->setCut (KShortcut(QString()));
       buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
@@ -727,7 +727,7 @@ void PhraseBookDialog::slotSave () {
 }
 
 void PhraseBookDialog::slotImportPhrasebook () {
-   KURL url=KFileDialog::getOpenURL(QString::null,
+   KURL url=KFileDialog::getOpenURL(QString(),
         i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
 
    slotImportPhrasebook (url);

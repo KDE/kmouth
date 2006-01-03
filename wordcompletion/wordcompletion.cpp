@@ -91,7 +91,7 @@ QString WordCompletion::languageOfWordList(const QString &wordlist) {
    if (d->dictDetails.contains(wordlist))
       return d->dictDetails[wordlist].language;
    else
-      return QString::null;
+      return QString();
 }
 
 QString WordCompletion::currentWordList() {
