@@ -1,16 +1,4 @@
 # KDE Config File
 [Desktop Entry]
 Name=Dutch
-Name[bg]=Холандски
-Name[br]=Nederlandeg
-Name[cy]=Iseldireg
-Name[da]=Hollandsk
-Name[es]=Danés
-Name[et]=Hollandi
-Name[ga]=Ollainnis
-Name[pa]=ਡੱਚ
-Name[rw]=Ikinyaholande
-Name[sr]=Холандски
-Name[sr@Latn]=Holandski
-Name[sv]=Holländska
-Name[tr]=Flemenkçe
+Name[x-test]=xxDutchxx
