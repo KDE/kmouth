@@ -244,7 +244,7 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
 : ButtonBoxUI (parent, name) {
    keyButtonPlaceLayout = new QGridLayout (keyButtonPlace, 1, 1, 0, 0, "keyButtonPlaceLayout");
 
-   keyButton = new KKeyButton (keyButtonPlace, "key");
+   keyButton = new KKeyButton (keyButtonPlace);
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
    keyButton->setWhatsThis( i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
