@@ -239,7 +239,7 @@ void KMouthApp::readOptions()
   config->setGroup("General Options");
 
   // bar status settings
-  bool bViewMenubar = config->readEntry("Show Menubar", QVariant(true)).toBool();
+  bool bViewMenubar = config->readEntry("Show Menubar", true);
   viewMenuBar->setChecked(bViewMenubar);
   slotViewMenuBar();
 
@@ -248,20 +248,20 @@ void KMouthApp::readOptions()
   // viewToolBar->setChecked(bViewToolbar);
   // slotViewToolBar();
 
-  bool bViewPhrasebookbar = config->readEntry("Show Phrasebook Bar", QVariant(true)).toBool();
+  bool bViewPhrasebookbar = config->readEntry("Show Phrasebook Bar", true);
   viewPhrasebookBar->setChecked(bViewPhrasebookbar);
 
-  bool bViewStatusbar = config->readEntry("Show Statusbar", QVariant(true)).toBool();
+  bool bViewStatusbar = config->readEntry("Show Statusbar", true);
   viewStatusBar->setChecked(bViewStatusbar);
   slotViewStatusBar();
 
 
   // bar position settings
   KToolBar::BarPosition toolBarPos;
-  toolBarPos=(KToolBar::BarPosition) config->readNumEntry("ToolBarPos", KToolBar::Top);
+  toolBarPos=(KToolBar::BarPosition) config->readEntry("ToolBarPos", int(KToolBar::Top));
   toolBar("mainToolBar")->setBarPos(toolBarPos);
 
-  QSize size=config->readSizeEntry("Geometry");
+  QSize size=config->readEntry("Geometry",QSize());
   if(!size.isEmpty())
   {
     resize(size);

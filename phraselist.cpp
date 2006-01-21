@@ -189,12 +189,12 @@ void PhraseList::saveCompletionOptions(KConfig *config) {
 
 void PhraseList::readCompletionOptions(KConfig *config) {
    config->setGroup("General Options");
-   if (!config->readEntry("Show speak button", QVariant(true)).toBool())
+   if (!config->readEntry("Show speak button", true))
       speakButton->hide();
 
    if (config->hasGroup ("Completion")) {
       config->setGroup("Completion");
-      int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
+      int mode = config->readEntry ("Mode", int(KGlobalSettings::completionMode()));
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
       QString current = config->readEntry ("List", QString());
