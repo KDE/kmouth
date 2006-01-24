@@ -28,7 +28,7 @@
 #include <kaction.h>
 #include <kprinter.h>
 
-class KURL;
+class KUrl;
 
 /**
  * The class Phrase represents one phrase in a phrase book.
@@ -96,7 +96,7 @@ public:
    ~PhraseBook() {};
 
    /** opens a file containing a phrase book. Returns true if successful. */
-   bool open (const KURL &url);
+   bool open (const KUrl &url);
 
    /** decodes a phrase book. Returns true if successful. */
    bool decode (const QString &xml);
@@ -105,10 +105,10 @@ public:
    bool decode (QXmlInputSource &source);
 
    /** Writes the phrases to a file. Returns true if successful. */
-   bool save (const KURL &url);
+   bool save (const KUrl &url);
 
    /** Writes the phrases to a file. Returns true if successful. */
-   bool save (const KURL &url, bool asPhrasebook);
+   bool save (const KUrl &url, bool asPhrasebook);
 
    /** Writes the phrases to a QTextStream. */
    void save (QTextStream &stream, bool asPhrasebook);
@@ -121,7 +121,7 @@ public:
     *          0, if the user canceled the operation,
     *         -1, if there was an error when saving the file.
     */
-   int save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst = true);
+   int save (QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst = true);
 
    /** encodes the phrase book. Returns the encoded xml code. */
    QString encode ();
