@@ -25,6 +25,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kprogressbar.h>
+#include <kprogressdialog.h>
 #include <klocale.h>
 
 #include "wordlist.h"
@@ -108,13 +109,13 @@ WordMap XMLParser::getList() {
 /***************************************************************************/
 
 KProgressDialog *progressDialog() {
-   KProgressDialog *pdlg = new KProgressDialog(0, "progressDialog", i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), false);
+   KProgressDialog *pdlg = new KProgressDialog(0,  i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), false);
    pdlg->setAllowCancel (false);
    pdlg->showCancelButton (false);
    pdlg->setAutoReset(false);
    pdlg->setAutoClose(false);
-   pdlg->progressBar()->setTotalSteps(100);
-   pdlg->progressBar()->setProgress(0);
+   pdlg->progressBar()->setMaximum(100);
+   pdlg->progressBar()->setValue(0);
    return pdlg;
 }
 
@@ -229,7 +230,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
-         pdlg->progressBar()->setProgress(percent);
+         pdlg->progressBar()->setValue(percent);
          qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
@@ -270,7 +271,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
-         pdlg->progressBar()->setProgress(percent);
+         pdlg->progressBar()->setValue(percent);
          qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
@@ -506,8 +507,8 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       pdlg->setAutoReset(false);
       pdlg->setAutoClose(false);
       pdlg->setLabel (i18n("Performing spell check..."));
-      pdlg->progressBar()->setTotalSteps(100);
-      pdlg->progressBar()->setProgress(0);
+      pdlg->progressBar()->setMaximum(100);
+      pdlg->progressBar()->setValue(0);
       qApp->processEvents (QEventLoop::AllEvents, 20);
       int progress = 0;
       int steps = 0;
@@ -538,7 +539,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
             progress++;
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
-               pdlg->progressBar()->setProgress(percent);
+               pdlg->progressBar()->setValue(percent);
                qApp->processEvents (QEventLoop::AllEvents, 20);
             }
          }
