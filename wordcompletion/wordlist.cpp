@@ -24,7 +24,7 @@
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
-#include <kprogress.h>
+#include <kprogressbar.h>
 #include <klocale.h>
 
 #include "wordlist.h"

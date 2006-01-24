@@ -74,7 +74,7 @@
                 <string>With this input field you specify which file you want to load for creating the new dictionary.</string>
             </property>
         </widget>
-        <widget class="KURLRequester" row="0" column="1">
+        <widget class="KUrlRequester" row="0" column="1">
             <property name="name">
                 <cstring>url</cstring>
             </property>
@@ -106,7 +106,7 @@
                 <string>With this combo box you select the character encoding used to load text files. This combo box is not used for XML files or for dictionary files.</string>
             </property>
         </widget>
-        <widget class="KURLRequester" row="4" column="1">
+        <widget class="KUrlRequester" row="4" column="1">
             <property name="name">
                 <cstring>ooDictURL</cstring>
             </property>

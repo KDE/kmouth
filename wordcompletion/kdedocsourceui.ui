@@ -30,7 +30,7 @@
                 <string>If you select this check box the words from the KDE documentation are spell-checked before they are inserted into the new dictionary.</string>
             </property>
         </widget>
-        <widget class="KURLRequester" row="2" column="1">
+        <widget class="KUrlRequester" row="2" column="1">
             <property name="name">
                 <cstring>ooDictURL</cstring>
             </property>
