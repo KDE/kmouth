@@ -447,7 +447,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    Q3PtrStack<KActionMenu> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
-      KURL url;
+      KUrl url;
       url.setPath((*it).filename);
 
       QString namePath = "x/"+(*it).path;
@@ -470,7 +470,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       currentNamePath = dirs;
       
       KAction *book = new StandardPhraseBookInsertAction (
-          url, (*it).name, this, SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
+          url, (*it).name, this, SLOT(slotImportPhrasebook (const KUrl &)), actionCollection());
       parent->insert(book);
       if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());
@@ -727,13 +727,13 @@ void PhraseBookDialog::slotSave () {
 }
 
 void PhraseBookDialog::slotImportPhrasebook () {
-   KURL url=KFileDialog::getOpenURL(QString(),
+   KUrl url=KFileDialog::getOpenURL(QString(),
         i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
 
    slotImportPhrasebook (url);
 }
 
-void PhraseBookDialog::slotImportPhrasebook (const KURL &url) {
+void PhraseBookDialog::slotImportPhrasebook (const KUrl &url) {
    if(!url.isEmpty()) {
       PhraseBook book;
       if (book.open (url))
@@ -747,7 +747,7 @@ void PhraseBookDialog::slotExportPhrasebook () {
    PhraseBook book;
    treeView->fillBook (&book, treeView->hasSelectedItems());
    
-   KURL url;
+   KUrl url;
    if (book.save (this, i18n("Export Phrase Book"), url) == -1)
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }

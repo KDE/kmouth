@@ -74,7 +74,7 @@ public slots:
 
    void save ();
    void open ();
-   void open (KURL url);
+   void open (KUrl url);
    
    void selectAllEntries ();
    void deselectAllEntries ();

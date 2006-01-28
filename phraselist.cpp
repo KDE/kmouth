@@ -451,20 +451,20 @@ void PhraseList::save () {
       book += PhraseBookEntry(Phrase(item->text()));
    }
 
-   KURL url;
+   KUrl url;
    if (book.save (this, i18n("Save As"), url, false) == -1)
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
 }
 
 void PhraseList::open () {
-   KURL url=KFileDialog::getOpenURL(QString(),
+   KUrl url=KFileDialog::getOpenURL(QString(),
         i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())
       open (url);
 }
 
-void PhraseList::open (KURL url) {
+void PhraseList::open (KUrl url) {
    // We want to open a history of spoken sentences here. However, as
    // the class PhraseBook does already provide a method for opening
    // both phrase books and plain text files we use that method here.

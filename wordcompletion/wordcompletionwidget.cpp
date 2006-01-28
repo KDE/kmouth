@@ -246,7 +246,7 @@ void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
 
    if (item != 0) {
-      KURL url = KFileDialog::getSaveURL(QString(), QString(), this, i18n("Export Dictionary"));
+      KUrl url = KFileDialog::getSaveURL(QString(), QString(), this, i18n("Export Dictionary"));
       if (url.isEmpty() || !url.isValid())
          return;
 
@@ -256,7 +256,7 @@ void WordCompletionWidget::exportDictionary() {
             return;
          }
       }
-      KURL src;
+      KUrl src;
       src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
       KIO::NetAccess::copy (src, url, this);
    }

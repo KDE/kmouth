@@ -99,10 +99,10 @@ private:
 class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KURL &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+   StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
-      connect (this, SIGNAL(slotActivated (const KURL &)), receiver, slot);
+      connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
    };
    ~StandardPhraseBookInsertAction () {
    };
@@ -114,10 +114,10 @@ public slots:
    };
 
 signals:
-   void slotActivated (const KURL &url);
+   void slotActivated (const KUrl &url);
 
 private:
-   KURL url;
+   KUrl url;
 };
 
 /**
@@ -184,7 +184,7 @@ public slots:
 
    void slotSave ();
    void slotImportPhrasebook ();
-   void slotImportPhrasebook (const KURL &url);
+   void slotImportPhrasebook (const KUrl &url);
    void slotExportPhrasebook ();
    void slotPrint ();
 

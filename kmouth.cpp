@@ -206,7 +206,7 @@ void KMouthApp::initPhraseList()
    setCentralWidget(phraseList);
 }
 
-void KMouthApp::openDocumentFile(const KURL& url)
+void KMouthApp::openDocumentFile(const KUrl& url)
 {
   slotStatusMsg(i18n("Opening file..."));
 
@@ -275,7 +275,7 @@ void KMouthApp::readOptions()
   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
   if (!standardBook.isEmpty()) {
      PhraseBook book;
-     book.open(KURL::fromPathOrURL( standardBook ));
+     book.open(KUrl::fromPathOrURL( standardBook ));
      slotPhrasebookConfirmed(book);
   }
   if (phraseList != 0)
@@ -470,7 +470,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
 
    QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (KURL::fromPathOrURL( bookLocation + "standard.phrasebook" ));
+      book.save (KUrl::fromPathOrURL( bookLocation + "standard.phrasebook" ));
    }
 }
 

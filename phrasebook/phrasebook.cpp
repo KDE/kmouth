@@ -212,7 +212,7 @@ QStringList PhraseBook::toStringList () {
    return result;
 }
 
-bool PhraseBook::save (const KURL &url) {
+bool PhraseBook::save (const KUrl &url) {
    QRegExp pattern("*.phrasebook",true,true);
    return save (url, pattern.exactMatch(url.fileName()));
 }
@@ -225,7 +225,7 @@ void PhraseBook::save (QTextStream &stream, bool asPhrasebook) {
       stream << toStringList().join("\n");
 }
 
-bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
+bool PhraseBook::save (const KUrl &url, bool asPhrasebook) {
    if (url.isLocalFile()) {
       QFile file(url.path());
       if(!file.open(QIODevice::WriteOnly))
@@ -251,7 +251,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    }
 }
 
-int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst) {
+int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst) {
    // KFileDialog::getSaveURL(...) is not useful here as we need
    // to know the requested file type.
 
@@ -326,9 +326,9 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
       return -1;
 }
 
-bool PhraseBook::open (const KURL &url) {
+bool PhraseBook::open (const KUrl &url) {
    QString tempFile;
-   KURL fileUrl = url;
+   KUrl fileUrl = url;
 
    QString protocol = fileUrl.protocol();
    if (protocol.isEmpty() || protocol.isNull()) {
