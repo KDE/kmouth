@@ -48,7 +48,7 @@
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
                QStringList dictionaryNames, QStringList dictionaryFiles,
                QStringList dictionaryLanguages)
-   : KWizard (parent, name)
+   : K3Wizard (parent, name)
 {
    buildCodecList ();
    
@@ -278,7 +278,7 @@ QString DictionaryCreationWizard::language() {
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(KWizard *parent, const char *name,
+MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
                QStringList dictionaryNames, QStringList dictionaryFiles,
                QStringList dictionaryLanguages)
 : Q3ScrollView (parent, name) {
@@ -344,7 +344,7 @@ QString MergeWidget::language () {
 
 /***************************************************************************/
 
-CompletionWizardWidget::CompletionWizardWidget (KWizard *parent, const char *name)
+CompletionWizardWidget::CompletionWizardWidget (K3Wizard *parent, const char *name)
    : KDEDocSourceUI (parent, name) {
 }
 

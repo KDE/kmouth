@@ -23,7 +23,7 @@
 #include <QList>
 #include <QMap>
 #include <Q3Dict>
-#include <kwizard.h>
+#include <k3wizard.h>
 #include <knuminput.h>
 #include "kdedocsourceui.h"
 
@@ -40,7 +40,7 @@ class MergeWidget;
  * necessary information for creating a new dictionary for the word
  * completion.
  */
-class DictionaryCreationWizard : public KWizard {
+class DictionaryCreationWizard : public K3Wizard {
    Q_OBJECT
 public:
    DictionaryCreationWizard (QWidget *parent, const char *name,
@@ -77,7 +77,7 @@ private:
 class MergeWidget : public Q3ScrollView {
    Q_OBJECT
 public:
-   MergeWidget(KWizard *parent, const char *name,
+   MergeWidget(K3Wizard *parent, const char *name,
                QStringList dictionaryNames,
                QStringList dictionaryFiles,
                QStringList dictionaryLanguages);
@@ -101,7 +101,7 @@ class CompletionWizardWidget : public KDEDocSourceUI {
    Q_OBJECT
    friend class ConfigWizard;
 public:
-   CompletionWizardWidget(KWizard *parent, const char *name);
+   CompletionWizardWidget(K3Wizard *parent, const char *name);
    ~CompletionWizardWidget();
 
    void ok (KConfig *config);
