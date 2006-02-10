@@ -21,7 +21,7 @@
 
 #include <qwidget.h>
 
-#include <kwizard.h>
+#include <k3wizard.h>
 
 class KConfig;
 class TextToSpeechConfigurationWidget;
@@ -33,7 +33,7 @@ class CompletionWizardWidget;
  *@author Gunnar Schmi Dt
  */
 
-class ConfigWizard : public KWizard  {
+class ConfigWizard : public K3Wizard  {
    Q_OBJECT
 public:
    ConfigWizard (QWidget *parent, const char *name, KConfig *config);

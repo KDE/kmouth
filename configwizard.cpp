@@ -33,7 +33,7 @@
 #include "wordcompletion/dictionarycreationwizard.h"
 
 ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
-             : KWizard(parent, name, true)
+             : K3Wizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
 
