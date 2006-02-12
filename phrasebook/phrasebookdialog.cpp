@@ -220,7 +220,7 @@ void InitialPhraseBookWidget::createBook () {
       else {
          if (((Q3CheckListItem*)item)->isOn()) {
             PhraseBook localBook;
-            localBook.open(KURL( item->text(PhraseBookPrivate::filename )));
+            localBook.open(KUrl( item->text(PhraseBookPrivate::filename )));
             book += localBook;
          }
          
@@ -234,7 +234,7 @@ void InitialPhraseBookWidget::createBook () {
 
    QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (KURL( bookLocation + "standard.phrasebook" ));
+      book.save (KUrl( bookLocation + "standard.phrasebook" ));
    }
 }
 
@@ -274,7 +274,7 @@ PhraseBookDialog::PhraseBookDialog ()
    QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
    if (!standardBook.isNull() && !standardBook.isEmpty()) {
       PhraseBook book;
-      book.open(KURL( standardBook ));
+      book.open(KUrl( standardBook ));
       treeView->clear();
       treeView->addBook(0, 0, &book);
       treeView->setCurrentItem(treeView->firstChild());
@@ -417,7 +417,7 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
    QStringList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       PhraseBook pbook;
-      if (pbook.open (KURL( *it ))) {
+      if (pbook.open (KUrl( *it ))) {
          StandardBook book;
          book.name = (*pbook.begin()).getPhrase().getPhrase();
          

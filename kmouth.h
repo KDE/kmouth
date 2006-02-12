@@ -68,7 +68,7 @@ class KMouthApp : public KMainWindow
     bool configured();
     /** opens a file specified by commandline option
      */
-    void openDocumentFile(const KUrl& url=KURL());
+    void openDocumentFile(const KUrl& url=KUrl());
 
     TextToSpeechSystem *getTTSSystem() const;
 
