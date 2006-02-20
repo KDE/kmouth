@@ -261,7 +261,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phr
    else
       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
 
-   KFileDialog fdlg(QString(),filters, parent, "filedialog", true);
+   KFileDialog fdlg(QString(),filters, parent);
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
