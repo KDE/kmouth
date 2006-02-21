@@ -59,7 +59,7 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    connect (optionsDialog, SIGNAL(configurationChanged ()),
             phraseList, SLOT(configureCompletion ()));
 
-   phrases = new KActionCollection (this);
+   phrases = new KActionCollection (static_cast<QWidget*>(this));
 
    readOptions();
    ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config);
