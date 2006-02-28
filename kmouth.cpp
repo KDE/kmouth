@@ -32,7 +32,7 @@
 #include <kmenu.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
-
+#include <ktoolbar.h>
 // application specific includes
 #include "kmouth.h"
 #include "phraselist.h"
