@@ -1,0 +1,24 @@
+kde4_header()
+
+include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}  )
+
+
+########### install files ###############
+
+install_files( ${DATA_INSTALL_DIR}/kmouth/icons FILES  )
+
+kde4_footer()
+
+
+
+#original Makefile.am contents follow:
+
+######## kdevelop will overwrite this part!!! (begin)##########
+#
+#
+#EXTRA_DIST = hi16-action-phrasehistory_open.png hi16-action-phrasehistory_print.png hi16-action-phrasehistory_save.png hi22-action-phrasehistory_open.png hi22-action-phrasehistory_print.png hi22-action-phrasehistory_save.png hi32-action-phrasehistory_open.png hi32-action-phrasehistory_print.png hi32-action-phrasehistory_save.png 
+#
+######## kdevelop will overwrite this part!!! (end)############
+#
+#kmouthiconsdir = $(kde_datadir)/kmouth/icons
+#kmouthicons_ICON = AUTO
