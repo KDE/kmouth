@@ -19,7 +19,7 @@
 #include "configwizard.h"
 #include <qlayout.h>
 #include <qlabel.h>
-#include <klistview.h>
+#include <k3listview.h>
 #include <klocale.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>

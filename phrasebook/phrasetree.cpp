@@ -33,7 +33,7 @@
 #include <QDropEvent>
 
 PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
-   : KListViewItem (parent, after, phrase)
+   : K3ListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -43,7 +43,7 @@ PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QStri
 }
 
 PhraseTreeItem::PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
-   : KListViewItem (parent, after, phrase)
+   : K3ListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -52,14 +52,14 @@ PhraseTreeItem::PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, Q
    setExpandable (false);
 }
 PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString name, QPixmap icon)
-   : KListViewItem (parent, after, name)
+   : K3ListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
    setExpandable (true);
 }
 PhraseTreeItem::PhraseTreeItem (Q3ListViewItem *parent, Q3ListViewItem *after, QString name, QPixmap icon)
-   : KListViewItem (parent, after, name)
+   : K3ListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
@@ -79,7 +79,7 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 // ***************************************************************************
 
 PhraseTree::PhraseTree (QWidget *parent, const char *name)
-   : KListView (parent)
+   : K3ListView (parent)
 {
    phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
    phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
@@ -347,7 +347,7 @@ void PhraseTree::keyPressEvent (QKeyEvent *e) {
          return;
       }
    }
-   KListView::keyPressEvent(e);
+   K3ListView::keyPressEvent(e);
 }
 
 PhraseTreeItem *PhraseTree::insertPhrase (Q3ListViewItem *parent, Q3ListViewItem *after, QString phrase, QString shortcut) {
@@ -449,7 +449,7 @@ Q3DragObject *PhraseTree::dragObject (bool isDependent) {
 }
 
 bool PhraseTree::acceptDrag (QDropEvent* event) const {
-   if (KListView::acceptDrag (event))
+   if (K3ListView::acceptDrag (event))
       return true;
    else
       return PhraseBookDrag::canDecode(event);

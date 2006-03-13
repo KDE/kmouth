@@ -27,7 +27,7 @@
 #include <QTextStream>
 #include <QGridLayout>
 
-#include <klistview.h>
+#include <k3listview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>

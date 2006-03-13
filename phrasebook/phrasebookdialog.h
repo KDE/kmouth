@@ -39,7 +39,7 @@ class PhraseTreeItem;
 class PhraseTree;
 class QStringList;
 class QString;
-class KListView;
+class K3ListView;
 
 struct StandardBook {
    QString name;
@@ -88,7 +88,7 @@ private:
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
 
-   KListView *books;
+   K3ListView *books;
 };
 
 /**

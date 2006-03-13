@@ -20,7 +20,7 @@
 #include <qcheckbox.h>
 #include <qlineedit.h>
 
-#include <klistview.h>
+#include <k3listview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>
@@ -37,20 +37,20 @@
 #include "wordcompletion.h"
 #include "klanguagebutton.h"
 
-class DictionaryListItem : public KListViewItem {
+class DictionaryListItem : public K3ListViewItem {
 public:
    DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString language, QString languageCode)
-   : KListViewItem (parent, name) {
+   : K3ListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
    };
    DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString languageCode)
-   : KListViewItem (parent, name) {
+   : K3ListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
    DictionaryListItem (Q3ListView *parent, Q3ListViewItem *after, QString filename, QString name, QString languageCode)
-   : KListViewItem (parent, after, name) {
+   : K3ListViewItem (parent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
@@ -202,7 +202,7 @@ void WordCompletionWidget::addDictionary() {
       if (!languageButton->contains(languageTag)) {
          languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString());
       }
-      KListViewItem *item = new DictionaryListItem (dictionaryList,
+      K3ListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
       dictionaryList->setSelected(item, true);
    }

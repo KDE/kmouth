@@ -23,7 +23,7 @@
 #include <QKeyEvent>
 #include <QDropEvent>
 #include <kshortcut.h>
-#include <klistview.h>
+#include <k3listview.h>
 
 class PhraseBook;
 class PhraseShortcutRequest;
@@ -32,7 +32,7 @@ class PhraseShortcutRequest;
   *@author Gunnar Schmi Dt
   */
 
-class PhraseTreeItem : public KListViewItem {
+class PhraseTreeItem : public K3ListViewItem {
    friend class PhraseTree;
 private:
    /** Creates a phrase item within a sub phrase book */
@@ -56,11 +56,11 @@ private:
 
 /**
  * The class PhraseTree represents the ListView of the phrase book edit
- * dialog. It extends KListView for providing better drag-and-drop support.
+ * dialog. It extends K3ListView for providing better drag-and-drop support.
  * @author Gunnar Schmi Dt
  */
 
-class PhraseTree : public KListView  {
+class PhraseTree : public K3ListView  {
    friend class PhraseTreeItem;
    Q_OBJECT
 public: 

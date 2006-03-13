@@ -40,7 +40,7 @@
 #include <klocale.h>
 #include <kaction.h>
 #include <kapplication.h>
-#include <klistview.h>
+#include <k3listview.h>
 #include <kiconloader.h>
 #include <kguiitem.h>
 #include <kmessagebox.h>
@@ -151,7 +151,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
    mainLayout->add (label);
 
-   books = new KListView (this);
+   books = new K3ListView (this);
    books->setSorting (-1);
    books->setItemsMovable (false);
    books->setDragEnabled (false);
