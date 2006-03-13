@@ -283,11 +283,7 @@
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>klistview.h</includehint>
+    <includehint>k3listview.h</includehint>
     <includehint>kinputdialog.h</includehint>
 </includehints>
 </UI>
