@@ -1,4 +1,5 @@
 kde4_header()
+project(kmouth)
 
 set(libphrasebook_SRCS 
 	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasetree.cpp
