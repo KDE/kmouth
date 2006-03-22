@@ -81,9 +81,9 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 PhraseTree::PhraseTree (QWidget *parent, const char *name)
    : K3ListView (parent)
 {
-   phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
-   phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
-   phrase            = KGlobal::iconLoader()->loadIcon("phrase",            KIcon::Small);
+   phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        K3Icon::Small);
+   phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", K3Icon::Small);
+   phrase            = KGlobal::iconLoader()->loadIcon("phrase",            K3Icon::Small);
 
    connect (this, SIGNAL(expanded (Q3ListViewItem *)), this, SLOT(itemExpanded (Q3ListViewItem *)));
    connect (this, SIGNAL(collapsed (Q3ListViewItem *)), this, SLOT(itemCollapsed (Q3ListViewItem *)));

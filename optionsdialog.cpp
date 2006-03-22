@@ -119,7 +119,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
 {
    setHelp ("config-dialog");
 
-   QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
+   QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", K3Icon::NoGroup, K3Icon::SizeMedium);
    KHBox *pageGeneral = addHBoxPage( i18n("General Options"), QString(), iconGeneral);
    
 	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
@@ -134,13 +134,13 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
-   QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
+   QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", K3Icon::NoGroup, K3Icon::SizeMedium);
    KHBox *pageCompletion = addHBoxPage (i18n("Word Completion"), QString(), iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
-      QPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", KIcon::NoGroup, KIcon::SizeMedium);
+      QPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", K3Icon::NoGroup, K3Icon::SizeMedium);
       KHBox *pageKttsd = addHBoxPage (i18n("KTTSD Speech Service"),
                                       i18n("KDE Text-to-Speech Daemon Configuration"), iconKttsd);
       
