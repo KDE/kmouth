@@ -349,7 +349,7 @@ void PhraseBookDialog::initActions() {
    toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   fileImportStandardBook = new KActionMenu (i18n("I&mport Standard Phrase Book"), "phrasebook_open", actionCollection(),"file_import_standard_book");
+   fileImportStandardBook = new KActionMenu (KIcon("phrasebook_open"),i18n("I&mport Standard Phrase Book"), actionCollection(),"file_import_standard_book");
    fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
@@ -461,7 +461,8 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          parent = stack.pop();
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
-         KActionMenu *newParent = new KActionMenu (*it2);
+#warning "kde4: correct newparent objectname ?"
+         KActionMenu *newParent = new KActionMenu (*it2,actionCollection(), "tmp_menu");
          parent->insert(newParent);
          if (parent == fileImportStandardBook)
             newParent->plug(toolbarImport->popupMenu());

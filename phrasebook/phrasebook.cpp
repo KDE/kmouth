@@ -382,7 +382,7 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
       for (it = begin(); it != end(); ++it) {
          int newLevel = (*it).getLevel();
          while (newLevel > level) {
-            KActionMenu *menu = new KActionMenu("", "phrasebook");
+            KActionMenu *menu = new KActionMenu("", phrases,"phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
             menu->plug (parent);
@@ -408,7 +408,7 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
          }
          else {
             Phrase phrase = (*it).getPhrase();
-            KActionMenu *menu = new KActionMenu(phrase.getPhrase(), "phrasebook");
+            KActionMenu *menu = new KActionMenu(phrase.getPhrase(),phrases, "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
             if (parent == popup)

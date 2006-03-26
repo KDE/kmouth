@@ -109,7 +109,7 @@ public:
 
 public slots:
    void slotActivated () {
-      KAction::slotActivated();
+      KAction::slotTriggered();
       emit slotActivated (url);
    };
 
