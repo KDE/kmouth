@@ -453,7 +453,7 @@ void PhraseList::save () {
 
    KUrl url;
    if (book.save (this, i18n("Save As"), url, false) == -1)
-      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error saving file\n%1", url.url() ));
 }
 
 void PhraseList::open () {
@@ -479,7 +479,7 @@ void PhraseList::open (KUrl url) {
          insertIntoPhraseList (*it, false);
    }
    else
-      KMessageBox::sorry(this,i18n("There was an error loading file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error loading file\n%1", url.url() ));
 }
 
 #include "phraselist.moc"
