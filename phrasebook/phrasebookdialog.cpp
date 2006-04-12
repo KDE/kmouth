@@ -599,9 +599,10 @@ void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
 void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    // Check whether the shortcut is valid
    for (uint i = 0; i < cut.count(); i++) {
-      const KKeySequence& seq = cut.seq(i);
-      const KKey& key = seq.key(0);
-
+      const QKeySequence& seq = cut.seq(i);
+      //const KKey& key = seq.key(0);
+#warning "kde 4 port it";
+#if 0
       if (key.modFlags() == 0 && key.sym() < 0x3000
           && QChar(key.sym()).isLetterOrNumber())
       {
@@ -612,7 +613,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
          return;
       }
    }
-
+#endif
    PhraseTreeItem *currentItem = selectedItem (treeView);
    // If key isn't already in use,
    if (!treeView->isKeyPresent (cut, currentItem, true)) {
@@ -621,7 +622,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       // Update display
       buttonBox->noKey->setChecked (false);
       buttonBox->customKey->setChecked (true);
-      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
+      buttonBox->keyButton->setShortcut(currentItem->cut());
    }
 }
 

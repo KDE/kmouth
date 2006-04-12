@@ -208,7 +208,7 @@ private:
    
    void setShortcut (const KShortcut &cut);
 
-   void _warning (const KKeySequence &cut, QString sAction, QString sTitle);
+   void _warning (const QKeySequence &cut, const QString &sAction, const QString &sTitle);
    
    bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
    bool isPhraseKeyPresent (const KShortcut& cut, bool warnUser);

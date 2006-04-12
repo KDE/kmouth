@@ -19,8 +19,6 @@
 #include <kconfig.h>
 #include <kaction.h>
 #include <kstdaccel.h>
-#include <kshortcutlist.h>
-#include <kactionshortcutlist.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
 
@@ -467,7 +465,7 @@ static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
    return -1;
 }
 
-void PhraseTree::_warning (const KKeySequence& cut, QString sAction, QString sTitle) {
+void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QString &sTitle) {
    sAction = sAction.trimmed();
 
    QString s =
@@ -481,7 +479,7 @@ void PhraseTree::_warning (const KKeySequence& cut, QString sAction, QString sTi
 
 bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
    for (uint iSeq = 0; iSeq < cut.count(); iSeq++) {
-      const KKeySequence& seq = cut.seq(iSeq);
+      const QKeySequence& seq = cut.seq(iSeq);
 
       KStdAccel::StdAccel id = KStdAccel::findStdAccel( seq );
       if( id != KStdAccel::AccelNone

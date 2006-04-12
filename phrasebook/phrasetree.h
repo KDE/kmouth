@@ -87,7 +87,7 @@ protected:
    bool acceptDrag (QDropEvent* event) const;
 
 private:
-   void _warning (const KKeySequence& cut, QString sAction, QString sTitle);
+   void _warning (const QKeySequence& cut, QString sAction, const QString &sTitle);
    bool isStdAccelPresent (const KShortcut& cut, bool warnUser);
    bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
    bool isApplicationKeyPresent (const KShortcut& cut, bool warnUser);
