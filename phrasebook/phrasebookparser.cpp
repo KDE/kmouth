@@ -35,7 +35,7 @@ bool PhraseBookParser::fatalError (const QXmlParseException &) {
    return false;
 }
 
-QString PhraseBookParser::errorString() {
+QString PhraseBookParser::errorString() const {
    return "";
 }
 
