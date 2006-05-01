@@ -51,7 +51,7 @@ bool XMLParser::fatalError (const QXmlParseException &) {
    return false;
 }
 
-QString XMLParser::errorString() {
+QString XMLParser::errorString() const {
    return "";
 }
 
