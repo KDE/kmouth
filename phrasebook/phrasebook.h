@@ -24,7 +24,7 @@
 //Added by qt3to4:
 #include <QTextStream>
 #include <QMenu>
-
+#include <ktoolbar.h>
 #include <kaction.h>
 #include <kprinter.h>
 

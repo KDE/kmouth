@@ -21,7 +21,8 @@
 #include <kstdaccel.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
-
+#include <kactionmenu.h>
+#include <ktoolbarpopupaction.h>
 #include "phrasetree.h"
 #include "phrasebookdialog.h"
 #include "phrasebook.h"
