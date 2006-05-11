@@ -47,6 +47,8 @@
 #include <kfiledialog.h>
 #include <kstandarddirs.h>
 #include <kdesktopfile.h> 
+#include <kactionmenu.h>
+#include <kstdaction.h>
 
 #include "phrasebookdialog.h"
 #include "buttonboxui.h"
