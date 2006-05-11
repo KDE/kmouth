@@ -30,7 +30,7 @@ add_subdirectory( phrasebook )
 add_subdirectory( wordcompletion ) 
 add_subdirectory( books ) 
 
-include_directories(${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/ ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}  )
+include_directories(${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/  )
 
 
 ########### next target ###############
