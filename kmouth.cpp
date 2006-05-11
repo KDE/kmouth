@@ -16,8 +16,8 @@
  ***************************************************************************/
 
 // include files for QT
-#include <qdir.h>
-#include <qpainter.h>
+#include <QDir>
+#include <QPainter>
 //Added by qt3to4:
 #include <QMenu>
 #include <kxmlguifactory.h>

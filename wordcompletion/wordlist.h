@@ -20,10 +20,10 @@
 #ifndef WORDLIST_H
 #define WORDLIST_H
 
-#include <qxml.h>
+#include <QtXml>
 #include <q3valuestack.h>
-#include <qstring.h>
-#include <qobject.h>
+#include <QString>
+#include <QObject>
 #include <qmap.h>
 //Added by qt3to4:
 #include <QTextStream>

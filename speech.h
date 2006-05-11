@@ -18,8 +18,8 @@
 #ifndef SPEECH_H
 #define SPEECH_H
 
-#include <qobject.h>
-#include <qstring.h>
+#include <QObject>
+#include <QString>
 #include <kprocess.h>
 #include <ktempfile.h>
 

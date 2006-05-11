@@ -18,9 +18,9 @@
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
-#include <qobject.h>
+#include <QObject>
 #include <q3dragobject.h>
-#include <qxml.h>
+#include <QtXml>
 //Added by qt3to4:
 #include <QTextStream>
 #include <QMenu>

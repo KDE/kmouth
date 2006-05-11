@@ -16,13 +16,13 @@
  ***************************************************************************/
 
 // include files for QT
-#include <qapplication.h>
-#include <qlayout.h>
-#include <qclipboard.h>
-#include <qradiobutton.h>
-#include <qevent.h>
-#include <qpainter.h>
-#include <qstyle.h>
+#include <QApplication>
+#include <QLayout>
+#include <QClipboard>
+#include <QRadioButton>
+#include <QEvent>
+#include <QPainter>
+#include <QStyle>
 #include <q3groupbox.h>
 #include <q3popupmenu.h>
 #include <q3valuestack.h>

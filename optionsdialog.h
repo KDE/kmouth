@@ -20,7 +20,7 @@
 #ifndef OPTIONSDIALOG_H
 #define OPTIONSDIALOG_H
 
-#include <qobject.h>
+#include <QObject>
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
 class QTabWidget;

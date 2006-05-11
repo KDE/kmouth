@@ -17,8 +17,8 @@
 
 // $Id$
 
-#include <qregexp.h>
-#include <qdir.h>
+#include <QRegExp>
+#include <QDir>
 //Added by qt3to4:
 #include <QTextStream>
 

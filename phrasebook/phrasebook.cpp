@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qprinter.h>
-#include <qpainter.h>
-#include <qfile.h>
-#include <qxml.h>
-#include <qregexp.h>
+#include <QPrinter>
+#include <QPainter>
+#include <QFile>
+#include <QtXml>
+#include <QRegExp>
 #include <qstack.h>
 #include <QTextStream>
 #include <Q3PopupMenu>

@@ -18,17 +18,17 @@
 
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
-#include <qtextcodec.h>
+#include <QTextCodec>
 #include <q3ptrlist.h>
-#include <qlayout.h>
+#include <QLayout>
 #include <q3whatsthis.h>
 #include <kcombobox.h>
 #include <klocale.h>
-#include <qlabel.h>
+#include <QLabel>
 #include "speech.h"
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qcheckbox.h>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QCheckBox>
 #include <kurlrequester.h>
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)

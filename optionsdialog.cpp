@@ -16,13 +16,13 @@
  ***************************************************************************/
 
 
-#include <qlayout.h>
-#include <qlabel.h>
+#include <QLayout>
+#include <QLabel>
 #include <q3whatsthis.h>
 #include <q3grid.h>
-#include <qtabwidget.h>
-#include <qpixmap.h>
-#include <qfile.h>
+#include <QTabWidget>
+#include <QPixmap>
+#include <QFile>
 
 #include <kcombobox.h>
 #include <klocale.h>

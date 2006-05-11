@@ -18,7 +18,7 @@
 #ifndef PHRASETREE_H
 #define PHRASETREE_H
 
-#include <qpixmap.h>
+#include <QPixmap>
 //Added by qt3to4:
 #include <QKeyEvent>
 #include <QDropEvent>

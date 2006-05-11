@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qlayout.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qradiobutton.h>
-#include <qlineedit.h>
-#include <qcombobox.h>
-#include <qtextcodec.h>
+#include <QLayout>
+#include <QLabel>
+#include <QCheckBox>
+#include <QRadioButton>
+#include <QLineEdit>
+#include <QComboBox>
+#include <QTextCodec>
 
 //Added by qt3to4:
 #include <QTextStream>

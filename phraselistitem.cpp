@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 #include "phraselistitem.h"
-#include <qstyle.h>
+#include <QStyle>
 #include <QStyleOptionFocusRect>
-#include <qpainter.h>
+#include <QPainter>
 
 PhraseListItem::PhraseListItem (const QString & text)
    : Q3ListBoxText(text) {

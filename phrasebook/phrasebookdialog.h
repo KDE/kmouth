@@ -19,9 +19,9 @@
 #define PHRASEBOOKDIALOG_H
 
 #include <q3button.h>
-#include <qradiobutton.h>
+#include <QRadioButton>
 #include <q3buttongroup.h>
-#include <qlabel.h>
+#include <QLabel>
 #include <q3listview.h> 
 //Added by qt3to4:
 #include <QList>

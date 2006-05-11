@@ -17,8 +17,8 @@
 
 
 #include "configwizard.h"
-#include <qlayout.h>
-#include <qlabel.h>
+#include <QLayout>
+#include <QLabel>
 #include <k3listview.h>
 #include <klocale.h>
 #include <kapplication.h>

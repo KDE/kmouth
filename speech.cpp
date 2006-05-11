@@ -16,12 +16,12 @@
  ***************************************************************************/
 
 #include "speech.h"
-#include <qstring.h>
+#include <QString>
 #include <QStack>
-#include <qstringlist.h>
-#include <qregexp.h>
-#include <qtextcodec.h>
-#include <qfile.h>
+#include <QStringList>
+#include <QRegExp>
+#include <QTextCodec>
+#include <QFile>
 #include <QHash>
 //Added by qt3to4:
 #include <QTextStream>

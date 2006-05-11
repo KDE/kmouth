@@ -16,12 +16,12 @@
  ***************************************************************************/
 
 // include files for Qt
-#include <qprinter.h>
-#include <qpainter.h>
-#include <qlayout.h>
+#include <QPrinter>
+#include <QPainter>
+#include <QLayout>
 
 #include <q3popupmenu.h>
-#include <qclipboard.h>
+#include <QClipboard>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QHBoxLayout>

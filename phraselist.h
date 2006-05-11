@@ -25,7 +25,7 @@
 
 // include files for Qt
 #include <qwidget.h>
-#include <qpushbutton.h>
+#include <QPushButton>
 #include <kcombobox.h>
 //Added by qt3to4:
 #include <QKeyEvent>
