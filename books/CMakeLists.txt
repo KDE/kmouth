@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -9,7 +8,6 @@ install_files( ${DATA_INSTALL_DIR}/kmouth/books/de FILES de.desktop de-courteous
 install_files( ${DATA_INSTALL_DIR}/kmouth/books/sv FILES sv.desktop sv-courteousness.phrasebook sv-greetings.phrasebook sv-howareyou.phrasebook sv-personal.phrasebook )
 install_files( ${DATA_INSTALL_DIR}/kmouth/books/en FILES en.desktop en-courteousness.phrasebook en-greetings.phrasebook en-howareyou.phrasebook en-personal.phrasebook )
 
-kde4_footer()
 
 
 

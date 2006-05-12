@@ -1,4 +1,3 @@
-kde4_header()
 project(kmouth)
 
 set(libphrasebook_SRCS 
@@ -64,7 +63,6 @@ install_files( ${APPLNK_INSTALL_DIR}/Applications FILES kmouth.desktop )
 install_files( ${CONFIG_INSTALL_DIR} FILES kmouthrc )
 install_files( ${DATA_INSTALL_DIR}/kmouth FILES kmouthui.rc )
 
-kde4_footer()
 
 
 

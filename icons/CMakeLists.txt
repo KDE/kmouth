@@ -1,4 +1,3 @@
-kde4_header()
 
 add_subdirectory( history ) 
 add_subdirectory( phrase ) 
@@ -12,7 +11,6 @@ add_subdirectory( app )
 
 install_files( ${DATA_INSTALL_DIR}/kmouth/icons FILES  )
 
-kde4_footer()
 
 
 
