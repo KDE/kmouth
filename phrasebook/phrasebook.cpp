@@ -23,7 +23,8 @@
 #include <qstack.h>
 #include <QTextStream>
 #include <Q3PopupMenu>
-
+#include <kactionmenu.h>
+#include <kactioncollection.h>
 #include <klocale.h>
 #include <kaction.h>
 #include <kmenu.h>

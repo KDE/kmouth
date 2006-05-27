@@ -40,6 +40,8 @@ class PhraseTree;
 class QStringList;
 class QString;
 class K3ListView;
+class KToolBarPopupAction;
+class KActionMenu;
 
 struct StandardBook {
    QString name;

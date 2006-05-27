@@ -36,7 +36,6 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *paren
 {
    ttsSystem = new TextToSpeechSystem();
 
-   urlReq->setShowLocalProtocol (false);
    buildCodecList();
 }
 
@@ -55,7 +54,7 @@ void TextToSpeechConfigurationWidget::buildCodecList () {
 }
 
 void TextToSpeechConfigurationWidget::cancel() {
-  urlReq->setURL (ttsSystem->ttsCommand);
+  urlReq->setUrl (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
   characterCodingBox->setCurrentItem(ttsSystem->codec);
   useKttsd->setChecked (ttsSystem->useKttsd);
@@ -74,7 +73,7 @@ TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const {
 
 void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QString &langGroup) {
   ttsSystem->readOptions (config, langGroup);
-  urlReq->setURL (ttsSystem->ttsCommand);
+  urlReq->setUrl (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
   characterCodingBox->setCurrentItem(ttsSystem->codec);
   useKttsd->setChecked (ttsSystem->useKttsd);

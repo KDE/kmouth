@@ -29,7 +29,6 @@
 // include files for KDE
 #include <kapplication.h>
 #include <kmainwindow.h>
-#include <kaccel.h>
 #include <kaction.h>
 #include <kurl.h>
 
@@ -39,7 +38,8 @@ class OptionsDialog;
 class TextToSpeechSystem;
 class PhraseBookDialog;
 class PhraseBook;
-
+class KToggleAction;
+class KActionCollection;
 /**
   * The base class for KMouth application windows. It sets up the main
   * window and reads the config file as well as providing a menubar, toolbar

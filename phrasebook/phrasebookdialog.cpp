@@ -27,13 +27,13 @@
 #include <q3popupmenu.h>
 #include <q3valuestack.h>
 #include <q3ptrstack.h>
-
+#include <ktoolbarpopupaction.h>
 //Added by qt3to4:
 #include <QGridLayout>
 #include <QDropEvent>
 #include <QLabel>
 #include <QVBoxLayout>
-
+#include <Q3ListViewItem>
 // include files for KDE
 #include <kmenu.h>
 #include <kxmlguifactory.h>
@@ -506,7 +506,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setText("");
       buttonBox->lineEdit->setEnabled(false);
       buttonBox->shortcutLabel->setEnabled(false);
-      buttonBox->keyButton->setShortcut("", false);
+      //buttonBox->keyButton->setShortcut("", false);
       buttonBox->keyButton->setEnabled(false);
       buttonBox->noKey->setChecked (false);
       buttonBox->noKey->setEnabled (false);
@@ -521,7 +521,8 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(true);
       QString shortcut = currentItem->text(1);
-      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
+#warning "kde4 port it"	  
+      //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
       if (shortcut.isEmpty() || shortcut.isNull()) {
          buttonBox->noKey->setChecked (true);
          buttonBox->customKey->setChecked (false);
@@ -541,7 +542,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setText(currentItem->text(0));
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(false);
-      buttonBox->keyButton->setShortcut("", false);
+      //buttonBox->keyButton->setShortcut("", false);
       buttonBox->keyButton->setEnabled(false);
       buttonBox->noKey->setChecked (false);
       buttonBox->noKey->setEnabled (false);
@@ -580,7 +581,8 @@ void PhraseBookDialog::slotNoKey() {
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
       currentItem->setCut (KShortcut(QString()));
-      buttonBox->keyButton->setShortcut(currentItem->cut(), false);
+#warning "kde4: port it"
+	  //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
 }
@@ -614,8 +616,8 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
          KMessageBox::sorry( this, s, i18n("Invalid Shortcut Key") );
          return;
       }
-   }
 #endif
+   }
    PhraseTreeItem *currentItem = selectedItem (treeView);
    // If key isn't already in use,
    if (!treeView->isKeyPresent (cut, currentItem, true)) {

@@ -33,6 +33,9 @@
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <ktoolbar.h>
+#include <kactioncollection.h>
+#include <kactionmenu.h>
+#include <ktoggleaction.h>
 // application specific includes
 #include "kmouth.h"
 #include "phraselist.h"
