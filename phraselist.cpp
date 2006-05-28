@@ -30,7 +30,7 @@
 // include files for KDE
 #include <klistbox.h>
 #include <klineedit.h>
-#include <kaudioplayer.h>
+// #include <kaudioplayer.h>
 #include <kcursor.h>
 #include <kiconloader.h>
 #include <klocale.h>
@@ -50,7 +50,8 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name) {
+PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
+   Q_UNUSED(name);
    isInSlot = false;
    // FIXME: Remove or change PaletteBase to Qt::OpaqueMode?
    // setBackgroundMode(PaletteBase);
@@ -159,19 +160,19 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
    if (list.isEmpty())
       dictionaryCombo->hide();
    else if (list.count() == 1) {
-      dictionaryCombo->insertStringList (list);
-      dictionaryCombo->setCurrentItem (0);
+      dictionaryCombo->addItems (list);
+      dictionaryCombo->setCurrentIndex (0);
       dictionaryCombo->hide();
    }
    else {
-      dictionaryCombo->insertStringList (list);
+      dictionaryCombo->addItems (list);
       dictionaryCombo->show();
    
       QStringList::ConstIterator it;
       int i = 0;
       for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
          if (current == *it) {
-            dictionaryCombo->setCurrentItem (i);
+            dictionaryCombo->setCurrentIndex (i);
             return;
          }
       }
@@ -203,7 +204,7 @@ void PhraseList::readCompletionOptions(KConfig *config) {
       int i = 0;
       for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
          if (current == *it) {
-            dictionaryCombo->setCurrentItem (i);
+            dictionaryCombo->setCurrentIndex (i);
             return;
          }
       }
@@ -291,7 +292,7 @@ void PhraseList::lineEntered (const QString &phrase) {
 
 void PhraseList::speakPhrase (const QString &phrase) {
    // QApplication::setOverrideCursor (KCursor::WaitCursor, false);
-   QApplication::setOverrideCursor (Qt::WaitCursor, false);
+   QApplication::setOverrideCursor (Qt::WaitCursor);
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    QString language = completion->languageOfWordList (completion->currentWordList());
    theApp->getTTSSystem()->speak(phrase, language);
@@ -324,7 +325,7 @@ void PhraseList::contextMenuRequested (Q3ListBoxItem *, const QPoint &pos) {
    KXMLGUIFactory *factory = theApp->factory();
    Q3PopupMenu *popup = (Q3PopupMenu *)factory->container(name,theApp);
    if (popup != 0) {
-      popup->popup(pos, 0);
+      popup->exec(pos, 0);
    }
 }
 
@@ -426,7 +427,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
       }
       e->accept();
    }
-   else if ((e->state() & Qt::KeyboardModifierMask) == Qt::ControlModifier) {
+   else if (e->modifiers() & Qt::ControlModifier) {
       if (e->key() == Qt::Key_C) {
          copy();
          e->accept();

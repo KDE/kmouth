@@ -125,12 +125,12 @@ bool saveWordList (WordMap map, QString filename) {
       return false;
 
    QTextStream stream(&file);
-   stream.setEncoding (QTextStream::UnicodeUTF8);
+   stream.setCodec ("UTF-8");
 
    stream << "WPDictFile\n";
    WordMap::ConstIterator it;
    for (it = map.begin(); it != map.end(); ++it)
-      stream << it.key() << "\t" << it.data() << "\t2\n";
+      stream << it.key() << "\t" << it.value() << "\t2\n";
    file.close();
    return true;
 }
@@ -156,9 +156,9 @@ void addWords (WordMap &map, WordMap add) {
    WordList::WordMap::ConstIterator it;
    for (it = add.begin(); it != add.end(); ++it)
       if (map.contains(it.key()))
-         map[it.key()] += it.data();
+         map[it.key()] += it.value();
       else
-         map[it.key()] = it.data();
+         map[it.key()] = it.value();
 }
 
 void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding encoding, QTextCodec *codec) {
@@ -176,7 +176,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
       QFile wpdfile(filename);
       if (wpdfile.open(QIODevice::ReadOnly)) {
          QTextStream stream(&wpdfile);
-         stream.setEncoding (QTextStream::UnicodeUTF8);
+         stream.setCodec ("UTF-8");
 
          if (!stream.atEnd()) {
             QString s = stream.readLine();
@@ -257,17 +257,17 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
       long long weight = 0;
       WordMap::ConstIterator iter;
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
-         weight += iter.data();
-      float factor = 1.0 * it.data() / weight;
+         weight += iter.value();
+      float factor = 1.0 * it.value() / weight;
       totalWeight += it.data();
       if (weight > maxWeight)
          maxWeight = weight;
 
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
          if (map.contains(iter.key()))
-            map[iter.key()] += iter.data() * factor;
+            map[iter.key()] += iter.value() * factor;
          else
-            map[iter.key()] = iter.data() * factor;
+            map[iter.key()] = iter.value() * factor;
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;

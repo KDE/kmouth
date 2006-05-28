@@ -175,7 +175,8 @@ class PhraseAction : public KAction {
    Q_OBJECT
 public:
    PhraseAction (const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {
+   : KAction (KIcon("phrase"), phrase, parent, phrase.toLatin1()) {
+      this->setShortcut(cut);
       this->phrase = phrase;
       connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
    };

@@ -28,6 +28,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstdaction.h>
+#include <kstdaccel.h>
 #include <kprinter.h>
 #include <kmenu.h>
 #include <kstandarddirs.h>
@@ -226,7 +227,8 @@ void KMouthApp::saveOptions() {
       // config->writeEntry("Show Toolbar", viewToolBar->isChecked());
       config->writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
       config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
-      config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
+      // FIXME: KToolBar no longer has barPos() method.
+      // config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
       if (phraseList != 0)
          phraseList->saveCompletionOptions(config);
@@ -260,9 +262,10 @@ void KMouthApp::readOptions()
 
 
   // bar position settings
-  KToolBar::BarPosition toolBarPos;
-  toolBarPos=(KToolBar::BarPosition) config->readEntry("ToolBarPos", int(KToolBar::Top));
-  toolBar("mainToolBar")->setBarPos(toolBarPos);
+  // FIXME:
+  // KToolBar::BarPosition toolBarPos;
+  // toolBarPos=(KToolBar::BarPosition) config->readEntry("ToolBarPos", int(KToolBar::Top));
+  // toolBar("mainToolBar")->setBarPos(toolBarPos);
 
   QSize size=config->readEntry("Geometry",QSize());
   if(!size.isEmpty())
@@ -452,7 +455,7 @@ void KMouthApp::slotStatusMsg(const QString &text)
 {
   ///////////////////////////////////////////////////////////////////
   // change status message permanently
-  statusBar()->clear();
+  statusBar()->clearMessage();
   statusBar()->changeItem(text, ID_STATUS_MSG);
 }
 
@@ -461,14 +464,13 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    QMenu *popup = (QMenu *)factory()->container(name, this);
    KToolBar *toolbar = toolBar ("phrasebookBar");
 
-   KActionPtrList actions = phrases->actions ();
-   KActionPtrList::iterator iter;
-   for (iter = actions.begin(); iter != actions.end(); ++iter) {
-      (*iter)->unplugAll();
+   QList<KAction *> actions = phrases->actions ();
+   for (int actNdx = 0; actNdx < actions.count(); ++actNdx) {
+      actions[actNdx]->unplugAll();
    }
    delete phrases;
 
-   phrases = new KActionCollection (this, actionCollection());
+   phrases = new KActionCollection (actionCollection());
    book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected (const QString &)));
 
    QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
