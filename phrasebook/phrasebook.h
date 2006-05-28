@@ -184,7 +184,7 @@ public:
    }
 
 public slots:
-   void slotActivated () {
+   void slotTriggered () {
       KAction::slotTriggered();
       emit slotActivated (phrase);
    }
