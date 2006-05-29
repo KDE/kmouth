@@ -148,11 +148,14 @@ void CheckBookItem::childChange (int numberDiff, int selDiff) {
 /***************************************************************************/
 
 InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *name)
-   : QWidget(parent, name)
+   : QWidget(parent)
 {
-   QVBoxLayout *mainLayout = new QVBoxLayout (this, 0, KDialog::spacingHint());
-   QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
-   mainLayout->add (label);
+   setObjectName(name);
+   QVBoxLayout *mainLayout = new QVBoxLayout (this);
+   mainLayout->setSpacing(KDialog::spacingHint());
+   QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this);
+   label->setObjectName("booksTitle");
+   mainLayout->addWidget (label);
 
    books = new K3ListView (this);
    books->setSorting (-1);
@@ -163,7 +166,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    books->setRootIsDecorated (true);
    books->setAllColumnsShowFocus (true);
    books->setSelectionMode (Q3ListView::Multi);
-   mainLayout->add (books);
+   mainLayout->addWidget (books);
 
    initStandardPhraseBooks();
 }
@@ -245,7 +248,10 @@ void InitialPhraseBookWidget::createBook () {
 
 ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
 : ButtonBoxUI (parent, name) {
-   keyButtonPlaceLayout = new QGridLayout (keyButtonPlace, 1, 1, 0, 0, "keyButtonPlaceLayout");
+   keyButtonPlaceLayout = new QGridLayout (keyButtonPlace);
+   keyButtonPlaceLayout->setObjectName("keyButtonPlaceLayout");
+   keyButtonPlaceLayout->setMargin(0);
+   keyButtonPlaceLayout->setSpacing(0);
 
    keyButton = new KKeyButton (keyButtonPlace);
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
@@ -300,7 +306,8 @@ PhraseBookDialog::~PhraseBookDialog() {
 void PhraseBookDialog::initGUI () {
    QWidget *page = new QWidget( this );
    setCentralWidget(page);
-   QVBoxLayout *mainLayout = new QVBoxLayout (page, 0);
+   QVBoxLayout *mainLayout = new QVBoxLayout (page);
+   mainLayout->setMargin(0);
    
    treeView = new PhraseTree (page, "phrasetree");
    treeView->setSorting (-1);
@@ -332,11 +339,13 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, this, SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
+   fileNewPhrase = new KAction (KIcon("phrase_new"), i18n("&New Phrase"), actionCollection(),"file_new_phrase");
+   connect(fileNewPhrase, SIGNAL(trigger(bool)), this, SLOT(slotAddPhrase()));
    fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new KAction (KIcon("phrasebook_new"), i18n("New Phrase &Book"), actionCollection(),"file_new_book");
+   connect(fileNewBook, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrasebook()));
    fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
@@ -344,11 +353,13 @@ void PhraseBookDialog::initActions() {
    fileSave->setToolTip(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
-   fileImport = new KAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
+   fileImport = new KAction (KIcon("phrasebook_open"), i18n("&Import..."), actionCollection(),"file_import");
+   connect(fileImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
    fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   toolbarImport = new KToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
+   toolbarImport = new KToolBarPopupAction (KIcon("phrasebook_open"), i18n("&Import..."), actionCollection(),"toolbar_import");
+   connect(toolbarImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
    toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
@@ -356,7 +367,8 @@ void PhraseBookDialog::initActions() {
    fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-   fileExport = new KAction (i18n("&Export..."), "phrasebook_save", 0, this, SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
+   fileExport = new KAction (KIcon("phrasebook_save"), i18n("&Export..."), actionCollection(),"file_export");
+   connect(fileExport, SIGNAL(triggered(bool)), this, SLOT(slotExportPhrasebook()));
    fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
@@ -381,7 +393,8 @@ void PhraseBookDialog::initActions() {
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new KAction (i18n("&Delete"), "editdelete", 0, this, SLOT(slotRemove()), actionCollection(),"edit_delete");
+   editDelete = new KAction (KIcon("editdelete"), i18n("&Delete"), actionCollection(),"edit_delete");
+   connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotRemove()));
    editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 
@@ -393,7 +406,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
    QFileInfo file(filename);
    QString path = file.path();
    QString dispPath = "";
-   int position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
+   int position = path.indexOf("/kmouth/books/")+QString("/kmouth/books/").length();
 
    while (path.length() > position) {
       file.setFile(path);
@@ -602,7 +615,7 @@ void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
 
 void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    // Check whether the shortcut is valid
-   for (uint i = 0; i < cut.count(); i++) {
+   for (int i = 0; i < cut.count(); i++) {
       const QKeySequence& seq = cut.seq(i);
       //const KKey& key = seq.key(0);
 #warning "kde 4 port it";
@@ -682,6 +695,7 @@ void PhraseBookDialog::slotCut () {
 void PhraseBookDialog::slotCopy () {
    PhraseBook book;
    treeView->fillBook (&book, true);
+#warning "kde4: port to QMimeData"
    QApplication::clipboard()->setData(new PhraseBookDrag(&book));
 }
 

@@ -80,6 +80,7 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 PhraseTree::PhraseTree (QWidget *parent, const char *name)
    : K3ListView (parent)
 {
+   Q_UNUSED(name);
    phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        K3Icon::Small);
    phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", K3Icon::Small);
    phrase            = KGlobal::iconLoader()->loadIcon("phrase",            K3Icon::Small);
@@ -284,7 +285,7 @@ void PhraseTree::deleteSelectedItems() {
 }
 
 void PhraseTree::keyPressEvent (QKeyEvent *e) {
-   if ((e->state() & Qt::KeyboardModifierMask) == Qt::AltModifier) {
+   if (e->modifiers() & Qt::AltModifier) {
       if (e->key() == Qt::Key_Up) {
          Q3ListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
@@ -457,8 +458,8 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
 // Returns iSeq index if cut2 has a sequence of equal or higher priority
 // to a sequence in cut, else -1
 static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
-   for (uint iSeq = 0; iSeq < cut.count(); iSeq++) {
-      for (uint iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < cut2.count(); iSeq2++) {
+   for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
+      for (int iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < cut2.count(); iSeq2++) {
          if (cut.seq(iSeq) == cut2.seq(iSeq2))
             return iSeq;
        }
@@ -479,7 +480,7 @@ void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QStr
 }
 
 bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
-   for (uint iSeq = 0; iSeq < cut.count(); iSeq++) {
+   for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
       const QKeySequence& seq = cut.seq(iSeq);
 
       KStdAccel::StdAccel id = KStdAccel::findStdAccel( seq );

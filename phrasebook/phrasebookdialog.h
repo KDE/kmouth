@@ -102,7 +102,7 @@ class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
    StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
+   : KAction (KIcon("phrasebook"), name, parent, name) {
       this->url = url;
       connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
    };
