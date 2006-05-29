@@ -105,11 +105,11 @@ void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
    QString local = i18n("Local")+" (";
    local += QTextCodec::codecForLocale()->name();
    local += ")";
-   combo->insertItem (local, 0);
-   combo->insertItem (i18n("Latin1"), 1);
-   combo->insertItem (i18n("Unicode"), 2);
+   combo->addItem (local, 0);
+   combo->addItem (i18n("Latin1"), 1);
+   combo->addItem (i18n("Unicode"), 2);
    for (int i = 0; i < codecList->count(); i++ )
-      combo->insertItem (codecList->at(i)->name(), i+3);
+      combo->addItem (codecList->at(i)->name(), i+3);
 }
 
 void DictionaryCreationWizard::calculateAppropriate (bool) {
@@ -171,10 +171,10 @@ QString DictionaryCreationWizard::createDictionary() {
       dicFile.clear();
    }
    else if (creationSource->fileButton->isChecked()) {
-      QString filename = fileWidget->url->url();
-      int encoding = fileWidget->encodingCombo->currentItem();
+      QString filename = fileWidget->url->url().path();
+      int encoding = fileWidget->encodingCombo->currentIndex();
       if (fileWidget->spellCheckBox->isChecked())
-         dicFile = fileWidget->ooDictURL->url();
+         dicFile = fileWidget->ooDictURL->url().path();
       switch (encoding) {
       case 0:
          map = WordList::parseFile (filename, QTextStream::Locale, 0, pdlg);
@@ -190,10 +190,10 @@ QString DictionaryCreationWizard::createDictionary() {
       }
    }
    else if (creationSource->directoryButton->isChecked()) {
-      QString directory = dirWidget->url->url();
-      int encoding = dirWidget->encodingCombo->currentItem();
+      QString directory = dirWidget->url->url().path();
+      int encoding = dirWidget->encodingCombo->currentIndex();
       if (dirWidget->spellCheckBox->isChecked())
-         dicFile = dirWidget->ooDictURL->url();
+         dicFile = dirWidget->ooDictURL->url().path();
       switch (encoding) {
       case 0:
          map = WordList::parseDir (directory, QTextStream::Locale, 0, pdlg);
@@ -211,7 +211,7 @@ QString DictionaryCreationWizard::createDictionary() {
    else { // creationSource->kdeDocButton must be checked
       QString language = kdeDocWidget->languageButton->current();
       if (kdeDocWidget->spellCheckBox->isChecked())
-         dicFile = kdeDocWidget->ooDictURL->url();
+         dicFile = kdeDocWidget->ooDictURL->url().path();
       map = WordList::parseKDEDoc (language, pdlg);
    }
    
@@ -245,10 +245,10 @@ QString DictionaryCreationWizard::name() {
       return i18nc("In the sense of a blank word list", "Empty list");
    }
    else if (creationSource->fileButton->isChecked()) {
-      return fileWidget->url->url();
+      return fileWidget->url->url().path();
    }
    else if (creationSource->directoryButton->isChecked()) {
-      return dirWidget->url->url();
+      return dirWidget->url->url().path();
    }
    else { // creationSource->kdeDocButton must be checked
       return i18n("KDE Documentation");
@@ -289,8 +289,8 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
    addChild(contents);
    QGridLayout *layout = new QGridLayout (contents);
    setResizePolicy (Q3ScrollView::AutoOneFit);
-   layout->setColStretch (0, 0);
-   layout->setColStretch (1, 1);
+   layout->setColumnStretch (0, 0);
+   layout->setColumnStretch (1, 1);
 
    int row = 0;
    QStringList::Iterator nIt = dictionaryNames.begin();
@@ -359,7 +359,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    map = WordList::parseKDEDoc (language, pdlg);
 
    if (spellCheckBox->isChecked())
-      map = WordList::spellCheck (map, ooDictURL->url(), pdlg);
+      map = WordList::spellCheck (map, ooDictURL->url().path(), pdlg);
 
    pdlg->close();
    delete pdlg;

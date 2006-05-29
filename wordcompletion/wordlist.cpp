@@ -259,7 +259,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
          weight += iter.value();
       float factor = 1.0 * it.value() / weight;
-      totalWeight += it.data();
+      totalWeight += it.value();
       if (weight > maxWeight)
          maxWeight = weight;
 
@@ -285,7 +285,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    WordMap resultMap;
    QMap<QString,float>::ConstIterator iter;
    for (iter = map.begin(); iter != map.end(); ++iter)
-      resultMap[iter.key()] = (int)(factor * iter.data() + 0.5);
+      resultMap[iter.key()] = (int)(factor * iter.value() + 0.5);
 
    return resultMap;
 }
@@ -323,8 +323,9 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
    QStringList directories;
    directories += directory;
    QStringList files;
-   for (QStringList::Iterator it = directories.begin(); it != directories.end(); it = directories.remove(it)) {
-      QDir dir(*it);
+   int dirNdx = 0;
+   while (dirNdx < directories.count()) {
+      QDir dir(directories.at(dirNdx));
       const QFileInfoList entries = dir.entryInfoList ("*", QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
 
        for (int i = 0; i < entries.size(); ++i) {
@@ -338,6 +339,7 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
                   files += fileInfo.filePath ();
             }
        }
+       directories.removeAt(dirNdx);
    }
 
    return parseFiles (files, encoding, codec, pdlg);
@@ -526,8 +528,8 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
          while (!stream.atEnd()) {
             QString s = stream.readLine();
             if (s.contains("/")) {
-               QString word = s.left(s.find("/")).toLower();
-               QString modifiers = s.right(s.length() - s.find("/"));
+               QString word = s.left(s.indexOf("/")).toLower();
+               QString modifiers = s.right(s.length() - s.indexOf("/"));
 
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }

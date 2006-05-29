@@ -59,7 +59,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
          QMap<QString,int>::ConstIterator it;
          for (it = d->map.begin(); it != d->map.end(); ++it)
             if (it.key().startsWith(suffix))
-               matches += Match (-it.data(), it.key());
+               matches += Match (-it.value(), it.key());
          qHeapSort(matches);
 
          MatchList::ConstIterator iter = matches.begin();
@@ -216,10 +216,10 @@ void WordCompletion::save () {
       for (it = d->map.begin(); it != d->map.end(); ++it) {
          if (d->addedWords.contains(it.key())) {
             stream << it.key() << "\t" << d->addedWords[it.key()] << "\t1\n";
-            stream << it.key() << "\t" << it.data() - d->addedWords[it.key()] << "\t2\n";
+            stream << it.key() << "\t" << it.value() - d->addedWords[it.key()] << "\t2\n";
          }
          else
-            stream << it.key() << "\t" << it.data() << "\t2\n";
+            stream << it.key() << "\t" << it.value() << "\t2\n";
       }
       file.close();
       d->wordsToSave = false;
