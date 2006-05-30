@@ -35,8 +35,7 @@
 ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
              : K3Wizard(parent, name, true)
 {
-   setCaption (i18n("Initial Configuration - KMouth"));
-
+   setWindowTitle(i18n("Initial Configuration - KMouth"));
    initCommandPage (config);
    initBookPage ();
    initCompletion (config);

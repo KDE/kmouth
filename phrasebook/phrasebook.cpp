@@ -214,7 +214,7 @@ QStringList PhraseBook::toStringList () {
 }
 
 bool PhraseBook::save (const KUrl &url) {
-   QRegExp pattern("*.phrasebook",true,true);
+   QRegExp pattern("*.phrasebook", Qt::CaseSensitive, QRegExp::Wildcard);
    return save (url, pattern.exactMatch(url.fileName()));
 }
 
@@ -236,7 +236,7 @@ bool PhraseBook::save (const KUrl &url, bool asPhrasebook) {
       save (stream, asPhrasebook);
       file.close();
 
-      if (file.status() != IO_Ok)
+      if (file.error() != QFile::NoError)
          return false;
       else
          return true;
@@ -288,7 +288,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phr
       if (url.fileName (false).contains('.') == 0) {
          url.setFileName (url.fileName(false) + ".phrasebook");
       }
-      else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
+      else if (url.fileName (false).right (11).contains (".phrasebook", Qt::CaseInsensitive) == 0) {
          int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                                                            "Do you wish to add <i>.phrasebook</i> to the filename?", url.fileName())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
          if (filetype == KMessageBox::Cancel) {
@@ -301,7 +301,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phr
       result = save (url, true);
    }
    else if (fdlg.currentFilter() == "*.txt") {
-      if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
+      if (url.fileName (false).right (11).contains (".phrasebook", Qt::CaseInsensitive) == 0) {
          result = save (url, false);
       }
       else {

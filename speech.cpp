@@ -195,7 +195,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
          fs->setCodec (codec);
       *fs << text;
       *fs << endl;
-      QString filename = tempFile.file()->name();
+      QString filename = tempFile.file()->fileName();
       tempFile.close();
 
       // 2. prepare the command:

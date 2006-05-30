@@ -46,24 +46,24 @@ void TextToSpeechConfigurationWidget::buildCodecList () {
    QString local = i18n("Local")+" (";
    local += QTextCodec::codecForLocale()->name();
    local += ")";
-   characterCodingBox->insertItem (local, Speech::Local);
-   characterCodingBox->insertItem (i18n("Latin1"), Speech::Latin1);
-   characterCodingBox->insertItem (i18n("Unicode"), Speech::Unicode);
-   for (uint i = 0; i < ttsSystem->codecList->count(); i++ )
-      characterCodingBox->insertItem (ttsSystem->codecList->at(i)->name(), Speech::UseCodec + i);
+   characterCodingBox->addItem (local, Speech::Local);
+   characterCodingBox->addItem (i18n("Latin1"), Speech::Latin1);
+   characterCodingBox->addItem (i18n("Unicode"), Speech::Unicode);
+   for (int i = 0; i < ttsSystem->codecList->count(); i++ )
+      characterCodingBox->addItem (ttsSystem->codecList->at(i)->name(), Speech::UseCodec + i);
 }
 
 void TextToSpeechConfigurationWidget::cancel() {
   urlReq->setUrl (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
-  characterCodingBox->setCurrentItem(ttsSystem->codec);
+  characterCodingBox->setCurrentIndex(ttsSystem->codec);
   useKttsd->setChecked (ttsSystem->useKttsd);
 }
 
 void TextToSpeechConfigurationWidget::ok() {
-  ttsSystem->ttsCommand = urlReq->url();
+  ttsSystem->ttsCommand = urlReq->url().path();
   ttsSystem->stdIn = stdInButton->isChecked();
-  ttsSystem->codec = characterCodingBox->currentItem();
+  ttsSystem->codec = characterCodingBox->currentIndex();
   ttsSystem->useKttsd = useKttsd->isChecked();
 }
 
@@ -75,7 +75,7 @@ void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QStrin
   ttsSystem->readOptions (config, langGroup);
   urlReq->setUrl (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
-  characterCodingBox->setCurrentItem(ttsSystem->codec);
+  characterCodingBox->setCurrentIndex(ttsSystem->codec);
   useKttsd->setChecked (ttsSystem->useKttsd);
 }
 

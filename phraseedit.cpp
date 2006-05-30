@@ -27,7 +27,7 @@ PhraseEdit::~PhraseEdit() {
 }
 
 void PhraseEdit::keyPressEvent (QKeyEvent *e) {
-   if ((e->state() & Qt::KeyboardModifierMask) == Qt::ControlModifier) {
+   if (e->modifiers() & Qt::ControlModifier) {
       if (e->key() == Qt::Key_C) {
          if (!this->hasSelectedText()) {
             e->ignore();
@@ -47,7 +47,7 @@ void PhraseEdit::keyPressEvent (QKeyEvent *e) {
          }
       }
    }
-   else if ((e->state() & Qt::KeyboardModifierMask) == Qt::ShiftModifier) {
+   else if (e->modifiers() & Qt::ShiftModifier) {
       if (e->key() == Qt::Key_Delete) {
          if (!hasSelectedText()) {
             e->ignore();

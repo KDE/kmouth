@@ -102,15 +102,21 @@ bool KMouthApp::configured() {
 
 void KMouthApp::initActions() {
 // The "File" menu
-   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KStdAccel::open(), this, SLOT(slotFileOpen()), actionCollection(),"file_open");
+   fileOpen = new KAction(KIcon("phrasehistory_open"), i18n("&Open as History..."), actionCollection(),"file_open");
+   fileOpen->setShortcut(KStdAccel::shortcut(KStdAccel::Open));
+   connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
    fileOpen->setToolTip(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = new KAction(i18n("Save &History As..."), "phrasehistory_save", KStdAccel::save(), this, SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
+   fileSaveAs = new KAction(KIcon("phrasehistory_save"), i18n("Save &History As..."), actionCollection(),"file_save_as");
+   fileSaveAs->setShortcut(KStdAccel::shortcut(KStdAccel::Save));
+   connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
    fileSaveAs->setToolTip(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
-   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KStdAccel::print(), this, SLOT(slotFilePrint()), actionCollection(),"file_print");
+   filePrint = new KAction(KIcon("phrasehistory_print"), i18n("&Print History..."), actionCollection(),"file_print");
+   filePrint->setShortcut(KStdAccel::shortcut(KStdAccel::Print));
+   connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
    filePrint->setToolTip(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
 
@@ -131,12 +137,14 @@ void KMouthApp::initActions() {
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
-   editSpeak = new KAction (i18n("&Speak"), "speak", 0, phraseList, SLOT(speak()), actionCollection(),"edit_speak");
+   editSpeak = new KAction (KIcon("speak"), i18n("&Speak"), actionCollection(),"edit_speak");
+   connect(editSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speak()));
    editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
    editSpeak->setWhatsThis (i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
 
 // The "Phrase book" menu
-   phrasebookEdit = new KAction(i18n("&Edit..."), 0, 0, this, SLOT(slotEditPhrasebook()), actionCollection(),"phrasebook_edit");
+   phrasebookEdit = new KAction(i18n("&Edit..."), actionCollection(),"phrasebook_edit");
+   connect(phrasebookEdit, SIGNAL(triggered(bool)), this, SLOT(slotEditPhrasebook()));
 
 // The "Options" menu
    viewMenuBar = KStdAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
@@ -145,7 +153,8 @@ void KMouthApp::initActions() {
    // viewToolBar->setToolTip(i18n("Enables/disables the toolbar"));
    // viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
-   viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), 0, 0, this, SLOT(slotViewPhrasebookBar()), actionCollection(), "showPhrasebookBar");
+   viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), actionCollection(), "showPhrasebookBar");
+   connect(viewPhrasebookBar, SIGNAL(triggered(bool)), this, SLOT(slotViewPhrasebookBar()));
    viewPhrasebookBar->setToolTip(i18n("Enables/disables the phrasebook bar"));
    viewPhrasebookBar->setWhatsThis (i18n("Enables/disables the phrasebook bar"));
 
@@ -153,7 +162,8 @@ void KMouthApp::initActions() {
    viewStatusBar->setToolTip(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 
-   configureTTS = new KAction (i18n("&Configure KMouth..."), "configure", 0, this, SLOT(slotConfigureTTS()), actionCollection(), "configureTTS");
+   configureTTS = new KAction (KIcon("configure"), i18n("&Configure KMouth..."), actionCollection(), "configureTTS");
+   connect(configureTTS, SIGNAL(triggered(bool)), this, SLOT(slotConfigureTTS()));
    configureTTS->setToolTip(i18n("Opens the configuration dialog"));
    configureTTS->setWhatsThis (i18n("Opens the configuration dialog"));
 
@@ -161,27 +171,33 @@ void KMouthApp::initActions() {
    // The "Help" menu will automatically get created.
 
 // The popup menu of the list of spoken sentences
-   phraseListSpeak = new KAction (i18n("&Speak"),  "speak",  0, phraseList, SLOT(speakListSelection()),  actionCollection(), "phraselist_speak");
+   phraseListSpeak = new KAction (KIcon("speak"), i18n("&Speak"), actionCollection(), "phraselist_speak");
    phraseListSpeak->setToolTip(i18n("Speaks the currently selected phrases in the history"));
+   connect(phraseListSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speakListSelection()));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
-   phraseListRemove = new KAction (i18n("&Delete"), "editdelete", 0, phraseList, SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
+   phraseListRemove = new KAction (KIcon("editdelete"), i18n("&Delete"), actionCollection(), "phraselist_remove");
+   connect(phraseListRemove, SIGNAL(triggered(bool)), phraseList, SLOT(removeListSelection()));
    phraseListRemove->setToolTip(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
-   phraseListCut = new KAction (i18n("Cu&t"),   "editcut", 0, phraseList, SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
+   phraseListCut = new KAction (KIcon("editcut"), i18n("Cu&t"), actionCollection(), "phraselist_cut");
+   connect(phraseListCut, SIGNAL(triggered(bool)), phraseList, SLOT(cutListSelection()));
    phraseListCut->setToolTip(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
-   phraseListCopy   = new KAction (i18n("&Copy"), "editcopy", 0, phraseList, SLOT(copyListSelection()),   actionCollection(), "phraselist_copy");
+   phraseListCopy   = new KAction (KIcon("editcopy"), i18n("&Copy"), actionCollection(), "phraselist_copy");
+   connect(phraseListCopy, SIGNAL(triggered(bool)), phraseList, SLOT(copyListSelection()));
    phraseListCut->setToolTip(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
-   phraselistSelectAll = new KAction (i18n("Select &All Entries"), 0, 0, phraseList, SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
+   phraselistSelectAll = new KAction (i18n("Select &All Entries"), actionCollection(),"phraselist_select_all");
+   connect(phraselistSelectAll, SIGNAL(triggered(bool)), phraseList, SLOT(selectAllEntries()));
    phraselistSelectAll->setToolTip(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 
-   phraselistDeselectAll = new KAction (i18n("D&eselect All Entries"), 0, 0, phraseList, SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
+   phraselistDeselectAll = new KAction (i18n("D&eselect All Entries"), actionCollection(),"phraselist_deselect_all");
+   connect(phraselistDeselectAll, SIGNAL(triggered(bool)), phraseList, SLOT(deselectAllEntries()));
    phraselistDeselectAll->setToolTip(i18n("Deselects all phrases in the history"));
    phraselistDeselectAll->setWhatsThis (i18n("Deselects all phrases in the history"));
 

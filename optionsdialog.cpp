@@ -42,10 +42,10 @@
 PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
    : PreferencesUI (parent, name)
 {
-   speakCombo->setCurrentItem (1);
+   speakCombo->setCurrentIndex (1);
    speak = false;
 
-   closeCombo->setCurrentItem (2);
+   closeCombo->setCurrentIndex (2);
    save = 2;
 }
 
@@ -54,15 +54,15 @@ PreferencesWidget::~PreferencesWidget() {
 
 void PreferencesWidget::cancel() {
    if (speak)
-      speakCombo->setCurrentItem (0);
+      speakCombo->setCurrentIndex (0);
    else
-      speakCombo->setCurrentItem (1);
-   closeCombo->setCurrentItem (save);
+      speakCombo->setCurrentIndex (1);
+   closeCombo->setCurrentIndex (save);
 }
 
 void PreferencesWidget::ok() {
-   speak = speakCombo->currentItem () == 0;
-   save  = closeCombo->currentItem ();
+   speak = speakCombo->currentIndex () == 0;
+   save  = closeCombo->currentIndex ();
 }
 
 void PreferencesWidget::readOptions (KConfig *config) {
@@ -85,10 +85,10 @@ void PreferencesWidget::readOptions (KConfig *config) {
       save = 2;
 
    if (speak)
-      speakCombo->setCurrentItem (0);
+      speakCombo->setCurrentIndex (0);
    else
-      speakCombo->setCurrentItem (1);
-   closeCombo->setCurrentItem (save);
+      speakCombo->setCurrentIndex (1);
+   closeCombo->setCurrentIndex (save);
 }
 
 void PreferencesWidget::saveOptions (KConfig *config) {
@@ -124,7 +124,8 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    
 	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
    
-   tabCtl = new QTabWidget (pageGeneral, "general");
+   tabCtl = new QTabWidget (pageGeneral);
+   tabCtl->setObjectName("general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());
@@ -144,7 +145,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
       KHBox *pageKttsd = addHBoxPage (i18n("KTTSD Speech Service"),
                                       i18n("KDE Text-to-Speech Daemon Configuration"), iconKttsd);
       
-      kttsd->reparent(pageKttsd,0,QPoint(0,0),true);
+      kttsd->setParent(pageKttsd);
    }
 }
 
