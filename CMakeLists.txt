@@ -59,7 +59,7 @@ install_targets(/bin kmouth )
 
 ########### install files ###############
 
-install_files( ${APPLNK_INSTALL_DIR}/Applications FILES kmouth.desktop )
+install_files( ${XDG_APPS_DIR} FILES kmouth.desktop )
 install_files( ${CONFIG_INSTALL_DIR} FILES kmouthrc )
 install_files( ${DATA_INSTALL_DIR}/kmouth FILES kmouthui.rc )
 
