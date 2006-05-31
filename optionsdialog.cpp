@@ -40,8 +40,10 @@
 #include "speech.h"
 
 PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
-   : PreferencesUI (parent, name)
+   : QWidget (parent)
 {
+   setObjectName(name);
+   setupUi(this);
    speakCombo->setCurrentIndex (1);
    speak = false;
 

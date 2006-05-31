@@ -1,170 +1,150 @@
-<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
-<class>texttospeechconfigurationui</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>texttospeechconfigurationui</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>texttospeechconfigurationui</class>
+  <widget class="QWidget" name="texttospeechconfigurationui" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>391</width>
+        <height>222</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>391</width>
-            <height>222</height>
-        </rect>
+    <property name="windowTitle" >
+      <string>Text-to-Speech</string>
     </property>
-    <property name="windowTitle">
-        <string>Text-to-Speech</string>
-    </property>
-    <vbox>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
-            <number>11</number>
-        </property>
-        <property name="spacing">
+    <layout class="QVBoxLayout" >
+      <property name="margin" >
+        <number>11</number>
+      </property>
+      <property name="spacing" >
+        <number>6</number>
+      </property>
+      <item>
+        <layout class="QVBoxLayout" >
+          <property name="margin" >
+            <number>0</number>
+          </property>
+          <property name="spacing" >
             <number>6</number>
-        </property>
-        <widget class="QLayoutWidget">
-            <property name="name">
-                <cstring>Layout4</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="margin">
-                    <number>0</number>
-                </property>
-                <property name="spacing">
-                    <number>6</number>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>urlLabel</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>C&amp;ommand for speaking texts:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>urlReq</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
+          </property>
+          <item>
+            <widget class="QLabel" name="urlLabel" >
+              <property name="sizePolicy" >
+                <sizepolicy>
+                  <hsizetype>5</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                </sizepolicy>
+              </property>
+              <property name="text" >
+                <string>C&amp;ommand for speaking texts:</string>
+              </property>
+              <property name="buddy" stdset="0" >
+                <cstring>urlReq</cstring>
+              </property>
+              <property name="whatsThis" stdset="0" >
+                <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
 %t -- the text that should be spoken
 %f -- the name of a file containing the text
 %l -- the language code
 %% -- a percent sign</string>
-                    </property>
-                </widget>
-                <widget class="KUrlRequester">
-                    <property name="name">
-                        <cstring>urlReq</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="KUrlRequester" name="urlReq" >
+              <property name="sizePolicy" >
+                <sizepolicy>
+                  <hsizetype>5</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                </sizepolicy>
+              </property>
+              <property name="whatsThis" stdset="0" >
+                <string>This field specifies both the command used for speaking texts and its parameters. KMouth knows the following placeholders:
 %t -- the text that should be spoken
 %f -- the name of a file containing the text
 %l -- the language code
 %% -- a percent sign</string>
-                    </property>
-                </widget>
-            </vbox>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+      <item>
+        <layout class="QVBoxLayout" >
+          <property name="margin" >
+            <number>0</number>
+          </property>
+          <property name="spacing" >
+            <number>6</number>
+          </property>
+          <item>
+            <widget class="QLabel" name="characterCodingLabel" >
+              <property name="sizePolicy" >
+                <sizepolicy>
+                  <hsizetype>5</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                </sizepolicy>
+              </property>
+              <property name="text" >
+                <string>Character &amp;encoding:</string>
+              </property>
+              <property name="buddy" stdset="0" >
+                <cstring>characterCodingBox</cstring>
+              </property>
+              <property name="whatsThis" stdset="0" >
+                <string>This combo box specifies which character encoding is used for passing the text.</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="KComboBox" name="characterCodingBox" >
+              <property name="whatsThis" stdset="0" >
+                <string>This combo box specifies which character encoding is used for passing the text.</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+      <item>
+        <widget class="QCheckBox" name="stdInButton" >
+          <property name="text" >
+            <string>Send the data as standard &amp;input</string>
+          </property>
+          <property name="whatsThis" stdset="0" >
+            <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
+          </property>
         </widget>
-        <widget class="QLayoutWidget">
-            <property name="name">
-                <cstring>Layout5</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="margin">
-                    <number>0</number>
-                </property>
-                <property name="spacing">
-                    <number>6</number>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>characterCodingLabel</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>Character &amp;encoding:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>characterCodingBox</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This combo box specifies which character encoding is used for passing the text.</string>
-                    </property>
-                </widget>
-                <widget class="KComboBox">
-                    <property name="name">
-                        <cstring>characterCodingBox</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This combo box specifies which character encoding is used for passing the text.</string>
-                    </property>
-                </widget>
-            </vbox>
+      </item>
+      <item>
+        <widget class="QCheckBox" name="useKttsd" >
+          <property name="text" >
+            <string>&amp;Use KTTSD speech service if possible</string>
+          </property>
+          <property name="whatsThis" stdset="0" >
+            <string>This check box specifies KMouth tries to use the KTTSD speech service prior to calling the speech synthesizer directly. The KTTSD speech service is a KDE daemon which gives KDE applications a standardized interface for speech synthesis and is currently developed in CVS.</string>
+          </property>
         </widget>
-        <widget class="QCheckBox">
-            <property name="name">
-                <cstring>stdInButton</cstring>
-            </property>
-            <property name="text">
-                <string>Send the data as standard &amp;input</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
-            </property>
-        </widget>
-        <widget class="QCheckBox">
-            <property name="name">
-                <cstring>useKttsd</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Use KTTSD speech service if possible</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>This check box specifies KMouth tries to use the KTTSD speech service prior to calling the speech synthesizer directly. The KTTSD speech service is a KDE daemon which gives KDE applications a standardized interface for speech synthesis and is currently developed in CVS.</string>
-            </property>
-        </widget>
-    </vbox>
-</widget>
-<signals>
-    <signal>configurationChanged()</signal>
-</signals>
-<layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kcombobox.h</includehint>
-</includehints>
-</UI>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+    <customwidget>
+      <class>KComboBox</class>
+      <extends>QComboBox</extends>
+      <header>kcombobox.h</header>
+      <container>0</container>
+      <pixmap></pixmap>
+    </customwidget>
+  </customwidgets>
+</ui>

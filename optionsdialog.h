@@ -21,8 +21,9 @@
 #define OPTIONSDIALOG_H
 
 #include <QObject>
-#include "preferencesui.h"
+#include "ui_preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
+
 class QTabWidget;
 class KCModule;
 class WordCompletionWidget;
@@ -31,7 +32,7 @@ class WordCompletionWidget;
   *@author Gunnar Schmi Dt
   */
 
-class PreferencesWidget : public PreferencesUI {
+class PreferencesWidget : public QWidget, public Ui::PreferencesUI {
    Q_OBJECT
 public:
    PreferencesWidget(QWidget *parent, const char *name);

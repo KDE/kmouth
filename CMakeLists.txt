@@ -50,7 +50,7 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
 
 kde4_automoc(${kmouth_SRCS})
 
-kde4_add_ui3_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
+kde4_add_ui_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
 
 kde4_add_executable(kmouth ${kmouth_SRCS})
 

@@ -32,8 +32,10 @@
 #include <kurlrequester.h>
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
-   : texttospeechconfigurationui (parent, name)
+   : QWidget (parent)
 {
+   setObjectName(name);
+   setupUi(this);
    ttsSystem = new TextToSpeechSystem();
 
    buildCodecList();
