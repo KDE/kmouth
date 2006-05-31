@@ -386,11 +386,13 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
             KActionMenu *menu = new KActionMenu("", phrases,"phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
-            menu->plug (parent);
             if (parent == popup)
                menu->plug (toolbar);
             if (parent != 0)
+            {
+               menu->plug (parent);
                stack.push (parent);
+            }
             parent = menu->popupMenu();
             level++;
          }
