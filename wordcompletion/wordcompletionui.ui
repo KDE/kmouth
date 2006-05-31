@@ -1,289 +1,277 @@
-<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
-<class>WordCompletionUI</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>WordCompletionUI</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>552</width>
-            <height>252</height>
-        </rect>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>WordCompletionUI</class>
+ <widget class="QWidget" name="WordCompletionUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="1" column="0" >
+    <widget class="QGroupBox" name="selectedDictionaryDetails" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>5</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title" >
+      <string>&amp;Selected Dictionary</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="1" column="1" >
+       <widget class="KLanguageButton" name="languageButton" />
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="languageLabel" >
+        <property name="whatsThis" >
+         <string>With this combo box you select the language associated with the selected dictionary.</string>
         </property>
-        <widget class="QLayoutWidget" row="0" column="1">
-            <property name="name">
-                <cstring>layout1</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>addButton</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>Add D&amp;ictionary...</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this button you can add a new dictionary to the list of available dictionaries.</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>deleteButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Delete Dictionary</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this button you delete the selected dictionary.</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>moveUpButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>Move &amp;Up</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this button you move the selected dictionary up.</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>moveDownButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Move Down</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this button you move the selected dictionary down.</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>exportButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Export Dictionary...</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this button you export the selected dictionary to a file.</string>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer1</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>240</height>
-                        </size>
-                    </property>
-                </spacer>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout2</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="K3ListView">
-                    <column>
-                        <property name="text">
-                            <string>Dictionary</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Language</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <property name="name">
-                        <cstring>dictionaryList</cstring>
-                    </property>
-                    <property name="allColumnsShowFocus">
-                        <bool>true</bool>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This list contains all available dictionaries for the word completion. KMouth will display a combo box next to the edit field in the main window if this list contains more than one dictionary. You can use this combo box in order to select the dictionary that actually gets used for the word completion.</string>
-                    </property>
-                </widget>
-                <widget class="QGroupBox">
-                    <property name="name">
-                        <cstring>selectedDictionaryDetails</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="title">
-                        <string>&amp;Selected Dictionary</string>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLabel" row="1" column="0">
-                            <property name="name">
-                                <cstring>languageLabel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Language:</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>With this combo box you select the language associated with the selected dictionary.</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="0" column="0">
-                            <property name="name">
-                                <cstring>dictionaryNameLabel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Name:</string>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>dictionaryName</cstring>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>With this input field you specify the name of the selected dictionary.</string>
-                            </property>
-                        </widget>
-                        <widget class="KLineEdit" row="0" column="1">
-                            <property name="name">
-                                <cstring>dictionaryName</cstring>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>With this input field you specify the name of the selected dictionary.</string>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-            </vbox>
-        </widget>
-    </grid>
-</widget>
-<tabstops>
-    <tabstop>dictionaryList</tabstop>
-    <tabstop>addButton</tabstop>
-    <tabstop>deleteButton</tabstop>
-    <tabstop>moveUpButton</tabstop>
-    <tabstop>moveDownButton</tabstop>
-    <tabstop>exportButton</tabstop>
-    <tabstop>selectedDictionaryDetails</tabstop>
-</tabstops>
-<includes>
-    <include location="global" impldecl="in implementation">kinputdialog.h</include>
-    <include location="local" impldecl="in implementation">klanguagebutton.h</include>
-    <include location="local" impldecl="in implementation">klanguagebuttonhelper.h</include>
-    <include location="local" impldecl="in implementation">wordcompletionui.ui.h</include>
-</includes>
-<forwards>
-    <forward>class KLanguageButton</forward>
-</forwards>
-<variables>
-    <variable access="public">KLanguageButton *languageButton;</variable>
-</variables>
-<slots>
-    <slot access="protected" specifier="non virtual">languageButton_activated( int index )</slot>
-</slots>
-<functions>
-    <function access="private" specifier="non virtual">init()</function>
-</functions>
-<layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>k3listview.h</includehint>
-    <includehint>kinputdialog.h</includehint>
-</includehints>
-</UI>
+        <property name="text" >
+         <string>&amp;Language:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>languageButton</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="dictionaryNameLabel" >
+        <property name="whatsThis" >
+         <string>With this input field you specify the name of the selected dictionary.</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Name:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>dictionaryName</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="KLineEdit" name="dictionaryName" >
+        <property name="whatsThis" >
+         <string>With this input field you specify the name of the selected dictionary.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item rowspan="2" row="0" column="1" >
+    <layout class="QVBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="KPushButton" name="addButton" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>With this button you can add a new dictionary to the list of available dictionaries.</string>
+       </property>
+       <property name="text" >
+        <string>Add D&amp;ictionary...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="deleteButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>With this button you delete the selected dictionary.</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Delete Dictionary</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="moveUpButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>With this button you move the selected dictionary up.</string>
+       </property>
+       <property name="text" >
+        <string>Move &amp;Up</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="moveDownButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>With this button you move the selected dictionary down.</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Move Down</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="exportButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>With this button you export the selected dictionary to a file.</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Export Dictionary...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>20</width>
+         <height>240</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" >
+    <widget class="K3ListView" name="dictionaryList" >
+     <property name="whatsThis" >
+      <string>This list contains all available dictionaries for the word completion. KMouth will display a combo box next to the edit field in the main window if this list contains more than one dictionary. You can use this combo box in order to select the dictionary that actually gets used for the word completion.</string>
+     </property>
+     <property name="allColumnsShowFocus" >
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Dictionary</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Language</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>K3ListView</class>
+   <extends>Q3ListView</extends>
+   <header>k3listview.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KLanguageButton</class>
+   <extends>QWidget</extends>
+   <header>klanguagebutton.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>dictionaryList</tabstop>
+  <tabstop>addButton</tabstop>
+  <tabstop>deleteButton</tabstop>
+  <tabstop>moveUpButton</tabstop>
+  <tabstop>moveDownButton</tabstop>
+  <tabstop>exportButton</tabstop>
+  <tabstop>selectedDictionaryDetails</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

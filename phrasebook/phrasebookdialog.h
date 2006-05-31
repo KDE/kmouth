@@ -32,7 +32,7 @@
 #include <kkeybutton.h>
 #include <kurl.h>
 #include "phrasebook.h"
-#include "buttonboxui.h"
+#include "ui_buttonboxui.h"
 
 class Q3ListViewItem;
 class PhraseTreeItem;
@@ -127,7 +127,7 @@ private:
  * edit window.
  * @author Gunnar Schmi Dt
  */
-class ButtonBoxWidget : public ButtonBoxUI {
+class ButtonBoxWidget : public QWidget, public Ui::ButtonBoxUI {
 public:
    ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
    ~ButtonBoxWidget ();

@@ -20,15 +20,15 @@
 #ifndef WORDCOMPLETIONWIDGET_H
 #define WORDCOMPLETIONWIDGET_H
 
-#include "wordcompletionui.h"
+#include "ui_wordcompletionui.h"
+
 class WordCompletion;
-class KLanguageButton;
 
 /**
  * This class represents a configuration widget for managing dictionaries.
  * @author Gunnar Schmi Dt
  */
-class WordCompletionWidget : public WordCompletionUI {
+class WordCompletionWidget : public QWidget, public Ui::WordCompletionUI {
    Q_OBJECT
 public:
    WordCompletionWidget(QWidget *parent, const char *name);
@@ -58,7 +58,7 @@ private slots:
 
    void selectionChanged();
    void nameChanged (const QString &text);
-   void languageSelected (int);
+   void languageSelected ();
 
    /**
     * This slot is used to emit the signal changed when any widget changes

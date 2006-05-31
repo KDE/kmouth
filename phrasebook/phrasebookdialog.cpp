@@ -51,7 +51,6 @@
 #include <kstdaction.h>
 
 #include "phrasebookdialog.h"
-#include "buttonboxui.h"
 #include "phrasetree.h"
 
 namespace PhraseBookPrivate {
@@ -247,7 +246,10 @@ void InitialPhraseBookWidget::createBook () {
 /***************************************************************************/
 
 ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
-: ButtonBoxUI (parent, name) {
+: QWidget(parent)
+{
+   setupUi(this);
+   setObjectName(name);
    keyButtonPlaceLayout = new QGridLayout (keyButtonPlace);
    keyButtonPlaceLayout->setObjectName("keyButtonPlaceLayout");
    keyButtonPlaceLayout->setMargin(0);

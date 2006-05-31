@@ -1,107 +1,105 @@
-<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
-<class>ButtonBoxUI</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>ButtonBoxUI</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>278</width>
-            <height>141</height>
-        </rect>
-    </property>
-    <property name="windowTitle">
-        <string>Currently Selected Phrase or Phrase Book</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>ButtonBoxUI</class>
+ <widget class="QWidget" name="ButtonBoxUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>278</width>
+    <height>141</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Currently Selected Phrase or Phrase Book</string>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>11</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="0" >
+    <widget class="QGroupBox" name="phrasebox" >
+     <property name="title" >
+      <string>&amp;Currently Selected Phrase or Phrase Book</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>11</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="3" column="2" >
+       <widget class="QWidget" name="keyButtonPlace" />
+      </item>
+      <item row="1" column="0" colspan="3" >
+       <widget class="KLineEdit" name="lineEdit" >
+        <property name="whatsThis" >
+         <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
         </property>
-        <property name="margin">
-            <number>11</number>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QRadioButton" name="noKey" >
+        <property name="whatsThis" >
+         <string>If you select this option then the selected phrase will not be reachable by a keyboard shortcut.</string>
         </property>
-        <property name="spacing">
-            <number>6</number>
+        <property name="text" >
+         <string>&amp;None</string>
         </property>
-        <widget class="QGroupBox" row="0" column="0">
-            <property name="name">
-                <cstring>phrasebox</cstring>
-            </property>
-            <property name="title">
-                <string>&amp;Currently Selected Phrase or Phrase Book</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="margin">
-                    <number>11</number>
-                </property>
-                <property name="spacing">
-                    <number>6</number>
-                </property>
-                <widget class="QWidget" row="3" column="2">
-                    <property name="name">
-                        <cstring>keyButtonPlace</cstring>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="1" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>lineEdit</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton" row="3" column="0">
-                    <property name="name">
-                        <cstring>noKey</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;None</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>If you select this option then the selected phrase will not be reachable by a keyboard shortcut.</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton" row="3" column="1">
-                    <property name="name">
-                        <cstring>customKey</cstring>
-                    </property>
-                    <property name="text">
-                        <string>C&amp;ustom</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>If you select this option then the selected phrase will be reachable by a keyboard shortcut. You can change the shortcut with the button next to this option.</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>shortcutLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Shortcut for the phrase:</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>textLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Text of the &amp;phrase:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>lineEdit</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-    </grid>
-</widget>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QRadioButton" name="customKey" >
+        <property name="whatsThis" >
+         <string>If you select this option then the selected phrase will be reachable by a keyboard shortcut. You can change the shortcut with the button next to this option.</string>
+        </property>
+        <property name="text" >
+         <string>C&amp;ustom</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3" >
+       <widget class="QLabel" name="shortcutLabel" >
+        <property name="text" >
+         <string>Shortcut for the phrase:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3" >
+       <widget class="QLabel" name="textLabel" >
+        <property name="whatsThis" >
+         <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
+        </property>
+        <property name="text" >
+         <string>Text of the &amp;phrase:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>lineEdit</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

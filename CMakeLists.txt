@@ -7,8 +7,7 @@ set(libphrasebook_SRCS
 	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasebook.cpp
 	)
 
-kde4_add_ui3_files(libphrasebook_SRCS ${CMAKE_SOURCE_DIR}/kmouth/phrasebook/buttonboxui.ui)
-
+kde4_add_ui_files(libphrasebook_SRCS ${CMAKE_SOURCE_DIR}/kmouth/phrasebook/buttonboxui.ui) 
 
 set(libwordcompletion_SRCS
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordlist.cpp 
@@ -17,12 +16,15 @@ set(libwordcompletion_SRCS
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/dictionarycreationwizard.cpp 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/klanguagebuttonhelper.cpp
 	)
+        
 kde4_add_ui3_files(libwordcompletion_SRCS 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionui.ui 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourceui.ui 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourcedetailsui.ui 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/kdedocsourceui.ui
 	)
+
+kde4_add_ui_files(libwordcompletion_SRCS 
+	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionui.ui )
 
 add_subdirectory( icons ) 
 add_subdirectory( phrasebook ) 

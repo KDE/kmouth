@@ -31,11 +31,11 @@
 #include <kfiledialog.h>
 #include <kio/netaccess.h>
 #include <kmessagebox.h>
+#include <klanguagebutton.h>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletionwidget.h"
 #include "wordcompletion.h"
-#include "klanguagebutton.h"
 
 class DictionaryListItem : public K3ListViewItem {
 public:
@@ -91,9 +91,13 @@ private:
 
 /***************************************************************************/
 
-WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name) : WordCompletionUI (parent, name) {
+WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
+: QWidget(parent)
+{
+    setupUi(this);
+    setObjectName(name);
     dictionaryList->setSorting (-1); // no sorted list
-
+    
     // Connect the signals from hte KCMKTTSDWidget to this class
     connect (addButton, SIGNAL (clicked()), this, SLOT(addDictionary()) );
     connect (deleteButton, SIGNAL (clicked()), this, SLOT (deleteDictionary()) );
@@ -103,7 +107,7 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name) : 
 
     connect (dictionaryList, SIGNAL (selectionChanged()), this, SLOT (selectionChanged()) );
     connect (dictionaryName, SIGNAL (textChanged (const QString &)), this, SLOT (nameChanged (const QString &)) );
-    connect (languageButton, SIGNAL (activated (int)), this, SLOT (languageSelected(int)) );
+    connect (languageButton, SIGNAL (activated (const QString &)), this, SLOT (languageSelected()) );
 
     // Object for the KCMKTTSD configuration
     config = new KConfig("kmouthrc");
@@ -308,7 +312,7 @@ void WordCompletionWidget::nameChanged (const QString &text) {
    }
 }
 
-void WordCompletionWidget::languageSelected (int) {
+void WordCompletionWidget::languageSelected () {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
 
    if (item != 0) {
