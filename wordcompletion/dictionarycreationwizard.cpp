@@ -40,9 +40,7 @@
 #include <kprogressdialog.h>
 #include "dictionarycreationwizard.h"
 #include "klanguagebutton.h"
-#include "creationsourceui.h"
-#include "creationsourcedetailsui.h"
-#include "kdedocsourceui.h"
+#include "klanguagebuttonhelper.h"
 #include "wordlist.h"
 
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
@@ -52,16 +50,16 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 {
    buildCodecList ();
    
-   creationSource = new CreationSourceUI (this, "source page");
+   creationSource = new CreationSourceWidget(this, "source page");
    addPage (creationSource, i18n("Source of New Dictionary (1)"));
    setHelpEnabled (creationSource, false);
    setFinishEnabled (creationSource, false);
 
-   fileWidget= new CreationSourceDetailsUI (this, "file source page");
+   fileWidget= new CreationSourceDetailsWidget (this, "file source page");
    addPage (fileWidget, i18n("Source of New Dictionary (2)"));
    buildCodecCombo (fileWidget->encodingCombo);
 
-   dirWidget= new CreationSourceDetailsUI (this, "directory source page");
+   dirWidget= new CreationSourceDetailsWidget (this, "directory source page");
    addPage (dirWidget, i18n("Source of New Dictionary (2)"));
    dirWidget->urlLabel->setText (i18n("&Directory:"));
     dirWidget->urlLabel->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
@@ -69,8 +67,9 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
     dirWidget->url->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    buildCodecCombo (dirWidget->encodingCombo);
 
-   kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
+   kdeDocWidget= new KDEDocSourceWidget (this, "KDE documentation source page");
    addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
+   loadLanguageList(kdeDocWidget->languageButton);
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
@@ -345,7 +344,9 @@ QString MergeWidget::language () {
 /***************************************************************************/
 
 CompletionWizardWidget::CompletionWizardWidget (K3Wizard *parent, const char *name)
-   : KDEDocSourceUI (parent, name) {
+   : QWidget (parent) {
+   setupUi(this);
+   setObjectName(name);
 }
 
 CompletionWizardWidget::~CompletionWizardWidget() {

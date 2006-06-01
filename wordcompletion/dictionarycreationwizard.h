@@ -25,15 +25,45 @@
 #include <Q3Dict>
 #include <k3wizard.h>
 #include <knuminput.h>
-#include "kdedocsourceui.h"
 
-class CreationSourceUI;
+#include "ui_creationsourceui.h"
+#include "ui_creationsourcedetailsui.h"
+#include "ui_kdedocsourceui.h"
+
 class CompletionWizardWidget;
-class CreationSourceDetailsUI;
-class KDEDocSourceUI;
 class QTextCodec;
 class QComboBox;
 class MergeWidget;
+
+class CreationSourceDetailsWidget : public QWidget, public Ui::CreationSourceDetailsUI {
+   Q_OBJECT
+public:
+   CreationSourceDetailsWidget(QWidget *parent, const char *name)
+      : QWidget(parent) {
+      setupUi(this);
+      setObjectName(name);
+   }
+};
+
+class CreationSourceWidget : public QWidget, public Ui::CreationSourceUI {
+   Q_OBJECT
+public:
+   CreationSourceWidget(QWidget *parent, const char *name)
+      : QWidget(parent) {
+      setupUi(this);
+      setObjectName(name);
+   }
+};
+
+class KDEDocSourceWidget : public QWidget, public Ui::KDEDocSourceUI {
+   Q_OBJECT
+public:
+   KDEDocSourceWidget(QWidget *parent, const char *name)
+      : QWidget(parent) {
+      setupUi(this);
+      setObjectName(name);
+   }
+};
 
 /**
  * This class represents a wizard that is used in order to gather all
@@ -60,10 +90,10 @@ private:
    void buildCodecList ();
    void buildCodecCombo (QComboBox *combo);
 
-   CreationSourceUI *creationSource;
-   CreationSourceDetailsUI *fileWidget;
-   CreationSourceDetailsUI *dirWidget;
-   KDEDocSourceUI *kdeDocWidget;
+   CreationSourceWidget *creationSource;
+   CreationSourceDetailsWidget *fileWidget;
+   CreationSourceDetailsWidget *dirWidget;
+   KDEDocSourceWidget *kdeDocWidget;
    MergeWidget *mergeWidget;
 
    QList<QTextCodec*> *codecList;
@@ -97,7 +127,7 @@ private:
  * KDE documentation.
  * @author Gunnar Schmi Dt
  */
-class CompletionWizardWidget : public KDEDocSourceUI {
+class CompletionWizardWidget : public QWidget, public Ui::KDEDocSourceUI {
    Q_OBJECT
    friend class ConfigWizard;
 public:

@@ -32,6 +32,7 @@
 #include <kio/netaccess.h>
 #include <kmessagebox.h>
 #include <klanguagebutton.h>
+#include <klanguagebuttonhelper.h>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletionwidget.h"
@@ -97,6 +98,8 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     setupUi(this);
     setObjectName(name);
     dictionaryList->setSorting (-1); // no sorted list
+    
+    loadLanguageList(languageButton);
     
     // Connect the signals from hte KCMKTTSDWidget to this class
     connect (addButton, SIGNAL (clicked()), this, SLOT(addDictionary()) );

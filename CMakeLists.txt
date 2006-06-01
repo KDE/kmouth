@@ -17,13 +17,10 @@ set(libwordcompletion_SRCS
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/klanguagebuttonhelper.cpp
 	)
         
-kde4_add_ui3_files(libwordcompletion_SRCS 
+kde4_add_ui_files(libwordcompletion_SRCS 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourceui.ui 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourcedetailsui.ui 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/kdedocsourceui.ui
-	)
-
-kde4_add_ui_files(libwordcompletion_SRCS 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionui.ui )
 
 add_subdirectory( icons ) 
