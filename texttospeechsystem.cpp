@@ -19,9 +19,8 @@
 #include "texttospeechsystem.h"
 #include <QTextCodec>
 #include <stdlib.h>
-
+#include <dbus/qdbus.h>
 #include <kapplication.h>
-#include <dcopclient.h>
 #include <kconfig.h>
 
 #include "speech.h"
@@ -39,14 +38,9 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 }
 
 bool kttsdSay (const QString &text, const QString &language) {
-   DCOPClient *client = kapp->dcopClient();
-   QByteArray  data;
-   DCOPCString replyType;
-   QByteArray  replyData;
-   QDataStream arg(&data, QIODevice::WriteOnly);
-   arg << text << language;
-   return client->call("kttsd", "KSpeech", "sayWarning(QString,QString)",
-                       data, replyType, replyData, true);
+   QDBusInterfacePtr kdesktop("org.kde.kttsd", "/KSpeech", "org.kde.kttsd.KSpeech");
+   QDBusReply<bool> reply = kdesktop->call("sayWarning", text, language);
+	return reply;
 }
 
 void TextToSpeechSystem::speak (const QString &text, const QString &language) {
