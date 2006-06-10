@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kmouth '<application>KMouth</application>'>
   <!ENTITY kappname "&kmouth;">
   <!ENTITY package "kdeaccessibility">
@@ -31,7 +31,7 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2005-12-10</date>
+  <date>2006-05-20</date>
   <releaseinfo>1.1.1</releaseinfo>
 
   <abstract>
@@ -224,7 +224,7 @@
         first to try to send the text to the KTTSD speech service. If this succeeds the
         other configuration entries on this tab are ignored. The KTTSD speech
         service is a &kde; daemon which gives &kde; applications a standardized
-        interface for speech synthesis and is currently developed in <acronym>CVS</acronym>. It
+        interface for speech synthesis and is currently developed in <acronym>SVN</acronym>. It
         is safe to select this option even if KTTSD is not installed.
       </para>
     </sect2>
@@ -579,8 +579,7 @@
                 is most commonly located at the top of the editor just under
                 the menu. When unchecked the toolbar is hidden.
               </action>
-              Clicking on the striated grip will hide or unhide the bar.
-              Clicking and dragging on this grip allows the user to move
+              Clicking on the striated grip and dragging allows the user to move
               the bar.
             </para></listitem>
           </varlistentry>
@@ -607,8 +606,7 @@
                 is most commonly located at the top of the editor just under
                 the toolbar. When unchecked the phrasebook bar is hidden.
               </action>
-              Clicking on the striated grip will hide or unhide the bar.
-              Clicking and dragging on this grip allows the user to move
+              Clicking on the striated grip and dragging allows the user to move
               the bar.
             </para></listitem>
           </varlistentry>
@@ -1064,7 +1062,7 @@
         <para>
           The &kde; Text-to-Speech Daemon (KTTSD) is a &kde; wide text-to-speech service
           which gives &kde; applications a standardized interface for speech synthesis
-          and is currently developed in <acronym>CVS</acronym>. It uses plug-ins in
+          and is currently developed in <acronym>SVN</acronym>. It uses plug-ins in
           order to support various text-to-speech systems.
         </para>
         <para>
