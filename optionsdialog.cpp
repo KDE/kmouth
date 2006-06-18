@@ -156,6 +156,8 @@ OptionsDialog::OptionsDialog (QWidget *parent)
       addPage(pageKttsd);
    }
    
+   setDefaultButton(KDialog::Cancel);
+   
    connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
    connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));
    connect(this, SIGNAL(applyClicked()), this, SLOT(slotApply()));
