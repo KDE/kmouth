@@ -20,6 +20,8 @@
 #ifndef OPTIONSDIALOG_H
 #define OPTIONSDIALOG_H
 
+#include <kpagedialog.h>
+
 #include <QObject>
 #include "ui_preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
@@ -55,7 +57,7 @@ private:
   *@author Gunnar Schmi Dt
   */
 
-class OptionsDialog : public KDialogBase  {
+class OptionsDialog : public KPageDialog {
    Q_OBJECT
 public: 
    OptionsDialog(QWidget *parent);

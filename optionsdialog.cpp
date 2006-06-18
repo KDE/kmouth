@@ -28,9 +28,9 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 #include <kcmodule.h>
 #include <klibloader.h>
+#include <kicon.h>
 #include <kparts/componentfactory.h>
 
 #include "optionsdialog.h"
@@ -116,17 +116,17 @@ bool PreferencesWidget::isSpeakImmediately () {
 /***************************************************************************/
 
 OptionsDialog::OptionsDialog (QWidget *parent)
-   : KDialogBase(IconList, i18n("Configuration"), Ok|Apply|Cancel|Help, Ok,
-                  parent, "configuration", false, true)
+   : KPageDialog(parent)
 {
+   setCaption(i18n("Configuration"));
+   setButtons(KDialog::Ok|KDialog::Apply|KDialog::Cancel|KDialog::Help);
+   setFaceType(KPageDialog::List);
    setHelp ("config-dialog");
 
-   QPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", K3Icon::NoGroup, K3Icon::SizeMedium);
-   KHBox *pageGeneral = addHBoxPage( i18n("General Options"), QString(), iconGeneral);
    
 	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
    
-   tabCtl = new QTabWidget (pageGeneral);
+   tabCtl = new QTabWidget();
    tabCtl->setObjectName("general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
@@ -137,18 +137,27 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    commandWidget->layout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
-   QPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", K3Icon::NoGroup, K3Icon::SizeMedium);
-   KHBox *pageCompletion = addHBoxPage (i18n("Word Completion"), QString(), iconCompletion);
-   completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
+   KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
+   pageGeneral->setHeader(i18n("General Options"));
+   pageGeneral->setIcon(KIcon("configure"));
+   addPage(pageGeneral);
+   
+   completionWidget = new WordCompletionWidget(this, "Word Completion widget");
+   KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
+   pageCompletion->setIcon(KIcon("keyboard"));
+   addPage(pageCompletion);
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
-      QPixmap iconKttsd = KGlobal::iconLoader()->loadIcon("multimedia", K3Icon::NoGroup, K3Icon::SizeMedium);
-      KHBox *pageKttsd = addHBoxPage (i18n("KTTSD Speech Service"),
-                                      i18n("KDE Text-to-Speech Daemon Configuration"), iconKttsd);
-      
-      kttsd->setParent(pageKttsd);
+      KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("KTTSD Speech Service"));
+      pageKttsd->setIcon(KIcon("multimedia"));
+      pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
+      addPage(pageKttsd);
    }
+   
+   connect(this, SLOT(okClicked()), this, SLOT(slotOk()));
+   connect(this, SLOT(cancelClicked()), this, SLOT(slotCancel()));
+   connect(this, SLOT(applyClicked()), this, SLOT(slotApply()));
 }
 
 OptionsDialog::~OptionsDialog() {
@@ -156,7 +165,7 @@ OptionsDialog::~OptionsDialog() {
 }
 
 void OptionsDialog::slotCancel() {
-   KDialogBase::slotCancel();
+//   KDialog::slotCancel();
    commandWidget->cancel();
    behaviourWidget->cancel();
    completionWidget->load();
@@ -165,7 +174,7 @@ void OptionsDialog::slotCancel() {
 }
 
 void OptionsDialog::slotOk() {
-   KDialogBase::slotOk();
+//   KDialog::slotOk();
    commandWidget->ok();
    behaviourWidget->ok();
    completionWidget->save();
@@ -176,7 +185,7 @@ void OptionsDialog::slotOk() {
 }
 
 void OptionsDialog::slotApply() {
-   KDialogBase::slotApply();
+//   KDialog::slotApply();
    commandWidget->ok();
    behaviourWidget->ok();
    completionWidget->save();
