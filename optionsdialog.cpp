@@ -142,8 +142,9 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    pageGeneral->setIcon(KIcon("configure"));
    addPage(pageGeneral);
    
-   completionWidget = new WordCompletionWidget(this, "Word Completion widget");
+   completionWidget = new WordCompletionWidget(0, "Word Completion widget");
    KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
+   pageCompletion->setHeader(i18n("Word Completion"));
    pageCompletion->setIcon(KIcon("keyboard"));
    addPage(pageCompletion);
 
@@ -155,9 +156,9 @@ OptionsDialog::OptionsDialog (QWidget *parent)
       addPage(pageKttsd);
    }
    
-   connect(this, SLOT(okClicked()), this, SLOT(slotOk()));
-   connect(this, SLOT(cancelClicked()), this, SLOT(slotCancel()));
-   connect(this, SLOT(applyClicked()), this, SLOT(slotApply()));
+   connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
+   connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));
+   connect(this, SIGNAL(applyClicked()), this, SLOT(slotApply()));
 }
 
 OptionsDialog::~OptionsDialog() {

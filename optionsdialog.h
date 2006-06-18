@@ -63,10 +63,6 @@ public:
    OptionsDialog(QWidget *parent);
    ~OptionsDialog();
 
-   void slotCancel();
-   void slotOk();
-   void slotApply();
-
    TextToSpeechSystem *getTTSSystem() const;
 
    void readOptions (KConfig *config);
@@ -76,6 +72,11 @@ public:
 
 signals:
    void configurationChanged ();
+   
+private slots:
+   void slotCancel();
+   void slotOk();
+   void slotApply();
 
 private:
    QTabWidget *tabCtl;
