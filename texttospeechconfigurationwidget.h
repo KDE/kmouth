@@ -19,7 +19,6 @@
 #ifndef TEXTTOSPEECHCONFIGURATIONDIALOG_H
 #define TEXTTOSPEECHCONFIGURATIONDIALOG_H
 
-#include <kdialogbase.h>
 #include "ui_texttospeechconfigurationui.h"
 #include "texttospeechsystem.h"
 
