@@ -31,6 +31,7 @@
 #include <kcmodule.h>
 #include <klibloader.h>
 #include <kicon.h>
+#include <kpagewidgetmodel.h>
 #include <kparts/componentfactory.h>
 
 #include "optionsdialog.h"
