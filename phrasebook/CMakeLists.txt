@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kmouth FILES phrasebookdialogui.rc )
+install( FILES phrasebookdialogui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kmouth )
 
 
 

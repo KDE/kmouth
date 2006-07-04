@@ -9,7 +9,7 @@ add_subdirectory( app )
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kmouth/icons FILES  )
+install( FILES   DESTINATION  ${DATA_INSTALL_DIR}/kmouth/icons )
 
 
 

@@ -4,9 +4,9 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kmouth/books/de FILES de.desktop de-courteousness.phrasebook de-greetings.phrasebook de-howareyou.phrasebook de-personal.phrasebook )
-install_files( ${DATA_INSTALL_DIR}/kmouth/books/sv FILES sv.desktop sv-courteousness.phrasebook sv-greetings.phrasebook sv-howareyou.phrasebook sv-personal.phrasebook )
-install_files( ${DATA_INSTALL_DIR}/kmouth/books/en FILES en.desktop en-courteousness.phrasebook en-greetings.phrasebook en-howareyou.phrasebook en-personal.phrasebook )
+install( FILES de.desktop de-courteousness.phrasebook de-greetings.phrasebook de-howareyou.phrasebook de-personal.phrasebook  DESTINATION  ${DATA_INSTALL_DIR}/kmouth/books/de )
+install( FILES sv.desktop sv-courteousness.phrasebook sv-greetings.phrasebook sv-howareyou.phrasebook sv-personal.phrasebook  DESTINATION  ${DATA_INSTALL_DIR}/kmouth/books/sv )
+install( FILES en.desktop en-courteousness.phrasebook en-greetings.phrasebook en-howareyou.phrasebook en-personal.phrasebook  DESTINATION  ${DATA_INSTALL_DIR}/kmouth/books/en )
 
 
 
