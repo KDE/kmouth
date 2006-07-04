@@ -19,7 +19,7 @@
 #include "texttospeechsystem.h"
 #include <QTextCodec>
 #include <stdlib.h>
-#include <dbus/qdbus.h>
+#include <QtDBus>
 #include <kapplication.h>
 #include <kconfig.h>
 
