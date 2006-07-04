@@ -253,7 +253,7 @@ bool PhraseBook::save (const KUrl &url, bool asPhrasebook) {
 }
 
 int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst) {
-   // KFileDialog::getSaveURL(...) is not useful here as we need
+   // KFileDialog::getSaveUrl(...) is not useful here as we need
    // to know the requested file type.
 
    QString filters;

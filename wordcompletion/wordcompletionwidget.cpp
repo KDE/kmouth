@@ -253,7 +253,7 @@ void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
 
    if (item != 0) {
-      KUrl url = KFileDialog::getSaveURL(QString(), QString(), this, i18n("Export Dictionary"));
+      KUrl url = KFileDialog::getSaveUrl(QString(), QString(), this, i18n("Export Dictionary"));
       if (url.isEmpty() || !url.isValid())
          return;
 
