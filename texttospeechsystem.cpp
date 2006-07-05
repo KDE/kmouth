@@ -38,8 +38,8 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 }
 
 bool kttsdSay (const QString &text, const QString &language) {
-   QDBusInterfacePtr kdesktop("org.kde.kttsd", "/org/kde/KSpeech", "org.kde.KSpeech");
-   QDBusReply<bool> reply = kdesktop->call("sayWarning", text, language);
+   QDBusInterface kdesktop("org.kde.kttsd", "/org/kde/KSpeech", "org.kde.KSpeech");
+   QDBusReply<bool> reply = kdesktop.call("sayWarning", text, language);
 	return reply;
 }
 

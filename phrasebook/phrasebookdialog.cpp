@@ -750,7 +750,7 @@ void PhraseBookDialog::slotSave () {
 }
 
 void PhraseBookDialog::slotImportPhrasebook () {
-   KUrl url=KFileDialog::getOpenURL(QString(),
+   KUrl url=KFileDialog::getOpenUrl(KUrl(),
         i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
 
    slotImportPhrasebook (url);
