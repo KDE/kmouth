@@ -53,7 +53,7 @@ kde4_add_executable(kmouth ${kmouth_SRCS})
 
 target_link_libraries(kmouth  ${KDE4_KDECORE_LIBS} kdeprint kdeui kspell2 kde3support )
 
-install_targets(/bin kmouth )
+install(TARGETS kmouth  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
