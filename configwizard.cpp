@@ -23,7 +23,6 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
-#include <ksconfig.h>
 #include <kconfig.h>
 #include <ktoolinvocation.h>
 

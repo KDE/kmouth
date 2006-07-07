@@ -22,6 +22,8 @@
 #include <QtDBus>
 #include <kapplication.h>
 #include <kconfig.h>
+#include <kspeech.h>
+#include <kdebug.h>
 
 #include "speech.h"
 
@@ -38,8 +40,15 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 }
 
 bool kttsdSay (const QString &text, const QString &language) {
-   QDBusInterface kdesktop("org.kde.kttsd", "/org/kde/KSpeech", "org.kde.KSpeech");
-   QDBusReply<bool> reply = kdesktop.call("sayWarning", text, language);
+   // TODO: Would be better to save off this QDBusInterface pointer and
+   // set defaults only once.
+   QDBusInterface kdesktop("org.kde.kttsd", "/KSpeech", "org.kde.KSpeech");
+   kdesktop.call("setApplicationName", "KMouth");
+   kdesktop.call("setDefaultTalker", language);
+   // FIXME: language is incorrect.
+   kDebug() << "kttsdSay: language = " << language << endl;
+   kdesktop.call("setDefaultPriority", KSpeech::jpWarning);
+   QDBusReply<bool> reply = kdesktop.call("say", text, 0);
 	return reply;
 }
 

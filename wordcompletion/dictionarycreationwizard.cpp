@@ -32,7 +32,6 @@
 #include <kurlrequester.h>
 #include <klocale.h>
 #include <kcombobox.h>
-#include <ksconfig.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kprogressbar.h>
