@@ -481,7 +481,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          stack.push (parent);
 #warning "kde4: correct newparent objectname ?"
          KActionMenu *newParent = new KActionMenu (*it2,actionCollection(), "tmp_menu");
-         parent->insert(newParent);
+         parent->addAction(newParent);
          if (parent == fileImportStandardBook)
             newParent->plug(toolbarImport->popupMenu());
          parent = newParent;
@@ -490,7 +490,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       
       KAction *book = new StandardPhraseBookInsertAction (
           url, (*it).name, this, SLOT(slotImportPhrasebook (const KUrl &)), actionCollection());
-      parent->insert(book);
+      parent->addAction(book);
       if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());
    }
