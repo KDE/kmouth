@@ -393,7 +393,7 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
                menu->plug (parent);
                stack.push (parent);
             }
-            parent = menu->popupMenu();
+            parent = menu->menu();
             level++;
          }
          while (newLevel < level && (parent != popup)) {
@@ -418,7 +418,7 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
                menu->plug (toolbar);
             menu->plug (parent);
             stack.push (parent);
-            parent = menu->popupMenu();
+            parent = menu->menu();
             level++;
          }
       }
