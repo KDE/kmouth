@@ -9,8 +9,7 @@ add_subdirectory( app )
 
 ########### install files ###############
 
-install( FILES   DESTINATION  ${DATA_INSTALL_DIR}/kmouth/icons )
-
+kde4_install_icons( ${DATA_INSTALL_DIR}/kmouth/icons hicolor )
 
 
 
