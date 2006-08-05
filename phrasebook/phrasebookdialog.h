@@ -33,7 +33,7 @@
 #include <kurl.h>
 #include "phrasebook.h"
 #include "ui_buttonboxui.h"
-
+#include <kicon.h>
 class Q3ListViewItem;
 class PhraseTreeItem;
 class PhraseTree;

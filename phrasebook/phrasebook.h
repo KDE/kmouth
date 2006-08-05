@@ -27,7 +27,7 @@
 #include <ktoolbar.h>
 #include <kaction.h>
 #include <kprinter.h>
-
+#include <kicon.h>
 class KUrl;
 
 /**
