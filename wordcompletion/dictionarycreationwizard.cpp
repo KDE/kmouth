@@ -34,7 +34,6 @@
 #include <kcombobox.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
-#include <kprogressbar.h>
 #include <kconfig.h>
 #include <kprogressdialog.h>
 #include "dictionarycreationwizard.h"

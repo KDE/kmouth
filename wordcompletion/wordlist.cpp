@@ -24,7 +24,6 @@
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
-#include <kprogressbar.h>
 #include <kprogressdialog.h>
 #include <klocale.h>
 
