@@ -77,7 +77,7 @@ public:
       KSimpleConfig entry(filename);
       entry.setGroup(QString::fromLatin1("KCM Locale"));
       QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
-      setLanguage (name + " (" + languageCode + ")", languageCode);
+      setLanguage (name + " (" + languageCode + ')', languageCode);
    }
 
    void setLanguage (QString name, QString languageCode) {

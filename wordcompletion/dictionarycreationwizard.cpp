@@ -100,8 +100,7 @@ void DictionaryCreationWizard::buildCodecList () {
 
 void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
    QString local = i18n("Local")+" (";
-   local += QTextCodec::codecForLocale()->name();
-   local += ")";
+   local += QTextCodec::codecForLocale()->name() + ')';
    combo->addItem (local, 0);
    combo->addItem (i18n("Latin1"), 1);
    combo->addItem (i18n("Unicode"), 2);

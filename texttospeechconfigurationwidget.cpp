@@ -46,8 +46,7 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget() {
 
 void TextToSpeechConfigurationWidget::buildCodecList () {
    QString local = i18n("Local")+" (";
-   local += QTextCodec::codecForLocale()->name();
-   local += ")";
+   local += QTextCodec::codecForLocale()->name() + ')';
    characterCodingBox->addItem (local, Speech::Local);
    characterCodingBox->addItem (i18n("Latin1"), Speech::Latin1);
    characterCodingBox->addItem (i18n("Unicode"), Speech::Unicode);

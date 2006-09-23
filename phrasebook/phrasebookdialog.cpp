@@ -418,9 +418,9 @@ QString PhraseBookDialog::displayPath (QString filename) {
       delete dirDesc;
 
       if (name.isNull() || name.isEmpty())
-         dispPath += "/" + file.fileName ();
+         dispPath += '/' + file.fileName ();
       else
-         dispPath += "/" + name;
+         dispPath += '/' + name;
 
       path = file.path();
    }
@@ -442,8 +442,8 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
          book.path = displayPath(*it);
          book.filename = *it;
       
-         bookNames += book.path + "/" + book.name;
-         bookMap [book.path + "/" + book.name] = book;
+         bookNames += book.path + '/' + book.name;
+         bookMap [book.path + '/' + book.name] = book;
       }
    }
 

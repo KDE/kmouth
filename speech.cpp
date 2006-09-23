@@ -223,10 +223,10 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 }
 
 void Speech::receivedStdout (KProcess *, char *buffer, int buflen) {
-   kDebug() << QString::fromLatin1(buffer, buflen) + "\n";
+   kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
 }
 void Speech::receivedStderr (KProcess *, char *buffer, int buflen) {
-   kDebug() << QString::fromLatin1(buffer, buflen) + "\n";
+   kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
 }
 
 void Speech::wroteStdin(KProcess *) {
