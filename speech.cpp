@@ -183,20 +183,20 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
       ts << text;
 
       // 1.b) create a temporary file for the text
-      tempFile.setAutoDelete(true);
-      QTextStream* fs = tempFile.textStream();
+      tempFile.open();
+      QTextStream fs ( &tempFile );
       if (encoding == Local)
-         fs->setEncoding (QTextStream::Locale);
+         fs.setEncoding (QTextStream::Locale);
       else if (encoding == Latin1)
-         fs->setEncoding (QTextStream::Latin1);
+         fs.setEncoding (QTextStream::Latin1);
       else if (encoding == Unicode)
-         fs->setEncoding (QTextStream::Unicode);
+         fs.setEncoding (QTextStream::Unicode);
       else
-         fs->setCodec (codec);
-      *fs << text;
-      *fs << endl;
-      QString filename = tempFile.file()->fileName();
-      tempFile.close();
+         fs.setCodec (codec);
+      fs << text;
+      fs << endl;
+      QString filename = tempFile.fileName();
+      tempFile.flush();
 
       // 2. prepare the command:
       command = prepareCommand (command, encText, filename, language);

@@ -21,7 +21,7 @@
 #include <QObject>
 #include <QString>
 #include <kprocess.h>
-#include <ktempfile.h>
+#include <ktemporaryfile.h>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
   *@author Gunnar Schmi Dt
@@ -66,7 +66,7 @@ public slots:
 private:
    KShellProcess process;
    QByteArray encText;
-   KTempFile tempFile;
+   KTemporaryFile tempFile;
 };
 
 #endif
