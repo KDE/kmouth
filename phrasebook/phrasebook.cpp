@@ -157,7 +157,7 @@ QByteArray encodeString (const QString str) {
       ushort uc = ch.unicode();
       QByteArray number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
-         res = res + "&#" + number + ";";
+         res = res + "&#" + number + ';';
       else
          res = res + (char)uc;
    }

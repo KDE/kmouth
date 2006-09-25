@@ -157,7 +157,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
          if (isdoublequote)
             v='"'+v+'"';
          else if (issinglequote)
-            v="'"+v+"'";
+            v='\''+v+'\'';
 
          command.replace (i, match.length(), v);
          i+=v.length();
