@@ -29,7 +29,7 @@
 #include <kaction.h>
 #include <kmenu.h>
 #include <ktoolbar.h>
-#include <ktempfile.h>
+#include <ktemporaryfile.h>
 #include <kio/netaccess.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
@@ -242,13 +242,14 @@ bool PhraseBook::save (const KUrl &url, bool asPhrasebook) {
          return true;
    }
    else {
-      KTempFile tempFile;
-      tempFile.setAutoDelete(true);
+      KTemporaryFile tempFile;
+      tempFile.open();
 
-      save (*tempFile.textStream(), asPhrasebook);
-      tempFile.close();
+      QTextStream ts(&tempFile);
+      save (ts, asPhrasebook);
+      ts.flush();
 
-      return KIO::NetAccess::upload(tempFile.name(), url,0L);
+      return KIO::NetAccess::upload(tempFile.fileName(), url,0L);
    }
 }
 
