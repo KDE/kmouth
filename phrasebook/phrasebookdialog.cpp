@@ -24,7 +24,7 @@
 #include <QPainter>
 #include <QStyle>
 #include <q3groupbox.h>
-#include <q3popupmenu.h>
+#include <QMenu>
 #include <q3valuestack.h>
 #include <q3ptrstack.h>
 #include <ktoolbarpopupaction.h>
@@ -676,7 +676,7 @@ void PhraseBookDialog::contextMenuRequested(Q3ListViewItem *, const QPoint &pos,
    else
       name = "phrasebook_popup_nosel";
 
-   Q3PopupMenu *popup = (Q3PopupMenu *)factory()->container(name,this);
+   QMenu *popup = (QMenu *)factory()->container(name,this);
    if (popup != 0) {
       popup->popup(pos, 0);
    }

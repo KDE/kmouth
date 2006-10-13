@@ -45,7 +45,7 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
    kmouth.cpp 
    main.cpp )
 
-kde4_automoc(${kmouth_SRCS})
+kde4_automoc(kmouth ${kmouth_SRCS})
 
 kde4_add_ui_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
 

@@ -20,7 +20,7 @@
 #include <QPainter>
 #include <QLayout>
 
-#include <q3popupmenu.h>
+#include <QMenu>
 #include <QClipboard>
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -323,7 +323,7 @@ void PhraseList::contextMenuRequested (Q3ListBoxItem *, const QPoint &pos) {
    
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    KXMLGUIFactory *factory = theApp->factory();
-   Q3PopupMenu *popup = (Q3PopupMenu *)factory->container(name,theApp);
+   QMenu *popup = (QMenu *)factory->container(name,theApp);
    if (popup != 0) {
       popup->exec(pos, 0);
    }
