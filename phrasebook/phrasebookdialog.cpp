@@ -479,7 +479,9 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          parent = stack.pop();
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
+#ifdef __GNUC__
 #warning "kde4: correct newparent objectname ?"
+#endif	 
          KActionMenu *newParent = new KActionMenu (*it2,actionCollection(), "tmp_menu");
          parent->addAction(newParent);
          if (parent == fileImportStandardBook)
@@ -536,7 +538,9 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(true);
       QString shortcut = currentItem->text(1);
+#ifdef __GNUC__
 #warning "kde4 port it"	  
+#endif      
       //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
       if (shortcut.isEmpty() || shortcut.isNull()) {
          buttonBox->noKey->setChecked (true);
@@ -596,7 +600,9 @@ void PhraseBookDialog::slotNoKey() {
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
       currentItem->setCut (KShortcut(QString()));
+#ifdef __GNUC__
 #warning "kde4: port it"
+#endif      
 	  //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
@@ -620,7 +626,9 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    for (int i = 0; i < cut.count(); i++) {
       const QKeySequence& seq = cut.seq(i);
       //const KKey& key = seq.key(0);
+#ifdef __GNUC__
 #warning "kde 4 port it";
+#endif      
 #if 0
       if (key.modFlags() == 0 && key.sym() < 0x3000
           && QChar(key.sym()).isLetterOrNumber())
@@ -697,7 +705,9 @@ void PhraseBookDialog::slotCut () {
 void PhraseBookDialog::slotCopy () {
    PhraseBook book;
    treeView->fillBook (&book, true);
+#ifdef __GNUC__
 #warning "kde4: port to QMimeData"
+#endif   
    QApplication::clipboard()->setData(new PhraseBookDrag(&book));
 }
 

@@ -378,7 +378,9 @@ void KMouthApp::slotFileQuit()
 	w = memberList().at(i);
       if(!w->close())
          break;
+#ifdef __GNUC__
 #warning "kde4: how remove it ?.???"
+#endif      
       //memberList()->removeRef(w);
     }
   }
