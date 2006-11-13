@@ -51,7 +51,7 @@ kde4_add_ui_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
 
 kde4_add_executable(kmouth ${kmouth_SRCS})
 
-target_link_libraries(kmouth  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KDEPRINT_LIBS} kspell2  )
+target_link_libraries(kmouth  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KDEPRINT_LIBS} ${KDE4_KSPELL2_LIBS}  )
 
 install(TARGETS kmouth  DESTINATION ${BIN_INSTALL_DIR} )
 
