@@ -431,7 +431,7 @@
   <sect1 id="main-commands">
     <title>Commands Within The Main Window</title>
     <sect2 id="file-menu">
-      <title>The <guimenuitem>File</guimenuitem> Menu</title>
+      <title>The <guimenu>File</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -477,7 +477,7 @@
     </sect2>
 
     <sect2 id="edit-menu">
-      <title>The <guimenuitem>Edit</guimenuitem> Menu</title>
+      <title>The <guimenu>Edit</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -537,7 +537,7 @@
     </sect2>
 
     <sect2 id="phrasebooks-menu">
-      <title>The <guimenuitem>Phrase Books</guimenuitem> Menu</title>
+      <title>The <guimenu>Phrase Books</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -552,7 +552,7 @@
     </sect2>
 
     <sect2 id="settings-menu">
-      <title>The <guimenuitem>Settings</guimenuitem> Menu</title>
+      <title>The <guimenu>Settings</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -624,7 +624,7 @@
     </sect2>
 
     <sect2 id="help-menu">
-      <title>The <guimenuitem>Help</guimenuitem> Menu</title>
+      <title>The <guimenu>Help</guimenu> Menu</title>
       &help.menu.documentation;
     </sect2>
 
@@ -704,7 +704,7 @@
   <sect1 id="pb-editor-commands">
     <title>Commands within the phrase book edit window</title>
     <sect2 id="pbe-file-menu">
-      <title>The <guimenuitem>File</guimenuitem> Menu</title>
+      <title>The <guimenu>File</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -775,7 +775,7 @@
     </sect2>
 
     <sect2 id="pbe-edit-menu">
-      <title>The <guimenuitem>Edit</guimenuitem> Menu</title>
+      <title>The <guimenu>Edit</guimenu> Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -826,7 +826,7 @@
     </sect2>
 
     <sect2 id="pbe-help-menu">
-      <title>The <guimenuitem>Help</guimenuitem> Menu</title>
+      <title>The <guimenu>Help</guimenu> Menu</title>
       &help.menu.documentation;
     </sect2>
 
