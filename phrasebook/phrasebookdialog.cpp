@@ -613,7 +613,7 @@ void PhraseBookDialog::slotCustomKey() {
 }
 
 void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
-   if (cut.isNull()) {
+   if (cut.isEmpty()) {
       slotNoKey();
    }
    else
@@ -623,8 +623,8 @@ void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
 
 void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    // Check whether the shortcut is valid
-   for (int i = 0; i < cut.count(); i++) {
-      const QKeySequence& seq = cut.seq(i);
+   for (int i = 0; i < cut.toList().count(); i++) {
+      const QKeySequence& seq = cut.toList()[i];
       //const KKey& key = seq.key(0);
 #ifdef __GNUC__
 #warning "kde 4 port it";

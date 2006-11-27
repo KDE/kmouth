@@ -458,9 +458,11 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
 // Returns iSeq index if cut2 has a sequence of equal or higher priority
 // to a sequence in cut, else -1
 static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
-   for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
-      for (int iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < cut2.count(); iSeq2++) {
-         if (cut.seq(iSeq) == cut2.seq(iSeq2))
+   int nbCut = cut.toList().count();
+   int nbCut2 = cut2.toList().count();
+   for (int iSeq = 0; iSeq < nbCut; iSeq++) {
+      for (int iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < nbCut2; iSeq2++) {
+         if (cut.toList()[iSeq] == cut2.toList()[iSeq2])
             return iSeq;
        }
    }
@@ -480,15 +482,15 @@ void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QStr
 }
 
 bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
-   for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
-      const QKeySequence& seq = cut.seq(iSeq);
+   for (int iSeq = 0; iSeq < cut.toList().count(); iSeq++) {
+      const QKeySequence& seq = cut.toList()[iSeq];
 
       KStdAccel::StdAccel id = KStdAccel::findStdAccel( seq );
       if( id != KStdAccel::AccelNone
           && keyConflict (cut, KStdAccel::shortcut(id)) > -1)
       {
          if (warnUser)
-            _warning (cut.seq(iSeq),
+            _warning (cut.toList()[iSeq],
                       i18n("the standard \"%1\" action", KStdAccel::label(id)),
                       i18n("Conflict with Standard Application Shortcut"));
          return true;
@@ -504,7 +506,7 @@ bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
       int iSeq = keyConflict (cut, KShortcut(*it));
       if (iSeq > -1) {
          if (warnUser)
-            _warning (cut.seq(iSeq),
+            _warning (cut.toList()[iSeq],
                       i18n("the global \"%1\" action", it.key()),
                       i18n("Conflict with Global Shortcuts"));
          return true;
@@ -520,7 +522,7 @@ bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutIt
          int iSeq = keyConflict (cut, item->cut());
          if (iSeq > -1) {
             if (warnUser)
-               _warning (cut.seq(iSeq),
+               _warning (cut.toList()[iSeq],
                          i18n("an other phrase"),
                          i18n("Key Conflict"));
             return true;
