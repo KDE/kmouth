@@ -482,9 +482,10 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    QMenu *popup = (QMenu *)factory()->container(name, this);
    KToolBar *toolbar = toolBar ("phrasebookBar");
 
-   QList<KAction *> actions = phrases->actions ();
+   QList<QAction *> actions = phrases->actions ();
    for (int actNdx = 0; actNdx < actions.count(); ++actNdx) {
-      actions[actNdx]->unplugAll();
+      foreach (QWidget *w, actions[actNdx]->associatedWidgets())
+          w->removeAction(actions[actNdx]);
    }
    delete phrases;
 
