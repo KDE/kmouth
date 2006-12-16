@@ -485,7 +485,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          KActionMenu *newParent = new KActionMenu (*it2,actionCollection(), "tmp_menu");
          parent->addAction(newParent);
          if (parent == fileImportStandardBook)
-            newParent->plug(toolbarImport->popupMenu());
+            toolbarImport->popupMenu()->addAction(newParent);
          parent = newParent;
       }
       currentNamePath = dirs;
@@ -494,7 +494,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
           url, (*it).name, this, SLOT(slotImportPhrasebook (const KUrl &)), actionCollection());
       parent->addAction(book);
       if (parent == fileImportStandardBook)
-         book->plug(toolbarImport->popupMenu());
+         toolbarImport->popupMenu()->addAction(book);
    }
 }
 

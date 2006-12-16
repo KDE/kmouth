@@ -388,10 +388,10 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
             menu->setDelayed(false);
             phrases->insert(menu);
             if (parent == popup)
-               menu->plug (toolbar);
+               toolbar->addAction(menu);
             if (parent != 0)
             {
-               menu->plug (parent);
+               parent->addAction(menu);
                stack.push (parent);
             }
             parent = menu->menu();
@@ -406,9 +406,9 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
             KAction *action = new PhraseAction (phrase.getPhrase(),
                      phrase.getShortcut(), receiver, slot, phrases);
             if (parent == popup)
-               action->plug (toolbar);
+               toolbar->addAction(action);
             if (parent != 0)
-               action->plug(parent);
+               parent->addAction(action);
          }
          else {
             Phrase phrase = (*it).getPhrase();
@@ -416,8 +416,8 @@ void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *p
             menu->setDelayed(false);
             phrases->insert(menu);
             if (parent == popup)
-               menu->plug (toolbar);
-            menu->plug (parent);
+               toolbar->addAction(menu);
+            parent->addAction(menu);
             stack.push (parent);
             parent = menu->menu();
             level++;
