@@ -27,7 +27,7 @@
 #include <kstatusbar.h>
 #include <klocale.h>
 #include <kconfig.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstdaccel.h>
 #include <kprinter.h>
 #include <kmenu.h>
@@ -120,20 +120,20 @@ void KMouthApp::initActions() {
    filePrint->setToolTip(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
 
-   fileQuit = KStdAction::quit(this, SLOT(slotFileQuit()), actionCollection());
+   fileQuit = KStandardAction::quit(this, SLOT(slotFileQuit()), actionCollection());
    fileQuit->setToolTip(i18n("Quits the application"));
    fileQuit->setWhatsThis (i18n("Quits the application"));
 
 // The "Edit" menu
-   editCut = KStdAction::cut(phraseList, SLOT(cut()), actionCollection());
+   editCut = KStandardAction::cut(phraseList, SLOT(cut()), actionCollection());
    editCut->setToolTip(i18n("Cuts the selected section and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the selected section and puts it to the clipboard. If there is some text selected in the edit field it is placed it on the clipboard. Otherwise the selected sentences in the history (if any) are placed on the clipboard."));
 
-   editCopy = KStdAction::copy(phraseList, SLOT(copy()), actionCollection());
+   editCopy = KStandardAction::copy(phraseList, SLOT(copy()), actionCollection());
    editCopy->setToolTip(i18n("Copies the selected section to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the selected section to the clipboard. If there is some text selected in the edit field it is copied to the clipboard. Otherwise the selected sentences in the history (if any) are copied to the clipboard."));
 
-   editPaste = KStdAction::paste(phraseList, SLOT(paste()), actionCollection());
+   editPaste = KStandardAction::paste(phraseList, SLOT(paste()), actionCollection());
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
@@ -147,7 +147,7 @@ void KMouthApp::initActions() {
    connect(phrasebookEdit, SIGNAL(triggered(bool)), this, SLOT(slotEditPhrasebook()));
 
 // The "Options" menu
-   viewMenuBar = KStdAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
+   viewMenuBar = KStandardAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
    // FIXME: Disable so it will compile.
    // viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
    // viewToolBar->setToolTip(i18n("Enables/disables the toolbar"));
@@ -158,7 +158,7 @@ void KMouthApp::initActions() {
    viewPhrasebookBar->setToolTip(i18n("Enables/disables the phrasebook bar"));
    viewPhrasebookBar->setWhatsThis (i18n("Enables/disables the phrasebook bar"));
 
-   viewStatusBar = KStdAction::showStatusbar(this, SLOT(slotViewStatusBar()), actionCollection());
+   viewStatusBar = KStandardAction::showStatusbar(this, SLOT(slotViewStatusBar()), actionCollection());
    viewStatusBar->setToolTip(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 

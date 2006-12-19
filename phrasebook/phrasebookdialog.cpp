@@ -48,7 +48,7 @@
 #include <kstandarddirs.h>
 #include <kdesktopfile.h> 
 #include <kactionmenu.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 
 #include "phrasebookdialog.h"
 #include "phrasetree.h"
@@ -351,7 +351,7 @@ void PhraseBookDialog::initActions() {
    fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
-   fileSave = KStdAction::save(this, SLOT(slotSave()), actionCollection());
+   fileSave = KStandardAction::save(this, SLOT(slotSave()), actionCollection());
    fileSave->setToolTip(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
@@ -374,24 +374,24 @@ void PhraseBookDialog::initActions() {
    fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
-   filePrint = KStdAction::print(this, SLOT(slotPrint()), actionCollection());
+   filePrint = KStandardAction::print(this, SLOT(slotPrint()), actionCollection());
    filePrint->setToolTip(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
    filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
 
-   fileClose = KStdAction::close(this, SLOT(close()), actionCollection());
+   fileClose = KStandardAction::close(this, SLOT(close()), actionCollection());
    fileClose->setToolTip(i18n("Closes the window"));
    fileClose->setWhatsThis (i18n("Closes the window"));
 
 // The edit menu
-   editCut = KStdAction::cut(this, SLOT(slotCut()), actionCollection());
+   editCut = KStandardAction::cut(this, SLOT(slotCut()), actionCollection());
    editCut->setToolTip(i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
 
-   editCopy = KStdAction::copy(this, SLOT(slotCopy()), actionCollection());
+   editCopy = KStandardAction::copy(this, SLOT(slotCopy()), actionCollection());
    editCopy->setToolTip(i18n("Copies the currently selected entry from the phrase book to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the currently selected entry from the phrase book to the clipboard"));
 
-   editPaste = KStdAction::paste(this, SLOT(slotPaste()), actionCollection());
+   editPaste = KStandardAction::paste(this, SLOT(slotPaste()), actionCollection());
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
