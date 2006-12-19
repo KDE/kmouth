@@ -42,13 +42,13 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 bool kttsdSay (const QString &text, const QString &language) {
    // TODO: Would be better to save off this QDBusInterface pointer and
    // set defaults only once.
-   QDBusInterface kdesktop("org.kde.kttsd", "/KSpeech", "org.kde.KSpeech");
-   kdesktop.call("setApplicationName", "KMouth");
-   kdesktop.call("setDefaultTalker", language);
+   QDBusInterface kttsd("org.kde.kttsd", "/KSpeech", "org.kde.KSpeech");
+   kttsd.call("setApplicationName", "KMouth");
+   kttsd.call("setDefaultTalker", language);
    // FIXME: language is incorrect.
    kDebug() << "kttsdSay: language = " << language << endl;
-   kdesktop.call("setDefaultPriority", KSpeech::jpWarning);
-   QDBusReply<bool> reply = kdesktop.call("say", text, 0);
+   kttsd.call("setDefaultPriority", KSpeech::jpWarning);
+   QDBusReply<bool> reply = kttsd.call("say", text, 0);
 	return reply;
 }
 
