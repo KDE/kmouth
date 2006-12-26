@@ -24,6 +24,7 @@
 #include <kconfig.h>
 #include <kspeech.h>
 #include <kdebug.h>
+#include <kspeech_interface.h>
 
 #include "speech.h"
 
@@ -42,14 +43,16 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 bool kttsdSay (const QString &text, const QString &language) {
    // TODO: Would be better to save off this QDBusInterface pointer and
    // set defaults only once.
-   QDBusInterface kttsd("org.kde.kttsd", "/KSpeech", "org.kde.KSpeech");
-   kttsd.call("setApplicationName", "KMouth");
-   kttsd.call("setDefaultTalker", language);
+   org::kde::KSpeech kspeech("org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus());
+   kspeech.setApplicationName("KMouth");
+   kspeech.setDefaultTalker(language);
+
    // FIXME: language is incorrect.
    kDebug() << "kttsdSay: language = " << language << endl;
-   kttsd.call("setDefaultPriority", KSpeech::jpWarning);
-   QDBusReply<bool> reply = kttsd.call("say", text, 0);
-	return reply;
+   kspeech.setDefaultPriority(KSpeech::jpWarning);
+   QDBusReply<int> val = kspeech.say(text, 0);
+   
+   return (val>0);
 }
 
 void TextToSpeechSystem::speak (const QString &text, const QString &language) {
