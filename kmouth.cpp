@@ -28,7 +28,6 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstandardaction.h>
-#include <kstdaccel.h>
 #include <kprinter.h>
 #include <kmenu.h>
 #include <kstandarddirs.h>
@@ -37,6 +36,7 @@
 #include <kactioncollection.h>
 #include <kactionmenu.h>
 #include <ktoggleaction.h>
+#include <kstandardshortcut.h>
 // application specific includes
 #include "kmouth.h"
 #include "phraselist.h"
@@ -103,19 +103,19 @@ bool KMouthApp::configured() {
 void KMouthApp::initActions() {
 // The "File" menu
    fileOpen = new KAction(KIcon("phrasehistory_open"), i18n("&Open as History..."), actionCollection(),"file_open");
-   fileOpen->setShortcut(KStdAccel::shortcut(KStdAccel::Open));
+   fileOpen->setDefaultShortcut(KStandardShortcut::open());
    connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
    fileOpen->setToolTip(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
    fileSaveAs = new KAction(KIcon("phrasehistory_save"), i18n("Save &History As..."), actionCollection(),"file_save_as");
-   fileSaveAs->setShortcut(KStdAccel::shortcut(KStdAccel::Save));
+   fileSaveAs->setDefaultShortcut(KStandardShortcut::save());
    connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
    fileSaveAs->setToolTip(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
    filePrint = new KAction(KIcon("phrasehistory_print"), i18n("&Print History..."), actionCollection(),"file_print");
-   filePrint->setShortcut(KStdAccel::shortcut(KStdAccel::Print));
+   filePrint->setDefaultShortcut(KStandardShortcut::print());
    connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
    filePrint->setToolTip(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));

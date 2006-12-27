@@ -18,7 +18,6 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kaction.h>
-#include <kstdaccel.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kactionmenu.h>
@@ -482,6 +481,8 @@ void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QStr
 }
 
 bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
+#warning "kde4: port it"
+#if 0	
    for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
       const QKeySequence& seq = cut[iSeq];
 
@@ -496,6 +497,7 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
          return true;
       }
    }
+#endif   
    return false;
 }
 

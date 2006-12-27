@@ -576,7 +576,7 @@ bool PhraseBookDialog::queryClose() {
       int answer = KMessageBox::questionYesNoCancel (this,
               i18n("<qt>There are unsaved changes.<br>Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
           i18n("Closing \"Phrase Book\" Window"),
-          KStdGuiItem::apply(), KStdGuiItem::discard(), "AutomaticSave");
+          KStandardGuiItem::apply(), KStandardGuiItem::discard(), "AutomaticSave");
       if (answer == KMessageBox::Yes) {
          slotSave();
          return true;
