@@ -342,7 +342,7 @@ void PhraseBookDialog::initGUI () {
 void PhraseBookDialog::initActions() {
 // The file menu
    fileNewPhrase = new KAction (KIcon("phrase_new"), i18n("&New Phrase"), actionCollection(),"file_new_phrase");
-   connect(fileNewPhrase, SIGNAL(trigger(bool)), this, SLOT(slotAddPhrase()));
+   connect(fileNewPhrase, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrase()));
    fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
