@@ -29,6 +29,7 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QDropEvent>
+#include <kapplication.h>
 
 PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
    : K3ListViewItem (parent, after, phrase)
