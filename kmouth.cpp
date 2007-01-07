@@ -103,19 +103,19 @@ bool KMouthApp::configured() {
 void KMouthApp::initActions() {
 // The "File" menu
    fileOpen = new KAction(KIcon("phrasehistory_open"), i18n("&Open as History..."), actionCollection(),"file_open");
-   fileOpen->setDefaultShortcut(KStandardShortcut::open());
+   fileOpen->setShortcut(KStandardShortcut::open(), KAction::DefaultShortcut);
    connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
    fileOpen->setToolTip(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
    fileSaveAs = new KAction(KIcon("phrasehistory_save"), i18n("Save &History As..."), actionCollection(),"file_save_as");
-   fileSaveAs->setDefaultShortcut(KStandardShortcut::save());
+   fileSaveAs->setShortcut(KStandardShortcut::save(), KAction::DefaultShortcut);
    connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
    fileSaveAs->setToolTip(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
    filePrint = new KAction(KIcon("phrasehistory_print"), i18n("&Print History..."), actionCollection(),"file_print");
-   filePrint->setDefaultShortcut(KStandardShortcut::print());
+   filePrint->setShortcut(KStandardShortcut::print(), KAction::DefaultShortcut);
    connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
    filePrint->setToolTip(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
