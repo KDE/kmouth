@@ -155,31 +155,31 @@ class KMouthApp : public KMainWindow
     OptionsDialog *optionsDialog;
 
     // KAction pointers to enable/disable actions
-    KAction* fileOpen;
-    KAction* fileSaveAs;
-    KAction* filePrint;
-    KAction* fileQuit;
+    QAction* fileOpen;
+    QAction* fileSaveAs;
+    QAction* filePrint;
+    QAction* fileQuit;
 
-    KAction* editCut;
-    KAction* editCopy;
-    KAction* editPaste;
-    KAction* editSpeak;
+    QAction* editCut;
+    QAction* editCopy;
+    QAction* editPaste;
+    QAction* editSpeak;
 
     KActionCollection *phrases;
-    KAction* phrasebookEdit;
+    QAction* phrasebookEdit;
 
     KToggleAction* viewMenuBar;
     KToggleAction* viewToolBar;
     KToggleAction* viewPhrasebookBar;
     KToggleAction* viewStatusBar;
-    KAction*       configureTTS;
+    QAction*       configureTTS;
 
-    KAction* phraseListSpeak;
-    KAction* phraseListRemove;
-    KAction* phraseListCut;
-    KAction* phraseListCopy;
-    KAction* phraselistSelectAll;
-    KAction* phraselistDeselectAll;
+    QAction* phraseListSpeak;
+    QAction* phraseListRemove;
+    QAction* phraseListCut;
+    QAction* phraseListCopy;
+    QAction* phraselistSelectAll;
+    QAction* phraselistDeselectAll;
 };
 
 #endif // KMOUTH_H
