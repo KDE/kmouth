@@ -26,6 +26,7 @@
 #include <QMenu>
 #include <ktoolbar.h>
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kprinter.h>
 #include <kicon.h>
 class KUrl;
@@ -175,17 +176,18 @@ class PhraseAction : public KAction {
    Q_OBJECT
 public:
    PhraseAction (const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon("phrase"), phrase, parent, phrase.toLatin1()) {
+   : KAction (KIcon("phrase"), phrase, parent) {
       this->setShortcut(cut);
       this->phrase = phrase;
       connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
+      parent->addAction(phrase, this);
    };
    ~PhraseAction () {
    }
 
 public slots:
    void slotTriggered () {
-      KAction::slotTriggered();
+      trigger();
       emit slotActivated (phrase);
    }
 

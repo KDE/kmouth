@@ -102,16 +102,17 @@ class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
    StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon("phrasebook"), name, parent, name) {
+   : KAction (KIcon("phrasebook"), name, parent) {
       this->url = url;
       connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
+      parent->addAction(name, this);
    };
    ~StandardPhraseBookInsertAction () {
    };
 
 public slots:
    void slotActivated () {
-      KAction::slotTriggered();
+      trigger();
       emit slotActivated (url);
    };
 
@@ -222,19 +223,19 @@ private:
    PhraseTree *treeView;
    ButtonBoxWidget *buttonBox;
 
-   KAction* fileNewPhrase;
-   KAction* fileNewBook;
-   KAction* fileSave;
-   KAction* fileImport;
+   QAction* fileNewPhrase;
+   QAction* fileNewBook;
+   QAction* fileSave;
+   QAction* fileImport;
    KToolBarPopupAction* toolbarImport;
    KActionMenu* fileImportStandardBook;
-   KAction* fileExport;
-   KAction* filePrint;
-   KAction* fileClose;
-   KAction* editCut;
-   KAction* editCopy;
-   KAction* editPaste;
-   KAction* editDelete;
+   QAction* fileExport;
+   QAction* filePrint;
+   QAction* fileClose;
+   QAction* editCut;
+   QAction* editCopy;
+   QAction* editPaste;
+   QAction* editDelete;
 };
 
 #endif

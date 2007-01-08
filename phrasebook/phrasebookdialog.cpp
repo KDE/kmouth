@@ -341,12 +341,16 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new KAction (KIcon("phrase_new"), i18n("&New Phrase"), actionCollection(),"file_new_phrase");
+   fileNewPhrase = actionCollection()->addAction("file_new_phrase");
+   fileNewPhrase->setIcon(KIcon("phrase_new"));
+   fileNewPhrase->setText(i18n("&New Phrase"));
    connect(fileNewPhrase, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrase()));
    fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (KIcon("phrasebook_new"), i18n("New Phrase &Book"), actionCollection(),"file_new_book");
+   fileNewBook = actionCollection()->addAction("file_new_book");
+   fileNewBook->setIcon(KIcon("phrasebook_new"));
+   fileNewBook->setText(i18n("New Phrase &Book"));
    connect(fileNewBook, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrasebook()));
    fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
@@ -355,21 +359,28 @@ void PhraseBookDialog::initActions() {
    fileSave->setToolTip(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
-   fileImport = new KAction (KIcon("phrasebook_open"), i18n("&Import..."), actionCollection(),"file_import");
+   fileImport = actionCollection()->addAction("file_import");
+   fileImport->setIcon(KIcon("phrasebook_open"));
+   fileImport->setText(i18n("&Import..."));
    connect(fileImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
    fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   toolbarImport = new KToolBarPopupAction (KIcon("phrasebook_open"), i18n("&Import..."), actionCollection(),"toolbar_import");
+   toolbarImport = new KToolBarPopupAction(KIcon("phrasebook_open"), i18n("&Import..."), this);
+   actionCollection()->addAction("toolbar_import", toolbarImport);
    connect(toolbarImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
    toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   fileImportStandardBook = new KActionMenu (KIcon("phrasebook_open"),i18n("I&mport Standard Phrase Book"), actionCollection(),"file_import_standard_book");
+   fileImportStandardBook = actionCollection()->add<KActionMenu>("file_import_standard_book");
+   fileImportStandardBook->setIcon(KIcon("phrasebook_open"));
+   fileImportStandardBook->setText(i18n("I&mport Standard Phrase Book"));
    fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-   fileExport = new KAction (KIcon("phrasebook_save"), i18n("&Export..."), actionCollection(),"file_export");
+   fileExport = actionCollection()->addAction("file_export");
+   fileExport->setIcon(KIcon("phrasebook_save"));
+   fileExport->setText(i18n("&Export..."));
    connect(fileExport, SIGNAL(triggered(bool)), this, SLOT(slotExportPhrasebook()));
    fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
@@ -395,7 +406,9 @@ void PhraseBookDialog::initActions() {
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new KAction (KIcon("editdelete"), i18n("&Delete"), actionCollection(),"edit_delete");
+   editDelete = actionCollection()->addAction("edit_delete");
+   editDelete->setIcon(KIcon("editdelete"));
+   editDelete->setText(i18n("&Delete"));
    connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotRemove()));
    editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
@@ -482,7 +495,8 @@ void PhraseBookDialog::initStandardPhraseBooks () {
 #ifdef __GNUC__
 #warning "kde4: correct newparent objectname ?"
 #endif	 
-         KActionMenu *newParent = new KActionMenu (*it2,actionCollection(), "tmp_menu");
+         KActionMenu *newParent = actionCollection()->add<KActionMenu>("tmp_menu");
+         newParent->setText(*it2);
          parent->addAction(newParent);
          if (parent == fileImportStandardBook)
             toolbarImport->popupMenu()->addAction(newParent);
