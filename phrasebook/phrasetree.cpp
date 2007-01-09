@@ -29,7 +29,6 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QDropEvent>
-#include <kapplication.h>
 
 PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
    : K3ListViewItem (parent, after, phrase)
@@ -81,9 +80,9 @@ PhraseTree::PhraseTree (QWidget *parent, const char *name)
    : K3ListView (parent)
 {
    Q_UNUSED(name);
-   phrasebook_open   = kapp->iconLoader()->loadIcon("phrasebook",        K3Icon::Small);
-   phrasebook_closed = kapp->iconLoader()->loadIcon("phrasebook_closed", K3Icon::Small);
-   phrase            = kapp->iconLoader()->loadIcon("phrase",            K3Icon::Small);
+   phrasebook_open   = KIconLoader::global()->loadIcon("phrasebook",        K3Icon::Small);
+   phrasebook_closed = KIconLoader::global()->loadIcon("phrasebook_closed", K3Icon::Small);
+   phrase            = KIconLoader::global()->loadIcon("phrase",            K3Icon::Small);
 
    connect (this, SIGNAL(expanded (Q3ListViewItem *)), this, SLOT(itemExpanded (Q3ListViewItem *)));
    connect (this, SIGNAL(collapsed (Q3ListViewItem *)), this, SLOT(itemCollapsed (Q3ListViewItem *)));
