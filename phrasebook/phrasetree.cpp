@@ -481,7 +481,9 @@ void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QStr
 }
 
 bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
+#ifdef __GNUC__
 #warning "kde4: port it"
+#endif
 #if 0	
    for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
       const QKeySequence& seq = cut[iSeq];
