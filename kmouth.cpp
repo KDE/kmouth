@@ -37,6 +37,8 @@
 #include <kactionmenu.h>
 #include <ktoggleaction.h>
 #include <kstandardshortcut.h>
+#include <kapplication.h>
+
 // application specific includes
 #include "kmouth.h"
 #include "phraselist.h"

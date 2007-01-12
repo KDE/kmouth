@@ -19,6 +19,7 @@
 #include <QPrinter>
 #include <QPainter>
 #include <QLayout>
+#include <QApplication>
 
 #include <QMenu>
 #include <QClipboard>

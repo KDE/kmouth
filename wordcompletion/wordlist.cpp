@@ -22,11 +22,10 @@
 //Added by qt3to4:
 #include <QTextStream>
 
-#include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kprogressdialog.h>
 #include <klocale.h>
-
+#include <kapplication.h>
 #include "wordlist.h"
 
 namespace WordList {

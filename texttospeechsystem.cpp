@@ -20,7 +20,6 @@
 #include <QTextCodec>
 #include <stdlib.h>
 #include <QtDBus>
-#include <kapplication.h>
 #include <kconfig.h>
 #include <kspeech.h>
 #include <kdebug.h>

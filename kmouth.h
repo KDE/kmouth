@@ -25,7 +25,6 @@
 // include files for Qt
 
 // include files for KDE
-#include <kapplication.h>
 #include <kmainwindow.h>
 #include <kaction.h>
 #include <kurl.h>
