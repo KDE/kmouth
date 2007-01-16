@@ -10,6 +10,7 @@ Terminal=false
 Name=KMouth
 Name[x-test]=xxKMouthxx
 GenericName=Speech Synthesizer Frontend
+GenericName[el]=Συνθέτης ομιλίας
 GenericName[fr]=Interface graphique de synthèse vocale
 GenericName[x-test]=xxSpeech Synthesizer Frontendxx
 Categories=Qt;KDE;Utility;Accessibility;
