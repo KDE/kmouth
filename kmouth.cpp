@@ -68,12 +68,12 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
    phrases = new KActionCollection (static_cast<QWidget*>(this));
 
    readOptions();
-   ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config);
+   ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config.data());
    if (wizard->configurationNeeded ()) {
       if (wizard->requestConfiguration ()) {
          isConfigured = true;
          saveOptions();
-         wizard->saveConfig (config);
+         wizard->saveConfig (config.data());
          readOptions();
       }
       else
@@ -271,10 +271,10 @@ void KMouthApp::saveOptions() {
       // config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
       if (phraseList != 0)
-         phraseList->saveCompletionOptions(config);
-      optionsDialog->saveOptions(config);
-      toolBar("mainToolBar")->saveSettings (config, "mainToolBar");
-      toolBar("phrasebookBar")->saveSettings (config, "phrasebookBar");
+         phraseList->saveCompletionOptions(config.data());
+      optionsDialog->saveOptions(config.data());
+      toolBar("mainToolBar")->saveSettings (config.data(), "mainToolBar");
+      toolBar("phrasebookBar")->saveSettings (config.data(), "phrasebookBar");
    }
 }
 
@@ -313,19 +313,19 @@ void KMouthApp::readOptions()
     resize(size);
   }
 
-  optionsDialog->readOptions(config);
+  optionsDialog->readOptions(config.data());
 
-  toolBar("mainToolBar")->applySettings (config, "mainToolBar");
-  toolBar("phrasebookBar")->applySettings (config, "phrasebookBar");
+  toolBar("mainToolBar")->applySettings (config.data(), "mainToolBar");
+  toolBar("phrasebookBar")->applySettings (config.data(), "phrasebookBar");
 
-  QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+  QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
   if (!standardBook.isEmpty()) {
      PhraseBook book;
      book.open(KUrl::fromPathOrUrl( standardBook ));
      slotPhrasebookConfirmed(book);
   }
   if (phraseList != 0)
-     phraseList->readCompletionOptions(config);
+     phraseList->readCompletionOptions(config.data());
 }
 
 bool KMouthApp::queryClose()
@@ -510,7 +510,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    phrases = new KActionCollection (actionCollection());
    book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected (const QString &)));
 
-   QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
+   QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KUrl::fromPathOrUrl( bookLocation + "standard.phrasebook" ));
    }
@@ -518,7 +518,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
 
 void KMouthApp::slotConfigurationChanged()
 {
-   optionsDialog->saveOptions (config);
+   optionsDialog->saveOptions (config.data());
 }
 
 void KMouthApp::slotPhraseSelected (const QString &phrase) {

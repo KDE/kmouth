@@ -150,7 +150,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    }
 
    QString filename = d->dictDetails[d->current].filename;
-   QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+   QString dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
    QFile file(dictionaryFile);
    if (file.exists() && file.open(QIODevice::ReadOnly)) {
       QTextStream stream(&file);
@@ -201,7 +201,7 @@ void WordCompletion::addSentence (const QString &sentence) {
 void WordCompletion::save () {
    if (d->wordsToSave) {
       QString filename = d->dictDetails[d->current].filename;
-      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      QString dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
       QFile file(dictionaryFile);
       if (!file.exists())
          return;

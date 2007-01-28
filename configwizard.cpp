@@ -62,7 +62,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
 }
 
 void ConfigWizard::initBookPage() {
-   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
    bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
    if (displayBook) {
@@ -79,7 +79,7 @@ void ConfigWizard::initBookPage() {
 
 void ConfigWizard::initCompletion (KConfig *config) {
    if (!WordCompletion::isConfigured()) {
-      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
+      QString dictionaryFile = KGlobal::dirs()->findResource("appdata", "dictionary.txt");
       QFile file(dictionaryFile);
       if (file.exists()) {
          // If there is a word completion dictionary but no entry in the

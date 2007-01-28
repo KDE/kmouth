@@ -237,7 +237,7 @@ void InitialPhraseBookWidget::createBook () {
       }
    }
 
-   QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
+   QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KUrl( bookLocation + "standard.phrasebook" ));
    }
@@ -282,7 +282,7 @@ PhraseBookDialog::PhraseBookDialog ()
    initGUI();
    initActions();
    initStandardPhraseBooks();
-   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
    if (!standardBook.isNull() && !standardBook.isEmpty()) {
       PhraseBook book;
       book.open(KUrl( standardBook ));
@@ -441,7 +441,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
 }
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
-   QStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
+   QStringList bookPaths = KGlobal::mainComponent().dirs()->findAllResources (
                           "data", "kmouth/books/*.phrasebook", true, true);
    QStringList bookNames;
    QMap<QString,StandardBook> bookMap;

@@ -222,11 +222,11 @@ QString DictionaryCreationWizard::createDictionary() {
    do {
       dictnumber++;
       filename = QString("wordcompletion%1.dict").arg(dictnumber);
-      dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
    
-   dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + filename;
+   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", "/") + filename;
    if (WordList::saveWordList (map, dictionaryFile))
       return filename;
    else
@@ -319,7 +319,7 @@ QMap <QString, int> MergeWidget::mergeParameters () {
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
          QString name = it.currentKey();
-         QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", name);
+         QString dictionaryFile = KGlobal::dirs()->findResource("appdata", name);
          files[dictionaryFile] = weights[name]->value();
       }
    }
@@ -365,7 +365,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    QString filename;
    QString dictionaryFile;
    
-   dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
+   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
    if (WordList::saveWordList (map, dictionaryFile)) {
       config->setGroup("Dictionary 0");
       config->writeEntry ("Filename", "wordcompletion1.dict");

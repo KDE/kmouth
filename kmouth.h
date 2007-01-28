@@ -28,6 +28,7 @@
 #include <kmainwindow.h>
 #include <kaction.h>
 #include <kurl.h>
+#include <kconfig.h>
 
 // forward declaration of the KMouth classes
 class PhraseList;
@@ -147,7 +148,7 @@ class KMouthApp : public KMainWindow
   private:
     bool isConfigured;
     /** the configuration object of the application */
-    KConfig *config;
+    KSharedConfigPtr config;
     /** The phrase list */
     PhraseList *phraseList;
     /** The configuration dialog */
