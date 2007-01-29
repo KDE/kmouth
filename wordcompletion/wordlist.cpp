@@ -293,10 +293,10 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
-   QStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
+   QStringList files = KGlobal::dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
       language = language.left(2);
-      files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
+      files = KGlobal::dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    }
 
    return parseFiles (files, QTextStream::UnicodeUTF8, 0, pdlg);
