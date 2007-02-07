@@ -19,9 +19,6 @@
 #ifndef KMOUTH_H
 #define KMOUTH_H
 
-
-#include <config.h>
-
 // include files for Qt
 
 // include files for KDE
