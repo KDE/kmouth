@@ -138,8 +138,8 @@ void CheckBookItem::childChange (int numberDiff, int selDiff) {
    if (parent != 0)
       ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
 
-   QString text = i18np(" (%1 of 1 book selected)",
-                        " (%1 of %n books selected)",
+   QString text = i18np(" (%2 of 1 book selected)",
+                        " (%2 of %1 books selected)",
                         numberOfBooks, selectedBooks);
    setText(0, this->text(PhraseBookPrivate::name)+text);
 }
