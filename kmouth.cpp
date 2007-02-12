@@ -160,7 +160,7 @@ void KMouthApp::initActions() {
 // The "Options" menu
    viewMenuBar = KStandardAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
    // FIXME: Disable so it will compile.
-   // viewToolBar = KStdAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
+   // viewToolBar = KStandardAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
    // viewToolBar->setToolTip(i18n("Enables/disables the toolbar"));
    // viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
