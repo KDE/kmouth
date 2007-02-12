@@ -442,7 +442,9 @@ QString PhraseBookDialog::displayPath (QString filename) {
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
    QStringList bookPaths = KGlobal::mainComponent().dirs()->findAllResources (
-                          "data", "kmouth/books/*.phrasebook", true, true);
+                          "data", "kmouth/books/*.phrasebook",
+                          KStandardDirs::Recursive |
+                          KStandardDirs::NoDuplicates);
    QStringList bookNames;
    QMap<QString,StandardBook> bookMap;
    QStringList::iterator it;
