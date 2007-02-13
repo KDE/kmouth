@@ -19,7 +19,7 @@
 #define PHRASELIST_H
 
 // include files for KDE
-#include <klistbox.h>
+#include <k3listbox.h>
 #include <klineedit.h>
 #include <kprinter.h>
 
@@ -94,7 +94,7 @@ protected slots:
    void configureCompletionCombo(const QStringList &list);
 
 private:
-   KListBox *listBox;
+   K3ListBox *listBox;
    KComboBox *dictionaryCombo;
    KLineEdit *lineEdit;
    QPushButton *speakButton;

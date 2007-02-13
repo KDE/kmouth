@@ -29,9 +29,7 @@
 #include <QKeyEvent>
 
 // include files for KDE
-#include <klistbox.h>
 #include <klineedit.h>
-// #include <kaudioplayer.h>
 #include <kcursor.h>
 #include <kiconloader.h>
 #include <klocale.h>
@@ -58,7 +56,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    // setBackgroundMode(PaletteBase);
    QVBoxLayout *layout = new QVBoxLayout (this);
 
-   listBox = new KListBox (this);
+   listBox = new K3ListBox (this);
    listBox->setFocusPolicy(Qt::NoFocus);
    listBox->setSelectionMode (Q3ListBox::Extended);
    listBox->setWhatsThis( i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
