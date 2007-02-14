@@ -260,43 +260,45 @@ void KMouthApp::openDocumentFile(const KUrl& url)
 
 void KMouthApp::saveOptions() {
    if (isConfigured) {
-      config->setGroup("General Options");
-      config->writeEntry("Geometry", size());
-      config->writeEntry("Show Menubar", viewMenuBar->isChecked());
+      KConfigGroup cg( config, "General Options");
+      cg.writeEntry("Geometry", size());
+      cg.writeEntry("Show Menubar", viewMenuBar->isChecked());
       // FIXME: Toolbar disabled so it will compile.
-      // config->writeEntry("Show Toolbar", viewToolBar->isChecked());
-      config->writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
-      config->writeEntry("Show Statusbar",viewStatusBar->isChecked());
+      // cg.writeEntry("Show Toolbar", viewToolBar->isChecked());
+      cg.writeEntry("Show Phrasebook Bar", viewPhrasebookBar->isChecked());
+      cg.writeEntry("Show Statusbar",viewStatusBar->isChecked());
       // FIXME: KToolBar no longer has barPos() method.
-      // config->writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
+      // cg.writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
       if (phraseList != 0)
          phraseList->saveCompletionOptions(config.data());
       optionsDialog->saveOptions(config.data());
-      toolBar("mainToolBar")->saveSettings (config.data(), "mainToolBar");
-      toolBar("phrasebookBar")->saveSettings (config.data(), "phrasebookBar");
+      cg.changeGroup( "mainToolBar" );
+      toolBar("mainToolBar")->saveSettings( cg );
+      cg.changeGroup( "phrasebookBar");
+      toolBar("phrasebookBar")->saveSettings( cg );
    }
 }
 
 
 void KMouthApp::readOptions()
 {
-  config->setGroup("General Options");
+  KConfigGroup cg( config, "General Options");
 
   // bar status settings
-  bool bViewMenubar = config->readEntry("Show Menubar", true);
+  bool bViewMenubar = cg.readEntry("Show Menubar", true);
   viewMenuBar->setChecked(bViewMenubar);
   slotViewMenuBar();
 
   // FIXME: Toolbar disabled so it will compile.
-  // bool bViewToolbar = config->readEntry("Show Toolbar", QVariant(true)).toBool();
+  // bool bViewToolbar = cg.readEntry("Show Toolbar", QVariant(true)).toBool();
   // viewToolBar->setChecked(bViewToolbar);
   // slotViewToolBar();
 
-  bool bViewPhrasebookbar = config->readEntry("Show Phrasebook Bar", true);
+  bool bViewPhrasebookbar = cg.readEntry("Show Phrasebook Bar", true);
   viewPhrasebookBar->setChecked(bViewPhrasebookbar);
 
-  bool bViewStatusbar = config->readEntry("Show Statusbar", true);
+  bool bViewStatusbar = cg.readEntry("Show Statusbar", true);
   viewStatusBar->setChecked(bViewStatusbar);
   slotViewStatusBar();
 
@@ -304,10 +306,10 @@ void KMouthApp::readOptions()
   // bar position settings
   // FIXME:
   // KToolBar::BarPosition toolBarPos;
-  // toolBarPos=(KToolBar::BarPosition) config->readEntry("ToolBarPos", int(KToolBar::Top));
+  // toolBarPos=(KToolBar::BarPosition) cg.readEntry("ToolBarPos", int(KToolBar::Top));
   // toolBar("mainToolBar")->setBarPos(toolBarPos);
 
-  QSize size=config->readEntry("Geometry",QSize());
+  QSize size=cg.readEntry("Geometry",QSize());
   if(!size.isEmpty())
   {
     resize(size);
@@ -315,8 +317,8 @@ void KMouthApp::readOptions()
 
   optionsDialog->readOptions(config.data());
 
-  toolBar("mainToolBar")->applySettings (config.data(), "mainToolBar");
-  toolBar("phrasebookBar")->applySettings (config.data(), "phrasebookBar");
+  toolBar("mainToolBar")->applySettings (config->group( "mainToolBar" ) );
+  toolBar("phrasebookBar")->applySettings (config->group( "phrasebookBar") );
 
   QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
   if (!standardBook.isEmpty()) {
@@ -395,7 +397,7 @@ void KMouthApp::slotFileQuit()
   KMainWindow* w;
   if (!memberList().isEmpty())
   {
-	for (int i = 0; i < memberList().size(); ++i) 
+	for (int i = 0; i < memberList().size(); ++i)
      {
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
       // the window and the application stay open.
@@ -404,7 +406,7 @@ void KMouthApp::slotFileQuit()
          break;
 #ifdef __GNUC__
 #warning "kde4: how remove it ?.???"
-#endif      
+#endif
       //memberList()->removeRef(w);
     }
   }
