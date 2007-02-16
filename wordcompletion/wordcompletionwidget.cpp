@@ -27,7 +27,6 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
-#include <ksimpleconfig.h>
 #include <kfiledialog.h>
 #include <kio/netaccess.h>
 #include <kmessagebox.h>

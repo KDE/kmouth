@@ -26,7 +26,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include "klanguagebutton.h"
 
 QString languageName (QString languageCode) {
