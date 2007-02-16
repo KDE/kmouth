@@ -73,7 +73,7 @@ public:
       QString filename = KGlobal::dirs()->findResource("locale",
 			languageCode + QString::fromLatin1("/entry.desktop"));
 
-      KSimpleConfig entry(filename);
+      KConfig entry(filename, KConfig::OnlyLocal);
       entry.setGroup(QString::fromLatin1("KCM Locale"));
       QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ')', languageCode);
