@@ -26,14 +26,14 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include "klanguagebutton.h"
 
 QString languageName (QString languageCode) {
    QString filename = KGlobal::dirs()->findResource("locale",
 			languageCode + QString::fromLatin1("/entry.desktop"));
       
-   KSimpleConfig entry(filename);
+   KConfig entry(filename, KConfig::OnlyLocal);
    entry.setGroup(QString::fromLatin1("KCM Locale"));
    return entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
 }
@@ -51,7 +51,7 @@ void loadLanguageList(KLanguageButton *combo)
     int index = fpath.lastIndexOf('/');
     QString nid = fpath.mid(index + 1);
 
-    KSimpleConfig entry(*it);
+    KConfig entry(*it, KConfig::OnlyLocal);
     entry.setGroup(QString::fromLatin1("KCM Locale"));
     QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
     combo->insertLanguage(nid, name, QString::fromLatin1("l10n/"), QString());

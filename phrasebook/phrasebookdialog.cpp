@@ -46,7 +46,7 @@
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kstandarddirs.h>
-#include <kdesktopfile.h> 
+#include <kdesktopfile.h>
 #include <kactionmenu.h>
 #include <kstandardaction.h>
 
@@ -68,7 +68,7 @@ CheckBookItem::CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
    setText(PhraseBookPrivate::name, name);
    setText(PhraseBookPrivate::filename, filename);
    setSelectable(false);
-   
+
    if (filename.isNull() || filename.isEmpty())
       numberOfBooks = 0;
    else
@@ -85,7 +85,7 @@ CheckBookItem::CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
    setText(PhraseBookPrivate::name, name);
    setText(PhraseBookPrivate::filename, filename);
    setSelectable(false);
-   
+
    if (filename.isNull() || filename.isEmpty())
       numberOfBooks = 0;
    else
@@ -205,7 +205,7 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
          last = 0;
       }
       currentNamePath = dirs;
-      
+
       Q3ListViewItem *book;
       if (parent == 0)
          book = new CheckBookItem (books, last, (*it).name, (*it).name, (*it).filename);
@@ -228,7 +228,7 @@ void InitialPhraseBookWidget::createBook () {
             localBook.open(KUrl( item->text(PhraseBookPrivate::filename )));
             book += localBook;
          }
-         
+
          while ((item != 0) && (item->nextSibling() == 0)) {
             item = item->parent();
          }
@@ -310,7 +310,7 @@ void PhraseBookDialog::initGUI () {
    setCentralWidget(page);
    QVBoxLayout *mainLayout = new QVBoxLayout (page);
    mainLayout->setMargin(0);
-   
+
    treeView = new PhraseTree (page, "phrasetree");
    treeView->setSorting (-1);
    treeView->setItemsMovable (true);
@@ -320,14 +320,14 @@ void PhraseBookDialog::initGUI () {
    treeView->addColumn (i18n("Shortcut"));
    treeView->setRootIsDecorated (true);
    treeView->setAllColumnsShowFocus (true);
-   treeView->setSelectionMode (Q3ListView::Extended); 
+   treeView->setSelectionMode (Q3ListView::Extended);
    treeView->setWhatsThis( i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
    connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
    connect (treeView, SIGNAL(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)));
    connect (treeView, SIGNAL(dropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotDropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)));
    connect (treeView, SIGNAL(moved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotMoved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)));
    mainLayout->addWidget (treeView);
-   
+
    buttonBox = new ButtonBoxWidget (page, "buttonbox");
    connect (buttonBox->lineEdit, SIGNAL(textChanged(const QString &)), SLOT(slotTextChanged(const QString &)));
    connect (buttonBox->noKey, SIGNAL(clicked()), SLOT(slotNoKey()));
@@ -426,7 +426,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
    while (path.length() > position) {
       file.setFile(path);
 
-      KDesktopFile *dirDesc = new KDesktopFile(path+"/.directory", true, "data");
+      KDesktopFile *dirDesc = new KDesktopFile("data", path+"/.directory");
       QString name = dirDesc->readName();
       delete dirDesc;
 
@@ -453,10 +453,10 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
       if (pbook.open (KUrl( *it ))) {
          StandardBook book;
          book.name = (*pbook.begin()).getPhrase().getPhrase();
-         
+
          book.path = displayPath(*it);
          book.filename = *it;
-      
+
          bookNames += book.path + '/' + book.name;
          bookMap [book.path + '/' + book.name] = book;
       }
@@ -473,7 +473,7 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
 
 void PhraseBookDialog::initStandardPhraseBooks () {
    StandardBookList bookPaths = standardPhraseBooks();
-   
+
    KActionMenu *parent = fileImportStandardBook;
    QStringList currentNamePath;
    currentNamePath<< "x";
@@ -496,7 +496,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          stack.push (parent);
 #ifdef __GNUC__
 #warning "kde4: correct newparent objectname ?"
-#endif	 
+#endif
          KActionMenu *newParent = actionCollection()->add<KActionMenu>("tmp_menu");
          newParent->setText(*it2);
          parent->addAction(newParent);
@@ -505,7 +505,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          parent = newParent;
       }
       currentNamePath = dirs;
-      
+
       KAction *book = new StandardPhraseBookInsertAction (
           url, (*it).name, this, SLOT(slotImportPhrasebook (const KUrl &)), actionCollection());
       parent->addAction(book);
@@ -555,8 +555,8 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->shortcutLabel->setEnabled(true);
       QString shortcut = currentItem->text(1);
 #ifdef __GNUC__
-#warning "kde4 port it"	  
-#endif      
+#warning "kde4 port it"
+#endif
       //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
       if (shortcut.isEmpty() || shortcut.isNull()) {
          buttonBox->noKey->setChecked (true);
@@ -612,13 +612,13 @@ void PhraseBookDialog::slotTextChanged (const QString &s) {
 void PhraseBookDialog::slotNoKey() {
    buttonBox->noKey->setChecked (true);
    buttonBox->customKey->setChecked (false);
-   
+
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
       currentItem->setCut (KShortcut(QString()));
 #ifdef __GNUC__
 #warning "kde4: port it"
-#endif      
+#endif
 	  //buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
@@ -644,7 +644,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       //const KKey& key = seq.key(0);
 #ifdef __GNUC__
 #warning "kde 4 port it";
-#endif      
+#endif
 #if 0
       if (key.modFlags() == 0 && key.sym() < 0x3000
           && QChar(key.sym()).isLetterOrNumber())
@@ -723,7 +723,7 @@ void PhraseBookDialog::slotCopy () {
    treeView->fillBook (&book, true);
 #ifdef __GNUC__
 #warning "kde4: port to QMimeData"
-#endif   
+#endif
    QApplication::clipboard()->setData(new PhraseBookDrag(&book));
 }
 
@@ -795,7 +795,7 @@ void PhraseBookDialog::slotImportPhrasebook (const KUrl &url) {
 void PhraseBookDialog::slotExportPhrasebook () {
    PhraseBook book;
    treeView->fillBook (&book, treeView->hasSelectedItems());
-   
+
    KUrl url;
    if (book.save (this, i18n("Export Phrase Book"), url) == -1)
       KMessageBox::sorry(this,i18n("There was an error saving file\n%1", url.url() ));
@@ -807,7 +807,7 @@ void PhraseBookDialog::slotPrint()
    if (printer.setup(this)) {
       PhraseBook book;
       treeView->fillBook (&book, treeView->hasSelectedItems());
-      
+
       book.print(&printer);
    }
 }
