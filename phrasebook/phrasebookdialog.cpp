@@ -407,7 +407,7 @@ void PhraseBookDialog::initActions() {
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
    editDelete = actionCollection()->addAction("edit_delete");
-   editDelete->setIcon(KIcon("editdelete"));
+   editDelete->setIcon(KIcon("edit-delete"));
    editDelete->setText(i18n("&Delete"));
    connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotRemove()));
    editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));

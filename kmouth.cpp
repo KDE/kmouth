@@ -193,21 +193,21 @@ void KMouthApp::initActions() {
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
    phraseListRemove = actionCollection()->addAction("phraselist_remove");
-   phraseListRemove->setIcon(KIcon("editdelete"));
+   phraseListRemove->setIcon(KIcon("edit-delete"));
    phraseListRemove->setText(i18n("&Delete"));
    connect(phraseListRemove, SIGNAL(triggered(bool)), phraseList, SLOT(removeListSelection()));
    phraseListRemove->setToolTip(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
    phraseListCut = actionCollection()->addAction("phraselist_cut");
-   phraseListCut->setIcon(KIcon("editcut"));
+   phraseListCut->setIcon(KIcon("edit-cut"));
    phraseListCut->setText(i18n("Cu&t"));
    connect(phraseListCut, SIGNAL(triggered(bool)), phraseList, SLOT(cutListSelection()));
    phraseListCut->setToolTip(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
    phraseListCopy = actionCollection()->addAction("phraselist_copy");
-   phraseListCopy->setIcon(KIcon("editcopy"));
+   phraseListCopy->setIcon(KIcon("edit-copy"));
    phraseListCopy->setText(i18n("&Copy"));
    connect(phraseListCopy, SIGNAL(triggered(bool)), phraseList, SLOT(copyListSelection()));
    phraseListCut->setToolTip(i18n("Copies the currently selected phrases from the history to the clipboard"));
