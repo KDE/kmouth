@@ -665,7 +665,7 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       // Update display
       buttonBox->noKey->setChecked (false);
       buttonBox->customKey->setChecked (true);
-      buttonBox->keyButton->setShortcut(currentItem->cut());
+      buttonBox->keyButton->setKeySequence(currentItem->cut().primary());
    }
 }
 
