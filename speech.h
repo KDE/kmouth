@@ -20,7 +20,7 @@
 
 #include <QObject>
 #include <QString>
-#include <kprocess.h>
+#include <k3process.h>
 #include <ktemporaryfile.h>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
@@ -58,13 +58,13 @@ public:
                      const QString &filename, const QString &language);
 
 public slots:
-   void wroteStdin (KProcess *p);
-   void processExited (KProcess *p);
-   void receivedStdout (KProcess *proc, char *buffer, int buflen);
-   void receivedStderr (KProcess *proc, char *buffer, int buflen);
+   void wroteStdin (K3Process *p);
+   void processExited (K3Process *p);
+   void receivedStdout (K3Process *proc, char *buffer, int buflen);
+   void receivedStderr (K3Process *proc, char *buffer, int buflen);
 
 private:
-   KShellProcess process;
+   K3ShellProcess process;
    QByteArray encText;
    KTemporaryFile tempFile;
 };

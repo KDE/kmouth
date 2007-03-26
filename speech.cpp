@@ -50,7 +50,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
-   QString escText = KShellProcess::quote(text);
+   QString escText = K3ShellProcess::quote(text);
 
    // character sequences that change the state or need to be otherwise processed
    QRegExp re_singlequote("('|%%|%t|%f|%l)");
@@ -204,36 +204,36 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 
       // 3. create a new process
       process << command;
-      connect(&process, SIGNAL(processExited(KProcess *)), this, SLOT(processExited(KProcess *)));
-      connect(&process, SIGNAL(wroteStdin(KProcess *)), this, SLOT(wroteStdin(KProcess *)));
-      connect(&process, SIGNAL(receivedStdout(KProcess *, char *, int)), this, SLOT(receivedStdout(KProcess *, char *, int)));
-      connect(&process, SIGNAL(receivedStderr(KProcess *, char *, int)), this, SLOT(receivedStderr(KProcess *, char *, int)));
+      connect(&process, SIGNAL(processExited(K3Process *)), this, SLOT(processExited(K3Process *)));
+      connect(&process, SIGNAL(wroteStdin(K3Process *)), this, SLOT(wroteStdin(K3Process *)));
+      connect(&process, SIGNAL(receivedStdout(K3Process *, char *, int)), this, SLOT(receivedStdout(K3Process *, char *, int)));
+      connect(&process, SIGNAL(receivedStderr(K3Process *, char *, int)), this, SLOT(receivedStderr(K3Process *, char *, int)));
 
       // 4. start the process
       if (stdIn) {
-         process.start(KProcess::NotifyOnExit, KProcess::All);
+         process.start(K3Process::NotifyOnExit, K3Process::All);
          if (encText.size() > 0)
             process.writeStdin(encText, encText.size());
          else
             process.closeStdin();
       }
       else
-         process.start(KProcess::NotifyOnExit, KProcess::AllOutput);
+         process.start(K3Process::NotifyOnExit, K3Process::AllOutput);
    }
 }
 
-void Speech::receivedStdout (KProcess *, char *buffer, int buflen) {
+void Speech::receivedStdout (K3Process *, char *buffer, int buflen) {
    kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
 }
-void Speech::receivedStderr (KProcess *, char *buffer, int buflen) {
+void Speech::receivedStderr (K3Process *, char *buffer, int buflen) {
    kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
 }
 
-void Speech::wroteStdin(KProcess *) {
+void Speech::wroteStdin(K3Process *) {
    process.closeStdin();
 }
 
-void Speech::processExited(KProcess *) {
+void Speech::processExited(K3Process *) {
    delete this;
 }
 
