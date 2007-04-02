@@ -488,13 +488,13 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
    for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
       const QKeySequence& seq = cut[iSeq];
 
-      KStdAccel::StdAccel id = KStdAccel::findStdAccel( seq );
-      if( id != KStdAccel::AccelNone
-          && keyConflict (cut, KStdAccel::shortcut(id)) > -1)
+      KStandardShortcut::StandardShortcut id = KStandardShortcut::findStandardShortcut( seq );
+      if( id != KStandardShortcut::AccelNone
+          && keyConflict (cut, KStandardShortcut::shortcut(id)) > -1)
       {
          if (warnUser)
             _warning (cut[iSeq],
-                      i18n("the standard \"%1\" action", KStdAccel::label(id)),
+                      i18n("the standard \"%1\" action", KStandardShortcut::label(id)),
                       i18n("Conflict with Standard Application Shortcut"));
          return true;
       }
