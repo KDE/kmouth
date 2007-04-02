@@ -232,7 +232,7 @@ KCModule *OptionsDialog::loadKttsd () {
       QString initSym("init_");
       initSym += libname;
 
-      if (lib->hasSymbol(QFile::encodeName(initSym))) {
+      if (lib->resolveFunction(QFile::encodeName(initSym))) {
          // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
          KLibFactory *factory = lib->factory();
          if (factory != 0) {

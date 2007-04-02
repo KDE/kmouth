@@ -255,7 +255,7 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
    keyButtonPlaceLayout->setMargin(0);
    keyButtonPlaceLayout->setSpacing(0);
 
-   keyButton = new KKeyButton (keyButtonPlace);
+   keyButton = new KKeySequenceWidget (keyButtonPlace);
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
    keyButton->setWhatsThis( i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
@@ -626,7 +626,7 @@ void PhraseBookDialog::slotNoKey() {
 }
 
 void PhraseBookDialog::slotCustomKey() {
-   buttonBox->keyButton->captureShortcut();
+   buttonBox->keyButton->keySequence();
 }
 
 void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {

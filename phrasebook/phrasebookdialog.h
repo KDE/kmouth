@@ -29,7 +29,7 @@
 #include <QDropEvent>
 #include <kmainwindow.h>
 #include <klineedit.h>
-#include <kkeybutton.h>
+#include <kkeysequencewidget.h>
 #include <kurl.h>
 #include "phrasebook.h"
 #include "ui_buttonboxui.h"
@@ -133,7 +133,7 @@ public:
    ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
    ~ButtonBoxWidget ();
 
-   KKeyButton *keyButton;
+   KKeySequenceWidget *keyButton;
    Q3ButtonGroup *group;
 
 protected:
