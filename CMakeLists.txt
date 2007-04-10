@@ -1,5 +1,6 @@
 project(kmouth)
 
+add_definitions (-DQT3_SUPPORT)
 set(libphrasebook_SRCS 
 	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasetree.cpp
 	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasebookparser.cpp
