@@ -18,7 +18,6 @@
 
 #include <QLayout>
 #include <QLabel>
-#include <q3whatsthis.h>
 #include <q3grid.h>
 #include <QTabWidget>
 #include <QPixmap>

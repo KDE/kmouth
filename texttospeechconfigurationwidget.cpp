@@ -21,7 +21,6 @@
 #include <QTextCodec>
 #include <q3ptrlist.h>
 #include <QLayout>
-#include <q3whatsthis.h>
 #include <kcombobox.h>
 #include <klocale.h>
 #include <QLabel>
