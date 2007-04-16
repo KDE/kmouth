@@ -276,8 +276,9 @@ namespace PhraseBookPrivate {
 }
 
 PhraseBookDialog::PhraseBookDialog ()
- : KMainWindow (0, "phraseEditDialog")
+ : KXmlGuiWindow (0)
 {
+   setObjectName("phraseEditDialog");
    setCaption (i18n("Phrase Book"));
    initGUI();
    initActions();

@@ -49,8 +49,9 @@
 
 #define ID_STATUS_MSG 1
 
-KMouthApp::KMouthApp(QWidget* , const char* name):KMainWindow(0, name)
+KMouthApp::KMouthApp(QWidget* , const char* name):KXmlGuiWindow(0)
 {
+   setObjectName(name);
    isConfigured = false;
    config=KGlobal::config();
 

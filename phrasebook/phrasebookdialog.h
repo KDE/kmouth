@@ -27,7 +27,7 @@
 #include <QList>
 #include <QGridLayout>
 #include <QDropEvent>
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <klineedit.h>
 #include <kkeysequencewidget.h>
 #include <kurl.h>
@@ -145,7 +145,7 @@ protected:
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookDialog : public KMainWindow {
+class PhraseBookDialog : public KXmlGuiWindow {
    friend class InitialPhraseBookWidget;
    Q_OBJECT
 private:
