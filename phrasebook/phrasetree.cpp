@@ -15,6 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "phrasetree.h"
+#include "phrasebookdialog.h"
+#include "phrasebook.h"
+
 #include <klocale.h>
 #include <kconfig.h>
 #include <kaction.h>
@@ -22,9 +26,6 @@
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <ktoolbarpopupaction.h>
-#include "phrasetree.h"
-#include "phrasebookdialog.h"
-#include "phrasebook.h"
 //Added by qt3to4:
 #include <QPixmap>
 #include <QKeyEvent>

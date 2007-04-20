@@ -1,3 +1,5 @@
+
+#include "wordcompletion.h"
 #include <QRegExp>
 #include <QFile>
 //Added by qt3to4:
@@ -8,8 +10,6 @@
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <q3tl.h>
-
-#include "wordcompletion.h"
 
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;

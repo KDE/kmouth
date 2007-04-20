@@ -15,6 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "optionsdialog.h"
+#include "wordcompletion/wordcompletionwidget.h"
+
+#include "texttospeechconfigurationwidget.h"
+#include "speech.h"
 
 #include <QLayout>
 #include <QLabel>
@@ -33,11 +38,6 @@
 #include <kpagewidgetmodel.h>
 #include <kparts/componentfactory.h>
 
-#include "optionsdialog.h"
-#include "wordcompletion/wordcompletionwidget.h"
-
-#include "texttospeechconfigurationwidget.h"
-#include "speech.h"
 
 PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
    : QWidget (parent)

@@ -22,6 +22,7 @@
 #include <k3listbox.h>
 #include <klineedit.h>
 #include <kprinter.h>
+#include <kconfig.h>
 
 // include files for Qt
 #include <qwidget.h>

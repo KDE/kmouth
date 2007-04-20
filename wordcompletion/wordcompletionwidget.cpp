@@ -15,6 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "wordcompletionwidget.h"
+#include "wordcompletion.h"
+#include "dictionarycreationwizard.h"
+
 #include <QLayout>
 #include <QLabel>
 #include <QCheckBox>
@@ -32,10 +36,6 @@
 #include <kmessagebox.h>
 #include <klanguagebutton.h>
 #include <klanguagebuttonhelper.h>
-
-#include "dictionarycreationwizard.h"
-#include "wordcompletionwidget.h"
-#include "wordcompletion.h"
 
 class DictionaryListItem : public K3ListViewItem {
 public:

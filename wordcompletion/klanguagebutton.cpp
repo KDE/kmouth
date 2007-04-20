@@ -21,13 +21,14 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+#include "klanguagebutton.h"
+
 #define INCLUDE_MENUITEM_DEF
 #include <QMenu>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
 #include <QMenuItem>
 
-#include "klanguagebutton.h"
 #include "klanguagebutton.moc"
 
 #include <kdebug.h>

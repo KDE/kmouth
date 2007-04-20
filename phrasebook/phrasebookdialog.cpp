@@ -15,7 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-// include files for QT
+#include "phrasebookdialog.h"
+#include "phrasetree.h"
+
+// include files for Qt
 #include <QApplication>
 #include <QLayout>
 #include <QClipboard>
@@ -49,9 +52,6 @@
 #include <kdesktopfile.h>
 #include <kactionmenu.h>
 #include <kstandardaction.h>
-
-#include "phrasebookdialog.h"
-#include "phrasetree.h"
 
 namespace PhraseBookPrivate {
    enum columns {

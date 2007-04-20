@@ -15,7 +15,15 @@
  *                                                                         *
  ***************************************************************************/
 
-// include files for QT
+// application specific includes
+#include "kmouth.h"
+#include "phraselist.h"
+#include "phrasebook/phrasebook.h"
+#include "phrasebook/phrasebookdialog.h"
+#include "optionsdialog.h"
+#include "configwizard.h"
+
+// include files for Qt
 #include <QDir>
 #include <QPainter>
 //Added by qt3to4:
@@ -38,14 +46,6 @@
 #include <ktoggleaction.h>
 #include <kstandardshortcut.h>
 #include <kapplication.h>
-
-// application specific includes
-#include "kmouth.h"
-#include "phraselist.h"
-#include "phrasebook/phrasebook.h"
-#include "phrasebook/phrasebookdialog.h"
-#include "optionsdialog.h"
-#include "configwizard.h"
 
 #define ID_STATUS_MSG 1
 

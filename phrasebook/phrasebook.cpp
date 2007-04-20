@@ -15,6 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "phrasebook.h"
+#include "phrasebookparser.h"
+
 #include <QPrinter>
 #include <QPainter>
 #include <QFile>
@@ -34,9 +37,6 @@
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
-
-#include "phrasebookparser.h"
-#include "phrasebook.h"
 
 Phrase::Phrase() {
    this->phrase = "";

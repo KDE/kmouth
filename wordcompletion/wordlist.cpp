@@ -17,6 +17,8 @@
 
 // $Id$
 
+#include "wordlist.h"
+
 #include <QRegExp>
 #include <QDir>
 //Added by qt3to4:
@@ -26,7 +28,6 @@
 #include <kprogressdialog.h>
 #include <klocale.h>
 #include <kapplication.h>
-#include "wordlist.h"
 
 namespace WordList {
 void addWords (WordMap &map, QString line);

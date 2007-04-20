@@ -15,6 +15,15 @@
  *                                                                         *
  ***************************************************************************/
 
+// application specific includes
+#include "phraselist.h"
+#include "phraselistitem.h"
+#include "phraseedit.h"
+#include "kmouth.h"
+#include "texttospeechsystem.h"
+#include "phrasebook/phrasebook.h"
+#include "wordcompletion/wordcompletion.h"
+
 // include files for Qt
 #include <QPrinter>
 #include <QPainter>
@@ -40,14 +49,6 @@
 
 #include <stdlib.h>
 
-// application specific includes
-#include "phraselistitem.h"
-#include "phraselist.h"
-#include "phraseedit.h"
-#include "kmouth.h"
-#include "texttospeechsystem.h"
-#include "phrasebook/phrasebook.h"
-#include "wordcompletion/wordcompletion.h"
 
 PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    Q_UNUSED(name);

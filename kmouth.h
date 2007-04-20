@@ -26,6 +26,7 @@
 #include <kaction.h>
 #include <kurl.h>
 #include <kconfig.h>
+#include <ksharedconfig.h>
 
 // forward declaration of the KMouth classes
 class PhraseList;
