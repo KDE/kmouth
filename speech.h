@@ -19,7 +19,7 @@
 #define SPEECH_H
 
 #include <QObject>
-#include <QString>
+
 #include <k3process.h>
 #include <ktemporaryfile.h>
 

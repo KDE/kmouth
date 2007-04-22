@@ -22,7 +22,7 @@
 
 #include <QtXml>
 #include <q3valuestack.h>
-#include <QString>
+
 #include <QObject>
 #include <qmap.h>
 //Added by qt3to4:

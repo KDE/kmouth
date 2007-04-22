@@ -19,7 +19,7 @@
 #ifndef TEXTTOSPEECHSYSTEM_H
 #define TEXTTOSPEECHSYSTEM_H
 
-#include <QString>
+
 #include <QList>
 #include <QObject>
 

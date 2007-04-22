@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "speech.h"
-#include <QString>
+
 #include <QStack>
 #include <QStringList>
 #include <QRegExp>
