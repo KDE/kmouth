@@ -458,7 +458,7 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
 // Returns the conflicting QKeySequence, or an empty QKeySequence if there is no conflict
 static QKeySequence keyConflict (const KShortcut& cut, const KShortcut& cut2) {
    foreach (QKeySequence seq, cut.toList())
-      if (seq2.contains(seq))
+      if (cut2.contains(seq))
           return seq;
 
    return QKeySequence();
@@ -520,7 +520,7 @@ bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutIt
    for (Q3ListViewItemIterator it(this); it.current(); ++it) {
       PhraseTreeItem* item = dynamic_cast<PhraseTreeItem*>(it.current());
       if ((item != 0) && (item != cutItem)) {
-         QKeySequence conflicting = keyConflict(cut, KShortcut(*it));
+         QKeySequence conflicting = keyConflict(cut, item->cut());
          if (!conflicting.isEmpty()) {
             if (warnUser)
                _warning (conflicting,
