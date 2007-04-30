@@ -237,7 +237,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
 }
 
 WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
-   pdlg->setLabel (i18n("Merging dictionaries..."));
+   pdlg->setLabelText (i18n("Merging dictionaries..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
@@ -290,7 +290,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 }
 
 WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
-   pdlg->setLabel (i18n("Parsing the KDE documentation..."));
+   pdlg->setLabelText (i18n("Parsing the KDE documentation..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
@@ -308,7 +308,7 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
 }
 
 WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
-   pdlg->setLabel (i18n("Parsing file..."));
+   pdlg->setLabelText (i18n("Parsing file..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
@@ -319,7 +319,7 @@ WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec 
 }
 
 WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
-   pdlg->setLabel (i18n("Parsing directory..."));
+   pdlg->setLabelText (i18n("Parsing directory..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
@@ -511,7 +511,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       pdlg->showCancelButton (false);
       pdlg->setAutoReset(false);
       pdlg->setAutoClose(false);
-      pdlg->setLabel (i18n("Performing spell check..."));
+      pdlg->setLabelText (i18n("Performing spell check..."));
       pdlg->progressBar()->setMaximum(100);
       pdlg->progressBar()->setValue(0);
       qApp->processEvents (QEventLoop::AllEvents, 20);
