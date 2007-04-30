@@ -455,20 +455,13 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
       return PhraseBookDrag::canDecode(event);
 }
 
-// Returns iSeq index if cut2 has a sequence of equal or higher priority
-// to a sequence in cut, else -1
-static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
-   const QList<QKeySequence> cutList = cut.toList();
-   const QList<QKeySequence> cut2List = cut2.toList();
-   int nbCut = cutList.count();
-   int nbCut2 = cut2List.count();
-   for (int iSeq = 0; iSeq < nbCut; iSeq++) {
-      for (int iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < nbCut2; iSeq2++) {
-         if (cutList[iSeq] == cut2List[iSeq2])
-            return iSeq;
-       }
-   }
-   return -1;
+// Returns the conflicting QKeySequence, or an empty QKeySequence if there is no conflict
+static QKeySequence keyConflict (const KShortcut& cut, const KShortcut& cut2) {
+   foreach (QKeySequence seq, cut.toList())
+      if (seq2.contains(seq))
+          return seq;
+
+   return QKeySequence();
 }
 
 void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QString &sTitle) {
@@ -487,7 +480,7 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
 #ifdef __GNUC__
 #warning "kde4: port it"
 #endif
-#if 0	
+#if 0
    for (int iSeq = 0; iSeq < cut.count(); iSeq++) {
       const QKeySequence& seq = cut[iSeq];
 
@@ -506,14 +499,15 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
    return false;
 }
 
+//port this, too. Hint: KGlobalAccel will do most of the work.
 bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
    QMap<QString, QString> mapEntry = KGlobal::config()->entryMap ("Global Shortcuts");
    QMap<QString, QString>::Iterator it;
    for (it = mapEntry.begin(); it != mapEntry.end(); ++it) {
-      int iSeq = keyConflict (cut, KShortcut(*it));
-      if (iSeq > -1) {
+      QKeySequence conflicting = keyConflict(cut, KShortcut(*it));
+      if (!conflicting.isEmpty()) {
          if (warnUser)
-            _warning (cut.toList().at(iSeq),
+            _warning (conflicting,
                       i18n("the global \"%1\" action", it.key()),
                       i18n("Conflict with Global Shortcuts"));
          return true;
@@ -526,10 +520,10 @@ bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutIt
    for (Q3ListViewItemIterator it(this); it.current(); ++it) {
       PhraseTreeItem* item = dynamic_cast<PhraseTreeItem*>(it.current());
       if ((item != 0) && (item != cutItem)) {
-         int iSeq = keyConflict (cut, item->cut());
-         if (iSeq > -1) {
+         QKeySequence conflicting = keyConflict(cut, KShortcut(*it));
+         if (!conflicting.isEmpty()) {
             if (warnUser)
-               _warning (cut.toList().at(iSeq),
+               _warning (conflicting,
                          i18n("an other phrase"),
                          i18n("Key Conflict"));
             return true;
