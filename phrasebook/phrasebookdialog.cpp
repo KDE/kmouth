@@ -641,8 +641,9 @@ void PhraseBookDialog::capturedShortcut (const KShortcut& cut) {
 
 void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    // Check whether the shortcut is valid
-   for (int i = 0; i < cut.count(); i++) {
-      const QKeySequence& seq = cut[i];
+   const QList<QKeySequence> cutList = cut.toList();
+   for (int i = 0; i < cutList.count(); i++) {
+      const QKeySequence& seq = cutList[i];
       //const KKey& key = seq.key(0);
 #ifdef __GNUC__
 #warning "kde 4 port it";

@@ -458,11 +458,13 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
 // Returns iSeq index if cut2 has a sequence of equal or higher priority
 // to a sequence in cut, else -1
 static int keyConflict (const KShortcut& cut, const KShortcut& cut2) {
-   int nbCut = cut.count();
-   int nbCut2 = cut2.count();
+   const QList<QKeySequence> cutList = cut.toList();
+   const QList<QKeySequence> cut2List = cut2.toList();
+   int nbCut = cutList.count();
+   int nbCut2 = cut2List.count();
    for (int iSeq = 0; iSeq < nbCut; iSeq++) {
       for (int iSeq2 = 0; iSeq2 <= iSeq && iSeq2 < nbCut2; iSeq2++) {
-         if (cut[iSeq] == cut2[iSeq2])
+         if (cutList[iSeq] == cut2List[iSeq2])
             return iSeq;
        }
    }
@@ -511,7 +513,7 @@ bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
       int iSeq = keyConflict (cut, KShortcut(*it));
       if (iSeq > -1) {
          if (warnUser)
-            _warning (cut[iSeq],
+            _warning (cut.toList().at(iSeq),
                       i18n("the global \"%1\" action", it.key()),
                       i18n("Conflict with Global Shortcuts"));
          return true;
@@ -527,7 +529,7 @@ bool PhraseTree::isPhraseKeyPresent (const KShortcut& cut, PhraseTreeItem* cutIt
          int iSeq = keyConflict (cut, item->cut());
          if (iSeq > -1) {
             if (warnUser)
-               _warning (cut[iSeq],
+               _warning (cut.toList().at(iSeq),
                          i18n("an other phrase"),
                          i18n("Key Conflict"));
             return true;
