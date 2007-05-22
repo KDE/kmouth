@@ -15,8 +15,6 @@ set(libwordcompletion_SRCS
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletion.cpp 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionwidget.cpp 
 	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/dictionarycreationwizard.cpp 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/klanguagebutton.cpp
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/klanguagebuttonhelper.cpp
 	)
         
 kde4_add_ui_files(libwordcompletion_SRCS 

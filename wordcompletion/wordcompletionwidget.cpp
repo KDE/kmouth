@@ -35,7 +35,6 @@
 #include <kio/netaccess.h>
 #include <kmessagebox.h>
 #include <klanguagebutton.h>
-#include <klanguagebuttonhelper.h>
 
 class DictionaryListItem : public K3ListViewItem {
 public:
@@ -98,7 +97,8 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     setObjectName(name);
     dictionaryList->setSorting (-1); // no sorted list
     
-    loadLanguageList(languageButton);
+    languageButton->showLanguageCodes(true);
+    languageButton->loadAllLanguages();
     
     // Connect the signals from hte KCMKTTSDWidget to this class
     connect (addButton, SIGNAL (clicked()), this, SLOT(addDictionary()) );
@@ -142,7 +142,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         languageTag);
          if (!languageButton->contains(languageTag))
-            languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString());
+            languageButton->insertLanguage(languageTag, i18n("without name"));
       }
 
    // Clean up disc space
@@ -206,7 +206,7 @@ void WordCompletionWidget::addDictionary() {
       newDictionaryFiles += filename;
       QString languageTag = wizard->language();
       if (!languageButton->contains(languageTag)) {
-         languageButton->insertLanguage(languageTag, i18n("without name"), QString::fromLatin1("l10n/"), QString());
+         languageButton->insertLanguage(languageTag, i18n("without name"));
       }
       K3ListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
@@ -297,7 +297,6 @@ void WordCompletionWidget::selectionChanged() {
       languageButton->setEnabled(false);
 
       dictionaryName->setText("");
-      languageButton->setText("");
    }
 }
 

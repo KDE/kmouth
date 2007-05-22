@@ -13,8 +13,9 @@ void CreationSourceDetailsUI::init() {
     languageLabel->setBuddy (languageButton);
     languageButton->setWhatsThis( i18n("With this combo box you decide which language should be associated with the new dictionary."));
     
-    loadLanguageList(languageButton);
-    languageButton->insertLanguage("??", i18n("Other"), QString::fromLatin1("l10n/"), QString());
+    languageButton->showLanguageCodes(true);
+    languageButton->loadAllLanguages();
+    languageButton->insertLanguage("??", i18n("Other"));
     
    connect (languageButton, SIGNAL(activated(int)), this, SLOT(languageButton_activated(int)));
 }
@@ -27,7 +28,7 @@ void CreationSourceDetailsUI::languageButton_activated (int) {
         languageButton->setCurrentItem(customLanguage);
      }
      else {
-        languageButton->insertLanguage(customLanguage, i18n("without name"), QString::fromLatin1("l10n/"), QString());
+        languageButton->insertLanguage(customLanguage, i18n("without name"));
         languageButton->setCurrentItem(customLanguage);
      }
    }

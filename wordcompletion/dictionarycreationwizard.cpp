@@ -36,9 +36,8 @@
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <kprogressdialog.h>
+#include <klanguagebutton.h>
 #include "dictionarycreationwizard.h"
-#include "klanguagebutton.h"
-#include "klanguagebuttonhelper.h"
 #include "wordlist.h"
 
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
@@ -67,7 +66,8 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 
    kdeDocWidget= new KDEDocSourceWidget (this, "KDE documentation source page");
    addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
-   loadLanguageList(kdeDocWidget->languageButton);
+   kdeDocWidget->languageButton->showLanguageCodes(true);
+   kdeDocWidget->languageButton->loadAllLanguages();
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
