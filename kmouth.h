@@ -32,7 +32,6 @@
 class PhraseList;
 class OptionsDialog;
 class TextToSpeechSystem;
-class PhraseBookDialog;
 class PhraseBook;
 class KToggleAction;
 class KActionCollection;
