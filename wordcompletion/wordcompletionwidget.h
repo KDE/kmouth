@@ -66,7 +66,7 @@ private slots:
     */
    void configChanged() {
       emit changed(true);
-   };
+   }
 
 private:
    /**

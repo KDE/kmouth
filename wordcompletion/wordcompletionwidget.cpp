@@ -42,19 +42,19 @@ public:
    : K3ListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
-   };
+   }
    DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString languageCode)
    : K3ListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (languageCode);
-   };
+   }
    DictionaryListItem (Q3ListView *parent, Q3ListViewItem *after, QString filename, QString name, QString languageCode)
    : K3ListViewItem (parent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
-   };
+   }
    ~DictionaryListItem () {
-   };
+   }
 
    QString filename() {
       return myFilename;

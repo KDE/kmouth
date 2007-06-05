@@ -62,7 +62,7 @@ class PhraseBookEntry {
 public:
    PhraseBookEntry ();
    PhraseBookEntry (Phrase phrase, int level = 1, bool isPhrase = true);
-   ~PhraseBookEntry () {};
+   ~PhraseBookEntry () {}
 
    void setPhrase (Phrase phrase, int level = 1, bool isPhrase = true);
 
@@ -93,8 +93,8 @@ typedef QList<PhraseBookEntry> PhraseBookEntryList;
  */
 class PhraseBook : public PhraseBookEntryList {
 public:
-   PhraseBook() : PhraseBookEntryList() {};
-   ~PhraseBook() {};
+   PhraseBook() : PhraseBookEntryList() {}
+   ~PhraseBook() {}
 
    /** opens a file containing a phrase book. Returns true if successful. */
    bool open (const KUrl &url);
@@ -181,7 +181,7 @@ public:
       this->phrase = phrase;
       connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
       parent->addAction(phrase, this);
-   };
+   }
    ~PhraseAction () {
    }
 

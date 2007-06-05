@@ -105,15 +105,15 @@ public:
       this->url = url;
       connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
       parent->addAction(name, this);
-   };
+   }
    ~StandardPhraseBookInsertAction () {
-   };
+   }
 
 public slots:
    void slotActivated () {
       trigger();
       emit slotActivated (url);
-   };
+   }
 
 signals:
    void slotActivated (const KUrl &url);
