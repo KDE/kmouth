@@ -18,7 +18,6 @@
 #include "speech.h"
 
 #include <QStack>
-#include <QStringList>
 #include <QRegExp>
 #include <QTextCodec>
 #include <QFile>
