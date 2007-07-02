@@ -29,24 +29,20 @@ static const char description[] =
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
 
-static KCmdLineOptions options[] =
-{
-  { "+[File]", I18N_NOOP("History file to open"), 0 },
-  KCmdLineLastOption
-  // INSERT YOUR COMMANDLINE OPTIONS HERE
-};
-
 int main(int argc, char *argv[])
 {
 
-	KAboutData aboutData( "kmouth", I18N_NOOP("KMouth"),
-		KMOUTH_VERSION, description, KAboutData::License_GPL,
-		"(c) 2002/2003, Gunnar Schmi Dt", 0, "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
-	aboutData.addAuthor("Gunnar Schmi Dt",0, "kmouth@schmi-dt.de");
+	KAboutData aboutData( "kmouth", 0, ki18n("KMouth"),
+		KMOUTH_VERSION, ki18n(description), KAboutData::License_GPL,
+		ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
+	aboutData.addAuthor(ki18n("Gunnar Schmi Dt"),KLocalizedString(), "kmouth@schmi-dt.de");
 	KCmdLineArgs::init( argc, argv, &aboutData );
+
+	KCmdLineOptions options;
+	options.add("+[File]", ki18n("History file to open"));
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-	aboutData.addCredit("Olaf Schmidt", I18N_NOOP("Tips, extended phrase books"), 0, 0);
+	aboutData.addCredit(ki18n("Olaf Schmidt"), ki18n("Tips, extended phrase books"));
   KApplication app;
 
   if (app.isSessionRestored())
