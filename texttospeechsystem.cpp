@@ -47,7 +47,7 @@ bool kttsdSay (const QString &text, const QString &language) {
    kspeech.setDefaultTalker(language);
 
    // FIXME: language is incorrect.
-   kDebug() << "kttsdSay: language = " << language << endl;
+   kDebug() << "kttsdSay: language = " << language;
    kspeech.setDefaultPriority(KSpeech::jpWarning);
    QDBusReply<int> val = kspeech.say(text, 0);
    
