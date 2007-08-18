@@ -249,7 +249,7 @@ bool PhraseBook::save (const KUrl &url, bool asPhrasebook) {
       save (ts, asPhrasebook);
       ts.flush();
 
-      return KIO::NetAccess::upload(tempFile.fileName(), url,0L);
+      return KIO::NetAccess::upload(tempFile.fileName(), url, 0L);
    }
 }
 
@@ -277,7 +277,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phr
       return -1;
    }
 
-   if (KIO::NetAccess::exists(url,false,0L)) {
+   if (KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, 0L)) {
       if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                        "Do you want to overwrite it?", url.url())),i18n("File Exists"),KGuiItem(i18n("&Overwrite")))==KMessageBox::Cancel) {
          return 0;
@@ -338,7 +338,7 @@ bool PhraseBook::open (const KUrl &url) {
       fileUrl.setPath (url.url());
    }
 
-   if (KIO::NetAccess::download (fileUrl, tempFile,0L)) {
+   if (KIO::NetAccess::download (fileUrl, tempFile, 0L)) {
       QStringList list = QStringList();
 
       // First: try to load it as a normal phrase book

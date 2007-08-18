@@ -256,7 +256,7 @@ void WordCompletionWidget::exportDictionary() {
       if (url.isEmpty() || !url.isValid())
          return;
 
-      if (KIO::NetAccess::exists(url, false, this)) {
+      if (KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, this)) {
          if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                           "Do you want to overwrite it?", url.url())),i18n("File Exists"),KGuiItem(i18n("&Overwrite")))==KMessageBox::Cancel) {
             return;
