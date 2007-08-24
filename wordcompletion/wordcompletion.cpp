@@ -118,11 +118,11 @@ void WordCompletion::configure() {
    QStringList groups = config->groupList();
    for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
-         config->setGroup(*it);
+		 KConfigGroup cg(config, *it);
          WordCompletionPrivate::DictionaryDetails details;
-         details.filename = config->readEntry("Filename");
-         details.language = config->readEntry("Language");
-         QString name = config->readEntry("Name");
+         details.filename = cg.readEntry("Filename");
+         details.language = cg.readEntry("Language");
+         QString name = cg.readEntry("Name");
          d->dictDetails[name] = details;
          d->dictionaries += name;
       }

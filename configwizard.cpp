@@ -44,11 +44,11 @@ ConfigWizard::~ConfigWizard() {
 }
 
 void ConfigWizard::initCommandPage(KConfig *config) {
-   config->setGroup("TTS System");
+   KConfigGroup cg(config, "TTS System");
    bool displayCommand = false;
-   if (!config->hasKey("Command")) displayCommand = true;
-   if (!config->hasKey("StdIn"))   displayCommand = true;
-   if (!config->hasKey("Codec"))   displayCommand = true;
+   if (!cg.hasKey("Command")) displayCommand = true;
+   if (!cg.hasKey("StdIn"))   displayCommand = true;
+   if (!cg.hasKey("Codec"))   displayCommand = true;
 
    if (displayCommand) {
       commandWidget = new TextToSpeechConfigurationWidget (this, "ttsPage");
@@ -84,11 +84,11 @@ void ConfigWizard::initCompletion (KConfig *config) {
       if (file.exists()) {
          // If there is a word completion dictionary but no entry in the
          // configuration file, we need to add it there.
-         config->setGroup("Dictionary 0");
-         config->writeEntry ("Filename", "dictionary.txt");
-         config->writeEntry ("Name",     "Default");
-         config->writeEntry ("Language", QString());
-         config->sync();
+		 KConfigGroup cg (config ,"Dictionary 0");
+         cg.writeEntry ("Filename", "dictionary.txt");
+         cg.writeEntry ("Name",     "Default");
+         cg.writeEntry ("Language", QString());
+         cg.sync();
       }
    }
    

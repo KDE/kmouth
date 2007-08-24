@@ -70,12 +70,12 @@ void TextToSpeechSystem::speak (const QString &text, const QString &language) {
 }
 
 void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup) {
-  config->setGroup(langGroup);
-  ttsCommand = config->readPathEntry("Command");
-  stdIn = config->readEntry("StdIn", true);
-  useKttsd = config->readEntry("useKttsd", true);
+  KConfigGroup cg(config, langGroup);
+  ttsCommand = cg.readPathEntry("Command");
+  stdIn = cg.readEntry("StdIn", true);
+  useKttsd = cg.readEntry("useKttsd", true);
 
-  QString codecString = config->readEntry("Codec", "Local");
+  QString codecString = cg.readEntry("Codec", "Local");
   if (codecString == "Local")
      codec = Speech::Local;
   else if (codecString == "Latin1")
@@ -91,19 +91,19 @@ void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup)
 }
 
 void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup) {
-  config->setGroup(langGroup);
-  config->writePathEntry("Command", ttsCommand);
-  config->writeEntry("StdIn", stdIn);
-  config->writeEntry("useKttsd", useKttsd);
+  KConfigGroup cg(config, langGroup);
+  cg.writePathEntry("Command", ttsCommand);
+  cg.writeEntry("StdIn", stdIn);
+  cg.writeEntry("useKttsd", useKttsd);
   if (codec == Speech::Local)
-     config->writeEntry("Codec", "Local");
+     cg.writeEntry("Codec", "Local");
   else if (codec == Speech::Latin1)
-     config->writeEntry("Codec", "Latin1");
+     cg.writeEntry("Codec", "Latin1");
   else if (codec == Speech::Unicode)
-     config->writeEntry("Codec", "Unicode");
+     cg.writeEntry("Codec", "Unicode");
   else {
      QString codeName = codecList->at (codec-Speech::UseCodec)->name();
-     config->writeEntry("Codec", codeName);
+     cg.writeEntry("Codec", codeName);
   }
 }
 

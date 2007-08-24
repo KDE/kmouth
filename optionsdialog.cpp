@@ -68,18 +68,18 @@ void PreferencesWidget::ok() {
 }
 
 void PreferencesWidget::readOptions (KConfig *config) {
-   config->setGroup("Preferences");
-   if (config->hasKey("AutomaticSpeak"))
-      if (config->readEntry ("AutomaticSpeak") == "Yes")
+   KConfigGroup cg ( config,"Preferences");
+   if (cg.hasKey("AutomaticSpeak"))
+      if (cg.readEntry ("AutomaticSpeak") == "Yes")
          speak = true;
       else
          speak = false;
    else
       speak = false;
 
-   config->setGroup("Notification Messages");
-   if (config->hasKey("AutomaticSave"))
-      if (config->readEntry ("AutomaticSave") == "Yes")
+   KConfigGroup cg2 ( config ,"Notification Messages");
+   if (cg2.hasKey("AutomaticSave"))
+      if (cg2.readEntry ("AutomaticSave") == "Yes")
          save = 0;
       else
          save = 1;
@@ -94,19 +94,19 @@ void PreferencesWidget::readOptions (KConfig *config) {
 }
 
 void PreferencesWidget::saveOptions (KConfig *config) {
-   config->setGroup("Preferences");
+   KConfigGroup cg (config, "Preferences");
    if (speak)
-      config->writeEntry ("AutomaticSpeak", "Yes");
+      cg.writeEntry ("AutomaticSpeak", "Yes");
    else
-      config->writeEntry ("AutomaticSpeak", "No");
+      cg.writeEntry ("AutomaticSpeak", "No");
 
-   config->setGroup("Notification Messages");
+   KConfigGroup cg2 (config, "Notification Messages");
    if (save == 0)
-      config->writeEntry ("AutomaticSave", "Yes");
+      cg2.writeEntry ("AutomaticSave", "Yes");
    else if (save == 1)
-      config->writeEntry ("AutomaticSave", "No");
+      cg2.writeEntry ("AutomaticSave", "No");
    else
-      config->deleteEntry ("AutomaticSave");
+      cg2.deleteEntry ("AutomaticSave");
 }
 
 bool PreferencesWidget::isSpeakImmediately () {

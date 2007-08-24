@@ -367,11 +367,11 @@ void CompletionWizardWidget::ok (KConfig *config) {
    
    dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
    if (WordList::saveWordList (map, dictionaryFile)) {
-      config->setGroup("Dictionary 0");
-      config->writeEntry ("Filename", "wordcompletion1.dict");
-      config->writeEntry ("Name",     i18n("Default"));
-      config->writeEntry ("Language", language);
-      config->sync();
+	  KConfigGroup cg(config, "Dictionary 0");
+      cg.writeEntry ("Filename", "wordcompletion1.dict");
+      cg.writeEntry ("Name",     i18n("Default"));
+      cg.writeEntry ("Language", language);
+      cg.sync();
    }
 }
 

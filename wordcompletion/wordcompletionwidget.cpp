@@ -73,8 +73,8 @@ public:
 			languageCode + QString::fromLatin1("/entry.desktop"));
 
       KConfig entry(filename, KConfig::OnlyLocal);
-      entry.setGroup(QString::fromLatin1("KCM Locale"));
-      QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
+	  KConfigGroup cg (&entry, "KCM Locale");
+      QString name = cg.readEntry(QString::fromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ')', languageCode);
    }
 
@@ -135,11 +135,11 @@ void WordCompletionWidget::load() {
    DictionaryListItem *last = 0;
    for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
-         config->setGroup(*it);
-         QString languageTag = config->readEntry("Language");
+		 KConfigGroup cg (config, *it);
+         QString languageTag = cg.readEntry("Language");
          last = new DictionaryListItem (dictionaryList, last,
-                                        config->readEntry("Filename"),
-                                        config->readEntry("Name"),
+                                        cg.readEntry("Filename"),
+                                        cg.readEntry("Name"),
                                         languageTag);
          if (!languageButton->contains(languageTag))
             languageButton->insertLanguage(languageTag, i18n("without name"));
@@ -165,10 +165,10 @@ void WordCompletionWidget::save() {
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
-         config->setGroup(QString("Dictionary %1").arg(number));
-         config->writeEntry ("Filename", item->filename());
-         config->writeEntry ("Name",     item->text (0));
-         config->writeEntry ("Language", item->languageCode());
+		 KConfigGroup cg (config, QString("Dictionary %1").arg(number));
+         cg.writeEntry ("Filename", item->filename());
+         cg.writeEntry ("Name",     item->text (0));
+         cg.writeEntry ("Language", item->languageCode());
          number++;
       }
       ++it;

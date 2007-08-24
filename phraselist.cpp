@@ -180,25 +180,25 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
 }
 
 void PhraseList::saveCompletionOptions(KConfig *config) {
-   config->setGroup("General Options");
-   config->writeEntry("Show speak button", speakButton->isVisible() || !lineEdit->isVisible());
+   KConfigGroup cg(config,"General Options");
+   cg.writeEntry("Show speak button", speakButton->isVisible() || !lineEdit->isVisible());
       
-   config->setGroup("Completion");
-   config->writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
-   config->writeEntry("List", completion->currentWordList());
+   KConfigGroup cg2(config,"Completion");
+   cg2.writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
+   cg2.writeEntry("List", completion->currentWordList());
 }
 
 void PhraseList::readCompletionOptions(KConfig *config) {
-   config->setGroup("General Options");
-   if (!config->readEntry("Show speak button", true))
+   KConfigGroup cg(config,"General Options");
+   if (!cg.readEntry("Show speak button", true))
       speakButton->hide();
 
    if (config->hasGroup ("Completion")) {
-      config->setGroup("Completion");
-      int mode = config->readEntry ("Mode", int(KGlobalSettings::completionMode()));
+      KConfigGroup cg2(config, "Completion");
+      int mode = cg2.readEntry ("Mode", int(KGlobalSettings::completionMode()));
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
-      QString current = config->readEntry ("List", QString());
+      QString current = cg2.readEntry ("List", QString());
       QStringList list = completion->wordLists();
       QStringList::ConstIterator it;
       int i = 0;
