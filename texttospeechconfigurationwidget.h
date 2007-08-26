@@ -15,9 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-
-#ifndef TEXTTOSPEECHCONFIGURATIONDIALOG_H
-#define TEXTTOSPEECHCONFIGURATIONDIALOG_H
+#ifndef TEXTTOSPEECHCONFIGURATIONWIDGET_H
+#define TEXTTOSPEECHCONFIGURATIONWIDGET_H
 
 #include "ui_texttospeechconfigurationui.h"
 #include "texttospeechsystem.h"
@@ -46,5 +45,4 @@ private:
    TextToSpeechSystem *ttsSystem;
 };
 
-#endif
-
+#endif // TEXTTOSPEECHCONFIGURATIONWIDGET_H

@@ -7,6 +7,9 @@
 ** place of a destructor.
 *****************************************************************************/
 
+#ifndef KDEDOCSOURCEUI_UI_H
+#define KDEDOCSOURCEUI_UI_H
+
 void KDEDocSourceUI::init() {
     languageButton = new KLanguageButton (this);
     languageLabel->setBuddy (languageButton);
@@ -17,3 +20,5 @@ void KDEDocSourceUI::init() {
     
     ooDictURL->setFilter ("*.dic");
 }
+
+#endif // KDEDOCSOURCEUI_UI_H

@@ -7,6 +7,8 @@
 ** place of a destructor.
 *****************************************************************************/
 
+#ifndef CREATIONSOURCEUI_UI_H
+#define CREATIONSOURCEUI_UI_H
 
 void CreationSourceUI::init() {
    group1 = new Q3ButtonGroup (0);
@@ -24,3 +26,5 @@ void CreationSourceUI::destroy() {
    delete group1;
    delete group2;
 }
+
+#endif // CREATIONSOURCEUI_UI_H

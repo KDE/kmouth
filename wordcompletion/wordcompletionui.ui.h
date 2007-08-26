@@ -7,6 +7,8 @@
 ** place of a destructor.
 *****************************************************************************/
 
+#ifndef WORDCOMPLETIONUI_UI_H
+#define WORDCOMPLETIONUI_UI_H
 
 void WordCompletionUI::init() {
     languageButton = new KLanguageButton (selectedDictionaryDetails);
@@ -33,3 +35,5 @@ void WordCompletionUI::languageButton_activated (int) {
      }
    }
 }
+
+#endif // WORDCOMPLETIONUI_UI_H

@@ -7,6 +7,8 @@
 ** place of a destructor.
 *****************************************************************************/
 
+#ifndef CREATIONSOURCEDETAILSUI_UI_H
+#define CREATIONSOURCEDETAILSUI_UI_H
 
 void CreationSourceDetailsUI::init() {
     languageButton = new KLanguageButton (this);
@@ -34,4 +36,4 @@ void CreationSourceDetailsUI::languageButton_activated (int) {
    }
 }
 
-
+#endif // CREATIONSOURCEDETAILSUI_UI_H
