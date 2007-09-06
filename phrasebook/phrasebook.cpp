@@ -18,14 +18,15 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
-#include <QPrinter>
-#include <QPainter>
-#include <QFile>
+#include <QtGui/QPrinter>
+#include <QtGui/QPainter>
+#include <QtCore/QFile>
 #include <QtXml>
-#include <QRegExp>
-#include <qstack.h>
-#include <QTextStream>
-#include <QMenu>
+#include <QtCore/QRegExp>
+#include <QtCore/QStack>
+#include <QtCore/QTextStream>
+#include <QtGui/QMenu>
+
 #include <kactionmenu.h>
 #include <kactioncollection.h>
 #include <klocale.h>

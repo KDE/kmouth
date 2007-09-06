@@ -18,7 +18,7 @@
 #ifndef PHRASELISTITEM_H
 #define PHRASELISTITEM_H
 
-#include <q3listbox.h>
+#include <Qt3Support/Q3ListBox>
 
 /**
  * This class represents a phrase in the list of spoken phrases. It extends

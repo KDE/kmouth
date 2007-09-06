@@ -18,17 +18,18 @@
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
-#include <QObject>
-#include <q3dragobject.h>
+#include <QtCore/QObject>
+#include <Qt3Support/Q3DragObject>
 #include <QtXml>
-//Added by qt3to4:
-#include <QTextStream>
-#include <QMenu>
+#include <QtCore/QTextStream>
+#include <QtGui/QMenu>
+
 #include <ktoolbar.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kprinter.h>
 #include <kicon.h>
+
 class KUrl;
 
 /**

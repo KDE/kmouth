@@ -15,11 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #include "texttospeechsystem.h"
-#include <QTextCodec>
 #include <stdlib.h>
-#include <QtDBus>
+
+#include <QtCore/QTextCodec>
+#include <QtDBus/QtDBus>
+
 #include <kconfig.h>
 #include <kspeech.h>
 #include <kdebug.h>

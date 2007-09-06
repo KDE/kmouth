@@ -19,10 +19,10 @@
 #include "wordcompletion.h"
 #include "dictionarycreationwizard.h"
 
-#include <QLayout>
-#include <QLabel>
-#include <QCheckBox>
-#include <QLineEdit>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLineEdit>
 
 #include <k3listview.h>
 #include <klineedit.h>

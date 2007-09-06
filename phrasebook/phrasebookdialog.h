@@ -18,15 +18,15 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <q3button.h>
-#include <QRadioButton>
-#include <q3buttongroup.h>
-#include <QLabel>
-#include <q3listview.h> 
-//Added by qt3to4:
-#include <QList>
-#include <QGridLayout>
-#include <QDropEvent>
+#include <Qt3Support/Q3Button>
+#include <QtGui/QRadioButton>
+#include <Qt3Support/Q3ButtonGroup>
+#include <QtGui/QLabel>
+#include <Qt3Support/Q3ListView> 
+#include <QtCore/QList>
+#include <QtGui/QGridLayout>
+#include <QtGui/QDropEvent>
+
 #include <kxmlguiwindow.h>
 #include <klineedit.h>
 #include <kkeysequencewidget.h>
@@ -34,6 +34,7 @@
 #include "phrasebook.h"
 #include "ui_buttonboxui.h"
 #include <kicon.h>
+
 class Q3ListViewItem;
 class PhraseTreeItem;
 class PhraseTree;

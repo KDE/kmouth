@@ -15,13 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #ifndef TEXTTOSPEECHSYSTEM_H
 #define TEXTTOSPEECHSYSTEM_H
 
-
-#include <QList>
-#include <QObject>
+#include <QtCore/QList>
+#include <QtCore/QObject>
 
 class KConfig;
 

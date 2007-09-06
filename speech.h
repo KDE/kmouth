@@ -18,7 +18,7 @@
 #ifndef SPEECH_H
 #define SPEECH_H
 
-#include <QObject>
+#include <QtCore/QObject>
 
 #include <k3process.h>
 #include <ktemporaryfile.h>

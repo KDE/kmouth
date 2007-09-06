@@ -21,12 +21,10 @@
 #define WORDLIST_H
 
 #include <QtXml>
-#include <q3valuestack.h>
-
-#include <QObject>
-#include <qmap.h>
-//Added by qt3to4:
-#include <QTextStream>
+#include <Qt3Support/Q3ValueStack>
+#include <QtCore/QObject>
+#include <QtCore/QMap>
+#include <QtCore/QTextStream>
 
 class QTextCodec;
 class KProgressDialog;

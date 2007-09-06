@@ -15,19 +15,20 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
-#include <QTextCodec>
-#include <q3ptrlist.h>
-#include <QLayout>
+
+#include <QtCore/QTextCodec>
+#include <Qt3Support/Q3PtrList>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
+#include <QtGui/QPushButton>
+#include <QtGui/QCheckBox>
+
 #include <kcombobox.h>
 #include <klocale.h>
-#include <QLabel>
 #include "speech.h"
-#include <QLineEdit>
-#include <QPushButton>
-#include <QCheckBox>
 #include <kurlrequester.h>
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)

@@ -19,7 +19,8 @@
 #define PHRASEBOOKPARSER_H
 
 #include <QtXml>
-#include <q3valuestack.h>
+#include <Qt3Support/Q3ValueStack>
+
 #include "phrasebook.h"
 
 /**

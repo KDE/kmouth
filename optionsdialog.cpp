@@ -21,12 +21,12 @@
 #include "texttospeechconfigurationwidget.h"
 #include "speech.h"
 
-#include <QLayout>
-#include <QLabel>
-#include <q3grid.h>
-#include <QTabWidget>
-#include <QPixmap>
-#include <QFile>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <Qt3Support/Q3Grid>
+#include <QtGui/QTabWidget>
+#include <QtGui/QPixmap>
+#include <QtCore/QFile>
 
 #include <kcombobox.h>
 #include <klocale.h>
@@ -37,7 +37,6 @@
 #include <kicon.h>
 #include <kpagewidgetmodel.h>
 #include <kparts/componentfactory.h>
-
 
 PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
    : QWidget (parent)

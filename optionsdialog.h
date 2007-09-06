@@ -22,7 +22,8 @@
 
 #include <kpagedialog.h>
 
-#include <QObject>
+#include <QtCore/QObject>
+
 #include "ui_preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
 

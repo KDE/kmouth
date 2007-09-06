@@ -15,10 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #include "configwizard.h"
-#include <QLayout>
-#include <QLabel>
+
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+
 #include <k3listview.h>
 #include <klocale.h>
 #include <kapplication.h>

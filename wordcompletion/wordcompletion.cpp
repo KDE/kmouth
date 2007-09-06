@@ -1,15 +1,15 @@
 
 #include "wordcompletion.h"
-#include <QRegExp>
-#include <QFile>
-//Added by qt3to4:
-#include <QList>
-#include <QTextStream>
+
+#include <QtCore/QRegExp>
+#include <QtCore/QFile>
+#include <QtCore/QList>
+#include <QtCore/QTextStream>
+#include <Qt3Support/q3tl.h>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
-#include <q3tl.h>
 
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;

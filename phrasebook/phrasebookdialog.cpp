@@ -19,25 +19,25 @@
 #include "phrasetree.h"
 
 // include files for Qt
-#include <QApplication>
-#include <QLayout>
-#include <QClipboard>
-#include <QRadioButton>
-#include <QEvent>
-#include <QPainter>
-#include <QStyle>
-#include <q3groupbox.h>
-#include <QMenu>
-#include <q3valuestack.h>
-#include <q3ptrstack.h>
-#include <ktoolbarpopupaction.h>
-//Added by qt3to4:
-#include <QGridLayout>
-#include <QDropEvent>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <Q3ListViewItem>
+#include <QtGui/QApplication>
+#include <QtGui/QLayout>
+#include <QtGui/QClipboard>
+#include <QtGui/QRadioButton>
+#include <QtGui/QEvent>
+#include <QtGui/QPainter>
+#include <QtGui/QStyle>
+#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QMenu>
+#include <Qt3Support/Q3ValueStack>
+#include <Qt3Support/Q3PtrStack>
+#include <QtGui/QGridLayout>
+#include <QtGui/QDropEvent>
+#include <QtGui/QLabel>
+#include <QtGui/QVBoxLayout>
+#include <Qt3Support/Q3ListViewItem>
+
 // include files for KDE
+#include <ktoolbarpopupaction.h>
 #include <kmenu.h>
 #include <kxmlguifactory.h>
 #include <klocale.h>

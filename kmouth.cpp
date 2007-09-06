@@ -24,12 +24,12 @@
 #include "configwizard.h"
 
 // include files for Qt
-#include <QDir>
-#include <QPainter>
-//Added by qt3to4:
-#include <QMenu>
-#include <kxmlguifactory.h>
+#include <QtCore/QDir>
+#include <QtGui/QPainter>
+#include <QtGui/QMenu>
+
 // include files for KDE
+#include <kxmlguifactory.h>
 #include <kiconloader.h>
 #include <kmenubar.h>
 #include <kstatusbar.h>

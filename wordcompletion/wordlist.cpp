@@ -19,10 +19,9 @@
 
 #include "wordlist.h"
 
-#include <QRegExp>
-#include <QDir>
-//Added by qt3to4:
-#include <QTextStream>
+#include <QtCore/QRegExp>
+#include <QtCore/QDir>
+#include <QtCore/QTextStream>
 
 #include <kstandarddirs.h>
 #include <kprogressdialog.h>

@@ -19,8 +19,8 @@
 #define PHRASEEDIT_H
 
 #include <klineedit.h>
-//Added by qt3to4:
-#include <QKeyEvent>
+
+#include <QtGui/QKeyEvent>
 
 /**
  * This class extends a KLineEdit by consuming fewer unused key presses.

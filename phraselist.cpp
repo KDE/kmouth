@@ -25,17 +25,15 @@
 #include "wordcompletion/wordcompletion.h"
 
 // include files for Qt
-#include <QPrinter>
-#include <QPainter>
-#include <QLayout>
-#include <QApplication>
-
-#include <QMenu>
-#include <QClipboard>
-//Added by qt3to4:
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QKeyEvent>
+#include <QtGui/QPrinter>
+#include <QtGui/QPainter>
+#include <QtGui/QLayout>
+#include <QtCore/QApplication>
+#include <QtGui/QMenu>
+#include <QtGui/QClipboard>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QKeyEvent>
 
 // include files for KDE
 #include <klineedit.h>

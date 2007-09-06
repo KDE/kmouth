@@ -26,10 +26,10 @@
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <ktoolbarpopupaction.h>
-//Added by qt3to4:
-#include <QPixmap>
-#include <QKeyEvent>
-#include <QDropEvent>
+
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QDropEvent>
 
 PhraseTreeItem::PhraseTreeItem (Q3ListView *parent, Q3ListViewItem *after, QString phrase, KShortcut shortcut, QPixmap icon)
    : K3ListViewItem (parent, after, phrase)

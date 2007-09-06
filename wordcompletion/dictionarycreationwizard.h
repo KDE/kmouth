@@ -20,9 +20,10 @@
 #ifndef DICTIONARYCREATIONWIZARD_H
 #define DICTIONARYCREATIONWIZARD_H
 
-#include <QList>
-#include <QMap>
-#include <Q3Dict>
+#include <QtCore/QList>
+#include <QtCore/QMap>
+#include <Qt3Support/Q3Dict>
+
 #include <k3wizard.h>
 #include <knuminput.h>
 

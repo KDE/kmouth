@@ -15,17 +15,15 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QLayout>
-#include <QLabel>
-#include <QCheckBox>
-#include <QRadioButton>
-#include <QLineEdit>
-#include <QComboBox>
-#include <QTextCodec>
-
-//Added by qt3to4:
-#include <QTextStream>
-#include <QGridLayout>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
+#include <QtGui/QRadioButton>
+#include <QtGui/QLineEdit>
+#include <QtGui/QComboBox>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
+#include <QtGui/QGridLayout>
 
 #include <k3listview.h>
 #include <klineedit.h>

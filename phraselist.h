@@ -23,13 +23,12 @@
 #include <klineedit.h>
 #include <kprinter.h>
 #include <kconfig.h>
+#include <kcombobox.h>
 
 // include files for Qt
-#include <qwidget.h>
-#include <QPushButton>
-#include <kcombobox.h>
-//Added by qt3to4:
-#include <QKeyEvent>
+#include <QtGui/QWidget>
+#include <QtGui/QPushButton>
+#include <QtGui/QKeyEvent>
 
 class WordCompletion;
 

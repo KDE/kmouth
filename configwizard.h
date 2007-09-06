@@ -15,11 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #ifndef CONFIGWIZARD_H
 #define CONFIGWIZARD_H
 
-#include <qwidget.h>
+#include <QtGui/QWidget>
 
 #include <k3wizard.h>
 
