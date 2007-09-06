@@ -23,7 +23,7 @@
 #include <QtGui/QLayout>
 #include <QtGui/QClipboard>
 #include <QtGui/QRadioButton>
-#include <QtGui/QEvent>
+#include <QtCore/QEvent>
 #include <QtGui/QPainter>
 #include <QtGui/QStyle>
 #include <Qt3Support/Q3GroupBox>
