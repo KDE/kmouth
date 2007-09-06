@@ -28,7 +28,7 @@
 #include <QtGui/QPrinter>
 #include <QtGui/QPainter>
 #include <QtGui/QLayout>
-#include <QtCore/QApplication>
+#include <QtGui/QApplication>
 #include <QtGui/QMenu>
 #include <QtGui/QClipboard>
 #include <QtGui/QVBoxLayout>
