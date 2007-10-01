@@ -81,9 +81,9 @@ PhraseTree::PhraseTree (QWidget *parent, const char *name)
    : K3ListView (parent)
 {
    Q_UNUSED(name);
-   phrasebook_open   = KIconLoader::global()->loadIcon("phrasebook",        K3Icon::Small);
-   phrasebook_closed = KIconLoader::global()->loadIcon("phrasebook_closed", K3Icon::Small);
-   phrase            = KIconLoader::global()->loadIcon("phrase",            K3Icon::Small);
+   phrasebook_open   = KIconLoader::global()->loadIcon("phrasebook",        KIconLoader::Small);
+   phrasebook_closed = KIconLoader::global()->loadIcon("phrasebook_closed", KIconLoader::Small);
+   phrase            = KIconLoader::global()->loadIcon("phrase",            KIconLoader::Small);
 
    connect (this, SIGNAL(expanded (Q3ListViewItem *)), this, SLOT(itemExpanded (Q3ListViewItem *)));
    connect (this, SIGNAL(collapsed (Q3ListViewItem *)), this, SLOT(itemCollapsed (Q3ListViewItem *)));

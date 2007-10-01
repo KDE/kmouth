@@ -80,7 +80,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   QIcon icon = KIconLoader::global()->loadIconSet("speak", K3Icon::Small);
+   QIcon icon = KIconLoader::global()->loadIconSet("speak", KIconLoader::Small);
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(Qt::NoFocus);
    speakButton->setAutoDefault(false);
