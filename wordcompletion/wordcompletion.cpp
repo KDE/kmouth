@@ -10,6 +10,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;
