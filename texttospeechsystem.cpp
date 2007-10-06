@@ -22,6 +22,7 @@
 #include <QtDBus/QtDBus>
 
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kspeech.h>
 #include <kdebug.h>
 #include <kspeech_interface.h>
