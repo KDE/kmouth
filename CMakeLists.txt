@@ -2,33 +2,33 @@ project(kmouth)
 
 add_definitions (-DQT3_SUPPORT)
 set(libphrasebook_SRCS 
-	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasetree.cpp
-	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasebookparser.cpp
-	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasebookdialog.cpp
-	${CMAKE_SOURCE_DIR}/kmouth/phrasebook/phrasebook.cpp
+	./phrasebook/phrasetree.cpp
+	./phrasebook/phrasebookparser.cpp
+	./phrasebook/phrasebookdialog.cpp
+	./phrasebook/phrasebook.cpp
 	)
 
-kde4_add_ui_files(libphrasebook_SRCS ${CMAKE_SOURCE_DIR}/kmouth/phrasebook/buttonboxui.ui) 
+kde4_add_ui_files(libphrasebook_SRCS ./phrasebook/buttonboxui.ui) 
 
 set(libwordcompletion_SRCS
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordlist.cpp 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletion.cpp 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionwidget.cpp 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/dictionarycreationwizard.cpp 
+	./wordcompletion/wordlist.cpp 
+	./wordcompletion/wordcompletion.cpp 
+	./wordcompletion/wordcompletionwidget.cpp 
+	./wordcompletion/dictionarycreationwizard.cpp 
 	)
         
 kde4_add_ui_files(libwordcompletion_SRCS 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourceui.ui 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/creationsourcedetailsui.ui 
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/kdedocsourceui.ui
-	${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/wordcompletionui.ui )
+	./wordcompletion/creationsourceui.ui 
+	./wordcompletion/creationsourcedetailsui.ui 
+	./wordcompletion/kdedocsourceui.ui
+	./wordcompletion/wordcompletionui.ui )
 
 add_subdirectory( icons ) 
 add_subdirectory( phrasebook ) 
 add_subdirectory( wordcompletion ) 
 add_subdirectory( books ) 
 
-include_directories(${CMAKE_SOURCE_DIR}/kmouth/wordcompletion/  )
+include_directories(./wordcompletion/  )
 
 
 ########### next target ###############
