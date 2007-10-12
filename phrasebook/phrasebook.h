@@ -23,11 +23,11 @@
 #include <QtXml>
 #include <QtCore/QTextStream>
 #include <QtGui/QMenu>
+#include <QtGui/QPrinter>
 
 #include <ktoolbar.h>
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kprinter.h>
 #include <kicon.h>
 
 class KUrl;
@@ -116,7 +116,7 @@ public:
    void save (QTextStream &stream, bool asPhrasebook);
 
    /** Prints the phrases. */
-   void print (KPrinter *pPrinter);
+   void print (QPrinter *pPrinter);
 
    /** Shows a file selector and writes the phrases to a file.
     *  @return 1, if the file got successfully written,

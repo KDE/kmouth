@@ -21,7 +21,6 @@
 // include files for KDE
 #include <k3listbox.h>
 #include <klineedit.h>
-#include <kprinter.h>
 #include <kconfig.h>
 #include <kcombobox.h>
 
@@ -29,6 +28,7 @@
 #include <QtGui/QWidget>
 #include <QtGui/QPushButton>
 #include <QtGui/QKeyEvent>
+#include <QtGui/QPrinter>
 
 class WordCompletion;
 
@@ -48,7 +48,7 @@ public:
    ~PhraseList();
    
    /** contains the implementation for printing functionality */
-   void print(KPrinter *pPrinter);
+   void print(QPrinter *pPrinter);
 
    QStringList getListSelection();
    

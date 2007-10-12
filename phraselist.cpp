@@ -25,7 +25,6 @@
 #include "wordcompletion/wordcompletion.h"
 
 // include files for Qt
-#include <QtGui/QPrinter>
 #include <QtGui/QPainter>
 #include <QtGui/QLayout>
 #include <QtGui/QApplication>
@@ -102,7 +101,7 @@ PhraseList::~PhraseList() {
    delete lineEdit;
 }
 
-void PhraseList::print(KPrinter *pPrinter) {
+void PhraseList::print(QPrinter *pPrinter) {
    PhraseBook book;
    for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));

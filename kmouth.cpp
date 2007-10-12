@@ -26,6 +26,8 @@
 // include files for Qt
 #include <QtCore/QDir>
 #include <QtGui/QPainter>
+#include <QtGui/QPrinter>
+#include <QtGui/QPrintDialog>
 #include <QtGui/QMenu>
 
 // include files for KDE
@@ -36,7 +38,6 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstandardaction.h>
-#include <kprinter.h>
 #include <kmenu.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
@@ -380,8 +381,9 @@ void KMouthApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
 
-  KPrinter printer;
-  if (printer.setup(this))
+  QPrinter printer;
+  QPrintDialog printDialog(&printer, this);
+  if (printDialog.exec())
   {
     phraseList->print(&printer);
   }

@@ -18,7 +18,6 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
-#include <QtGui/QPrinter>
 #include <QtGui/QPainter>
 #include <QtCore/QFile>
 #include <QtXml>
@@ -98,7 +97,7 @@ int PhraseBookEntry::getLevel() const {
 
 // ***************************************************************************
 
-void PhraseBook::print(KPrinter *pPrinter) {
+void PhraseBook::print(QPrinter *pPrinter) {
    QPainter printpainter;
    printpainter.begin(pPrinter);
 

@@ -25,6 +25,7 @@
 #include <QtGui/QRadioButton>
 #include <QtCore/QEvent>
 #include <QtGui/QPainter>
+#include <QtGui/QPrintDialog>
 #include <QtGui/QStyle>
 #include <Qt3Support/Q3GroupBox>
 #include <QtGui/QMenu>
@@ -806,8 +807,9 @@ void PhraseBookDialog::slotExportPhrasebook () {
 
 void PhraseBookDialog::slotPrint()
 {
-   KPrinter printer;
-   if (printer.setup(this)) {
+   QPrinter printer;
+   QPrintDialog printDialog(&printer, this);
+   if (printDialog.exec()) {
       PhraseBook book;
       treeView->fillBook (&book, treeView->hasSelectedItems());
 
