@@ -73,7 +73,7 @@ void TextToSpeechSystem::speak (const QString &text, const QString &language) {
 
 void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup) {
   KConfigGroup cg(config, langGroup);
-  ttsCommand = cg.readPathEntry("Command");
+  ttsCommand = cg.readPathEntry("Command", QString());
   stdIn = cg.readEntry("StdIn", true);
   useKttsd = cg.readEntry("useKttsd", true);
 
