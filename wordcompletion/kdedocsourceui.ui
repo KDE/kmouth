@@ -25,7 +25,7 @@
       <string>If you select this check box the words from the KDE documentation are spell-checked before they are inserted into the new dictionary.</string>
      </property>
      <property name="text" >
-      <string>&amp;Compare to OpenOffice.org dictionary:</string>
+      <string>C&amp;ompare to OpenOffice.org dictionary:</string>
      </property>
      <property name="checked" >
       <bool>false</bool>
