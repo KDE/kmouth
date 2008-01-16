@@ -1,6 +1,6 @@
 project(kmouth)
 
-add_definitions (-DQT3_SUPPORT)
+add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 set(libphrasebook_SRCS 
 	./phrasebook/phrasetree.cpp
 	./phrasebook/phrasebookparser.cpp
