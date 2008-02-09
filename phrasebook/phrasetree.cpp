@@ -457,7 +457,7 @@ bool PhraseTree::acceptDrag (QDropEvent* event) const {
 
 // Returns the conflicting QKeySequence, or an empty QKeySequence if there is no conflict
 static QKeySequence keyConflict (const KShortcut& cut, const KShortcut& cut2) {
-   foreach (QKeySequence seq, cut.toList())
+   foreach (const QKeySequence &seq, cut.toList())
       if (cut2.contains(seq))
           return seq;
 
