@@ -63,6 +63,10 @@ public:
       : QWidget(parent) {
       setupUi(this);
       setObjectName(name);
+      languageButton->showLanguageCodes(true);
+      languageButton->loadAllLanguages();
+
+      ooDictURL->setFilter ("*.dic");
    }
 };
 
