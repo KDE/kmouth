@@ -67,7 +67,7 @@
       <string>With this combo box you select which of the installed languages is used for creating the new dictionary. KMouth will only parse documentation files of this language.</string>
      </property>
      <property name="text" >
-      <string>&amp;Language:</string>
+      <string>Language:</string>
      </property>
     </widget>
    </item>
