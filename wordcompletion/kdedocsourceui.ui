@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>KDEDocSourceUI</class>
  <widget class="QWidget" name="KDEDocSourceUI" >
   <property name="geometry" >
@@ -9,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>272</width>
-    <height>100</height>
+    <height>118</height>
    </rect>
   </property>
   <layout class="QGridLayout" >
@@ -38,9 +35,7 @@
       <bool>false</bool>
      </property>
      <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>5</hsizetype>
-       <vsizetype>0</vsizetype>
+      <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
        <horstretch>1</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -51,14 +46,16 @@
     </widget>
    </item>
    <item row="0" column="1" >
-    <widget class="KLanguageButton" name="languageButton" />
+    <widget class="KLanguageButton" name="languageButton" >
+     <property name="focusPolicy" >
+      <enum>Qt::WheelFocus</enum>
+     </property>
+    </widget>
    </item>
    <item row="0" column="0" >
     <widget class="QLabel" name="languageLabel" >
      <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>5</hsizetype>
-       <vsizetype>0</vsizetype>
+      <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -67,7 +64,10 @@
       <string>With this combo box you select which of the installed languages is used for creating the new dictionary. KMouth will only parse documentation files of this language.</string>
      </property>
      <property name="text" >
-      <string>Language:</string>
+      <string>&amp;Language:</string>
+     </property>
+     <property name="buddy" >
+      <cstring>languageButton</cstring>
      </property>
     </widget>
    </item>
@@ -77,18 +77,14 @@
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>KUrlRequester</class>
-   <extends>QFrame</extends>
-   <header>kurlrequester.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
-  </customwidget>
-  <customwidget>
    <class>KLanguageButton</class>
    <extends>QWidget</extends>
    <header>klanguagebutton.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -100,12 +96,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>31</x>
+     <y>67</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>97</x>
+     <y>96</y>
     </hint>
    </hints>
   </connection>
