@@ -20,6 +20,7 @@
 #define KMOUTH_H
 
 // include files for Qt
+#include <QtGui/QPrinter>
 
 // include files for KDE
 #include <kxmlguiwindow.h>
@@ -177,6 +178,9 @@ class KMouthApp : public KXmlGuiWindow
     QAction* phraseListCopy;
     QAction* phraselistSelectAll;
     QAction* phraselistDeselectAll;
+
+    // Keep QPrinter so settings persist
+    QPrinter *printer;
 };
 
 #endif // KMOUTH_H

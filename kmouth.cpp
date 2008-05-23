@@ -26,7 +26,6 @@
 // include files for Qt
 #include <QtCore/QDir>
 #include <QtGui/QPainter>
-#include <QtGui/QPrinter>
 #include <QtGui/QPrintDialog>
 #include <QtGui/QMenu>
 
@@ -47,6 +46,7 @@
 #include <ktoggleaction.h>
 #include <kstandardshortcut.h>
 #include <kapplication.h>
+#include <kdeprintdialog.h>
 
 #define ID_STATUS_MSG 1
 
@@ -93,11 +93,13 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KXmlGuiWindow(0)
    // disable actions at startup
    fileSaveAs->setEnabled(false);
    filePrint->setEnabled(false);
+
+   printer = 0;
 }
 
 KMouthApp::~KMouthApp()
 {
-
+   delete printer;
 }
 
 bool KMouthApp::configured() {
@@ -381,11 +383,15 @@ void KMouthApp::slotFilePrint()
 {
   slotStatusMsg(i18n("Printing..."));
 
-  QPrinter printer;
-  QPrintDialog printDialog(&printer, this);
-  if (printDialog.exec())
+  if (printer == 0) {
+    printer = new QPrinter();
+  }
+
+  QPrintDialog *printDialog = KdePrint::createPrintDialog(printer, this);
+
+  if (printDialog->exec())
   {
-    phraseList->print(&printer);
+    phraseList->print(printer);
   }
 
   slotStatusMsg(i18n("Ready."));

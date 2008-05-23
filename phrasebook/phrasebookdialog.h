@@ -26,6 +26,7 @@
 #include <QtCore/QList>
 #include <QtGui/QGridLayout>
 #include <QtGui/QDropEvent>
+#include <QtGui/QPrinter>
 
 #include <kxmlguiwindow.h>
 #include <klineedit.h>
@@ -236,6 +237,9 @@ private:
    QAction* editCopy;
    QAction* editPaste;
    QAction* editDelete;
+
+   // Keep QPrinter so settings persist
+   QPrinter *printer;
 };
 
 #endif

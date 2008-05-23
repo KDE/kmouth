@@ -53,6 +53,7 @@
 #include <kdesktopfile.h>
 #include <kactionmenu.h>
 #include <kstandardaction.h>
+#include <kdeprintdialog.h>
 
 namespace PhraseBookPrivate {
    enum columns {
@@ -294,6 +295,8 @@ PhraseBookDialog::PhraseBookDialog ()
       selectionChanged();
       phrasebookChanged = false;
    }
+
+   printer = 0;
    // i18n("Edit Phrase Book")
 }
 
@@ -305,6 +308,7 @@ PhraseBookDialog *PhraseBookDialog::get() {
 
 PhraseBookDialog::~PhraseBookDialog() {
    PhraseBookPrivate::instance = 0;
+   delete printer;
 }
 
 void PhraseBookDialog::initGUI () {
@@ -807,13 +811,17 @@ void PhraseBookDialog::slotExportPhrasebook () {
 
 void PhraseBookDialog::slotPrint()
 {
-   QPrinter printer;
-   QPrintDialog printDialog(&printer, this);
-   if (printDialog.exec()) {
+   if (printer == 0) {
+     printer = new QPrinter();
+   }
+
+   QPrintDialog *printDialog = KdePrint::createPrintDialog(printer, this);
+
+   if (printDialog->exec()) {
       PhraseBook book;
       treeView->fillBook (&book, treeView->hasSelectedItems());
 
-      book.print(&printer);
+      book.print(printer);
    }
 }
 
