@@ -54,7 +54,7 @@ kde4_add_executable(kmouth ${kmouth_SRCS})
 
 target_link_libraries(kmouth  ${KDE4_KIO_LIBS} ${KDE4_KDE3SUPPORT_LIBS} )
 
-install(TARGETS kmouth  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
