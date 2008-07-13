@@ -823,6 +823,7 @@ void PhraseBookDialog::slotPrint()
 
       book.print(printer);
    }
+   delete printDialog;
 }
 
 #include "phrasebookdialog.moc"
