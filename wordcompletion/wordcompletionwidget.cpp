@@ -133,7 +133,7 @@ void WordCompletionWidget::load() {
    // Set the group general for the configuration of kttsd itself (no plug ins)
    QStringList groups = config->groupList();
    DictionaryListItem *last = 0;
-   for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
+   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
 		 KConfigGroup cg (config, *it);
          QString languageTag = cg.readEntry("Language");
@@ -146,7 +146,7 @@ void WordCompletionWidget::load() {
       }
 
    // Clean up disc space
-   for (QStringList::Iterator it = newDictionaryFiles.begin(); it != newDictionaryFiles.end(); ++it) {
+   for (QStringList::const_iterator it = newDictionaryFiles.begin(); it != newDictionaryFiles.end(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          QFile::remove (filename);
@@ -156,7 +156,7 @@ void WordCompletionWidget::load() {
 
 void WordCompletionWidget::save() {
    QStringList groups = config->groupList();
-   for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
+   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary "))
          config->deleteGroup (*it);
 
@@ -176,7 +176,7 @@ void WordCompletionWidget::save() {
    config->sync();
 
    // Clean up disc space
-   for (QStringList::Iterator it = removedDictionaryFiles.begin(); it != removedDictionaryFiles.end(); ++it) {
+   for (QStringList::const_iterator it = removedDictionaryFiles.begin(); it != removedDictionaryFiles.end(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          QFile::remove (filename);

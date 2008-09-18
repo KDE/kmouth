@@ -81,7 +81,7 @@ QStringList WordCompletion::wordLists() {
 
 QStringList WordCompletion::wordLists(const QString &language) {
    QStringList result;
-   for (QStringList::Iterator it = d->dictionaries.begin();
+   for (QStringList::const_iterator it = d->dictionaries.begin();
          it != d->dictionaries.end(); ++it)
       if (d->dictDetails[*it].language == language)
          result += *it;
@@ -117,7 +117,7 @@ void WordCompletion::configure() {
 
    KConfig *config = new KConfig("kmouthrc");
    QStringList groups = config->groupList();
-   for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
+   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
 		 KConfigGroup cg(config, *it);
          WordCompletionPrivate::DictionaryDetails details;
