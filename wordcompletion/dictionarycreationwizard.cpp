@@ -39,8 +39,8 @@
 #include "wordlist.h"
 
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
-               QStringList dictionaryNames, QStringList dictionaryFiles,
-               QStringList dictionaryLanguages)
+               const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
+               const QStringList &dictionaryLanguages)
    : K3Wizard (parent, name)
 {
    buildCodecList ();
@@ -273,8 +273,8 @@ QString DictionaryCreationWizard::language() {
 /***************************************************************************/
 
 MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
-               QStringList dictionaryNames, QStringList dictionaryFiles,
-               QStringList dictionaryLanguages)
+               const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
+               const QStringList &dictionaryLanguages)
 : Q3ScrollView (parent, name) {
    dictionaries.setAutoDelete (false);
    weights.setAutoDelete (false);
@@ -287,9 +287,9 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
    layout->setColumnStretch (1, 1);
 
    int row = 0;
-   QStringList::Iterator nIt = dictionaryNames.begin();
-   QStringList::Iterator fIt = dictionaryFiles.begin();
-   QStringList::Iterator lIt = dictionaryLanguages.begin();
+   QStringList::ConstIterator nIt = dictionaryNames.begin();
+   QStringList::ConstIterator fIt = dictionaryFiles.begin();
+   QStringList::ConstIterator lIt = dictionaryLanguages.begin();
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
       QCheckBox *checkbox = new QCheckBox(*nIt, contents);
       KIntNumInput *numInput = new KIntNumInput(contents);

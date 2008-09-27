@@ -79,9 +79,9 @@ class DictionaryCreationWizard : public K3Wizard {
    Q_OBJECT
 public:
    DictionaryCreationWizard (QWidget *parent, const char *name,
-                             QStringList dictionaryNames,
-                             QStringList dictionaryFiles,
-                             QStringList dictionaryLanguages);
+                             const QStringList &dictionaryNames,
+                             const QStringList &dictionaryFiles,
+                             const QStringList &dictionaryLanguages);
    ~DictionaryCreationWizard();
 
    QString createDictionary();
@@ -113,9 +113,9 @@ class MergeWidget : public Q3ScrollView {
    Q_OBJECT
 public:
    MergeWidget(K3Wizard *parent, const char *name,
-               QStringList dictionaryNames,
-               QStringList dictionaryFiles,
-               QStringList dictionaryLanguages);
+               const QStringList &dictionaryNames,
+               const QStringList &dictionaryFiles,
+               const QStringList &dictionaryLanguages);
    ~MergeWidget();
 
    QMap <QString, int> mergeParameters ();
