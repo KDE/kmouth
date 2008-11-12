@@ -127,7 +127,7 @@ bool saveWordList (WordMap map, QString filename) {
 
    stream << "WPDictFile\n";
    WordMap::ConstIterator it;
-   for (it = map.begin(); it != map.end(); ++it)
+   for (it = map.constBegin(); it != map.constEnd(); ++it)
       stream << it.key() << "\t" << it.value() << "\t2\n";
    file.close();
    return true;
@@ -136,10 +136,10 @@ bool saveWordList (WordMap map, QString filename) {
 /***************************************************************************/
 
 void addWords (WordMap &map, QString line) {
-   QStringList words = line.split( QRegExp("\\W"));
+   const QStringList words = line.split( QRegExp("\\W"));
 
    QStringList::ConstIterator it;
-   for (it = words.begin(); it != words.end(); ++it) {
+   for (it = words.constBegin(); it != words.constEnd(); ++it) {
       if (!(*it).contains(QRegExp("\\d|_"))) {
          QString key = (*it).toLower();
          if (map.contains(key))
@@ -152,7 +152,7 @@ void addWords (WordMap &map, QString line) {
 
 void addWords (WordMap &map, WordMap add) {
    WordList::WordMap::ConstIterator it;
-   for (it = add.begin(); it != add.end(); ++it)
+   for (it = add.constBegin(); it != add.constEnd(); ++it)
       if (map.contains(it.key()))
          map[it.key()] += it.value();
       else
@@ -223,7 +223,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
 
    WordMap map;
    QStringList::ConstIterator it;
-   for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
+   for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
       addWordsFromFile (map, *it, encoding, codec);
 
       if (steps != 0 && progress*100/steps > percent) {
@@ -248,20 +248,20 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 
    QMap<QString,float> map;
    QMap<QString,int>::ConstIterator it;
-   for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
+   for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
       WordMap fileMap;
       addWordsFromFile (fileMap, it.key(), QTextStream::UnicodeUTF8, 0);
 
       long long weight = 0;
       WordMap::ConstIterator iter;
-      for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
+      for (iter = fileMap.constBegin(); iter != fileMap.constEnd(); ++iter)
          weight += iter.value();
       float factor = 1.0 * it.value() / weight;
       totalWeight += it.value();
       if (weight > maxWeight)
          maxWeight = weight;
 
-      for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
+      for (iter = fileMap.constBegin(); iter != fileMap.constEnd(); ++iter)
          if (map.contains(iter.key()))
             map[iter.key()] += iter.value() * factor;
          else
@@ -282,7 +282,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 
    WordMap resultMap;
    QMap<QString,float>::ConstIterator iter;
-   for (iter = map.begin(); iter != map.end(); ++iter)
+   for (iter = map.constBegin(); iter != map.constEnd(); ++iter)
       resultMap[iter.key()] = (int)(factor * iter.value() + 0.5);
 
    return resultMap;
@@ -437,8 +437,8 @@ inline bool checkCondition (const QString &word, const QStringList &condition) {
 
    QStringList::ConstIterator it;
    int idx;
-   for (it = condition.begin(), idx = word.length()-condition.count();
-        it != condition.end();
+   for (it = condition.constBegin(), idx = word.length()-condition.count();
+        it != condition.constEnd();
         ++it, ++idx)
    {
       if ((*it).contains(word[idx]) == ((*it)[0] == '^'))
@@ -458,7 +458,7 @@ inline void checkWord(const QString &word, const QString &modifiers, bool cross,
          AffList sList = suffixes[modifiers[i]];
 
          AffList::ConstIterator sIt;
-         for (sIt = sList.begin(); sIt != sList.end(); ++sIt) {
+         for (sIt = sList.constBegin(); sIt != sList.constEnd(); ++sIt) {
             if (((*sIt).cross || !cross)
              && (checkCondition(word, (*sIt).condition)))
             {
@@ -486,7 +486,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
          AffList pList = prefixes[modifiers[i]];
 
          AffList::ConstIterator pIt;
-         for (pIt = pList.begin(); pIt != pList.end(); ++pIt) {
+         for (pIt = pList.constBegin(); pIt != pList.constEnd(); ++pIt) {
             QString pWord = (*pIt).add + word;
             if (map.contains(pWord))
                checkedMap[pWord] = map[pWord];

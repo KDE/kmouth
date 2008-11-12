@@ -58,13 +58,13 @@ QString WordCompletion::makeCompletion(const QString &text) {
       if (suffix.length() > 0) {
          MatchList matches;
          QMap<QString,int>::ConstIterator it;
-         for (it = d->map.begin(); it != d->map.end(); ++it)
+         for (it = d->map.constBegin(); it != d->map.constEnd(); ++it)
             if (it.key().startsWith(suffix))
                matches += Match (-it.value(), it.key());
          qHeapSort(matches);
 
-         MatchList::ConstIterator iter = matches.begin();
-         for (int count = 0; (iter != matches.end()) && (count < 10); ++iter, ++count) {
+         MatchList::ConstIterator iter = matches.constBegin();
+         for (int count = 0; (iter != matches.constEnd()) && (count < 10); ++iter, ++count) {
             int length = (*iter).second.length() + prefix.length() - text.length();
             KCompletion::addItem(text + (*iter).second.right(length), -(*iter).first);
          }
@@ -81,8 +81,8 @@ QStringList WordCompletion::wordLists() {
 
 QStringList WordCompletion::wordLists(const QString &language) {
    QStringList result;
-   for (QStringList::const_iterator it = d->dictionaries.begin();
-         it != d->dictionaries.end(); ++it)
+   for (QStringList::const_iterator it = d->dictionaries.constBegin();
+         it != d->dictionaries.constEnd(); ++it)
       if (d->dictDetails[*it].language == language)
          result += *it;
    return result;
@@ -116,8 +116,8 @@ void WordCompletion::configure() {
    d->dictDetails.clear();
 
    KConfig *config = new KConfig("kmouthrc");
-   QStringList groups = config->groupList();
-   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
+   const QStringList groups = config->groupList();
+   for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
 		 KConfigGroup cg(config, *it);
          WordCompletionPrivate::DictionaryDetails details;
@@ -180,10 +180,10 @@ bool WordCompletion::setWordList(const QString &wordlist) {
 }
 
 void WordCompletion::addSentence (const QString &sentence) {
-   QStringList words = sentence.split( QRegExp("\\W"));
+   const QStringList words = sentence.split( QRegExp("\\W"));
    
    QStringList::ConstIterator it;
-   for (it = words.begin(); it != words.end(); ++it) {
+   for (it = words.constBegin(); it != words.constEnd(); ++it) {
       if (!(*it).contains(QRegExp("\\d|_"))) {
          QString key = (*it).toLower();
          if (d->map.contains(key))
@@ -214,7 +214,7 @@ void WordCompletion::save () {
 
       stream << "WPDictFile\n";
       QMap<QString,int>::ConstIterator it;
-      for (it = d->map.begin(); it != d->map.end(); ++it) {
+      for (it = d->map.constBegin(); it != d->map.constEnd(); ++it) {
          if (d->addedWords.contains(it.key())) {
             stream << it.key() << "\t" << d->addedWords[it.key()] << "\t1\n";
             stream << it.key() << "\t" << it.value() - d->addedWords[it.key()] << "\t2\n";

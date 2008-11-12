@@ -196,10 +196,10 @@ void PhraseList::readCompletionOptions(KConfig *config) {
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
       QString current = cg2.readEntry ("List", QString());
-      QStringList list = completion->wordLists();
+      const QStringList list = completion->wordLists();
       QStringList::ConstIterator it;
       int i = 0;
-      for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
+      for (it = list.constBegin(), i = 0; it != list.constEnd(); ++it, ++i) {
          if (current == *it) {
             dictionaryCombo->setCurrentIndex (i);
             return;

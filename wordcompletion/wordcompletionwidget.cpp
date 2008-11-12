@@ -131,9 +131,9 @@ void WordCompletionWidget::load() {
    dictionaryList->clear();
 
    // Set the group general for the configuration of kttsd itself (no plug ins)
-   QStringList groups = config->groupList();
+   const QStringList groups = config->groupList();
    DictionaryListItem *last = 0;
-   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
+   for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
 		 KConfigGroup cg (config, *it);
          QString languageTag = cg.readEntry("Language");
@@ -146,7 +146,7 @@ void WordCompletionWidget::load() {
       }
 
    // Clean up disc space
-   for (QStringList::const_iterator it = newDictionaryFiles.begin(); it != newDictionaryFiles.end(); ++it) {
+   for (QStringList::const_iterator it = newDictionaryFiles.constBegin(); it != newDictionaryFiles.constEnd(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          QFile::remove (filename);
@@ -155,8 +155,8 @@ void WordCompletionWidget::load() {
 }
 
 void WordCompletionWidget::save() {
-   QStringList groups = config->groupList();
-   for (QStringList::const_iterator it = groups.begin(); it != groups.end(); ++it)
+   const QStringList groups = config->groupList();
+   for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
       if ((*it).startsWith ("Dictionary "))
          config->deleteGroup (*it);
 
@@ -176,7 +176,7 @@ void WordCompletionWidget::save() {
    config->sync();
 
    // Clean up disc space
-   for (QStringList::const_iterator it = removedDictionaryFiles.begin(); it != removedDictionaryFiles.end(); ++it) {
+   for (QStringList::const_iterator it = removedDictionaryFiles.constBegin(); it != removedDictionaryFiles.constEnd(); ++it) {
       QString filename = KGlobal::dirs()->findResource ("appdata", *it);
       if (!filename.isEmpty() && !filename.isNull())
          QFile::remove (filename);
