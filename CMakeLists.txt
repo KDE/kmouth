@@ -45,7 +45,7 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
    kmouth.cpp 
    main.cpp )
 
-set(kspeech_xml  ${DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml)
+set(kspeech_xml  ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml)
 qt4_add_dbus_interface(kmouth_SRCS ${kspeech_xml} kspeech_interface)
 
 kde4_add_ui_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
