@@ -20,11 +20,12 @@
 
 #include <QtGui/QPainter>
 #include <QtCore/QFile>
-#include <QtXml>
 #include <QtCore/QRegExp>
 #include <QtCore/QStack>
 #include <QtCore/QTextStream>
 #include <QtGui/QMenu>
+#include <QtXml/QXmlInputSource>
+#include <QtXml/QXmlSimpleReader>
 
 #include <kactionmenu.h>
 #include <kactioncollection.h>

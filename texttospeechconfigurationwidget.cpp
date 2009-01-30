@@ -45,10 +45,10 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget() {
 }
 
 void TextToSpeechConfigurationWidget::buildCodecList () {
-   QString local = i18n("Local")+" (";
+   QString local = i18nc("Local characterset", "Local")+" (";
    local += QTextCodec::codecForLocale()->name() + ')';
    characterCodingBox->addItem (local, Speech::Local);
-   characterCodingBox->addItem (i18n("Latin1"), Speech::Latin1);
+   characterCodingBox->addItem (i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);
    characterCodingBox->addItem (i18n("Unicode"), Speech::Unicode);
    for (int i = 0; i < ttsSystem->codecList->count(); i++ )
       characterCodingBox->addItem (ttsSystem->codecList->at(i)->name(), Speech::UseCodec + i);

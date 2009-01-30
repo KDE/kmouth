@@ -44,7 +44,7 @@ class WordCompletion;
 class PhraseList : public QWidget  {
    Q_OBJECT
 public:
-   PhraseList(QWidget *parent=0, const char *name=0);
+   explicit PhraseList(QWidget *parent=0, const char *name=0);
    ~PhraseList();
    
    /** contains the implementation for printing functionality */

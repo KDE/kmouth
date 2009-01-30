@@ -23,8 +23,10 @@
 #include <QtCore/QList>
 #include <QtCore/QMap>
 #include <Qt3Support/Q3Dict>
+#include <Q3ScrollView>
 
 #include <k3wizard.h>
+#include <kcombobox.h>
 #include <knuminput.h>
 
 #include "ui_creationsourceui.h"
@@ -33,7 +35,7 @@
 
 class CompletionWizardWidget;
 class QTextCodec;
-class QComboBox;
+class KComboBox;
 class MergeWidget;
 
 class CreationSourceDetailsWidget : public QWidget, public Ui::CreationSourceDetailsUI {
@@ -93,7 +95,7 @@ private slots:
 
 private:
    void buildCodecList ();
-   void buildCodecCombo (QComboBox *combo);
+   void buildCodecCombo (KComboBox *combo);
 
    CreationSourceWidget *creationSource;
    CreationSourceDetailsWidget *fileWidget;

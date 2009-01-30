@@ -24,11 +24,11 @@
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 #include <Qt3Support/Q3Grid>
-#include <QtGui/QTabWidget>
 #include <QtGui/QPixmap>
 #include <QtCore/QFile>
 
 #include <kcombobox.h>
+#include <ktabwidget.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
@@ -125,7 +125,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
    
 	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
    
-   tabCtl = new QTabWidget();
+   tabCtl = new KTabWidget();
    tabCtl->setObjectName("general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");

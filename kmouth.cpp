@@ -151,7 +151,7 @@ void KMouthApp::initActions() {
 
    editSpeak = actionCollection()->addAction("edit_speak");
    editSpeak->setIcon(KIcon("speak"));
-   editSpeak->setText(i18n("&Speak"));
+   editSpeak->setText(i18nc("Start speaking", "&Speak"));
    connect(editSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speak()));
    editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
    editSpeak->setWhatsThis (i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
@@ -241,7 +241,7 @@ void KMouthApp::initStatusBar()
   ///////////////////////////////////////////////////////////////////
   // STATUSBAR
   // TODO: add your own items you need for displaying current application status.
-  statusBar()->insertItem(i18n("Ready."), ID_STATUS_MSG);
+  statusBar()->insertItem(i18nc("The job is done", "Ready."), ID_STATUS_MSG);
 }
 
 void KMouthApp::initPhraseList()
@@ -259,7 +259,7 @@ void KMouthApp::openDocumentFile(const KUrl& url)
   slotStatusMsg(i18n("Opening file..."));
 
   phraseList->open (url);
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::saveOptions() {
@@ -368,7 +368,7 @@ void KMouthApp::slotFileOpen() {
 
    phraseList->open();
 
-   slotStatusMsg(i18n("Ready."));
+   slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotFileSaveAs() {
@@ -376,7 +376,7 @@ void KMouthApp::slotFileSaveAs() {
 
    phraseList->save();
 
-   slotStatusMsg(i18n("Ready."));
+   slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotFilePrint()
@@ -394,12 +394,12 @@ void KMouthApp::slotFilePrint()
     phraseList->print(printer);
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotFileQuit()
 {
-  slotStatusMsg(i18n("Exiting..."));
+  slotStatusMsg(i18nc("Shutting down the application", "Exiting..."));
   saveOptions();
   // close the first window, the list makes the next one the first again.
   // This ensures that queryClose() is called on each window to ask for closing
@@ -444,7 +444,7 @@ void KMouthApp::slotViewMenuBar() {
    else
       menuBar()->show();
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotViewToolBar()
@@ -461,7 +461,7 @@ void KMouthApp::slotViewToolBar()
     toolBar("mainToolBar")->show();
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotViewPhrasebookBar()
@@ -478,7 +478,7 @@ void KMouthApp::slotViewPhrasebookBar()
     toolBar("phrasebookBar")->show();
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotViewStatusBar()
@@ -495,7 +495,7 @@ void KMouthApp::slotViewStatusBar()
     statusBar()->show();
   }
 
-  slotStatusMsg(i18n("Ready."));
+  slotStatusMsg(i18nc("The job is done", "Ready."));
 }
 
 void KMouthApp::slotConfigureTTS() {

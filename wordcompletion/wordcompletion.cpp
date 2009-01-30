@@ -1,3 +1,19 @@
+/***************************************************************************
+                          wordcompletion.cpp  -  description
+                             -------------------
+    begin                : Tue Apr 29 2003
+    copyright            : (C) 2002 by Gunnar Schmi Dt
+    email                : kmouth@schmi-dt.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
 #include "wordcompletion.h"
 
@@ -118,7 +134,7 @@ void WordCompletion::configure() {
    KConfig *config = new KConfig("kmouthrc");
    const QStringList groups = config->groupList();
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith ("Dictionary ")) {
+      if ((*it).startsWith (QString("Dictionary "))) {
 		 KConfigGroup cg(config, *it);
          WordCompletionPrivate::DictionaryDetails details;
          details.filename = cg.readEntry("Filename");
@@ -161,7 +177,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
             while (!stream.atEnd()) {
                QString s = stream.readLine();
                if (!(s.isNull() || s.isEmpty())) {
-                  QStringList list = s.split( "\t");
+                  QStringList list = s.split( '\t');
                   bool ok;
                   int weight = list[1].toInt(&ok);
                   if (ok && (weight > 0))

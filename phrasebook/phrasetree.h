@@ -64,7 +64,7 @@ class PhraseTree : public K3ListView  {
    friend class PhraseTreeItem;
    Q_OBJECT
 public: 
-   PhraseTree (QWidget *parent = 0, const char *name = 0);
+   explicit PhraseTree (QWidget *parent = 0, const char *name = 0);
    ~PhraseTree ();
 
    void keyPressEvent (QKeyEvent *e);

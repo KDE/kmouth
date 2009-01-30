@@ -20,10 +20,10 @@
 
 #include <QtCore/QObject>
 #include <Qt3Support/Q3DragObject>
-#include <QtXml>
 #include <QtCore/QTextStream>
 #include <QtGui/QMenu>
 #include <QtGui/QPrinter>
+#include <QtXml/QXmlInputSource>
 
 #include <ktoolbar.h>
 #include <kaction.h>
@@ -62,7 +62,7 @@ private:
 class PhraseBookEntry {
 public:
    PhraseBookEntry ();
-   PhraseBookEntry (Phrase phrase, int level = 1, bool isPhrase = true);
+   explicit PhraseBookEntry (Phrase phrase, int level = 1, bool isPhrase = true);
    ~PhraseBookEntry () {}
 
    void setPhrase (Phrase phrase, int level = 1, bool isPhrase = true);
@@ -154,8 +154,8 @@ public:
 class PhraseBookDrag: public Q3DragObject {
    Q_OBJECT
 public:
-   PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
-   PhraseBookDrag (QWidget *dragSource = 0, const char *name = 0);
+   explicit PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
+   explicit PhraseBookDrag (QWidget *dragSource = 0, const char *name = 0);
    ~PhraseBookDrag ();
 
    virtual void setBook (PhraseBook *book);

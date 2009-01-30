@@ -131,7 +131,7 @@ private:
  */
 class ButtonBoxWidget : public QWidget, public Ui::ButtonBoxUI {
 public:
-   ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
+   explicit ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
    ~ButtonBoxWidget ();
 
    KKeySequenceWidget *keyButton;

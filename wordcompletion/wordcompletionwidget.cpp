@@ -134,7 +134,7 @@ void WordCompletionWidget::load() {
    const QStringList groups = config->groupList();
    DictionaryListItem *last = 0;
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith ("Dictionary ")) {
+      if ((*it).startsWith (QString("Dictionary "))) {
 		 KConfigGroup cg (config, *it);
          QString languageTag = cg.readEntry("Language");
          last = new DictionaryListItem (dictionaryList, last,
@@ -157,7 +157,7 @@ void WordCompletionWidget::load() {
 void WordCompletionWidget::save() {
    const QStringList groups = config->groupList();
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith ("Dictionary "))
+      if ((*it).startsWith (QString("Dictionary ")))
          config->deleteGroup (*it);
 
    int number = 0;

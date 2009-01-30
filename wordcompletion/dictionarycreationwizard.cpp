@@ -15,15 +15,17 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "dictionarycreationwizard.h"
+#include "wordlist.h"
+
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QCheckBox>
 #include <QtGui/QRadioButton>
 #include <QtGui/QLineEdit>
-#include <QtGui/QComboBox>
+#include <QtGui/QGridLayout>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
-#include <QtGui/QGridLayout>
 
 #include <k3listview.h>
 #include <klineedit.h>
@@ -35,8 +37,6 @@
 #include <kconfig.h>
 #include <kprogressdialog.h>
 #include <klanguagebutton.h>
-#include "dictionarycreationwizard.h"
-#include "wordlist.h"
 
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
                const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
@@ -56,7 +56,7 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 
    dirWidget= new CreationSourceDetailsWidget (this, "directory source page");
    addPage (dirWidget, i18n("Source of New Dictionary (2)"));
-   dirWidget->urlLabel->setText (i18n("&Directory:"));
+   dirWidget->urlLabel->setText (i18nc("In which directory is the file located?", "&Directory:"));
     dirWidget->urlLabel->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    dirWidget->url->setMode(KFile::Directory);
     dirWidget->url->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
@@ -96,12 +96,13 @@ void DictionaryCreationWizard::buildCodecList () {
    }
 }
 
-void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
-   QString local = i18n("Local")+" (";
+void DictionaryCreationWizard::buildCodecCombo (KComboBox *combo) {
+   QString local = i18nc("Local characterset", "Local")+" (";
    local += QTextCodec::codecForLocale()->name() + ')';
    combo->addItem (local, 0);
-   combo->addItem (i18n("Latin1"), 1);
+   combo->addItem (i18nc("Latin characterset", "Latin1"), 1);
    combo->addItem (i18n("Unicode"), 2);
+
    for (int i = 0; i < codecList->count(); i++ )
       combo->addItem (codecList->at(i)->name(), i+3);
 }
@@ -367,7 +368,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    if (WordList::saveWordList (map, dictionaryFile)) {
 	  KConfigGroup cg(config, "Dictionary 0");
       cg.writeEntry ("Filename", "wordcompletion1.dict");
-      cg.writeEntry ("Name",     i18n("Default"));
+      cg.writeEntry ("Name",     i18nc("Default dictionary", "Default"));
       cg.writeEntry ("Language", language);
       cg.sync();
    }

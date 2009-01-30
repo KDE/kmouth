@@ -20,7 +20,9 @@
 #ifndef WORDLIST_H
 #define WORDLIST_H
 
-#include <QtXml>
+#include <QtXml/QXmlDefaultHandler>
+#include <QtXml/QXmlParseException>
+#include <QtXml/QXmlAttributes>
 #include <Qt3Support/Q3ValueStack>
 #include <QtCore/QObject>
 #include <QtCore/QMap>

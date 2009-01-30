@@ -22,6 +22,10 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QDir>
 #include <QtCore/QTextStream>
+#include <QtXml/QXmlParseException>
+#include <QtXml/QXmlAttributes>
+#include <QtXml/QXmlInputSource>
+#include <QtXml/QXmlSimpleReader>
 
 #include <kstandarddirs.h>
 #include <kprogressdialog.h>
@@ -183,7 +187,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
                while (!stream.atEnd()) {
                   QString s = stream.readLine();
                   if (!(s.isNull() || s.isEmpty())) {
-                     QStringList list = s.split( "\t");
+                     QStringList list = s.split( '\t');
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
@@ -401,14 +405,14 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
                   }
                }
 
-               if (s.startsWith("PFX")) {
+               if (s.startsWith(QString("PFX"))) {
                   AffList list;
                   if (prefixes.contains (fields[1][0]))
                      list = prefixes[fields[1][0]];
                   list << e;
                   prefixes[fields[1][0]] = list;
                }
-               else if (s.startsWith("SFX")) {
+               else if (s.startsWith(QString("SFX"))) {
                   AffList list;
                   if (suffixes.contains (fields[1][0]))
                      list = suffixes[fields[1][0]];
@@ -499,7 +503,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
 
 WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
 
-   if (dictionary.endsWith(".dic")) {
+   if (dictionary.endsWith(QString(".dic"))) {
       AffMap prefixes;
       AffMap suffixes;
       WordMap checkedMap;
