@@ -153,9 +153,9 @@ class KMouthApp : public KXmlGuiWindow
     OptionsDialog *optionsDialog;
 
     // KAction pointers to enable/disable actions
-    QAction* fileOpen;
-    QAction* fileSaveAs;
-    QAction* filePrint;
+    KAction* fileOpen;
+    KAction* fileSaveAs;
+    KAction* filePrint;
     QAction* fileQuit;
 
     QAction* editCut;
