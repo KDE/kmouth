@@ -1,7 +1,4 @@
 <ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
   <class>texttospeechconfigurationui</class>
   <widget class="QWidget" name="texttospeechconfigurationui" >
     <property name="geometry" >
@@ -136,7 +133,6 @@
       </item>
     </layout>
   </widget>
-  <layoutdefault spacing="6" margin="11" />
     <customwidgets>
     <customwidget>
       <class>KComboBox</class>

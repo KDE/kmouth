@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>PreferencesUI</class>
  <widget class="QWidget" name="PreferencesUI" >
   <property name="geometry" >
@@ -133,7 +130,6 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
   <customwidgets>
   <customwidget>
    <class>KComboBox</class>
