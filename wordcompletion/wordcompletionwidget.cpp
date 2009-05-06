@@ -69,12 +69,11 @@ public:
    }
 
    void setLanguage (QString languageCode) {
-      QString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + QString::fromLatin1("/entry.desktop"));
-
-      KConfig entry(filename, KConfig::SimpleConfig);
-	  KConfigGroup cg (&entry, "KCM Locale");
-      QString name = cg.readEntry(QString::fromLatin1("Name"), i18n("without name"));
+      QString name = KGlobal::locale()->languageCodeToName(languageCode);
+      if (name.isEmpty())
+      {
+          name = i18n("without name");
+      }
       setLanguage (name + " (" + languageCode + ')', languageCode);
    }
 

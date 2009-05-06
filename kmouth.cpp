@@ -306,7 +306,6 @@ void KMouthApp::readOptions()
   viewStatusBar->setChecked(bViewStatusbar);
   slotViewStatusBar();
 
-
   // bar position settings
   // FIXME:
   // KToolBar::BarPosition toolBarPos;

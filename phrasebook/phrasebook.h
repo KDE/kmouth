@@ -180,6 +180,7 @@ public:
    : KAction (KIcon("phrase"), phrase, parent) {
       this->setShortcut(cut);
       this->phrase = phrase;
+      connect (this, SIGNAL(triggered()), this, SLOT(slotTriggered()));
       connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
       parent->addAction(phrase, this);
    }
@@ -188,7 +189,7 @@ public:
 
 public slots:
    void slotTriggered () {
-      trigger();
+//      trigger();
       emit slotActivated (phrase);
    }
 

@@ -59,11 +59,11 @@ int main(int argc, char *argv[])
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-		if (args->count())
-		{
+    if (args->count())
+    {
         kmouth->openDocumentFile(args->url(0));
-		}
-		args->clear();
+    }
+    args->clear();
   }
   return app.exec();
 }
