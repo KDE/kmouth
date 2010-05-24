@@ -44,7 +44,7 @@ TextToSpeechSystem::~TextToSpeechSystem() {
 bool kttsdSay (const QString &text, const QString &language) {
    // TODO: Would be better to save off this QDBusInterface pointer and
    // set defaults only once.
-   org::kde::KSpeech kspeech("org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus());
+   org::kde::KSpeech kspeech("org.kde.KSpeech", "/KSpeech", QDBusConnection::sessionBus());
    kspeech.setApplicationName("KMouth");
    kspeech.setDefaultTalker(language);
 
