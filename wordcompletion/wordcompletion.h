@@ -16,35 +16,35 @@ public:
    /**
     * Returns the names for the available word lists
     */
-   QStringList wordLists();
+   TQStringList wordLists();
 
    /**
     * Returns the names for those word lists that contain
     * words of a given language.
     */
-   QStringList wordLists(const QString &language);
+   TQStringList wordLists(const TQString &language);
    
    /**
     * Returns the language of a given word list.
     */
-   QString languageOfWordList(const QString &wordlist);
+   TQString languageOfWordList(const TQString &wordlist);
 
    /**
     * Returns the name of the currently active word list.
     */
-   QString currentWordList();
+   TQString currentWordList();
 
    /**
     * Finds completions to the given text.
     */
-   virtual QString makeCompletion(const QString&);
+   virtual TQString makeCompletion(const TQString&);
 
    static bool isConfigured();
    
    /**
     * Adds the words from the given sentence to the list of words.
     */
-   void addSentence (const QString &sentence);
+   void addSentence (const TQString &sentence);
    
 public slots:
    /**
@@ -58,7 +58,7 @@ public slots:
     * list gets used.
     * The method returns true if the specified word list was found.
     */
-   bool setWordList(const QString &wordlist);
+   bool setWordList(const TQString &wordlist);
 
    /**
     * Saves the added words to disk.
@@ -66,8 +66,8 @@ public slots:
    void save ();
 
 signals:
-   void wordListsChanged (const QStringList &wordLists);
-   void currentListChanged (const QString &wordList);
+   void wordListsChanged (const TQStringList &wordLists);
+   void currentListChanged (const TQString &wordList);
 
 private:
    class WordCompletionPrivate;

@@ -18,11 +18,11 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <qbutton.h>
-#include <qradiobutton.h>
-#include <qbuttongroup.h>
-#include <qlabel.h>
-#include <qlistview.h> 
+#include <tqbutton.h>
+#include <tqradiobutton.h>
+#include <tqbuttongroup.h>
+#include <tqlabel.h>
+#include <tqlistview.h> 
 #include <kmainwindow.h>
 #include <klineedit.h>
 #include <kkeybutton.h>
@@ -38,22 +38,22 @@ class QString;
 class KListView;
 
 struct StandardBook {
-   QString name;
-   QString path;
-   QString filename;
+   TQString name;
+   TQString path;
+   TQString filename;
 };
-typedef QValueList<StandardBook> StandardBookList;
+typedef TQValueList<StandardBook> StandardBookList;
 
 /**The class PhraseTreeItem is an ListViewItem for either a phrase or a phrase book.
   *@author Gunnar Schmi Dt
   */
 
-class CheckBookItem : public QCheckListItem {
+class CheckBookItem : public TQCheckListItem {
 public:
-   CheckBookItem (QListViewItem *parent, QListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
-   CheckBookItem (QListView *parent, QListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
+   CheckBookItem (TQListViewItem *parent, TQListViewItem *last,
+            const TQString &text, const TQString &name, const TQString &filename);
+   CheckBookItem (TQListView *parent, TQListViewItem *last,
+            const TQString &text, const TQString &name, const TQString &filename);
    ~CheckBookItem();
 
 protected:
@@ -72,10 +72,10 @@ private:
  * @author Gunnar Schmi Dt
  */
 
-class InitialPhraseBookWidget : public QWidget {
+class InitialPhraseBookWidget : public TQWidget {
    Q_OBJECT
 public:
-   InitialPhraseBookWidget(QWidget *parent, const char *name);
+   InitialPhraseBookWidget(TQWidget *parent, const char *name);
    ~InitialPhraseBookWidget();
 
    void createBook();
@@ -95,10 +95,10 @@ private:
 class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KURL &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+   StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
-      connect (this, SIGNAL(slotActivated (const KURL &)), receiver, slot);
+      connect (this, TQT_SIGNAL(slotActivated (const KURL &)), receiver, slot);
    };
    ~StandardPhraseBookInsertAction () {
    };
@@ -123,14 +123,14 @@ private:
  */
 class ButtonBoxWidget : public ButtonBoxUI {
 public:
-   ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
+   ButtonBoxWidget (TQWidget *parent = 0, const char *name = 0);
    ~ButtonBoxWidget ();
 
    KKeyButton *keyButton;
-   QButtonGroup *group;
+   TQButtonGroup *group;
 
 protected:
-   QGridLayout *keyButtonPlaceLayout;
+   TQGridLayout *keyButtonPlaceLayout;
 };
 
 /**
@@ -147,7 +147,7 @@ private:
     */
    PhraseBookDialog ();
 
-   static QString displayPath (QString path);
+   static TQString displayPath (TQString path);
 
 public:
    /** Returns a pointer to the instance of this dialog. As a part off the
@@ -162,13 +162,13 @@ public:
    bool queryClose ();
 
 public slots:
-   void slotTextChanged (const QString &s);
+   void slotTextChanged (const TQString &s);
    void slotNoKey();
    void slotCustomKey();
    void capturedShortcut (const KShortcut& cut);
    
    void selectionChanged ();
-   void contextMenuRequested(QListViewItem *, const QPoint &pos, int);
+   void contextMenuRequested(TQListViewItem *, const TQPoint &pos, int);
 
    void slotRemove ();
    void slotCut ();
@@ -184,8 +184,8 @@ public slots:
    void slotExportPhrasebook ();
    void slotPrint ();
 
-   void slotDropped (QDropEvent *e, QListViewItem *parent, QListViewItem *after);
-   void slotMoved (QListViewItem *item, QListViewItem *, QListViewItem *);
+   void slotDropped (TQDropEvent *e, TQListViewItem *parent, TQListViewItem *after);
+   void slotMoved (TQListViewItem *item, TQListViewItem *, TQListViewItem *);
 
 signals:
    void phrasebookConfirmed (PhraseBook &book);
@@ -199,12 +199,12 @@ private:
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
    
-   QListViewItem *addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book);
-   QListViewItem *addBook (QListViewItem *item, PhraseBook *book);
+   TQListViewItem *addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book);
+   TQListViewItem *addBook (TQListViewItem *item, PhraseBook *book);
    
    void setShortcut (const KShortcut &cut);
 
-   void _warning (const KKeySequence &cut, QString sAction, QString sTitle);
+   void _warning (const KKeySequence &cut, TQString sAction, TQString sTitle);
    
    bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
    bool isPhraseKeyPresent (const KShortcut& cut, bool warnUser);

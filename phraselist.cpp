@@ -16,12 +16,12 @@
  ***************************************************************************/
 
 // include files for Qt
-#include <qprinter.h>
-#include <qpainter.h>
-#include <qlayout.h>
-#include <qwhatsthis.h>
-#include <qpopupmenu.h>
-#include <qclipboard.h>
+#include <tqprinter.h>
+#include <tqpainter.h>
+#include <tqlayout.h>
+#include <tqwhatsthis.h>
+#include <tqpopupmenu.h>
+#include <tqclipboard.h>
 
 // include files for KDE
 #include <klistbox.h>
@@ -45,18 +45,18 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name) {
+PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
-   QVBoxLayout *layout = new QVBoxLayout (this);
+   TQVBoxLayout *layout = new TQVBoxLayout (this);
 
    listBox = new KListBox (this);
-   listBox->setFocusPolicy(QWidget::NoFocus);
-   listBox->setSelectionMode (QListBox::Extended);
-   QWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
+   listBox->setFocusPolicy(TQWidget::NoFocus);
+   listBox->setSelectionMode (TQListBox::Extended);
+   TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
    layout->addWidget(listBox);
 
-   QHBoxLayout *rowLayout = new QHBoxLayout ();
+   TQHBoxLayout *rowLayout = new TQHBoxLayout ();
    layout->addLayout(rowLayout);
 
    completion = new WordCompletion();
@@ -66,29 +66,29 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent,name)
    rowLayout->addWidget(dictionaryCombo);
 
    lineEdit = new PhraseEdit ("", this);
-   lineEdit->setFocusPolicy(QWidget::StrongFocus);
+   lineEdit->setFocusPolicy(TQWidget::StrongFocus);
    lineEdit->setFrame(true);
-   lineEdit->setEchoMode(QLineEdit::Normal);
+   lineEdit->setEchoMode(TQLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
    lineEdit->setAutoDeleteCompletionObject(true);
-   QWhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
+   TQWhatsThis::add (lineEdit, i18n("Into this edit field you can type a phrase. Click on the speak button in order to speak the entered phrase."));
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   QIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
-   speakButton = new QPushButton (icon, i18n("&Speak"), this);
-   speakButton->setFocusPolicy(QWidget::NoFocus);
+   TQIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
+   speakButton = new TQPushButton (icon, i18n("&Speak"), this);
+   speakButton->setFocusPolicy(TQWidget::NoFocus);
    speakButton->setAutoDefault(false);
-   QWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
+   TQWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
-   connect(dictionaryCombo, SIGNAL (activated (const QString &)), completion, SLOT (setWordList(const QString &)));
-   connect(completion, SIGNAL (wordListsChanged (const QStringList &)), this, SLOT (configureCompletionCombo (const QStringList &)));
-   connect(listBox,  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
-   connect(listBox,  SIGNAL(contextMenuRequested (QListBoxItem *, const QPoint &)), SLOT(contextMenuRequested (QListBoxItem *, const QPoint &)));
-   connect(lineEdit, SIGNAL(returnPressed(const QString &)), SLOT(lineEntered(const QString &)));
-   connect(lineEdit, SIGNAL(textChanged  (const QString &)), SLOT(textChanged(const QString &)));
-   connect(speakButton, SIGNAL( clicked ()), SLOT(speak()));
+   connect(dictionaryCombo, TQT_SIGNAL (activated (const TQString &)), completion, TQT_SLOT (setWordList(const TQString &)));
+   connect(completion, TQT_SIGNAL (wordListsChanged (const TQStringList &)), this, TQT_SLOT (configureCompletionCombo (const TQStringList &)));
+   connect(listBox,  TQT_SIGNAL(selectionChanged()), TQT_SLOT(selectionChanged()));
+   connect(listBox,  TQT_SIGNAL(contextMenuRequested (TQListBoxItem *, const TQPoint &)), TQT_SLOT(contextMenuRequested (TQListBoxItem *, const TQPoint &)));
+   connect(lineEdit, TQT_SIGNAL(returnPressed(const TQString &)), TQT_SLOT(lineEntered(const TQString &)));
+   connect(lineEdit, TQT_SIGNAL(textChanged  (const TQString &)), TQT_SLOT(textChanged(const TQString &)));
+   connect(speakButton, TQT_SIGNAL( clicked ()), TQT_SLOT(speak()));
 }
 
 PhraseList::~PhraseList() {
@@ -99,17 +99,17 @@ PhraseList::~PhraseList() {
 
 void PhraseList::print(KPrinter *pPrinter) {
    PhraseBook book;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));
    }
    
    book.print (pPrinter);
 }
 
-QStringList PhraseList::getListSelection() {
-   QStringList res = QStringList();
+TQStringList PhraseList::getListSelection() {
+   TQStringList res = TQStringList();
 
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          res += item->text();
    }
@@ -118,7 +118,7 @@ QStringList PhraseList::getListSelection() {
 }
 
 bool PhraseList::existListSelection() {
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          return true;
    }
@@ -133,7 +133,7 @@ bool PhraseList::existEditSelection() {
 void PhraseList::enableMenuEntries() {
    bool deselected = false;
    bool selected = false;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       if (item->isSelected())
          selected = true;
       else
@@ -147,8 +147,8 @@ void PhraseList::configureCompletion() {
    completion->configure();
 }
 
-void PhraseList::configureCompletionCombo(const QStringList &list) {
-   QString current = completion->currentWordList();
+void PhraseList::configureCompletionCombo(const TQStringList &list) {
+   TQString current = completion->currentWordList();
    dictionaryCombo->clear();
    if (list.isEmpty())
       dictionaryCombo->hide();
@@ -161,7 +161,7 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
       dictionaryCombo->insertStringList (list);
       dictionaryCombo->show();
    
-      QStringList::ConstIterator it;
+      TQStringList::ConstIterator it;
       int i = 0;
       for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
          if (current == *it) {
@@ -191,9 +191,9 @@ void PhraseList::readCompletionOptions(KConfig *config) {
       int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
-      QString current = config->readEntry ("List", QString::null);
-      QStringList list = completion->wordLists();
-      QStringList::ConstIterator it;
+      TQString current = config->readEntry ("List", TQString::null);
+      TQStringList list = completion->wordLists();
+      TQStringList::ConstIterator it;
       int i = 0;
       for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
          if (current == *it) {
@@ -218,7 +218,7 @@ void PhraseList::deselectAllEntries () {
 }
 
 void PhraseList::speak () {
-   QString phrase = lineEdit->text();
+   TQString phrase = lineEdit->text();
    if (phrase.isNull() || phrase.isEmpty())
       speakListSelection();
    else {
@@ -245,7 +245,7 @@ void PhraseList::paste() {
    lineEdit->paste();
 }
 
-void PhraseList::insert (const QString &s) {
+void PhraseList::insert (const TQString &s) {
    setEditLineText(s);
 }
 
@@ -254,8 +254,8 @@ void PhraseList::speakListSelection () {
 }
 
 void PhraseList::removeListSelection () {
-   QListBoxItem *next;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
+   TQListBoxItem *next;
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
       next = item->next();
       
       if (item->isSelected()) {
@@ -271,10 +271,10 @@ void PhraseList::cutListSelection () {
 }
 
 void PhraseList::copyListSelection () {
-   QApplication::clipboard()->setText (getListSelection().join ("\n"));
+   TQApplication::clipboard()->setText (getListSelection().join ("\n"));
 }
 
-void PhraseList::lineEntered (const QString &phrase) {
+void PhraseList::lineEntered (const TQString &phrase) {
    if (phrase.isNull() || phrase.isEmpty())
       speakListSelection();
    else {
@@ -283,15 +283,15 @@ void PhraseList::lineEntered (const QString &phrase) {
    }
 }
 
-void PhraseList::speakPhrase (const QString &phrase) {
-   QApplication::setOverrideCursor (KCursor::WaitCursor, false);
+void PhraseList::speakPhrase (const TQString &phrase) {
+   TQApplication::setOverrideCursor (KCursor::WaitCursor, false);
    KMouthApp *theApp=(KMouthApp *) parentWidget();
-   QString language = completion->languageOfWordList (completion->currentWordList());
+   TQString language = completion->languageOfWordList (completion->currentWordList());
    theApp->getTTSSystem()->speak(phrase, language);
-   QApplication::restoreOverrideCursor ();
+   TQApplication::restoreOverrideCursor ();
 }
 
-void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine) {
+void PhraseList::insertIntoPhraseList (const TQString &phrase, bool clearEditLine) {
    int lastLine = listBox->count() - 1;
    if ((lastLine == -1) || (phrase != listBox->text(lastLine))) {
       listBox->insertItem(new PhraseListItem(phrase));
@@ -306,8 +306,8 @@ void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine
    enableMenuEntries ();
 }
 
-void PhraseList::contextMenuRequested (QListBoxItem *, const QPoint &pos) {
-   QString name;
+void PhraseList::contextMenuRequested (TQListBoxItem *, const TQPoint &pos) {
+   TQString name;
    if (existListSelection())
       name = "phraselist_selection_popup";
    else
@@ -315,13 +315,13 @@ void PhraseList::contextMenuRequested (QListBoxItem *, const QPoint &pos) {
    
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    KXMLGUIFactory *factory = theApp->factory();
-   QPopupMenu *popup = (QPopupMenu *)factory->container(name,theApp);
+   TQPopupMenu *popup = (TQPopupMenu *)factory->container(name,theApp);
    if (popup != 0) {
       popup->popup(pos, 0);
    }
 }
 
-void PhraseList::textChanged (const QString &s) {
+void PhraseList::textChanged (const TQString &s) {
    if (!isInSlot) {
       isInSlot = true;
       line = s;
@@ -335,7 +335,7 @@ void PhraseList::selectionChanged () {
    if (!isInSlot) {
       isInSlot = true;
       
-      QStringList sel = getListSelection();
+      TQStringList sel = getListSelection();
 
       if (sel.empty())
          setEditLineText(line);
@@ -349,17 +349,17 @@ void PhraseList::selectionChanged () {
    enableMenuEntries ();
 }
 
-void PhraseList::setEditLineText(const QString &s) {
+void PhraseList::setEditLineText(const TQString &s) {
    lineEdit->end(false);
    while (!(lineEdit->text().isNull() || lineEdit->text().isEmpty()))
       lineEdit->backspace();
    lineEdit->insert(s);
 }
 
-void PhraseList::keyPressEvent (QKeyEvent *e) {
+void PhraseList::keyPressEvent (TQKeyEvent *e) {
    if (e->key() == Qt::Key_Up) {
       bool selected = false;
-      for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+      for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
             selected = true;
          }
@@ -396,7 +396,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
    }
    else if (e->key() == Qt::Key_Down) {
       bool selected = false;
-      for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+      for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
             selected = true;
          }
@@ -440,7 +440,7 @@ void PhraseList::save () {
    // format we use that method here.
    
    PhraseBook book;
-   for (QListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));
    }
 
@@ -450,7 +450,7 @@ void PhraseList::save () {
 }
 
 void PhraseList::open () {
-   KURL url=KFileDialog::getOpenURL(QString::null,
+   KURL url=KFileDialog::getOpenURL(TQString::null,
         i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())
@@ -465,9 +465,9 @@ void PhraseList::open (KURL url) {
    PhraseBook book;
    if (book.open (url)) {
       // convert PhraseBookEntryList -> QStringList
-      QStringList list = book.toStringList();
+      TQStringList list = book.toStringList();
       listBox->clear();
-      QStringList::iterator it;
+      TQStringList::iterator it;
       for (it = list.begin(); it != list.end(); ++it)
          insertIntoPhraseList (*it, false);
    }

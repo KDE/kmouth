@@ -18,17 +18,17 @@
 #ifndef PHRASELISTITEM_H
 #define PHRASELISTITEM_H
 
-#include <qlistbox.h>
+#include <tqlistbox.h>
 
 /**
  * This class represents a phrase in the list of spoken phrases. It extends
- * QListBoxText for providing support for a visible list cursor.
+ * TQListBoxText for providing support for a visible list cursor.
  * @author Gunnar Schmi Dt
  */
 
-class PhraseListItem : public QListBoxText  {
+class PhraseListItem : public TQListBoxText  {
 public:
-   PhraseListItem (const QString & text);
+   PhraseListItem (const TQString & text);
    ~PhraseListItem();
    
    bool drawCursor() const;
@@ -37,7 +37,7 @@ public:
    static const int RTTI = 982734;
 
 protected:
-   void  paint( QPainter * );
+   void  paint( TQPainter * );
 };
 
 #endif

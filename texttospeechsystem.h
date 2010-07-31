@@ -19,9 +19,9 @@
 #ifndef TEXTTOSPEECHSYSTEM_H
 #define TEXTTOSPEECHSYSTEM_H
 
-#include <qstring.h>
-#include <qobject.h>
-#include <qptrlist.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqptrlist.h>
 
 class KConfig;
 
@@ -36,18 +36,18 @@ public:
    TextToSpeechSystem();
    ~TextToSpeechSystem();
 
-   void readOptions (KConfig *config, const QString &langGroup);
-   void saveOptions (KConfig *config, const QString &langGroup);
+   void readOptions (KConfig *config, const TQString &langGroup);
+   void saveOptions (KConfig *config, const TQString &langGroup);
 
 public slots:
-   void speak (const QString &text, const QString &language);
+   void speak (const TQString &text, const TQString &language);
 
 private:
    void buildCodecList ();
 
-   QPtrList<QTextCodec> *codecList;
+   TQPtrList<TQTextCodec> *codecList;
    int codec;
-   QString ttsCommand;
+   TQString ttsCommand;
    bool stdIn;
    bool useKttsd;
 };

@@ -20,8 +20,8 @@
 #ifndef DICTIONARYCREATIONWIZARD_H
 #define DICTIONARYCREATIONWIZARD_H
 
-#include <qptrlist.h>
-#include <qmap.h>
+#include <tqptrlist.h>
+#include <tqmap.h>
 
 #include <kwizard.h>
 #include <knuminput.h>
@@ -43,22 +43,22 @@ class MergeWidget;
 class DictionaryCreationWizard : public KWizard {
    Q_OBJECT
 public:
-   DictionaryCreationWizard (QWidget *parent, const char *name,
-                             QStringList dictionaryNames,
-                             QStringList dictionaryFiles,
-                             QStringList dictionaryLanguages);
+   DictionaryCreationWizard (TQWidget *parent, const char *name,
+                             TQStringList dictionaryNames,
+                             TQStringList dictionaryFiles,
+                             TQStringList dictionaryLanguages);
    ~DictionaryCreationWizard();
 
-   QString createDictionary();
-   QString name();
-   QString language();
+   TQString createDictionary();
+   TQString name();
+   TQString language();
 
 private slots:
    void calculateAppropriate (bool);
 
 private:
    void buildCodecList ();
-   void buildCodecCombo (QComboBox *combo);
+   void buildCodecCombo (TQComboBox *combo);
 
    CreationSourceUI *creationSource;
    CreationSourceDetailsUI *fileWidget;
@@ -66,7 +66,7 @@ private:
    KDEDocSourceUI *kdeDocWidget;
    MergeWidget *mergeWidget;
 
-   QPtrList<QTextCodec> *codecList;
+   TQPtrList<TQTextCodec> *codecList;
 };
 
 /**
@@ -74,22 +74,22 @@ private:
  * KDE documentation.
  * @author Gunnar Schmi Dt
  */
-class MergeWidget : public QScrollView {
+class MergeWidget : public TQScrollView {
    Q_OBJECT
 public:
    MergeWidget(KWizard *parent, const char *name,
-               QStringList dictionaryNames,
-               QStringList dictionaryFiles,
-               QStringList dictionaryLanguages);
+               TQStringList dictionaryNames,
+               TQStringList dictionaryFiles,
+               TQStringList dictionaryLanguages);
    ~MergeWidget();
 
-   QMap <QString, int> mergeParameters ();
-   QString language ();
+   TQMap <TQString, int> mergeParameters ();
+   TQString language ();
 
 private:
-   QDict<QCheckBox> dictionaries;
-   QDict<KIntNumInput> weights;
-   QMap<QString,QString> languages;
+   TQDict<TQCheckBox> dictionaries;
+   TQDict<KIntNumInput> weights;
+   TQMap<TQString,TQString> languages;
 };
 
 /**

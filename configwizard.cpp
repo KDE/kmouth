@@ -17,8 +17,8 @@
 
 
 #include "configwizard.h"
-#include <qlayout.h>
-#include <qlabel.h>
+#include <tqlayout.h>
+#include <tqlabel.h>
 #include <klistview.h>
 #include <klocale.h>
 #include <kapplication.h>
@@ -31,7 +31,7 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (QWidget *parent, const char *name, KConfig *config)
+ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, KConfig *config)
              : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
@@ -63,7 +63,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
 }
 
 void ConfigWizard::initBookPage() {
-   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   TQString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
    bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
    if (displayBook) {
@@ -80,15 +80,15 @@ void ConfigWizard::initBookPage() {
 
 void ConfigWizard::initCompletion (KConfig *config) {
    if (!WordCompletion::isConfigured()) {
-      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
-      QFile file(dictionaryFile);
+      TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", "dictionary.txt");
+      TQFile file(dictionaryFile);
       if (file.exists()) {
          // If there is a word completion dictionary but no entry in the
          // configuration file, we need to add it there.
          config->setGroup("Dictionary 0");
          config->writeEntry ("Filename", "dictionary.txt");
          config->writeEntry ("Name",     "Default");
-         config->writeEntry ("Language", QString::null);
+         config->writeEntry ("Language", TQString::null);
          config->sync();
       }
    }
@@ -128,7 +128,7 @@ void ConfigWizard::saveConfig (KConfig *config) {
 
 bool ConfigWizard::requestConfiguration () {
    if (commandWidget != 0 || bookWidget != 0 || completionWidget != 0)
-      return (exec() == QDialog::Accepted);
+      return (exec() == TQDialog::Accepted);
    else
       return false;
 }

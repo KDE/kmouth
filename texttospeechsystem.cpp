@@ -17,9 +17,9 @@
 
 
 #include "texttospeechsystem.h"
-#include <qregexp.h>
-#include <qtextcodec.h>
-#include <qptrlist.h>
+#include <tqregexp.h>
+#include <tqtextcodec.h>
+#include <tqptrlist.h>
 #include <stdlib.h>
 
 #include <kapplication.h>
@@ -40,18 +40,18 @@ TextToSpeechSystem::~TextToSpeechSystem() {
    delete codecList;
 }
 
-bool kttsdSay (const QString &text, const QString &language) {
+bool kttsdSay (const TQString &text, const TQString &language) {
    DCOPClient *client = kapp->dcopClient();
-   QByteArray  data;
-   QCString replyType;
-   QByteArray  replyData;
-   QDataStream arg(data, IO_WriteOnly);
+   TQByteArray  data;
+   TQCString replyType;
+   TQByteArray  replyData;
+   TQDataStream arg(data, IO_WriteOnly);
    arg << text << language;
-   return client->call("kttsd", "KSpeech", "sayWarning(QString,QString)",
+   return client->call("kttsd", "KSpeech", "sayWarning(TQString,TQString)",
                        data, replyType, replyData, true);
 }
 
-void TextToSpeechSystem::speak (const QString &text, const QString &language) {
+void TextToSpeechSystem::speak (const TQString &text, const TQString &language) {
    if (text.length() > 0) {
       if (useKttsd) {
          if (kttsdSay(text, language))
@@ -66,13 +66,13 @@ void TextToSpeechSystem::speak (const QString &text, const QString &language) {
    }
 }
 
-void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup) {
+void TextToSpeechSystem::readOptions (KConfig *config, const TQString &langGroup) {
   config->setGroup(langGroup);
   ttsCommand = config->readPathEntry("Command");
   stdIn = config->readBoolEntry("StdIn", true);
   useKttsd = config->readBoolEntry("useKttsd", true);
 
-  QString codecString = config->readEntry("Codec", "Local");
+  TQString codecString = config->readEntry("Codec", "Local");
   if (codecString == "Local")
      codec = Speech::Local;
   else if (codecString == "Latin1")
@@ -87,7 +87,7 @@ void TextToSpeechSystem::readOptions (KConfig *config, const QString &langGroup)
   }
 }
 
-void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup) {
+void TextToSpeechSystem::saveOptions (KConfig *config, const TQString &langGroup) {
   config->setGroup(langGroup);
   config->writePathEntry("Command", ttsCommand);
   config->writeEntry("StdIn", stdIn);
@@ -104,10 +104,10 @@ void TextToSpeechSystem::saveOptions (KConfig *config, const QString &langGroup)
 }
 
 void TextToSpeechSystem::buildCodecList () {
-   codecList = new QPtrList<QTextCodec>;
-   QTextCodec *codec;
+   codecList = new TQPtrList<TQTextCodec>;
+   TQTextCodec *codec;
    int i;
-   for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
+   for (i = 0; (codec = TQTextCodec::codecForIndex(i)); i++)
       codecList->append (codec);
 }
 

@@ -24,5 +24,5 @@
 class QString;
 class KLanguageButton;
 
-QString languageName (QString languageCode);
+TQString languageName (TQString languageCode);
 void loadLanguageList(KLanguageButton *combo);

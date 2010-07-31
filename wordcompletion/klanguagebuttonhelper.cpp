@@ -29,32 +29,32 @@
 #include <ksimpleconfig.h>
 #include "klanguagebutton.h"
 
-QString languageName (QString languageCode) {
-   QString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + QString::fromLatin1("/entry.desktop"));
+TQString languageName (TQString languageCode) {
+   TQString filename = KGlobal::dirs()->findResource("locale",
+			languageCode + TQString::fromLatin1("/entry.desktop"));
       
    KSimpleConfig entry(filename);
-   entry.setGroup(QString::fromLatin1("KCM Locale"));
-   return entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
+   entry.setGroup(TQString::fromLatin1("KCM Locale"));
+   return entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
 }
 
 void loadLanguageList(KLanguageButton *combo)
 // This function was taken from kdebase/kcontrol/kdm/kdm-appear.cpp
 {
-  QStringList langlist = KGlobal::dirs()->findAllResources("locale",
-			QString::fromLatin1("*/entry.desktop"));
+  TQStringList langlist = KGlobal::dirs()->findAllResources("locale",
+			TQString::fromLatin1("*/entry.desktop"));
   langlist.sort();
-  for ( QStringList::ConstIterator it = langlist.begin();
+  for ( TQStringList::ConstIterator it = langlist.begin();
 	it != langlist.end(); ++it )
   {
-    QString fpath = (*it).left((*it).length() - 14);
+    TQString fpath = (*it).left((*it).length() - 14);
     int index = fpath.findRev('/');
-    QString nid = fpath.mid(index + 1);
+    TQString nid = fpath.mid(index + 1);
 
     KSimpleConfig entry(*it);
-    entry.setGroup(QString::fromLatin1("KCM Locale"));
-    QString name = entry.readEntry(QString::fromLatin1("Name"), i18n("without name"));
-    combo->insertLanguage(nid, name, QString::fromLatin1("l10n/"), QString::null);
+    entry.setGroup(TQString::fromLatin1("KCM Locale"));
+    TQString name = entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
+    combo->insertLanguage(nid, name, TQString::fromLatin1("l10n/"), TQString::null);
   }
   
   if (KGlobal::locale())

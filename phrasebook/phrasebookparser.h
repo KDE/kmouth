@@ -18,8 +18,8 @@
 #ifndef PHRASEBOOKPARSER_H
 #define PHRASEBOOKPARSER_H
 
-#include <qxml.h>
-#include <qvaluestack.h>
+#include <tqxml.h>
+#include <tqvaluestack.h>
 #include "phrasebook.h"
 
 /**
@@ -28,31 +28,31 @@
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookParser : public QXmlDefaultHandler {
+class PhraseBookParser : public TQXmlDefaultHandler {
 public: 
    PhraseBookParser();
    ~PhraseBookParser();
 
-   bool warning (const QXmlParseException &exception);
-   bool error (const QXmlParseException &exception);
-   bool fatalError (const QXmlParseException &exception);
-   QString errorString();
+   bool warning (const TQXmlParseException &exception);
+   bool error (const TQXmlParseException &exception);
+   bool fatalError (const TQXmlParseException &exception);
+   TQString errorString();
  
    /** Processes the start of the document. */
    bool startDocument();
                        
    /** Processes the start tag of an element. */
-   bool startElement (const QString &, const QString &, const QString &name,
-                      const QXmlAttributes &attributes);
+   bool startElement (const TQString &, const TQString &, const TQString &name,
+                      const TQXmlAttributes &attributes);
 
    /** Processes a chunk of normal character data. */
-   bool characters (const QString &ch);
+   bool characters (const TQString &ch);
 
    /** Processes whitespace. */
-   bool ignorableWhitespace (const QString &ch);
+   bool ignorableWhitespace (const TQString &ch);
 
    /** Processes the end tag of an element. */
-   bool endElement (const QString &, const QString &, const QString &name);
+   bool endElement (const TQString &, const TQString &, const TQString &name);
    
    /** Processes the end of the document. */
    bool endDocument();

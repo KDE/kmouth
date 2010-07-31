@@ -17,8 +17,8 @@
 
 // $Id$
 
-#include <qregexp.h>
-#include <qdir.h>
+#include <tqregexp.h>
+#include <tqdir.h>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -28,7 +28,7 @@
 #include "wordlist.h"
 
 namespace WordList {
-void addWords (WordMap &map, QString line);
+void addWords (WordMap &map, TQString line);
 
 XMLParser::XMLParser() {
 }
@@ -36,57 +36,57 @@ XMLParser::XMLParser() {
 XMLParser::~XMLParser() {
 }
 
-bool XMLParser::warning (const QXmlParseException &) {
+bool XMLParser::warning (const TQXmlParseException &) {
    return false;
 }
 
-bool XMLParser::error (const QXmlParseException &) {
+bool XMLParser::error (const TQXmlParseException &) {
    return false;
 }
 
-bool XMLParser::fatalError (const QXmlParseException &) {
+bool XMLParser::fatalError (const TQXmlParseException &) {
    return false;
 }
 
-QString XMLParser::errorString() {
+TQString XMLParser::errorString() {
    return "";
 }
 
 bool XMLParser::startDocument() {
-   text = QString::null;
+   text = TQString::null;
    return true;
 }
 
-bool XMLParser::startElement (const QString &, const QString &,
-                                     const QString &,
-                                     const QXmlAttributes &)
+bool XMLParser::startElement (const TQString &, const TQString &,
+                                     const TQString &,
+                                     const TQXmlAttributes &)
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text = TQString::null;
    }
    return true;
 }
 
-bool XMLParser::characters (const QString &ch) {
+bool XMLParser::characters (const TQString &ch) {
    text += ch;
    return true;
 }
 
-bool XMLParser::ignorableWhitespace (const QString &) {
+bool XMLParser::ignorableWhitespace (const TQString &) {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text = TQString::null;
    }
    return true;
 }
 
-bool XMLParser::endElement (const QString &, const QString &,
-                                   const QString &)
+bool XMLParser::endElement (const TQString &, const TQString &,
+                                   const TQString &)
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text = TQString::null;
    }
    return true;
 }
@@ -94,7 +94,7 @@ bool XMLParser::endElement (const QString &, const QString &,
 bool XMLParser::endDocument() {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = QString::null;
+      text = TQString::null;
    }
    return true;
 }
@@ -116,13 +116,13 @@ KProgressDialog *progressDialog() {
    return pdlg;
 }
 
-bool saveWordList (WordMap map, QString filename) {
-   QFile file(filename);
+bool saveWordList (WordMap map, TQString filename) {
+   TQFile file(filename);
    if(!file.open(IO_WriteOnly))
       return false;
 
-   QTextStream stream(&file);
-   stream.setEncoding (QTextStream::UnicodeUTF8);
+   TQTextStream stream(&file);
+   stream.setEncoding (TQTextStream::UnicodeUTF8);
 
    stream << "WPDictFile\n";
    WordMap::ConstIterator it;
@@ -134,13 +134,13 @@ bool saveWordList (WordMap map, QString filename) {
 
 /***************************************************************************/
 
-void addWords (WordMap &map, QString line) {
-   QStringList words = QStringList::split(QRegExp("\\W"), line);
+void addWords (WordMap &map, TQString line) {
+   TQStringList words = TQStringList::split(TQRegExp("\\W"), line);
    
-   QStringList::ConstIterator it;
+   TQStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
-      if (!(*it).contains(QRegExp("\\d|_"))) {
-         QString key = (*it).lower();
+      if (!(*it).contains(TQRegExp("\\d|_"))) {
+         TQString key = (*it).lower();
          if (map.contains(key))
             map[key] += 1;
          else
@@ -158,11 +158,11 @@ void addWords (WordMap &map, WordMap add) {
          map[it.key()] = it.data();
 }
 
-void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding encoding, QTextCodec *codec) {
-   QFile xmlfile(filename);
-   QXmlInputSource source (&xmlfile);
+void addWordsFromFile (WordMap &map, TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec) {
+   TQFile xmlfile(filename);
+   TQXmlInputSource source (&xmlfile);
    XMLParser parser;
-   QXmlSimpleReader reader;
+   TQXmlSimpleReader reader;
    reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);
    reader.setContentHandler (&parser);
    
@@ -170,19 +170,19 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
    if (reader.parse(source)) // try to load the file as an xml-file
       addWords(map, parser.getList());
    else {
-      QFile wpdfile(filename);
+      TQFile wpdfile(filename);
       if (wpdfile.open(IO_ReadOnly)) {
-         QTextStream stream(&wpdfile);
-         stream.setEncoding (QTextStream::UnicodeUTF8);
+         TQTextStream stream(&wpdfile);
+         stream.setEncoding (TQTextStream::UnicodeUTF8);
 
          if (!stream.atEnd()) {
-            QString s = stream.readLine();
+            TQString s = stream.readLine();
             if (s == "WPDictFile") { // Contains the file a weighted word list?
                // We can assume that weighted word lists are always UTF8 coded.
                while (!stream.atEnd()) {
-                  QString s = stream.readLine();
+                  TQString s = stream.readLine();
                   if (!(s.isNull() || s.isEmpty())) {
-                     QStringList list = QStringList::split("\t", s);
+                     TQStringList list = TQStringList::split("\t", s);
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
@@ -195,9 +195,9 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
                }
             }
             else { // Count the words in an ordinary text file
-               QFile file(filename);
+               TQFile file(filename);
                if (file.open(IO_ReadOnly)) {
-                  QTextStream stream(&file);
+                  TQTextStream stream(&file);
                   if (codec != 0)
                      stream.setCodec (codec);
                   else
@@ -215,13 +215,13 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
 #include <kdebug.h>
 namespace WordList {
 
-WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFiles (TQStringList files, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    int progress = 0;
    int steps = files.count();
    int percent = 0;
    
    WordMap map;
-   QStringList::ConstIterator it;
+   TQStringList::ConstIterator it;
    for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
       addWordsFromFile (map, *it, encoding, codec);
 
@@ -234,7 +234,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
    return map;
 }
 
-WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
+WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Merging dictionaries..."));
    pdlg->show();
    qApp->processEvents (20);
@@ -245,11 +245,11 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    float totalWeight = 0;
    long long maxWeight = 0;
    
-   QMap<QString,float> map;
-   QMap<QString,int>::ConstIterator it;
+   TQMap<TQString,float> map;
+   TQMap<TQString,int>::ConstIterator it;
    for (progress = 1, it = files.begin(); it != files.end(); ++progress, ++it) {
       WordMap fileMap;
-      addWordsFromFile (fileMap, it.key(), QTextStream::UnicodeUTF8, 0);
+      addWordsFromFile (fileMap, it.key(), TQTextStream::UnicodeUTF8, 0);
 
       long long weight = 0;
       WordMap::ConstIterator iter;
@@ -280,52 +280,52 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
       factor = 1.0 * maxWeight;
    
    WordMap resultMap;
-   QMap<QString,float>::ConstIterator iter;
+   TQMap<TQString,float>::ConstIterator iter;
    for (iter = map.begin(); iter != map.end(); ++iter)
       resultMap[iter.key()] = (int)(factor * iter.data() + 0.5);
    
    return resultMap;
 }
 
-WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
+WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing the KDE documentation..."));
    pdlg->show();
    qApp->processEvents (20);
    
-   QStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
+   TQStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
       language = language.left(2);
       files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    }
 
-   return parseFiles (files, QTextStream::UnicodeUTF8, 0, pdlg);
+   return parseFiles (files, TQTextStream::UnicodeUTF8, 0, pdlg);
 }
 
-WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFile (TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing file..."));
    pdlg->show();
    qApp->processEvents (20);
    
-   QStringList files = filename;
+   TQStringList files = filename;
 
    return parseFiles (files, encoding, codec, pdlg);
 }
 
-WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseDir (TQString directory, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing directory..."));
    pdlg->show();
    qApp->processEvents (20);
    
-   QStringList directories;
+   TQStringList directories;
    directories += directory;
-   QStringList files;
-   for (QStringList::Iterator it = directories.begin(); it != directories.end(); it = directories.remove(it)) {
-      QDir dir(*it);
-      const QFileInfoList *entries = dir.entryInfoList ("*", QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
+   TQStringList files;
+   for (TQStringList::Iterator it = directories.begin(); it != directories.end(); it = directories.remove(it)) {
+      TQDir dir(*it);
+      const QFileInfoList *entries = dir.entryInfoList ("*", TQDir::Dirs | TQDir::Files | TQDir::NoSymLinks | TQDir::Readable);
       if (entries != 0) {
          QFileInfoListIterator iter (*entries);
          while ((iter.current()) != 0) {
-            QString name = iter.current()->fileName();
+            TQString name = iter.current()->fileName();
             if (name != "." && name != "..") {
                if (iter.current()->isDir())
                   directories += iter.current()->filePath ();
@@ -347,23 +347,23 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
 struct AffEntry {
    bool    cross;
    int     charsToRemove;
-   QString add;
-   QStringList condition;
+   TQString add;
+   TQStringList condition;
 };
-typedef QValueList<AffEntry> AffList;
-typedef QMap<QChar,AffList>  AffMap;
+typedef TQValueList<AffEntry> AffList;
+typedef TQMap<TQChar,AffList>  AffMap;
 
 /** Loads an *.aff file (part of OpenOffice.org dictionaries)
  */
-void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
+void loadAffFile(const TQString &filename, AffMap &prefixes, AffMap &suffixes) {
    bool cross = false;
 
-   QFile afile(filename);
+   TQFile afile(filename);
    if (afile.open(IO_ReadOnly)) {
-      QTextStream stream(&afile);
+      TQTextStream stream(&afile);
       while (!stream.atEnd()) {
-         QString s = stream.readLine();
-         QStringList fields = QStringList::split(QRegExp("\\s"), s);
+         TQString s = stream.readLine();
+         TQStringList fields = TQStringList::split(TQRegExp("\\s"), s);
 
          if (fields.count() == 4) {
             cross = (fields[2] == "Y");
@@ -379,16 +379,16 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
                e.add       = fields[3];
 
                if (fields[4] != ".") {
-                  QString condition = fields[4];
+                  TQString condition = fields[4];
                   for (uint idx = 0; idx < condition.length(); ++idx) {
                      if (condition[idx] == '[') {
-                        QString code;
+                        TQString code;
                         for (++idx; (idx < condition.length()) && condition[idx] != ']'; ++idx)
                            code += condition[idx];
                         e.condition << code;
                      }
                      else
-                        e.condition << QString(condition[idx]);
+                        e.condition << TQString(condition[idx]);
                   }
                }
                
@@ -413,20 +413,20 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
 }
 
 /** Checks if the given word matches the given condition. Each entry of the
- * QStringList "condition" describes one character of the word. (If the word
+ * TQStringList "condition" describes one character of the word. (If the word
  * has more characters than condition entries only the last characters are
  * compared).
  * Each entry contains either all valid characters (if it does _not_ start
  * with "^") or all invalid characters (if it starts with "^").
  */
-inline bool checkCondition (const QString &word, const QStringList &condition) {
+inline bool checkCondition (const TQString &word, const TQStringList &condition) {
    if (condition.count() == 0)
       return true;
 
    if (word.length() < condition.count())
       return false;
    
-   QStringList::ConstIterator it;
+   TQStringList::ConstIterator it;
    int idx;
    for (it = condition.begin(), idx = word.length()-condition.count();
         it != condition.end();
@@ -443,7 +443,7 @@ inline bool checkCondition (const QString &word, const QStringList &condition) {
  * @param modifiers discribes which suffixes are valid
  * @param cross true if the word has a prefix
  */
-inline void checkWord(const QString &word, const QString &modifiers, bool cross, const WordMap &map, WordMap &checkedMap, const AffMap &suffixes) {
+inline void checkWord(const TQString &word, const TQString &modifiers, bool cross, const WordMap &map, WordMap &checkedMap, const AffMap &suffixes) {
    for (uint i = 0; i < modifiers.length(); i++) {
       if (suffixes.contains(modifiers[i])) {
          AffList sList = suffixes[modifiers[i]];
@@ -453,7 +453,7 @@ inline void checkWord(const QString &word, const QString &modifiers, bool cross,
             if (((*sIt).cross || !cross)
              && (checkCondition(word, (*sIt).condition)))
             {
-               QString sWord = word.left(word.length()-(*sIt).charsToRemove) + (*sIt).add;
+               TQString sWord = word.left(word.length()-(*sIt).charsToRemove) + (*sIt).add;
                if (map.contains(sWord))
                   checkedMap[sWord] = map[sWord];
             }
@@ -466,7 +466,7 @@ inline void checkWord(const QString &word, const QString &modifiers, bool cross,
  * copies the resulting words from map to checkedMap.
  * @param modifiers discribes which pre- and suffixes are valid
  */
-void checkWord (const QString &word, const QString &modifiers, const WordMap &map, WordMap &checkedMap, const AffMap &prefixes, const AffMap &suffixes) {
+void checkWord (const TQString &word, const TQString &modifiers, const WordMap &map, WordMap &checkedMap, const AffMap &prefixes, const AffMap &suffixes) {
    if (map.contains(word))
       checkedMap[word] = map[word];
 
@@ -478,7 +478,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
 
          AffList::ConstIterator pIt;
          for (pIt = pList.begin(); pIt != pList.end(); ++pIt) {
-            QString pWord = (*pIt).add + word;
+            TQString pWord = (*pIt).add + word;
             if (map.contains(pWord))
                checkedMap[pWord] = map[pWord];
 
@@ -488,7 +488,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
    }
 }
 
-WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
+WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
 
    if (dictionary.endsWith(".dic")) {
       AffMap prefixes;
@@ -509,20 +509,20 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       int steps = 0;
       int percent = 0;
 
-      QFile dfile(dictionary);
+      TQFile dfile(dictionary);
       if (dfile.open(IO_ReadOnly)) {
-         QTextStream stream(&dfile);
+         TQTextStream stream(&dfile);
          
          if (!stream.atEnd()) {
-            QString s = stream.readLine(); // Number of words
+            TQString s = stream.readLine(); // Number of words
             steps = s.toInt();
          }
 
          while (!stream.atEnd()) {
-            QString s = stream.readLine();
+            TQString s = stream.readLine();
             if (s.contains("/")) {
-               QString word = s.left(s.find("/")).lower();
-               QString modifiers = s.right(s.length() - s.find("/"));
+               TQString word = s.left(s.find("/")).lower();
+               TQString modifiers = s.right(s.length() - s.find("/"));
             
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }

@@ -20,7 +20,7 @@
 #ifndef OPTIONSDIALOG_H
 #define OPTIONSDIALOG_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
 class QTabWidget;
@@ -34,7 +34,7 @@ class WordCompletionWidget;
 class PreferencesWidget : public PreferencesUI {
    Q_OBJECT
 public:
-   PreferencesWidget(QWidget *parent, const char *name);
+   PreferencesWidget(TQWidget *parent, const char *name);
    ~PreferencesWidget();
 
    void readOptions (KConfig *config);
@@ -57,7 +57,7 @@ private:
 class OptionsDialog : public KDialogBase  {
    Q_OBJECT
 public: 
-   OptionsDialog(QWidget *parent);
+   OptionsDialog(TQWidget *parent);
    ~OptionsDialog();
 
    void slotCancel();
@@ -75,7 +75,7 @@ signals:
    void configurationChanged ();
 
 private:
-   QTabWidget *tabCtl;
+   TQTabWidget *tabCtl;
    TextToSpeechConfigurationWidget *commandWidget;
    PreferencesWidget *behaviourWidget;
    KCModule *kttsd;

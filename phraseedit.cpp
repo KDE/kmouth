@@ -17,14 +17,14 @@
 
 #include "phraseedit.h"
 
-PhraseEdit::PhraseEdit(const QString &string, QWidget *parent)
+PhraseEdit::PhraseEdit(const TQString &string, TQWidget *parent)
  : KLineEdit (string, parent) {
 }
 
 PhraseEdit::~PhraseEdit() {
 }
 
-void PhraseEdit::keyPressEvent (QKeyEvent *e) {
+void PhraseEdit::keyPressEvent (TQKeyEvent *e) {
    if ((e->state() & Qt::KeyButtonMask) == Qt::ControlButton) {
       if (e->key() == Qt::Key_C) {
          if (!this->hasSelectedText()) {

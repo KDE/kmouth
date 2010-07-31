@@ -20,29 +20,29 @@
 #ifndef WORDLIST_H
 #define WORDLIST_H
 
-#include <qxml.h>
-#include <qvaluestack.h>
-#include <qstring.h>
-#include <qobject.h>
-#include <qmap.h>
+#include <tqxml.h>
+#include <tqvaluestack.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqmap.h>
 
 class QTextCodec;
 class KProgressDialog;
 
 namespace WordList {
 
-typedef QMap<QString,int> WordMap;
+typedef TQMap<TQString,int> WordMap;
 
 KProgressDialog *progressDialog();
 
-WordMap parseKDEDoc (QString language, KProgressDialog *pdlg);
-WordMap parseFile   (QString filename,  QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
-WordMap parseDir    (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
-WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg);
+WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg);
+WordMap parseFile   (TQString filename,  TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg);
+WordMap parseDir    (TQString directory, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg);
+WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg);
 
-WordMap spellCheck  (WordMap wordlist,  QString dictionary,   KProgressDialog *pdlg);
+WordMap spellCheck  (WordMap wordlist,  TQString dictionary,   KProgressDialog *pdlg);
 
-bool saveWordList (WordMap map, QString filename);
+bool saveWordList (WordMap map, TQString filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word
@@ -50,31 +50,31 @@ bool saveWordList (WordMap map, QString filename);
  * @author Gunnar Schmi Dt
  */
 
-class XMLParser : public QXmlDefaultHandler {
+class XMLParser : public TQXmlDefaultHandler {
 public: 
    XMLParser();
    ~XMLParser();
 
-   bool warning (const QXmlParseException &exception);
-   bool error (const QXmlParseException &exception);
-   bool fatalError (const QXmlParseException &exception);
-   QString errorString();
+   bool warning (const TQXmlParseException &exception);
+   bool error (const TQXmlParseException &exception);
+   bool fatalError (const TQXmlParseException &exception);
+   TQString errorString();
  
    /** Processes the start of the document. */
    bool startDocument();
                        
    /** Processes the start tag of an element. */
-   bool startElement (const QString &, const QString &, const QString &name,
-                      const QXmlAttributes &attributes);
+   bool startElement (const TQString &, const TQString &, const TQString &name,
+                      const TQXmlAttributes &attributes);
 
    /** Processes a chunk of normal character data. */
-   bool characters (const QString &ch);
+   bool characters (const TQString &ch);
 
    /** Processes whitespace. */
-   bool ignorableWhitespace (const QString &ch);
+   bool ignorableWhitespace (const TQString &ch);
 
    /** Processes the end tag of an element. */
-   bool endElement (const QString &, const QString &, const QString &name);
+   bool endElement (const TQString &, const TQString &, const TQString &name);
    
    /** Processes the end of the document. */
    bool endDocument();
@@ -84,7 +84,7 @@ public:
 
 private:
    WordMap list;
-   QString text;
+   TQString text;
 };
 
 }

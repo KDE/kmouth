@@ -23,19 +23,19 @@ PhraseBookParser::PhraseBookParser() {
 PhraseBookParser::~PhraseBookParser() {
 }
 
-bool PhraseBookParser::warning (const QXmlParseException &) {
+bool PhraseBookParser::warning (const TQXmlParseException &) {
    return false;
 }
 
-bool PhraseBookParser::error (const QXmlParseException &) {
+bool PhraseBookParser::error (const TQXmlParseException &) {
    return false;
 }
 
-bool PhraseBookParser::fatalError (const QXmlParseException &) {
+bool PhraseBookParser::fatalError (const TQXmlParseException &) {
    return false;
 }
 
-QString PhraseBookParser::errorString() {
+TQString PhraseBookParser::errorString() {
    return "";
 }
 
@@ -48,9 +48,9 @@ bool PhraseBookParser::startDocument() {
    return true;
 }
 
-bool PhraseBookParser::startElement (const QString &, const QString &,
-                                     const QString &name,
-                                     const QXmlAttributes &attributes)
+bool PhraseBookParser::startElement (const TQString &, const TQString &,
+                                     const TQString &name,
+                                     const TQXmlAttributes &attributes)
 {
    if (name == "phrase") {
       if (isInPhrase)
@@ -77,18 +77,18 @@ bool PhraseBookParser::startElement (const QString &, const QString &,
    return true;
 }
 
-bool PhraseBookParser::characters (const QString &ch) {
+bool PhraseBookParser::characters (const TQString &ch) {
    phrase.phrase += ch;
    return true;
 }
 
-bool PhraseBookParser::ignorableWhitespace (const QString &ch) {
+bool PhraseBookParser::ignorableWhitespace (const TQString &ch) {
    phrase.phrase += ch;
    return true;
 }
 
-bool PhraseBookParser::endElement (const QString &, const QString &,
-                                   const QString &name)
+bool PhraseBookParser::endElement (const TQString &, const TQString &,
+                                   const TQString &name)
 {
    if (name == "phrase") {
       list += PhraseBookEntry (phrase, level, true);

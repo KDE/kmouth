@@ -18,8 +18,8 @@
 #ifndef SPEECH_H
 #define SPEECH_H
 
-#include <qobject.h>
-#include <qstring.h>
+#include <tqobject.h>
+#include <tqstring.h>
 #include <kprocess.h>
 #include <ktempfile.h>
 
@@ -27,7 +27,7 @@
   *@author Gunnar Schmi Dt
   */
 
-class Speech : public QObject {
+class Speech : public TQObject {
    Q_OBJECT
 public:
    enum CharacterCodec {
@@ -46,7 +46,7 @@ public:
     * @param stdin true if the program shall receive its data via standard input
     * @param text The text that shall be spoken
     */
-   void speak(QString command, bool use_stdin, const QString &text, const QString &language, int encoding, QTextCodec *codec);
+   void speak(TQString command, bool use_stdin, const TQString &text, const TQString &language, int encoding, TQTextCodec *codec);
 
    /**
     * Prepares a command for being executed. During the preparation the
@@ -54,8 +54,8 @@ public:
     * @param command the command that shall be executed for speaking
     * @param text the quoted text that can be inserted into the command
     */
-   QString prepareCommand (QString command, const QString &text,
-                     const QString &filename, const QString &language);
+   TQString prepareCommand (TQString command, const TQString &text,
+                     const TQString &filename, const TQString &language);
 
 public slots:
    void wroteStdin (KProcess *p);
@@ -65,7 +65,7 @@ public slots:
 
 private:
    KShellProcess process;
-   QByteArray encText;
+   TQByteArray encText;
    KTempFile tempFile;
 };
 

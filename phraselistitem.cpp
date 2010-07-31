@@ -16,21 +16,21 @@
  ***************************************************************************/
 
 #include "phraselistitem.h"
-#include <qstyle.h>
-#include <qpainter.h>
+#include <tqstyle.h>
+#include <tqpainter.h>
 
-PhraseListItem::PhraseListItem (const QString & text)
-   : QListBoxText::QListBoxText(text) {
+PhraseListItem::PhraseListItem (const TQString & text)
+   : TQListBoxText::TQListBoxText(text) {
 }
 
 PhraseListItem::~PhraseListItem() {
 }
 
 bool PhraseListItem::drawCursor() const {
-   if ((QListBoxItem *)this != listBox()->item (listBox()->currentItem()))
+   if ((TQListBoxItem *)this != listBox()->item (listBox()->currentItem()))
       return false;
    
-   for (QListBoxItem *item = listBox()->firstItem(); item != 0; item = item->next() ) {
+   for (TQListBoxItem *item = listBox()->firstItem(); item != 0; item = item->next() ) {
       if (item->isSelected())
          return true;
    }
@@ -41,12 +41,12 @@ int PhraseListItem::rtti() const {
    return RTTI;
 }
 
-void PhraseListItem::paint (QPainter *p) {
-   QListBoxText::paint (p);
+void PhraseListItem::paint (TQPainter *p) {
+   TQListBoxText::paint (p);
 
    if (drawCursor()) {
-      QRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
-      listBox()->style().drawPrimitive (QStyle::PE_FocusRect, p, r,
+      TQRect r (0, 0, listBox()->maxItemWidth(), height (listBox()));
+      listBox()->style().drawPrimitive (TQStyle::PE_FocusRect, p, r,
                                         listBox()->colorGroup());
    }
 }

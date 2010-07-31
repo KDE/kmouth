@@ -15,14 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qlayout.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qradiobutton.h>
-#include <qlineedit.h>
-#include <qcombobox.h>
-#include <qtextcodec.h>
-#include <qwhatsthis.h>
+#include <tqlayout.h>
+#include <tqlabel.h>
+#include <tqcheckbox.h>
+#include <tqradiobutton.h>
+#include <tqlineedit.h>
+#include <tqcombobox.h>
+#include <tqtextcodec.h>
+#include <tqwhatsthis.h>
 
 #include <klistview.h>
 #include <klineedit.h>
@@ -42,9 +42,9 @@
 #include "kdedocsourceui.h"
 #include "wordlist.h"
 
-DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
-               QStringList dictionaryNames, QStringList dictionaryFiles,
-               QStringList dictionaryLanguages)
+DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *parent, const char *name,
+               TQStringList dictionaryNames, TQStringList dictionaryFiles,
+               TQStringList dictionaryLanguages)
    : KWizard (parent, name)
 {
    buildCodecList ();
@@ -61,9 +61,9 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    dirWidget= new CreationSourceDetailsUI (this, "directory source page");
    addPage (dirWidget, i18n("Source of New Dictionary (2)"));
    dirWidget->urlLabel->setText (i18n("&Directory:"));
-    QWhatsThis::add (dirWidget->urlLabel, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
+    TQWhatsThis::add (dirWidget->urlLabel, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    dirWidget->url->setMode(KFile::Directory);
-    QWhatsThis::add (dirWidget->url, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
+    TQWhatsThis::add (dirWidget->url, i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    buildCodecCombo (dirWidget->encodingCombo);
 
    kdeDocWidget= new KDEDocSourceUI (this, "KDE documentation source page");
@@ -72,11 +72,11 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
    
-   connect (creationSource->fileButton,    SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->directoryButton,SIGNAL(toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->kdeDocButton,  SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->mergeButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->emptyButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->fileButton,    TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->directoryButton,TQT_SIGNAL(toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->kdeDocButton,  TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->mergeButton,   TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
+   connect (creationSource->emptyButton,   TQT_SIGNAL (toggled(bool)), this, TQT_SLOT(calculateAppropriate(bool)) );
 
    calculateAppropriate (true);
 }
@@ -90,16 +90,16 @@ DictionaryCreationWizard::~DictionaryCreationWizard () {
 }
 
 void DictionaryCreationWizard::buildCodecList () {
-   codecList = new QPtrList<QTextCodec>;
-   QTextCodec *codec;
+   codecList = new TQPtrList<TQTextCodec>;
+   TQTextCodec *codec;
    int i;
-   for (i = 0; (codec = QTextCodec::codecForIndex(i)); i++)
+   for (i = 0; (codec = TQTextCodec::codecForIndex(i)); i++)
       codecList->append (codec);
 }
 
-void DictionaryCreationWizard::buildCodecCombo (QComboBox *combo) {
-   QString local = i18n("Local")+" (";
-   local += QTextCodec::codecForLocale()->name();
+void DictionaryCreationWizard::buildCodecCombo (TQComboBox *combo) {
+   TQString local = i18n("Local")+" (";
+   local += TQTextCodec::codecForLocale()->name();
    local += ")";
    combo->insertItem (local, 0);
    combo->insertItem (i18n("Latin1"), 1);
@@ -154,58 +154,58 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
    }
 }
 
-QString DictionaryCreationWizard::createDictionary() {
+TQString DictionaryCreationWizard::createDictionary() {
    WordList::WordMap map;
-   QString dicFile = "";
+   TQString dicFile = "";
    KProgressDialog *pdlg = WordList::progressDialog();
 
    if (creationSource->mergeButton->isChecked()) {
       map = WordList::mergeFiles (mergeWidget->mergeParameters(), pdlg);
-      dicFile = QString::null;
+      dicFile = TQString::null;
    }
    else if (creationSource->emptyButton->isChecked()) {
-      dicFile = QString::null;
+      dicFile = TQString::null;
    }
    else if (creationSource->fileButton->isChecked()) {
-      QString filename = fileWidget->url->url();
+      TQString filename = fileWidget->url->url();
       int encoding = fileWidget->encodingCombo->currentItem();
       if (fileWidget->spellCheckBox->isChecked())
          dicFile = fileWidget->ooDictURL->url();
       switch (encoding) {
       case 0:
-         map = WordList::parseFile (filename, QTextStream::Locale, 0, pdlg);
+         map = WordList::parseFile (filename, TQTextStream::Locale, 0, pdlg);
          break;
       case 1:
-         map = WordList::parseFile (filename, QTextStream::Latin1, 0, pdlg);
+         map = WordList::parseFile (filename, TQTextStream::Latin1, 0, pdlg);
          break;
       case 2:
-         map = WordList::parseFile (filename, QTextStream::Unicode, 0, pdlg);
+         map = WordList::parseFile (filename, TQTextStream::Unicode, 0, pdlg);
          break;
       default:
-         map = WordList::parseFile (filename, (QTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
+         map = WordList::parseFile (filename, (TQTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
       }
    }
    else if (creationSource->directoryButton->isChecked()) {
-      QString directory = dirWidget->url->url();
+      TQString directory = dirWidget->url->url();
       int encoding = dirWidget->encodingCombo->currentItem();
       if (dirWidget->spellCheckBox->isChecked())
          dicFile = dirWidget->ooDictURL->url();
       switch (encoding) {
       case 0:
-         map = WordList::parseDir (directory, QTextStream::Locale, 0, pdlg);
+         map = WordList::parseDir (directory, TQTextStream::Locale, 0, pdlg);
          break;
       case 1:
-         map = WordList::parseDir (directory, QTextStream::Latin1, 0, pdlg);
+         map = WordList::parseDir (directory, TQTextStream::Latin1, 0, pdlg);
          break;
       case 2:
-         map = WordList::parseDir (directory, QTextStream::Unicode, 0, pdlg);
+         map = WordList::parseDir (directory, TQTextStream::Unicode, 0, pdlg);
          break;
       default:
-         map = WordList::parseDir (directory, (QTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
+         map = WordList::parseDir (directory, (TQTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
       }
    }
    else { // creationSource->kdeDocButton must be checked
-      QString language = kdeDocWidget->languageButton->currentTag();
+      TQString language = kdeDocWidget->languageButton->currentTag();
       if (kdeDocWidget->spellCheckBox->isChecked())
          dicFile = kdeDocWidget->ooDictURL->url();
       map = WordList::parseKDEDoc (language, pdlg);
@@ -217,11 +217,11 @@ QString DictionaryCreationWizard::createDictionary() {
    delete pdlg;
    
    int dictnumber = 0;
-   QString filename;
-   QString dictionaryFile;
+   TQString filename;
+   TQString dictionaryFile;
    do {
       dictnumber++;
-      filename = QString("wordcompletion%1.dict").arg(dictnumber);
+      filename = TQString("wordcompletion%1.dict").arg(dictnumber);
       dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
@@ -233,7 +233,7 @@ QString DictionaryCreationWizard::createDictionary() {
       return "";
 }
 
-QString DictionaryCreationWizard::name() {
+TQString DictionaryCreationWizard::name() {
    if (creationSource->mergeButton->isChecked()) {
       return i18n("Merge result");
    }
@@ -251,7 +251,7 @@ QString DictionaryCreationWizard::name() {
    }
 }
 
-QString DictionaryCreationWizard::language() {
+TQString DictionaryCreationWizard::language() {
    if (creationSource->mergeButton->isChecked()) {
       return mergeWidget->language();
    }
@@ -275,25 +275,25 @@ QString DictionaryCreationWizard::language() {
 /***************************************************************************/
 
 MergeWidget::MergeWidget(KWizard *parent, const char *name,
-               QStringList dictionaryNames, QStringList dictionaryFiles,
-               QStringList dictionaryLanguages)
-: QScrollView (parent, name) {
+               TQStringList dictionaryNames, TQStringList dictionaryFiles,
+               TQStringList dictionaryLanguages)
+: TQScrollView (parent, name) {
    dictionaries.setAutoDelete (false);
    weights.setAutoDelete (false);
 
-   QWidget *contents = new QWidget(viewport());
+   TQWidget *contents = new TQWidget(viewport());
    addChild(contents);
-   QGridLayout *layout = new QGridLayout (contents);
-   setResizePolicy (QScrollView::AutoOneFit);
+   TQGridLayout *layout = new TQGridLayout (contents);
+   setResizePolicy (TQScrollView::AutoOneFit);
    layout->setColStretch (0, 0);
    layout->setColStretch (1, 1);
 
    int row = 0;
-   QStringList::Iterator nIt = dictionaryNames.begin();
-   QStringList::Iterator fIt = dictionaryFiles.begin();
-   QStringList::Iterator lIt = dictionaryLanguages.begin();
+   TQStringList::Iterator nIt = dictionaryNames.begin();
+   TQStringList::Iterator fIt = dictionaryFiles.begin();
+   TQStringList::Iterator lIt = dictionaryLanguages.begin();
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
-      QCheckBox *checkbox = new QCheckBox(*nIt, contents);
+      TQCheckBox *checkbox = new TQCheckBox(*nIt, contents);
       KIntNumInput *numInput = new KIntNumInput(contents);
       layout->addWidget (checkbox, row, 0);
       layout->addWidget (numInput, row, 1);
@@ -301,7 +301,7 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);
       numInput->setValue (100);
-      connect (checkbox, SIGNAL (toggled(bool)), numInput, SLOT(setEnabled(bool)));
+      connect (checkbox, TQT_SIGNAL (toggled(bool)), numInput, TQT_SLOT(setEnabled(bool)));
       
       dictionaries.insert(*fIt, checkbox);
       weights.insert(*fIt, numInput);
@@ -313,13 +313,13 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
 MergeWidget::~MergeWidget() {
 }
 
-QMap <QString, int> MergeWidget::mergeParameters () {
-   QMap <QString, int> files;
-   QDictIterator<QCheckBox> it(dictionaries);
+TQMap <TQString, int> MergeWidget::mergeParameters () {
+   TQMap <TQString, int> files;
+   TQDictIterator<TQCheckBox> it(dictionaries);
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
-         QString name = it.currentKey();
-         QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", name);
+         TQString name = it.currentKey();
+         TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", name);
          files[dictionaryFile] = weights[name]->value();
       }
    }
@@ -327,15 +327,15 @@ QMap <QString, int> MergeWidget::mergeParameters () {
    return files;
 }
 
-QString MergeWidget::language () {
-   QDictIterator<QCheckBox> it(dictionaries);
+TQString MergeWidget::language () {
+   TQDictIterator<TQCheckBox> it(dictionaries);
    for (; it.current(); ++it) {
       if (it.current()->isChecked()) {
          return languages [it.currentKey()];
       }
    }
 
-   return QString::null;
+   return TQString::null;
 }
 
 /***************************************************************************/
@@ -351,7 +351,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    WordList::WordMap map;
    KProgressDialog *pdlg = WordList::progressDialog();
 
-   QString language = languageButton->currentTag();
+   TQString language = languageButton->currentTag();
    map = WordList::parseKDEDoc (language, pdlg);
 
    if (spellCheckBox->isChecked())
@@ -360,8 +360,8 @@ void CompletionWizardWidget::ok (KConfig *config) {
    pdlg->close();
    delete pdlg;
    
-   QString filename;
-   QString dictionaryFile;
+   TQString filename;
+   TQString dictionaryFile;
    
    dictionaryFile = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
    if (WordList::saveWordList (map, dictionaryFile)) {

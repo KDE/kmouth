@@ -12,23 +12,23 @@ void WordCompletionUI::init() {
     languageButton = new KLanguageButton (selectedDictionaryDetails, "languageButton");
     selectedDictionaryDetailsLayout->addWidget (languageButton, 1, 1);
     languageLabel->setBuddy (languageButton);
-    QWhatsThis::add (languageButton, i18n("With this combo box you select the language associated with the selected dictionary."));
+    TQWhatsThis::add (languageButton, i18n("With this combo box you select the language associated with the selected dictionary."));
     
     loadLanguageList(languageButton);
-    languageButton->insertLanguage("??", i18n("Other"), QString::fromLatin1("l10n/"), QString::null);
+    languageButton->insertLanguage("??", i18n("Other"), TQString::fromLatin1("l10n/"), TQString::null);
     
-   connect (languageButton, SIGNAL(activated(int)), this, SLOT(languageButton_activated(int)));
+   connect (languageButton, TQT_SIGNAL(activated(int)), this, TQT_SLOT(languageButton_activated(int)));
 }
 
 void WordCompletionUI::languageButton_activated (int) {
    if (languageButton->currentTag() == "??") {
-     QString customLanguage = KInputDialog::getText(i18n("Create Custom Language"), i18n("Please enter the code for the custom language:"));
+     TQString customLanguage = KInputDialog::getText(i18n("Create Custom Language"), i18n("Please enter the code for the custom language:"));
      
      if (languageButton->containsTag(customLanguage)) {
         languageButton->setCurrentItem(customLanguage);
      }
      else {
-        languageButton->insertLanguage(customLanguage, i18n("without name"), QString::fromLatin1("l10n/"), QString::null);
+        languageButton->insertLanguage(customLanguage, i18n("without name"), TQString::fromLatin1("l10n/"), TQString::null);
         languageButton->setCurrentItem(customLanguage);
      }
    }

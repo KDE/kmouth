@@ -19,7 +19,7 @@
 #ifndef CONFIGWIZARD_H
 #define CONFIGWIZARD_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 #include <kwizard.h>
 
@@ -36,7 +36,7 @@ class CompletionWizardWidget;
 class ConfigWizard : public KWizard  {
    Q_OBJECT
 public:
-   ConfigWizard (QWidget *parent, const char *name, KConfig *config);
+   ConfigWizard (TQWidget *parent, const char *name, KConfig *config);
    ~ConfigWizard();
 
    bool configurationNeeded ();

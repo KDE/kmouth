@@ -30,13 +30,13 @@
 class TextToSpeechConfigurationWidget : public texttospeechconfigurationui {
    friend class TextToSpeechConfigurationDialog;
 public:
-   TextToSpeechConfigurationWidget(QWidget *parent, const char *name);
+   TextToSpeechConfigurationWidget(TQWidget *parent, const char *name);
    ~TextToSpeechConfigurationWidget();
 
    TextToSpeechSystem *getTTSSystem() const;
 
-   void readOptions (KConfig *config, const QString &langGroup);
-   void saveOptions (KConfig *config, const QString &langGroup);
+   void readOptions (KConfig *config, const TQString &langGroup);
+   void saveOptions (KConfig *config, const TQString &langGroup);
 
    void ok();
    void cancel();

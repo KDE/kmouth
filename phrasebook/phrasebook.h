@@ -18,9 +18,9 @@
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
-#include <qobject.h>
-#include <qdragobject.h>
-#include <qxml.h>
+#include <tqobject.h>
+#include <tqdragobject.h>
+#include <tqxml.h>
 
 #include <kaction.h>
 #include <kprinter.h>
@@ -35,18 +35,18 @@ class Phrase {
    friend class PhraseBookParser;
 public:
    Phrase();
-   Phrase (const QString &phrase);
-   Phrase (const QString &phrase, const QString &shortcut);
+   Phrase (const TQString &phrase);
+   Phrase (const TQString &phrase, const TQString &shortcut);
 
-   QString getPhrase() const;
-   QString getShortcut() const;
+   TQString getPhrase() const;
+   TQString getShortcut() const;
 
-   void setPhrase (const QString &phrase);
-   void setShortcut (const QString &shortcut);
+   void setPhrase (const TQString &phrase);
+   void setShortcut (const TQString &shortcut);
 
 private:
-   QString phrase;
-   QString shortcut;
+   TQString phrase;
+   TQString shortcut;
 };
 
 /**
@@ -72,7 +72,7 @@ private:
    int level;
 };
 
-typedef QValueList<PhraseBookEntry> PhraseBookEntryList;
+typedef TQValueList<PhraseBookEntry> PhraseBookEntryList;
 
 /**
  * The class PhraseBook implements a phrase book. It mainly stores a
@@ -96,10 +96,10 @@ public:
    bool open (const KURL &url);
 
    /** decodes a phrase book. Returns true if successful. */
-   bool decode (const QString &xml);
+   bool decode (const TQString &xml);
 
    /** decodes a phrase book. Returns true if successful. */
-   bool decode (QXmlInputSource &source);
+   bool decode (TQXmlInputSource &source);
 
    /** Writes the phrases to a file. Returns true if successful. */
    bool save (const KURL &url);
@@ -107,8 +107,8 @@ public:
    /** Writes the phrases to a file. Returns true if successful. */
    bool save (const KURL &url, bool asPhrasebook);
 
-   /** Writes the phrases to a QTextStream. */
-   void save (QTextStream &stream, bool asPhrasebook);
+   /** Writes the phrases to a TQTextStream. */
+   void save (TQTextStream &stream, bool asPhrasebook);
 
    /** Prints the phrases. */
    void print (KPrinter *pPrinter);
@@ -118,63 +118,63 @@ public:
     *          0, if the user canceled the operation,
     *         -1, if there was an error when saving the file.
     */
-   int save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst = true);
+   int save (TQWidget *parent, const TQString &title, KURL &url, bool phrasebookFirst = true);
 
    /** encodes the phrase book. Returns the encoded xml code. */
-   QString encode ();
+   TQString encode ();
 
-   /** Stores all entries in a QStringList. All hierarchy information and all
+   /** Stores all entries in a TQStringList. All hierarchy information and all
     * shortcuts are ignored during this operation.
     */
-   QStringList toStringList();
+   TQStringList toStringList();
 
    /** Adds the entries of the book to both the given popup menu and the given
     * toolbar. The corresponding actions will be inserted into phrases.
     */
-   void addToGUI (QPopupMenu *popup, KToolBar *toolbar,
+   void addToGUI (TQPopupMenu *popup, KToolBar *toolbar,
                   KActionCollection *phrases,
-                  QObject *receiver, const char *slot) const;
+                  TQObject *receiver, const char *slot) const;
 
    /** Inserts book into a new sub phrase book.
     * @param name the name of the new sub phrase book.
     * @param book the phrase book to insert.
     */
-   void insert (const QString &name, const PhraseBook &book);
+   void insert (const TQString &name, const PhraseBook &book);
 };
 
 /**
  * The class PhraseBookDrag implements drag and drop support for phrase books.
  * @author Gunnar Schmi Dt
  */
-class PhraseBookDrag: public QDragObject {
+class PhraseBookDrag: public TQDragObject {
    Q_OBJECT
 public:
-   PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
-   PhraseBookDrag (QWidget *dragSource = 0, const char *name = 0);
+   PhraseBookDrag (PhraseBook *book, TQWidget *dragSource = 0, const char *name = 0);
+   PhraseBookDrag (TQWidget *dragSource = 0, const char *name = 0);
    ~PhraseBookDrag ();
 
    virtual void setBook (PhraseBook *book);
 
    const char *format (int i) const;
-   virtual QByteArray encodedData (const char *) const;
+   virtual TQByteArray encodedData (const char *) const;
 
-   static bool canDecode (const QMimeSource *e);
-   static bool decode (const QMimeSource *e, PhraseBook *book);
+   static bool canDecode (const TQMimeSource *e);
+   static bool decode (const TQMimeSource *e, PhraseBook *book);
 
 private:
    bool isEmpty;
-   QTextDrag xmlphrasebook;
-   QTextDrag xml;
-   QTextDrag plain;
+   TQTextDrag xmlphrasebook;
+   TQTextDrag xml;
+   TQTextDrag plain;
 };
 
 class PhraseAction : public KAction {
    Q_OBJECT
 public:
-   PhraseAction (const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
+   PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, KActionCollection* parent)
    : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {
       this->phrase = phrase;
-      connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
+      connect (this, TQT_SIGNAL(slotActivated (const TQString &)), receiver, slot);
    };
    ~PhraseAction () {
    }
@@ -186,10 +186,10 @@ public slots:
    }
 
 signals:
-   void slotActivated (const QString &phrase);
+   void slotActivated (const TQString &phrase);
 
 private:
-   QString phrase;
+   TQString phrase;
 };
 
 #endif

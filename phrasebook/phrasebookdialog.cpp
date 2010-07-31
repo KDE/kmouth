@@ -16,18 +16,18 @@
  ***************************************************************************/
 
 // include files for QT
-#include <qapplication.h>
-#include <qlayout.h>
-#include <qclipboard.h>
-#include <qradiobutton.h>
-#include <qevent.h>
-#include <qpainter.h>
-#include <qstyle.h>
-#include <qgroupbox.h>
-#include <qpopupmenu.h>
-#include <qvaluestack.h>
-#include <qptrstack.h>
-#include <qwhatsthis.h>
+#include <tqapplication.h>
+#include <tqlayout.h>
+#include <tqclipboard.h>
+#include <tqradiobutton.h>
+#include <tqevent.h>
+#include <tqpainter.h>
+#include <tqstyle.h>
+#include <tqgroupbox.h>
+#include <tqpopupmenu.h>
+#include <tqvaluestack.h>
+#include <tqptrstack.h>
+#include <tqwhatsthis.h>
 
 // include files for KDE
 #include <kpopupmenu.h>
@@ -53,9 +53,9 @@ namespace PhraseBookPrivate {
    };
 }
 
-CheckBookItem::CheckBookItem (QListViewItem *parent, QListViewItem *last,
-             const QString &text, const QString &name, const QString &filename)
-   : QCheckListItem (parent, text, QCheckListItem::CheckBox)
+CheckBookItem::CheckBookItem (TQListViewItem *parent, TQListViewItem *last,
+             const TQString &text, const TQString &name, const TQString &filename)
+   : TQCheckListItem (parent, text, TQCheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -70,9 +70,9 @@ CheckBookItem::CheckBookItem (QListViewItem *parent, QListViewItem *last,
    ((CheckBookItem*)parent)->childChange (numberOfBooks, selectedBooks);
 }
 
-CheckBookItem::CheckBookItem (QListView *parent, QListViewItem *last,
-             const QString &text, const QString &name, const QString &filename)
-   : QCheckListItem (parent, text, QCheckListItem::CheckBox)
+CheckBookItem::CheckBookItem (TQListView *parent, TQListViewItem *last,
+             const TQString &text, const TQString &name, const TQString &filename)
+   : TQCheckListItem (parent, text, TQCheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -90,7 +90,7 @@ CheckBookItem::~CheckBookItem () {
 }
 
 void CheckBookItem::activate() {
-   QListView *lv = listView();
+   TQListView *lv = listView();
 
    if ((lv != 0) && (!lv->isEnabled()) || (!isEnabled()))
       return;
@@ -100,9 +100,9 @@ void CheckBookItem::activate() {
 }
 
 void CheckBookItem::stateChange (bool on) {
-   QListViewItem *item = firstChild();
+   TQListViewItem *item = firstChild();
    if (item == 0) {
-      QListViewItem *parent = this->parent();
+      TQListViewItem *parent = this->parent();
       if (parent != 0) {
          if (on)
             ((CheckBookItem*)parent)->childChange (0, 1);
@@ -114,10 +114,10 @@ void CheckBookItem::stateChange (bool on) {
 }
 
 void CheckBookItem::propagateStateChange () {
-   QListViewItem *item = firstChild();
+   TQListViewItem *item = firstChild();
    while (item != 0) {
-      if (isOn() != ((QCheckListItem*)item)->isOn())
-         ((QCheckListItem*)item)->setOn (isOn());
+      if (isOn() != ((TQCheckListItem*)item)->isOn())
+         ((TQCheckListItem*)item)->setOn (isOn());
       else
          ((CheckBookItem*)item)->propagateStateChange ();
       item = item->nextSibling();
@@ -127,22 +127,22 @@ void CheckBookItem::propagateStateChange () {
 void CheckBookItem::childChange (int numberDiff, int selDiff) {
    numberOfBooks += numberDiff;
    selectedBooks += selDiff;
-   QListViewItem *parent = this->parent();
+   TQListViewItem *parent = this->parent();
    if (parent != 0)
       ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
 
-   QString text = i18n(" (%1 of %2 books selected)");
+   TQString text = i18n(" (%1 of %2 books selected)");
    text = text.arg(selectedBooks).arg(numberOfBooks);
    setText(0, this->text(PhraseBookPrivate::name)+text);
 }
 
 /***************************************************************************/
 
-InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *name)
-   : QWidget(parent, name)
+InitialPhraseBookWidget::InitialPhraseBookWidget (TQWidget *parent, const char *name)
+   : TQWidget(parent, name)
 {
-   QVBoxLayout *mainLayout = new QVBoxLayout (this, 0, KDialog::spacingHint());
-   QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
+   TQVBoxLayout *mainLayout = new TQVBoxLayout (this, 0, KDialog::spacingHint());
+   TQLabel *label = new TQLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
    mainLayout->add (label);
 
    books = new KListView (this, "books");
@@ -153,7 +153,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    books->addColumn (i18n("Book"));
    books->setRootIsDecorated (true);
    books->setAllColumnsShowFocus (true);
-   books->setSelectionMode (QListView::Multi);
+   books->setSelectionMode (TQListView::Multi);
    mainLayout->add (books);
 
    initStandardPhraseBooks();
@@ -165,17 +165,17 @@ InitialPhraseBookWidget::~InitialPhraseBookWidget () {
 void InitialPhraseBookWidget::initStandardPhraseBooks() {
    StandardBookList bookPaths = PhraseBookDialog::standardPhraseBooks();
 
-   QListViewItem *parent = 0;
-   QListViewItem *last = 0;
-   QStringList currentNamePath = "";
-   QPtrStack<QListViewItem> stack;
+   TQListViewItem *parent = 0;
+   TQListViewItem *last = 0;
+   TQStringList currentNamePath = "";
+   TQPtrStack<TQListViewItem> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
-      QString namePath = (*it).path;
-      QStringList dirs = QStringList::split("/", namePath);
+      TQString namePath = (*it).path;
+      TQStringList dirs = TQStringList::split("/", namePath);
 
-      QStringList::iterator it1=currentNamePath.begin();
-      QStringList::iterator it2=dirs.begin();
+      TQStringList::iterator it1=currentNamePath.begin();
+      TQStringList::iterator it2=dirs.begin();
       for (; (it1 != currentNamePath.end())
           && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
       for (; it1 != currentNamePath.end(); ++it1) {
@@ -184,17 +184,17 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
       }
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
-         QListViewItem *newParent;
+         TQListViewItem *newParent;
          if (parent == 0)
-            newParent = new CheckBookItem (books, last, *it2, *it2, QString::null);
+            newParent = new CheckBookItem (books, last, *it2, *it2, TQString::null);
          else
-            newParent = new CheckBookItem (parent, last, *it2, *it2, QString::null);
+            newParent = new CheckBookItem (parent, last, *it2, *it2, TQString::null);
          parent = newParent;
          last = 0;
       }
       currentNamePath = dirs;
       
-      QListViewItem *book;
+      TQListViewItem *book;
       if (parent == 0)
          book = new CheckBookItem (books, last, (*it).name, (*it).name, (*it).filename);
       else
@@ -205,13 +205,13 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
 
 void InitialPhraseBookWidget::createBook () {
    PhraseBook book;
-   QListViewItem *item = books->firstChild();
+   TQListViewItem *item = books->firstChild();
    while (item != 0) {
       if (item->firstChild() != 0) {
          item = item->firstChild();
       }
       else {
-         if (((QCheckListItem*)item)->isOn()) {
+         if (((TQCheckListItem*)item)->isOn()) {
             PhraseBook localBook;
             localBook.open(KURL( item->text(PhraseBookPrivate::filename )));
             book += localBook;
@@ -225,7 +225,7 @@ void InitialPhraseBookWidget::createBook () {
       }
    }
 
-   QString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
+   TQString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KURL( bookLocation + "standard.phrasebook" ));
    }
@@ -233,15 +233,15 @@ void InitialPhraseBookWidget::createBook () {
 
 /***************************************************************************/
 
-ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
+ButtonBoxWidget::ButtonBoxWidget (TQWidget *parent, const char *name)
 : ButtonBoxUI (parent, name) {
-   keyButtonPlaceLayout = new QGridLayout (keyButtonPlace, 1, 1, 0, 0, "keyButtonPlaceLayout");
+   keyButtonPlaceLayout = new TQGridLayout (keyButtonPlace, 1, 1, 0, 0, "keyButtonPlaceLayout");
 
    keyButton = new KKeyButton (keyButtonPlace, "key");
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
-   QWhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
+   TQWhatsThis::add (keyButton, i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
-   group = new QButtonGroup (phrasebox);
+   group = new TQButtonGroup (phrasebox);
    group->hide();
    group->setExclusive (true);
    group->insert (noKey);
@@ -264,7 +264,7 @@ PhraseBookDialog::PhraseBookDialog ()
    initGUI();
    initActions();
    initStandardPhraseBooks();
-   QString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
+   TQString standardBook = KApplication::kApplication()->dirs()->findResource("appdata", "standard.phrasebook");
    if (!standardBook.isNull() && !standardBook.isEmpty()) {
       PhraseBook book;
       book.open(KURL( standardBook ));
@@ -288,9 +288,9 @@ PhraseBookDialog::~PhraseBookDialog() {
 }
 
 void PhraseBookDialog::initGUI () {
-   QWidget *page = new QWidget( this );
+   TQWidget *page = new TQWidget( this );
    setCentralWidget(page);
-   QVBoxLayout *mainLayout = new QVBoxLayout (page, 0);
+   TQVBoxLayout *mainLayout = new TQVBoxLayout (page, 0);
    
    treeView = new PhraseTree (page, "phrasetree");
    treeView->setSorting (-1);
@@ -301,19 +301,19 @@ void PhraseBookDialog::initGUI () {
    treeView->addColumn (i18n("Shortcut"));
    treeView->setRootIsDecorated (true);
    treeView->setAllColumnsShowFocus (true);
-   treeView->setSelectionMode (QListView::Extended); 
-   QWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
-   connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
-   connect (treeView, SIGNAL(contextMenuRequested (QListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (QListViewItem *, const QPoint &, int)));
-   connect (treeView, SIGNAL(dropped (QDropEvent *, QListViewItem *, QListViewItem *)), this, SLOT(slotDropped (QDropEvent *, QListViewItem *, QListViewItem *)));
-   connect (treeView, SIGNAL(moved (QListViewItem *, QListViewItem *, QListViewItem *)), this, SLOT(slotMoved (QListViewItem *, QListViewItem *, QListViewItem *)));
+   treeView->setSelectionMode (TQListView::Extended); 
+   TQWhatsThis::add (treeView, i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
+   connect (treeView, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(selectionChanged()));
+   connect (treeView, TQT_SIGNAL(contextMenuRequested (TQListViewItem *, const TQPoint &, int)), this, TQT_SLOT(contextMenuRequested (TQListViewItem *, const TQPoint &, int)));
+   connect (treeView, TQT_SIGNAL(dropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)), this, TQT_SLOT(slotDropped (TQDropEvent *, TQListViewItem *, TQListViewItem *)));
+   connect (treeView, TQT_SIGNAL(moved (TQListViewItem *, TQListViewItem *, TQListViewItem *)), this, TQT_SLOT(slotMoved (TQListViewItem *, TQListViewItem *, TQListViewItem *)));
    mainLayout->addWidget (treeView);
    
    buttonBox = new ButtonBoxWidget (page, "buttonbox");
-   connect (buttonBox->lineEdit, SIGNAL(textChanged(const QString &)), SLOT(slotTextChanged(const QString &)));
-   connect (buttonBox->noKey, SIGNAL(clicked()), SLOT(slotNoKey()));
-   connect (buttonBox->customKey, SIGNAL(clicked()), SLOT(slotCustomKey()));
-   connect (buttonBox->keyButton, SIGNAL(capturedShortcut(const KShortcut&)), SLOT(capturedShortcut(const KShortcut&)));
+   connect (buttonBox->lineEdit, TQT_SIGNAL(textChanged(const TQString &)), TQT_SLOT(slotTextChanged(const TQString &)));
+   connect (buttonBox->noKey, TQT_SIGNAL(clicked()), TQT_SLOT(slotNoKey()));
+   connect (buttonBox->customKey, TQT_SIGNAL(clicked()), TQT_SLOT(slotCustomKey()));
+   connect (buttonBox->keyButton, TQT_SIGNAL(capturedShortcut(const KShortcut&)), TQT_SLOT(capturedShortcut(const KShortcut&)));
    mainLayout->addWidget (buttonBox);
 
    treeView->setFocus();
@@ -322,23 +322,23 @@ void PhraseBookDialog::initGUI () {
 
 void PhraseBookDialog::initActions() {
 // The file menu
-   fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, this, SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
+   fileNewPhrase = new KAction (i18n("&New Phrase"), "phrase_new", 0, this, TQT_SLOT(slotAddPhrase()), actionCollection(),"file_new_phrase");
    fileNewPhrase->setStatusText(i18n("Adds a new phrase"));
    fileNewPhrase->setWhatsThis (i18n("Adds a new phrase"));
 
-   fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
+   fileNewBook = new KAction (i18n("New Phrase &Book"), "phrasebook_new", 0, this, TQT_SLOT(slotAddPhrasebook()), actionCollection(),"file_new_book");
    fileNewBook->setStatusText(i18n("Adds a new phrase book into which other books and phrases can be placed"));
    fileNewBook->setWhatsThis (i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
-   fileSave = KStdAction::save(this, SLOT(slotSave()), actionCollection());
+   fileSave = KStdAction::save(this, TQT_SLOT(slotSave()), actionCollection());
    fileSave->setStatusText(i18n("Saves the phrase book onto the hard disk"));
    fileSave->setWhatsThis (i18n("Saves the phrase book onto the hard disk"));
 
-   fileImport = new KAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
+   fileImport = new KAction (i18n("&Import..."), "phrasebook_open", 0, this, TQT_SLOT(slotImportPhrasebook()), actionCollection(),"file_import");
    fileImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    fileImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
-   toolbarImport = new KToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, this, SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
+   toolbarImport = new KToolBarPopupAction (i18n("&Import..."), "phrasebook_open", 0, this, TQT_SLOT(slotImportPhrasebook()), actionCollection(),"toolbar_import");
    toolbarImport->setStatusText(i18n("Imports a file and adds its contents to the phrase book"));
    toolbarImport->setWhatsThis (i18n("Imports a file and adds its contents to the phrase book"));
 
@@ -346,32 +346,32 @@ void PhraseBookDialog::initActions() {
    fileImportStandardBook->setStatusText(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
    fileImportStandardBook->setWhatsThis (i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-   fileExport = new KAction (i18n("&Export..."), "phrasebook_save", 0, this, SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
+   fileExport = new KAction (i18n("&Export..."), "phrasebook_save", 0, this, TQT_SLOT(slotExportPhrasebook()), actionCollection(),"file_export");
    fileExport->setStatusText(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
    fileExport->setWhatsThis (i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
-   filePrint = KStdAction::print(this, SLOT(slotPrint()), actionCollection());
+   filePrint = KStdAction::print(this, TQT_SLOT(slotPrint()), actionCollection());
    filePrint->setStatusText(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
    filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
 
-   fileClose = KStdAction::close(this, SLOT(close()), actionCollection());
+   fileClose = KStdAction::close(this, TQT_SLOT(close()), actionCollection());
    fileClose->setStatusText(i18n("Closes the window"));
    fileClose->setWhatsThis (i18n("Closes the window"));
 
 // The edit menu
-   editCut = KStdAction::cut(this, SLOT(slotCut()), actionCollection());
+   editCut = KStdAction::cut(this, TQT_SLOT(slotCut()), actionCollection());
    editCut->setStatusText(i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the currently selected entries from the phrase book and puts it to the clipboard"));
 
-   editCopy = KStdAction::copy(this, SLOT(slotCopy()), actionCollection());
+   editCopy = KStdAction::copy(this, TQT_SLOT(slotCopy()), actionCollection());
    editCopy->setStatusText(i18n("Copies the currently selected entry from the phrase book to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the currently selected entry from the phrase book to the clipboard"));
 
-   editPaste = KStdAction::paste(this, SLOT(slotPaste()), actionCollection());
+   editPaste = KStdAction::paste(this, TQT_SLOT(slotPaste()), actionCollection());
    editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
 
-   editDelete = new KAction (i18n("&Delete"), "editdelete", 0, this, SLOT(slotRemove()), actionCollection(),"edit_delete");
+   editDelete = new KAction (i18n("&Delete"), "editdelete", 0, this, TQT_SLOT(slotRemove()), actionCollection(),"edit_delete");
    editDelete->setStatusText(i18n("Deletes the selected entries from the phrase book"));
    editDelete->setWhatsThis (i18n("Deletes the selected entries from the phrase book"));
 
@@ -379,17 +379,17 @@ void PhraseBookDialog::initActions() {
    createGUI("phrasebookdialogui.rc");
 }
 
-QString PhraseBookDialog::displayPath (QString filename) {
-   QFileInfo file(filename);
-   QString path = file.dirPath();
-   QString dispPath = "";
-   uint position = path.find("/kmouth/books/")+QString("/kmouth/books/").length();
+TQString PhraseBookDialog::displayPath (TQString filename) {
+   TQFileInfo file(filename);
+   TQString path = file.dirPath();
+   TQString dispPath = "";
+   uint position = path.find("/kmouth/books/")+TQString("/kmouth/books/").length();
 
    while (path.length() > position) {
       file.setFile(path);
 
       KDesktopFile *dirDesc = new KDesktopFile(path+"/.directory", true, "data");
-      QString name = dirDesc->readName();
+      TQString name = dirDesc->readName();
       delete dirDesc;
 
       if (name.isNull() || name.isEmpty())
@@ -403,11 +403,11 @@ QString PhraseBookDialog::displayPath (QString filename) {
 }
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
-   QStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
+   TQStringList bookPaths = KGlobal::instance()->dirs()->findAllResources (
                           "data", "kmouth/books/*.phrasebook", true, true);
-   QStringList bookNames;
-   QMap<QString,StandardBook> bookMap;
-   QStringList::iterator it;
+   TQStringList bookNames;
+   TQMap<TQString,StandardBook> bookMap;
+   TQStringList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       PhraseBook pbook;
       if (pbook.open (KURL( *it ))) {
@@ -435,18 +435,18 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    StandardBookList bookPaths = standardPhraseBooks();
    
    KActionMenu *parent = fileImportStandardBook;
-   QStringList currentNamePath = "x";
-   QPtrStack<KActionMenu> stack;
+   TQStringList currentNamePath = "x";
+   TQPtrStack<KActionMenu> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       KURL url;
       url.setPath((*it).filename);
 
-      QString namePath = "x/"+(*it).path;
-      QStringList dirs = QStringList::split("/", namePath);
+      TQString namePath = "x/"+(*it).path;
+      TQStringList dirs = TQStringList::split("/", namePath);
 
-      QStringList::iterator it1=currentNamePath.begin();
-      QStringList::iterator it2=dirs.begin();
+      TQStringList::iterator it1=currentNamePath.begin();
+      TQStringList::iterator it2=dirs.begin();
       for (; (it1 != currentNamePath.end())
           && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
       for (; it1 != currentNamePath.end(); ++it1)
@@ -462,21 +462,21 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       currentNamePath = dirs;
       
       KAction *book = new StandardPhraseBookInsertAction (
-          url, (*it).name, this, SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
+          url, (*it).name, this, TQT_SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
       parent->insert(book);
       if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());
    }
 }
 
-PhraseTreeItem *selectedItem (QListView *treeView) {
+PhraseTreeItem *selectedItem (TQListView *treeView) {
    PhraseTreeItem *currentItem = (PhraseTreeItem *)treeView->currentItem();
    if ((currentItem == 0) || (!currentItem->isSelected()))
       return 0;
 
-   QListViewItemIterator it(treeView);
+   TQListViewItemIterator it(treeView);
    while (it.current()) {
-      QListViewItem *item = it.current();
+      TQListViewItem *item = it.current();
       if (item->isSelected() && (item != currentItem))
          return 0;
       ++it;
@@ -508,7 +508,7 @@ void PhraseBookDialog::selectionChanged () {
       buttonBox->lineEdit->setText(currentItem->text(0));
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(true);
-      QString shortcut = currentItem->text(1);
+      TQString shortcut = currentItem->text(1);
       buttonBox->keyButton->setShortcut(currentItem->cut(), false);
       if (shortcut.isEmpty() || shortcut.isNull()) {
          buttonBox->noKey->setChecked (true);
@@ -554,7 +554,7 @@ bool PhraseBookDialog::queryClose() {
    return true;
 }
 
-void PhraseBookDialog::slotTextChanged (const QString &s) {
+void PhraseBookDialog::slotTextChanged (const TQString &s) {
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0)
       currentItem->setText(0, s);
@@ -567,7 +567,7 @@ void PhraseBookDialog::slotNoKey() {
    
    PhraseTreeItem *currentItem = selectedItem (treeView);
    if (currentItem != 0) {
-      currentItem->setCut (KShortcut(QString::null));
+      currentItem->setCut (KShortcut(TQString::null));
       buttonBox->keyButton->setShortcut(currentItem->cut(), false);
    }
    phrasebookChanged = true;
@@ -593,11 +593,11 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
       const KKey& key = seq.key(0);
 
       if (key.modFlags() == 0 && key.sym() < 0x3000
-          && QChar(key.sym()).isLetterOrNumber())
+          && TQChar(key.sym()).isLetterOrNumber())
       {
-         QString s = i18n("In order to use the '%1' key as a shortcut, "
+         TQString s = i18n("In order to use the '%1' key as a shortcut, "
                           "it must be combined with the "
-                          "Win, Alt, Ctrl, and/or Shift keys.").arg(QChar(key.sym()));
+                          "Win, Alt, Ctrl, and/or Shift keys.").arg(TQChar(key.sym()));
          KMessageBox::sorry( this, s, i18n("Invalid Shortcut Key") );
          return;
       }
@@ -615,8 +615,8 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    }
 }
 
-QListViewItem *PhraseBookDialog::addBook (QListViewItem *parent, QListViewItem *after, PhraseBook *book) {
-   QListViewItem *newItem = treeView->addBook(parent, after, book);
+TQListViewItem *PhraseBookDialog::addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book) {
+   TQListViewItem *newItem = treeView->addBook(parent, after, book);
    if (newItem != 0) {
       treeView->clearSelection();
       treeView->ensureItemVisible(newItem);
@@ -627,7 +627,7 @@ QListViewItem *PhraseBookDialog::addBook (QListViewItem *parent, QListViewItem *
    return newItem;
 }
 
-QListViewItem *PhraseBookDialog::addBook (QListViewItem *item, PhraseBook *book) {
+TQListViewItem *PhraseBookDialog::addBook (TQListViewItem *item, PhraseBook *book) {
    if (item == 0)
       return addBook(0, 0, book);
    else if (((PhraseTreeItem *)item)->isPhrase() || !item->isOpen())
@@ -639,14 +639,14 @@ QListViewItem *PhraseBookDialog::addBook (QListViewItem *item, PhraseBook *book)
       return addBook(item, 0, book);
 }
 
-void PhraseBookDialog::contextMenuRequested(QListViewItem *, const QPoint &pos, int) {
-   QString name;
+void PhraseBookDialog::contextMenuRequested(TQListViewItem *, const TQPoint &pos, int) {
+   TQString name;
    if (treeView->hasSelectedItems())
       name = "phrasebook_popup_sel";
    else
       name = "phrasebook_popup_nosel";
 
-   QPopupMenu *popup = (QPopupMenu *)factory()->container(name,this);
+   TQPopupMenu *popup = (TQPopupMenu *)factory()->container(name,this);
    if (popup != 0) {
       popup->popup(pos, 0);
    }
@@ -667,24 +667,24 @@ void PhraseBookDialog::slotCut () {
 void PhraseBookDialog::slotCopy () {
    PhraseBook book;
    treeView->fillBook (&book, true);
-   QApplication::clipboard()->setData(new PhraseBookDrag(&book));
+   TQApplication::clipboard()->setData(new PhraseBookDrag(&book));
 }
 
 void PhraseBookDialog::slotPaste () {
    PhraseBook book;
-   if (PhraseBookDrag::decode(QApplication::clipboard()->data(), &book)) {
+   if (PhraseBookDrag::decode(TQApplication::clipboard()->data(), &book)) {
       addBook (treeView->currentItem(), &book);
    }
 }
 
-void PhraseBookDialog::slotDropped (QDropEvent *e, QListViewItem *parent, QListViewItem *after) {
+void PhraseBookDialog::slotDropped (TQDropEvent *e, TQListViewItem *parent, TQListViewItem *after) {
    PhraseBook book;
    if (PhraseBookDrag::decode(e, &book)) {
       addBook(parent, after, &book);
    }
 }
 
-void PhraseBookDialog::slotMoved (QListViewItem *item, QListViewItem *, QListViewItem *) {
+void PhraseBookDialog::slotMoved (TQListViewItem *item, TQListViewItem *, TQListViewItem *) {
    treeView->ensureItemVisible(item);
    treeView->setSelected (item, true);
    phrasebookChanged = true;
@@ -695,7 +695,7 @@ void PhraseBookDialog::slotAddPhrasebook () {
    Phrase phrase(i18n("(New Phrase Book)"), "");
    book += PhraseBookEntry(phrase, 0, false);
 
-   QListViewItem *item = addBook (treeView->currentItem(), &book);
+   TQListViewItem *item = addBook (treeView->currentItem(), &book);
    item->setOpen (true);
    buttonBox->lineEdit->selectAll();
    buttonBox->lineEdit->setFocus();
@@ -719,7 +719,7 @@ void PhraseBookDialog::slotSave () {
 }
 
 void PhraseBookDialog::slotImportPhrasebook () {
-   KURL url=KFileDialog::getOpenURL(QString::null,
+   KURL url=KFileDialog::getOpenURL(TQString::null,
         i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
 
    slotImportPhrasebook (url);

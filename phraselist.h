@@ -24,8 +24,8 @@
 #include <kprinter.h>
 
 // include files for Qt
-#include <qwidget.h>
-#include <qpushbutton.h>
+#include <tqwidget.h>
+#include <tqpushbutton.h>
 
 class WordCompletion;
 
@@ -38,16 +38,16 @@ class WordCompletion;
  * @author Gunnar Schmi Dt
  */
 
-class PhraseList : public QWidget  {
+class PhraseList : public TQWidget  {
    Q_OBJECT
 public:
-   PhraseList(QWidget *parent=0, const char *name=0);
+   PhraseList(TQWidget *parent=0, const char *name=0);
    ~PhraseList();
    
    /** contains the implementation for printing functionality */
    void print(KPrinter *pPrinter);
 
-   QStringList getListSelection();
+   TQStringList getListSelection();
    
    bool existListSelection();
    bool existEditSelection();
@@ -61,7 +61,7 @@ public slots:
    void paste();
    
    /** Insert s into the edit field. */
-   void insert (const QString &s);
+   void insert (const TQString &s);
 
    /** Called whenever the user wants the selected list entries to be spoken. */
    void speakListSelection ();
@@ -83,26 +83,26 @@ public slots:
    void readCompletionOptions(KConfig *config);
 
 protected slots:
-   void lineEntered (const QString &phrase);
-   void contextMenuRequested (QListBoxItem *, const QPoint &pos);
-   void textChanged (const QString &s);
+   void lineEntered (const TQString &phrase);
+   void contextMenuRequested (TQListBoxItem *, const TQPoint &pos);
+   void textChanged (const TQString &s);
    void selectionChanged ();
-   void keyPressEvent (QKeyEvent *e);
-   void configureCompletionCombo(const QStringList &list);
+   void keyPressEvent (TQKeyEvent *e);
+   void configureCompletionCombo(const TQStringList &list);
 
 private:
    KListBox *listBox;
    KComboBox *dictionaryCombo;
    KLineEdit *lineEdit;
-   QPushButton *speakButton;
-   QString line;
+   TQPushButton *speakButton;
+   TQString line;
    WordCompletion *completion;
   
    bool isInSlot;
    
-   void speakPhrase (const QString &phrase);
-   void setEditLineText(const QString &s);
-   void insertIntoPhraseList (const QString &phrase, bool clearEditLine);
+   void speakPhrase (const TQString &phrase);
+   void setEditLineText(const TQString &s);
+   void insertIntoPhraseList (const TQString &phrase, bool clearEditLine);
    
    void enableMenuEntries ();
 };

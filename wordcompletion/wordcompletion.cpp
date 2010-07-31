@@ -1,5 +1,5 @@
-#include <qregexp.h>
-#include <qfile.h>
+#include <tqregexp.h>
+#include <tqfile.h>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -10,18 +10,18 @@
 class WordCompletion::WordCompletionPrivate {
 friend class WordCompletion;
 private:
-   typedef QMap<QString,int> WordMap;
+   typedef TQMap<TQString,int> WordMap;
    struct DictionaryDetails {
-      QString filename;
-      QString language;
+      TQString filename;
+      TQString language;
    };
 
-   QString lastText;
-   QMap<QString,int> map;
-   QMap<QString,int> addedWords;
-   QMap<QString,DictionaryDetails> dictDetails;
-   QStringList dictionaries;
-   QString current;
+   TQString lastText;
+   TQMap<TQString,int> map;
+   TQMap<TQString,int> addedWords;
+   TQMap<TQString,DictionaryDetails> dictDetails;
+   TQStringList dictionaries;
+   TQString current;
    bool blockCurrentListSignal;
    bool wordsToSave;
 };
@@ -38,21 +38,21 @@ WordCompletion::~WordCompletion() {
    delete d;
 }
 
-typedef QPair<int,QString> Match;
-typedef QValueList<Match> MatchList;
+typedef QPair<int,TQString> Match;
+typedef TQValueList<Match> MatchList;
 
-QString WordCompletion::makeCompletion(const QString &text) {
+TQString WordCompletion::makeCompletion(const TQString &text) {
    if (d->lastText != text) {
       d->lastText = text;
       KCompletion::clear();
 
-      int border = text.findRev(QRegExp("\\W"));
-      QString suffix = text.right (text.length() - border - 1).lower();
-      QString prefix = text.left (border + 1);
+      int border = text.findRev(TQRegExp("\\W"));
+      TQString suffix = text.right (text.length() - border - 1).lower();
+      TQString prefix = text.left (border + 1);
 
       if (suffix.length() > 0) {
          MatchList matches;
-         QMap<QString,int>::ConstIterator it;
+         TQMap<TQString,int>::ConstIterator it;
          for (it = d->map.begin(); it != d->map.end(); ++it)
             if (it.key().startsWith(suffix))
                matches += Match (-it.data(), it.key());
@@ -70,27 +70,27 @@ QString WordCompletion::makeCompletion(const QString &text) {
    return KCompletion::makeCompletion (text);
 }
 
-QStringList WordCompletion::wordLists() {
+TQStringList WordCompletion::wordLists() {
    return d->dictionaries;
 }
 
-QStringList WordCompletion::wordLists(const QString &language) {
-   QStringList result;
-   for (QStringList::Iterator it = d->dictionaries.begin();
+TQStringList WordCompletion::wordLists(const TQString &language) {
+   TQStringList result;
+   for (TQStringList::Iterator it = d->dictionaries.begin();
          it != d->dictionaries.end(); ++it)
       if (d->dictDetails[*it].language == language)
          result += *it;
    return result;
 }
 
-QString WordCompletion::languageOfWordList(const QString &wordlist) {
+TQString WordCompletion::languageOfWordList(const TQString &wordlist) {
    if (d->dictDetails.contains(wordlist))
       return d->dictDetails[wordlist].language;
    else
-      return QString::null;
+      return TQString::null;
 }
 
-QString WordCompletion::currentWordList() {
+TQString WordCompletion::currentWordList() {
    return d->current;
 }
 
@@ -111,14 +111,14 @@ void WordCompletion::configure() {
    d->dictDetails.clear();
 
    KConfig *config = new KConfig("kmouthrc");
-   QStringList groups = config->groupList();
-   for (QStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
+   TQStringList groups = config->groupList();
+   for (TQStringList::Iterator it = groups.begin(); it != groups.end(); ++it)
       if ((*it).startsWith ("Dictionary ")) {
          config->setGroup(*it);
          WordCompletionPrivate::DictionaryDetails details;
          details.filename = config->readEntry("Filename");
          details.language = config->readEntry("Language");
-         QString name = config->readEntry("Name");
+         TQString name = config->readEntry("Name");
          d->dictDetails[name] = details;
          d->dictionaries += name;
       }
@@ -131,7 +131,7 @@ void WordCompletion::configure() {
    emit currentListChanged (d->current);
 }
 
-bool WordCompletion::setWordList(const QString &wordlist) {
+bool WordCompletion::setWordList(const TQString &wordlist) {
    if (d->wordsToSave)
       save ();
    d->wordsToSave = false;
@@ -143,18 +143,18 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    else
       d->current = d->dictionaries[0];
    
-   QString filename = d->dictDetails[d->current].filename;
-   QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
-   QFile file(dictionaryFile);
+   TQString filename = d->dictDetails[d->current].filename;
+   TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+   TQFile file(dictionaryFile);
    if (file.exists() && file.open(IO_ReadOnly)) {
-      QTextStream stream(&file);
-      stream.setEncoding (QTextStream::UnicodeUTF8);
+      TQTextStream stream(&file);
+      stream.setEncoding (TQTextStream::UnicodeUTF8);
       if (!stream.atEnd()) {
          if (stream.readLine() == "WPDictFile") {
             while (!stream.atEnd()) {
-               QString s = stream.readLine();
+               TQString s = stream.readLine();
                if (!(s.isNull() || s.isEmpty())) {
-                  QStringList list = QStringList::split("\t", s);
+                  TQStringList list = TQStringList::split("\t", s);
                   bool ok;
                   int weight = list[1].toInt(&ok);
                   if (ok && (weight > 0))
@@ -172,13 +172,13 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    return result;
 }
 
-void WordCompletion::addSentence (const QString &sentence) {
-   QStringList words = QStringList::split(QRegExp("\\W"), sentence);
+void WordCompletion::addSentence (const TQString &sentence) {
+   TQStringList words = TQStringList::split(TQRegExp("\\W"), sentence);
    
-   QStringList::ConstIterator it;
+   TQStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
-      if (!(*it).contains(QRegExp("\\d|_"))) {
-         QString key = (*it).lower();
+      if (!(*it).contains(TQRegExp("\\d|_"))) {
+         TQString key = (*it).lower();
          if (d->map.contains(key))
             d->map[key] += 1;
          else
@@ -194,19 +194,19 @@ void WordCompletion::addSentence (const QString &sentence) {
 
 void WordCompletion::save () {
    if (d->wordsToSave) {
-      QString filename = d->dictDetails[d->current].filename;
-      QString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
-      QFile file(dictionaryFile);
+      TQString filename = d->dictDetails[d->current].filename;
+      TQString dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
+      TQFile file(dictionaryFile);
       if (!file.exists())
          return;
       if (!file.open(IO_WriteOnly))
          return;
 
-      QTextStream stream(&file);
-      stream.setEncoding (QTextStream::UnicodeUTF8);
+      TQTextStream stream(&file);
+      stream.setEncoding (TQTextStream::UnicodeUTF8);
 
       stream << "WPDictFile\n";
-      QMap<QString,int>::ConstIterator it;
+      TQMap<TQString,int>::ConstIterator it;
       for (it = d->map.begin(); it != d->map.end(); ++it) {
          if (d->addedWords.contains(it.key())) {
             stream << it.key() << "\t" << d->addedWords[it.key()] << "\t1\n";

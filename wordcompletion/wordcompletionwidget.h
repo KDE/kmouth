@@ -31,7 +31,7 @@ class KLanguageButton;
 class WordCompletionWidget : public WordCompletionUI {
    Q_OBJECT
 public:
-   WordCompletionWidget(QWidget *parent, const char *name);
+   WordCompletionWidget(TQWidget *parent, const char *name);
    ~WordCompletionWidget();
 
    /**
@@ -57,7 +57,7 @@ private slots:
    void exportDictionary();
 
    void selectionChanged();
-   void nameChanged (const QString &text);
+   void nameChanged (const TQString &text);
    void languageSelected (int);
 
    /**
@@ -73,8 +73,8 @@ private:
     * Object holding all the configuration
     */
    KConfig *config;
-   QStringList newDictionaryFiles;
-   QStringList removedDictionaryFiles;
+   TQStringList newDictionaryFiles;
+   TQStringList removedDictionaryFiles;
 };
 
 #endif

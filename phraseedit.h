@@ -27,10 +27,10 @@
 
 class PhraseEdit : public KLineEdit  {
 public: 
-   PhraseEdit(const QString &string, QWidget *parent);
+   PhraseEdit(const TQString &string, TQWidget *parent);
    virtual ~PhraseEdit();
 
-   void keyPressEvent (QKeyEvent *e);
+   void keyPressEvent (TQKeyEvent *e);
 };
 
 #endif

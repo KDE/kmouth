@@ -16,13 +16,13 @@
  ***************************************************************************/
 
 #include "speech.h"
-#include <qstring.h>
-#include <qvaluelist.h>
-#include <qvaluestack.h>
-#include <qstringlist.h>
-#include <qregexp.h>
-#include <qtextcodec.h>
-#include <qfile.h>
+#include <tqstring.h>
+#include <tqvaluelist.h>
+#include <tqvaluestack.h>
+#include <tqstringlist.h>
+#include <tqregexp.h>
+#include <tqtextcodec.h>
+#include <tqfile.h>
 #include <kdebug.h>
 
 #include <kdeversion.h>
@@ -39,25 +39,25 @@ Speech::Speech() {
 Speech::~Speech() {
 }
 
-QString Speech::prepareCommand (QString command, const QString &text,
-                          const QString &filename, const QString &language) {
+TQString Speech::prepareCommand (TQString command, const TQString &text,
+                          const TQString &filename, const TQString &language) {
 #ifdef macroExpander
-   QMap<QChar,QString> map;
+   TQMap<TQChar,TQString> map;
    map['t'] = text;
    map['f'] = filename;
    map['l'] = language;
    return KMacroExpander::expandMacrosShellQuote (command, map);
 #else
-   QValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
+   TQValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
    int noreplace=0; // nested braces when within ${...}
-   QString escText = KShellProcess::quote(text);
+   TQString escText = KShellProcess::quote(text);
 
    // character sequences that change the state or need to be otherwise processed
-   QRegExp re_singlequote("('|%%|%t|%f|%l)");
-   QRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t|%f|%l)");
-   QRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t|%f|%l)");
+   TQRegExp re_singlequote("('|%%|%t|%f|%l)");
+   TQRegExp re_doublequote("(\"|\\\\|`|\\$\\(|\\$\\{|%%|%t|%f|%l)");
+   TQRegExp re_noquote  ("('|\"|\\\\|`|\\$\\(|\\$\\{|\\(|\\{|\\)|\\}|%%|%t|%f|%l)");
 
    // parse the command:
    for (int i = re_noquote.search(command);
@@ -108,7 +108,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
       else if (command[i]=='`') {
          // Replace all `...` with safer $(...)
          command.replace (i, 1, "$(");
-         QRegExp re_backticks("(`|\\\\`|\\\\\\\\|\\\\\\$)");
+         TQRegExp re_backticks("(`|\\\\`|\\\\\\\\|\\\\\\$)");
          for (int i2=re_backticks.search(command,i+2);
               i2!=-1;
               i2=re_backticks.search(command,i2)
@@ -135,7 +135,7 @@ QString Speech::prepareCommand (QString command, const QString &text,
             i+=re_noquote.matchedLength();
       }
       else { // replace macro
-         QString match, v;
+         TQString match, v;
 
          // get match
          if (issinglequote)
@@ -169,35 +169,35 @@ QString Speech::prepareCommand (QString command, const QString &text,
 #endif
 }
 
-void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, int encoding, QTextCodec *codec) {
+void Speech::speak(TQString command, bool stdIn, const TQString &text, const TQString &language, int encoding, TQTextCodec *codec) {
    if (text.length () > 0) {
       // 1. prepare the text:
       // 1.a) encode the text
-      QTextStream ts (encText, IO_WriteOnly);
+      TQTextStream ts (encText, IO_WriteOnly);
       if (encoding == Local)
-         ts.setEncoding (QTextStream::Locale);
+         ts.setEncoding (TQTextStream::Locale);
       else if (encoding == Latin1)
-         ts.setEncoding (QTextStream::Latin1);
+         ts.setEncoding (TQTextStream::Latin1);
       else if (encoding == Unicode)
-         ts.setEncoding (QTextStream::Unicode);
+         ts.setEncoding (TQTextStream::Unicode);
       else
          ts.setCodec (codec);
       ts << text;
 
       // 1.b) create a temporary file for the text
       tempFile.setAutoDelete(true);
-      QTextStream* fs = tempFile.textStream();
+      TQTextStream* fs = tempFile.textStream();
       if (encoding == Local)
-         fs->setEncoding (QTextStream::Locale);
+         fs->setEncoding (TQTextStream::Locale);
       else if (encoding == Latin1)
-         fs->setEncoding (QTextStream::Latin1);
+         fs->setEncoding (TQTextStream::Latin1);
       else if (encoding == Unicode)
-         fs->setEncoding (QTextStream::Unicode);
+         fs->setEncoding (TQTextStream::Unicode);
       else
          fs->setCodec (codec);
       *fs << text;
       *fs << endl;
-      QString filename = tempFile.file()->name();
+      TQString filename = tempFile.file()->name();
       tempFile.close();
 
       // 2. prepare the command:
@@ -206,10 +206,10 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 
       // 3. create a new process
       process << command;
-      connect(&process, SIGNAL(processExited(KProcess *)), this, SLOT(processExited(KProcess *)));
-      connect(&process, SIGNAL(wroteStdin(KProcess *)), this, SLOT(wroteStdin(KProcess *)));
-      connect(&process, SIGNAL(receivedStdout(KProcess *, char *, int)), this, SLOT(receivedStdout(KProcess *, char *, int)));
-      connect(&process, SIGNAL(receivedStderr(KProcess *, char *, int)), this, SLOT(receivedStderr(KProcess *, char *, int)));
+      connect(&process, TQT_SIGNAL(processExited(KProcess *)), this, TQT_SLOT(processExited(KProcess *)));
+      connect(&process, TQT_SIGNAL(wroteStdin(KProcess *)), this, TQT_SLOT(wroteStdin(KProcess *)));
+      connect(&process, TQT_SIGNAL(receivedStdout(KProcess *, char *, int)), this, TQT_SLOT(receivedStdout(KProcess *, char *, int)));
+      connect(&process, TQT_SIGNAL(receivedStderr(KProcess *, char *, int)), this, TQT_SLOT(receivedStderr(KProcess *, char *, int)));
 
       // 4. start the process
       if (stdIn) {
@@ -225,10 +225,10 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 }
 
 void Speech::receivedStdout (KProcess *, char *buffer, int buflen) {
-   kdDebug() << QString::fromLatin1(buffer, buflen) + "\n";
+   kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
 void Speech::receivedStderr (KProcess *, char *buffer, int buflen) {
-   kdDebug() << QString::fromLatin1(buffer, buflen) + "\n";
+   kdDebug() << TQString::fromLatin1(buffer, buflen) + "\n";
 }
 
 void Speech::wroteStdin(KProcess *) {

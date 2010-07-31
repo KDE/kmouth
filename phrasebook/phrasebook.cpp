@@ -15,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qprinter.h>
-#include <qpainter.h>
-#include <qfile.h>
-#include <qxml.h>
-#include <qregexp.h>
-#include <qptrstack.h>
+#include <tqprinter.h>
+#include <tqpainter.h>
+#include <tqfile.h>
+#include <tqxml.h>
+#include <tqregexp.h>
+#include <tqptrstack.h>
 
 #include <klocale.h>
 #include <kaction.h>
@@ -40,29 +40,29 @@ Phrase::Phrase() {
    this->shortcut = "";
 }
 
-Phrase::Phrase (const QString &phrase) {
+Phrase::Phrase (const TQString &phrase) {
    this->phrase = phrase;
    this->shortcut = "";
 }
 
-Phrase::Phrase (const QString &phrase, const QString &shortcut) {
+Phrase::Phrase (const TQString &phrase, const TQString &shortcut) {
    this->phrase = phrase;
    this->shortcut = shortcut;
 }
 
-QString Phrase::getPhrase() const {
+TQString Phrase::getPhrase() const {
    return phrase;
 }
 
-QString Phrase::getShortcut() const {
+TQString Phrase::getShortcut() const {
    return shortcut;
 }
 
-void Phrase::setPhrase (const QString &phrase) {
+void Phrase::setPhrase (const TQString &phrase) {
    this->phrase = phrase;
 }
 
-void Phrase::setShortcut (const QString &shortcut) {
+void Phrase::setShortcut (const TQString &shortcut) {
    this->shortcut = shortcut;
 }
 
@@ -95,19 +95,19 @@ int PhraseBookEntry::getLevel() const {
 // ***************************************************************************
 
 void PhraseBook::print(KPrinter *pPrinter) {
-   QPainter printpainter;
+   TQPainter printpainter;
    printpainter.begin(pPrinter);
 
-   QRect size = printpainter.viewport ();
+   TQRect size = printpainter.viewport ();
    int x = size.x();
    int y = size.y();
    int w = size.width();
-   printpainter.setFont (QFont (KGlobalSettings::generalFont().family(), 12));
-   QFontMetrics metrics = printpainter.fontMetrics();
+   printpainter.setFont (TQFont (KGlobalSettings::generalFont().family(), 12));
+   TQFontMetrics metrics = printpainter.fontMetrics();
 
    PhraseBookEntryList::iterator it;
    for (it = begin(); it != end(); ++it) {
-      QRect rect = metrics.boundingRect (x+16*(*it).getLevel(), y,
+      TQRect rect = metrics.boundingRect (x+16*(*it).getLevel(), y,
                                          w-16*(*it).getLevel(), 0,
                                          Qt::AlignJustify | Qt::WordBreak,
                                          (*it).getPhrase().getPhrase());
@@ -126,15 +126,15 @@ void PhraseBook::print(KPrinter *pPrinter) {
    printpainter.end();
 }
 
-bool PhraseBook::decode (const QString &xml) {
-   QXmlInputSource source;
+bool PhraseBook::decode (const TQString &xml) {
+   TQXmlInputSource source;
    source.setData (xml);
    return decode (source);
 }
 
-bool PhraseBook::decode (QXmlInputSource &source) {
+bool PhraseBook::decode (TQXmlInputSource &source) {
    PhraseBookParser parser;
-   QXmlSimpleReader reader;
+   TQXmlSimpleReader reader;
    reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);
    reader.setContentHandler (&parser);
 
@@ -147,12 +147,12 @@ bool PhraseBook::decode (QXmlInputSource &source) {
       return false;
 }
 
-QCString encodeString (const QString str) {
-   QCString res = "";
+TQCString encodeString (const TQString str) {
+   TQCString res = "";
    for (int i = 0; i < (int)str.length(); i++) {
-      QChar ch = str.at(i);
+      TQChar ch = str.at(i);
       ushort uc = ch.unicode();
-      QCString number; number.setNum(uc);
+      TQCString number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
          res = res + "&#" + number + ";";
       else
@@ -161,8 +161,8 @@ QCString encodeString (const QString str) {
    return res;
 }
 
-QString PhraseBook::encode () {
-   QString result;
+TQString PhraseBook::encode () {
+   TQString result;
    result  = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
    result += "<!DOCTYPE phrasebook>\n";
    result += "<phrasebook>\n";
@@ -199,8 +199,8 @@ QString PhraseBook::encode () {
    return result;
 }
 
-QStringList PhraseBook::toStringList () {
-   QStringList result;
+TQStringList PhraseBook::toStringList () {
+   TQStringList result;
 
    PhraseBook::iterator it;
    for (it = begin(); it != end(); ++it) {
@@ -211,12 +211,12 @@ QStringList PhraseBook::toStringList () {
 }
 
 bool PhraseBook::save (const KURL &url) {
-   QRegExp pattern("*.phrasebook",true,true);
+   TQRegExp pattern("*.phrasebook",true,true);
    return save (url, pattern.exactMatch(url.filename()));
 }
 
 
-void PhraseBook::save (QTextStream &stream, bool asPhrasebook) {
+void PhraseBook::save (TQTextStream &stream, bool asPhrasebook) {
    if (asPhrasebook)
       stream << encode();
    else
@@ -225,11 +225,11 @@ void PhraseBook::save (QTextStream &stream, bool asPhrasebook) {
 
 bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    if (url.isLocalFile()) {
-      QFile file(url.path());
+      TQFile file(url.path());
       if(!file.open(IO_WriteOnly))
          return false;
 
-      QTextStream stream(&file);
+      TQTextStream stream(&file);
       save (stream, asPhrasebook);
       file.close();
 
@@ -249,21 +249,21 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    }
 }
 
-int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phrasebookFirst) {
+int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool phrasebookFirst) {
    // KFileDialog::getSaveURL(...) is not useful here as we need
    // to know the requested file type.
 
-   QString filters;
+   TQString filters;
    if (phrasebookFirst)
       filters = i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files");
    else
       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
 
-   KFileDialog fdlg(QString::null,filters, parent, "filedialog", true);
+   KFileDialog fdlg(TQString::null,filters, parent, "filedialog", true);
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
-   if (fdlg.exec() != QDialog::Accepted) {
+   if (fdlg.exec() != TQDialog::Accepted) {
      return 0;
    }
 
@@ -274,7 +274,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
    }
 
    if (KIO::NetAccess::exists(url)) {
-      if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+      if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                        "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
          return 0;
       }
@@ -286,7 +286,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
          url.setFileName (url.fileName(false) + ".phrasebook");
       }
       else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
-         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
+         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                                                            "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
@@ -302,7 +302,7 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
          result = save (url, false);
       }
       else {
-         int filetype = KMessageBox::questionYesNoCancel (0,QString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
                                                            "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
@@ -325,21 +325,21 @@ int PhraseBook::save (QWidget *parent, const QString &title, KURL &url, bool phr
 }
 
 bool PhraseBook::open (const KURL &url) {
-   QString tempFile;
+   TQString tempFile;
    KURL fileUrl = url;
 
-   QString protocol = fileUrl.protocol();
+   TQString protocol = fileUrl.protocol();
    if (protocol.isEmpty() || protocol.isNull()) {
       fileUrl.setProtocol ("file");
       fileUrl.setPath (url.url());
    }
 
    if (KIO::NetAccess::download (fileUrl, tempFile)) {
-      QStringList list = QStringList();
+      TQStringList list = TQStringList();
 
       // First: try to load it as a normal phrase book
-      QFile file(tempFile);
-      QXmlInputSource source (&file);
+      TQFile file(tempFile);
+      TQXmlInputSource source (&file);
       bool error = !decode (source);
 
       // Second: if the file does not contain a phrase book, load it as
@@ -347,12 +347,12 @@ bool PhraseBook::open (const KURL &url) {
       if (error) {
          // Load each line of the plain text file as a new phrase
 
-         QFile file(tempFile);
+         TQFile file(tempFile);
          if (file.open(IO_ReadOnly)) {
-            QTextStream stream(&file);
+            TQTextStream stream(&file);
 
             while (!stream.atEnd()) {
-               QString s = stream.readLine();
+               TQString s = stream.readLine();
                if (!(s.isNull() || s.isEmpty()))
                   *this += PhraseBookEntry(Phrase(s, ""), 0, true);
             }
@@ -370,14 +370,14 @@ bool PhraseBook::open (const KURL &url) {
       return false;
 }
 
-void PhraseBook::addToGUI (QPopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
-                  QObject *receiver, const char *slot) const {
+void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
+                  TQObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
-      QPtrStack<QWidget> stack;
-      QWidget *parent = popup;
+      TQPtrStack<TQWidget> stack;
+      TQWidget *parent = popup;
       int level = 0;
 
-      QValueListConstIterator<PhraseBookEntry> it;
+      TQValueListConstIterator<PhraseBookEntry> it;
       for (it = begin(); it != end(); ++it) {
          int newLevel = (*it).getLevel();
          while (newLevel > level) {
@@ -422,10 +422,10 @@ void PhraseBook::addToGUI (QPopupMenu *popup, KToolBar *toolbar, KActionCollecti
    }
 }
 
-void PhraseBook::insert (const QString &name, const PhraseBook &book) {
+void PhraseBook::insert (const TQString &name, const PhraseBook &book) {
    *this += PhraseBookEntry(Phrase(name), 0, false);
 
-   QValueListConstIterator<PhraseBookEntry> it;
+   TQValueListConstIterator<PhraseBookEntry> it;
    for (it = book.begin(); it != book.end(); ++it) {
       *this += PhraseBookEntry ((*it).getPhrase(), (*it).getLevel()+1, (*it).isPhrase());
    }
@@ -433,14 +433,14 @@ void PhraseBook::insert (const QString &name, const PhraseBook &book) {
 
 // ***************************************************************************
 
-PhraseBookDrag::PhraseBookDrag (PhraseBook *book, QWidget *dragSource, const char *name)
-    : QDragObject (dragSource, name)
+PhraseBookDrag::PhraseBookDrag (PhraseBook *book, TQWidget *dragSource, const char *name)
+    : TQDragObject (dragSource, name)
 {
    setBook (book);
 }
 
-PhraseBookDrag::PhraseBookDrag (QWidget *dragSource, const char *name)
-    : QDragObject (dragSource, name)
+PhraseBookDrag::PhraseBookDrag (TQWidget *dragSource, const char *name)
+    : TQDragObject (dragSource, name)
 {
    setBook (0);
 }
@@ -451,9 +451,9 @@ PhraseBookDrag::~PhraseBookDrag () {
 void PhraseBookDrag::setBook (PhraseBook *book) {
    if (book == 0) {
       isEmpty = true;
-      xmlphrasebook.setText(QString::null);
-      xml.setText(QString::null);
-      plain.setText(QString::null);
+      xmlphrasebook.setText(TQString::null);
+      xml.setText(TQString::null);
+      plain.setText(TQString::null);
    }
    else {
       isEmpty = false;
@@ -477,8 +477,8 @@ const char *PhraseBookDrag::format (int i) const {
       return xmlphrasebook.format(i/3);
 }
 
-QByteArray PhraseBookDrag::encodedData (const char* mime) const {
-   QCString m(mime);
+TQByteArray PhraseBookDrag::encodedData (const char* mime) const {
+   TQCString m(mime);
    m = m.lower();
    if (m.contains("xml-phrasebook"))
       return xmlphrasebook.encodedData(mime);
@@ -488,18 +488,18 @@ QByteArray PhraseBookDrag::encodedData (const char* mime) const {
       return plain.encodedData(mime);
 }
 
-bool PhraseBookDrag::canDecode (const QMimeSource* e) {
-   return QTextDrag::canDecode(e);
+bool PhraseBookDrag::canDecode (const TQMimeSource* e) {
+   return TQTextDrag::canDecode(e);
 }
 
-bool PhraseBookDrag::decode (const QMimeSource *e, PhraseBook *book) {
-   QString string;
-   QCString subtype1 = "x-xml-phrasebook";
-   QCString subtype2 = "xml";
+bool PhraseBookDrag::decode (const TQMimeSource *e, PhraseBook *book) {
+   TQString string;
+   TQCString subtype1 = "x-xml-phrasebook";
+   TQCString subtype2 = "xml";
 
-   if (!QTextDrag::decode(e, string, subtype1))
-      if (!QTextDrag::decode(e, string, subtype2)) {
-         if (QTextDrag::decode(e, string)) {
+   if (!TQTextDrag::decode(e, string, subtype1))
+      if (!TQTextDrag::decode(e, string, subtype2)) {
+         if (TQTextDrag::decode(e, string)) {
             *book += PhraseBookEntry(Phrase(string, ""), 0, true);
             return true;
          }

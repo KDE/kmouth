@@ -18,20 +18,20 @@
 
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
-#include <qtextcodec.h>
-#include <qptrlist.h>
-#include <qlayout.h>
-#include <qwhatsthis.h>
+#include <tqtextcodec.h>
+#include <tqptrlist.h>
+#include <tqlayout.h>
+#include <tqwhatsthis.h>
 #include <kcombobox.h>
 #include <klocale.h>
-#include <qlabel.h>
+#include <tqlabel.h>
 #include "speech.h"
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qcheckbox.h>
+#include <tqlineedit.h>
+#include <tqpushbutton.h>
+#include <tqcheckbox.h>
 #include <kurlrequester.h>
 
-TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
+TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (TQWidget *parent, const char *name)
    : texttospeechconfigurationui (parent, name)
 {
    ttsSystem = new TextToSpeechSystem();
@@ -44,8 +44,8 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget() {
 }
 
 void TextToSpeechConfigurationWidget::buildCodecList () {
-   QString local = i18n("Local")+" (";
-   local += QTextCodec::codecForLocale()->name();
+   TQString local = i18n("Local")+" (";
+   local += TQTextCodec::codecForLocale()->name();
    local += ")";
    characterCodingBox->insertItem (local, Speech::Local);
    characterCodingBox->insertItem (i18n("Latin1"), Speech::Latin1);
@@ -72,7 +72,7 @@ TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const {
    return ttsSystem;
 }
 
-void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QString &langGroup) {
+void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const TQString &langGroup) {
   ttsSystem->readOptions (config, langGroup);
   urlReq->setURL (ttsSystem->ttsCommand);
   stdInButton->setChecked (ttsSystem->stdIn);
@@ -80,7 +80,7 @@ void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QStrin
   useKttsd->setChecked (ttsSystem->useKttsd);
 }
 
-void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const QString &langGroup) {
+void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const TQString &langGroup) {
   ttsSystem->saveOptions (config, langGroup);
 }
 
