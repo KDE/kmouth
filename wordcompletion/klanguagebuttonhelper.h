@@ -21,7 +21,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-class QString;
+class TQString;
 class KLanguageButton;
 
 TQString languageName (TQString languageCode);

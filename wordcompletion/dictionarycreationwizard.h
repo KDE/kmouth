@@ -31,8 +31,8 @@ class CreationSourceUI;
 class CompletionWizardWidget;
 class CreationSourceDetailsUI;
 class KDEDocSourceUI;
-class QTextCodec;
-class QComboBox;
+class TQTextCodec;
+class TQComboBox;
 class MergeWidget;
 
 /**

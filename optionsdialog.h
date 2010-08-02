@@ -23,7 +23,7 @@
 #include <tqobject.h>
 #include "preferencesui.h"
 #include "texttospeechconfigurationwidget.h"
-class QTabWidget;
+class TQTabWidget;
 class KCModule;
 class WordCompletionWidget;
 

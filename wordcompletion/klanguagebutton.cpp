@@ -85,7 +85,7 @@ KLanguageButton::KLanguageButton( TQWidget * parent, const char *name )
 	m_popup( 0 ),
 	m_oldPopup( 0 )
 {
-  m_tags = new QStringList;
+  m_tags = new TQStringList;
 
   clear();
 }

@@ -26,7 +26,7 @@
 #include <tqobject.h>
 #include <tqmap.h>
 
-class QTextCodec;
+class TQTextCodec;
 class KProgressDialog;
 
 namespace WordList {

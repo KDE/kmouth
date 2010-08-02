@@ -30,11 +30,11 @@
 #include "phrasebook.h"
 #include "buttonboxui.h"
 
-class QListViewItem;
+class TQListViewItem;
 class PhraseTreeItem;
 class PhraseTree;
-class QStringList;
-class QString;
+class TQStringList;
+class TQString;
 class KListView;
 
 struct StandardBook {
