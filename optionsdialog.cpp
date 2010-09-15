@@ -149,7 +149,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
 
    kttsd = loadKttsd();
    if (kttsd != 0) {
-      KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("KTTSD Speech Service"));
+      KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("Jovie Speech Service"));
       pageKttsd->setIcon(KIcon("multimedia"));
       pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
       addPage(pageKttsd);
