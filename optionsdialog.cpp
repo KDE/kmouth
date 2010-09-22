@@ -126,7 +126,7 @@ OptionsDialog::OptionsDialog (QWidget *parent)
 	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
    
    tabCtl = new KTabWidget();
-   tabCtl->setObjectName("general");
+   tabCtl->setObjectName( QLatin1String("general" ));
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
    behaviourWidget->layout()->setMargin(KDialog::marginHint());

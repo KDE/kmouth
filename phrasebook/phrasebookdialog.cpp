@@ -155,7 +155,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    QVBoxLayout *mainLayout = new QVBoxLayout (this);
    mainLayout->setSpacing(KDialog::spacingHint());
    QLabel *label = new QLabel (i18n("Please decide which phrase books you need:"), this);
-   label->setObjectName("booksTitle");
+   label->setObjectName( QLatin1String("booksTitle" ));
    mainLayout->addWidget (label);
 
    books = new K3ListView (this);
@@ -253,7 +253,7 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
    setupUi(this);
    setObjectName(name);
    keyButtonPlaceLayout = new QGridLayout (keyButtonPlace);
-   keyButtonPlaceLayout->setObjectName("keyButtonPlaceLayout");
+   keyButtonPlaceLayout->setObjectName( QLatin1String("keyButtonPlaceLayout" ));
    keyButtonPlaceLayout->setMargin(0);
    keyButtonPlaceLayout->setSpacing(0);
 
@@ -280,7 +280,7 @@ namespace PhraseBookPrivate {
 PhraseBookDialog::PhraseBookDialog ()
  : KXmlGuiWindow (0)
 {
-   setObjectName("phraseEditDialog");
+   setObjectName( QLatin1String("phraseEditDialog" ));
    setCaption (i18n("Phrase Book"));
    initGUI();
    initActions();
