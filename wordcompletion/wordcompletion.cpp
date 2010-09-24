@@ -50,7 +50,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
       d->lastText = text;
       KCompletion::clear();
 
-      int border = text.lastIndexOf(QRegExp("\\W"));
+      int border = text.lastIndexOf(QRegExp(QLatin1String( "\\W" )));
       QString suffix = text.right (text.length() - border - 1).toLower();
       QString prefix = text.left (border + 1);
 
@@ -99,7 +99,7 @@ QString WordCompletion::currentWordList() {
 }
 
 bool WordCompletion::isConfigured() {
-   KConfig *config = new KConfig("kmouthrc");
+   KConfig *config = new KConfig(QLatin1String( "kmouthrc" ));
    bool result = config->hasGroup("Dictionary 0");
    delete config;
 
@@ -114,10 +114,10 @@ void WordCompletion::configure() {
    d->dictionaries.clear();
    d->dictDetails.clear();
 
-   KConfig *config = new KConfig("kmouthrc");
+   KConfig *config = new KConfig(QLatin1String( "kmouthrc" ));
    const QStringList groups = config->groupList();
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith (QString("Dictionary "))) {
+      if ((*it).startsWith (QLatin1String("Dictionary "))) {
 		 KConfigGroup cg(config, *it);
          WordCompletionPrivate::DictionaryDetails details;
          details.filename = cg.readEntry("Filename");
@@ -127,7 +127,7 @@ void WordCompletion::configure() {
          d->dictionaries += name;
       }
    delete config;
-   
+
    d->blockCurrentListSignal = true;
    setWordList(d->current);
    d->blockCurrentListSignal = false;
@@ -156,11 +156,11 @@ bool WordCompletion::setWordList(const QString &wordlist) {
       QTextStream stream(&file);
       stream.setEncoding (QTextStream::UnicodeUTF8);
       if (!stream.atEnd()) {
-         if (stream.readLine() == "WPDictFile") {
+         if (stream.readLine() == QLatin1String( "WPDictFile" )) {
             while (!stream.atEnd()) {
                QString s = stream.readLine();
                if (!(s.isNull() || s.isEmpty())) {
-                  QStringList list = s.split( '\t');
+                  QStringList list = s.split( QLatin1Char( '\t' ));
                   bool ok;
                   int weight = list[1].toInt(&ok);
                   if (ok && (weight > 0))
@@ -173,17 +173,17 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    }
    if (!d->blockCurrentListSignal)
       emit currentListChanged (d->current);
-   d->lastText = "";
+   d->lastText.clear();
    d->wordsToSave = false;
    return result;
 }
 
 void WordCompletion::addSentence (const QString &sentence) {
-   const QStringList words = sentence.split( QRegExp("\\W"));
-   
+   const QStringList words = sentence.split( QRegExp(QLatin1String( "\\W" )));
+
    QStringList::ConstIterator it;
    for (it = words.constBegin(); it != words.constEnd(); ++it) {
-      if (!(*it).contains(QRegExp("\\d|_"))) {
+      if (!(*it).contains(QRegExp(QLatin1String( "\\d|_" )))) {
          QString key = (*it).toLower();
          if (d->map.contains(key))
             d->map[key] += 1;

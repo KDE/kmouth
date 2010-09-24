@@ -74,7 +74,7 @@ public:
       {
           name = i18n("without name");
       }
-      setLanguage (name + " (" + languageCode + ')', languageCode);
+      setLanguage (name + QLatin1String( " (" ) + languageCode + QLatin1Char( ')' ), languageCode);
    }
 
    void setLanguage (QString name, QString languageCode) {
@@ -93,12 +93,12 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
 : QWidget(parent)
 {
     setupUi(this);
-    setObjectName(name);
+    setObjectName( QLatin1String( name ) );
     dictionaryList->setSorting (-1); // no sorted list
-    
+
     languageButton->showLanguageCodes(true);
     languageButton->loadAllLanguages();
-    
+
     // Connect the signals from hte KCMKTTSDWidget to this class
     connect (addButton, SIGNAL (clicked()), this, SLOT(addDictionary()) );
     connect (deleteButton, SIGNAL (clicked()), this, SLOT (deleteDictionary()) );
@@ -111,7 +111,7 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     connect (languageButton, SIGNAL (activated (const QString &)), this, SLOT (languageSelected()) );
 
     // Object for the KCMKTTSD configuration
-    config = new KConfig("kmouthrc");
+    config = new KConfig(QLatin1String( "kmouthrc" ));
 
     // Load the configuration from the file
     load();
@@ -133,7 +133,7 @@ void WordCompletionWidget::load() {
    const QStringList groups = config->groupList();
    DictionaryListItem *last = 0;
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith (QString("Dictionary "))) {
+      if ((*it).startsWith (QLatin1String("Dictionary "))) {
 		 KConfigGroup cg (config, *it);
          QString languageTag = cg.readEntry("Language");
          last = new DictionaryListItem (dictionaryList, last,
@@ -156,7 +156,7 @@ void WordCompletionWidget::load() {
 void WordCompletionWidget::save() {
    const QStringList groups = config->groupList();
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
-      if ((*it).startsWith (QString("Dictionary ")))
+      if ((*it).startsWith (QLatin1String("Dictionary ")))
          config->deleteGroup (*it);
 
    int number = 0;
@@ -164,7 +164,7 @@ void WordCompletionWidget::save() {
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
-		 KConfigGroup cg (config, QString("Dictionary %1").arg(number));
+		 KConfigGroup cg (config, QString(QLatin1String( "Dictionary %1" )).arg(number));
          cg.writeEntry ("Filename", item->filename());
          cg.writeEntry ("Name",     item->text (0));
          cg.writeEntry ("Language", item->languageCode());
@@ -256,7 +256,7 @@ void WordCompletionWidget::exportDictionary() {
          return;
 
       if (KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, this)) {
-         if (KMessageBox::warningContinueCancel(0,QString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+         if (KMessageBox::warningContinueCancel(0,QString(QLatin1String( "<qt>%1</qt>" )).arg(i18n("The file %1 already exists. "
                                                           "Do you want to overwrite it?", url.url())),i18n("File Exists"),KGuiItem(i18n("&Overwrite")))==KMessageBox::Cancel) {
             return;
          }
@@ -295,7 +295,7 @@ void WordCompletionWidget::selectionChanged() {
       dictionaryName->setEnabled(false);
       languageButton->setEnabled(false);
 
-      dictionaryName->setText("");
+      dictionaryName->setText(QLatin1String( "" ));
    }
 }
 

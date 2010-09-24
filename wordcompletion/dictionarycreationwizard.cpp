@@ -44,7 +44,7 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    : K3Wizard (parent, name)
 {
    buildCodecList ();
-   
+
    creationSource = new CreationSourceWidget(this, "source page");
    addPage (creationSource, i18n("Source of New Dictionary (1)"));
    setHelpEnabled (creationSource, false);
@@ -69,7 +69,7 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
-   
+
    connect (creationSource->fileButton,    SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
    connect (creationSource->directoryButton,SIGNAL(toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
    connect (creationSource->kdeDocButton,  SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
@@ -97,14 +97,14 @@ void DictionaryCreationWizard::buildCodecList () {
 }
 
 void DictionaryCreationWizard::buildCodecCombo (KComboBox *combo) {
-   QString local = i18nc("Local characterset", "Local")+" (";
-   local += QTextCodec::codecForLocale()->name() + ')';
+   QString local = i18nc("Local characterset", "Local")+QLatin1String( " (" );
+   local += QLatin1String( QTextCodec::codecForLocale()->name() ) + QLatin1Char( ')' );
    combo->addItem (local, 0);
    combo->addItem (i18nc("Latin characterset", "Latin1"), 1);
    combo->addItem (i18n("Unicode"), 2);
 
    for (int i = 0; i < codecList->count(); i++ )
-      combo->addItem (codecList->at(i)->name(), i+3);
+       combo->addItem (QLatin1String( codecList->at(i)->name() ), i+3);
 }
 
 void DictionaryCreationWizard::calculateAppropriate (bool) {
@@ -155,7 +155,7 @@ void DictionaryCreationWizard::calculateAppropriate (bool) {
 
 QString DictionaryCreationWizard::createDictionary() {
    WordList::WordMap map;
-   QString dicFile = "";
+   QString dicFile;
    KProgressDialog *pdlg = WordList::progressDialog();
 
    if (creationSource->mergeButton->isChecked()) {
@@ -209,27 +209,27 @@ QString DictionaryCreationWizard::createDictionary() {
          dicFile = kdeDocWidget->ooDictURL->url().path();
       map = WordList::parseKDEDoc (language, pdlg);
    }
-   
+
    if (!dicFile.isEmpty() && !dicFile.isNull())
       map = WordList::spellCheck (map, dicFile, pdlg);
    pdlg->close();
    delete pdlg;
-   
+
    int dictnumber = 0;
    QString filename;
    QString dictionaryFile;
    do {
       dictnumber++;
-      filename = QString("wordcompletion%1.dict").arg(dictnumber);
+      filename = QString(QLatin1String( "wordcompletion%1.dict" )).arg(dictnumber);
       dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
-   
-   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", "/") + filename;
+
+   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" )) + filename;
    if (WordList::saveWordList (map, dictionaryFile))
       return filename;
    else
-      return "";
+      return QLatin1String( "" );
 }
 
 QString DictionaryCreationWizard::name() {
@@ -296,12 +296,12 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
       KIntNumInput *numInput = new KIntNumInput(contents);
       layout->addWidget (checkbox, row, 0);
       layout->addWidget (numInput, row, 1);
-      
+
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);
       numInput->setValue (100);
       connect (checkbox, SIGNAL (toggled(bool)), numInput, SLOT(setEnabled(bool)));
-      
+
       dictionaries.insert(*fIt, checkbox);
       weights.insert(*fIt, numInput);
       languages [*fIt] = *lIt;
@@ -342,7 +342,7 @@ QString MergeWidget::language () {
 CompletionWizardWidget::CompletionWizardWidget (K3Wizard *parent, const char *name)
    : QWidget (parent) {
    setupUi(this);
-   setObjectName(name);
+   setObjectName( QLatin1String( name ) );
 }
 
 CompletionWizardWidget::~CompletionWizardWidget() {
@@ -360,11 +360,11 @@ void CompletionWizardWidget::ok (KConfig *config) {
 
    pdlg->close();
    delete pdlg;
-   
+
    QString filename;
    QString dictionaryFile;
-   
-   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", "/") + "wordcompletion1.dict";
+
+   dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" )) + QLatin1String( "wordcompletion1.dict" );
    if (WordList::saveWordList (map, dictionaryFile)) {
 	  KConfigGroup cg(config, "Dictionary 0");
       cg.writeEntry ("Filename", "wordcompletion1.dict");

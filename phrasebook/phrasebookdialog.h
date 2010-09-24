@@ -22,7 +22,7 @@
 #include <QtGui/QRadioButton>
 #include <Qt3Support/Q3ButtonGroup>
 #include <QtGui/QLabel>
-#include <Qt3Support/Q3ListView> 
+#include <Qt3Support/Q3ListView>
 #include <QtCore/QList>
 #include <QtGui/QGridLayout>
 #include <QtGui/QDropEvent>
@@ -103,7 +103,7 @@ class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
 public:
    StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon("phrasebook"), name, parent) {
+   : KAction (KIcon(QLatin1String( "phrasebook" )), name, parent) {
       this->url = url;
       connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
       parent->addAction(name, this);
@@ -174,7 +174,7 @@ public slots:
    void slotNoKey();
    void slotCustomKey();
    void capturedShortcut (const KShortcut& cut);
-   
+
    void selectionChanged ();
    void contextMenuRequested(Q3ListViewItem *, const QPoint &pos, int);
 
@@ -206,14 +206,14 @@ private:
    void initActions();
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
-   
+
    Q3ListViewItem *addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book);
    Q3ListViewItem *addBook (Q3ListViewItem *item, PhraseBook *book);
-   
+
    void setShortcut (const KShortcut &cut);
 
    void _warning (const QKeySequence &cut, const QString &sAction, const QString &sTitle);
-   
+
    bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
    bool isPhraseKeyPresent (const KShortcut& cut, bool warnUser);
    bool isKeyPresent (const KShortcut& cut, bool warnUser);

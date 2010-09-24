@@ -36,7 +36,7 @@ bool PhraseBookParser::fatalError (const QXmlParseException &) {
 }
 
 QString PhraseBookParser::errorString() const {
-   return "";
+   return QLatin1String( "" );
 }
 
 bool PhraseBookParser::startDocument() {
@@ -52,20 +52,20 @@ bool PhraseBookParser::startElement (const QString &, const QString &,
                                      const QString &name,
                                      const QXmlAttributes &attributes)
 {
-   if (name == "phrase") {
+   if (name == QLatin1String( "phrase" )) {
       if (isInPhrase)
          return false;
 
-      phrase.phrase = "";
-      phrase.shortcut = attributes.value("shortcut");
+      phrase.phrase.clear();
+      phrase.shortcut = attributes.value(QLatin1String( "shortcut" ));
       isInPhrase = true;
    }
-   else if (name == "phrasebook") {
+   else if (name == QLatin1String( "phrasebook" )) {
       if (isInPhrase)
          return false;
 
-      phrase.phrase = attributes.value("name");
-      phrase.shortcut = "";
+      phrase.phrase = attributes.value(QLatin1String( "name" ));
+      phrase.shortcut.clear();
       if ((phrase.phrase.isNull() || phrase.phrase.isEmpty()) && starting)
          offset = -1;
       else {
@@ -90,11 +90,11 @@ bool PhraseBookParser::ignorableWhitespace (const QString &ch) {
 bool PhraseBookParser::endElement (const QString &, const QString &,
                                    const QString &name)
 {
-   if (name == "phrase") {
+   if (name == QLatin1String( "phrase" )) {
       list += PhraseBookEntry (phrase, level, true);
       isInPhrase = false;
    }
-   else if (name == "phrasebook") {
+   else if (name == QLatin1String( "phrasebook" )) {
       if (level == offset)
          return false;
 

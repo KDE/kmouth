@@ -54,7 +54,7 @@ bool XMLParser::fatalError (const QXmlParseException &) {
 }
 
 QString XMLParser::errorString() const {
-   return "";
+   return QLatin1String( "" );
 }
 
 bool XMLParser::startDocument() {
@@ -140,11 +140,11 @@ bool saveWordList (WordMap map, QString filename) {
 /***************************************************************************/
 
 void addWords (WordMap &map, QString line) {
-   const QStringList words = line.split( QRegExp("\\W"));
+   const QStringList words = line.split( QRegExp(QLatin1String( "\\W" )));
 
    QStringList::ConstIterator it;
    for (it = words.constBegin(); it != words.constEnd(); ++it) {
-      if (!(*it).contains(QRegExp("\\d|_"))) {
+      if (!(*it).contains(QRegExp(QLatin1String( "\\d|_" )))) {
          QString key = (*it).toLower();
          if (map.contains(key))
             map[key] += 1;
@@ -168,7 +168,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
    QXmlInputSource source (&xmlfile);
    XMLParser parser;
    QXmlSimpleReader reader;
-   reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);
+   reader.setFeature (QLatin1String( "http://trolltech.com/xml/features/report-start-end-entity" ), true);
    reader.setContentHandler (&parser);
 
    WordMap words;
@@ -182,12 +182,12 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
 
          if (!stream.atEnd()) {
             QString s = stream.readLine();
-            if (s == "WPDictFile") { // Contains the file a weighted word list?
+            if (s == QLatin1String( "WPDictFile" )) { // Contains the file a weighted word list?
                // We can assume that weighted word lists are always UTF8 coded.
                while (!stream.atEnd()) {
                   QString s = stream.readLine();
                   if (!(s.isNull() || s.isEmpty())) {
-                     QStringList list = s.split( '\t');
+                     QStringList list = s.split( QLatin1Char( '\t' ));
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
@@ -297,12 +297,12 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
 
-   QStringList files = KGlobal::dirs()->findAllResources ("html", language + "/*.docbook",
+   QStringList files = KGlobal::dirs()->findAllResources ("html", language + QLatin1String( "/*.docbook" ),
                                                           KStandardDirs::Recursive |
                                                           KStandardDirs::NoDuplicates);
    if ((files.count() == 0) && (language.length() == 5)) {
       language = language.left(2);
-      files = KGlobal::dirs()->findAllResources ("html", language + "/*.docbook",
+      files = KGlobal::dirs()->findAllResources ("html", language + QLatin1String( "/*.docbook" ),
                                                  KStandardDirs::Recursive |
                                                  KStandardDirs::NoDuplicates);
    }
@@ -332,13 +332,13 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
    int dirNdx = 0;
    while (dirNdx < directories.count()) {
       QDir dir(directories.at(dirNdx));
-      const QFileInfoList entries = dir.entryInfoList ("*", QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
+      const QFileInfoList entries = dir.entryInfoList (QLatin1String( "*" ), QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
 
        for (int i = 0; i < entries.size(); ++i) {
             QFileInfo fileInfo = entries.at(i);
 
             QString name = fileInfo.fileName();
-            if (name != "." && name != "..") {
+            if (name != QLatin1String( "." ) && name != QLatin1String( ".." )) {
                if (fileInfo.isDir())
                   directories += fileInfo.filePath ();
                else
@@ -376,27 +376,27 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
       QTextStream stream(&afile);
       while (!stream.atEnd()) {
          QString s = stream.readLine();
-         QStringList fields = s.split( QRegExp("\\s"));
+         QStringList fields = s.split( QRegExp(QLatin1String( "\\s" )));
 
          if (fields.count() == 4) {
-            cross = (fields[2] == "Y");
+            cross = (fields[2] == QLatin1String( "Y" ));
          }
          else {
             if (fields.count() >= 5) {
                AffEntry e;
                e.cross     = cross;
-               if (fields[2] == "0")
+               if (fields[2] == QLatin1String( "0" ))
                   e.charsToRemove = 0;
                else
                   e.charsToRemove = fields[2].length();
                e.add       = fields[3];
 
-               if (fields[4] != ".") {
+               if (fields[4] != QLatin1String( "." )) {
                   QString condition = fields[4];
                   for (int idx = 0; idx < condition.length(); ++idx) {
-                     if (condition[idx] == '[') {
+                     if (condition[idx] == QLatin1Char( '[' )) {
                         QString code;
-                        for (++idx; (idx < condition.length()) && condition[idx] != ']'; ++idx)
+                        for (++idx; (idx < condition.length()) && condition[idx] != QLatin1Char( ']' ); ++idx)
                            code += condition[idx];
                         e.condition << code;
                      }
@@ -405,14 +405,14 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes) {
                   }
                }
 
-               if (s.startsWith(QString("PFX"))) {
+               if (s.startsWith(QLatin1String("PFX"))) {
                   AffList list;
                   if (prefixes.contains (fields[1][0]))
                      list = prefixes[fields[1][0]];
                   list << e;
                   prefixes[fields[1][0]] = list;
                }
-               else if (s.startsWith(QString("SFX"))) {
+               else if (s.startsWith(QLatin1String("SFX"))) {
                   AffList list;
                   if (suffixes.contains (fields[1][0]))
                      list = suffixes[fields[1][0]];
@@ -445,7 +445,7 @@ inline bool checkCondition (const QString &word, const QStringList &condition) {
         it != condition.constEnd();
         ++it, ++idx)
    {
-      if ((*it).contains(word[idx]) == ((*it)[0] == '^'))
+      if ((*it).contains(word[idx]) == ((*it)[0] == QLatin1Char( '^' )))
          return false;
    }
    return true;
@@ -503,11 +503,11 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
 
 WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
 
-   if (dictionary.endsWith(QString(".dic"))) {
+   if (dictionary.endsWith(QLatin1String(".dic"))) {
       AffMap prefixes;
       AffMap suffixes;
       WordMap checkedMap;
-      loadAffFile (dictionary.left(dictionary.length()-4) + ".aff", prefixes, suffixes);
+      loadAffFile (dictionary.left(dictionary.length()-4) + QLatin1String( ".aff" ), prefixes, suffixes);
 
       pdlg->progressBar()->reset();
       pdlg->setAllowCancel (false);
@@ -533,9 +533,9 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
 
          while (!stream.atEnd()) {
             QString s = stream.readLine();
-            if (s.contains("/")) {
-               QString word = s.left(s.indexOf("/")).toLower();
-               QString modifiers = s.right(s.length() - s.indexOf("/"));
+            if (s.contains(QLatin1Char( '/' ))) {
+               QString word = s.left(s.indexOf(QLatin1Char( '/' ))).toLower();
+               QString modifiers = s.right(s.length() - s.indexOf(QLatin1Char(  '/' )));
 
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }

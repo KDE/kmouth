@@ -44,7 +44,7 @@ public:
    CreationSourceDetailsWidget(QWidget *parent, const char *name)
       : QWidget(parent) {
       setupUi(this);
-      setObjectName(name);
+      setObjectName( QLatin1String( name ) );
    }
 };
 
@@ -54,7 +54,7 @@ public:
    CreationSourceWidget(QWidget *parent, const char *name)
       : QWidget(parent) {
       setupUi(this);
-      setObjectName(name);
+      setObjectName(QLatin1String( name ));
    }
 };
 
@@ -64,11 +64,11 @@ public:
    KDEDocSourceWidget(QWidget *parent, const char *name)
       : QWidget(parent) {
       setupUi(this);
-      setObjectName(name);
+      setObjectName( QLatin1String( name ) );
       languageButton->showLanguageCodes(true);
       languageButton->loadAllLanguages();
 
-      ooDictURL->setFilter ("*.dic");
+      ooDictURL->setFilter (QLatin1String( "*.dic" ));
    }
 };
 

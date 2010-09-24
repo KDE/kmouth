@@ -81,9 +81,9 @@ PhraseTree::PhraseTree (QWidget *parent, const char *name)
    : K3ListView (parent)
 {
    Q_UNUSED(name);
-   phrasebook_open   = KIconLoader::global()->loadIcon("phrasebook",        KIconLoader::Small);
-   phrasebook_closed = KIconLoader::global()->loadIcon("phrasebook_closed", KIconLoader::Small);
-   phrase            = KIconLoader::global()->loadIcon("phrase",            KIconLoader::Small);
+   phrasebook_open   = KIconLoader::global()->loadIcon(QLatin1String( "phrasebook" ),        KIconLoader::Small);
+   phrasebook_closed = KIconLoader::global()->loadIcon(QLatin1String( "phrasebook_closed" ), KIconLoader::Small);
+   phrase            = KIconLoader::global()->loadIcon(QLatin1String( "phrase" ),            KIconLoader::Small);
 
    connect (this, SIGNAL(expanded (Q3ListViewItem *)), this, SLOT(itemExpanded (Q3ListViewItem *)));
    connect (this, SIGNAL(collapsed (Q3ListViewItem *)), this, SLOT(itemCollapsed (Q3ListViewItem *)));
@@ -375,7 +375,7 @@ Q3ListViewItem *PhraseTree::addBook (Q3ListViewItem *parent, Q3ListViewItem *aft
    for (it = book->begin(); it != book->end(); ++it) {
       int newLevel = (*it).getLevel();
       while (level < newLevel) {
-         parent = insertBook(parent, last, "");
+         parent = insertBook(parent, last, QLatin1String( "" ));
          last = 0;
          level++;
       }
@@ -470,7 +470,7 @@ void PhraseTree::_warning (const QKeySequence& cut,  QString sAction, const QStr
    QString s =
        i18n("The '%1' key combination has already been allocated "
        "to %2.\n"
-       "Please choose a unique key combination.", 
+       "Please choose a unique key combination.",
        cut.toString(), sAction);
 
    KMessageBox::sorry( this, s, sTitle );
@@ -495,13 +495,13 @@ bool PhraseTree::isStdAccelPresent (const KShortcut& cut, bool warnUser) {
          return true;
       }
    }
-#endif   
+#endif
    return false;
 }
 
 //port this, too. Hint: KGlobalAccel will do most of the work.
 bool PhraseTree::isGlobalKeyPresent (const KShortcut& cut, bool warnUser) {
-   QMap<QString, QString> mapEntry = KGlobal::config()->entryMap ("Global Shortcuts");
+   QMap<QString, QString> mapEntry = KGlobal::config()->entryMap (QLatin1String( "Global Shortcuts" ));
    QMap<QString, QString>::Iterator it;
    for (it = mapEntry.begin(); it != mapEntry.end(); ++it) {
       QKeySequence conflicting = keyConflict(cut, KShortcut(*it));
