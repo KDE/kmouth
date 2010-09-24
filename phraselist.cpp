@@ -69,7 +69,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    configureCompletionCombo(completion->wordLists());
    rowLayout->addWidget(dictionaryCombo);
 
-   lineEdit = new PhraseEdit ("", this);
+   lineEdit = new PhraseEdit (QLatin1String( "" ), this);
    lineEdit->setFocusPolicy(Qt::StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(QLineEdit::Normal);
@@ -79,7 +79,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    rowLayout->addWidget(lineEdit);
    lineEdit->setFocus();
 
-   QIcon icon = KIconLoader::global()->loadIconSet("speak", KIconLoader::Small);
+   QIcon icon = KIconLoader::global()->loadIconSet(QLatin1String( "speak" ), KIconLoader::Small);
    speakButton = new QPushButton (icon, i18n("&Speak"), this);
    speakButton->setFocusPolicy(Qt::NoFocus);
    speakButton->setAutoDefault(false);
@@ -106,7 +106,7 @@ void PhraseList::print(QPrinter *pPrinter) {
    for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));
    }
-   
+
    book.print (pPrinter);
 }
 
@@ -117,7 +117,7 @@ QStringList PhraseList::getListSelection() {
       if (item->isSelected())
          res += item->text();
    }
-   
+
    return res;
 }
 
@@ -164,7 +164,7 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
    else {
       dictionaryCombo->addItems (list);
       dictionaryCombo->show();
-   
+
       QStringList::ConstIterator it;
       int i = 0;
       for (it = list.begin(), i = 0; it != list.end(); ++it, ++i) {
@@ -179,7 +179,7 @@ void PhraseList::configureCompletionCombo(const QStringList &list) {
 void PhraseList::saveCompletionOptions(KConfig *config) {
    KConfigGroup cg(config,"General Options");
    cg.writeEntry("Show speak button", speakButton->isVisible() || !lineEdit->isVisible());
-      
+
    KConfigGroup cg2(config,"Completion");
    cg2.writeEntry("Mode", static_cast<int>(lineEdit->completionMode()));
    cg2.writeEntry("List", completion->currentWordList());
@@ -254,14 +254,14 @@ void PhraseList::insert (const QString &s) {
 }
 
 void PhraseList::speakListSelection () {
-   speakPhrase(getListSelection().join ("\n"));
+   speakPhrase(getListSelection().join (QLatin1String( "\n" )));
 }
 
 void PhraseList::removeListSelection () {
    Q3ListBoxItem *next;
    for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
       next = item->next();
-      
+
       if (item->isSelected()) {
          listBox->removeItem(listBox->index(item));
       }
@@ -275,7 +275,7 @@ void PhraseList::cutListSelection () {
 }
 
 void PhraseList::copyListSelection () {
-   QApplication::clipboard()->setText (getListSelection().join ("\n"));
+   QApplication::clipboard()->setText (getListSelection().join (QLatin1String( "\n" )));
 }
 
 void PhraseList::lineEntered (const QString &phrase) {
@@ -306,7 +306,7 @@ void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine
 
    if (clearEditLine) {
       lineEdit->selectAll();
-      line = "";
+      line.clear();
    }
    enableMenuEntries ();
 }
@@ -314,10 +314,10 @@ void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine
 void PhraseList::contextMenuRequested (Q3ListBoxItem *, const QPoint &pos) {
    QString name;
    if (existListSelection())
-      name = "phraselist_selection_popup";
+      name = QLatin1String( "phraselist_selection_popup" );
    else
-      name = "phraselist_popup";
-   
+      name = QLatin1String( "phraselist_popup" );
+
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    KXMLGUIFactory *factory = theApp->factory();
    QMenu *popup = (QMenu *)factory->container(name,theApp);
@@ -339,7 +339,7 @@ void PhraseList::textChanged (const QString &s) {
 void PhraseList::selectionChanged () {
    if (!isInSlot) {
       isInSlot = true;
-      
+
       QStringList sel = getListSelection();
 
       if (sel.empty())
@@ -347,7 +347,7 @@ void PhraseList::selectionChanged () {
       else if (sel.count() == 1)
          setEditLineText(sel.first());
       else {
-         setEditLineText("");
+         setEditLineText(QLatin1String( "" ));
       }
       isInSlot = false;
    }
@@ -369,7 +369,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             selected = true;
          }
       }
-      
+
       if (!selected) {
          listBox->setCurrentItem (listBox->count() - 1);
          listBox->setSelected (listBox->count() - 1, true);
@@ -377,7 +377,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
       }
       else {
          int curr = listBox->currentItem();
-         
+
          if (curr == -1) {
             isInSlot = true;
             listBox->clearSelection();
@@ -396,7 +396,7 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             listBox->ensureCurrentVisible ();
          }
       }
-      
+
       e->accept();
    }
    else if (e->key() == Qt::Key_Down) {
@@ -406,10 +406,10 @@ void PhraseList::keyPressEvent (QKeyEvent *e) {
             selected = true;
          }
       }
-      
+
       if (selected) {
          int curr = listBox->currentItem();
-      
+
          if (curr == (int)listBox->count() - 1) {
             listBox->clearSelection();
          }
@@ -443,7 +443,7 @@ void PhraseList::save () {
    // the class PhraseBook does already provide a method for saving
    // phrase books in both the phrase book format and plain text file
    // format we use that method here.
-   
+
    PhraseBook book;
    for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
       book += PhraseBookEntry(Phrase(item->text()));

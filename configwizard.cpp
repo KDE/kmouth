@@ -45,7 +45,7 @@ ConfigWizard::~ConfigWizard() {
 }
 
 void ConfigWizard::initCommandPage(KConfig *config) {
-   KConfigGroup cg(config, "TTS System");
+   KConfigGroup cg(config, QLatin1String( "TTS System" ));
    bool displayCommand = false;
    if (!cg.hasKey("Command")) displayCommand = true;
    if (!cg.hasKey("StdIn"))   displayCommand = true;
@@ -53,7 +53,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
 
    if (displayCommand) {
       commandWidget = new TextToSpeechConfigurationWidget (this, "ttsPage");
-      commandWidget->readOptions (config, "TTS System");
+      commandWidget->readOptions (config, QLatin1String( "TTS System" ));
       addPage (commandWidget, i18n("Text-to-Speech Configuration"));
       setHelpEnabled (commandWidget, true);
       setFinishEnabled (commandWidget, true);
@@ -63,7 +63,7 @@ void ConfigWizard::initCommandPage(KConfig *config) {
 }
 
 void ConfigWizard::initBookPage() {
-   QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
+   QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
    bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
    if (displayBook) {
@@ -80,7 +80,7 @@ void ConfigWizard::initBookPage() {
 
 void ConfigWizard::initCompletion (KConfig *config) {
    if (!WordCompletion::isConfigured()) {
-      QString dictionaryFile = KGlobal::dirs()->findResource("appdata", "dictionary.txt");
+      QString dictionaryFile = KGlobal::dirs()->findResource("appdata", QLatin1String( "dictionary.txt" ));
       QFile file(dictionaryFile);
       if (file.exists()) {
          // If there is a word completion dictionary but no entry in the
@@ -92,18 +92,18 @@ void ConfigWizard::initCompletion (KConfig *config) {
          cg.sync();
       }
    }
-   
+
    if (config->hasGroup("Completion")) {
       completionWidget = 0;
       return;
    }
-   
+
    if (!WordCompletion::isConfigured()) {
       completionWidget = new CompletionWizardWidget(this, "completionPage");
       addPage (completionWidget, i18n("Word Completion"));
       setHelpEnabled (completionWidget, true);
       setFinishEnabled (completionWidget, true);
-   
+
       if (commandWidget != 0)
          setFinishEnabled (commandWidget, false);
       if (bookWidget != 0)
@@ -116,7 +116,7 @@ void ConfigWizard::initCompletion (KConfig *config) {
 void ConfigWizard::saveConfig (KConfig *config) {
    if (commandWidget != 0) {
       commandWidget->ok();
-      commandWidget->saveOptions (config, "TTS System");
+      commandWidget->saveOptions (config, QLatin1String( "TTS System" ));
    }
 
    if (bookWidget != 0)
@@ -138,7 +138,7 @@ bool ConfigWizard::configurationNeeded () {
 }
 
 void ConfigWizard::help () {
-   KToolInvocation::invokeHelp ("Wizard");
+   KToolInvocation::invokeHelp (QLatin1String( "Wizard" ));
 }
 
 #include "configwizard.moc"

@@ -34,7 +34,7 @@
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
    : QWidget (parent)
 {
-   setObjectName(name);
+   setObjectName( QLatin1String( name ) );
    setupUi(this);
    ttsSystem = new TextToSpeechSystem();
 
@@ -45,13 +45,13 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget() {
 }
 
 void TextToSpeechConfigurationWidget::buildCodecList () {
-   QString local = i18nc("Local characterset", "Local")+" (";
-   local += QTextCodec::codecForLocale()->name() + ')';
+   QString local = i18nc("Local characterset", "Local")+QLatin1String( " (" );
+   local += QLatin1String( QTextCodec::codecForLocale()->name() ) + QLatin1Char( ')' );
    characterCodingBox->addItem (local, Speech::Local);
    characterCodingBox->addItem (i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);
    characterCodingBox->addItem (i18n("Unicode"), Speech::Unicode);
    for (int i = 0; i < ttsSystem->codecList->count(); i++ )
-      characterCodingBox->addItem (ttsSystem->codecList->at(i)->name(), Speech::UseCodec + i);
+      characterCodingBox->addItem (QLatin1String( ttsSystem->codecList->at(i)->name() ), Speech::UseCodec + i);
 }
 
 void TextToSpeechConfigurationWidget::cancel() {

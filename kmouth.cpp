@@ -52,7 +52,7 @@
 
 KMouthApp::KMouthApp(QWidget* , const char* name):KXmlGuiWindow(0)
 {
-   setObjectName(name);
+   setObjectName( QLatin1String( name ) );
    isConfigured = false;
    config=KGlobal::config();
 
@@ -109,7 +109,7 @@ bool KMouthApp::configured() {
 void KMouthApp::initActions() {
 // The "File" menu
    fileOpen = actionCollection()->addAction("file_open");
-   fileOpen->setIcon(KIcon("phrasehistory_open"));
+   fileOpen->setIcon(KIcon( QLatin1String( "phrasehistory_open" )));
    fileOpen->setText(i18n("&Open as History..."));
    fileOpen->setShortcuts(KStandardShortcut::open());
    connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
@@ -117,7 +117,7 @@ void KMouthApp::initActions() {
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
    fileSaveAs = actionCollection()->addAction("file_save_as");
-   fileSaveAs->setIcon(KIcon("phrasehistory_save"));
+   fileSaveAs->setIcon(KIcon( QLatin1String( "phrasehistory_save" )));
    fileSaveAs->setText(i18n("Save &History As..."));
    fileSaveAs->setShortcuts(KStandardShortcut::save());
    connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
@@ -125,7 +125,7 @@ void KMouthApp::initActions() {
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
    filePrint = actionCollection()->addAction("file_print");
-   filePrint->setIcon(KIcon("phrasehistory_print"));
+   filePrint->setIcon(KIcon( QLatin1String( "phrasehistory_print" )));
    filePrint->setText(i18n("&Print History..."));
    filePrint->setShortcuts(KStandardShortcut::print());
    connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
@@ -150,7 +150,7 @@ void KMouthApp::initActions() {
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
    editSpeak = actionCollection()->addAction("edit_speak");
-   editSpeak->setIcon(KIcon("speak"));
+   editSpeak->setIcon(KIcon( QLatin1String( "speak" )));
    editSpeak->setText(i18nc("Start speaking", "&Speak"));
    connect(editSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speak()));
    editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
@@ -179,7 +179,7 @@ void KMouthApp::initActions() {
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 
    configureTTS = actionCollection()->addAction("configureTTS");
-   configureTTS->setIcon(KIcon("configure"));
+   configureTTS->setIcon(KIcon( QLatin1String( "configure" )));
    configureTTS->setText(i18n("&Configure KMouth..."));
    connect(configureTTS, SIGNAL(triggered(bool)), this, SLOT(slotConfigureTTS()));
    configureTTS->setToolTip(i18n("Opens the configuration dialog"));
@@ -190,28 +190,28 @@ void KMouthApp::initActions() {
 
 // The popup menu of the list of spoken sentences
    phraseListSpeak = actionCollection()->addAction("phraselist_speak");
-   phraseListSpeak->setIcon(KIcon("speak"));
+   phraseListSpeak->setIcon(KIcon( QLatin1String( "speak" )));
    phraseListSpeak->setText(i18n("&Speak"));
    phraseListSpeak->setToolTip(i18n("Speaks the currently selected phrases in the history"));
    connect(phraseListSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speakListSelection()));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
    phraseListRemove = actionCollection()->addAction("phraselist_remove");
-   phraseListRemove->setIcon(KIcon("edit-delete"));
+   phraseListRemove->setIcon(KIcon( QLatin1String( "edit-delete" )));
    phraseListRemove->setText(i18n("&Delete"));
    connect(phraseListRemove, SIGNAL(triggered(bool)), phraseList, SLOT(removeListSelection()));
    phraseListRemove->setToolTip(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
    phraseListCut = actionCollection()->addAction("phraselist_cut");
-   phraseListCut->setIcon(KIcon("edit-cut"));
+   phraseListCut->setIcon(KIcon( QLatin1String( "edit-cut" )));
    phraseListCut->setText(i18n("Cu&t"));
    connect(phraseListCut, SIGNAL(triggered(bool)), phraseList, SLOT(cutListSelection()));
    phraseListCut->setToolTip(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
    phraseListCopy = actionCollection()->addAction("phraselist_copy");
-   phraseListCopy->setIcon(KIcon("edit-copy"));
+   phraseListCopy->setIcon(KIcon( QLatin1String( "edit-copy" )));
    phraseListCopy->setText(i18n("&Copy"));
    connect(phraseListCopy, SIGNAL(triggered(bool)), phraseList, SLOT(copyListSelection()));
    phraseListCut->setToolTip(i18n("Copies the currently selected phrases from the history to the clipboard"));

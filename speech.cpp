@@ -39,9 +39,9 @@ QString Speech::prepareCommand (QString command, const QString &text,
                           const QString &filename, const QString &language) {
 #ifdef macroExpander
    QHash<QChar,QString> map;
-   map['t'] = text;
-   map['f'] = filename;
-   map['l'] = language;
+   map[QLatin1Char( 't' )] = text;
+   map[QLatin1Char( 'f' )] = filename;
+   map[QLatin1Char( 'l' )] = language;
    return KMacroExpander::expandMacrosShellQuote (command, map);
 #else
    QStack<bool> stack;  // saved isdoublequote values during parsing of braces
@@ -197,7 +197,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
       tempFile.flush();
 
       // 2. prepare the command:
-      command = prepareCommand (command, encText, filename, language);
+      command = prepareCommand (command, QLatin1String( encText ), filename, language);
 
 
       // 3. create a new process
@@ -221,10 +221,10 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 }
 
 void Speech::receivedStdout (K3Process *, char *buffer, int buflen) {
-   kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
+   kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char( '\n' );
 }
 void Speech::receivedStderr (K3Process *, char *buffer, int buflen) {
-   kDebug() << QString::fromLatin1(buffer, buflen) + '\n';
+   kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char( '\n' );
 }
 
 void Speech::wroteStdin(K3Process *) {
