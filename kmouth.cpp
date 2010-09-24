@@ -108,7 +108,7 @@ bool KMouthApp::configured() {
 
 void KMouthApp::initActions() {
 // The "File" menu
-   fileOpen = actionCollection()->addAction("file_open");
+   fileOpen = actionCollection()->addAction(QLatin1String( "file_open" ));
    fileOpen->setIcon(KIcon( QLatin1String( "phrasehistory_open" )));
    fileOpen->setText(i18n("&Open as History..."));
    fileOpen->setShortcuts(KStandardShortcut::open());
@@ -116,7 +116,7 @@ void KMouthApp::initActions() {
    fileOpen->setToolTip(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = actionCollection()->addAction("file_save_as");
+   fileSaveAs = actionCollection()->addAction(QLatin1String( "file_save_as" ));
    fileSaveAs->setIcon(KIcon( QLatin1String( "phrasehistory_save" )));
    fileSaveAs->setText(i18n("Save &History As..."));
    fileSaveAs->setShortcuts(KStandardShortcut::save());
@@ -124,7 +124,7 @@ void KMouthApp::initActions() {
    fileSaveAs->setToolTip(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
-   filePrint = actionCollection()->addAction("file_print");
+   filePrint = actionCollection()->addAction(QLatin1String( "file_print" ));
    filePrint->setIcon(KIcon( QLatin1String( "phrasehistory_print" )));
    filePrint->setText(i18n("&Print History..."));
    filePrint->setShortcuts(KStandardShortcut::print());
@@ -149,7 +149,7 @@ void KMouthApp::initActions() {
    editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
-   editSpeak = actionCollection()->addAction("edit_speak");
+   editSpeak = actionCollection()->addAction(QLatin1String( "edit_speak" ));
    editSpeak->setIcon(KIcon( QLatin1String( "speak" )));
    editSpeak->setText(i18nc("Start speaking", "&Speak"));
    connect(editSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speak()));
@@ -157,7 +157,7 @@ void KMouthApp::initActions() {
    editSpeak->setWhatsThis (i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
 
 // The "Phrase book" menu
-   phrasebookEdit = actionCollection()->addAction("phrasebook_edit");
+   phrasebookEdit = actionCollection()->addAction(QLatin1String( "phrasebook_edit" ));
    phrasebookEdit->setText(i18n("&Edit..."));
    connect(phrasebookEdit, SIGNAL(triggered(bool)), this, SLOT(slotEditPhrasebook()));
 
@@ -168,7 +168,7 @@ void KMouthApp::initActions() {
    // viewToolBar->setToolTip(i18n("Enables/disables the toolbar"));
    // viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
-   viewPhrasebookBar = actionCollection()->add<KToggleAction>("showPhrasebookBar");
+   viewPhrasebookBar = actionCollection()->add<KToggleAction>(QLatin1String( "showPhrasebookBar" ));
    viewPhrasebookBar->setText(i18n("Show P&hrasebook Bar"));
    connect(viewPhrasebookBar, SIGNAL(triggered(bool)), this, SLOT(slotViewPhrasebookBar()));
    viewPhrasebookBar->setToolTip(i18n("Enables/disables the phrasebook bar"));
@@ -178,7 +178,7 @@ void KMouthApp::initActions() {
    viewStatusBar->setToolTip(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 
-   configureTTS = actionCollection()->addAction("configureTTS");
+   configureTTS = actionCollection()->addAction(QLatin1String( "configureTTS" ));
    configureTTS->setIcon(KIcon( QLatin1String( "configure" )));
    configureTTS->setText(i18n("&Configure KMouth..."));
    connect(configureTTS, SIGNAL(triggered(bool)), this, SLOT(slotConfigureTTS()));
@@ -189,41 +189,41 @@ void KMouthApp::initActions() {
    // The "Help" menu will automatically get created.
 
 // The popup menu of the list of spoken sentences
-   phraseListSpeak = actionCollection()->addAction("phraselist_speak");
+   phraseListSpeak = actionCollection()->addAction(QLatin1String( "phraselist_speak" ));
    phraseListSpeak->setIcon(KIcon( QLatin1String( "speak" )));
    phraseListSpeak->setText(i18n("&Speak"));
    phraseListSpeak->setToolTip(i18n("Speaks the currently selected phrases in the history"));
    connect(phraseListSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speakListSelection()));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
-   phraseListRemove = actionCollection()->addAction("phraselist_remove");
+   phraseListRemove = actionCollection()->addAction(QLatin1String( "phraselist_remove" ));
    phraseListRemove->setIcon(KIcon( QLatin1String( "edit-delete" )));
    phraseListRemove->setText(i18n("&Delete"));
    connect(phraseListRemove, SIGNAL(triggered(bool)), phraseList, SLOT(removeListSelection()));
    phraseListRemove->setToolTip(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
-   phraseListCut = actionCollection()->addAction("phraselist_cut");
+   phraseListCut = actionCollection()->addAction(QLatin1String( "phraselist_cut" ));
    phraseListCut->setIcon(KIcon( QLatin1String( "edit-cut" )));
    phraseListCut->setText(i18n("Cu&t"));
    connect(phraseListCut, SIGNAL(triggered(bool)), phraseList, SLOT(cutListSelection()));
    phraseListCut->setToolTip(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
-   phraseListCopy = actionCollection()->addAction("phraselist_copy");
+   phraseListCopy = actionCollection()->addAction(QLatin1String( "phraselist_copy" ));
    phraseListCopy->setIcon(KIcon( QLatin1String( "edit-copy" )));
    phraseListCopy->setText(i18n("&Copy"));
    connect(phraseListCopy, SIGNAL(triggered(bool)), phraseList, SLOT(copyListSelection()));
    phraseListCut->setToolTip(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
-   phraselistSelectAll = actionCollection()->addAction("phraselist_select_all");
+   phraselistSelectAll = actionCollection()->addAction(QLatin1String( "phraselist_select_all" ));
    phraselistSelectAll->setText(i18n("Select &All Entries"));
    connect(phraselistSelectAll, SIGNAL(triggered(bool)), phraseList, SLOT(selectAllEntries()));
    phraselistSelectAll->setToolTip(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 
-   phraselistDeselectAll = actionCollection()->addAction("phraselist_deselect_all");
+   phraselistDeselectAll = actionCollection()->addAction(QLatin1String( "phraselist_deselect_all" ));
    phraselistDeselectAll->setText(i18n("D&eselect All Entries"));
    connect(phraselistDeselectAll, SIGNAL(triggered(bool)), phraseList, SLOT(deselectAllEntries()));
    phraselistDeselectAll->setToolTip(i18n("Deselects all phrases in the history"));
@@ -278,9 +278,9 @@ void KMouthApp::saveOptions() {
          phraseList->saveCompletionOptions(config.data());
       optionsDialog->saveOptions(config.data());
       cg.changeGroup( "mainToolBar" );
-      toolBar("mainToolBar")->saveSettings( cg );
+      toolBar(QLatin1String( "mainToolBar" ))->saveSettings( cg );
       cg.changeGroup( "phrasebookBar");
-      toolBar("phrasebookBar")->saveSettings( cg );
+      toolBar(QLatin1String( "phrasebookBar" ))->saveSettings( cg );
    }
 }
 
@@ -320,10 +320,10 @@ void KMouthApp::readOptions()
 
   optionsDialog->readOptions(config.data());
 
-  toolBar("mainToolBar")->applySettings (config->group( "mainToolBar" ) );
-  toolBar("phrasebookBar")->applySettings (config->group( "phrasebookBar") );
+  toolBar(QLatin1String( "mainToolBar" ))->applySettings (config->group( "mainToolBar" ) );
+  toolBar(QLatin1String( "phrasebookBar" ))->applySettings (config->group( "phrasebookBar") );
 
-  QString standardBook = KGlobal::dirs()->findResource("appdata", "standard.phrasebook");
+  QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
   if (!standardBook.isEmpty()) {
      PhraseBook book;
      book.open(KUrl::fromPathOrUrl( standardBook ));
@@ -453,11 +453,11 @@ void KMouthApp::slotViewToolBar()
   // turn Toolbar on or off
   if(!viewToolBar->isChecked())
   {
-    toolBar("mainToolBar")->hide();
+    toolBar(QLatin1String( "mainToolBar" ))->hide();
   }
   else
   {
-    toolBar("mainToolBar")->show();
+    toolBar(QLatin1String( "mainToolBar" ))->show();
   }
 
   slotStatusMsg(i18nc("The job is done", "Ready."));
@@ -470,11 +470,11 @@ void KMouthApp::slotViewPhrasebookBar()
   // turn Toolbar on or off
   if(!viewPhrasebookBar->isChecked())
   {
-    toolBar("phrasebookBar")->hide();
+    toolBar(QLatin1String( "phrasebookBar" ))->hide();
   }
   else
   {
-    toolBar("phrasebookBar")->show();
+    toolBar(QLatin1String( "phrasebookBar" ))->show();
   }
 
   slotStatusMsg(i18nc("The job is done", "Ready."));
@@ -512,17 +512,17 @@ void KMouthApp::slotStatusMsg(const QString &text)
 }
 
 void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
-   QString name = "phrasebooks";
+   QString name = QLatin1String( "phrasebooks" );
    QMenu *popup = (QMenu *)factory()->container(name, this);
-   KToolBar *toolbar = toolBar ("phrasebookBar");
+   KToolBar *toolbar = toolBar (QLatin1String( "phrasebookBar" ));
 
    delete phrases;
    phrases = new KActionCollection (actionCollection());
    book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected (const QString &)));
 
-   QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", "/");
+   QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" ));
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (KUrl::fromPathOrUrl( bookLocation + "standard.phrasebook" ));
+      book.save (KUrl::fromPathOrUrl( bookLocation + QLatin1String( "standard.phrasebook" )));
    }
 }
 
