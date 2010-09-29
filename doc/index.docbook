@@ -209,7 +209,7 @@
         selected phrase gets immediately spoken and is entered into
         the history. If you select <guilabel>Insert Into Edit
         Field</guilabel> the selected phrase is just inserted into the
-        edit field. 
+        edit field.
       </para>
       <para>
         With the second combo box, <guilabel>Closing the phrase book
@@ -219,7 +219,7 @@
       <para>
         By selecting <guilabel>Save Phrase Book</guilabel> the phrase
         book gets saved. If you select <guilabel>Discard
-        changes</guilabel> the changes are discarded and the phrase 
+        changes</guilabel> the changes are discarded and the phrase
         book is not saved. If you select <guilabel>Ask Whether to
         Save</guilabel> &kmouth; will ask you whether it shall save
         the phrase book.
@@ -382,7 +382,7 @@
     </sect2>
     <sect2 id="kttsd-speech-service-config">
       <title>The <guilabel>Jovie Speech Service</guilabel> page</title>
-      <para>The configuration of the &kde; Speech Service is described in detail in the 
+      <para>The configuration of the &kde; Speech Service is described in detail in the
         <ulink url="help:jovie">Jovie Handbook</ulink>.</para>
     </sect2>
   </sect1>
@@ -564,9 +564,9 @@
         <variablelist>
           <varlistentry>
             <term><menuchoice>
-              <shortcut> 
-                <keycombo>&Ctrl;<keycap>M</keycap></keycombo> 
-              </shortcut> 
+              <shortcut>
+                <keycombo>&Ctrl;<keycap>M</keycap></keycombo>
+              </shortcut>
                <guimenu>Settings</guimenu>
               <guimenuitem>Show Menubar</guimenuitem>
             </menuchoice></term>
@@ -689,7 +689,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <shortcut><keycombo>&Ctrl;<keycap>O</keycap></keycombo></shortcut> 
+              <shortcut><keycombo>&Ctrl;<keycap>O</keycap></keycombo></shortcut>
               <guimenuitem>Open as History...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -698,7 +698,7 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-<shortcut><keycombo>&Ctrl;<keycap>S</keycap></keycombo></shortcut> 
+<shortcut><keycombo>&Ctrl;<keycap>S</keycap></keycombo></shortcut>
               <guimenuitem>Save History As...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -873,9 +873,9 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <shortcut> 
-                <keycombo>&Ctrl;<keycap>X</keycap></keycombo> 
-              </shortcut> 
+              <shortcut>
+                <keycombo>&Ctrl;<keycap>X</keycap></keycombo>
+              </shortcut>
                <guimenuitem>Cut</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -884,9 +884,9 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <shortcut> 
-                <keycombo>&Ctrl;<keycap>C</keycap></keycombo> 
-              </shortcut> 
+              <shortcut>
+                <keycombo>&Ctrl;<keycap>C</keycap></keycombo>
+              </shortcut>
               <guimenuitem>Copy</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -895,9 +895,9 @@
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
-              <shortcut> 
-                <keycombo>&Ctrl;<keycap>V</keycap></keycombo> 
-              </shortcut> 
+              <shortcut>
+                <keycombo>&Ctrl;<keycap>V</keycap></keycombo>
+              </shortcut>
               <guimenuitem>Paste</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>
@@ -1054,7 +1054,7 @@
           <screen><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
           | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
           <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
-          <command>artsplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
         </para>
         <para>
           All parts of this command need to be written into one line. The option
