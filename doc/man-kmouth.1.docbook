@@ -7,7 +7,7 @@
 <refentryinfo>
 <title>&kde; User's Manual</title>
 <author>&Lauri.Watts; &Lauri.Watts.mail;</author>
-<date>June 12, 2005</date>
+<date>2010-09-15</date>
 <productname>K Desktop Environment</productname>
 </refentryinfo>
 
@@ -55,7 +55,7 @@ requires a speech synthesizer installed in the system.</para>
 
 <refsect1>
 <title>See Also</title>
-<para>kttsd(1), festival(1), mbrola(1), freetts(1)</para>
+<para>espeak(1), festival(1), mbrola(1), freetts(1)</para>
 
 <para>More detailed user documentation is available from <ulink
 url="help:/kmouth">help:/kmouth</ulink>

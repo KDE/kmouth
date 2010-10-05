@@ -31,8 +31,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2006-05-20</date>
-  <releaseinfo>1.1.1</releaseinfo>
+  <date>2010-09-15</date>
+  <releaseinfo>1.1.1 (&kde; 4.5)</releaseinfo>
 
   <abstract>
     <para>
@@ -43,7 +43,7 @@
 
   <keywordset>
     <keyword>KDE</keyword>
-    <keyword>kdeutils</keyword>
+    <keyword>kdeaccesibility</keyword>
     <keyword>KMouth</keyword>
     <keyword>text-to-speech conversion</keyword>
     <keyword>mutual persons</keyword>
@@ -62,40 +62,47 @@
     Note that &kmouth; does not include speech synthesizer. Instead it requires
     a speech synthesizer installed in the system.
   </para>
-  <para>
-    Please report any problems and feature requests to the author of &kmouth;.
-  </para>
 </chapter>
 
 <chapter id="using-kmouth">
   <title>Using &kmouth;</title>
   <sect1 id="Wizard">
-    <title>The first start</title>
+    <title>The First Start</title>
     <para>
       During the first start of &kmouth;, a wizard is displayed into which you
       can enter some basic configuration.
     </para>
     <para>
       <screenshot>
-        <screeninfo>The wizard</screeninfo>
+        <screeninfo>Text-to-Speech Configuration</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="kmouthwizard.png" format="PNG"/>
-          </imageobject>
-          <imageobject>
-            <imagedata fileref="kmouthwizard.eps" format="EPS"/>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
           </imageobject>
           <textobject>
-            <phrase>The wizard</phrase>
+            <phrase>Text-to-Speech Configuration</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
     </para>
     <para>
-      With the first page of the wizard (the left screen shot) you specify
+      With the first page of the wizard you specify
       the command that shall later be used for the text-to-speech conversion.
       For more details look into the <link linkend="tts-config">description
       of the configuration dialog.</link>
+    </para>
+    <para>
+      <screenshot>
+        <screeninfo>Initial Phrase Book</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Initial Phrase Book</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
     </para>
     <para>
       With the second page you select which standard phrase books you need.
@@ -104,7 +111,20 @@
       dialog for the case that you later want to edit your phrase books.
     </para>
     <para>
-      With the third page (the right screen shot) you define the dictionary
+      <screenshot>
+        <screeninfo>Word Completion</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Word Completion</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para>
+      With the third page you define the dictionary
       for a word completion. &kmouth; will parse the &kde; documentation of
       the chosen language in order to detect the frequentness of individual
       words. Optionally you can compare the word list to an OpenOffice.org
@@ -127,11 +147,8 @@
           <imageobject>
             <imagedata fileref="kmouthmain.png" format="PNG"/>
           </imageobject>
-          <imageobject>
-            <imagedata fileref="kmouthmain.eps" format="EPS"/>
-          </imageobject>
           <textobject>
-            <phrase>Screen shot</phrase>
+            <phrase>The main window of &kmouth;</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -155,79 +172,10 @@
         <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
       </menuchoice>
       you open the configuration dialog of &kmouth;. This dialog consists of
-      the pages <guilabel>General Options</guilabel> with the two tabs <guilabel>Text-to-Speech</guilabel> 
-      and <guilabel>Preferences</guilabel>, the page <guilabel>Word Completion</guilabel> and
-       the page <guilabel>KTTSD Speech Service</guilabel> 
+      the pages <guilabel>General Options</guilabel> with the two tabs <guilabel>Preferences</guilabel>
+      and <guilabel>Text-to-Speech</guilabel>, the page <guilabel>Word Completion</guilabel> and
+       the page <guilabel>Jovie Speech Service</guilabel>.
     </para>
-    <sect2 id="tts-config">
-      <title>The <guilabel>Text-to-Speech</guilabel> tab</title>
-      <para>
-        <screenshot>
-          <screeninfo>The <guilabel>Text-to-Speech</guilabel> tab</screeninfo>
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="kmouthctts.png" format="PNG"/>
-            </imageobject>
-            <imageobject>
-              <imagedata fileref="kmouthctts.eps" format="EPS"/>
-            </imageobject>
-            <textobject>
-              <phrase>Screen shot</phrase>
-            </textobject>
-          </mediaobject>
-        </screenshot>
-      </para>
-      <para>
-        Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
-        for calling the speech synthesizer. With the combo box below the edit
-        field you specify the character encoding that is used for passing the
-        text to the speech synthesizer.
-      </para>
-      <para>
-        &kmouth; knows two ways of passing the text: If the command expects the
-        text as standard input you select the check box.
-      </para>
-      <para>
-        The other way is to pass the text as a parameter:
-        Before calling the command &kmouth; replaces certain placeholders with
-        actual content:
-        <informaltable frame="topbot">
-         <tgroup cols="2">
-          <thead>
-          <row><entry>Placeholder</entry><entry>Replaced with</entry></row>
-          </thead>
-            <tbody>
-              <row><entry><token>%t</token></entry>
-                   <entry>The actual text that should be spoken</entry>
-              </row>
-              <row><entry><token>%f</token></entry>
-                   <entry>The name of a temporary file that contains the text
-                          that should be spoken</entry>
-              </row>
-              <row><entry><token>%l</token></entry>
-                   <entry>The language code associated with the current word completion
-                          dictionary</entry>
-              </row>
-              <row><entry><token>%%</token></entry><entry>A percent sign</entry></row>
-           </tbody>
-          </tgroup>
-        </informaltable>
-      </para>
-      <para>
-        Off course the command for speaking texts is dependent on which speech
-        synthesizer you use. Please look into the documentation of your speech
-        synthesizer for the command for speaking texts. You can find examples
-        for the command in the <link linkend="tts">appendix</link>.
-      </para>
-      <para>
-        By selecting <guilabel>Use KTTSD speech service if possible</guilabel> you tell &kmouth;
-        first to try to send the text to the KTTSD speech service. If this succeeds the
-        other configuration entries on this tab are ignored. The KTTSD speech
-        service is a &kde; daemon which gives &kde; applications a standardized
-        interface for speech synthesis and is currently developed in <acronym>SVN</acronym>. It
-        is safe to select this option even if KTTSD is not installed.
-      </para>
-    </sect2>
     <sect2 id="preferences">
       <title>The <guilabel>Preferences</guilabel> tab</title>
       <para>
@@ -277,6 +225,72 @@
         the phrase book.
       </para>
     </sect2>
+    <sect2 id="tts-config">
+      <title>The <guilabel>Text-to-Speech</guilabel> tab</title>
+      <para>
+        <screenshot>
+          <screeninfo>The <guilabel>Text-to-Speech</guilabel> tab</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Screen shot</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para>
+        Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
+        for calling the speech synthesizer. With the combo box below the edit
+        field you specify the character encoding that is used for passing the
+        text to the speech synthesizer.
+      </para>
+      <para>
+        &kmouth; knows two ways of passing the text: If the command expects the
+        text as standard input you select the check box.
+      </para>
+      <para>
+        The other way is to pass the text as a parameter:
+        Before calling the command &kmouth; replaces certain placeholders with
+        actual content:
+        <informaltable frame="topbot">
+         <tgroup cols="2">
+          <thead>
+          <row><entry>Placeholder</entry><entry>Replaced with</entry></row>
+          </thead>
+            <tbody>
+              <row><entry><token>%t</token></entry>
+                   <entry>The actual text that should be spoken</entry>
+              </row>
+              <row><entry><token>%f</token></entry>
+                   <entry>The name of a temporary file that contains the text
+                          that should be spoken</entry>
+              </row>
+              <row><entry><token>%l</token></entry>
+                   <entry>The language code associated with the current word completion
+                          dictionary</entry>
+              </row>
+              <row><entry><token>%%</token></entry><entry>A percent sign</entry></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para>
+        Of course the command for speaking texts is dependent on which speech
+        synthesizer you use. Please look into the documentation of your speech
+        synthesizer for the command for speaking texts. You can find examples
+        for the command in the <link linkend="tts">appendix</link>.
+      </para>
+      <para>
+        By selecting <guilabel>Use Jovie speech service if possible</guilabel> you tell &kmouth;
+        first to try to send the text to the Jovie speech service. If this succeeds the
+        other configuration entries on this tab are ignored. The Jovie speech
+        service is a &kde; daemon which gives &kde; applications a standardized
+        interface for speech synthesis and is currently developed in <acronym>SVN</acronym>. It
+        is safe to select this option even if Jovie is not installed.
+      </para>
+    </sect2>
     <sect2 id="completion-config">
       <title>The <guilabel>Word Completion</guilabel> page</title>
       <para>
@@ -285,9 +299,6 @@
           <mediaobject>
             <imageobject>
               <imagedata fileref="kmouthcwcp.png" format="PNG"/>
-            </imageobject>
-            <imageobject>
-              <imagedata fileref="kmouthcwcp.eps" format="EPS"/>
             </imageobject>
             <textobject>
               <phrase>Screen shot</phrase>
@@ -343,7 +354,7 @@
           <para>Create a new dictionary from a folder</para>
           <para>
             If you use this source &kmouth; will ask you for the intended folder.
-            &kmouth; will open all files in that folder and its subdirectories.
+            &kmouth; will open all files in that folder and its subfolders.
             Each file is either loaded as a completion dictionary, as an &XML; file
             or as a standard text file. In the latter two cases the occurrences of
             each individual word in the file is counted. Optionally you can compare
@@ -370,9 +381,9 @@
       </itemizedlist>
     </sect2>
     <sect2 id="kttsd-speech-service-config">
-      <title>The <guilabel>KTTSD Speech Service</guilabel> page</title>
+      <title>The <guilabel>Jovie Speech Service</guilabel> page</title>
       <para>The configuration of the &kde; Speech Service is described in detail in the 
-        <ulink url="help:kttsd">KTTS Handbook</ulink>.</para>
+        <ulink url="help:jovie">Jovie Handbook</ulink>.</para>
     </sect2>
   </sect1>
   <sect1 id="phrasebook-editor">
@@ -390,9 +401,6 @@
         <mediaobject>
           <imageobject>
             <imagedata fileref="kmouthedit.png" format="PNG"/>
-          </imageobject>
-          <imageobject>
-            <imagedata fileref="kmouthedit.eps" format="EPS"/>
           </imageobject>
           <textobject>
             <phrase>Screens hot</phrase>
@@ -827,7 +835,7 @@
 
     <sect2 id="pbe-help-menu">
       <title>The <guimenu>Help</guimenu> Menu</title>
-      &help.menu.documentation;
+      <para>The items in this menu are described in the main window</para>
     </sect2>
 
     <sect2 id="pbe-popup-menu">
@@ -1060,20 +1068,20 @@
       </question>
       <answer>
         <para>
-          The &kde; Text-to-Speech Daemon (KTTSD) is a &kde; wide text-to-speech service
+          The &kde; Text-to-Speech Daemon (Jovie) is a &kde; wide text-to-speech service
           which gives &kde; applications a standardized interface for speech synthesis
           and is currently developed in <acronym>SVN</acronym>. It uses plug-ins in
           order to support various text-to-speech systems.
         </para>
         <para>
-          As the configuration of the speech synthesizer is done in KTTSD the only
-          &kmouth;-specific option you need to activate is <guilabel>Use KTTSD speech
+          As the configuration of the speech synthesizer is done in Jovie the only
+          &kmouth;-specific option you need to activate is <guilabel>Use Jovie speech
           service if possible</guilabel>.
         </para>
         <para>
-          Of course you need to configure KTTSD. You may do this with the configuration
-          page <guilabel>KTTSD Speech Service</guilabel> that is added to the configuration
-          dialog of &kmouth; if KTTSD is installed.
+          Of course you need to configure Jovie. You may do this with the configuration
+          page <guilabel>Jovie Speech Service</guilabel> that is added to the configuration
+          dialog of &kmouth; if Jovie is installed.
         </para>
       </answer>
     </qandaentry>
@@ -1094,11 +1102,7 @@
     <title>Requirements</title>
 
     <para>
-      In order to successfully use &kmouth;, you need a speech synthesizer
-      (and of course &kde; 3.x). &kmouth; uses about 15 MB of memory to
-      run (plus the amount of memory needed by your speech synthesizer),
-      but this may vary depending on your platform and configuration.
-    </para>
+      In order to successfully use &kmouth;, you need a speech synthesizer.</para>
   </sect1>
 
 
