@@ -58,7 +58,7 @@ install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
 install( FILES kmouthui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kmouth )
 
