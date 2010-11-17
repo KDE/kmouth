@@ -4,7 +4,6 @@ Type=Application
 Exec=kmouth -caption "%c" %i
 Icon=kmouth
 X-DocPath=kmouth/index.html
-Comment=
 Terminal=false
 Name=KMouth
 Name[ar]=فم كي
