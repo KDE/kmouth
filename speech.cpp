@@ -169,7 +169,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
    if (text.length () > 0) {
       // 1. prepare the text:
       // 1.a) encode the text
-      QTextStream ts (encText, QIODevice::WriteOnly);
+      QTextStream ts (&encText, QIODevice::WriteOnly);
       if (encoding == Local)
          ts.setEncoding (QTextStream::Locale);
       else if (encoding == Latin1)
@@ -179,6 +179,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
       else
          ts.setCodec (codec);
       ts << text;
+      ts.flush();
 
       // 1.b) create a temporary file for the text
       tempFile.open();
