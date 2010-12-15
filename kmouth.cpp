@@ -146,7 +146,7 @@ void KMouthApp::initActions() {
    editCopy->setWhatsThis (i18n("Copies the selected section to the clipboard. If there is some text selected in the edit field it is copied to the clipboard. Otherwise the selected sentences in the history (if any) are copied to the clipboard."));
 
    editPaste = KStandardAction::paste(phraseList, SLOT(paste()), actionCollection());
-   editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
+   editPaste->setToolTip(i18n("Pastes the clipboard contents to current position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
    editSpeak = actionCollection()->addAction(QLatin1String( "edit_speak" ));

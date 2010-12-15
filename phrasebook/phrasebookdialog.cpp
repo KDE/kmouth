@@ -409,8 +409,8 @@ void PhraseBookDialog::initActions() {
    editCopy->setWhatsThis (i18n("Copies the currently selected entry from the phrase book to the clipboard"));
 
    editPaste = KStandardAction::paste(this, SLOT(slotPaste()), actionCollection());
-   editPaste->setToolTip(i18n("Pastes the clipboard contents to actual position"));
-   editPaste->setWhatsThis (i18n("Pastes the clipboard contents to actual position"));
+   editPaste->setToolTip(i18n("Pastes the clipboard contents to current position"));
+   editPaste->setWhatsThis(i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
    editDelete = actionCollection()->addAction(QLatin1String( "edit_delete" ));
    editDelete->setIcon(KIcon( QLatin1String( "edit-delete" )));
