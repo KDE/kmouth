@@ -191,7 +191,8 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
       QStringList::iterator it1=currentNamePath.begin();
       QStringList::iterator it2=dirs.begin();
       for (; (it1 != currentNamePath.end())
-          && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+          && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+
       for (; it1 != currentNamePath.end(); ++it1) {
          last = parent;
          parent = stack.pop();
@@ -495,7 +496,8 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       QStringList::iterator it1=currentNamePath.begin();
       QStringList::iterator it2=dirs.begin();
       for (; (it1 != currentNamePath.end())
-          && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+          && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+
       for (; it1 != currentNamePath.end(); ++it1)
          parent = stack.pop();
       for (; it2 != dirs.end(); ++it2) {
