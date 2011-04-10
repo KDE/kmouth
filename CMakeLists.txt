@@ -23,6 +23,7 @@ kde4_add_ui_files(libwordcompletion_SRCS
 	./wordcompletion/kdedocsourceui.ui
 	./wordcompletion/wordcompletionui.ui )
 
+add_subdirectory( doc )
 add_subdirectory( icons ) 
 add_subdirectory( phrasebook ) 
 add_subdirectory( books ) 
