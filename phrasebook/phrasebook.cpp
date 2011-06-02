@@ -288,23 +288,23 @@ int PhraseBook::save (QWidget *parent, const QString &title, KUrl &url, bool phr
 
    bool result;
    if (fdlg.currentFilter() == QLatin1String( "*.phrasebook" )) {
-      if (url.fileName (false).contains(QLatin1Char( '.' )) == 0) {
-         url.setFileName (url.fileName(false) + QLatin1String( ".phrasebook" ));
+      if (url.fileName (0).contains(QLatin1Char( '.' )) == 0) {
+         url.setFileName (url.fileName(0) + QLatin1String( ".phrasebook" ));
       }
-      else if (url.fileName (false).right (11).contains (QLatin1String( ".phrasebook" ), Qt::CaseInsensitive) == 0) {
+      else if (url.fileName (0).right (11).contains (QLatin1String( ".phrasebook" ), Qt::CaseInsensitive) == 0) {
          int filetype = KMessageBox::questionYesNoCancel (0,QString(QLatin1String( "<qt>%1</qt>" )).arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                                                            "Do you wish to add <i>.phrasebook</i> to the filename?", url.fileName())),i18n("File Extension"),KGuiItem(i18n("Add")),KGuiItem(i18n("Do Not Add")));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
          if (filetype == KMessageBox::Yes) {
-            url.setFileName (url.fileName(false) + QLatin1String( ".phrasebook" ));
+            url.setFileName (url.fileName(0) + QLatin1String( ".phrasebook" ));
          }
       }
       result = save (url, true);
    }
    else if (fdlg.currentFilter() == QLatin1String( "*.txt" )) {
-      if (url.fileName (false).right (11).contains (QLatin1String( ".phrasebook" ), Qt::CaseInsensitive) == 0) {
+      if (url.fileName (0).right (11).contains (QLatin1String( ".phrasebook" ), Qt::CaseInsensitive) == 0) {
          result = save (url, false);
       }
       else {
