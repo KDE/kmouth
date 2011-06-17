@@ -27,7 +27,7 @@
 
 class PhraseEdit : public KLineEdit  {
 public: 
-   PhraseEdit(const TQString &string, TQWidget *parent);
+   PhraseEdit(const TQString &string, TQWidget *tqparent);
    virtual ~PhraseEdit();
 
    void keyPressEvent (TQKeyEvent *e);

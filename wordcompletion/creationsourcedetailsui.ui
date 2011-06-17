@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>CreationSourceDetailsUI</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>CreationSourceDetailsUI</cstring>
     </property>
@@ -16,7 +16,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QCheckBox" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="TQCheckBox" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>spellCheckBox</cstring>
             </property>
@@ -30,7 +30,7 @@
                 <string>If you select this check box the words are spell-checked before they are inserted into the new dictionary.</string>
             </property>
         </widget>
-        <widget class="QLabel" row="1" column="0">
+        <widget class="TQLabel" row="1" column="0">
             <property name="name">
                 <cstring>encodingLabel</cstring>
             </property>
@@ -52,7 +52,7 @@
                 <string>With this combo box you select the character encoding used to load text files. This combo box is not used for XML files or for dictionary files.</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0">
+        <widget class="TQLabel" row="0" column="0">
             <property name="name">
                 <cstring>urlLabel</cstring>
             </property>
@@ -125,7 +125,7 @@
                 <string>With this input field you select the OpenOffice.org directory that will be used to spellcheck the words of the new dictionary.</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="TQLabel" row="2" column="0">
             <property name="name">
                 <cstring>languageLabel</cstring>
             </property>
@@ -166,13 +166,13 @@
 <variables>
     <variable access="public">KLanguageButton *languageButton;</variable>
 </variables>
-<slots>
+<Q_SLOTS>
     <slot access="protected" specifier="non virtual">languageButton_activated( int index )</slot>
-</slots>
+</Q_SLOTS>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
 </functions>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kinputdialog.h</includehint>
     <includehint>kpushbutton.h</includehint>

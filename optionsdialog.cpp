@@ -39,8 +39,8 @@
 #include "texttospeechconfigurationwidget.h"
 #include "speech.h"
 
-PreferencesWidget::PreferencesWidget (TQWidget *parent, const char *name)
-   : PreferencesUI (parent, name)
+PreferencesWidget::PreferencesWidget (TQWidget *tqparent, const char *name)
+   : PreferencesUI (tqparent, name)
 {
    speakCombo->setCurrentItem (1);
    speak = false;
@@ -113,27 +113,27 @@ bool PreferencesWidget::isSpeakImmediately () {
 
 /***************************************************************************/
 
-OptionsDialog::OptionsDialog (TQWidget *parent)
+OptionsDialog::OptionsDialog (TQWidget *tqparent)
    : KDialogBase(IconList, i18n("Configuration"), Ok|Apply|Cancel|Help, Ok,
-                  parent, "configuration", false, true)
+                  tqparent, "configuration", false, true)
 {
    setHelp ("config-dialog");
 
    TQPixmap iconGeneral = KGlobal::iconLoader()->loadIcon("configure", KIcon::NoGroup, KIcon::SizeMedium);
-   TQGrid *pageGeneral = addGridPage (1, Qt::Horizontal, i18n("General Options"), TQString::null, iconGeneral);
+   TQGrid *pageGeneral = addGridPage (1, Qt::Horizontal, i18n("General Options"), TQString(), iconGeneral);
    
    tabCtl = new TQTabWidget (pageGeneral, "general");
 
    behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
-   behaviourWidget->layout()->setMargin(KDialog::marginHint());
+   behaviourWidget->tqlayout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (behaviourWidget, i18n("&Preferences"));
    
    commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
-   commandWidget->layout()->setMargin(KDialog::marginHint());
+   commandWidget->tqlayout()->setMargin(KDialog::marginHint());
    tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
    
    TQPixmap iconCompletion = KGlobal::iconLoader()->loadIcon("keyboard", KIcon::NoGroup, KIcon::SizeMedium);
-   TQGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), TQString::null, iconCompletion);
+   TQGrid *pageCompletion = addGridPage (1, Qt::Horizontal, i18n("Word Completion"), TQString(), iconCompletion);
    completionWidget = new WordCompletionWidget(pageCompletion, "Word Completion widget");
 
    kttsd = loadKttsd();

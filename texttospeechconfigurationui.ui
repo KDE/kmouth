@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>texttospeechconfigurationui</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>texttospeechconfigurationui</cstring>
     </property>
@@ -25,7 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
                 <cstring>Layout4</cstring>
             </property>
@@ -39,7 +39,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>urlLabel</cstring>
                     </property>
@@ -87,7 +87,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
                 <cstring>Layout5</cstring>
             </property>
@@ -101,7 +101,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>characterCodingLabel</cstring>
                     </property>
@@ -133,7 +133,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QCheckBox">
+        <widget class="TQCheckBox">
             <property name="name">
                 <cstring>stdInButton</cstring>
             </property>
@@ -144,7 +144,7 @@
                 <string>This check box specifies whether the text is sent as standard input to the speech synthesizer.</string>
             </property>
         </widget>
-        <widget class="QCheckBox">
+        <widget class="TQCheckBox">
             <property name="name">
                 <cstring>useKttsd</cstring>
             </property>
@@ -157,10 +157,10 @@
         </widget>
     </vbox>
 </widget>
-<signals>
+<Q_SIGNALS>
     <signal>configurationChanged()</signal>
-</signals>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SIGNALS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

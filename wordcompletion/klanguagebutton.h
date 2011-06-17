@@ -5,7 +5,7 @@
  * Copyright (c) 1999-2000 Hans Petter Bieker <bieker@kde.org>
  *           (c) 2001      Martijn Klingens   <mklingens@yahoo.com>
  *
- * Requires the Qt widget libraries, available at no cost at
+ * Requires the TQt widget libraries, available at no cost at
  * http://www.troll.no/
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -34,33 +34,34 @@
  * Essentially just a combo box with a 2-D dataset, but using a real
  * TQComboBox will produce ugly results.
  *
- * Combined version of KTagCombo and KLanguageCombo but using a QPushButton
+ * Combined version of KTagCombo and KLanguageCombo but using a TQPushButton
  * instead.
  */
-class KLanguageButton : public QPushButton
+class KLanguageButton : public TQPushButton
 {
   Q_OBJECT
+  TQ_OBJECT
 
 public:
-  KLanguageButton(TQWidget *parent=0, const char *name=0);
+  KLanguageButton(TQWidget *tqparent=0, const char *name=0);
   ~KLanguageButton();
 
   void insertItem( const TQIconSet& icon, const TQString &text,
-                   const TQString &tag, const TQString &submenu = TQString::null,
+                   const TQString &tag, const TQString &submenu = TQString(),
                    int index = -1 );
   void insertItem( const TQString &text, const TQString &tag,
-                   const TQString &submenu = TQString::null, int index = -1 );
-  void insertSeparator( const TQString &submenu = TQString::null,
+                   const TQString &submenu = TQString(), int index = -1 );
+  void insertSeparator( const TQString &submenu = TQString(),
                         int index = -1 );
   void insertSubmenu( const TQString &text, const TQString &tag,
-                      const TQString &submenu = TQString::null, int index = -1);
+                      const TQString &submenu = TQString(), int index = -1);
 
   int count() const;
   void clear();
   
   void insertLanguage( const TQString& path, const TQString& name,
-                       const TQString& sub = TQString::null,
-                       const TQString &submenu = TQString::null, int index = -1);
+                       const TQString& sub = TQString(),
+                       const TQString &submenu = TQString(), int index = -1);
   
   /*
    * Tag of the selected item

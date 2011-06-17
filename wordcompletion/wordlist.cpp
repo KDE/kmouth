@@ -53,7 +53,7 @@ TQString XMLParser::errorString() {
 }
 
 bool XMLParser::startDocument() {
-   text = TQString::null;
+   text = TQString();
    return true;
 }
 
@@ -63,7 +63,7 @@ bool XMLParser::startElement (const TQString &, const TQString &,
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = TQString::null;
+      text = TQString();
    }
    return true;
 }
@@ -76,7 +76,7 @@ bool XMLParser::characters (const TQString &ch) {
 bool XMLParser::ignorableWhitespace (const TQString &) {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = TQString::null;
+      text = TQString();
    }
    return true;
 }
@@ -86,7 +86,7 @@ bool XMLParser::endElement (const TQString &, const TQString &,
 {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = TQString::null;
+      text = TQString();
    }
    return true;
 }
@@ -94,7 +94,7 @@ bool XMLParser::endElement (const TQString &, const TQString &,
 bool XMLParser::endDocument() {
    if (!text.isNull() && !text.isEmpty()) {
       addWords (list, text);
-      text = TQString::null;
+      text = TQString();
    }
    return true;
 }
@@ -139,9 +139,9 @@ void addWords (WordMap &map, TQString line) {
    
    TQStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
-      if (!(*it).contains(TQRegExp("\\d|_"))) {
+      if (!(*it).tqcontains(TQRegExp("\\d|_"))) {
          TQString key = (*it).lower();
-         if (map.contains(key))
+         if (map.tqcontains(key))
             map[key] += 1;
          else
             map[key] = 1;
@@ -152,7 +152,7 @@ void addWords (WordMap &map, TQString line) {
 void addWords (WordMap &map, WordMap add) {
    WordList::WordMap::ConstIterator it;
    for (it = add.begin(); it != add.end(); ++it)
-      if (map.contains(it.key()))
+      if (map.tqcontains(it.key()))
          map[it.key()] += it.data();
       else
          map[it.key()] = it.data();
@@ -160,7 +160,7 @@ void addWords (WordMap &map, WordMap add) {
 
 void addWordsFromFile (WordMap &map, TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec) {
    TQFile xmlfile(filename);
-   TQXmlInputSource source (&xmlfile);
+   TQXmlInputSource source (TQT_TQIODEVICE(&xmlfile));
    XMLParser parser;
    TQXmlSimpleReader reader;
    reader.setFeature ("http://trolltech.com/xml/features/report-start-end-entity", true);
@@ -186,7 +186,7 @@ void addWordsFromFile (WordMap &map, TQString filename, TQTextStream::Encoding e
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
-                        if (map.contains(list[0]))
+                        if (map.tqcontains(list[0]))
                            map[list[0]] += weight;
                         else
                            map[list[0]] = weight;
@@ -228,7 +228,7 @@ WordMap parseFiles (TQStringList files, TQTextStream::Encoding encoding, TQTextC
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         qApp->processEvents (20);
+         tqApp->tqprocessEvents (20);
       }
    }
    return map;
@@ -237,7 +237,7 @@ WordMap parseFiles (TQStringList files, TQTextStream::Encoding encoding, TQTextC
 WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Merging dictionaries..."));
    pdlg->show();
-   qApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    int progress = 0;
    int steps = files.count();
@@ -261,7 +261,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
          maxWeight = weight;
       
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
-         if (map.contains(iter.key()))
+         if (map.tqcontains(iter.key()))
             map[iter.key()] += iter.data() * factor;
          else
             map[iter.key()] = iter.data() * factor;
@@ -269,7 +269,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
          pdlg->progressBar()->setProgress(percent);
-         qApp->processEvents (20);
+         tqApp->tqprocessEvents (20);
       }
    }
    
@@ -290,7 +290,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
 WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing the KDE documentation..."));
    pdlg->show();
-   qApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList files = KApplication::kApplication()->dirs()->findAllResources ("html", language + "/*.docbook", true, true);
    if ((files.count() == 0) && (language.length() == 5)) {
@@ -304,7 +304,7 @@ WordMap parseKDEDoc (TQString language, KProgressDialog *pdlg) {
 WordMap parseFile (TQString filename, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing file..."));
    pdlg->show();
-   qApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList files = filename;
 
@@ -314,16 +314,16 @@ WordMap parseFile (TQString filename, TQTextStream::Encoding encoding, TQTextCod
 WordMap parseDir (TQString directory, TQTextStream::Encoding encoding, TQTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabel (i18n("Parsing directory..."));
    pdlg->show();
-   qApp->processEvents (20);
+   tqApp->tqprocessEvents (20);
    
    TQStringList directories;
    directories += directory;
    TQStringList files;
    for (TQStringList::Iterator it = directories.begin(); it != directories.end(); it = directories.remove(it)) {
       TQDir dir(*it);
-      const QFileInfoList *entries = dir.entryInfoList ("*", TQDir::Dirs | TQDir::Files | TQDir::NoSymLinks | TQDir::Readable);
+      const TQFileInfoList *entries = dir.entryInfoList ("*", TQDir::Dirs | TQDir::Files | TQDir::NoSymLinks | TQDir::Readable);
       if (entries != 0) {
-         QFileInfoListIterator iter (*entries);
+         TQFileInfoListIterator iter (*entries);
          while ((iter.current()) != 0) {
             TQString name = iter.current()->fileName();
             if (name != "." && name != "..") {
@@ -394,14 +394,14 @@ void loadAffFile(const TQString &filename, AffMap &prefixes, AffMap &suffixes) {
                
                if (s.startsWith("PFX")) {
                   AffList list;
-                  if (prefixes.contains (fields[1][0]))
+                  if (prefixes.tqcontains (fields[1][0]))
                      list = prefixes[fields[1][0]];
                   list << e;
                   prefixes[fields[1][0]] = list;
                }
                else if (s.startsWith("SFX")) {
                   AffList list;
-                  if (suffixes.contains (fields[1][0]))
+                  if (suffixes.tqcontains (fields[1][0]))
                      list = suffixes[fields[1][0]];
                   list << e;
                   suffixes[fields[1][0]] = list;
@@ -432,7 +432,7 @@ inline bool checkCondition (const TQString &word, const TQStringList &condition)
         it != condition.end();
         ++it, ++idx)
    {
-      if ((*it).contains(word[idx]) == ((*it)[0] == '^'))
+      if ((*it).tqcontains(word[idx]) == ((*it)[0] == '^'))
          return false;
    }
    return true;
@@ -445,7 +445,7 @@ inline bool checkCondition (const TQString &word, const TQStringList &condition)
  */
 inline void checkWord(const TQString &word, const TQString &modifiers, bool cross, const WordMap &map, WordMap &checkedMap, const AffMap &suffixes) {
    for (uint i = 0; i < modifiers.length(); i++) {
-      if (suffixes.contains(modifiers[i])) {
+      if (suffixes.tqcontains(modifiers[i])) {
          AffList sList = suffixes[modifiers[i]];
 
          AffList::ConstIterator sIt;
@@ -454,7 +454,7 @@ inline void checkWord(const TQString &word, const TQString &modifiers, bool cros
              && (checkCondition(word, (*sIt).condition)))
             {
                TQString sWord = word.left(word.length()-(*sIt).charsToRemove) + (*sIt).add;
-               if (map.contains(sWord))
+               if (map.tqcontains(sWord))
                   checkedMap[sWord] = map[sWord];
             }
          }
@@ -467,19 +467,19 @@ inline void checkWord(const TQString &word, const TQString &modifiers, bool cros
  * @param modifiers discribes which pre- and suffixes are valid
  */
 void checkWord (const TQString &word, const TQString &modifiers, const WordMap &map, WordMap &checkedMap, const AffMap &prefixes, const AffMap &suffixes) {
-   if (map.contains(word))
+   if (map.tqcontains(word))
       checkedMap[word] = map[word];
 
    checkWord(word, modifiers, true, map, checkedMap, suffixes);
 
    for (uint i = 0; i < modifiers.length(); i++) {
-      if (prefixes.contains(modifiers[i])) {
+      if (prefixes.tqcontains(modifiers[i])) {
          AffList pList = prefixes[modifiers[i]];
 
          AffList::ConstIterator pIt;
          for (pIt = pList.begin(); pIt != pList.end(); ++pIt) {
             TQString pWord = (*pIt).add + word;
-            if (map.contains(pWord))
+            if (map.tqcontains(pWord))
                checkedMap[pWord] = map[pWord];
 
             checkWord(pWord, modifiers, false, map, checkedMap, suffixes);
@@ -504,7 +504,7 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
       pdlg->setLabel (i18n("Performing spell check..."));
       pdlg->progressBar()->setTotalSteps(100);
       pdlg->progressBar()->setProgress(0);
-      qApp->processEvents (20);
+      tqApp->tqprocessEvents (20);
       int progress = 0;
       int steps = 0;
       int percent = 0;
@@ -520,14 +520,14 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
 
          while (!stream.atEnd()) {
             TQString s = stream.readLine();
-            if (s.contains("/")) {
-               TQString word = s.left(s.find("/")).lower();
-               TQString modifiers = s.right(s.length() - s.find("/"));
+            if (s.tqcontains("/")) {
+               TQString word = s.left(s.tqfind("/")).lower();
+               TQString modifiers = s.right(s.length() - s.tqfind("/"));
             
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }
             else {
-               if (!s.isEmpty() && !s.isNull() && map.contains(s.lower()))
+               if (!s.isEmpty() && !s.isNull() && map.tqcontains(s.lower()))
                   checkedMap[s.lower()] = map[s.lower()];
             }
             
@@ -535,7 +535,7 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
                pdlg->progressBar()->setProgress(percent);
-               qApp->processEvents (20);
+               tqApp->tqprocessEvents (20);
             }
          }
       }

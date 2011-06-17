@@ -31,8 +31,8 @@
 #include <tqcheckbox.h>
 #include <kurlrequester.h>
 
-TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (TQWidget *parent, const char *name)
-   : texttospeechconfigurationui (parent, name)
+TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (TQWidget *tqparent, const char *name)
+   : texttospeechconfigurationui (tqparent, name)
 {
    ttsSystem = new TextToSpeechSystem();
 

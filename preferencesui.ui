@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>PreferencesUI</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>PreferencesUI</cstring>
     </property>
@@ -33,7 +33,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
                 <cstring>Layout1</cstring>
             </property>
@@ -47,7 +47,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>speakLabel</cstring>
                     </property>
@@ -92,7 +92,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
                 <cstring>Layout2</cstring>
             </property>
@@ -106,7 +106,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>closeLabel</cstring>
                     </property>
@@ -158,5 +158,5 @@
         </widget>
     </vbox>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

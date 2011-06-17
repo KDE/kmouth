@@ -3,7 +3,7 @@
  *
  * Copyright (c) 1999-2000 Hans Petter Bieker <bieker@kde.org>
  *
- * Requires the Qt widget libraries, available at no cost at
+ * Requires the TQt widget libraries, available at no cost at
  * http://www.trolltech.com/
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -60,12 +60,12 @@ static inline void checkInsertPos( TQPopupMenu *popup, const TQString & str,
 static inline TQPopupMenu * checkInsertIndex( TQPopupMenu *popup,
                             const TQStringList *tags, const TQString &submenu )
 {
-  int pos = tags->findIndex( submenu );
+  int pos = tags->tqfindIndex( submenu );
 
   TQPopupMenu *pi = 0;
   if ( pos != -1 )
   {
-    TQMenuItem *p = popup->findItem( pos );
+    TQMenuItem *p = popup->tqfindItem( pos );
     pi = p ? p->popup() : 0;
   }
   if ( !pi )
@@ -80,8 +80,8 @@ KLanguageButton::~KLanguageButton()
   delete m_tags;
 }
 
-KLanguageButton::KLanguageButton( TQWidget * parent, const char *name )
-: TQPushButton( parent, name ),
+KLanguageButton::KLanguageButton( TQWidget * tqparent, const char *name )
+: TQPushButton( tqparent, name ),
 	m_popup( 0 ),
 	m_oldPopup( 0 )
 {
@@ -112,7 +112,7 @@ void KLanguageButton::insertSeparator( const TQString &submenu, int index )
 {
   TQPopupMenu *pi = checkInsertIndex( m_popup, m_tags, submenu );
   pi->insertSeparator( index );
-  m_tags->append( TQString::null );
+  m_tags->append( TQString() );
 }
 
 void KLanguageButton::insertSubmenu( const TQString &text, const TQString &tag,
@@ -132,12 +132,12 @@ void KLanguageButton::insertSubmenu( const TQString &text, const TQString &tag,
 void KLanguageButton::insertLanguage( const TQString& path, const TQString& name,
                         const TQString& sub, const TQString &submenu, int index )
 {
-  TQString output = name + TQString::fromLatin1( " (" ) + path +
-                   TQString::fromLatin1( ")" );
+  TQString output = name + TQString::tqfromLatin1( " (" ) + path +
+                   TQString::tqfromLatin1( ")" );
 #if 0
   // Nooooo ! Country != language
   TQPixmap flag( locate( "locale", sub + path +
-                TQString::fromLatin1( "/flag.png" ) ) );
+                TQString::tqfromLatin1( "/flag.png" ) ) );
 #endif
   insertItem( output, path, submenu, index );
 }
@@ -174,7 +174,7 @@ void KLanguageButton::clear()
   connect( m_popup, TQT_SIGNAL( highlighted( int ) ),
                         TQT_SIGNAL( highlighted( int ) ) );
 
-  setText( TQString::null );
+  setText( TQString() );
   setIconSet( TQIconSet() );
 }
 
@@ -182,14 +182,14 @@ void KLanguageButton::clear()
 {
   if ( i < 0 || i >= count() )
     return;
-  TQString output = name + TQString::fromLatin1( " (" ) + tag( i ) +
-                   TQString::fromLatin1( ")" );
+  TQString output = name + TQString::tqfromLatin1( " (" ) + tag( i ) +
+                   TQString::tqfromLatin1( ")" );
   changeItem( output, i );
 }*/
 
 bool KLanguageButton::containsTag( const TQString &str ) const
 {
-  return m_tags->contains( str ) > 0;
+  return m_tags->tqcontains( str ) > 0;
 }
 
 TQString KLanguageButton::currentTag() const
@@ -202,7 +202,7 @@ TQString KLanguageButton::tag( int i ) const
   if ( i < 0 || i >= count() )
   {
     kdDebug() << "KLanguageButton::tag(), unknown tag " << i << endl;
-    return TQString::null;
+    return TQString();
   }
   return *m_tags->at( i );
 }
@@ -228,7 +228,7 @@ void KLanguageButton::setCurrentItem( int i )
 
 void KLanguageButton::setCurrentItem( const TQString &code )
 {
-  int i = m_tags->findIndex( code );
+  int i = m_tags->tqfindIndex( code );
   if ( code.isNull() )
     i = 0;
   if ( i != -1 )

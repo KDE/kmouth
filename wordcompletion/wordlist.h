@@ -46,7 +46,7 @@ bool saveWordList (WordMap map, TQString filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word
- * lists. It is intended to be used together with the Qt SAX2 framework.
+ * lists. It is intended to be used together with the TQt SAX2 framework.
  * @author Gunnar Schmi Dt
  */
 

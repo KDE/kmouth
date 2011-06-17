@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-// include files for Qt
+// include files for TQt
 #include <tqprinter.h>
 #include <tqpainter.h>
 #include <tqlayout.h>
@@ -45,19 +45,19 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,name) {
+PhraseList::PhraseList(TQWidget *tqparent, const char *name) : TQWidget(tqparent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
-   TQVBoxLayout *layout = new TQVBoxLayout (this);
+   TQVBoxLayout *tqlayout = new TQVBoxLayout (this);
 
    listBox = new KListBox (this);
-   listBox->setFocusPolicy(TQWidget::NoFocus);
+   listBox->setFocusPolicy(TQ_NoFocus);
    listBox->setSelectionMode (TQListBox::Extended);
    TQWhatsThis::add (listBox, i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
-   layout->addWidget(listBox);
+   tqlayout->addWidget(listBox);
 
    TQHBoxLayout *rowLayout = new TQHBoxLayout ();
-   layout->addLayout(rowLayout);
+   tqlayout->addLayout(rowLayout);
 
    completion = new WordCompletion();
 
@@ -66,7 +66,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
    rowLayout->addWidget(dictionaryCombo);
 
    lineEdit = new PhraseEdit ("", this);
-   lineEdit->setFocusPolicy(TQWidget::StrongFocus);
+   lineEdit->setFocusPolicy(TQ_StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(TQLineEdit::Normal);
    lineEdit->setCompletionObject (completion);
@@ -77,7 +77,7 @@ PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,nam
 
    TQIconSet icon = KGlobal::iconLoader()->loadIconSet("speak", KIcon::Small);
    speakButton = new TQPushButton (icon, i18n("&Speak"), this);
-   speakButton->setFocusPolicy(TQWidget::NoFocus);
+   speakButton->setFocusPolicy(TQ_NoFocus);
    speakButton->setAutoDefault(false);
    TQWhatsThis::add (speakButton, i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
@@ -139,7 +139,7 @@ void PhraseList::enableMenuEntries() {
       else
          deselected = true;
    }
-   KMouthApp *theApp=(KMouthApp *) parentWidget();
+   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
    theApp->enableMenuEntries (selected, deselected);
 }
 
@@ -191,7 +191,7 @@ void PhraseList::readCompletionOptions(KConfig *config) {
       int mode = config->readNumEntry ("Mode", KGlobalSettings::completionMode());
       lineEdit->setCompletionMode (static_cast<KGlobalSettings::Completion>(mode));
 
-      TQString current = config->readEntry ("List", TQString::null);
+      TQString current = config->readEntry ("List", TQString());
       TQStringList list = completion->wordLists();
       TQStringList::ConstIterator it;
       int i = 0;
@@ -271,7 +271,7 @@ void PhraseList::cutListSelection () {
 }
 
 void PhraseList::copyListSelection () {
-   TQApplication::clipboard()->setText (getListSelection().join ("\n"));
+   TQApplication::tqclipboard()->setText (getListSelection().join ("\n"));
 }
 
 void PhraseList::lineEntered (const TQString &phrase) {
@@ -285,7 +285,7 @@ void PhraseList::lineEntered (const TQString &phrase) {
 
 void PhraseList::speakPhrase (const TQString &phrase) {
    TQApplication::setOverrideCursor (KCursor::WaitCursor, false);
-   KMouthApp *theApp=(KMouthApp *) parentWidget();
+   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
    TQString language = completion->languageOfWordList (completion->currentWordList());
    theApp->getTTSSystem()->speak(phrase, language);
    TQApplication::restoreOverrideCursor ();
@@ -313,7 +313,7 @@ void PhraseList::contextMenuRequested (TQListBoxItem *, const TQPoint &pos) {
    else
       name = "phraselist_popup";
    
-   KMouthApp *theApp=(KMouthApp *) parentWidget();
+   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
    KXMLGUIFactory *factory = theApp->factory();
    TQPopupMenu *popup = (TQPopupMenu *)factory->container(name,theApp);
    if (popup != 0) {
@@ -357,7 +357,7 @@ void PhraseList::setEditLineText(const TQString &s) {
 }
 
 void PhraseList::keyPressEvent (TQKeyEvent *e) {
-   if (e->key() == Qt::Key_Up) {
+   if (e->key() == TQt::Key_Up) {
       bool selected = false;
       for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
@@ -394,7 +394,7 @@ void PhraseList::keyPressEvent (TQKeyEvent *e) {
       
       e->accept();
    }
-   else if (e->key() == Qt::Key_Down) {
+   else if (e->key() == TQt::Key_Down) {
       bool selected = false;
       for (TQListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
          if (item->isSelected()) {
@@ -419,12 +419,12 @@ void PhraseList::keyPressEvent (TQKeyEvent *e) {
       }
       e->accept();
    }
-   else if ((e->state() & Qt::KeyButtonMask) == Qt::ControlButton) {
-      if (e->key() == Qt::Key_C) {
+   else if ((e->state() & TQt::KeyButtonMask) == TQt::ControlButton) {
+      if (e->key() == TQt::Key_C) {
          copy();
          e->accept();
       }
-      else if (e->key() == Qt::Key_X) {
+      else if (e->key() == TQt::Key_X) {
          cut();
          e->accept();
       }
@@ -446,11 +446,11 @@ void PhraseList::save () {
 
    KURL url;
    if (book.save (this, i18n("Save As"), url, false) == -1)
-      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error saving file\n%1").tqarg( url.url() ));
 }
 
 void PhraseList::open () {
-   KURL url=KFileDialog::getOpenURL(TQString::null,
+   KURL url=KFileDialog::getOpenURL(TQString(),
         i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
 
    if(!url.isEmpty())
@@ -464,7 +464,7 @@ void PhraseList::open (KURL url) {
 
    PhraseBook book;
    if (book.open (url)) {
-      // convert PhraseBookEntryList -> QStringList
+      // convert PhraseBookEntryList -> TQStringList
       TQStringList list = book.toStringList();
       listBox->clear();
       TQStringList::iterator it;
@@ -472,7 +472,7 @@ void PhraseList::open (KURL url) {
          insertIntoPhraseList (*it, false);
    }
    else
-      KMessageBox::sorry(this,i18n("There was an error loading file\n%1").arg( url.url() ));
+      KMessageBox::sorry(this,i18n("There was an error loading file\n%1").tqarg( url.url() ));
 }
 
 #include "phraselist.moc"

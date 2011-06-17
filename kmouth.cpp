@@ -95,57 +95,57 @@ bool KMouthApp::configured() {
 
 void KMouthApp::initActions() {
 // The "File" menu
-   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KStdAccel::open(), this, TQT_SLOT(slotFileOpen()), actionCollection(),"file_open");
+   fileOpen = new KAction(i18n("&Open as History..."), "phrasehistory_open", KStdAccel::open(), TQT_TQOBJECT(this), TQT_SLOT(slotFileOpen()), actionCollection(),"file_open");
    fileOpen->setStatusText(i18n("Opens an existing file as history"));
    fileOpen->setWhatsThis (i18n("Opens an existing file as history"));
 
-   fileSaveAs = new KAction(i18n("Save &History As..."), "phrasehistory_save", KStdAccel::save(), this, TQT_SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
+   fileSaveAs = new KAction(i18n("Save &History As..."), "phrasehistory_save", KStdAccel::save(), TQT_TQOBJECT(this), TQT_SLOT(slotFileSaveAs()), actionCollection(),"file_save_as");
    fileSaveAs->setStatusText(i18n("Saves the actual history as..."));
    fileSaveAs->setWhatsThis (i18n("Saves the actual history as..."));
 
-   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KStdAccel::print(), this, TQT_SLOT(slotFilePrint()), actionCollection(),"file_print");
+   filePrint = new KAction(i18n("&Print History..."), "phrasehistory_print", KStdAccel::print(), TQT_TQOBJECT(this), TQT_SLOT(slotFilePrint()), actionCollection(),"file_print");
    filePrint->setStatusText(i18n("Prints out the actual history"));
    filePrint->setWhatsThis (i18n("Prints out the actual history"));
 
-   fileQuit = KStdAction::quit(this, TQT_SLOT(slotFileQuit()), actionCollection());
+   fileQuit = KStdAction::quit(TQT_TQOBJECT(this), TQT_SLOT(slotFileQuit()), actionCollection());
    fileQuit->setStatusText(i18n("Quits the application"));
    fileQuit->setWhatsThis (i18n("Quits the application"));
 
 // The "Edit" menu
-   editCut = KStdAction::cut(phraseList, TQT_SLOT(cut()), actionCollection());
+   editCut = KStdAction::cut(TQT_TQOBJECT(phraseList), TQT_SLOT(cut()), actionCollection());
    editCut->setStatusText(i18n("Cuts the selected section and puts it to the clipboard"));
    editCut->setWhatsThis (i18n("Cuts the selected section and puts it to the clipboard. If there is some text selected in the edit field it is placed it on the clipboard. Otherwise the selected sentences in the history (if any) are placed on the clipboard."));
 
-   editCopy = KStdAction::copy(phraseList, TQT_SLOT(copy()), actionCollection());
+   editCopy = KStdAction::copy(TQT_TQOBJECT(phraseList), TQT_SLOT(copy()), actionCollection());
    editCopy->setStatusText(i18n("Copies the selected section to the clipboard"));
    editCopy->setWhatsThis (i18n("Copies the selected section to the clipboard. If there is some text selected in the edit field it is copied to the clipboard. Otherwise the selected sentences in the history (if any) are copied to the clipboard."));
 
-   editPaste = KStdAction::paste(phraseList, TQT_SLOT(paste()), actionCollection());
+   editPaste = KStdAction::paste(TQT_TQOBJECT(phraseList), TQT_SLOT(paste()), actionCollection());
    editPaste->setStatusText(i18n("Pastes the clipboard contents to actual position"));
    editPaste->setWhatsThis (i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
-   editSpeak = new KAction (i18n("&Speak"), "speak", 0, phraseList, TQT_SLOT(speak()), actionCollection(),"edit_speak");
+   editSpeak = new KAction (i18n("&Speak"), "speak", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(speak()), actionCollection(),"edit_speak");
    editSpeak->setStatusText(i18n("Speaks the currently active sentence(s)"));
    editSpeak->setWhatsThis (i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
 
 // The "Phrase book" menu
-   phrasebookEdit = new KAction(i18n("&Edit..."), 0, 0, this, TQT_SLOT(slotEditPhrasebook()), actionCollection(),"phrasebook_edit");
+   phrasebookEdit = new KAction(i18n("&Edit..."), 0, 0, TQT_TQOBJECT(this), TQT_SLOT(slotEditPhrasebook()), actionCollection(),"phrasebook_edit");
 
 // The "Options" menu
-   viewMenuBar = KStdAction::showMenubar(this, TQT_SLOT(slotViewMenuBar()), actionCollection());
-   viewToolBar = KStdAction::showToolbar(this, TQT_SLOT(slotViewToolBar()), actionCollection());
+   viewMenuBar = KStdAction::showMenubar(TQT_TQOBJECT(this), TQT_SLOT(slotViewMenuBar()), actionCollection());
+   viewToolBar = KStdAction::showToolbar(TQT_TQOBJECT(this), TQT_SLOT(slotViewToolBar()), actionCollection());
    viewToolBar->setStatusText(i18n("Enables/disables the toolbar"));
    viewToolBar->setWhatsThis (i18n("Enables/disables the toolbar"));
 
-   viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), 0, 0, this, TQT_SLOT(slotViewPhrasebookBar()), actionCollection(), "showPhrasebookBar");
+   viewPhrasebookBar = new KToggleAction (i18n("Show P&hrasebook Bar"), 0, 0, TQT_TQOBJECT(this), TQT_SLOT(slotViewPhrasebookBar()), actionCollection(), "showPhrasebookBar");
    viewPhrasebookBar->setStatusText(i18n("Enables/disables the phrasebook bar"));
    viewPhrasebookBar->setWhatsThis (i18n("Enables/disables the phrasebook bar"));
 
-   viewStatusBar = KStdAction::showStatusbar(this, TQT_SLOT(slotViewStatusBar()), actionCollection());
+   viewStatusBar = KStdAction::showStatusbar(TQT_TQOBJECT(this), TQT_SLOT(slotViewStatusBar()), actionCollection());
    viewStatusBar->setStatusText(i18n("Enables/disables the statusbar"));
    viewStatusBar->setWhatsThis (i18n("Enables/disables the statusbar"));
 
-   configureTTS = new KAction (i18n("&Configure KMouth..."), "configure", 0, this, TQT_SLOT(slotConfigureTTS()), actionCollection(), "configureTTS");
+   configureTTS = new KAction (i18n("&Configure KMouth..."), "configure", 0, TQT_TQOBJECT(this), TQT_SLOT(slotConfigureTTS()), actionCollection(), "configureTTS");
    configureTTS->setStatusText(i18n("Opens the configuration dialog"));
    configureTTS->setWhatsThis (i18n("Opens the configuration dialog"));
 
@@ -153,27 +153,27 @@ void KMouthApp::initActions() {
    // The "Help" menu will automatically get created.
 
 // The popup menu of the list of spoken sentences
-   phraseListSpeak = new KAction (i18n("&Speak"),  "speak",  0, phraseList, TQT_SLOT(speakListSelection()),  actionCollection(), "phraselist_speak");
+   phraseListSpeak = new KAction (i18n("&Speak"),  "speak",  0, TQT_TQOBJECT(phraseList), TQT_SLOT(speakListSelection()),  actionCollection(), "phraselist_speak");
    phraseListSpeak->setStatusText(i18n("Speaks the currently selected phrases in the history"));
    phraseListSpeak->setWhatsThis (i18n("Speaks the currently selected phrases in the history"));
 
-   phraseListRemove = new KAction (i18n("&Delete"), "editdelete", 0, phraseList, TQT_SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
+   phraseListRemove = new KAction (i18n("&Delete"), "editdelete", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(removeListSelection()), actionCollection(), "phraselist_remove");
    phraseListRemove->setStatusText(i18n("Deletes the currently selected phrases from the history"));
    phraseListRemove->setWhatsThis (i18n("Deletes the currently selected phrases from the history"));
 
-   phraseListCut = new KAction (i18n("Cu&t"),   "editcut", 0, phraseList, TQT_SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
+   phraseListCut = new KAction (i18n("Cu&t"),   "editcut", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(cutListSelection()),    actionCollection(), "phraselist_cut");
    phraseListCut->setStatusText(i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Cuts the currently selected phrases from the history and puts them to the clipboard"));
 
-   phraseListCopy   = new KAction (i18n("&Copy"), "editcopy", 0, phraseList, TQT_SLOT(copyListSelection()),   actionCollection(), "phraselist_copy");
+   phraseListCopy   = new KAction (i18n("&Copy"), "editcopy", 0, TQT_TQOBJECT(phraseList), TQT_SLOT(copyListSelection()),   actionCollection(), "phraselist_copy");
    phraseListCut->setStatusText(i18n("Copies the currently selected phrases from the history to the clipboard"));
    phraseListCut->setWhatsThis (i18n("Copies the currently selected phrases from the history to the clipboard"));
 
-   phraselistSelectAll = new KAction (i18n("Select &All Entries"), 0, 0, phraseList, TQT_SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
+   phraselistSelectAll = new KAction (i18n("Select &All Entries"), 0, 0, TQT_TQOBJECT(phraseList), TQT_SLOT(selectAllEntries()), actionCollection(),"phraselist_select_all");
    phraselistSelectAll->setStatusText(i18n("Selects all phrases in the history"));
    phraselistSelectAll->setWhatsThis (i18n("Selects all phrases in the history"));
 
-   phraselistDeselectAll = new KAction (i18n("D&eselect All Entries"), 0, 0, phraseList, TQT_SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
+   phraselistDeselectAll = new KAction (i18n("D&eselect All Entries"), 0, 0, TQT_TQOBJECT(phraseList), TQT_SLOT(deselectAllEntries()), actionCollection(),"phraselist_deselect_all");
    phraselistDeselectAll->setStatusText(i18n("Deselects all phrases in the history"));
    phraselistDeselectAll->setWhatsThis (i18n("Deselects all phrases in the history"));
 
@@ -458,7 +458,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
    delete phrases;
 
    phrases = new KActionCollection (this, actionCollection());
-   book.addToGUI (popup, toolbar, phrases, this, TQT_SLOT(slotPhraseSelected (const TQString &)));
+   book.addToGUI (popup, toolbar, phrases, TQT_TQOBJECT(this), TQT_SLOT(slotPhraseSelected (const TQString &)));
 
    TQString bookLocation = KApplication::kApplication()->dirs()->saveLocation ("appdata", "/");
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {

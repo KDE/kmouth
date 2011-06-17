@@ -23,7 +23,7 @@
 #include <klineedit.h>
 #include <kprinter.h>
 
-// include files for Qt
+// include files for TQt
 #include <tqwidget.h>
 #include <tqpushbutton.h>
 
@@ -40,8 +40,9 @@ class WordCompletion;
 
 class PhraseList : public TQWidget  {
    Q_OBJECT
+  TQ_OBJECT
 public:
-   PhraseList(TQWidget *parent=0, const char *name=0);
+   PhraseList(TQWidget *tqparent=0, const char *name=0);
    ~PhraseList();
    
    /** contains the implementation for printing functionality */

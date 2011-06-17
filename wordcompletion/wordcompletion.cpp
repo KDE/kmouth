@@ -38,7 +38,7 @@ WordCompletion::~WordCompletion() {
    delete d;
 }
 
-typedef QPair<int,TQString> Match;
+typedef TQPair<int,TQString> Match;
 typedef TQValueList<Match> MatchList;
 
 TQString WordCompletion::makeCompletion(const TQString &text) {
@@ -46,7 +46,7 @@ TQString WordCompletion::makeCompletion(const TQString &text) {
       d->lastText = text;
       KCompletion::clear();
 
-      int border = text.findRev(TQRegExp("\\W"));
+      int border = text.tqfindRev(TQRegExp("\\W"));
       TQString suffix = text.right (text.length() - border - 1).lower();
       TQString prefix = text.left (border + 1);
 
@@ -84,10 +84,10 @@ TQStringList WordCompletion::wordLists(const TQString &language) {
 }
 
 TQString WordCompletion::languageOfWordList(const TQString &wordlist) {
-   if (d->dictDetails.contains(wordlist))
+   if (d->dictDetails.tqcontains(wordlist))
       return d->dictDetails[wordlist].language;
    else
-      return TQString::null;
+      return TQString();
 }
 
 TQString WordCompletion::currentWordList() {
@@ -137,7 +137,7 @@ bool WordCompletion::setWordList(const TQString &wordlist) {
    d->wordsToSave = false;
 
    d->map.clear();
-   bool result = d->dictDetails.contains (wordlist);
+   bool result = d->dictDetails.tqcontains (wordlist);
    if (result)
       d->current = wordlist;
    else
@@ -177,13 +177,13 @@ void WordCompletion::addSentence (const TQString &sentence) {
    
    TQStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
-      if (!(*it).contains(TQRegExp("\\d|_"))) {
+      if (!(*it).tqcontains(TQRegExp("\\d|_"))) {
          TQString key = (*it).lower();
-         if (d->map.contains(key))
+         if (d->map.tqcontains(key))
             d->map[key] += 1;
          else
             d->map[key] = 1;
-         if (d->addedWords.contains(key))
+         if (d->addedWords.tqcontains(key))
             d->addedWords[key] += 1;
          else
             d->addedWords[key] = 1;
@@ -208,7 +208,7 @@ void WordCompletion::save () {
       stream << "WPDictFile\n";
       TQMap<TQString,int>::ConstIterator it;
       for (it = d->map.begin(); it != d->map.end(); ++it) {
-         if (d->addedWords.contains(it.key())) {
+         if (d->addedWords.tqcontains(it.key())) {
             stream << it.key() << "\t" << d->addedWords[it.key()] << "\t1\n";
             stream << it.key() << "\t" << it.data() - d->addedWords[it.key()] << "\t2\n";
          }

@@ -24,7 +24,7 @@
 
 /**
  * This class implements a parser for both the phrase list and for phrase
- * books. It is intended to be used together with the Qt SAX2 framework.
+ * books. It is intended to be used together with the TQt SAX2 framework.
  * @author Gunnar Schmi Dt
  */
 

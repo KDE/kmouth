@@ -109,7 +109,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
    for (it = begin(); it != end(); ++it) {
       TQRect rect = metrics.boundingRect (x+16*(*it).getLevel(), y,
                                          w-16*(*it).getLevel(), 0,
-                                         Qt::AlignJustify | Qt::WordBreak,
+                                         TQt::AlignJustify | TQt::WordBreak,
                                          (*it).getPhrase().getPhrase());
 
       if (y+rect.height() > size.height()) {
@@ -118,7 +118,7 @@ void PhraseBook::print(KPrinter *pPrinter) {
       }
       printpainter.drawText (x+16*(*it).getLevel(),y,
                              w-16*(*it).getLevel(),rect.height(),
-                             Qt::AlignJustify | Qt::WordBreak,
+                             TQt::AlignJustify | TQt::WordBreak,
                              (*it).getPhrase().getPhrase());
       y += rect.height();
    }
@@ -151,7 +151,7 @@ TQCString encodeString (const TQString str) {
    TQCString res = "";
    for (int i = 0; i < (int)str.length(); i++) {
       TQChar ch = str.at(i);
-      ushort uc = ch.unicode();
+      ushort uc = ch.tqunicode();
       TQCString number; number.setNum(uc);
       if ((uc>127) || (uc<32) || (ch=='<') || (ch=='>') || (ch=='&') || (ch==';'))
          res = res + "&#" + number + ";";
@@ -249,7 +249,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    }
 }
 
-int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool phrasebookFirst) {
+int PhraseBook::save (TQWidget *tqparent, const TQString &title, KURL &url, bool phrasebookFirst) {
    // KFileDialog::getSaveURL(...) is not useful here as we need
    // to know the requested file type.
 
@@ -259,7 +259,7 @@ int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool p
    else
       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
 
-   KFileDialog fdlg(TQString::null,filters, parent, "filedialog", true);
+   KFileDialog fdlg(TQString(),filters, tqparent, "filedialog", true);
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
@@ -274,20 +274,20 @@ int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool p
    }
 
    if (KIO::NetAccess::exists(url)) {
-      if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                       "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+      if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").tqarg(i18n("The file %1 already exists. "
+                                                       "Do you want to overwrite it?").tqarg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
          return 0;
       }
    }
 
    bool result;
    if (fdlg.currentFilter() == "*.phrasebook") {
-      if (url.fileName (false).contains('.') == 0) {
+      if (url.fileName (false).tqcontains('.') == 0) {
          url.setFileName (url.fileName(false) + ".phrasebook");
       }
-      else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
-         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
-                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").arg(url.filename())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
+      else if (url.fileName (false).right (11).tqcontains (".phrasebook", false) == 0) {
+         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").tqarg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
+                                                           "Do you wish to add <i>.phrasebook</i> to the filename?").tqarg(url.filename())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
@@ -298,12 +298,12 @@ int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool p
       result = save (url, true);
    }
    else if (fdlg.currentFilter() == "*.txt") {
-      if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
+      if (url.fileName (false).right (11).tqcontains (".phrasebook", false) == 0) {
          result = save (url, false);
       }
       else {
-         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-                                                           "Do you wish to save in phrasebook format?").arg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
+         int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").tqarg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+                                                           "Do you wish to save in phrasebook format?").tqarg(url.filename())),i18n("File Extension"),i18n("As Phrasebook"),i18n("As Plain Text"));
          if (filetype == KMessageBox::Cancel) {
             return 0;
          }
@@ -339,7 +339,7 @@ bool PhraseBook::open (const KURL &url) {
 
       // First: try to load it as a normal phrase book
       TQFile file(tempFile);
-      TQXmlInputSource source (&file);
+      TQXmlInputSource source (TQT_TQIODEVICE(&file));
       bool error = !decode (source);
 
       // Second: if the file does not contain a phrase book, load it as
@@ -374,7 +374,7 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
                   TQObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
       TQPtrStack<TQWidget> stack;
-      TQWidget *parent = popup;
+      TQWidget *tqparent = popup;
       int level = 0;
 
       TQValueListConstIterator<PhraseBookEntry> it;
@@ -384,38 +384,38 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
             KActionMenu *menu = new KActionMenu("", "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
-            menu->plug (parent);
-            if (parent == popup)
+            menu->plug (tqparent);
+            if (tqparent == popup)
                menu->plug (toolbar);
-            if (parent != 0)
-               stack.push (parent);
-            parent = menu->popupMenu();
+            if (tqparent != 0)
+               stack.push (tqparent);
+            tqparent = menu->popupMenu();
             level++;
          }
-         while (newLevel < level && (parent != popup)) {
-            parent = stack.pop();
+         while (newLevel < level && (tqparent != popup)) {
+            tqparent = stack.pop();
             level--;
          }
          if ((*it).isPhrase()) {
             Phrase phrase = (*it).getPhrase();
             KAction *action = new PhraseAction (phrase.getPhrase(),
                      phrase.getShortcut(), receiver, slot, phrases);
-            if (parent == popup)
+            if (tqparent == popup)
                action->plug (toolbar);
-            if (parent != 0)
-               action->plug(parent);
+            if (tqparent != 0)
+               action->plug(tqparent);
          }
          else {
             Phrase phrase = (*it).getPhrase();
             KActionMenu *menu = new KActionMenu(phrase.getPhrase(), "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
-            if (parent == popup)
+            if (tqparent == popup)
                menu->plug (toolbar);
-            if (parent != 0)
-               menu->plug (parent);
-            stack.push (parent);
-            parent = menu->popupMenu();
+            if (tqparent != 0)
+               menu->plug (tqparent);
+            stack.push (tqparent);
+            tqparent = menu->popupMenu();
             level++;
          }
       }
@@ -451,9 +451,9 @@ PhraseBookDrag::~PhraseBookDrag () {
 void PhraseBookDrag::setBook (PhraseBook *book) {
    if (book == 0) {
       isEmpty = true;
-      xmlphrasebook.setText(TQString::null);
-      xml.setText(TQString::null);
-      plain.setText(TQString::null);
+      xmlphrasebook.setText(TQString());
+      xml.setText(TQString());
+      plain.setText(TQString());
    }
    else {
       isEmpty = false;
@@ -477,15 +477,15 @@ const char *PhraseBookDrag::format (int i) const {
       return xmlphrasebook.format(i/3);
 }
 
-TQByteArray PhraseBookDrag::encodedData (const char* mime) const {
+TQByteArray PhraseBookDrag::tqencodedData (const char* mime) const {
    TQCString m(mime);
    m = m.lower();
-   if (m.contains("xml-phrasebook"))
-      return xmlphrasebook.encodedData(mime);
-   else if (m.contains("xml"))
-      return xml.encodedData(mime);
+   if (m.tqcontains("xml-phrasebook"))
+      return xmlphrasebook.tqencodedData(mime);
+   else if (m.tqcontains("xml"))
+      return xml.tqencodedData(mime);
    else
-      return plain.encodedData(mime);
+      return plain.tqencodedData(mime);
 }
 
 bool PhraseBookDrag::canDecode (const TQMimeSource* e) {

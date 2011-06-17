@@ -17,36 +17,36 @@
 
 #include "phraseedit.h"
 
-PhraseEdit::PhraseEdit(const TQString &string, TQWidget *parent)
- : KLineEdit (string, parent) {
+PhraseEdit::PhraseEdit(const TQString &string, TQWidget *tqparent)
+ : KLineEdit (string, tqparent) {
 }
 
 PhraseEdit::~PhraseEdit() {
 }
 
 void PhraseEdit::keyPressEvent (TQKeyEvent *e) {
-   if ((e->state() & Qt::KeyButtonMask) == Qt::ControlButton) {
-      if (e->key() == Qt::Key_C) {
+   if ((e->state() & TQt::KeyButtonMask) == TQt::ControlButton) {
+      if (e->key() == TQt::Key_C) {
          if (!this->hasSelectedText()) {
             e->ignore();
             return;
          }
       }
-      else if (e->key() == Qt::Key_Insert) {
+      else if (e->key() == TQt::Key_Insert) {
          if (!hasSelectedText()) {
             e->ignore();
             return;
          }
       }
-      else if (e->key() == Qt::Key_X) {
+      else if (e->key() == TQt::Key_X) {
          if (!hasSelectedText()) {
             e->ignore();
             return;
          }
       }
    }
-   else if ((e->state() & Qt::KeyButtonMask) == Qt::ShiftButton) {
-      if (e->key() == Qt::Key_Delete) {
+   else if ((e->state() & TQt::KeyButtonMask) == TQt::ShiftButton) {
+      if (e->key() == TQt::Key_Delete) {
          if (!hasSelectedText()) {
             e->ignore();
             return;

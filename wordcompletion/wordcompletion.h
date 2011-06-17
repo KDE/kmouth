@@ -9,6 +9,7 @@
 class WordCompletion : public KCompletion {
    friend class WordListWidget;
    Q_OBJECT
+  TQ_OBJECT
 public:
    WordCompletion();
    virtual ~WordCompletion();

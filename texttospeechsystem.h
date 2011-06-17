@@ -29,8 +29,9 @@ class KConfig;
   *@author Gunnar Schmi Dt
   */
 
-class TextToSpeechSystem : public QObject{
+class TextToSpeechSystem : public TQObject{
    Q_OBJECT
+  TQ_OBJECT
    friend class TextToSpeechConfigurationWidget;
 public:
    TextToSpeechSystem();

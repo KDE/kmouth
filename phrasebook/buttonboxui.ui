@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.0" stdsetdef="1">
 <class>ButtonBoxUI</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>ButtonBoxUI</cstring>
     </property>
@@ -25,7 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QGroupBox" row="0" column="0">
+        <widget class="TQGroupBox" row="0" column="0">
             <property name="name">
                 <cstring>phrasebox</cstring>
             </property>
@@ -42,7 +42,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QWidget" row="3" column="2">
+                <widget class="TQWidget" row="3" column="2">
                     <property name="name">
                         <cstring>keyButtonPlace</cstring>
                     </property>
@@ -55,7 +55,7 @@
                         <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
                     </property>
                 </widget>
-                <widget class="QRadioButton" row="3" column="0">
+                <widget class="TQRadioButton" row="3" column="0">
                     <property name="name">
                         <cstring>noKey</cstring>
                     </property>
@@ -66,7 +66,7 @@
                         <string>If you select this option then the selected phrase will not be reachable by a keyboard shortcut.</string>
                     </property>
                 </widget>
-                <widget class="QRadioButton" row="3" column="1">
+                <widget class="TQRadioButton" row="3" column="1">
                     <property name="name">
                         <cstring>customKey</cstring>
                     </property>
@@ -77,7 +77,7 @@
                         <string>If you select this option then the selected phrase will be reachable by a keyboard shortcut. You can change the shortcut with the button next to this option.</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
+                <widget class="TQLabel" row="2" column="0" rowspan="1" colspan="3">
                     <property name="name">
                         <cstring>shortcutLabel</cstring>
                     </property>
@@ -85,7 +85,7 @@
                         <string>Shortcut for the phrase:</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+                <widget class="TQLabel" row="0" column="0" rowspan="1" colspan="3">
                     <property name="name">
                         <cstring>textLabel</cstring>
                     </property>
@@ -103,5 +103,5 @@
         </widget>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

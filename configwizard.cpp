@@ -31,8 +31,8 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, KConfig *config)
-             : KWizard(parent, name, true)
+ConfigWizard::ConfigWizard (TQWidget *tqparent, const char *name, KConfig *config)
+             : KWizard(tqparent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
 
@@ -88,7 +88,7 @@ void ConfigWizard::initCompletion (KConfig *config) {
          config->setGroup("Dictionary 0");
          config->writeEntry ("Filename", "dictionary.txt");
          config->writeEntry ("Name",     "Default");
-         config->writeEntry ("Language", TQString::null);
+         config->writeEntry ("Language", TQString());
          config->sync();
       }
    }

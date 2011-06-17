@@ -33,13 +33,13 @@ class PhraseTreeItem : public KListViewItem {
    friend class PhraseTree;
 private:
    /** Creates a phrase item within a sub phrase book */
-   PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
+   PhraseTreeItem (TQListView *tqparent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
    /** Creates a phrase item at the top level */
-   PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
+   PhraseTreeItem (TQListViewItem *tqparent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon);
    /** Creates a phrase book item within a sub phrase book */
-   PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString name, TQPixmap icon);
+   PhraseTreeItem (TQListView *tqparent, TQListViewItem *after, TQString name, TQPixmap icon);
    /** Creates a phrase book item at the top level */
-   PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString name, TQPixmap icon);
+   PhraseTreeItem (TQListViewItem *tqparent, TQListViewItem *after, TQString name, TQPixmap icon);
 
 public:
    bool isPhrase();
@@ -60,22 +60,23 @@ private:
 class PhraseTree : public KListView  {
    friend class PhraseTreeItem;
    Q_OBJECT
+  TQ_OBJECT
 public: 
-   PhraseTree (TQWidget *parent = 0, const char *name = 0);
+   PhraseTree (TQWidget *tqparent = 0, const char *name = 0);
    ~PhraseTree ();
 
    void keyPressEvent (TQKeyEvent *e);
 
-   PhraseTreeItem *insertPhrase (TQListViewItem *parent, TQListViewItem *after, TQString phrase, TQString shortcut);
-   PhraseTreeItem *insertBook (TQListViewItem *parent, TQListViewItem *after, TQString name);
+   PhraseTreeItem *insertPhrase (TQListViewItem *tqparent, TQListViewItem *after, TQString phrase, TQString shortcut);
+   PhraseTreeItem *insertBook (TQListViewItem *tqparent, TQListViewItem *after, TQString name);
 
-   TQListViewItem *addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book);
+   TQListViewItem *addBook (TQListViewItem *tqparent, TQListViewItem *after, PhraseBook *book);
    void fillBook (PhraseBook *book, bool respectSelection);
 
    TQDragObject *dragObject ();
    TQDragObject *dragObject (bool isDependent);
 
-   void moveItem (TQListViewItem *item, TQListViewItem *parent, TQListViewItem *above);
+   void moveItem (TQListViewItem *item, TQListViewItem *tqparent, TQListViewItem *above);
 
    bool hasSelectedItems();
    void deleteSelectedItems();

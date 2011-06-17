@@ -42,10 +42,10 @@
 #include "kdedocsourceui.h"
 #include "wordlist.h"
 
-DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *parent, const char *name,
+DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *tqparent, const char *name,
                TQStringList dictionaryNames, TQStringList dictionaryFiles,
                TQStringList dictionaryLanguages)
-   : KWizard (parent, name)
+   : KWizard (tqparent, name)
 {
    buildCodecList ();
    
@@ -161,10 +161,10 @@ TQString DictionaryCreationWizard::createDictionary() {
 
    if (creationSource->mergeButton->isChecked()) {
       map = WordList::mergeFiles (mergeWidget->mergeParameters(), pdlg);
-      dicFile = TQString::null;
+      dicFile = TQString();
    }
    else if (creationSource->emptyButton->isChecked()) {
-      dicFile = TQString::null;
+      dicFile = TQString();
    }
    else if (creationSource->fileButton->isChecked()) {
       TQString filename = fileWidget->url->url();
@@ -221,7 +221,7 @@ TQString DictionaryCreationWizard::createDictionary() {
    TQString dictionaryFile;
    do {
       dictnumber++;
-      filename = TQString("wordcompletion%1.dict").arg(dictnumber);
+      filename = TQString("wordcompletion%1.dict").tqarg(dictnumber);
       dictionaryFile = KApplication::kApplication()->dirs()->findResource("appdata", filename);
    }
    while (KStandardDirs::exists(dictionaryFile));
@@ -274,19 +274,19 @@ TQString DictionaryCreationWizard::language() {
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(KWizard *parent, const char *name,
+MergeWidget::MergeWidget(KWizard *tqparent, const char *name,
                TQStringList dictionaryNames, TQStringList dictionaryFiles,
                TQStringList dictionaryLanguages)
-: TQScrollView (parent, name) {
+: TQScrollView (tqparent, name) {
    dictionaries.setAutoDelete (false);
    weights.setAutoDelete (false);
 
    TQWidget *contents = new TQWidget(viewport());
    addChild(contents);
-   TQGridLayout *layout = new TQGridLayout (contents);
+   TQGridLayout *tqlayout = new TQGridLayout (contents);
    setResizePolicy (TQScrollView::AutoOneFit);
-   layout->setColStretch (0, 0);
-   layout->setColStretch (1, 1);
+   tqlayout->setColStretch (0, 0);
+   tqlayout->setColStretch (1, 1);
 
    int row = 0;
    TQStringList::Iterator nIt = dictionaryNames.begin();
@@ -295,8 +295,8 @@ MergeWidget::MergeWidget(KWizard *parent, const char *name,
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
       TQCheckBox *checkbox = new TQCheckBox(*nIt, contents);
       KIntNumInput *numInput = new KIntNumInput(contents);
-      layout->addWidget (checkbox, row, 0);
-      layout->addWidget (numInput, row, 1);
+      tqlayout->addWidget (checkbox, row, 0);
+      tqlayout->addWidget (numInput, row, 1);
       
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10, true);
@@ -335,13 +335,13 @@ TQString MergeWidget::language () {
       }
    }
 
-   return TQString::null;
+   return TQString();
 }
 
 /***************************************************************************/
 
-CompletionWizardWidget::CompletionWizardWidget (KWizard *parent, const char *name)
-   : KDEDocSourceUI (parent, name) {
+CompletionWizardWidget::CompletionWizardWidget (KWizard *tqparent, const char *name)
+   : KDEDocSourceUI (tqparent, name) {
 }
 
 CompletionWizardWidget::~CompletionWizardWidget() {

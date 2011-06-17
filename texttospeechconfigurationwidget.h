@@ -30,7 +30,7 @@
 class TextToSpeechConfigurationWidget : public texttospeechconfigurationui {
    friend class TextToSpeechConfigurationDialog;
 public:
-   TextToSpeechConfigurationWidget(TQWidget *parent, const char *name);
+   TextToSpeechConfigurationWidget(TQWidget *tqparent, const char *name);
    ~TextToSpeechConfigurationWidget();
 
    TextToSpeechSystem *getTTSSystem() const;

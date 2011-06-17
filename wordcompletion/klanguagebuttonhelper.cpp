@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2003 Gunnar Schmi Dt <gunnar@schmi-dt.de>
  *
- * Requires the Qt widget libraries, available at no cost at
+ * Requires the TQt widget libraries, available at no cost at
  * http://www.trolltech.com/
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -31,30 +31,30 @@
 
 TQString languageName (TQString languageCode) {
    TQString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + TQString::fromLatin1("/entry.desktop"));
+			languageCode + TQString::tqfromLatin1("/entry.desktop"));
       
    KSimpleConfig entry(filename);
-   entry.setGroup(TQString::fromLatin1("KCM Locale"));
-   return entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
+   entry.setGroup(TQString::tqfromLatin1("KCM Locale"));
+   return entry.readEntry(TQString::tqfromLatin1("Name"), i18n("without name"));
 }
 
 void loadLanguageList(KLanguageButton *combo)
 // This function was taken from kdebase/kcontrol/kdm/kdm-appear.cpp
 {
   TQStringList langlist = KGlobal::dirs()->findAllResources("locale",
-			TQString::fromLatin1("*/entry.desktop"));
+			TQString::tqfromLatin1("*/entry.desktop"));
   langlist.sort();
   for ( TQStringList::ConstIterator it = langlist.begin();
 	it != langlist.end(); ++it )
   {
     TQString fpath = (*it).left((*it).length() - 14);
-    int index = fpath.findRev('/');
+    int index = fpath.tqfindRev('/');
     TQString nid = fpath.mid(index + 1);
 
     KSimpleConfig entry(*it);
-    entry.setGroup(TQString::fromLatin1("KCM Locale"));
-    TQString name = entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
-    combo->insertLanguage(nid, name, TQString::fromLatin1("l10n/"), TQString::null);
+    entry.setGroup(TQString::tqfromLatin1("KCM Locale"));
+    TQString name = entry.readEntry(TQString::tqfromLatin1("Name"), i18n("without name"));
+    combo->insertLanguage(nid, name, TQString::tqfromLatin1("l10n/"), TQString());
   }
   
   if (KGlobal::locale())

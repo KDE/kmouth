@@ -39,18 +39,18 @@
 
 class DictionaryListItem : public KListViewItem {
 public:
-   DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString language, TQString languageCode)
-   : KListViewItem (parent, name) {
+   DictionaryListItem (TQListView *tqparent, TQString filename, TQString name, TQString language, TQString languageCode)
+   : KListViewItem (tqparent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
    };
-   DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (parent, name) {
+   DictionaryListItem (TQListView *tqparent, TQString filename, TQString name, TQString languageCode)
+   : KListViewItem (tqparent, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
-   DictionaryListItem (TQListView *parent, TQListViewItem *after, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (parent, after, name) {
+   DictionaryListItem (TQListView *tqparent, TQListViewItem *after, TQString filename, TQString name, TQString languageCode)
+   : KListViewItem (tqparent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
@@ -71,11 +71,11 @@ public:
 
    void setLanguage (TQString languageCode) {
       TQString filename = KGlobal::dirs()->findResource("locale",
-			languageCode + TQString::fromLatin1("/entry.desktop"));
+			languageCode + TQString::tqfromLatin1("/entry.desktop"));
 
       KSimpleConfig entry(filename);
-      entry.setGroup(TQString::fromLatin1("KCM Locale"));
-      TQString name = entry.readEntry(TQString::fromLatin1("Name"), i18n("without name"));
+      entry.setGroup(TQString::tqfromLatin1("KCM Locale"));
+      TQString name = entry.readEntry(TQString::tqfromLatin1("Name"), i18n("without name"));
       setLanguage (name + " (" + languageCode + ")", languageCode);
    }
 
@@ -91,7 +91,7 @@ private:
 
 /***************************************************************************/
 
-WordCompletionWidget::WordCompletionWidget(TQWidget *parent, const char *name) : WordCompletionUI (parent, name) {
+WordCompletionWidget::WordCompletionWidget(TQWidget *tqparent, const char *name) : WordCompletionUI (tqparent, name) {
     dictionaryList->setSorting (-1); // no sorted list
 
     // Connect the signals from hte KCMKTTSDWidget to this class
@@ -136,7 +136,7 @@ void WordCompletionWidget::load() {
                                         config->readEntry("Name"),
                                         languageTag);
          if (!languageButton->containsTag(languageTag))
-            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString::null);
+            languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
       }
 
    // Clean up disc space
@@ -159,7 +159,7 @@ void WordCompletionWidget::save() {
    while (it.current()) {
       DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
       if (item != 0) {
-         config->setGroup(TQString("Dictionary %1").arg(number));
+         config->setGroup(TQString("Dictionary %1").tqarg(number));
          config->writeEntry ("Filename", item->filename());
          config->writeEntry ("Name",     item->text (0));
          config->writeEntry ("Language", item->languageCode());
@@ -200,7 +200,7 @@ void WordCompletionWidget::addDictionary() {
       newDictionaryFiles += filename;
       TQString languageTag = wizard->language();
       if (!languageButton->containsTag(languageTag)) {
-         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::fromLatin1("l10n/"), TQString::null);
+         languageButton->insertLanguage(languageTag, i18n("without name"), TQString::tqfromLatin1("l10n/"), TQString());
       }
       KListViewItem *item = new DictionaryListItem (dictionaryList,
                       filename, wizard->name(), languageTag);
@@ -246,13 +246,13 @@ void WordCompletionWidget::exportDictionary() {
    DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
 
    if (item != 0) {
-      KURL url = KFileDialog::getSaveURL(TQString::null, TQString::null, this, i18n("Export Dictionary"));
+      KURL url = KFileDialog::getSaveURL(TQString(), TQString(), this, i18n("Export Dictionary"));
       if (url.isEmpty() || !url.isValid())
          return;
 
       if (KIO::NetAccess::exists(url, false, this)) {
-         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                          "Do you want to overwrite it?").arg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
+         if (KMessageBox::warningContinueCancel(0,TQString("<qt>%1</qt>").tqarg(i18n("The file %1 already exists. "
+                                                          "Do you want to overwrite it?").tqarg(url.url())),i18n("File Exists"),i18n("&Overwrite"))==KMessageBox::Cancel) {
             return;
          }
       }

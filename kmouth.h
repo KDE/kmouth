@@ -24,7 +24,7 @@
 #include <config.h>
 #endif
 
-// include files for Qt
+// include files for TQt
 
 // include files for KDE
 #include <kapplication.h>
@@ -56,11 +56,12 @@ class PhraseBook;
 class KMouthApp : public KMainWindow
 {
   Q_OBJECT
+  TQ_OBJECT
 
   public:
     /** construtor of KMouthApp, calls all init functions to create the application.
      */
-    KMouthApp(TQWidget* parent=0, const char* name=0);
+    KMouthApp(TQWidget* tqparent=0, const char* name=0);
     ~KMouthApp();
     /** Returns true if the configuration wizard was not needed or when it
      * was successfully completed.
@@ -78,7 +79,7 @@ class KMouthApp : public KMainWindow
     void enableMenuEntries(bool existSelectedEntries, bool existDeselectedEntries);
 
   protected:
-    /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
+    /** save general Options like all bar positions and status as well as the tqgeometry and the recent file list to the configuration
      * file
      */
     void saveOptions();
