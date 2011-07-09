@@ -279,7 +279,7 @@
 <functions>
     <function access="private" specifier="non virtual">init()</function>
 </functions>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>kpushbutton.h</includehint>

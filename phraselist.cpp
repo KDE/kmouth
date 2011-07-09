@@ -139,7 +139,7 @@ void PhraseList::enableMenuEntries() {
       else
          deselected = true;
    }
-   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
+   KMouthApp *theApp=(KMouthApp *) parentWidget();
    theApp->enableMenuEntries (selected, deselected);
 }
 
@@ -285,7 +285,7 @@ void PhraseList::lineEntered (const TQString &phrase) {
 
 void PhraseList::speakPhrase (const TQString &phrase) {
    TQApplication::setOverrideCursor (KCursor::WaitCursor, false);
-   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
+   KMouthApp *theApp=(KMouthApp *) parentWidget();
    TQString language = completion->languageOfWordList (completion->currentWordList());
    theApp->getTTSSystem()->speak(phrase, language);
    TQApplication::restoreOverrideCursor ();
@@ -313,7 +313,7 @@ void PhraseList::contextMenuRequested (TQListBoxItem *, const TQPoint &pos) {
    else
       name = "phraselist_popup";
    
-   KMouthApp *theApp=(KMouthApp *) tqparentWidget();
+   KMouthApp *theApp=(KMouthApp *) parentWidget();
    KXMLGUIFactory *factory = theApp->factory();
    TQPopupMenu *popup = (TQPopupMenu *)factory->container(name,theApp);
    if (popup != 0) {

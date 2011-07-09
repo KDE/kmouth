@@ -160,7 +160,7 @@
 <Q_SIGNALS>
     <signal>configurationChanged()</signal>
 </Q_SIGNALS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>
