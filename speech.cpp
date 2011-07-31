@@ -203,10 +203,10 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 
       // 3. create a new process
       process << command;
-      connect(&process, SIGNAL(processExited(K3Process *)), this, SLOT(processExited(K3Process *)));
-      connect(&process, SIGNAL(wroteStdin(K3Process *)), this, SLOT(wroteStdin(K3Process *)));
-      connect(&process, SIGNAL(receivedStdout(K3Process *, char *, int)), this, SLOT(receivedStdout(K3Process *, char *, int)));
-      connect(&process, SIGNAL(receivedStderr(K3Process *, char *, int)), this, SLOT(receivedStderr(K3Process *, char *, int)));
+      connect(&process, SIGNAL(processExited(K3Process*)), this, SLOT(processExited(K3Process*)));
+      connect(&process, SIGNAL(wroteStdin(K3Process*)), this, SLOT(wroteStdin(K3Process*)));
+      connect(&process, SIGNAL(receivedStdout(K3Process*,char*,int)), this, SLOT(receivedStdout(K3Process*,char*,int)));
+      connect(&process, SIGNAL(receivedStderr(K3Process*,char*,int)), this, SLOT(receivedStderr(K3Process*,char*,int)));
 
       // 4. start the process
       if (stdIn) {

@@ -107,8 +107,8 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     connect (exportButton, SIGNAL (clicked()), this, SLOT (exportDictionary()) );
 
     connect (dictionaryList, SIGNAL (selectionChanged()), this, SLOT (selectionChanged()) );
-    connect (dictionaryName, SIGNAL (textChanged (const QString &)), this, SLOT (nameChanged (const QString &)) );
-    connect (languageButton, SIGNAL (activated (const QString &)), this, SLOT (languageSelected()) );
+    connect (dictionaryName, SIGNAL (textChanged(QString)), this, SLOT (nameChanged(QString)) );
+    connect (languageButton, SIGNAL (activated(QString)), this, SLOT (languageSelected()) );
 
     // Object for the KCMKTTSD configuration
     config = new KConfig(QLatin1String( "kmouthrc" ));

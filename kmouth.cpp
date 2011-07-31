@@ -62,10 +62,10 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KXmlGuiWindow(0)
    initPhraseList();
    initActions();
    optionsDialog = new OptionsDialog(this);
-   connect (optionsDialog, SIGNAL(configurationChanged ()),
-            this, SLOT(slotConfigurationChanged ()));
-   connect (optionsDialog, SIGNAL(configurationChanged ()),
-            phraseList, SLOT(configureCompletion ()));
+   connect (optionsDialog, SIGNAL(configurationChanged()),
+            this, SLOT(slotConfigurationChanged()));
+   connect (optionsDialog, SIGNAL(configurationChanged()),
+            phraseList, SLOT(configureCompletion()));
 
    phrases = new KActionCollection (static_cast<QWidget*>(this));
 
@@ -424,10 +424,10 @@ void KMouthApp::slotEditPhrasebook () {
    PhraseBookDialog *phraseBookDialog = PhraseBookDialog::get();
    // As we do not know whether the we are already connected to the slot,
    // we first disconnect and then connect again.
-   disconnect (phraseBookDialog, SIGNAL(phrasebookConfirmed (PhraseBook &)),
-               this, SLOT(slotPhrasebookConfirmed (PhraseBook &)));
-   connect (phraseBookDialog, SIGNAL(phrasebookConfirmed (PhraseBook &)),
-            this, SLOT(slotPhrasebookConfirmed (PhraseBook &)));
+   disconnect (phraseBookDialog, SIGNAL(phrasebookConfirmed(PhraseBook&)),
+               this, SLOT(slotPhrasebookConfirmed(PhraseBook&)));
+   connect (phraseBookDialog, SIGNAL(phrasebookConfirmed(PhraseBook&)),
+            this, SLOT(slotPhrasebookConfirmed(PhraseBook&)));
 
    // As we do not know whether the phrase book edit window is already open,
    // we first open and then raise it, so that it is surely the top window.
@@ -518,7 +518,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
 
    delete phrases;
    phrases = new KActionCollection (actionCollection());
-   book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected (const QString &)));
+   book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected(QString)));
 
    QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" ));
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {

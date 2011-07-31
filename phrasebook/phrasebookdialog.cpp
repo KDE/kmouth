@@ -330,16 +330,16 @@ void PhraseBookDialog::initGUI () {
    treeView->setSelectionMode (Q3ListView::Extended);
    treeView->setWhatsThis( i18n("This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books"));
    connect (treeView, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
-   connect (treeView, SIGNAL(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)), this, SLOT(contextMenuRequested (Q3ListViewItem *, const QPoint &, int)));
-   connect (treeView, SIGNAL(dropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotDropped (QDropEvent *, Q3ListViewItem *, Q3ListViewItem *)));
-   connect (treeView, SIGNAL(moved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)), this, SLOT(slotMoved (Q3ListViewItem *, Q3ListViewItem *, Q3ListViewItem *)));
+   connect (treeView, SIGNAL(contextMenuRequested(Q3ListViewItem*,QPoint,int)), this, SLOT(contextMenuRequested(Q3ListViewItem*,QPoint,int)));
+   connect (treeView, SIGNAL(dropped(QDropEvent*,Q3ListViewItem*,Q3ListViewItem*)), this, SLOT(slotDropped(QDropEvent*,Q3ListViewItem*,Q3ListViewItem*)));
+   connect (treeView, SIGNAL(moved(Q3ListViewItem*,Q3ListViewItem*,Q3ListViewItem*)), this, SLOT(slotMoved(Q3ListViewItem*,Q3ListViewItem*,Q3ListViewItem*)));
    mainLayout->addWidget (treeView);
 
    buttonBox = new ButtonBoxWidget (page, "buttonbox");
-   connect (buttonBox->lineEdit, SIGNAL(textChanged(const QString &)), SLOT(slotTextChanged(const QString &)));
+   connect (buttonBox->lineEdit, SIGNAL(textChanged(QString)), SLOT(slotTextChanged(QString)));
    connect (buttonBox->noKey, SIGNAL(clicked()), SLOT(slotNoKey()));
    connect (buttonBox->customKey, SIGNAL(clicked()), SLOT(slotCustomKey()));
-   connect (buttonBox->keyButton, SIGNAL(capturedShortcut(const KShortcut&)), SLOT(capturedShortcut(const KShortcut&)));
+   connect (buttonBox->keyButton, SIGNAL(capturedShortcut(KShortcut)), SLOT(capturedShortcut(KShortcut)));
    mainLayout->addWidget (buttonBox);
 
    treeView->setFocus();
@@ -515,7 +515,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       currentNamePath = dirs;
 
       KAction *book = new StandardPhraseBookInsertAction (
-          url, (*it).name, this, SLOT(slotImportPhrasebook (const KUrl &)), actionCollection());
+          url, (*it).name, this, SLOT(slotImportPhrasebook(KUrl)), actionCollection());
       parent->addAction(book);
       if (parent == fileImportStandardBook)
          toolbarImport->popupMenu()->addAction(book);

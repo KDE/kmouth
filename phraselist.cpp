@@ -86,13 +86,13 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    speakButton->setWhatsThis( i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
    rowLayout->addWidget(speakButton);
 
-   connect(dictionaryCombo, SIGNAL (activated (const QString &)), completion, SLOT (setWordList(const QString &)));
-   connect(completion, SIGNAL (wordListsChanged (const QStringList &)), this, SLOT (configureCompletionCombo (const QStringList &)));
+   connect(dictionaryCombo, SIGNAL (activated(QString)), completion, SLOT (setWordList(QString)));
+   connect(completion, SIGNAL (wordListsChanged(QStringList)), this, SLOT (configureCompletionCombo(QStringList)));
    connect(listBox,  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
-   connect(listBox,  SIGNAL(contextMenuRequested (Q3ListBoxItem *, const QPoint &)), SLOT(contextMenuRequested (Q3ListBoxItem *, const QPoint &)));
-   connect(lineEdit, SIGNAL(returnPressed(const QString &)), SLOT(lineEntered(const QString &)));
-   connect(lineEdit, SIGNAL(textChanged  (const QString &)), SLOT(textChanged(const QString &)));
-   connect(speakButton, SIGNAL( clicked ()), SLOT(speak()));
+   connect(listBox,  SIGNAL(contextMenuRequested(Q3ListBoxItem*,QPoint)), SLOT(contextMenuRequested(Q3ListBoxItem*,QPoint)));
+   connect(lineEdit, SIGNAL(returnPressed(QString)), SLOT(lineEntered(QString)));
+   connect(lineEdit, SIGNAL(textChanged(QString)), SLOT(textChanged(QString)));
+   connect(speakButton, SIGNAL(clicked()), SLOT(speak()));
 }
 
 PhraseList::~PhraseList() {
