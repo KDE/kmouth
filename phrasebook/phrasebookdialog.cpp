@@ -383,7 +383,7 @@ TQString PhraseBookDialog::displayPath (TQString filename) {
    TQFileInfo file(filename);
    TQString path = file.dirPath();
    TQString dispPath = "";
-   uint position = path.tqfind("/kmouth/books/")+TQString("/kmouth/books/").length();
+   uint position = path.find("/kmouth/books/")+TQString("/kmouth/books/").length();
 
    while (path.length() > position) {
       file.setFile(path);

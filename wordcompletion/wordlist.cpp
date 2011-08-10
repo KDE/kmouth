@@ -139,9 +139,9 @@ void addWords (WordMap &map, TQString line) {
    
    TQStringList::ConstIterator it;
    for (it = words.begin(); it != words.end(); ++it) {
-      if (!(*it).tqcontains(TQRegExp("\\d|_"))) {
+      if (!(*it).contains(TQRegExp("\\d|_"))) {
          TQString key = (*it).lower();
-         if (map.tqcontains(key))
+         if (map.contains(key))
             map[key] += 1;
          else
             map[key] = 1;
@@ -152,7 +152,7 @@ void addWords (WordMap &map, TQString line) {
 void addWords (WordMap &map, WordMap add) {
    WordList::WordMap::ConstIterator it;
    for (it = add.begin(); it != add.end(); ++it)
-      if (map.tqcontains(it.key()))
+      if (map.contains(it.key()))
          map[it.key()] += it.data();
       else
          map[it.key()] = it.data();
@@ -186,7 +186,7 @@ void addWordsFromFile (WordMap &map, TQString filename, TQTextStream::Encoding e
                      bool ok;
                      int weight = list[1].toInt(&ok);
                      if (ok && (weight > 0)) {
-                        if (map.tqcontains(list[0]))
+                        if (map.contains(list[0]))
                            map[list[0]] += weight;
                         else
                            map[list[0]] = weight;
@@ -261,7 +261,7 @@ WordMap mergeFiles  (TQMap<TQString,int> files, KProgressDialog *pdlg) {
          maxWeight = weight;
       
       for (iter = fileMap.begin(); iter != fileMap.end(); ++iter)
-         if (map.tqcontains(iter.key()))
+         if (map.contains(iter.key()))
             map[iter.key()] += iter.data() * factor;
          else
             map[iter.key()] = iter.data() * factor;
@@ -394,14 +394,14 @@ void loadAffFile(const TQString &filename, AffMap &prefixes, AffMap &suffixes) {
                
                if (s.startsWith("PFX")) {
                   AffList list;
-                  if (prefixes.tqcontains (fields[1][0]))
+                  if (prefixes.contains (fields[1][0]))
                      list = prefixes[fields[1][0]];
                   list << e;
                   prefixes[fields[1][0]] = list;
                }
                else if (s.startsWith("SFX")) {
                   AffList list;
-                  if (suffixes.tqcontains (fields[1][0]))
+                  if (suffixes.contains (fields[1][0]))
                      list = suffixes[fields[1][0]];
                   list << e;
                   suffixes[fields[1][0]] = list;
@@ -432,7 +432,7 @@ inline bool checkCondition (const TQString &word, const TQStringList &condition)
         it != condition.end();
         ++it, ++idx)
    {
-      if ((*it).tqcontains(word[idx]) == ((*it)[0] == '^'))
+      if ((*it).contains(word[idx]) == ((*it)[0] == '^'))
          return false;
    }
    return true;
@@ -445,7 +445,7 @@ inline bool checkCondition (const TQString &word, const TQStringList &condition)
  */
 inline void checkWord(const TQString &word, const TQString &modifiers, bool cross, const WordMap &map, WordMap &checkedMap, const AffMap &suffixes) {
    for (uint i = 0; i < modifiers.length(); i++) {
-      if (suffixes.tqcontains(modifiers[i])) {
+      if (suffixes.contains(modifiers[i])) {
          AffList sList = suffixes[modifiers[i]];
 
          AffList::ConstIterator sIt;
@@ -454,7 +454,7 @@ inline void checkWord(const TQString &word, const TQString &modifiers, bool cros
              && (checkCondition(word, (*sIt).condition)))
             {
                TQString sWord = word.left(word.length()-(*sIt).charsToRemove) + (*sIt).add;
-               if (map.tqcontains(sWord))
+               if (map.contains(sWord))
                   checkedMap[sWord] = map[sWord];
             }
          }
@@ -467,19 +467,19 @@ inline void checkWord(const TQString &word, const TQString &modifiers, bool cros
  * @param modifiers discribes which pre- and suffixes are valid
  */
 void checkWord (const TQString &word, const TQString &modifiers, const WordMap &map, WordMap &checkedMap, const AffMap &prefixes, const AffMap &suffixes) {
-   if (map.tqcontains(word))
+   if (map.contains(word))
       checkedMap[word] = map[word];
 
    checkWord(word, modifiers, true, map, checkedMap, suffixes);
 
    for (uint i = 0; i < modifiers.length(); i++) {
-      if (prefixes.tqcontains(modifiers[i])) {
+      if (prefixes.contains(modifiers[i])) {
          AffList pList = prefixes[modifiers[i]];
 
          AffList::ConstIterator pIt;
          for (pIt = pList.begin(); pIt != pList.end(); ++pIt) {
             TQString pWord = (*pIt).add + word;
-            if (map.tqcontains(pWord))
+            if (map.contains(pWord))
                checkedMap[pWord] = map[pWord];
 
             checkWord(pWord, modifiers, false, map, checkedMap, suffixes);
@@ -520,14 +520,14 @@ WordMap spellCheck  (WordMap map, TQString dictionary, KProgressDialog *pdlg) {
 
          while (!stream.atEnd()) {
             TQString s = stream.readLine();
-            if (s.tqcontains("/")) {
-               TQString word = s.left(s.tqfind("/")).lower();
-               TQString modifiers = s.right(s.length() - s.tqfind("/"));
+            if (s.contains("/")) {
+               TQString word = s.left(s.find("/")).lower();
+               TQString modifiers = s.right(s.length() - s.find("/"));
             
                checkWord(word, modifiers, map, checkedMap, prefixes, suffixes);
             }
             else {
-               if (!s.isEmpty() && !s.isNull() && map.tqcontains(s.lower()))
+               if (!s.isEmpty() && !s.isNull() && map.contains(s.lower()))
                   checkedMap[s.lower()] = map[s.lower()];
             }
             

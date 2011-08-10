@@ -51,7 +51,7 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
    TQValueStack<bool> stack;  // saved isdoublequote values during parsing of braces
    bool issinglequote=false; // inside '...' ?
    bool isdoublequote=false; // inside "..." ?
-   int notqreplace=0; // nested braces when within ${...}
+   int noreplace=0; // nested braces when within ${...}
    TQString escText = KShellProcess::quote(text);
 
    // character sequences that change the state or need to be otherwise processed
@@ -71,17 +71,17 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
       if ((command[i]=='(') || (command[i]=='{')) { // (...) or {...}
          // assert(isdoublequote == false)
          stack.push(isdoublequote);
-         if (notqreplace > 0)
+         if (noreplace > 0)
             // count nested braces when within ${...}
-            notqreplace++;
+            noreplace++;
          i++;
       }
       else if (command[i]=='$') { // $(...) or ${...}
          stack.push(isdoublequote);
          isdoublequote = false;
-         if ((notqreplace > 0) || (command[i+1]=='{'))
+         if ((noreplace > 0) || (command[i+1]=='{'))
             // count nested braces when within ${...}
-            notqreplace++;
+            noreplace++;
          i+=2;
       }
       else if ((command[i]==')') || (command[i]=='}')) {
@@ -90,9 +90,9 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
             isdoublequote = stack.pop();
          else
             qWarning("Parse error.");
-         if (notqreplace > 0)
+         if (noreplace > 0)
             // count nested braces when within ${...}
-            notqreplace--;
+            noreplace--;
          i++;
       }
       else if (command[i]=='\'') {
@@ -107,7 +107,7 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
          i+=2;
       else if (command[i]=='`') {
          // Replace all `...` with safer $(...)
-         command.tqreplace (i, 1, "$(");
+         command.replace (i, 1, "$(");
          TQRegExp re_backticks("(`|\\\\`|\\\\\\\\|\\\\\\$)");
          for (int i2=re_backticks.search(command,i+2);
               i2!=-1;
@@ -115,7 +115,7 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
              )
          {
             if (command[i2] == '`') {
-               command.tqreplace (i2, 1, ")");
+               command.replace (i2, 1, ")");
                i2=command.length(); // leave loop
             }
             else {
@@ -126,7 +126,7 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
          }
          // Leave i unchanged! We need to process "$("
       }
-      else if (notqreplace > 0) { // do not replace macros within ${...}
+      else if (noreplace > 0) { // do not replace macros within ${...}
          if (issinglequote)
             i+=re_singlequote.matchedLength();
          else if (isdoublequote)
@@ -161,7 +161,7 @@ TQString Speech::prepareCommand (TQString command, const TQString &text,
          else if (issinglequote)
             v="'"+v+"'";
 
-         command.tqreplace (i, match.length(), v);
+         command.replace (i, match.length(), v);
          i+=v.length();
       }
    }

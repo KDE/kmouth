@@ -48,7 +48,7 @@ void loadLanguageList(KLanguageButton *combo)
 	it != langlist.end(); ++it )
   {
     TQString fpath = (*it).left((*it).length() - 14);
-    int index = fpath.tqfindRev('/');
+    int index = fpath.findRev('/');
     TQString nid = fpath.mid(index + 1);
 
     KSimpleConfig entry(*it);

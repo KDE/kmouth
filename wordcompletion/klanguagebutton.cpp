@@ -60,12 +60,12 @@ static inline void checkInsertPos( TQPopupMenu *popup, const TQString & str,
 static inline TQPopupMenu * checkInsertIndex( TQPopupMenu *popup,
                             const TQStringList *tags, const TQString &submenu )
 {
-  int pos = tags->tqfindIndex( submenu );
+  int pos = tags->findIndex( submenu );
 
   TQPopupMenu *pi = 0;
   if ( pos != -1 )
   {
-    TQMenuItem *p = popup->tqfindItem( pos );
+    TQMenuItem *p = popup->findItem( pos );
     pi = p ? p->popup() : 0;
   }
   if ( !pi )
@@ -189,7 +189,7 @@ void KLanguageButton::clear()
 
 bool KLanguageButton::containsTag( const TQString &str ) const
 {
-  return m_tags->tqcontains( str ) > 0;
+  return m_tags->contains( str ) > 0;
 }
 
 TQString KLanguageButton::currentTag() const
@@ -228,7 +228,7 @@ void KLanguageButton::setCurrentItem( int i )
 
 void KLanguageButton::setCurrentItem( const TQString &code )
 {
-  int i = m_tags->tqfindIndex( code );
+  int i = m_tags->findIndex( code );
   if ( code.isNull() )
     i = 0;
   if ( i != -1 )

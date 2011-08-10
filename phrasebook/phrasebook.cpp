@@ -282,10 +282,10 @@ int PhraseBook::save (TQWidget *tqparent, const TQString &title, KURL &url, bool
 
    bool result;
    if (fdlg.currentFilter() == "*.phrasebook") {
-      if (url.fileName (false).tqcontains('.') == 0) {
+      if (url.fileName (false).contains('.') == 0) {
          url.setFileName (url.fileName(false) + ".phrasebook");
       }
-      else if (url.fileName (false).right (11).tqcontains (".phrasebook", false) == 0) {
+      else if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
          int filetype = KMessageBox::questionYesNoCancel (0,TQString("<qt>%1</qt>").tqarg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                                                            "Do you wish to add <i>.phrasebook</i> to the filename?").tqarg(url.filename())),i18n("File Extension"),i18n("Add"),i18n("Do Not Add"));
          if (filetype == KMessageBox::Cancel) {
@@ -298,7 +298,7 @@ int PhraseBook::save (TQWidget *tqparent, const TQString &title, KURL &url, bool
       result = save (url, true);
    }
    else if (fdlg.currentFilter() == "*.txt") {
-      if (url.fileName (false).right (11).tqcontains (".phrasebook", false) == 0) {
+      if (url.fileName (false).right (11).contains (".phrasebook", false) == 0) {
          result = save (url, false);
       }
       else {
@@ -480,9 +480,9 @@ const char *PhraseBookDrag::format (int i) const {
 TQByteArray PhraseBookDrag::tqencodedData (const char* mime) const {
    TQCString m(mime);
    m = m.lower();
-   if (m.tqcontains("xml-phrasebook"))
+   if (m.contains("xml-phrasebook"))
       return xmlphrasebook.tqencodedData(mime);
-   else if (m.tqcontains("xml"))
+   else if (m.contains("xml"))
       return xml.tqencodedData(mime);
    else
       return plain.tqencodedData(mime);
