@@ -31,8 +31,8 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (TQWidget *tqparent, const char *name, KConfig *config)
-             : KWizard(tqparent, name, true)
+ConfigWizard::ConfigWizard (TQWidget *parent, const char *name, KConfig *config)
+             : KWizard(parent, name, true)
 {
    setCaption (i18n("Initial Configuration - KMouth"));
 

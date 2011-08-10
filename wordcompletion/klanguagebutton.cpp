@@ -80,8 +80,8 @@ KLanguageButton::~KLanguageButton()
   delete m_tags;
 }
 
-KLanguageButton::KLanguageButton( TQWidget * tqparent, const char *name )
-: TQPushButton( tqparent, name ),
+KLanguageButton::KLanguageButton( TQWidget * parent, const char *name )
+: TQPushButton( parent, name ),
 	m_popup( 0 ),
 	m_oldPopup( 0 )
 {

@@ -39,18 +39,18 @@
 
 class DictionaryListItem : public KListViewItem {
 public:
-   DictionaryListItem (TQListView *tqparent, TQString filename, TQString name, TQString language, TQString languageCode)
-   : KListViewItem (tqparent, name) {
+   DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString language, TQString languageCode)
+   : KListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (language, languageCode);
    };
-   DictionaryListItem (TQListView *tqparent, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (tqparent, name) {
+   DictionaryListItem (TQListView *parent, TQString filename, TQString name, TQString languageCode)
+   : KListViewItem (parent, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
-   DictionaryListItem (TQListView *tqparent, TQListViewItem *after, TQString filename, TQString name, TQString languageCode)
-   : KListViewItem (tqparent, after, name) {
+   DictionaryListItem (TQListView *parent, TQListViewItem *after, TQString filename, TQString name, TQString languageCode)
+   : KListViewItem (parent, after, name) {
       setFilename (filename);
       setLanguage (languageCode);
    };
@@ -91,7 +91,7 @@ private:
 
 /***************************************************************************/
 
-WordCompletionWidget::WordCompletionWidget(TQWidget *tqparent, const char *name) : WordCompletionUI (tqparent, name) {
+WordCompletionWidget::WordCompletionWidget(TQWidget *parent, const char *name) : WordCompletionUI (parent, name) {
     dictionaryList->setSorting (-1); // no sorted list
 
     // Connect the signals from hte KCMKTTSDWidget to this class

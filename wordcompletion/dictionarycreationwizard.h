@@ -44,7 +44,7 @@ class DictionaryCreationWizard : public KWizard {
    Q_OBJECT
   TQ_OBJECT
 public:
-   DictionaryCreationWizard (TQWidget *tqparent, const char *name,
+   DictionaryCreationWizard (TQWidget *parent, const char *name,
                              TQStringList dictionaryNames,
                              TQStringList dictionaryFiles,
                              TQStringList dictionaryLanguages);
@@ -79,7 +79,7 @@ class MergeWidget : public TQScrollView {
    Q_OBJECT
   TQ_OBJECT
 public:
-   MergeWidget(KWizard *tqparent, const char *name,
+   MergeWidget(KWizard *parent, const char *name,
                TQStringList dictionaryNames,
                TQStringList dictionaryFiles,
                TQStringList dictionaryLanguages);
@@ -104,7 +104,7 @@ class CompletionWizardWidget : public KDEDocSourceUI {
   TQ_OBJECT
    friend class ConfigWizard;
 public:
-   CompletionWizardWidget(KWizard *tqparent, const char *name);
+   CompletionWizardWidget(KWizard *parent, const char *name);
    ~CompletionWizardWidget();
 
    void ok (KConfig *config);

@@ -37,7 +37,7 @@ class ConfigWizard : public KWizard  {
    Q_OBJECT
   TQ_OBJECT
 public:
-   ConfigWizard (TQWidget *tqparent, const char *name, KConfig *config);
+   ConfigWizard (TQWidget *parent, const char *name, KConfig *config);
    ~ConfigWizard();
 
    bool configurationNeeded ();

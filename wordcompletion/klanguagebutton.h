@@ -43,7 +43,7 @@ class KLanguageButton : public TQPushButton
   TQ_OBJECT
 
 public:
-  KLanguageButton(TQWidget *tqparent=0, const char *name=0);
+  KLanguageButton(TQWidget *parent=0, const char *name=0);
   ~KLanguageButton();
 
   void insertItem( const TQIconSet& icon, const TQString &text,

@@ -39,8 +39,8 @@
 #include "texttospeechconfigurationwidget.h"
 #include "speech.h"
 
-PreferencesWidget::PreferencesWidget (TQWidget *tqparent, const char *name)
-   : PreferencesUI (tqparent, name)
+PreferencesWidget::PreferencesWidget (TQWidget *parent, const char *name)
+   : PreferencesUI (parent, name)
 {
    speakCombo->setCurrentItem (1);
    speak = false;
@@ -113,9 +113,9 @@ bool PreferencesWidget::isSpeakImmediately () {
 
 /***************************************************************************/
 
-OptionsDialog::OptionsDialog (TQWidget *tqparent)
+OptionsDialog::OptionsDialog (TQWidget *parent)
    : KDialogBase(IconList, i18n("Configuration"), Ok|Apply|Cancel|Help, Ok,
-                  tqparent, "configuration", false, true)
+                  parent, "configuration", false, true)
 {
    setHelp ("config-dialog");
 

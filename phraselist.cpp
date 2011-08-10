@@ -45,7 +45,7 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(TQWidget *tqparent, const char *name) : TQWidget(tqparent,name) {
+PhraseList::PhraseList(TQWidget *parent, const char *name) : TQWidget(parent,name) {
    isInSlot = false;
    setBackgroundMode(PaletteBase);
    TQVBoxLayout *tqlayout = new TQVBoxLayout (this);

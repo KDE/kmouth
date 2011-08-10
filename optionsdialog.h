@@ -35,7 +35,7 @@ class PreferencesWidget : public PreferencesUI {
    Q_OBJECT
   TQ_OBJECT
 public:
-   PreferencesWidget(TQWidget *tqparent, const char *name);
+   PreferencesWidget(TQWidget *parent, const char *name);
    ~PreferencesWidget();
 
    void readOptions (KConfig *config);
@@ -59,7 +59,7 @@ class OptionsDialog : public KDialogBase  {
    Q_OBJECT
   TQ_OBJECT
 public: 
-   OptionsDialog(TQWidget *tqparent);
+   OptionsDialog(TQWidget *parent);
    ~OptionsDialog();
 
    void slotCancel();

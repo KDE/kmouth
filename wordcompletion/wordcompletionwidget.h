@@ -32,7 +32,7 @@ class WordCompletionWidget : public WordCompletionUI {
    Q_OBJECT
   TQ_OBJECT
 public:
-   WordCompletionWidget(TQWidget *tqparent, const char *name);
+   WordCompletionWidget(TQWidget *parent, const char *name);
    ~WordCompletionWidget();
 
    /**

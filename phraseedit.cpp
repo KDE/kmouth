@@ -17,8 +17,8 @@
 
 #include "phraseedit.h"
 
-PhraseEdit::PhraseEdit(const TQString &string, TQWidget *tqparent)
- : KLineEdit (string, tqparent) {
+PhraseEdit::PhraseEdit(const TQString &string, TQWidget *parent)
+ : KLineEdit (string, parent) {
 }
 
 PhraseEdit::~PhraseEdit() {

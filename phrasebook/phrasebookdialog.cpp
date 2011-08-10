@@ -53,9 +53,9 @@ namespace PhraseBookPrivate {
    };
 }
 
-CheckBookItem::CheckBookItem (TQListViewItem *tqparent, TQListViewItem *last,
+CheckBookItem::CheckBookItem (TQListViewItem *parent, TQListViewItem *last,
              const TQString &text, const TQString &name, const TQString &filename)
-   : TQCheckListItem (tqparent, text, TQCheckListItem::CheckBox)
+   : TQCheckListItem (parent, text, TQCheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -67,12 +67,12 @@ CheckBookItem::CheckBookItem (TQListViewItem *tqparent, TQListViewItem *last,
    else
       numberOfBooks = 1;
    selectedBooks = 0;
-   ((CheckBookItem*)tqparent)->childChange (numberOfBooks, selectedBooks);
+   ((CheckBookItem*)parent)->childChange (numberOfBooks, selectedBooks);
 }
 
-CheckBookItem::CheckBookItem (TQListView *tqparent, TQListViewItem *last,
+CheckBookItem::CheckBookItem (TQListView *parent, TQListViewItem *last,
              const TQString &text, const TQString &name, const TQString &filename)
-   : TQCheckListItem (tqparent, text, TQCheckListItem::CheckBox)
+   : TQCheckListItem (parent, text, TQCheckListItem::CheckBox)
 {
    moveItem (last);
    setText(PhraseBookPrivate::name, name);
@@ -102,12 +102,12 @@ void CheckBookItem::activate() {
 void CheckBookItem::stateChange (bool on) {
    TQListViewItem *item = firstChild();
    if (item == 0) {
-      TQListViewItem *tqparent = this->tqparent();
-      if (tqparent != 0) {
+      TQListViewItem *parent = this->parent();
+      if (parent != 0) {
          if (on)
-            ((CheckBookItem*)tqparent)->childChange (0, 1);
+            ((CheckBookItem*)parent)->childChange (0, 1);
          else
-            ((CheckBookItem*)tqparent)->childChange (0, -1);
+            ((CheckBookItem*)parent)->childChange (0, -1);
       }
    }
    else propagateStateChange();
@@ -127,9 +127,9 @@ void CheckBookItem::propagateStateChange () {
 void CheckBookItem::childChange (int numberDiff, int selDiff) {
    numberOfBooks += numberDiff;
    selectedBooks += selDiff;
-   TQListViewItem *tqparent = this->tqparent();
-   if (tqparent != 0)
-      ((CheckBookItem*)tqparent)->childChange (numberDiff, selDiff);
+   TQListViewItem *parent = this->parent();
+   if (parent != 0)
+      ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
 
    TQString text = i18n(" (%1 of %2 books selected)");
    text = text.tqarg(selectedBooks).tqarg(numberOfBooks);
@@ -138,8 +138,8 @@ void CheckBookItem::childChange (int numberDiff, int selDiff) {
 
 /***************************************************************************/
 
-InitialPhraseBookWidget::InitialPhraseBookWidget (TQWidget *tqparent, const char *name)
-   : TQWidget(tqparent, name)
+InitialPhraseBookWidget::InitialPhraseBookWidget (TQWidget *parent, const char *name)
+   : TQWidget(parent, name)
 {
    TQVBoxLayout *mainLayout = new TQVBoxLayout (this, 0, KDialog::spacingHint());
    TQLabel *label = new TQLabel (i18n("Please decide which phrase books you need:"), this, "booksTitle");
@@ -165,7 +165,7 @@ InitialPhraseBookWidget::~InitialPhraseBookWidget () {
 void InitialPhraseBookWidget::initStandardPhraseBooks() {
    StandardBookList bookPaths = PhraseBookDialog::standardPhraseBooks();
 
-   TQListViewItem *tqparent = 0;
+   TQListViewItem *parent = 0;
    TQListViewItem *last = 0;
    TQStringList currentNamePath = "";
    TQPtrStack<TQListViewItem> stack;
@@ -179,26 +179,26 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
       for (; (it1 != currentNamePath.end())
           && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
       for (; it1 != currentNamePath.end(); ++it1) {
-         last = tqparent;
-         tqparent = stack.pop();
+         last = parent;
+         parent = stack.pop();
       }
       for (; it2 != dirs.end(); ++it2) {
-         stack.push (tqparent);
+         stack.push (parent);
          TQListViewItem *newParent;
-         if (tqparent == 0)
+         if (parent == 0)
             newParent = new CheckBookItem (books, last, *it2, *it2, TQString());
          else
-            newParent = new CheckBookItem (tqparent, last, *it2, *it2, TQString());
-         tqparent = newParent;
+            newParent = new CheckBookItem (parent, last, *it2, *it2, TQString());
+         parent = newParent;
          last = 0;
       }
       currentNamePath = dirs;
       
       TQListViewItem *book;
-      if (tqparent == 0)
+      if (parent == 0)
          book = new CheckBookItem (books, last, (*it).name, (*it).name, (*it).filename);
       else
-         book = new CheckBookItem (tqparent, last, (*it).name, (*it).name, (*it).filename);
+         book = new CheckBookItem (parent, last, (*it).name, (*it).name, (*it).filename);
       last = book;
    }
 }
@@ -218,7 +218,7 @@ void InitialPhraseBookWidget::createBook () {
          }
          
          while ((item != 0) && (item->nextSibling() == 0)) {
-            item = item->tqparent();
+            item = item->parent();
          }
          if (item != 0)
             item = item->nextSibling();
@@ -233,8 +233,8 @@ void InitialPhraseBookWidget::createBook () {
 
 /***************************************************************************/
 
-ButtonBoxWidget::ButtonBoxWidget (TQWidget *tqparent, const char *name)
-: ButtonBoxUI (tqparent, name) {
+ButtonBoxWidget::ButtonBoxWidget (TQWidget *parent, const char *name)
+: ButtonBoxUI (parent, name) {
    keyButtonPlaceLayout = new TQGridLayout (keyButtonPlace, 1, 1, 0, 0, "keyButtonPlaceLayout");
 
    keyButton = new KKeyButton (keyButtonPlace, "key");
@@ -434,7 +434,7 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
 void PhraseBookDialog::initStandardPhraseBooks () {
    StandardBookList bookPaths = standardPhraseBooks();
    
-   KActionMenu *tqparent = fileImportStandardBook;
+   KActionMenu *parent = fileImportStandardBook;
    TQStringList currentNamePath = "x";
    TQPtrStack<KActionMenu> stack;
    StandardBookList::iterator it;
@@ -450,21 +450,21 @@ void PhraseBookDialog::initStandardPhraseBooks () {
       for (; (it1 != currentNamePath.end())
           && (it1 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
       for (; it1 != currentNamePath.end(); ++it1)
-         tqparent = stack.pop();
+         parent = stack.pop();
       for (; it2 != dirs.end(); ++it2) {
-         stack.push (tqparent);
+         stack.push (parent);
          KActionMenu *newParent = new KActionMenu (*it2);
-         tqparent->insert(newParent);
-         if (tqparent == fileImportStandardBook)
+         parent->insert(newParent);
+         if (parent == fileImportStandardBook)
             newParent->plug(toolbarImport->popupMenu());
-         tqparent = newParent;
+         parent = newParent;
       }
       currentNamePath = dirs;
       
       KAction *book = new StandardPhraseBookInsertAction (
           url, (*it).name, TQT_TQOBJECT(this), TQT_SLOT(slotImportPhrasebook (const KURL &)), actionCollection());
-      tqparent->insert(book);
-      if (tqparent == fileImportStandardBook)
+      parent->insert(book);
+      if (parent == fileImportStandardBook)
          book->plug(toolbarImport->popupMenu());
    }
 }
@@ -615,8 +615,8 @@ void PhraseBookDialog::setShortcut( const KShortcut& cut ) {
    }
 }
 
-TQListViewItem *PhraseBookDialog::addBook (TQListViewItem *tqparent, TQListViewItem *after, PhraseBook *book) {
-   TQListViewItem *newItem = treeView->addBook(tqparent, after, book);
+TQListViewItem *PhraseBookDialog::addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book) {
+   TQListViewItem *newItem = treeView->addBook(parent, after, book);
    if (newItem != 0) {
       treeView->clearSelection();
       treeView->ensureItemVisible(newItem);
@@ -631,8 +631,8 @@ TQListViewItem *PhraseBookDialog::addBook (TQListViewItem *item, PhraseBook *boo
    if (item == 0)
       return addBook(0, 0, book);
    else if (((PhraseTreeItem *)item)->isPhrase() || !item->isOpen())
-      if (item->tqparent() != 0)
-         return addBook(item->tqparent(), item, book);
+      if (item->parent() != 0)
+         return addBook(item->parent(), item, book);
       else
          return addBook(0, item, book);
    else
@@ -677,10 +677,10 @@ void PhraseBookDialog::slotPaste () {
    }
 }
 
-void PhraseBookDialog::slotDropped (TQDropEvent *e, TQListViewItem *tqparent, TQListViewItem *after) {
+void PhraseBookDialog::slotDropped (TQDropEvent *e, TQListViewItem *parent, TQListViewItem *after) {
    PhraseBook book;
    if (PhraseBookDrag::decode(e, &book)) {
-      addBook(tqparent, after, &book);
+      addBook(parent, after, &book);
    }
 }
 

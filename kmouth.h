@@ -61,7 +61,7 @@ class KMouthApp : public KMainWindow
   public:
     /** construtor of KMouthApp, calls all init functions to create the application.
      */
-    KMouthApp(TQWidget* tqparent=0, const char* name=0);
+    KMouthApp(TQWidget* parent=0, const char* name=0);
     ~KMouthApp();
     /** Returns true if the configuration wizard was not needed or when it
      * was successfully completed.

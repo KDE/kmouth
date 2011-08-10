@@ -42,10 +42,10 @@
 #include "kdedocsourceui.h"
 #include "wordlist.h"
 
-DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *tqparent, const char *name,
+DictionaryCreationWizard::DictionaryCreationWizard (TQWidget *parent, const char *name,
                TQStringList dictionaryNames, TQStringList dictionaryFiles,
                TQStringList dictionaryLanguages)
-   : KWizard (tqparent, name)
+   : KWizard (parent, name)
 {
    buildCodecList ();
    
@@ -274,10 +274,10 @@ TQString DictionaryCreationWizard::language() {
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(KWizard *tqparent, const char *name,
+MergeWidget::MergeWidget(KWizard *parent, const char *name,
                TQStringList dictionaryNames, TQStringList dictionaryFiles,
                TQStringList dictionaryLanguages)
-: TQScrollView (tqparent, name) {
+: TQScrollView (parent, name) {
    dictionaries.setAutoDelete (false);
    weights.setAutoDelete (false);
 
@@ -340,8 +340,8 @@ TQString MergeWidget::language () {
 
 /***************************************************************************/
 
-CompletionWizardWidget::CompletionWizardWidget (KWizard *tqparent, const char *name)
-   : KDEDocSourceUI (tqparent, name) {
+CompletionWizardWidget::CompletionWizardWidget (KWizard *parent, const char *name)
+   : KDEDocSourceUI (parent, name) {
 }
 
 CompletionWizardWidget::~CompletionWizardWidget() {

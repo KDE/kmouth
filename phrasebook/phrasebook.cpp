@@ -249,7 +249,7 @@ bool PhraseBook::save (const KURL &url, bool asPhrasebook) {
    }
 }
 
-int PhraseBook::save (TQWidget *tqparent, const TQString &title, KURL &url, bool phrasebookFirst) {
+int PhraseBook::save (TQWidget *parent, const TQString &title, KURL &url, bool phrasebookFirst) {
    // KFileDialog::getSaveURL(...) is not useful here as we need
    // to know the requested file type.
 
@@ -259,7 +259,7 @@ int PhraseBook::save (TQWidget *tqparent, const TQString &title, KURL &url, bool
    else
       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
 
-   KFileDialog fdlg(TQString(),filters, tqparent, "filedialog", true);
+   KFileDialog fdlg(TQString(),filters, parent, "filedialog", true);
    fdlg.setCaption(title);
    fdlg.setOperationMode( KFileDialog::Saving );
 
@@ -374,7 +374,7 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
                   TQObject *receiver, const char *slot) const {
    if ((popup != 0) || (toolbar != 0)) {
       TQPtrStack<TQWidget> stack;
-      TQWidget *tqparent = popup;
+      TQWidget *parent = popup;
       int level = 0;
 
       TQValueListConstIterator<PhraseBookEntry> it;
@@ -384,38 +384,38 @@ void PhraseBook::addToGUI (TQPopupMenu *popup, KToolBar *toolbar, KActionCollect
             KActionMenu *menu = new KActionMenu("", "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
-            menu->plug (tqparent);
-            if (tqparent == popup)
+            menu->plug (parent);
+            if (parent == popup)
                menu->plug (toolbar);
-            if (tqparent != 0)
-               stack.push (tqparent);
-            tqparent = menu->popupMenu();
+            if (parent != 0)
+               stack.push (parent);
+            parent = menu->popupMenu();
             level++;
          }
-         while (newLevel < level && (tqparent != popup)) {
-            tqparent = stack.pop();
+         while (newLevel < level && (parent != popup)) {
+            parent = stack.pop();
             level--;
          }
          if ((*it).isPhrase()) {
             Phrase phrase = (*it).getPhrase();
             KAction *action = new PhraseAction (phrase.getPhrase(),
                      phrase.getShortcut(), receiver, slot, phrases);
-            if (tqparent == popup)
+            if (parent == popup)
                action->plug (toolbar);
-            if (tqparent != 0)
-               action->plug(tqparent);
+            if (parent != 0)
+               action->plug(parent);
          }
          else {
             Phrase phrase = (*it).getPhrase();
             KActionMenu *menu = new KActionMenu(phrase.getPhrase(), "phrasebook");
             menu->setDelayed(false);
             phrases->insert(menu);
-            if (tqparent == popup)
+            if (parent == popup)
                menu->plug (toolbar);
-            if (tqparent != 0)
-               menu->plug (tqparent);
-            stack.push (tqparent);
-            tqparent = menu->popupMenu();
+            if (parent != 0)
+               menu->plug (parent);
+            stack.push (parent);
+            parent = menu->popupMenu();
             level++;
          }
       }

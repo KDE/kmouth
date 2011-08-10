@@ -28,8 +28,8 @@
 #include "phrasebookdialog.h"
 #include "phrasebook.h"
 
-PhraseTreeItem::PhraseTreeItem (TQListView *tqparent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
-   : KListViewItem (tqparent, after, phrase)
+PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
+   : KListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -38,8 +38,8 @@ PhraseTreeItem::PhraseTreeItem (TQListView *tqparent, TQListViewItem *after, TQS
    setExpandable (false);
 }
 
-PhraseTreeItem::PhraseTreeItem (TQListViewItem *tqparent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
-   : KListViewItem (tqparent, after, phrase)
+PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString phrase, KShortcut shortcut, TQPixmap icon)
+   : KListViewItem (parent, after, phrase)
 {
    isPhraseValue = true;
    cutValue = shortcut;
@@ -47,15 +47,15 @@ PhraseTreeItem::PhraseTreeItem (TQListViewItem *tqparent, TQListViewItem *after,
    setPixmap(0, icon);
    setExpandable (false);
 }
-PhraseTreeItem::PhraseTreeItem (TQListView *tqparent, TQListViewItem *after, TQString name, TQPixmap icon)
-   : KListViewItem (tqparent, after, name)
+PhraseTreeItem::PhraseTreeItem (TQListView *parent, TQListViewItem *after, TQString name, TQPixmap icon)
+   : KListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
    setExpandable (true);
 }
-PhraseTreeItem::PhraseTreeItem (TQListViewItem *tqparent, TQListViewItem *after, TQString name, TQPixmap icon)
-   : KListViewItem (tqparent, after, name)
+PhraseTreeItem::PhraseTreeItem (TQListViewItem *parent, TQListViewItem *after, TQString name, TQPixmap icon)
+   : KListViewItem (parent, after, name)
 {
    isPhraseValue = false;
    setPixmap(0, icon);
@@ -74,8 +74,8 @@ void PhraseTreeItem::setCut (KShortcut cut) {
 
 // ***************************************************************************
 
-PhraseTree::PhraseTree (TQWidget *tqparent, const char *name)
-   : KListView (tqparent, name)
+PhraseTree::PhraseTree (TQWidget *parent, const char *name)
+   : KListView (parent, name)
 {
    phrasebook_open   = KGlobal::iconLoader()->loadIcon("phrasebook",        KIcon::Small);
    phrasebook_closed = KGlobal::iconLoader()->loadIcon("phrasebook_closed", KIcon::Small);
@@ -90,14 +90,14 @@ PhraseTree::~PhraseTree (){
 
 namespace PhraseTreePrivate {
    TQListViewItem *prevSibling (TQListViewItem *item) {
-      TQListViewItem *tqparent = item->tqparent();
+      TQListViewItem *parent = item->parent();
       TQListViewItem *above  = item->itemAbove();
 
-      if (above == tqparent)
+      if (above == parent)
          return 0;
 
-      while (above->tqparent() != tqparent)
-         above = above->tqparent();
+      while (above->parent() != parent)
+         above = above->parent();
 
       return above;
    }
@@ -109,25 +109,25 @@ namespace PhraseTreePrivate {
       if (item == 0)
          return false;
 
-      TQListViewItem *tqparent = item->tqparent();
+      TQListViewItem *parent = item->parent();
       TQListViewItem *above  = item->itemAbove();
 
       if (above == 0)
          return false;
-      else if (above == tqparent) {
-         *newParent = tqparent->tqparent();
-         *newAbove  = prevSibling (tqparent);
+      else if (above == parent) {
+         *newParent = parent->parent();
+         *newAbove  = prevSibling (parent);
          return true;
       }
-      else if (above->tqparent() == tqparent) {
-         *newParent = tqparent;
+      else if (above->parent() == parent) {
+         *newParent = parent;
          *newAbove  = prevSibling (above);
          return true;
       }
       else {
-         while (above->tqparent()->tqparent() != tqparent)
-            above = above->tqparent();
-         *newParent = above->tqparent();
+         while (above->parent()->parent() != parent)
+            above = above->parent();
+         *newParent = above->parent();
          *newAbove  = above;
          return true;
       }
@@ -140,14 +140,14 @@ namespace PhraseTreePrivate {
       if (item == 0)
          return false;
 
-      TQListViewItem *tqparent = item->tqparent();
+      TQListViewItem *parent = item->parent();
       TQListViewItem *below  = item->nextSibling();
 
-      if (tqparent == 0 && below == 0)
+      if (parent == 0 && below == 0)
          return false;
-      else if (tqparent != 0 && below == 0) {
-         *newParent = tqparent->tqparent();
-         *newAbove  = tqparent;
+      else if (parent != 0 && below == 0) {
+         *newParent = parent->parent();
+         *newAbove  = parent;
          return true;
       }
       else if (below->isOpen()) {
@@ -156,7 +156,7 @@ namespace PhraseTreePrivate {
          return true;
       }
       else {
-         *newParent = tqparent;
+         *newParent = parent;
          *newAbove  = below;
          return true;
       }
@@ -195,32 +195,32 @@ namespace PhraseTreePrivate {
       if (item == 0)
          return false;
 
-      TQListViewItem *tqparent = item->tqparent();
+      TQListViewItem *parent = item->parent();
 
-      if (tqparent == 0)
+      if (parent == 0)
          return false;
       else {
-         *newParent = tqparent->tqparent();
-         *newAbove  = tqparent;
+         *newParent = parent->parent();
+         *newAbove  = parent;
          return true;
       }
    }
 }
 
 void PhraseTree::moveItem (TQListViewItem *item,
-                           TQListViewItem *tqparent,
+                           TQListViewItem *parent,
                            TQListViewItem *above)
 {
    if (item != 0) {
-      if (item->tqparent() == 0)
+      if (item->parent() == 0)
          takeItem (item);
       else
-         item->tqparent()->takeItem (item);
+         item->parent()->takeItem (item);
 
-      if (tqparent == 0)
+      if (parent == 0)
          insertItem (item);
       else
-         tqparent->insertItem (item);
+         parent->insertItem (item);
 
       item->moveItem(above);
    }
@@ -241,7 +241,7 @@ bool PhraseTree::hasSelectedItems() {
       }
       else {
          while ((i != 0) && (i->nextSibling() == 0)) {
-            i = i->tqparent();
+            i = i->parent();
             level--;
          }
          if (i != 0)
@@ -267,7 +267,7 @@ void PhraseTree::deleteSelectedItems() {
       }
       else {
          while ((i != 0) && (i->nextSibling() == 0)) {
-            i = i->tqparent();
+            i = i->parent();
          }
          if (i != 0)
             i = i->nextSibling();
@@ -285,11 +285,11 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
       if (e->key() == TQt::Key_Up) {
          TQListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            TQListViewItem *tqparent;
+            TQListViewItem *parent;
             TQListViewItem *above;
 
-            if (PhraseTreePrivate::findAbovePosition (item, &tqparent, &above)) {
-               moveItem(item, tqparent, above);
+            if (PhraseTreePrivate::findAbovePosition (item, &parent, &above)) {
+               moveItem(item, parent, above);
                setCurrentItem (item);
                item->setSelected(true);
             }
@@ -300,11 +300,11 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
       else if (e->key() == TQt::Key_Down) {
          TQListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            TQListViewItem *tqparent;
+            TQListViewItem *parent;
             TQListViewItem *above;
 
-            if (PhraseTreePrivate::findBelowPosition (item, &tqparent, &above)) {
-               moveItem(item, tqparent, above);
+            if (PhraseTreePrivate::findBelowPosition (item, &parent, &above)) {
+               moveItem(item, parent, above);
                setCurrentItem (item);
                item->setSelected(true);
             }
@@ -315,11 +315,11 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
       else if (e->key() == TQt::Key_Left) {
          TQListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            TQListViewItem *tqparent;
+            TQListViewItem *parent;
             TQListViewItem *above;
 
-            if (PhraseTreePrivate::findLeftPosition (item, &tqparent, &above)) {
-               moveItem(item, tqparent, above);
+            if (PhraseTreePrivate::findLeftPosition (item, &parent, &above)) {
+               moveItem(item, parent, above);
                setCurrentItem (item);
                item->setSelected(true);
             }
@@ -330,11 +330,11 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
       else if (e->key() == TQt::Key_Right) {
          TQListViewItem *item = currentItem();
          if ((item != 0) && (item->isSelected())) {
-            TQListViewItem *tqparent;
+            TQListViewItem *parent;
             TQListViewItem *above;
 
-            if (PhraseTreePrivate::findRightPosition (item, &tqparent, &above)) {
-               moveItem(item, tqparent, above);
+            if (PhraseTreePrivate::findRightPosition (item, &parent, &above)) {
+               moveItem(item, parent, above);
                setCurrentItem (item);
                item->setSelected(true);
             }
@@ -346,57 +346,57 @@ void PhraseTree::keyPressEvent (TQKeyEvent *e) {
    KListView::keyPressEvent(e);
 }
 
-PhraseTreeItem *PhraseTree::insertPhrase (TQListViewItem *tqparent, TQListViewItem *after, TQString phrase, TQString shortcut) {
+PhraseTreeItem *PhraseTree::insertPhrase (TQListViewItem *parent, TQListViewItem *after, TQString phrase, TQString shortcut) {
    KShortcut cut = KShortcut(shortcut);
    if (isKeyPresent (cut, 0, false))
       cut = KShortcut(TQString());
 
-   if (tqparent == 0)
+   if (parent == 0)
       return new PhraseTreeItem (this, after, phrase, cut, this->phrase);
    else
-      return new PhraseTreeItem (tqparent, after, phrase, cut, this->phrase);
+      return new PhraseTreeItem (parent, after, phrase, cut, this->phrase);
 }
 
-PhraseTreeItem *PhraseTree::insertBook (TQListViewItem *tqparent, TQListViewItem *after, TQString name) {
-   if (tqparent == 0)
+PhraseTreeItem *PhraseTree::insertBook (TQListViewItem *parent, TQListViewItem *after, TQString name) {
+   if (parent == 0)
       return new PhraseTreeItem (this, after, name, phrasebook_closed);
    else
-      return new PhraseTreeItem (tqparent, after, name, phrasebook_closed);
+      return new PhraseTreeItem (parent, after, name, phrasebook_closed);
 }
 
-TQListViewItem *PhraseTree::addBook (TQListViewItem *tqparent, TQListViewItem *after, PhraseBook *book) {
+TQListViewItem *PhraseTree::addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book) {
    TQListViewItem *last = after;
    int level = 0;
    PhraseBookEntryList::iterator it;
    for (it = book->begin(); it != book->end(); ++it) {
       int newLevel = (*it).getLevel();
       while (level < newLevel) {
-         tqparent = insertBook(tqparent, last, "");
+         parent = insertBook(parent, last, "");
          last = 0;
          level++;
       }
       while (level > newLevel) {
-         last = tqparent;
-         if (tqparent != 0)
-            tqparent = tqparent->tqparent();
+         last = parent;
+         if (parent != 0)
+            parent = parent->parent();
          level--;
       }
 
       if ((*it).isPhrase()) {
          Phrase phrase = (*it).getPhrase();
-         last = insertPhrase (tqparent, last, phrase.getPhrase(), phrase.getShortcut());
+         last = insertPhrase (parent, last, phrase.getPhrase(), phrase.getShortcut());
       }
       else {
          Phrase phrase = (*it).getPhrase();
-         tqparent = insertBook(tqparent, last, phrase.getPhrase());
+         parent = insertBook(parent, last, phrase.getPhrase());
          last = 0;
          level++;
       }
    }
    while (level > 0) {
-      last = tqparent;
-      if (tqparent != 0)
-         tqparent = tqparent->tqparent();
+      last = parent;
+      if (parent != 0)
+         parent = parent->parent();
       level--;
    }
    return last;
@@ -421,7 +421,7 @@ void PhraseTree::fillBook (PhraseBook *book, bool respectSelection) {
       }
       else {
          while ((i != 0) && (i->nextSibling() == 0)) {
-            i = i->tqparent();
+            i = i->parent();
             if (level > 0)
                level--;
          }

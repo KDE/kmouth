@@ -118,7 +118,7 @@ public:
     *          0, if the user canceled the operation,
     *         -1, if there was an error when saving the file.
     */
-   int save (TQWidget *tqparent, const TQString &title, KURL &url, bool phrasebookFirst = true);
+   int save (TQWidget *parent, const TQString &title, KURL &url, bool phrasebookFirst = true);
 
    /** encodes the phrase book. Returns the encoded xml code. */
    TQString encode ();
@@ -173,8 +173,8 @@ class PhraseAction : public KAction {
    Q_OBJECT
   TQ_OBJECT
 public:
-   PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, KActionCollection* tqparent)
-   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, tqparent, phrase.latin1()) {
+   PhraseAction (const TQString& phrase, const TQString& cut, const TQObject* receiver, const char* slot, KActionCollection* parent)
+   : KAction (phrase, "phrase", KShortcut(cut), 0, 0, parent, phrase.latin1()) {
       this->phrase = phrase;
       connect (this, TQT_SIGNAL(slotActivated (const TQString &)), receiver, slot);
    };

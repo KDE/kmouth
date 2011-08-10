@@ -50,9 +50,9 @@ typedef TQValueList<StandardBook> StandardBookList;
 
 class CheckBookItem : public TQCheckListItem {
 public:
-   CheckBookItem (TQListViewItem *tqparent, TQListViewItem *last,
+   CheckBookItem (TQListViewItem *parent, TQListViewItem *last,
             const TQString &text, const TQString &name, const TQString &filename);
-   CheckBookItem (TQListView *tqparent, TQListViewItem *last,
+   CheckBookItem (TQListView *parent, TQListViewItem *last,
             const TQString &text, const TQString &name, const TQString &filename);
    ~CheckBookItem();
 
@@ -76,7 +76,7 @@ class InitialPhraseBookWidget : public TQWidget {
    Q_OBJECT
   TQ_OBJECT
 public:
-   InitialPhraseBookWidget(TQWidget *tqparent, const char *name);
+   InitialPhraseBookWidget(TQWidget *parent, const char *name);
    ~InitialPhraseBookWidget();
 
    void createBook();
@@ -97,8 +97,8 @@ class StandardPhraseBookInsertAction : public KAction {
    Q_OBJECT
   TQ_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, KActionCollection* tqparent)
-   : KAction (name, "phrasebook", 0, 0, 0, tqparent, 0) {
+   StandardPhraseBookInsertAction (const KURL &url, const TQString& name, const TQObject* receiver, const char* slot, KActionCollection* parent)
+   : KAction (name, "phrasebook", 0, 0, 0, parent, 0) {
       this->url = url;
       connect (this, TQT_SIGNAL(slotActivated (const KURL &)), receiver, slot);
    };
@@ -125,7 +125,7 @@ private:
  */
 class ButtonBoxWidget : public ButtonBoxUI {
 public:
-   ButtonBoxWidget (TQWidget *tqparent = 0, const char *name = 0);
+   ButtonBoxWidget (TQWidget *parent = 0, const char *name = 0);
    ~ButtonBoxWidget ();
 
    KKeyButton *keyButton;
@@ -187,7 +187,7 @@ public slots:
    void slotExportPhrasebook ();
    void slotPrint ();
 
-   void slotDropped (TQDropEvent *e, TQListViewItem *tqparent, TQListViewItem *after);
+   void slotDropped (TQDropEvent *e, TQListViewItem *parent, TQListViewItem *after);
    void slotMoved (TQListViewItem *item, TQListViewItem *, TQListViewItem *);
 
 signals:
@@ -202,7 +202,7 @@ private:
    /** initializes the list of standard phrase books */
    void initStandardPhraseBooks ();
    
-   TQListViewItem *addBook (TQListViewItem *tqparent, TQListViewItem *after, PhraseBook *book);
+   TQListViewItem *addBook (TQListViewItem *parent, TQListViewItem *after, PhraseBook *book);
    TQListViewItem *addBook (TQListViewItem *item, PhraseBook *book);
    
    void setShortcut (const KShortcut &cut);
