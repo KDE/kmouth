@@ -332,7 +332,7 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
    int dirNdx = 0;
    while (dirNdx < directories.count()) {
       QDir dir(directories.at(dirNdx));
-      const QFileInfoList entries = dir.entryInfoList (QLatin1String( "*" ), QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
+      const QFileInfoList entries = dir.entryInfoList (QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
 
        for (int i = 0; i < entries.size(); ++i) {
             QFileInfo fileInfo = entries.at(i);

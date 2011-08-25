@@ -263,7 +263,7 @@ void WordCompletionWidget::exportDictionary() {
       }
       KUrl src;
       src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
-      KIO::NetAccess::copy (src, url, this);
+      KIO::NetAccess::file_copy (src, url, this);
    }
 }
 

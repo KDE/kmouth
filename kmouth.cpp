@@ -326,7 +326,7 @@ void KMouthApp::readOptions()
   QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
   if (!standardBook.isEmpty()) {
      PhraseBook book;
-     book.open(KUrl::fromPathOrUrl( standardBook ));
+     book.open(KUrl( standardBook ));
      slotPhrasebookConfirmed(book);
   }
   if (phraseList != 0)
@@ -522,7 +522,7 @@ void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
 
    QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" ));
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (KUrl::fromPathOrUrl( bookLocation + QLatin1String( "standard.phrasebook" )));
+      book.save (KUrl( bookLocation + QLatin1String( "standard.phrasebook" )));
    }
 }
 

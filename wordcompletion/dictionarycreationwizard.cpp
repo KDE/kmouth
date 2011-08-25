@@ -298,7 +298,8 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
       layout->addWidget (numInput, row, 1);
 
       checkbox->setChecked (true);
-      numInput->setRange (1, 100, 10, true);
+      numInput->setRange (1, 100, 10);
+	  numInput->setSliderEnabled (true);
       numInput->setValue (100);
       connect (checkbox, SIGNAL (toggled(bool)), numInput, SLOT(setEnabled(bool)));
 
