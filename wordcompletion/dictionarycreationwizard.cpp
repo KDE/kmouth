@@ -172,16 +172,16 @@ QString DictionaryCreationWizard::createDictionary() {
          dicFile = fileWidget->ooDictURL->url().path();
       switch (encoding) {
       case 0:
-         map = WordList::parseFile (filename, QTextStream::Locale, 0, pdlg);
+         map = WordList::parseFile (filename, QTextCodec::codecForLocale(), pdlg);
          break;
       case 1:
-         map = WordList::parseFile (filename, QTextStream::Latin1, 0, pdlg);
+         map = WordList::parseFile (filename, QTextCodec::codecForName("ISO-8859-1"), pdlg);
          break;
       case 2:
-         map = WordList::parseFile (filename, QTextStream::Unicode, 0, pdlg);
+         map = WordList::parseFile (filename, QTextCodec::codecForName("UTF-16"), pdlg);
          break;
       default:
-         map = WordList::parseFile (filename, (QTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
+         map = WordList::parseFile (filename, codecList->at(encoding-3), pdlg);
       }
    }
    else if (creationSource->directoryButton->isChecked()) {
@@ -191,16 +191,16 @@ QString DictionaryCreationWizard::createDictionary() {
          dicFile = dirWidget->ooDictURL->url().path();
       switch (encoding) {
       case 0:
-         map = WordList::parseDir (directory, QTextStream::Locale, 0, pdlg);
+         map = WordList::parseDir (directory, QTextCodec::codecForLocale(), pdlg);
          break;
       case 1:
-         map = WordList::parseDir (directory, QTextStream::Latin1, 0, pdlg);
+         map = WordList::parseDir (directory, QTextCodec::codecForName("ISO-8859-1"), pdlg);
          break;
       case 2:
-         map = WordList::parseDir (directory, QTextStream::Unicode, 0, pdlg);
+         map = WordList::parseDir (directory, QTextCodec::codecForName("UTF-16"), pdlg);
          break;
       default:
-         map = WordList::parseDir (directory, (QTextStream::Encoding)0, codecList->at(encoding-3), pdlg);
+         map = WordList::parseDir (directory, codecList->at(encoding-3), pdlg);
       }
    }
    else { // creationSource->kdeDocButton must be checked

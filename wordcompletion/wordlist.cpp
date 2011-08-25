@@ -163,7 +163,7 @@ void addWords (WordMap &map, WordMap add) {
          map[it.key()] = it.value();
 }
 
-void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding encoding, QTextCodec *codec) {
+void addWordsFromFile (WordMap &map, QString filename, QTextCodec *codec) {
    QFile xmlfile(filename);
    QXmlInputSource source (&xmlfile);
    XMLParser parser;
@@ -203,10 +203,8 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
                QFile file(filename);
                if (file.open(QIODevice::ReadOnly)) {
                   QTextStream stream(&file);
-                  if (codec != 0)
-                     stream.setCodec (codec);
-                  else
-                     stream.setEncoding (encoding);
+                  Q_ASSERT(codec != 0);
+                  stream.setCodec (codec);
                   while (!stream.atEnd())
                      addWords (map, stream.readLine());
                }
@@ -220,7 +218,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextStream::Encoding enc
 #include <kdebug.h>
 namespace WordList {
 
-WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFiles (QStringList files, QTextCodec *codec, KProgressDialog *pdlg) {
    int progress = 0;
    int steps = files.count();
    int percent = 0;
@@ -228,7 +226,7 @@ WordMap parseFiles (QStringList files, QTextStream::Encoding encoding, QTextCode
    WordMap map;
    QStringList::ConstIterator it;
    for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
-      addWordsFromFile (map, *it, encoding, codec);
+      addWordsFromFile (map, *it, codec);
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
@@ -254,7 +252,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    QMap<QString,int>::ConstIterator it;
    for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
       WordMap fileMap;
-      addWordsFromFile (fileMap, it.key(), QTextStream::UnicodeUTF8, 0);
+      addWordsFromFile (fileMap, it.key(), QTextCodec::codecForName("UTF-8"));
 
       long long weight = 0;
       WordMap::ConstIterator iter;
@@ -307,10 +305,10 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
                                                  KStandardDirs::NoDuplicates);
    }
 
-   return parseFiles (files, QTextStream::UnicodeUTF8, 0, pdlg);
+   return parseFiles (files, QTextCodec::codecForName("UTF-8"), pdlg);
 }
 
-WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFile (QString filename, QTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Parsing file..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -318,10 +316,10 @@ WordMap parseFile (QString filename, QTextStream::Encoding encoding, QTextCodec 
    QStringList files;
    files.append(filename);
 
-   return parseFiles (files, encoding, codec, pdlg);
+   return parseFiles (files, codec, pdlg);
 }
 
-WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseDir (QString directory, QTextCodec *codec, KProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Parsing directory..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -348,7 +346,7 @@ WordMap parseDir (QString directory, QTextStream::Encoding encoding, QTextCodec 
        directories.removeAt(dirNdx);
    }
 
-   return parseFiles (files, encoding, codec, pdlg);
+   return parseFiles (files, codec, pdlg);
 }
 /***************************************************************************/
 

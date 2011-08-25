@@ -37,8 +37,8 @@ typedef QMap<QString,int> WordMap;
 KProgressDialog *progressDialog();
 
 WordMap parseKDEDoc (QString language, KProgressDialog *pdlg);
-WordMap parseFile   (QString filename,  QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
-WordMap parseDir    (QString directory, QTextStream::Encoding encoding, QTextCodec *codec, KProgressDialog *pdlg);
+WordMap parseFile   (QString filename, QTextCodec *codec, KProgressDialog *pdlg);
+WordMap parseDir    (QString directory, QTextCodec *codec, KProgressDialog *pdlg);
 WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg);
 
 WordMap spellCheck  (WordMap wordlist,  QString dictionary,   KProgressDialog *pdlg);
