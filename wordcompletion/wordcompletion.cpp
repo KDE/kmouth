@@ -154,7 +154,7 @@ bool WordCompletion::setWordList(const QString &wordlist) {
    QFile file(dictionaryFile);
    if (file.exists() && file.open(QIODevice::ReadOnly)) {
       QTextStream stream(&file);
-      stream.setEncoding (QTextStream::UnicodeUTF8);
+      stream.setCodec ("UTF-8");
       if (!stream.atEnd()) {
          if (stream.readLine() == QLatin1String( "WPDictFile" )) {
             while (!stream.atEnd()) {
@@ -209,7 +209,7 @@ void WordCompletion::save () {
          return;
 
       QTextStream stream(&file);
-      stream.setEncoding (QTextStream::UnicodeUTF8);
+      stream.setCodec ("UTF-8");
 
       stream << "WPDictFile\n";
       QMap<QString,int>::ConstIterator it;

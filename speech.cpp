@@ -171,11 +171,11 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
       // 1.a) encode the text
       QTextStream ts (&encText, QIODevice::WriteOnly);
       if (encoding == Local)
-         ts.setEncoding (QTextStream::Locale);
+         ts.setCodec (QTextCodec::codecForLocale());
       else if (encoding == Latin1)
-         ts.setEncoding (QTextStream::Latin1);
+         ts.setCodec ("ISO-8859-1");
       else if (encoding == Unicode)
-         ts.setEncoding (QTextStream::Unicode);
+         ts.setCodec ("UTF-16");
       else
          ts.setCodec (codec);
       ts << text;
@@ -185,11 +185,11 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
       tempFile.open();
       QTextStream fs ( &tempFile );
       if (encoding == Local)
-         fs.setEncoding (QTextStream::Locale);
+         fs.setCodec (QTextCodec::codecForLocale());
       else if (encoding == Latin1)
-         fs.setEncoding (QTextStream::Latin1);
+         fs.setCodec ("ISO-8859-1");
       else if (encoding == Unicode)
-         fs.setEncoding (QTextStream::Unicode);
+         fs.setCodec ("UTF-16");
       else
          fs.setCodec (codec);
       fs << text;
