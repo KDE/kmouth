@@ -29,7 +29,6 @@
 #include <QtGui/QStyle>
 #include <Qt3Support/Q3GroupBox>
 #include <QtGui/QMenu>
-#include <Qt3Support/Q3ValueStack>
 #include <Qt3Support/Q3PtrStack>
 #include <QtGui/QGridLayout>
 #include <QtGui/QDropEvent>

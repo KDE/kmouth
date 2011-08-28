@@ -23,7 +23,6 @@
 
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
-#include <Qt3Support/Q3Grid>
 #include <QtGui/QPixmap>
 #include <QtCore/QFile>
 

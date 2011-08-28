@@ -19,7 +19,6 @@
 #include <kconfig.h>
 
 #include <QtCore/QTextCodec>
-#include <Qt3Support/Q3PtrList>
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
