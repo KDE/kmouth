@@ -4,7 +4,6 @@
 #include <QtCore/QFile>
 #include <QtCore/QList>
 #include <QtCore/QTextStream>
-#include <Qt3Support/q3tl.h>
 
 #include <kapplication.h>
 #include <kstandarddirs.h>
@@ -60,7 +59,7 @@ QString WordCompletion::makeCompletion(const QString &text) {
          for (it = d->map.constBegin(); it != d->map.constEnd(); ++it)
             if (it.key().startsWith(suffix))
                matches += Match (-it.value(), it.key());
-         qHeapSort(matches);
+         qSort(matches);
 
          MatchList::ConstIterator iter = matches.constBegin();
          for (int count = 0; (iter != matches.constEnd()) && (count < 10); ++iter, ++count) {
