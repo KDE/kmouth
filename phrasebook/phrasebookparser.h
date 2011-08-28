@@ -18,7 +18,6 @@
 #ifndef PHRASEBOOKPARSER_H
 #define PHRASEBOOKPARSER_H
 
-#include <Qt3Support/Q3ValueStack>
 #include <QtXml/QXmlParseException>
 #include <QtXml/QXmlAttributes>
 

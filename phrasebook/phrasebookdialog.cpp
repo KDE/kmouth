@@ -29,7 +29,7 @@
 #include <QtGui/QStyle>
 #include <Qt3Support/Q3GroupBox>
 #include <QtGui/QMenu>
-#include <Qt3Support/Q3PtrStack>
+#include <QtCore/QStack>
 #include <QtGui/QGridLayout>
 #include <QtGui/QDropEvent>
 #include <QtGui/QLabel>
@@ -181,7 +181,7 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
    Q3ListViewItem *last = 0;
    QStringList currentNamePath;
    currentNamePath<<QLatin1String("");
-   Q3PtrStack<Q3ListViewItem> stack;
+   QStack<Q3ListViewItem *> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       QString namePath = (*it).path;
@@ -483,7 +483,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
    KActionMenu *parent = fileImportStandardBook;
    QStringList currentNamePath;
    currentNamePath<< QLatin1String( "x" );
-   Q3PtrStack<KActionMenu> stack;
+   QStack<KActionMenu *> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       KUrl url;
