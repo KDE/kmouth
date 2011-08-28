@@ -22,7 +22,6 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
-#include <Qt3Support/Q3Dict>
 #include <Q3ScrollView>
 
 #include <k3wizard.h>
@@ -124,8 +123,8 @@ public:
    QString language ();
 
 private:
-   Q3Dict<QCheckBox> dictionaries;
-   Q3Dict<KIntNumInput> weights;
+   QHash<QString, QCheckBox*> dictionaries;
+   QHash<QString, KIntNumInput*> weights;
    QMap<QString,QString> languages;
 };
 

@@ -277,8 +277,6 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
                const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
                const QStringList &dictionaryLanguages)
 : Q3ScrollView (parent, name) {
-   dictionaries.setAutoDelete (false);
-   weights.setAutoDelete (false);
 
    QWidget *contents = new QWidget(viewport());
    addChild(contents);
@@ -299,7 +297,7 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
 
       checkbox->setChecked (true);
       numInput->setRange (1, 100, 10);
-	  numInput->setSliderEnabled (true);
+      numInput->setSliderEnabled (true);
       numInput->setValue (100);
       connect (checkbox, SIGNAL (toggled(bool)), numInput, SLOT(setEnabled(bool)));
 
@@ -315,12 +313,13 @@ MergeWidget::~MergeWidget() {
 
 QMap <QString, int> MergeWidget::mergeParameters () {
    QMap <QString, int> files;
-   Q3DictIterator<QCheckBox> it(dictionaries);
-   for (; it.current(); ++it) {
-      if (it.current()->isChecked()) {
-         QString name = it.currentKey();
+   QHashIterator<QString, QCheckBox*> it(dictionaries);
+   while (it.hasNext()) {
+      it.next();
+      if (it.value()->isChecked()) {
+         QString name = it.key();
          QString dictionaryFile = KGlobal::dirs()->findResource("appdata", name);
-         files[dictionaryFile] = weights[name]->value();
+         files[dictionaryFile] = weights.value(name)->value();
       }
    }
 
@@ -328,10 +327,11 @@ QMap <QString, int> MergeWidget::mergeParameters () {
 }
 
 QString MergeWidget::language () {
-   Q3DictIterator<QCheckBox> it(dictionaries);
-   for (; it.current(); ++it) {
-      if (it.current()->isChecked()) {
-         return languages [it.currentKey()];
+   QHashIterator<QString, QCheckBox*> it(dictionaries);
+   while (it.hasNext()) {
+      it.next();
+      if (it.value()->isChecked()) {
+         return languages [it.key()];
       }
    }
 
@@ -367,7 +367,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
 
    dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" )) + QLatin1String( "wordcompletion1.dict" );
    if (WordList::saveWordList (map, dictionaryFile)) {
-	  KConfigGroup cg(config, "Dictionary 0");
+      KConfigGroup cg(config, "Dictionary 0");
       cg.writeEntry ("Filename", "wordcompletion1.dict");
       cg.writeEntry ("Name",     i18nc("Default dictionary", "Default"));
       cg.writeEntry ("Language", language);
