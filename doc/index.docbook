@@ -31,8 +31,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2010-09-15</date>
-  <releaseinfo>1.1.1 (&kde; 4.5)</releaseinfo>
+  <date>2013-06-23</date>
+  <releaseinfo>1.1.1 (&kde; 4.11)</releaseinfo>
 
   <abstract>
     <para>
@@ -177,7 +177,7 @@
        the page <guilabel>Jovie Speech Service</guilabel>.
     </para>
     <sect2 id="preferences">
-      <title>The <guilabel>Preferences</guilabel> tab</title>
+      <title>The Preferences tab</title>
       <para>
         <screenshot>
           <screeninfo>The <guilabel>Preferences</guilabel> tab</screeninfo>
@@ -226,7 +226,7 @@
       </para>
     </sect2>
     <sect2 id="tts-config">
-      <title>The <guilabel>Text-to-Speech</guilabel> tab</title>
+      <title>The Text-to-Speech tab</title>
       <para>
         <screenshot>
           <screeninfo>The <guilabel>Text-to-Speech</guilabel> tab</screeninfo>
@@ -287,12 +287,12 @@
         first to try to send the text to the Jovie speech service. If this succeeds the
         other configuration entries on this tab are ignored. The Jovie speech
         service is a &kde; daemon which gives &kde; applications a standardized
-        interface for speech synthesis and is currently developed in <acronym>SVN</acronym>. It
+        interface for speech synthesis and is currently developed in <acronym>Git</acronym>. It
         is safe to select this option even if Jovie is not installed.
       </para>
     </sect2>
     <sect2 id="completion-config">
-      <title>The <guilabel>Word Completion</guilabel> page</title>
+      <title>The Word Completion page</title>
       <para>
         <screenshot>
           <screeninfo>The <guilabel>Word Completion</guilabel> page</screeninfo>
@@ -381,7 +381,7 @@
       </itemizedlist>
     </sect2>
     <sect2 id="kttsd-speech-service-config">
-      <title>The <guilabel>Jovie Speech Service</guilabel> page</title>
+      <title>The Jovie Speech Service page</title>
       <para>The configuration of the &kde; Speech Service is described in detail in the
         <ulink url="help:jovie">Jovie Handbook</ulink>.</para>
     </sect2>
@@ -439,7 +439,7 @@
   <sect1 id="main-commands">
     <title>Commands Within The Main Window</title>
     <sect2 id="file-menu">
-      <title>The <guimenu>File</guimenu> Menu</title>
+      <title>The File Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -485,7 +485,7 @@
     </sect2>
 
     <sect2 id="edit-menu">
-      <title>The <guimenu>Edit</guimenu> Menu</title>
+      <title>The Edit Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -545,7 +545,7 @@
     </sect2>
 
     <sect2 id="phrasebooks-menu">
-      <title>The <guimenu>Phrase Books</guimenu> Menu</title>
+      <title>The Phrase Books Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -557,84 +557,14 @@
             </para></listitem>
           </varlistentry>
         </variablelist>
+<para>
+&kmouth; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
     </sect2>
 
-    <sect2 id="settings-menu">
-      <title>The <guimenu>Settings</guimenu> Menu</title>
-        <variablelist>
-          <varlistentry>
-            <term><menuchoice>
-              <shortcut>
-                <keycombo>&Ctrl;<keycap>M</keycap></keycombo>
-              </shortcut>
-               <guimenu>Settings</guimenu>
-              <guimenuitem>Show Menubar</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-                When checked, this displays the menubar. When unchecked the
-                menubar is hidden.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenu>Settings</guimenu>
-              <guimenuitem>Show Toolbar</guimenuitem>
-            </menuchoice></term>
-            <listitem><para>
-              <action>
-                When checked, this displays a movable toolbar containing
-                buttons used to initiate frequently used commands. The toolbar
-                is most commonly located at the top of the editor just under
-                the menu. When unchecked the toolbar is hidden.
-              </action>
-              Clicking on the striated grip and dragging allows the user to move
-              the bar.
-            </para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenu>Settings</guimenu>
-              <guimenuitem>Show Statusbar</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              When checked, this displays a small bar at the bottom of the
-              main window containing information about the status of
-              &kmouth;. When unchecked the status bar is hidden.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenu>Settings</guimenu>
-              <guimenuitem>Show Phrasebook Bar</guimenuitem>
-            </menuchoice></term>
-            <listitem><para>
-              <action>
-                When checked, this displays a movable phrasebook bar containing
-                buttons for the phrasebook entries. The phrasebook bar
-                is most commonly located at the top of the editor just under
-                the toolbar. When unchecked the phrasebook bar is hidden.
-              </action>
-              Clicking on the striated grip and dragging allows the user to move
-              the bar.
-            </para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenu>Settings</guimenu>
-              <guimenuitem>Configure KMouth...</guimenuitem>
-            </menuchoice></term>
-            <listitem><para>
-              Opens the <link linkend="config-dialog">configuration dialog for
-              the speech synthesizer</link> and other &kmouth; settings.
-            </para></listitem>
-          </varlistentry>
-        </variablelist>
-    </sect2>
-
-    <sect2 id="help-menu">
-      <title>The <guimenu>Help</guimenu> Menu</title>
-      &help.menu.documentation;
-    </sect2>
 
     <sect2 id="popup-menu">
       <title>The pop up menu of history entries</title>
@@ -712,7 +642,7 @@
   <sect1 id="pb-editor-commands">
     <title>Commands within the phrase book edit window</title>
     <sect2 id="pbe-file-menu">
-      <title>The <guimenu>File</guimenu> Menu</title>
+      <title>The File Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -783,7 +713,7 @@
     </sect2>
 
     <sect2 id="pbe-edit-menu">
-      <title>The <guimenu>Edit</guimenu> Menu</title>
+      <title>The Edit Menu</title>
         <variablelist>
           <varlistentry>
             <term><menuchoice>
@@ -834,8 +764,8 @@
     </sect2>
 
     <sect2 id="pbe-help-menu">
-      <title>The <guimenu>Help</guimenu> Menu</title>
-      <para>The items in this menu are described in the main window</para>
+      <title>The Help Menu</title>
+      <para>The items in this menu are the same as in the main window.</para>
     </sect2>
 
     <sect2 id="pbe-popup-menu">
@@ -1070,7 +1000,7 @@
         <para>
           The &kde; Text-to-Speech Daemon (Jovie) is a &kde; wide text-to-speech service
           which gives &kde; applications a standardized interface for speech synthesis
-          and is currently developed in <acronym>SVN</acronym>. It uses plug-ins in
+          and is currently developed in <acronym>Git</acronym>. It uses plug-ins in
           order to support various text-to-speech systems.
         </para>
         <para>
