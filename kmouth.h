@@ -88,20 +88,13 @@ class KMouthApp : public KXmlGuiWindow
     /** sets up the statusbar for the main window by initialzing a statuslabel.
      */
     void initStatusBar();
-    /** queryClose is called by KTMainWindow on each closeEvent of a window. Against the
+    /** queryClose is called by KMainWindow on each closeEvent of a window. Against the
      * default implementation (only returns true), this calles saveModified() on the document object to ask if the document shall
      * be saved if Modified; on cancel the closeEvent is rejected.
-     * @see KTMainWindow#queryClose
-     * @see KTMainWindow#closeEvent
+     * @see KMainWindow#queryClose
+     * @see KMainWindow#closeEvent
      */
     virtual bool queryClose();
-    /** queryExit is called by KTMainWindow when the last window of the application is going to be closed during the closeEvent().
-     * Against the default implementation that just returns true, this calls saveOptions() to save the settings of the last window's
-     * properties.
-     * @see KTMainWindow#queryExit
-     * @see KTMainWindow#closeEvent
-     */
-    virtual bool queryExit();
 
   public slots:
     /** open a file and load it into the history */

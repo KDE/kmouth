@@ -335,11 +335,6 @@ void KMouthApp::readOptions()
 
 bool KMouthApp::queryClose()
 {
-  return true;
-}
-
-bool KMouthApp::queryExit()
-{
   saveOptions();
   return true;
 }
