@@ -31,7 +31,7 @@
 #include <kurlrequester.h>
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
-   : QWidget (parent)
+   : QWizardPage (parent)
 {
    setObjectName( QLatin1String( name ) );
    setupUi(this);

@@ -28,20 +28,20 @@
 #include <QtCore/QTextStream>
 
 class QTextCodec;
-class KProgressDialog;
+class QProgressDialog;
 
 namespace WordList {
 
 typedef QMap<QString,int> WordMap;
 
-KProgressDialog *progressDialog();
+QProgressDialog *progressDialog();
 
-WordMap parseKDEDoc (QString language, KProgressDialog *pdlg);
-WordMap parseFile   (QString filename, QTextCodec *codec, KProgressDialog *pdlg);
-WordMap parseDir    (QString directory, QTextCodec *codec, KProgressDialog *pdlg);
-WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg);
+WordMap parseKDEDoc (QString language, QProgressDialog *pdlg);
+WordMap parseFile   (QString filename, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap parseDir    (QString directory, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap mergeFiles  (QMap<QString,int> files, QProgressDialog *pdlg);
 
-WordMap spellCheck  (WordMap wordlist,  QString dictionary,   KProgressDialog *pdlg);
+WordMap spellCheck  (WordMap wordlist,  QString dictionary,   QProgressDialog *pdlg);
 
 bool saveWordList (WordMap map, QString filename);
 
@@ -52,7 +52,7 @@ bool saveWordList (WordMap map, QString filename);
  */
 
 class XMLParser : public QXmlDefaultHandler {
-public: 
+public:
    XMLParser();
    ~XMLParser();
 
@@ -60,10 +60,10 @@ public:
    bool error (const QXmlParseException &exception);
    bool fatalError (const QXmlParseException &exception);
    QString errorString() const;
- 
+
    /** Processes the start of the document. */
    bool startDocument();
-                       
+
    /** Processes the start tag of an element. */
    bool startElement (const QString &, const QString &, const QString &name,
                       const QXmlAttributes &attributes);
@@ -76,7 +76,7 @@ public:
 
    /** Processes the end tag of an element. */
    bool endElement (const QString &, const QString &, const QString &name);
-   
+
    /** Processes the end of the document. */
    bool endDocument();
 

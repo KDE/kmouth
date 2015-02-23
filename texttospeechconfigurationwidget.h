@@ -20,12 +20,13 @@
 
 #include "ui_texttospeechconfigurationui.h"
 #include "texttospeechsystem.h"
+#include <QWizardPage>
 
 /**This class represents a configuration widget for the text-to-speech system.
   *@author Gunnar Schmi Dt
   */
 
-class TextToSpeechConfigurationWidget : public QWidget, public Ui::texttospeechconfigurationui {
+class TextToSpeechConfigurationWidget : public QWizardPage, public Ui::texttospeechconfigurationui {
    friend class TextToSpeechConfigurationDialog;
 public:
    TextToSpeechConfigurationWidget(QWidget *parent, const char *name);

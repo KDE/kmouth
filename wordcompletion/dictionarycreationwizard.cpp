@@ -26,6 +26,8 @@
 #include <QtGui/QGridLayout>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
+#include <QProgressDialog>
+#include <QDebug>
 
 #include <k3listview.h>
 #include <klineedit.h>
@@ -35,27 +37,49 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
-#include <kprogressdialog.h>
 #include <klanguagebutton.h>
+
+int CreationSourceWidget::nextId() const
+{
+    int nextPage = -1;
+    if (fileButton->isChecked()) {
+        nextPage = DictionaryCreationWizard::FilePage;
+    } else if (directoryButton->isChecked()) {
+        nextPage = DictionaryCreationWizard::DirPage;
+    } else if (kdeDocButton->isChecked()) {
+        nextPage = DictionaryCreationWizard::KDEDocPage;
+    } else if (mergeButton->isChecked()) {
+        nextPage = DictionaryCreationWizard::MergePage;
+    }
+    return nextPage;
+}
+
+void CreationSourceWidget::emptyToggled(bool checked)
+{
+    setFinalPage(checked);
+}
 
 DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char *name,
                const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
                const QStringList &dictionaryLanguages)
-   : K3Wizard (parent, name)
+   : QWizard (parent)
 {
    buildCodecList ();
 
    creationSource = new CreationSourceWidget(this, "source page");
-   addPage (creationSource, i18n("Source of New Dictionary (1)"));
-   setHelpEnabled (creationSource, false);
-   setFinishEnabled (creationSource, false);
+   creationSource->setTitle(i18n("Source of New Dictionary (1)"));
+   setPage (CreationSourcePage, creationSource);
+   setOption(QWizard::HaveHelpButton, false);
+   //setFinishEnabled (creationSource, false);
 
    fileWidget= new CreationSourceDetailsWidget (this, "file source page");
-   addPage (fileWidget, i18n("Source of New Dictionary (2)"));
+   fileWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   setPage (FilePage, fileWidget);
    buildCodecCombo (fileWidget->encodingCombo);
 
    dirWidget= new CreationSourceDetailsWidget (this, "directory source page");
-   addPage (dirWidget, i18n("Source of New Dictionary (2)"));
+   dirWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   setPage (DirPage, dirWidget);
    dirWidget->urlLabel->setText (i18nc("In which directory is the file located?", "&Directory:"));
     dirWidget->urlLabel->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
    dirWidget->url->setMode(KFile::Directory);
@@ -63,28 +87,18 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
    buildCodecCombo (dirWidget->encodingCombo);
 
    kdeDocWidget= new KDEDocSourceWidget (this, "KDE documentation source page");
-   addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
+   kdeDocWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   setPage (KDEDocPage, kdeDocWidget);
    kdeDocWidget->languageButton->showLanguageCodes(true);
    kdeDocWidget->languageButton->loadAllLanguages();
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
-   addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
-
-   connect (creationSource->fileButton,    SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->directoryButton,SIGNAL(toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->kdeDocButton,  SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->mergeButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-   connect (creationSource->emptyButton,   SIGNAL (toggled(bool)), this, SLOT(calculateAppropriate(bool)) );
-
-   calculateAppropriate (true);
+   mergeWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   setPage (MergePage, mergeWidget);
 }
 
 DictionaryCreationWizard::~DictionaryCreationWizard () {
    delete codecList;
-   removePage (fileWidget);   delete fileWidget;
-   removePage (dirWidget);    delete dirWidget;
-   removePage (kdeDocWidget); delete kdeDocWidget;
-   removePage (mergeWidget);  delete mergeWidget;
 }
 
 void DictionaryCreationWizard::buildCodecList () {
@@ -107,56 +121,10 @@ void DictionaryCreationWizard::buildCodecCombo (KComboBox *combo) {
        combo->addItem (QLatin1String( codecList->at(i)->name() ), i+3);
 }
 
-void DictionaryCreationWizard::calculateAppropriate (bool) {
-   if (creationSource->mergeButton->isChecked()) {
-      setFinishEnabled (creationSource, false);
-      removePage (fileWidget);
-      removePage (dirWidget);
-      removePage (kdeDocWidget);
-      addPage (mergeWidget, i18n("Source of New Dictionary (2)"));
-      setHelpEnabled (mergeWidget, false);
-      setFinishEnabled (mergeWidget, true);
-   }
-   else if (creationSource->emptyButton->isChecked()) {
-      removePage (fileWidget);
-      removePage (dirWidget);
-      removePage (kdeDocWidget);
-      removePage (mergeWidget);
-      setFinishEnabled (creationSource, true);
-   }
-   else if (creationSource->fileButton->isChecked()) {
-      setFinishEnabled (creationSource, false);
-      removePage (dirWidget);
-      removePage (kdeDocWidget);
-      removePage (mergeWidget);
-      addPage (fileWidget, i18n("Source of New Dictionary (2)"));
-      setHelpEnabled (fileWidget, false);
-      setFinishEnabled (fileWidget, true);
-   }
-   else if (creationSource->directoryButton->isChecked()) {
-      setFinishEnabled (creationSource, false);
-      removePage (fileWidget);
-      removePage (kdeDocWidget);
-      removePage (mergeWidget);
-      addPage (dirWidget, i18n("Source of New Dictionary (2)"));
-      setHelpEnabled (dirWidget, false);
-      setFinishEnabled (dirWidget, true);
-   }
-   else { // creationSource->kdeDocButton must be checked
-      setFinishEnabled (creationSource, false);
-      removePage (fileWidget);
-      removePage (dirWidget);
-      removePage (mergeWidget);
-      addPage (kdeDocWidget, i18n("Source of New Dictionary (2)"));
-      setHelpEnabled (kdeDocWidget, false);
-      setFinishEnabled (kdeDocWidget, true);
-   }
-}
-
 QString DictionaryCreationWizard::createDictionary() {
    WordList::WordMap map;
    QString dicFile;
-   KProgressDialog *pdlg = WordList::progressDialog();
+   QProgressDialog *pdlg = WordList::progressDialog();
 
    if (creationSource->mergeButton->isChecked()) {
       map = WordList::mergeFiles (mergeWidget->mergeParameters(), pdlg);
@@ -273,15 +241,11 @@ QString DictionaryCreationWizard::language() {
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
+MergeWidget::MergeWidget(QWidget *parent, const char *name,
                const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
                const QStringList &dictionaryLanguages)
-: Q3ScrollView (parent, name) {
-
-   QWidget *contents = new QWidget(viewport());
-   addChild(contents);
-   QGridLayout *layout = new QGridLayout (contents);
-   setResizePolicy (Q3ScrollView::AutoOneFit);
+: QWizardPage (parent) {
+   QGridLayout *layout = new QGridLayout (this);
    layout->setColumnStretch (0, 0);
    layout->setColumnStretch (1, 1);
 
@@ -290,8 +254,8 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
    QStringList::ConstIterator fIt = dictionaryFiles.begin();
    QStringList::ConstIterator lIt = dictionaryLanguages.begin();
    for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
-      QCheckBox *checkbox = new QCheckBox(*nIt, contents);
-      KIntNumInput *numInput = new KIntNumInput(contents);
+      QCheckBox *checkbox = new QCheckBox(*nIt, this);
+      KIntNumInput *numInput = new KIntNumInput(this);
       layout->addWidget (checkbox, row, 0);
       layout->addWidget (numInput, row, 1);
 
@@ -306,6 +270,7 @@ MergeWidget::MergeWidget(K3Wizard *parent, const char *name,
       languages [*fIt] = *lIt;
       row++;
    }
+   setLayout(layout);
 }
 
 MergeWidget::~MergeWidget() {
@@ -340,8 +305,8 @@ QString MergeWidget::language () {
 
 /***************************************************************************/
 
-CompletionWizardWidget::CompletionWizardWidget (K3Wizard *parent, const char *name)
-   : QWidget (parent) {
+CompletionWizardWidget::CompletionWizardWidget (QWidget *parent, const char *name)
+   : QWizardPage (parent) {
    setupUi(this);
    setObjectName( QLatin1String( name ) );
 }
@@ -351,7 +316,7 @@ CompletionWizardWidget::~CompletionWizardWidget() {
 
 void CompletionWizardWidget::ok (KConfig *config) {
    WordList::WordMap map;
-   KProgressDialog *pdlg = WordList::progressDialog();
+   QProgressDialog *pdlg = WordList::progressDialog();
 
    QString language = languageButton->current();
    map = WordList::parseKDEDoc (language, pdlg);
@@ -366,6 +331,7 @@ void CompletionWizardWidget::ok (KConfig *config) {
    QString dictionaryFile;
 
    dictionaryFile = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" )) + QLatin1String( "wordcompletion1.dict" );
+   qDebug() << "dictionaryFile is " << dictionaryFile;
    if (WordList::saveWordList (map, dictionaryFile)) {
       KConfigGroup cg(config, "Dictionary 0");
       cg.writeEntry ("Filename", "wordcompletion1.dict");

@@ -70,12 +70,12 @@ KMouthApp::KMouthApp(QWidget* , const char* name):KXmlGuiWindow(0)
    phrases = new KActionCollection (static_cast<QWidget*>(this));
 
    readOptions();
-   ConfigWizard *wizard = new ConfigWizard (this, "ConfigWizard", config.data());
+   ConfigWizard *wizard = new ConfigWizard (this, config.data());
    if (wizard->configurationNeeded ()) {
       if (wizard->requestConfiguration ()) {
          isConfigured = true;
          saveOptions();
-         wizard->saveConfig (config.data());
+         wizard->saveConfig ();
          readOptions();
       }
       else
@@ -400,11 +400,11 @@ void KMouthApp::slotFileQuit()
   KMainWindow* w;
   if (!memberList().isEmpty())
   {
-	for (int i = 0; i < memberList().size(); ++i)
+     for (int i = 0; i < memberList().size(); ++i)
      {
       // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
       // the window and the application stay open.
-	w = memberList().at(i);
+      w = memberList().at(i);
       if(!w->close())
          break;
 #ifdef __GNUC__

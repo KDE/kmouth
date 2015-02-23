@@ -19,8 +19,7 @@
 #define CONFIGWIZARD_H
 
 #include <QtGui/QWidget>
-
-#include <k3wizard.h>
+#include <QWizard>
 
 class KConfig;
 class TextToSpeechConfigurationWidget;
@@ -31,28 +30,30 @@ class CompletionWizardWidget;
  * time. It asks the user to provide a first set of configuration data.
  *@author Gunnar Schmi Dt
  */
-
-class ConfigWizard : public K3Wizard  {
+class ConfigWizard : public QWizard  {
    Q_OBJECT
 public:
-   ConfigWizard (QWidget *parent, const char *name, KConfig *config);
+   ConfigWizard (QWidget *parent, KConfig *config);
    ~ConfigWizard();
 
    bool configurationNeeded ();
    bool requestConfiguration ();
-   void saveConfig (KConfig *config);
+
+public slots:
+   void saveConfig ();
 
 protected:
    void help();
 
 private:
-   void initCommandPage (KConfig *config);
+   void initCommandPage ();
    void initBookPage();
-   void initCompletion (KConfig *config);
+   void initCompletion ();
 
    TextToSpeechConfigurationWidget *commandWidget;
    InitialPhraseBookWidget *bookWidget;
    CompletionWizardWidget *completionWidget;
+   KConfig *m_config;
 };
 
 #endif

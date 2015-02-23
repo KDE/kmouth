@@ -27,7 +27,6 @@
 #include <QtGui/QPainter>
 #include <QtGui/QPrintDialog>
 #include <QtGui/QStyle>
-#include <Qt3Support/Q3GroupBox>
 #include <QtGui/QMenu>
 #include <QtCore/QStack>
 #include <QtGui/QGridLayout>
@@ -148,7 +147,7 @@ void CheckBookItem::childChange (int numberDiff, int selDiff) {
 /***************************************************************************/
 
 InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *name)
-   : QWidget(parent)
+   : QWizardPage(parent)
 {
    setObjectName( QLatin1String( name ) );
    QVBoxLayout *mainLayout = new QVBoxLayout (this);
@@ -261,8 +260,8 @@ ButtonBoxWidget::ButtonBoxWidget (QWidget *parent, const char *name)
    keyButtonPlaceLayout->addWidget (keyButton, 1,1);
    keyButton->setWhatsThis( i18n("By clicking on this button you can select the keyboard shortcut associated with the selected phrase."));
 
-   group = new Q3ButtonGroup (phrasebox);
-   group->hide();
+   group = new QButtonGroup (phrasebox);
+   phrasebox->hide();
    group->setExclusive (true);
    group->insert (noKey);
    group->insert (customKey);
@@ -447,6 +446,7 @@ QString PhraseBookDialog::displayPath (QString filename) {
 }
 
 StandardBookList PhraseBookDialog::standardPhraseBooks() {
+   // Get all the standard phrasebook filenames in bookPaths.
    QStringList bookPaths = KGlobal::mainComponent().dirs()->findAllResources (
                           "data", QLatin1String( "kmouth/books/*.phrasebook" ),
                           KStandardDirs::Recursive |
@@ -454,8 +454,10 @@ StandardBookList PhraseBookDialog::standardPhraseBooks() {
    QStringList bookNames;
    QMap<QString,StandardBook> bookMap;
    QStringList::iterator it;
+   // Iterate over all books creating a phrasebook for each, creating a StandardBook of each.
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       PhraseBook pbook;
+      // Open the phrasebook.
       if (pbook.open (KUrl( *it ))) {
          StandardBook book;
          book.name = (*pbook.begin()).getPhrase().getPhrase();
@@ -542,7 +544,7 @@ void PhraseBookDialog::selectionChanged () {
    if (currentItem == 0) {
       buttonBox->textLabel->setText (i18n("Text of the &phrase:"));
       buttonBox->textLabel->setEnabled(false);
-      buttonBox->group->setEnabled(false);
+      buttonBox->setEnabled(false);
       buttonBox->lineEdit->setText(QLatin1String( "" ));
       buttonBox->lineEdit->setEnabled(false);
       buttonBox->shortcutLabel->setEnabled(false);
@@ -556,7 +558,7 @@ void PhraseBookDialog::selectionChanged () {
    else if (currentItem->isPhrase()) {
       buttonBox->textLabel->setText (i18n("Text of the &phrase:"));
       buttonBox->textLabel->setEnabled(true);
-      buttonBox->group->setEnabled(true);
+      buttonBox->setEnabled(true);
       buttonBox->lineEdit->setText(currentItem->text(0));
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(true);
@@ -580,7 +582,7 @@ void PhraseBookDialog::selectionChanged () {
    else {
       buttonBox->textLabel->setText (i18n("Name of the &phrase book:"));
       buttonBox->textLabel->setEnabled(true);
-      buttonBox->group->setEnabled(true);
+      buttonBox->setEnabled(true);
       buttonBox->lineEdit->setText(currentItem->text(0));
       buttonBox->lineEdit->setEnabled(true);
       buttonBox->shortcutLabel->setEnabled(false);

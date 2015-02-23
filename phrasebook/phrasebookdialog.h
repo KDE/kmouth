@@ -20,13 +20,14 @@
 
 #include <Qt3Support/Q3Button>
 #include <QtGui/QRadioButton>
-#include <Qt3Support/Q3ButtonGroup>
+#include <QButtonGroup>
 #include <QtGui/QLabel>
 #include <Qt3Support/Q3ListView>
 #include <QtCore/QList>
 #include <QtGui/QGridLayout>
 #include <QtGui/QDropEvent>
 #include <QtGui/QPrinter>
+#include <QWizardPage>
 
 #include <kxmlguiwindow.h>
 #include <klineedit.h>
@@ -78,8 +79,7 @@ private:
  * This class represents a widget for configuring the initial phrasebook.
  * @author Gunnar Schmi Dt
  */
-
-class InitialPhraseBookWidget : public QWidget {
+class InitialPhraseBookWidget : public QWizardPage {
    Q_OBJECT
 public:
    InitialPhraseBookWidget(QWidget *parent, const char *name);
@@ -135,7 +135,7 @@ public:
    ~ButtonBoxWidget ();
 
    KKeySequenceWidget *keyButton;
-   Q3ButtonGroup *group;
+   QButtonGroup *group;
 
 protected:
    QGridLayout *keyButtonPlaceLayout;

@@ -26,9 +26,10 @@
 #include <QtXml/QXmlAttributes>
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
+#include <QProgressDialog>
+#include <QApplication>
 
 #include <kstandarddirs.h>
-#include <kprogressdialog.h>
 #include <klocale.h>
 #include <kapplication.h>
 
@@ -110,14 +111,12 @@ WordMap XMLParser::getList() {
 
 /***************************************************************************/
 
-KProgressDialog *progressDialog() {
-   KProgressDialog *pdlg = new KProgressDialog(0,  i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), 0);
-   pdlg->setAllowCancel (false);
-   pdlg->showCancelButton (false);
+QProgressDialog *progressDialog() {
+   QProgressDialog *pdlg = new QProgressDialog(i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), 0, 100);
+   //pdlg->setAllowCancel (false);
+   //pdlg->showCancelButton (false);
    pdlg->setAutoReset(false);
    pdlg->setAutoClose(false);
-   pdlg->progressBar()->setMaximum(100);
-   pdlg->progressBar()->setValue(0);
    return pdlg;
 }
 
@@ -218,7 +217,7 @@ void addWordsFromFile (WordMap &map, QString filename, QTextCodec *codec) {
 #include <kdebug.h>
 namespace WordList {
 
-WordMap parseFiles (QStringList files, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFiles (QStringList files, QTextCodec *codec, QProgressDialog *pdlg) {
    int progress = 0;
    int steps = files.count();
    int percent = 0;
@@ -230,14 +229,14 @@ WordMap parseFiles (QStringList files, QTextCodec *codec, KProgressDialog *pdlg)
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
-         pdlg->progressBar()->setValue(percent);
+         pdlg->setValue(percent);
          qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
    return map;
 }
 
-WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
+WordMap mergeFiles  (QMap<QString,int> files, QProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Merging dictionaries..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -271,7 +270,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
 
       if (steps != 0 && progress*100/steps > percent) {
          percent = progress*100/steps;
-         pdlg->progressBar()->setValue(percent);
+         pdlg->setValue(percent);
          qApp->processEvents (QEventLoop::AllEvents, 20);
       }
    }
@@ -290,7 +289,7 @@ WordMap mergeFiles  (QMap<QString,int> files, KProgressDialog *pdlg) {
    return resultMap;
 }
 
-WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
+WordMap parseKDEDoc (QString language, QProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Parsing the KDE documentation..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -308,7 +307,7 @@ WordMap parseKDEDoc (QString language, KProgressDialog *pdlg) {
    return parseFiles (files, QTextCodec::codecForName("UTF-8"), pdlg);
 }
 
-WordMap parseFile (QString filename, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseFile (QString filename, QTextCodec *codec, QProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Parsing file..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -319,7 +318,7 @@ WordMap parseFile (QString filename, QTextCodec *codec, KProgressDialog *pdlg) {
    return parseFiles (files, codec, pdlg);
 }
 
-WordMap parseDir (QString directory, QTextCodec *codec, KProgressDialog *pdlg) {
+WordMap parseDir (QString directory, QTextCodec *codec, QProgressDialog *pdlg) {
    pdlg->setLabelText (i18n("Parsing directory..."));
    pdlg->show();
    qApp->processEvents (QEventLoop::AllEvents, 20);
@@ -499,7 +498,7 @@ void checkWord (const QString &word, const QString &modifiers, const WordMap &ma
    }
 }
 
-WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
+WordMap spellCheck  (WordMap map, QString dictionary, QProgressDialog *pdlg) {
 
    if (dictionary.endsWith(QLatin1String(".dic"))) {
       AffMap prefixes;
@@ -507,14 +506,14 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
       WordMap checkedMap;
       loadAffFile (dictionary.left(dictionary.length()-4) + QLatin1String( ".aff" ), prefixes, suffixes);
 
-      pdlg->progressBar()->reset();
-      pdlg->setAllowCancel (false);
-      pdlg->showCancelButton (false);
+      pdlg->reset();
+      //pdlg->setAllowCancel (false);
+      //pdlg->showCancelButton (false);
       pdlg->setAutoReset(false);
       pdlg->setAutoClose(false);
       pdlg->setLabelText (i18n("Performing spell check..."));
-      pdlg->progressBar()->setMaximum(100);
-      pdlg->progressBar()->setValue(0);
+      pdlg->setMaximum(100);
+      pdlg->setValue(0);
       qApp->processEvents (QEventLoop::AllEvents, 20);
       int progress = 0;
       int steps = 0;
@@ -545,7 +544,7 @@ WordMap spellCheck  (WordMap map, QString dictionary, KProgressDialog *pdlg) {
             progress++;
             if (steps != 0 && progress*100/steps > percent) {
                percent = progress*100/steps;
-               pdlg->progressBar()->setValue(percent);
+               pdlg->setValue(percent);
                qApp->processEvents (QEventLoop::AllEvents, 20);
             }
          }
