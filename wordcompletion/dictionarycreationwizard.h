@@ -46,7 +46,7 @@ public:
         setObjectName(QLatin1String( name ));
         connect(emptyButton, SIGNAL(toggled(bool)), this, SLOT(emptyToggled(bool)));
     }
-    
+
     virtual int nextId() const;
 private slots:
     void emptyToggled(bool checked);
@@ -59,6 +59,10 @@ public:
       : QWizardPage(parent) {
       setupUi(this);
       setObjectName( QLatin1String( name ) );
+   }
+   virtual int nextId() const
+   {
+       return -1;
    }
 };
 
@@ -73,6 +77,10 @@ public:
       languageButton->loadAllLanguages();
 
       ooDictURL->setFilter (QLatin1String( "*.dic" ));
+   }
+   virtual int nextId() const
+   {
+       return -1;
    }
 };
 
@@ -101,7 +109,7 @@ public:
        KDEDocPage,
        MergePage
    };
-   
+
 private:
    void buildCodecList ();
    void buildCodecCombo (KComboBox *combo);

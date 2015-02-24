@@ -74,11 +74,13 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 
    fileWidget= new CreationSourceDetailsWidget (this, "file source page");
    fileWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   fileWidget->setFinalPage(true);
    setPage (FilePage, fileWidget);
    buildCodecCombo (fileWidget->encodingCombo);
 
    dirWidget= new CreationSourceDetailsWidget (this, "directory source page");
    dirWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   dirWidget->setFinalPage(true);
    setPage (DirPage, dirWidget);
    dirWidget->urlLabel->setText (i18nc("In which directory is the file located?", "&Directory:"));
     dirWidget->urlLabel->setWhatsThis( i18n("With this input field you specify which directory you want to load for creating the new dictionary."));
@@ -88,12 +90,14 @@ DictionaryCreationWizard::DictionaryCreationWizard (QWidget *parent, const char 
 
    kdeDocWidget= new KDEDocSourceWidget (this, "KDE documentation source page");
    kdeDocWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   kdeDocWidget->setFinalPage(true);
    setPage (KDEDocPage, kdeDocWidget);
    kdeDocWidget->languageButton->showLanguageCodes(true);
    kdeDocWidget->languageButton->loadAllLanguages();
 
    mergeWidget = new MergeWidget (this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    mergeWidget->setTitle(i18n("Source of New Dictionary (2)"));
+   mergeWidget->setFinalPage(true);
    setPage (MergePage, mergeWidget);
 }
 
