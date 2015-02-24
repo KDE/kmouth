@@ -22,7 +22,7 @@
 
 #include "ui_wordcompletionui.h"
 
-class WordCompletion;
+class QStandardItemModel;
 
 /**
  * This class represents a configuration widget for managing dictionaries.
@@ -41,7 +41,7 @@ public:
    void load();
 
    /**
-    * This function gets called when the user wants to save the settings in 
+    * This function gets called when the user wants to save the settings in
     * the user interface, updating the config files.
     */
    void save();
@@ -62,7 +62,7 @@ private slots:
 
    /**
     * This slot is used to emit the signal changed when any widget changes
-    * the configuration 
+    * the configuration
     */
    void configChanged() {
       emit changed(true);
@@ -75,6 +75,7 @@ private:
    KConfig *config;
    QStringList newDictionaryFiles;
    QStringList removedDictionaryFiles;
+   QStandardItemModel *model;
 };
 
 #endif

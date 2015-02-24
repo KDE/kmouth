@@ -23,8 +23,8 @@
 #include <QtGui/QLabel>
 #include <QtGui/QCheckBox>
 #include <QtGui/QLineEdit>
+#include <QStandardItemModel>
 
-#include <k3listview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>
@@ -36,65 +36,16 @@
 #include <kmessagebox.h>
 #include <klanguagebutton.h>
 
-class DictionaryListItem : public K3ListViewItem {
-public:
-   DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString language, QString languageCode)
-   : K3ListViewItem (parent, name) {
-      setFilename (filename);
-      setLanguage (language, languageCode);
-   }
-   DictionaryListItem (Q3ListView *parent, QString filename, QString name, QString languageCode)
-   : K3ListViewItem (parent, name) {
-      setFilename (filename);
-      setLanguage (languageCode);
-   }
-   DictionaryListItem (Q3ListView *parent, Q3ListViewItem *after, QString filename, QString name, QString languageCode)
-   : K3ListViewItem (parent, after, name) {
-      setFilename (filename);
-      setLanguage (languageCode);
-   }
-   ~DictionaryListItem () {
-   }
-
-   QString filename() {
-      return myFilename;
-   }
-
-   QString languageCode() {
-      return myLanguageCode;
-   }
-
-   void setFilename(QString filename) {
-      myFilename = filename;
-   }
-
-   void setLanguage (QString languageCode) {
-      QString name = KGlobal::locale()->languageCodeToName(languageCode);
-      if (name.isEmpty())
-      {
-          name = i18n("without name");
-      }
-      setLanguage (name + QLatin1String( " (" ) + languageCode + QLatin1Char( ')' ), languageCode);
-   }
-
-   void setLanguage (QString name, QString languageCode) {
-      myLanguageCode = languageCode;
-      setText (1, name);
-   }
-
-private:
-   QString myFilename;
-   QString myLanguageCode;
-};
-
-/***************************************************************************/
-
 WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
 : QWidget(parent)
 {
     setupUi(this);
     setObjectName( QLatin1String( name ) );
-    dictionaryList->setSorting (-1); // no sorted list
+    model = new QStandardItemModel(0, 2, this);
+    QStringList labels;
+    labels << i18n("Dictionary") << i18n("Language");
+    model->setHorizontalHeaderLabels(labels);
+    dictionaryView->setModel(model);
 
     languageButton->showLanguageCodes(true);
     languageButton->loadAllLanguages();
@@ -106,7 +57,8 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     connect (moveDownButton, SIGNAL (clicked()), this, SLOT (moveDown()) );
     connect (exportButton, SIGNAL (clicked()), this, SLOT (exportDictionary()) );
 
-    connect (dictionaryList, SIGNAL (selectionChanged()), this, SLOT (selectionChanged()) );
+    connect (dictionaryView->selectionModel(), SIGNAL (selectionChanged(QItemSelection, QItemSelection)),
+             this, SLOT (selectionChanged()) );
     connect (dictionaryName, SIGNAL (textChanged(QString)), this, SLOT (nameChanged(QString)) );
     connect (languageButton, SIGNAL (activated(QString)), this, SLOT (languageSelected()) );
 
@@ -127,19 +79,22 @@ WordCompletionWidget::~WordCompletionWidget() {
 /***************************************************************************/
 
 void WordCompletionWidget::load() {
-   dictionaryList->clear();
+   model->clear();
 
    // Set the group general for the configuration of kttsd itself (no plug ins)
    const QStringList groups = config->groupList();
-   DictionaryListItem *last = 0;
    for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
       if ((*it).startsWith (QLatin1String("Dictionary "))) {
-		 KConfigGroup cg (config, *it);
+         KConfigGroup cg (config, *it);
+         QString filename = cg.readEntry("Filename");
          QString languageTag = cg.readEntry("Language");
-         last = new DictionaryListItem (dictionaryList, last,
-                                        cg.readEntry("Filename"),
-                                        cg.readEntry("Name"),
-                                        languageTag);
+         QStandardItem *nameItem = new QStandardItem(cg.readEntry("Name"));
+         nameItem->setData(filename);
+         QStandardItem *languageItem = new QStandardItem(languageTag);
+         QList<QStandardItem*> items;
+         items.append(nameItem);
+         items.append(languageItem);
+         model->appendRow(items);
          if (!languageButton->contains(languageTag))
             languageButton->insertLanguage(languageTag, i18n("without name"));
       }
@@ -159,18 +114,14 @@ void WordCompletionWidget::save() {
       if ((*it).startsWith (QLatin1String("Dictionary ")))
          config->deleteGroup (*it);
 
-   int number = 0;
-   Q3ListViewItemIterator it(dictionaryList);
-   while (it.current()) {
-      DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
-      if (item != 0) {
-		 KConfigGroup cg (config, QString(QLatin1String( "Dictionary %1" )).arg(number));
-         cg.writeEntry ("Filename", item->filename());
-         cg.writeEntry ("Name",     item->text (0));
-         cg.writeEntry ("Language", item->languageCode());
-         number++;
-      }
-      ++it;
+   int row = 0;
+   for (int row = 0; row < model->rowCount(); ++row) {
+      const QStandardItem *nameItem = model->item(row, 0);
+      const QStandardItem *languageItem = model->item(row, 1);
+      KConfigGroup cg (config, QString(QLatin1String( "Dictionary %1" )).arg(row));
+      cg.writeEntry ("Filename", nameItem->data().toString());
+      cg.writeEntry ("Name",     nameItem->text ());
+      cg.writeEntry ("Language", languageItem->text ());
    }
    config->sync();
 
@@ -189,15 +140,12 @@ void WordCompletionWidget::addDictionary() {
    QStringList dictionaryNames;
    QStringList dictionaryFiles;
    QStringList dictionaryLanguages;
-   Q3ListViewItemIterator it(dictionaryList);
-   while (it.current()) {
-      DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(it.current());
-      if (item != 0) {
-         dictionaryNames += item->text (0);
-         dictionaryFiles += item->filename();
-         dictionaryLanguages += item->languageCode();
-      }
-      ++it;
+   for (int row = 0; row < model->rowCount(); ++row) {
+      const QStandardItem *nameItem = model->item(row, 0);
+      const QStandardItem *languageItem = model->item(row, 1);
+      dictionaryNames += nameItem->text();
+      dictionaryFiles += nameItem->data().toString();
+      dictionaryLanguages += languageItem->text();
    }
    DictionaryCreationWizard *wizard = new DictionaryCreationWizard (this, "Dictionary creation wizard", dictionaryNames, dictionaryFiles, dictionaryLanguages);
    if (wizard->exec() == QDialog::Accepted) {
@@ -207,50 +155,49 @@ void WordCompletionWidget::addDictionary() {
       if (!languageButton->contains(languageTag)) {
          languageButton->insertLanguage(languageTag, i18n("without name"));
       }
-      K3ListViewItem *item = new DictionaryListItem (dictionaryList,
-                      filename, wizard->name(), languageTag);
-      dictionaryList->setSelected(item, true);
+      QStandardItem *nameItem = new QStandardItem(wizard->name());
+      nameItem->setData(filename);
+      QStandardItem *languageItem = new QStandardItem(languageTag);
+      QList<QStandardItem*> items;
+      items.append(nameItem);
+      items.append(languageItem);
+      model->appendRow(items);
    }
    delete wizard;
 }
 
 void WordCompletionWidget::deleteDictionary() {
-   DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
+   int row = dictionaryView->currentIndex().row();
+   const QStandardItem *nameItem = model->item(row, 0);
 
-   if (item != 0) {
-      removedDictionaryFiles += item->filename();
-      delete item;
+   if (nameItem != 0) {
+      removedDictionaryFiles += nameItem->data().toString();
+      qDeleteAll(model->takeRow(row));
    }
 }
 
 void WordCompletionWidget::moveUp() {
-   Q3ListViewItem *item = dictionaryList->selectedItem ();
-
-   if (item != 0) {
-      Q3ListViewItem *above = item->itemAbove();
-
-      if (above != 0) {
-         above->moveItem (item);
-      }
+   int row = dictionaryView->currentIndex().row();
+   if (row > 0) {
+      QList<QStandardItem*> items = model->takeRow(row);
+      model->insertRow(row - 1, items);
+      dictionaryView->setCurrentIndex(model->index(row - 1, 0));
    }
 }
 
 void WordCompletionWidget::moveDown() {
-   Q3ListViewItem *item = dictionaryList->selectedItem ();
-
-   if (item != 0) {
-      Q3ListViewItem *next = item->itemBelow();
-
-      if (next != 0) {
-         item->moveItem (next);
-      }
+   int row = dictionaryView->currentIndex().row();
+   if (row < model->rowCount() - 1) {
+      QList<QStandardItem*> items = model->takeRow(row);
+      model->insertRow(row + 1, items);
+      dictionaryView->setCurrentIndex(model->index(row + 1, 0));
    }
 }
 
 void WordCompletionWidget::exportDictionary() {
-   DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
+   const QStandardItem *nameItem = model->item(dictionaryView->currentIndex().row(), 0);
 
-   if (item != 0) {
+   if (nameItem != 0) {
       KUrl url = KFileDialog::getSaveUrl(QString(), QString(), this, i18n("Export Dictionary"));
       if (url.isEmpty() || !url.isValid())
          return;
@@ -262,65 +209,55 @@ void WordCompletionWidget::exportDictionary() {
          }
       }
       KUrl src;
-      src.setPath( KGlobal::dirs()->findResource ("appdata", item->filename()) );
+      src.setPath( KGlobal::dirs()->findResource ("appdata", nameItem->data().toString()) );
       KIO::NetAccess::file_copy (src, url, this);
    }
 }
 
 void WordCompletionWidget::selectionChanged() {
-   DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
+   QModelIndex current = dictionaryView->currentIndex();
+   deleteButton->setEnabled(current.isValid());
+   exportButton->setEnabled(current.isValid());
+   selectedDictionaryDetails->setEnabled(current.isValid());
+   moveUpButton->setEnabled(current.isValid() && current.row() > 0);
+   moveDownButton->setEnabled(current.isValid() && current.row() < model->rowCount() - 1);
 
-   if (item != 0) {
-      deleteButton->setEnabled(true);
-      moveUpButton->setEnabled(true);
-      moveDownButton->setEnabled(true);
-      exportButton->setEnabled(true);
-      selectedDictionaryDetails->setEnabled(true);
-      languageLabel->setEnabled(true);
-      dictionaryNameLabel->setEnabled(true);
-      dictionaryName->setEnabled(true);
-      languageButton->setEnabled(true);
+   if (current.isValid()) {
+      const QStandardItem *nameItem = model->item(current.row(), 0);
+      const QStandardItem *languageItem = model->item(current.row(), 1);
 
-      dictionaryName->setText(item->text(0));
-      languageButton->setCurrentItem(item->languageCode());
-   }
-   else {
-      deleteButton->setEnabled(false);
-      moveUpButton->setEnabled(false);
-      moveDownButton->setEnabled(false);
-      exportButton->setEnabled(false);
-      selectedDictionaryDetails->setEnabled(false);
-      languageLabel->setEnabled(false);
-      dictionaryNameLabel->setEnabled(false);
-      dictionaryName->setEnabled(false);
-      languageButton->setEnabled(false);
-
-      dictionaryName->setText(QLatin1String( "" ));
+      dictionaryName->setText(nameItem->text());
+      languageButton->setCurrentItem(languageItem->text());
+   } else {
+      dictionaryName->clear();
    }
 }
 
 void WordCompletionWidget::nameChanged (const QString &text) {
-   Q3ListViewItem *item = dictionaryList->selectedItem ();
+   const QStandardItem *nameItem = model->item(dictionaryView->currentIndex().row(), 0);
 
-   if (item != 0) {
-      QString old = item->text(0);
+   if (nameItem != 0) {
+      QString old = nameItem->text();
 
       if (old != text) {
-         item->setText(0, text);
+         QStandardItem *newItem = new QStandardItem(text);
+         newItem->setData(nameItem->data());
+         model->setItem(dictionaryView->currentIndex().row(), 0, newItem);
          emit changed(true);
       }
    }
 }
 
 void WordCompletionWidget::languageSelected () {
-   DictionaryListItem *item = dynamic_cast<DictionaryListItem*>(dictionaryList->selectedItem ());
+   const QStandardItem *languageItem = model->item(dictionaryView->currentIndex().row(), 1);
 
-   if (item != 0) {
-      QString old = item->text(1);
+   if (languageItem != 0) {
+      QString old = languageItem->text();
       QString text = languageButton->current();
 
       if (old != text) {
-         item->setLanguage(languageButton->current(), text);
+         QStandardItem *newItem = new QStandardItem(text);
+         model->setItem(dictionaryView->currentIndex().row(), 1, newItem);
          emit changed(true);
       }
    }
