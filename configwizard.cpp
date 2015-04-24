@@ -48,7 +48,6 @@ ConfigWizard::~ConfigWizard() {
 void ConfigWizard::initCommandPage() {
    KConfigGroup cg(m_config, QLatin1String( "TTS System" ));
    bool displayCommand = false;
-   if (!cg.hasKey("Command")) displayCommand = true;
    if (!cg.hasKey("StdIn"))   displayCommand = true;
    if (!cg.hasKey("Codec"))   displayCommand = true;
 
