@@ -323,12 +323,7 @@ void KMouthApp::readOptions()
   toolBar(QLatin1String( "mainToolBar" ))->applySettings (config->group( "mainToolBar" ) );
   toolBar(QLatin1String( "phrasebookBar" ))->applySettings (config->group( "phrasebookBar") );
 
-  QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
-  if (!standardBook.isEmpty()) {
-     PhraseBook book;
-     book.open(KUrl( standardBook ));
-     slotPhrasebookConfirmed(book);
-  }
+  slotPhrasebookConfirmed();
   if (phraseList != 0)
      phraseList->readCompletionOptions(config.data());
 }
@@ -419,10 +414,10 @@ void KMouthApp::slotEditPhrasebook () {
    PhraseBookDialog *phraseBookDialog = PhraseBookDialog::get();
    // As we do not know whether the we are already connected to the slot,
    // we first disconnect and then connect again.
-   disconnect (phraseBookDialog, SIGNAL(phrasebookConfirmed(PhraseBook&)),
-               this, SLOT(slotPhrasebookConfirmed(PhraseBook&)));
-   connect (phraseBookDialog, SIGNAL(phrasebookConfirmed(PhraseBook&)),
-            this, SLOT(slotPhrasebookConfirmed(PhraseBook&)));
+   disconnect (phraseBookDialog, SIGNAL(phrasebookConfirmed()),
+               this, SLOT(slotPhrasebookConfirmed()));
+   connect (phraseBookDialog, SIGNAL(phrasebookConfirmed()),
+            this, SLOT(slotPhrasebookConfirmed()));
 
    // As we do not know whether the phrase book edit window is already open,
    // we first open and then raise it, so that it is surely the top window.
@@ -506,18 +501,18 @@ void KMouthApp::slotStatusMsg(const QString &text)
   statusBar()->changeItem(text, ID_STATUS_MSG);
 }
 
-void KMouthApp::slotPhrasebookConfirmed (PhraseBook &book) {
-   QString name = QLatin1String( "phrasebooks" );
-   QMenu *popup = (QMenu *)factory()->container(name, this);
-   KToolBar *toolbar = toolBar (QLatin1String( "phrasebookBar" ));
+void KMouthApp::slotPhrasebookConfirmed () {
+   QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
+   if (!standardBook.isEmpty()) {
+      PhraseBook book;
+      book.open(KUrl( standardBook ));
+      QString name = QLatin1String( "phrasebooks" );
+      QMenu *popup = (QMenu *)factory()->container(name, this);
+      KToolBar *toolbar = toolBar (QLatin1String( "phrasebookBar" ));
 
-   delete phrases;
-   phrases = new KActionCollection (actionCollection());
-   book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected(QString)));
-
-   QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" ));
-   if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
-      book.save (KUrl( bookLocation + QLatin1String( "standard.phrasebook" )));
+      delete phrases;
+      phrases = new KActionCollection (actionCollection());
+      book.addToGUI (popup, toolbar, phrases, this, SLOT(slotPhraseSelected(QString)));
    }
 }
 

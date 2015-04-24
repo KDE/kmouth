@@ -130,7 +130,7 @@ class KMouthApp : public KXmlGuiWindow
      */
     void slotStatusMsg(const QString &text);
 
-    void slotPhrasebookConfirmed (PhraseBook &book);
+    void slotPhrasebookConfirmed ();
 
     void slotConfigurationChanged();
 

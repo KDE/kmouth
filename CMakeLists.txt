@@ -13,13 +13,12 @@ include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
 add_definitions (-DQT3_SUPPORT)
 set(libphrasebook_SRCS
-	./phrasebook/phrasetree.cpp
 	./phrasebook/phrasebookparser.cpp
 	./phrasebook/phrasebookdialog.cpp
 	./phrasebook/phrasebook.cpp
 	)
 
-kde4_add_ui_files(libphrasebook_SRCS ./phrasebook/buttonboxui.ui)
+kde4_add_ui_files(libphrasebook_SRCS ./phrasebook/phrasebookdialog.ui)
 
 set(libwordcompletion_SRCS
 	./wordcompletion/wordlist.cpp
@@ -47,7 +46,6 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
    texttospeechconfigurationwidget.cpp
    optionsdialog.cpp
    configwizard.cpp
-   phraseedit.cpp
    phraselist.cpp
    speech.cpp
    texttospeechsystem.cpp
