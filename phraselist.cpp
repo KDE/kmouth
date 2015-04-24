@@ -18,7 +18,6 @@
 // application specific includes
 #include "phraselist.h"
 #include "phraselistitem.h"
-#include "phraseedit.h"
 #include "kmouth.h"
 #include "texttospeechsystem.h"
 #include "phrasebook/phrasebook.h"
@@ -69,7 +68,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    configureCompletionCombo(completion->wordLists());
    rowLayout->addWidget(dictionaryCombo);
 
-   lineEdit = new PhraseEdit (QLatin1String( "" ), this);
+   lineEdit = new KLineEdit (QLatin1String( "" ), this);
    lineEdit->setFocusPolicy(Qt::StrongFocus);
    lineEdit->setFrame(true);
    lineEdit->setEchoMode(QLineEdit::Normal);
