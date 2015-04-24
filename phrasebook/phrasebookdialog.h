@@ -18,25 +18,15 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <Qt3Support/Q3Button>
-#include <QtGui/QRadioButton>
-#include <QButtonGroup>
-#include <QtGui/QLabel>
 #include <Qt3Support/Q3ListView>
-#include <QtCore/QList>
-#include <QtGui/QGridLayout>
-#include <QtGui/QDropEvent>
-//#include <QtGui/QPrinter>
-#include <QWizardPage>
-#include <QStandardItemModel>
 #include <QDomNode>
+#include <QStandardItemModel>
+#include <QWizardPage>
 
-#include <kxmlguiwindow.h>
-#include <klineedit.h>
-#include <kkeysequencewidget.h>
 #include <kurl.h>
+#include <kxmlguiwindow.h>
+
 #include "phrasebook.h"
-#include <kicon.h>
 #include "ui_phrasebookdialog.h"
 
 #include <QDebug>

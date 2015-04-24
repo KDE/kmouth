@@ -18,44 +18,21 @@
 #include "phrasebookdialog.h"
 
 // include files for Qt
-#include <QtGui/QApplication>
-#include <QtGui/QLayout>
-#include <QtGui/QClipboard>
-#include <QtGui/QRadioButton>
-#include <QtCore/QEvent>
-#include <QtGui/QPainter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QStyle>
-#include <QtGui/QMenu>
-#include <QtCore/QStack>
-#include <QtGui/QGridLayout>
-#include <QtGui/QDropEvent>
-#include <QtGui/QLabel>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QTreeView>
-#include <Qt3Support/Q3ListViewItem>
+#include <QClipboard>
+#include <QFileInfo>
+#include <QStack>
 #include <QDebug>
-#include <QStandardItemModel>
-#include <QStandardItem>
 
 // include files for KDE
-#include <ktoolbarpopupaction.h>
-#include <kmenu.h>
-#include <kxmlguifactory.h>
-#include <klocale.h>
-#include <kaction.h>
-#include <kapplication.h>
 #include <k3listview.h>
-#include <kiconloader.h>
-#include <kguiitem.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <kstandarddirs.h>
-#include <kdesktopfile.h>
 #include <kactionmenu.h>
-#include <kstandardaction.h>
-#include <kdeprintdialog.h>
-#include <kicon.h>
+#include <kdesktopfile.h>
+#include <kfiledialog.h>
+#include <kmenu.h>
+#include <kmessagebox.h>
+#include <kstandarddirs.h>
+#include <ktoolbarpopupaction.h>
+#include <kxmlguifactory.h>
 
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;
