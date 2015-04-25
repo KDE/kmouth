@@ -19,12 +19,7 @@
 #define INITIALPHRASEBOOKWIDGET_H
 
 #include <Qt3Support/Q3ListView>
-#include <QDomNode>
-#include <QStandardItemModel>
 #include <QWizardPage>
-
-#include <kurl.h>
-#include <kxmlguiwindow.h>
 
 #include "phrasebook.h"
 

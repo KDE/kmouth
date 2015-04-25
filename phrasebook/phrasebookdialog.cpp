@@ -19,14 +19,11 @@
 
 // include files for Qt
 #include <QClipboard>
-#include <QFileInfo>
 #include <QStack>
 #include <QDebug>
 
 // include files for KDE
-#include <k3listview.h>
 #include <kactionmenu.h>
-#include <kdesktopfile.h>
 #include <kfiledialog.h>
 #include <kmenu.h>
 #include <kmessagebox.h>

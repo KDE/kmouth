@@ -26,15 +26,10 @@
 
 // include files for KDE
 #include <k3listview.h>
-#include <kactionmenu.h>
-#include <kdesktopfile.h>
-#include <kfiledialog.h>
+#include <kdialog.h>
 #include <klocalizedstring.h>
-#include <kmenu.h>
-#include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <ktoolbarpopupaction.h>
-#include <kxmlguifactory.h>
+#include <kurl.h>
 
 #include "phrasebook.h"
 
