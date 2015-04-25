@@ -15,6 +15,7 @@ add_definitions (-DQT3_SUPPORT)
 set(libphrasebook_SRCS
 	./phrasebook/phrasebookparser.cpp
 	./phrasebook/phrasebookdialog.cpp
+        ./phrasebook/initialphrasebookwidget.cpp
 	./phrasebook/phrasebook.cpp
 	)
 

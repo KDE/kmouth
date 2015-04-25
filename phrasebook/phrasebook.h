@@ -32,6 +32,13 @@
 
 class KUrl;
 
+struct StandardBook {
+    QString name;
+    QString path;
+    QString filename;
+};
+typedef QList<StandardBook> StandardBookList;
+
 /**
  * The class Phrase represents one phrase in a phrase book.
  * @author Gunnar Schmi Dt
@@ -145,6 +152,11 @@ public:
     * @param book the phrase book to insert.
     */
    void insert (const QString &name, const PhraseBook &book);
+
+   static StandardBookList standardPhraseBooks ();
+
+private:
+    static QString displayPath (QString path);
 };
 
 /**

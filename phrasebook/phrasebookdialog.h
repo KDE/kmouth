@@ -18,10 +18,8 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <Qt3Support/Q3ListView>
 #include <QDomNode>
 #include <QStandardItemModel>
-#include <QWizardPage>
 
 #include <kurl.h>
 #include <kxmlguiwindow.h>
@@ -29,66 +27,8 @@
 #include "phrasebook.h"
 #include "ui_phrasebookdialog.h"
 
-#include <QDebug>
-
-class Q3ListViewItem;
-class PhraseTreeItem;
-class QTreeView;
-class QString;
-class K3ListView;
-class KToolBarPopupAction;
 class KActionMenu;
-class PhraseBookModel;
-class PhraseBookItem;
-
-struct StandardBook {
-   QString name;
-   QString path;
-   QString filename;
-};
-typedef QList<StandardBook> StandardBookList;
-
-/**The class PhraseTreeItem is an ListViewItem for either a phrase or a phrase book.
-  *@author Gunnar Schmi Dt
-  */
-
-class CheckBookItem : public Q3CheckListItem {
-public:
-   CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
-   CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
-   ~CheckBookItem();
-
-protected:
-   virtual void activate ();
-   virtual void stateChange (bool);
-   virtual void propagateStateChange ();
-   virtual void childChange (int numberDiff, int selDiff);
-
-private:
-   int numberOfBooks;
-   int selectedBooks;
-};
-
-/**
- * This class represents a widget for configuring the initial phrasebook.
- * @author Gunnar Schmi Dt
- */
-class InitialPhraseBookWidget : public QWizardPage {
-   Q_OBJECT
-public:
-   InitialPhraseBookWidget(QWidget *parent, const char *name);
-   ~InitialPhraseBookWidget();
-
-   void createBook();
-
-private:
-   /** initializes the list of standard phrase books */
-   void initStandardPhraseBooks ();
-
-   K3ListView *books;
-};
+class KToolBarPopupAction;
 
 /**
  * The class StandardPhraseBookInsertAction implements an Action for
@@ -134,8 +74,6 @@ private:
     */
    PhraseBookDialog ();
 
-   static QString displayPath (QString path);
-
 public:
    /** Returns a pointer to the instance of this dialog. As a part off the
     * singleton pattern it will make sure that there is at most one instance
@@ -177,8 +115,6 @@ signals:
    void phrasebookConfirmed ();
 
 private:
-   static StandardBookList standardPhraseBooks ();
-
    void initGUI();
    /** initializes the KActions of the window */
    void initActions();

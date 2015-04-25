@@ -31,7 +31,9 @@
 #include <kactioncollection.h>
 #include <klocale.h>
 #include <kaction.h>
+#include <kdesktopfile.h>
 #include <kmenu.h>
+#include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <ktemporaryfile.h>
 #include <kio/netaccess.h>
@@ -373,6 +375,63 @@ bool PhraseBook::open (const KUrl &url) {
       return !error;
    }
       return false;
+}
+
+StandardBookList PhraseBook::standardPhraseBooks() {
+    // Get all the standard phrasebook filenames in bookPaths.
+    QStringList bookPaths = KGlobal::mainComponent().dirs()->findAllResources (
+                                "data", QLatin1String( "kmouth/books/*.phrasebook" ),
+                                KStandardDirs::Recursive |
+                                KStandardDirs::NoDuplicates);
+    QStringList bookNames;
+    QMap<QString,StandardBook> bookMap;
+    QStringList::iterator it;
+    // Iterate over all books creating a phrasebook for each, creating a StandardBook of each.
+    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
+        PhraseBook pbook;
+        // Open the phrasebook.
+        if (pbook.open (KUrl( *it ))) {
+            StandardBook book;
+            book.name = (*pbook.begin()).getPhrase().getPhrase();
+
+            book.path = displayPath(*it);
+            book.filename = *it;
+
+            bookNames += book.path + QLatin1Char( '/' ) + book.name;
+            bookMap [book.path + QLatin1Char( '/' ) + book.name] = book;
+        }
+    }
+
+    bookNames.sort();
+
+    StandardBookList result;
+    for (it = bookNames.begin(); it != bookNames.end(); ++it)
+        result += bookMap [*it];
+
+    return result;
+}
+
+QString PhraseBook::displayPath (QString filename) {
+    QFileInfo file(filename);
+    QString path = file.path();
+    QString dispPath;
+    int position = path.indexOf(QLatin1String( "/kmouth/books/" ))+QString( QLatin1String("/kmouth/books/") ).length();
+
+    while (path.length() > position) {
+        file.setFile(path);
+
+        KDesktopFile *dirDesc = new KDesktopFile("data", path+QLatin1String( "/.directory" ));
+        QString name = dirDesc->readName();
+        delete dirDesc;
+
+        if (name.isNull() || name.isEmpty())
+            dispPath += QLatin1Char( '/' ) + file.fileName ();
+        else
+            dispPath += QLatin1Char( '/' ) + name;
+
+        path = file.path();
+    }
+    return dispPath;
 }
 
 void PhraseBook::addToGUI (QMenu *popup, KToolBar *toolbar, KActionCollection *phrases,

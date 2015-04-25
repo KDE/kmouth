@@ -28,7 +28,7 @@
 #include <ktoolinvocation.h>
 
 #include "texttospeechconfigurationwidget.h"
-#include "phrasebook/phrasebookdialog.h"
+#include "phrasebook/initialphrasebookwidget.h"
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
