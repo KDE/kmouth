@@ -138,8 +138,6 @@ private:
 
    void setShortcut (const QKeySequence &sequence);
 
-   void _warning (const QKeySequence &cut, const QString &sAction, const QString &sTitle);
-
    bool phrasebookChanged;
 
    QAction* fileNewPhrase;

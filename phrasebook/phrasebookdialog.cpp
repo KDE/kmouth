@@ -295,7 +295,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
          newParent->setText(*it2);
          parent->addAction(newParent);
          if (parent == fileImportStandardBook)
-            toolbarImport->popupMenu()->addAction(newParent);
+            toolbarImport->menu()->addAction(newParent);
          parent = newParent;
       }
       currentNamePath = dirs;
@@ -304,7 +304,7 @@ void PhraseBookDialog::initStandardPhraseBooks () {
           url, (*it).name, this, SLOT(slotImportPhrasebook(KUrl)), actionCollection());
       parent->addAction(book);
       if (parent == fileImportStandardBook)
-         toolbarImport->popupMenu()->addAction(book);
+         toolbarImport->menu()->addAction(book);
    }
 }
 
