@@ -25,6 +25,8 @@
 #include <QtGui/QLineEdit>
 #include <QStandardItemModel>
 
+#include <QDebug>
+
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <klocale.h>
@@ -42,9 +44,6 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     setupUi(this);
     setObjectName( QLatin1String( name ) );
     model = new QStandardItemModel(0, 2, this);
-    QStringList labels;
-    labels << i18n("Dictionary") << i18n("Language");
-    model->setHorizontalHeaderLabels(labels);
     dictionaryView->setModel(model);
 
     languageButton->showLanguageCodes(true);
@@ -67,6 +66,7 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
 
     // Load the configuration from the file
     load();
+    qDebug() << "horizontal header data is " << model->headerData(0, Qt::Horizontal) << model->headerData(1, Qt::Horizontal);
 }
 
 /**
@@ -80,6 +80,10 @@ WordCompletionWidget::~WordCompletionWidget() {
 
 void WordCompletionWidget::load() {
    model->clear();
+
+   QStringList labels;
+   labels << i18n("Dictionary") << i18n("Language");
+   model->setHorizontalHeaderLabels(labels);
 
    // Set the group general for the configuration of kttsd itself (no plug ins)
    const QStringList groups = config->groupList();
