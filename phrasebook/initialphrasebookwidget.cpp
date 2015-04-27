@@ -20,111 +20,17 @@
 // include files for Qt
 #include <QLabel>
 #include <QStack>
+#include <QStandardItemModel>
+#include <QTreeView>
 #include <QVBoxLayout>
 
-#include <QDebug>
-
 // include files for KDE
-#include <k3listview.h>
 #include <kdialog.h>
 #include <klocalizedstring.h>
 #include <kstandarddirs.h>
 #include <kurl.h>
 
 #include "phrasebook.h"
-
-namespace PhraseBookPrivate {
-   enum columns {
-      name     = 1,
-      filename = 2
-   };
-}
-
-CheckBookItem::CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
-             const QString &text, const QString &name, const QString &filename)
-   : Q3CheckListItem (parent, text, Q3CheckListItem::CheckBox)
-{
-   moveItem (last);
-   setText(PhraseBookPrivate::name, name);
-   setText(PhraseBookPrivate::filename, filename);
-   setSelectable(false);
-
-   if (filename.isNull() || filename.isEmpty())
-      numberOfBooks = 0;
-   else
-      numberOfBooks = 1;
-   selectedBooks = 0;
-   ((CheckBookItem*)parent)->childChange (numberOfBooks, selectedBooks);
-}
-
-CheckBookItem::CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
-             const QString &text, const QString &name, const QString &filename)
-   : Q3CheckListItem (parent, text, Q3CheckListItem::CheckBox)
-{
-   moveItem (last);
-   setText(PhraseBookPrivate::name, name);
-   setText(PhraseBookPrivate::filename, filename);
-   setSelectable(false);
-
-   if (filename.isNull() || filename.isEmpty())
-      numberOfBooks = 0;
-   else
-      numberOfBooks = 1;
-   selectedBooks = 0;
-}
-
-CheckBookItem::~CheckBookItem () {
-}
-
-void CheckBookItem::activate() {
-   Q3ListView *lv = listView();
-
-   if (((lv != 0) && (!lv->isEnabled())) || (!isEnabled()))
-      return;
-
-   setOn (!isOn());
-   ignoreDoubleClick();
-}
-
-void CheckBookItem::stateChange (bool on) {
-   Q3ListViewItem *item = firstChild();
-   if (item == 0) {
-      Q3ListViewItem *parent = this->parent();
-      if (parent != 0) {
-         if (on)
-            ((CheckBookItem*)parent)->childChange (0, 1);
-         else
-            ((CheckBookItem*)parent)->childChange (0, -1);
-      }
-   }
-   else propagateStateChange();
-}
-
-void CheckBookItem::propagateStateChange () {
-   Q3ListViewItem *item = firstChild();
-   while (item != 0) {
-      if (isOn() != ((Q3CheckListItem*)item)->isOn())
-         ((Q3CheckListItem*)item)->setOn (isOn());
-      else
-         ((CheckBookItem*)item)->propagateStateChange ();
-      item = item->nextSibling();
-   }
-}
-
-void CheckBookItem::childChange (int numberDiff, int selDiff) {
-   numberOfBooks += numberDiff;
-   selectedBooks += selDiff;
-   Q3ListViewItem *parent = this->parent();
-   if (parent != 0)
-      ((CheckBookItem*)parent)->childChange (numberDiff, selDiff);
-
-   QString text = i18np(" (%2 of 1 book selected)",
-                        " (%2 of %1 books selected)",
-                        numberOfBooks, selectedBooks);
-   setText(0, this->text(PhraseBookPrivate::name)+text);
-}
-
-/***************************************************************************/
 
 InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *name)
    : QWizardPage(parent)
@@ -136,31 +42,41 @@ InitialPhraseBookWidget::InitialPhraseBookWidget (QWidget *parent, const char *n
    label->setObjectName( QLatin1String("booksTitle" ));
    mainLayout->addWidget (label);
 
-   books = new K3ListView (this);
-   books->setSorting (-1);
-   books->setItemsMovable (false);
-   books->setDragEnabled (false);
-   books->setAcceptDrops (false);
-   books->addColumn (i18n("Book"));
-   books->setRootIsDecorated (true);
-   books->setAllColumnsShowFocus (true);
-   books->setSelectionMode (Q3ListView::Multi);
-   mainLayout->addWidget (books);
+   m_model = new QStandardItemModel(0, 1, this);
+   m_model->setHeaderData(0, Qt::Horizontal, i18n("Book"));
+   QTreeView *view = new QTreeView(this);
+   view->setSortingEnabled(false);
+   //books->setItemsMovable (false);
+   view->setDragEnabled (false);
+   view->setRootIsDecorated (true);
+   view->setSelectionMode (QAbstractItemView::MultiSelection);
+   view->setModel(m_model);
+   mainLayout->addWidget (view);
 
    initStandardPhraseBooks();
+   connect(m_model, SIGNAL(itemChanged(QStandardItem*)),
+           this, SLOT(slotItemChanged(QStandardItem*)));
 }
 
 InitialPhraseBookWidget::~InitialPhraseBookWidget () {
 }
 
+void InitialPhraseBookWidget::slotItemChanged(QStandardItem *item) {
+   if (item->hasChildren()) {
+      for (int i = 0; i < item->rowCount(); ++i) {
+         QStandardItem *child = item->child(i);
+         child->setCheckState(item->checkState());
+      }
+   }
+}
+
 void InitialPhraseBookWidget::initStandardPhraseBooks() {
    StandardBookList bookPaths = PhraseBook::standardPhraseBooks();
 
-   Q3ListViewItem *parent = 0;
-   Q3ListViewItem *last = 0;
+   QStandardItem *parent = m_model->invisibleRootItem();
    QStringList currentNamePath;
    currentNamePath<<QLatin1String("");
-   QStack<Q3ListViewItem *> stack;
+   QStack<QStandardItem *> stack;
    StandardBookList::iterator it;
    for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
       QString namePath = (*it).path;
@@ -172,54 +88,47 @@ void InitialPhraseBookWidget::initStandardPhraseBooks() {
           && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
 
       for (; it1 != currentNamePath.end(); ++it1) {
-         last = parent;
          parent = stack.pop();
       }
       for (; it2 != dirs.end(); ++it2) {
          stack.push (parent);
-         Q3ListViewItem *newParent;
-         if (parent == 0)
-            newParent = new CheckBookItem (books, last, *it2, *it2, QString());
-         else
-            newParent = new CheckBookItem (parent, last, *it2, *it2, QString());
+         QStandardItem *newParent = new QStandardItem(*it2);
+         newParent->setCheckable(true);
+         parent->appendRow(newParent);
          parent = newParent;
-         last = 0;
       }
       currentNamePath = dirs;
 
-      Q3ListViewItem *book;
-      if (parent == 0)
-         book = new CheckBookItem (books, last, (*it).name, (*it).name, (*it).filename);
-      else
-         book = new CheckBookItem (parent, last, (*it).name, (*it).name, (*it).filename);
-      last = book;
+      QStandardItem *book;
+      book = new QStandardItem((*it).name);
+      book->setData((*it).filename);
+      book->setCheckable(true);
+      parent->appendRow(book);
    }
 }
 
 void InitialPhraseBookWidget::createBook () {
    PhraseBook book;
-   Q3ListViewItem *item = books->firstChild();
-   while (item != 0) {
-      if (item->firstChild() != 0) {
-         item = item->firstChild();
-      }
-      else {
-         if (((Q3CheckListItem*)item)->isOn()) {
-            PhraseBook localBook;
-            localBook.open(KUrl( item->text(PhraseBookPrivate::filename )));
-            book += localBook;
-         }
-
-         while ((item != 0) && (item->nextSibling() == 0)) {
-            item = item->parent();
-         }
-         if (item != 0)
-            item = item->nextSibling();
-      }
-   }
+   QStandardItem *item = m_model->invisibleRootItem();
+   addChildrenToBook(book, item);
 
    QString bookLocation = KGlobal::dirs()->saveLocation ("appdata", QLatin1String( "/" ));
    if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
       book.save (KUrl( bookLocation + QLatin1String( "standard.phrasebook" ) ));
+   }
+}
+
+void InitialPhraseBookWidget::addChildrenToBook(PhraseBook &book, QStandardItem *item)
+{
+   for (int i = 0; i < item->rowCount(); ++i) {
+      QStandardItem *child = item->child(i);
+      if (child->checkState() != Qt::Unchecked) {
+         PhraseBook localBook;
+         if (localBook.open(KUrl( child->data().toString()))) {
+            book += localBook;
+         }
+      }
+      if (child->hasChildren())
+         addChildrenToBook(book, child);
    }
 }
