@@ -17,7 +17,6 @@
 
 // application specific includes
 #include "phraselist.h"
-#include "phraselistitem.h"
 #include "kmouth.h"
 #include "texttospeechsystem.h"
 #include "phrasebook/phrasebook.h"
@@ -32,6 +31,8 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QKeyEvent>
+#include <QStandardItem>
+#include <QListView>
 
 // include files for KDE
 #include <klineedit.h>
@@ -53,11 +54,13 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
    // setBackgroundMode(PaletteBase);
    QVBoxLayout *layout = new QVBoxLayout (this);
 
-   listBox = new K3ListBox (this);
-   listBox->setFocusPolicy(Qt::NoFocus);
-   listBox->setSelectionMode (Q3ListBox::Extended);
-   listBox->setWhatsThis( i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
-   layout->addWidget(listBox);
+   m_listView = new QListView (this);
+   m_model = new QStandardItemModel (this);
+   m_listView->setModel(m_model);
+   m_listView->setFocusPolicy(Qt::NoFocus);
+   m_listView->setSelectionMode (QAbstractItemView::ExtendedSelection);
+   m_listView->setWhatsThis( i18n("This list contains the history of spoken sentences. You can select sentences and press the speak button for re-speaking."));
+   layout->addWidget(m_listView);
 
    QHBoxLayout *rowLayout = new QHBoxLayout ();
    layout->addLayout(rowLayout);
@@ -87,8 +90,8 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
 
    connect(dictionaryCombo, SIGNAL (activated(QString)), completion, SLOT (setWordList(QString)));
    connect(completion, SIGNAL (wordListsChanged(QStringList)), this, SLOT (configureCompletionCombo(QStringList)));
-   connect(listBox,  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
-   connect(listBox,  SIGNAL(contextMenuRequested(Q3ListBoxItem*,QPoint)), SLOT(contextMenuRequested(Q3ListBoxItem*,QPoint)));
+   connect(m_listView->selectionModel(),  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
+   connect(m_listView,  SIGNAL(customContextMenuRequested(QPoint)), SLOT(contextMenuRequested(QPoint)));
    connect(lineEdit, SIGNAL(returnPressed(QString)), SLOT(lineEntered(QString)));
    connect(lineEdit, SIGNAL(textChanged(QString)), SLOT(textChanged(QString)));
    connect(speakButton, SIGNAL(clicked()), SLOT(speak()));
@@ -96,13 +99,16 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
 
 PhraseList::~PhraseList() {
    delete speakButton;
-   delete listBox;
+   delete m_model;
    delete lineEdit;
 }
 
 void PhraseList::print(QPrinter *pPrinter) {
    PhraseBook book;
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   QStandardItem *rootItem = m_model->invisibleRootItem();
+   int count = rootItem->rowCount();
+   for (int i = 0; i < count; ++i) {
+      QStandardItem *item = rootItem->child(i);
       book += PhraseBookEntry(Phrase(item->text()));
    }
 
@@ -112,8 +118,12 @@ void PhraseList::print(QPrinter *pPrinter) {
 QStringList PhraseList::getListSelection() {
    QStringList res = QStringList();
 
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
-      if (item->isSelected())
+   QStandardItem *rootItem = m_model->invisibleRootItem();
+   int count = rootItem->rowCount();
+   QItemSelectionModel *selection = m_listView->selectionModel();
+   for (int i = 0; i < count; ++i) {
+      QStandardItem *item = rootItem->child(i);
+      if (selection->isSelected(m_model->indexFromItem(item)))
          res += item->text();
    }
 
@@ -121,12 +131,7 @@ QStringList PhraseList::getListSelection() {
 }
 
 bool PhraseList::existListSelection() {
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
-      if (item->isSelected())
-         return true;
-   }
-
-   return false;
+   return m_listView->selectionModel()->hasSelection();
 }
 
 bool PhraseList::existEditSelection() {
@@ -135,12 +140,16 @@ bool PhraseList::existEditSelection() {
 
 void PhraseList::enableMenuEntries() {
    bool deselected = false;
-   bool selected = false;
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
-      if (item->isSelected())
-         selected = true;
-      else
+   bool selected = existListSelection();
+   QStandardItem *rootItem = m_model->invisibleRootItem();
+   int count = rootItem->rowCount();
+   QItemSelectionModel *selection = m_listView->selectionModel();
+   for (int i = 0; i < count; ++i) {
+      QStandardItem *item = rootItem->child(i);
+      if (!selection->isSelected(m_model->indexFromItem(item))) {
          deselected = true;
+         break;
+      }
    }
    KMouthApp *theApp=(KMouthApp *) parentWidget();
    theApp->enableMenuEntries (selected, deselected);
@@ -213,11 +222,11 @@ void PhraseList::saveWordCompletion () {
 
 
 void PhraseList::selectAllEntries () {
-   listBox->selectAll (true);
+   m_listView->selectAll ();
 }
 
 void PhraseList::deselectAllEntries () {
-   listBox->selectAll (false);
+   m_listView->clearSelection ();
 }
 
 void PhraseList::speak () {
@@ -257,14 +266,15 @@ void PhraseList::speakListSelection () {
 }
 
 void PhraseList::removeListSelection () {
-   Q3ListBoxItem *next;
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = next) {
-      next = item->next();
-
-      if (item->isSelected()) {
-         listBox->removeItem(listBox->index(item));
-      }
-   }
+    if (m_listView->selectionModel()->hasSelection()) {
+        QList<QModelIndex> selected = m_listView->selectionModel()->selectedRows();
+        qSort(selected.begin(), selected.end());
+        // Iterate over the rows backwards so we don't modify the .row of any indexes in selected.
+        for (int i = selected.size() - 1; i >= 0; --i) {
+            QModelIndex index = selected.at(i);
+            m_model->removeRows(index.row(), 1);
+        }
+    }
    enableMenuEntries ();
 }
 
@@ -296,9 +306,10 @@ void PhraseList::speakPhrase (const QString &phrase) {
 }
 
 void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine) {
-   int lastLine = listBox->count() - 1;
-   if ((lastLine == -1) || (phrase != listBox->text(lastLine))) {
-      listBox->insertItem(new PhraseListItem(phrase));
+   int lastLine = m_model->rowCount() - 1;
+   if ((lastLine == -1) || (phrase != m_model->data(m_model->index(lastLine, 0)).toString())) {
+      QStandardItem *item = new QStandardItem(phrase);
+      m_model->appendRow(item);
       if (clearEditLine)
          completion->addSentence (phrase);
    }
@@ -310,7 +321,7 @@ void PhraseList::insertIntoPhraseList (const QString &phrase, bool clearEditLine
    enableMenuEntries ();
 }
 
-void PhraseList::contextMenuRequested (Q3ListBoxItem *, const QPoint &pos) {
+void PhraseList::contextMenuRequested (const QPoint &pos) {
    QString name;
    if (existListSelection())
       name = QLatin1String( "phraselist_selection_popup" );
@@ -329,8 +340,8 @@ void PhraseList::textChanged (const QString &s) {
    if (!isInSlot) {
       isInSlot = true;
       line = s;
-      listBox->setCurrentItem (listBox->count() - 1);
-      listBox->clearSelection ();
+      m_listView->setCurrentIndex (m_model->index(m_model->rowCount() - 1, 0));
+      m_listView->clearSelection ();
       isInSlot = false;
    }
 }
@@ -362,63 +373,49 @@ void PhraseList::setEditLineText(const QString &s) {
 
 void PhraseList::keyPressEvent (QKeyEvent *e) {
    if (e->key() == Qt::Key_Up) {
-      bool selected = false;
-      for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
-         if (item->isSelected()) {
-            selected = true;
-         }
-      }
+      bool selected = m_listView->selectionModel()->hasSelection();
 
       if (!selected) {
-         listBox->setCurrentItem (listBox->count() - 1);
-         listBox->setSelected (listBox->count() - 1, true);
-         listBox->ensureCurrentVisible ();
+         m_listView->setCurrentIndex (m_model->index(m_model->rowCount() - 1, 0));
+         //listBox->ensureCurrentVisible ();
       }
       else {
-         int curr = listBox->currentItem();
+         int curr = m_listView->currentIndex().row();
 
          if (curr == -1) {
             isInSlot = true;
-            listBox->clearSelection();
+            m_listView->clearSelection();
             isInSlot = false;
-            curr = listBox->count() - 1;
-            listBox->setCurrentItem (curr);
-            listBox->setSelected (curr, true);
-            listBox->ensureCurrentVisible ();
+            curr = m_model->rowCount() - 1;
+            m_listView->setCurrentIndex( m_model->index(curr, 0));
+            //listBox->ensureCurrentVisible ();
          }
          else if (curr != 0) {
             isInSlot = true;
-            listBox->clearSelection();
+            m_listView->clearSelection();
             isInSlot = false;
-            listBox->setCurrentItem (curr - 1);
-            listBox->setSelected (curr - 1, true);
-            listBox->ensureCurrentVisible ();
+            m_listView->setCurrentIndex ( m_model->index(curr - 1, 0));
+            //listBox->ensureCurrentVisible ();
          }
       }
 
       e->accept();
    }
    else if (e->key() == Qt::Key_Down) {
-      bool selected = false;
-      for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
-         if (item->isSelected()) {
-            selected = true;
-         }
-      }
+      bool selected = m_listView->selectionModel()->hasSelection();
 
       if (selected) {
-         int curr = listBox->currentItem();
+         int curr = m_listView->currentIndex().row();
 
-         if (curr == (int)listBox->count() - 1) {
-            listBox->clearSelection();
+         if (curr == (int)m_model->rowCount() - 1) {
+            m_listView->clearSelection();
          }
          else if (curr != -1) {
             isInSlot = true;
-            listBox->clearSelection();
+            m_listView->clearSelection();
             isInSlot = false;
-            listBox->setCurrentItem (curr + 1);
-            listBox->setSelected (curr + 1, true);
-            listBox->ensureCurrentVisible ();
+            m_listView->setCurrentIndex ( m_model->index(curr + 1, 0));
+            //listBox->ensureCurrentVisible ();
          }
       }
       e->accept();
@@ -444,7 +441,10 @@ void PhraseList::save () {
    // format we use that method here.
 
    PhraseBook book;
-   for (Q3ListBoxItem *item = listBox->firstItem(); item != 0; item = item->next()) {
+   QStandardItem *rootItem = m_model->invisibleRootItem();
+   int count = m_model->rowCount();
+   for (int i = 0; i < count; ++i) {
+      QStandardItem *item = rootItem->child(i);
       book += PhraseBookEntry(Phrase(item->text()));
    }
 
@@ -470,7 +470,7 @@ void PhraseList::open (KUrl url) {
    if (book.open (url)) {
       // convert PhraseBookEntryList -> QStringList
       QStringList list = book.toStringList();
-      listBox->clear();
+      m_model->clear();
       QStringList::iterator it;
       for (it = list.begin(); it != list.end(); ++it)
          insertIntoPhraseList (*it, false);

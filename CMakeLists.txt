@@ -11,7 +11,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
-add_definitions (-DQT3_SUPPORT)
+# add_definitions (-DQT3_SUPPORT)
 set(libphrasebook_SRCS
 	./phrasebook/phrasebookparser.cpp
 	./phrasebook/phrasebookdialog.cpp
@@ -50,7 +50,6 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
    phraselist.cpp
    speech.cpp
    texttospeechsystem.cpp
-   phraselistitem.cpp
    kmouth.cpp
    main.cpp )
 

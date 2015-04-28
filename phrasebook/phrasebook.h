@@ -19,7 +19,6 @@
 #define PHRASEBOOK_H
 
 #include <QtCore/QObject>
-#include <Qt3Support/Q3DragObject>
 #include <QtCore/QTextStream>
 #include <QtGui/QMenu>
 #include <QtGui/QPrinter>
@@ -157,32 +156,6 @@ public:
 
 private:
     static QString displayPath (QString path);
-};
-
-/**
- * The class PhraseBookDrag implements drag and drop support for phrase books.
- * @author Gunnar Schmi Dt
- */
-class PhraseBookDrag: public Q3DragObject {
-   Q_OBJECT
-public:
-   explicit PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
-   explicit PhraseBookDrag (QWidget *dragSource = 0, const char *name = 0);
-   ~PhraseBookDrag ();
-
-   virtual void setBook (PhraseBook *book);
-
-   const char *format (int i) const;
-   virtual QByteArray encodedData (const char *) const;
-
-   static bool canDecode (const QMimeSource *e);
-   static bool decode (const QMimeSource *e, PhraseBook *book);
-
-private:
-   bool isEmpty;
-   Q3TextDrag xmlphrasebook;
-   Q3TextDrag xml;
-   Q3TextDrag plain;
 };
 
 class PhraseAction : public KAction {

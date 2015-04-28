@@ -19,7 +19,6 @@
 #define PHRASELIST_H
 
 // include files for KDE
-#include <k3listbox.h>
 #include <klineedit.h>
 #include <kconfig.h>
 #include <kcombobox.h>
@@ -30,6 +29,8 @@
 #include <QtGui/QKeyEvent>
 #include <QtGui/QPrinter>
 
+class QListView;
+class QStandardItemModel;
 class WordCompletion;
 
 /**
@@ -37,7 +38,7 @@ class WordCompletion;
  * the phraselist and also methods for viewing the list.
  * The phrase list consists of an edit field for entering phrases and a list
  * box for the spoken phrases.
- * 
+ *
  * @author Gunnar Schmi Dt
  */
 
@@ -46,12 +47,12 @@ class PhraseList : public QWidget  {
 public:
    explicit PhraseList(QWidget *parent=0, const char *name=0);
    ~PhraseList();
-   
+
    /** contains the implementation for printing functionality */
    void print(QPrinter *pPrinter);
 
    QStringList getListSelection();
-   
+
    bool existListSelection();
    bool existEditSelection();
 
@@ -62,7 +63,7 @@ public slots:
    void cut();
    void copy();
    void paste();
-   
+
    /** Insert s into the edit field. */
    void insert (const QString &s);
 
@@ -76,7 +77,7 @@ public slots:
    void save ();
    void open ();
    void open (KUrl url);
-   
+
    void selectAllEntries ();
    void deselectAllEntries ();
 
@@ -87,26 +88,27 @@ public slots:
 
 protected slots:
    void lineEntered (const QString &phrase);
-   void contextMenuRequested (Q3ListBoxItem *, const QPoint &pos);
+   void contextMenuRequested (const QPoint &pos);
    void textChanged (const QString &s);
    void selectionChanged ();
    void keyPressEvent (QKeyEvent *e);
    void configureCompletionCombo(const QStringList &list);
 
 private:
-   K3ListBox *listBox;
+   QListView *m_listView;
+   QStandardItemModel *m_model;
    KComboBox *dictionaryCombo;
    KLineEdit *lineEdit;
    QPushButton *speakButton;
    QString line;
    WordCompletion *completion;
-  
+
    bool isInSlot;
-   
+
    void speakPhrase (const QString &phrase);
    void setEditLineText(const QString &s);
    void insertIntoPhraseList (const QString &phrase, bool clearEditLine);
-   
+
    void enableMenuEntries ();
 };
 

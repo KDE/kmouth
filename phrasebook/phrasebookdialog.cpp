@@ -19,6 +19,7 @@
 
 // include files for Qt
 #include <QClipboard>
+#include <QMimeData>
 #include <QStack>
 #include <QDebug>
 

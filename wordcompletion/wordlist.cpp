@@ -28,6 +28,7 @@
 #include <QtXml/QXmlSimpleReader>
 #include <QProgressDialog>
 #include <QApplication>
+#include <QTextCodec>
 
 #include <kstandarddirs.h>
 #include <klocale.h>
