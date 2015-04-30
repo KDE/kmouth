@@ -114,8 +114,7 @@ WordMap XMLParser::getList() {
 
 QProgressDialog *progressDialog() {
    QProgressDialog *pdlg = new QProgressDialog(i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), 0, 100);
-   //pdlg->setAllowCancel (false);
-   //pdlg->showCancelButton (false);
+   pdlg->setCancelButton(0);
    pdlg->setAutoReset(false);
    pdlg->setAutoClose(false);
    return pdlg;
