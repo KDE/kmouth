@@ -90,7 +90,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent) {
 
    connect(dictionaryCombo, SIGNAL (activated(QString)), completion, SLOT (setWordList(QString)));
    connect(completion, SIGNAL (wordListsChanged(QStringList)), this, SLOT (configureCompletionCombo(QStringList)));
-   connect(m_listView->selectionModel(),  SIGNAL(selectionChanged()), SLOT(selectionChanged()));
+   connect(m_listView->selectionModel(),  SIGNAL(selectionChanged(QItemSelection,QItemSelection)), SLOT(selectionChanged()));
    connect(m_listView,  SIGNAL(customContextMenuRequested(QPoint)), SLOT(contextMenuRequested(QPoint)));
    connect(lineEdit, SIGNAL(returnPressed(QString)), SLOT(lineEntered(QString)));
    connect(lineEdit, SIGNAL(textChanged(QString)), SLOT(textChanged(QString)));
