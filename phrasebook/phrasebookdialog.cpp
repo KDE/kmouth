@@ -525,7 +525,7 @@ QModelIndex PhraseBookDialog::getCurrentParent()
 {
    QModelIndex currentIndex = m_ui->treeView->currentIndex();
    QStandardItem *item = m_bookModel->itemFromIndex(currentIndex);
-   if (!item->isDropEnabled()) // If it's not a book
+   if (item != NULL && !item->isDropEnabled()) // If it's not a book
        currentIndex = currentIndex.parent();
    return currentIndex;
 }
@@ -547,7 +547,10 @@ void PhraseBookDialog::slotAddPhrasebook () {
 
    QList<QStandardItem*> items;
    items << item << shortcutItem;
-   parent->appendRow(items);
+   if (parent)
+      parent->appendRow(items);
+   else
+      m_bookModel->appendRow(items);
    focusNewItem(parentIndex, item);
 }
 
@@ -562,7 +565,10 @@ void PhraseBookDialog::slotAddPhrase () {
 
    QList<QStandardItem*> items;
    items << item << shortcutItem;
-   parent->appendRow(items);
+   if (parent)
+      parent->appendRow(items);
+   else
+      m_bookModel->appendRow(items);
    focusNewItem(parentIndex, item);
 }
 
