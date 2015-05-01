@@ -30,20 +30,21 @@
 class QTextCodec;
 class QProgressDialog;
 
-namespace WordList {
+namespace WordList
+{
 
-typedef QMap<QString,int> WordMap;
+typedef QMap<QString, int> WordMap;
 
 QProgressDialog *progressDialog();
 
-WordMap parseKDEDoc (QString language, QProgressDialog *pdlg);
-WordMap parseFile   (QString filename, QTextCodec *codec, QProgressDialog *pdlg);
-WordMap parseDir    (QString directory, QTextCodec *codec, QProgressDialog *pdlg);
-WordMap mergeFiles  (QMap<QString,int> files, QProgressDialog *pdlg);
+WordMap parseKDEDoc(QString language, QProgressDialog *pdlg);
+WordMap parseFile(QString filename, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap parseDir(QString directory, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap mergeFiles(QMap<QString, int> files, QProgressDialog *pdlg);
 
-WordMap spellCheck  (WordMap wordlist,  QString dictionary,   QProgressDialog *pdlg);
+WordMap spellCheck(WordMap wordlist,  QString dictionary,   QProgressDialog *pdlg);
 
-bool saveWordList (WordMap map, QString filename);
+bool saveWordList(WordMap map, QString filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word
@@ -51,41 +52,42 @@ bool saveWordList (WordMap map, QString filename);
  * @author Gunnar Schmi Dt
  */
 
-class XMLParser : public QXmlDefaultHandler {
+class XMLParser : public QXmlDefaultHandler
+{
 public:
-   XMLParser();
-   ~XMLParser();
+    XMLParser();
+    ~XMLParser();
 
-   bool warning (const QXmlParseException &exception);
-   bool error (const QXmlParseException &exception);
-   bool fatalError (const QXmlParseException &exception);
-   QString errorString() const;
+    bool warning(const QXmlParseException &exception);
+    bool error(const QXmlParseException &exception);
+    bool fatalError(const QXmlParseException &exception);
+    QString errorString() const;
 
-   /** Processes the start of the document. */
-   bool startDocument();
+    /** Processes the start of the document. */
+    bool startDocument();
 
-   /** Processes the start tag of an element. */
-   bool startElement (const QString &, const QString &, const QString &name,
+    /** Processes the start tag of an element. */
+    bool startElement(const QString &, const QString &, const QString &name,
                       const QXmlAttributes &attributes);
 
-   /** Processes a chunk of normal character data. */
-   bool characters (const QString &ch);
+    /** Processes a chunk of normal character data. */
+    bool characters(const QString &ch);
 
-   /** Processes whitespace. */
-   bool ignorableWhitespace (const QString &ch);
+    /** Processes whitespace. */
+    bool ignorableWhitespace(const QString &ch);
 
-   /** Processes the end tag of an element. */
-   bool endElement (const QString &, const QString &, const QString &name);
+    /** Processes the end tag of an element. */
+    bool endElement(const QString &, const QString &, const QString &name);
 
-   /** Processes the end of the document. */
-   bool endDocument();
+    /** Processes the end of the document. */
+    bool endDocument();
 
-   /** returns a list of words */
-   WordMap getList();
+    /** returns a list of words */
+    WordMap getList();
 
 private:
-   WordMap list;
-   QString text;
+    WordMap list;
+    QString text;
 };
 
 }

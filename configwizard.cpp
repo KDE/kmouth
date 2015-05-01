@@ -32,113 +32,118 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard (QWidget *parent, KConfig *config)
-             : QWizard(parent), m_config(config)
+ConfigWizard::ConfigWizard(QWidget *parent, KConfig *config)
+    : QWizard(parent), m_config(config)
 {
-   setWindowTitle(i18n("Initial Configuration - KMouth"));
-   initCommandPage ();
-   initBookPage ();
-   initCompletion ();
-   connect (this, SIGNAL(accepted()), this, SLOT(saveConfig()));
+    setWindowTitle(i18n("Initial Configuration - KMouth"));
+    initCommandPage();
+    initBookPage();
+    initCompletion();
+    connect(this, SIGNAL(accepted()), this, SLOT(saveConfig()));
 }
 
-ConfigWizard::~ConfigWizard() {
+ConfigWizard::~ConfigWizard()
+{
 }
 
-void ConfigWizard::initCommandPage() {
-   KConfigGroup cg(m_config, QLatin1String( "TTS System" ));
-   bool displayCommand = false;
-   if (!cg.hasKey("StdIn"))   displayCommand = true;
-   if (!cg.hasKey("Codec"))   displayCommand = true;
+void ConfigWizard::initCommandPage()
+{
+    KConfigGroup cg(m_config, QLatin1String("TTS System"));
+    bool displayCommand = false;
+    if (!cg.hasKey("StdIn"))   displayCommand = true;
+    if (!cg.hasKey("Codec"))   displayCommand = true;
 
-   if (displayCommand) {
-      commandWidget = new TextToSpeechConfigurationWidget (this, "ttsPage");
-      commandWidget->readOptions (m_config, QLatin1String( "TTS System" ));
-      commandWidget->setTitle(i18n("Text-to-Speech Configuration"));
-      addPage (commandWidget);
-      commandWidget->setFinalPage (true);
-   }
-   else
-      commandWidget = 0;
+    if (displayCommand) {
+        commandWidget = new TextToSpeechConfigurationWidget(this, "ttsPage");
+        commandWidget->readOptions(m_config, QLatin1String("TTS System"));
+        commandWidget->setTitle(i18n("Text-to-Speech Configuration"));
+        addPage(commandWidget);
+        commandWidget->setFinalPage(true);
+    } else
+        commandWidget = 0;
 }
 
-void ConfigWizard::initBookPage() {
-   QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String( "standard.phrasebook" ));
-   bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
+void ConfigWizard::initBookPage()
+{
+    QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String("standard.phrasebook"));
+    bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
-   if (displayBook) {
-      bookWidget = new InitialPhraseBookWidget (this, "pbPage");
-      bookWidget->setTitle (i18n ("Initial Phrase Book"));
-      addPage (bookWidget);
-      bookWidget->setFinalPage (true);
-      if (commandWidget != 0)
-         commandWidget->setFinalPage (false);
-   }
-   else
-      bookWidget = 0;
+    if (displayBook) {
+        bookWidget = new InitialPhraseBookWidget(this, "pbPage");
+        bookWidget->setTitle(i18n("Initial Phrase Book"));
+        addPage(bookWidget);
+        bookWidget->setFinalPage(true);
+        if (commandWidget != 0)
+            commandWidget->setFinalPage(false);
+    } else
+        bookWidget = 0;
 }
 
-void ConfigWizard::initCompletion () {
-   if (!WordCompletion::isConfigured()) {
-      QString dictionaryFile = KGlobal::dirs()->findResource("appdata", QLatin1String( "dictionary.txt" ));
-      QFile file(dictionaryFile);
-      if (file.exists()) {
-         // If there is a word completion dictionary but no entry in the
-         // configuration file, we need to add it there.
-		 KConfigGroup cg (m_config ,"Dictionary 0");
-         cg.writeEntry ("Filename", "dictionary.txt");
-         cg.writeEntry ("Name",     "Default");
-         cg.writeEntry ("Language", QString());
-         cg.sync();
-      }
-   }
+void ConfigWizard::initCompletion()
+{
+    if (!WordCompletion::isConfigured()) {
+        QString dictionaryFile = KGlobal::dirs()->findResource("appdata", QLatin1String("dictionary.txt"));
+        QFile file(dictionaryFile);
+        if (file.exists()) {
+            // If there is a word completion dictionary but no entry in the
+            // configuration file, we need to add it there.
+            KConfigGroup cg(m_config , "Dictionary 0");
+            cg.writeEntry("Filename", "dictionary.txt");
+            cg.writeEntry("Name",     "Default");
+            cg.writeEntry("Language", QString());
+            cg.sync();
+        }
+    }
 
-   if (m_config->hasGroup("Completion")) {
-      completionWidget = 0;
-      return;
-   }
+    if (m_config->hasGroup("Completion")) {
+        completionWidget = 0;
+        return;
+    }
 
-   if (!WordCompletion::isConfigured()) {
-      completionWidget = new CompletionWizardWidget(this, "completionPage");
-      completionWidget->setTitle (i18n ("Word Completion"));
-      addPage (completionWidget);
-      completionWidget->setFinalPage (true);
+    if (!WordCompletion::isConfigured()) {
+        completionWidget = new CompletionWizardWidget(this, "completionPage");
+        completionWidget->setTitle(i18n("Word Completion"));
+        addPage(completionWidget);
+        completionWidget->setFinalPage(true);
 
-      if (commandWidget != 0)
-         commandWidget->setFinalPage (false);
-      if (bookWidget != 0)
-         bookWidget->setFinalPage (false);
-   }
-   else
-      completionWidget = 0;
+        if (commandWidget != 0)
+            commandWidget->setFinalPage(false);
+        if (bookWidget != 0)
+            bookWidget->setFinalPage(false);
+    } else
+        completionWidget = 0;
 }
 
-void ConfigWizard::saveConfig () {
-   if (commandWidget != 0) {
-      commandWidget->ok();
-      commandWidget->saveOptions (m_config, QLatin1String( "TTS System" ));
-   }
+void ConfigWizard::saveConfig()
+{
+    if (commandWidget != 0) {
+        commandWidget->ok();
+        commandWidget->saveOptions(m_config, QLatin1String("TTS System"));
+    }
 
-   if (bookWidget != 0)
-      bookWidget->createBook();
+    if (bookWidget != 0)
+        bookWidget->createBook();
 
-   if (completionWidget != 0)
-      completionWidget->ok (m_config);
+    if (completionWidget != 0)
+        completionWidget->ok(m_config);
 }
 
-bool ConfigWizard::requestConfiguration () {
-   if (commandWidget != 0 || bookWidget != 0 || completionWidget != 0)
-      return (exec() == QDialog::Accepted);
-   else
-      return false;
+bool ConfigWizard::requestConfiguration()
+{
+    if (commandWidget != 0 || bookWidget != 0 || completionWidget != 0)
+        return (exec() == QDialog::Accepted);
+    else
+        return false;
 }
 
-bool ConfigWizard::configurationNeeded () {
-   return (commandWidget != 0 || bookWidget != 0 || completionWidget != 0);
+bool ConfigWizard::configurationNeeded()
+{
+    return (commandWidget != 0 || bookWidget != 0 || completionWidget != 0);
 }
 
-void ConfigWizard::help () {
-   KToolInvocation::invokeHelp (QLatin1String( "Wizard" ));
+void ConfigWizard::help()
+{
+    KToolInvocation::invokeHelp(QLatin1String("Wizard"));
 }
 
 #include "configwizard.moc"

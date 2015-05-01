@@ -35,29 +35,33 @@ class KToolBarPopupAction;
  * inserting a standard phrase book.
  * @author Gunnar Schmi Dt
  */
-class StandardPhraseBookInsertAction : public KAction {
-   Q_OBJECT
+class StandardPhraseBookInsertAction : public KAction
+{
+    Q_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon(QLatin1String( "phrasebook" )), name, parent) {
-      this->url = url;
-      connect (this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
-      connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
-      parent->addAction(name, this);
-   }
-   ~StandardPhraseBookInsertAction () {
-   }
+    StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+        : KAction(KIcon(QLatin1String("phrasebook")), name, parent)
+    {
+        this->url = url;
+        connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
+        connect(this, SIGNAL(slotActivated(const KUrl &)), receiver, slot);
+        parent->addAction(name, this);
+    }
+    ~StandardPhraseBookInsertAction()
+    {
+    }
 
 public slots:
-   void slotActivated () {
-      emit slotActivated (url);
-   }
+    void slotActivated()
+    {
+        emit slotActivated(url);
+    }
 
 signals:
-   void slotActivated (const KUrl &url);
+    void slotActivated(const KUrl &url);
 
 private:
-   KUrl url;
+    KUrl url;
 };
 
 /**
@@ -65,102 +69,103 @@ private:
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookDialog : public KXmlGuiWindow {
-   friend class InitialPhraseBookWidget;
-   Q_OBJECT
+class PhraseBookDialog : public KXmlGuiWindow
+{
+    friend class InitialPhraseBookWidget;
+    Q_OBJECT
 private:
-   /** Constructor. It is private because this class implements the singleton
-    * pattern. For creating the instance of the dialog, use the get() method.
-    */
-   PhraseBookDialog ();
+    /** Constructor. It is private because this class implements the singleton
+     * pattern. For creating the instance of the dialog, use the get() method.
+     */
+    PhraseBookDialog();
 
 public:
-   /** Returns a pointer to the instance of this dialog. As a part off the
-    * singleton pattern it will make sure that there is at most one instance
-    * of the dialog at a given time.
-    */
-   static PhraseBookDialog *get();
+    /** Returns a pointer to the instance of this dialog. As a part off the
+     * singleton pattern it will make sure that there is at most one instance
+     * of the dialog at a given time.
+     */
+    static PhraseBookDialog *get();
 
-   /** Destructor. */
-   ~PhraseBookDialog();
+    /** Destructor. */
+    ~PhraseBookDialog();
 
-   bool queryClose ();
+    bool queryClose();
 
 public slots:
-   void slotTextChanged (const QString &s);
-   void slotNoKey();
-   void slotCustomKey();
-   void slotKeySequenceChanged (const QKeySequence& sequence);
+    void slotTextChanged(const QString &s);
+    void slotNoKey();
+    void slotCustomKey();
+    void slotKeySequenceChanged(const QKeySequence& sequence);
 
-   void selectionChanged ();
-   void contextMenuRequested(const QPoint &pos);
+    void selectionChanged();
+    void contextMenuRequested(const QPoint &pos);
 
-   void slotRemove ();
-   void slotCut ();
-   void slotCopy ();
-   void slotPaste ();
+    void slotRemove();
+    void slotCut();
+    void slotCopy();
+    void slotPaste();
 
-   void slotAddPhrasebook ();
-   void slotAddPhrase ();
+    void slotAddPhrasebook();
+    void slotAddPhrase();
 
-   void slotSave ();
-   void slotImportPhrasebook ();
-   void slotImportPhrasebook (const KUrl &url);
-   void slotExportPhrasebook ();
-   //void slotPrint ();
+    void slotSave();
+    void slotImportPhrasebook();
+    void slotImportPhrasebook(const KUrl &url);
+    void slotExportPhrasebook();
+    //void slotPrint ();
 
-   void slotModelChanged();
+    void slotModelChanged();
 
 signals:
-   void phrasebookConfirmed ();
+    void phrasebookConfirmed();
 
 private:
-   void initGUI();
-   /** initializes the KActions of the window */
-   void initActions();
-   /** initializes the list of standard phrase books */
-   void initStandardPhraseBooks ();
+    void initGUI();
+    /** initializes the KActions of the window */
+    void initActions();
+    /** initializes the list of standard phrase books */
+    void initStandardPhraseBooks();
 
-   void connectEditor();
-   void disconnectEditor();
+    void connectEditor();
+    void disconnectEditor();
 
-   // Deserialize the book from the given QDomNode and under the given parent
-   // Return the new QStandardItem so it can get focused.
-   QStandardItem* deserializeBook(const QDomNode &node, QStandardItem *parent);
-   // Return a serialized string of the book or phrase at the given index.
-   QString serializeBook(const QModelIndex &index);
+    // Deserialize the book from the given QDomNode and under the given parent
+    // Return the new QStandardItem so it can get focused.
+    QStandardItem* deserializeBook(const QDomNode &node, QStandardItem *parent);
+    // Return a serialized string of the book or phrase at the given index.
+    QString serializeBook(const QModelIndex &index);
 
-   // Get the current parent, if the current index is not a book, get it's parent.
-   QModelIndex getCurrentParent();
+    // Get the current parent, if the current index is not a book, get it's parent.
+    QModelIndex getCurrentParent();
 
-   // Expand to, select and focus a new item from the given parameters
-   void focusNewItem(QModelIndex parent, QStandardItem *item);
+    // Expand to, select and focus a new item from the given parameters
+    void focusNewItem(QModelIndex parent, QStandardItem *item);
 
-   void setShortcut (const QKeySequence &sequence);
+    void setShortcut(const QKeySequence &sequence);
 
-   bool phrasebookChanged;
+    bool phrasebookChanged;
 
-   QAction* fileNewPhrase;
-   QAction* fileNewBook;
-   QAction* fileSave;
-   QAction* fileImport;
-   KToolBarPopupAction* toolbarImport;
-   KActionMenu* fileImportStandardBook;
-   QAction* fileExport;
-   //QAction* filePrint;
-   QAction* fileClose;
-   QAction* editCut;
-   QAction* editCopy;
-   QAction* editPaste;
-   QAction* editDelete;
+    QAction* fileNewPhrase;
+    QAction* fileNewBook;
+    QAction* fileSave;
+    QAction* fileImport;
+    KToolBarPopupAction* toolbarImport;
+    KActionMenu* fileImportStandardBook;
+    QAction* fileExport;
+    //QAction* filePrint;
+    QAction* fileClose;
+    QAction* editCut;
+    QAction* editCopy;
+    QAction* editPaste;
+    QAction* editDelete;
 
-   QStandardItemModel* m_bookModel;
-   QStandardItem *m_rootItem;
+    QStandardItemModel* m_bookModel;
+    QStandardItem *m_rootItem;
 
-   // Keep QPrinter so settings persist
-   //QPrinter *printer;
+    // Keep QPrinter so settings persist
+    //QPrinter *printer;
 
-   Ui::PhraseBookDialog *m_ui;
+    Ui::PhraseBookDialog *m_ui;
 };
 
 #endif

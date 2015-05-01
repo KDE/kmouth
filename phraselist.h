@@ -42,74 +42,75 @@ class WordCompletion;
  * @author Gunnar Schmi Dt
  */
 
-class PhraseList : public QWidget  {
-   Q_OBJECT
+class PhraseList : public QWidget
+{
+    Q_OBJECT
 public:
-   explicit PhraseList(QWidget *parent=0, const char *name=0);
-   ~PhraseList();
+    explicit PhraseList(QWidget *parent = 0, const char *name = 0);
+    ~PhraseList();
 
-   /** contains the implementation for printing functionality */
-   void print(QPrinter *pPrinter);
+    /** contains the implementation for printing functionality */
+    void print(QPrinter *pPrinter);
 
-   QStringList getListSelection();
+    QStringList getListSelection();
 
-   bool existListSelection();
-   bool existEditSelection();
+    bool existListSelection();
+    bool existEditSelection();
 
 public slots:
-   /** Called whenever the user wants the contents of the edit line to be spoken. */
-   void speak ();
+    /** Called whenever the user wants the contents of the edit line to be spoken. */
+    void speak();
 
-   void cut();
-   void copy();
-   void paste();
+    void cut();
+    void copy();
+    void paste();
 
-   /** Insert s into the edit field. */
-   void insert (const QString &s);
+    /** Insert s into the edit field. */
+    void insert(const QString &s);
 
-   /** Called whenever the user wants the selected list entries to be spoken. */
-   void speakListSelection ();
+    /** Called whenever the user wants the selected list entries to be spoken. */
+    void speakListSelection();
 
-   void removeListSelection ();
-   void cutListSelection ();
-   void copyListSelection ();
+    void removeListSelection();
+    void cutListSelection();
+    void copyListSelection();
 
-   void save ();
-   void open ();
-   void open (KUrl url);
+    void save();
+    void open();
+    void open(KUrl url);
 
-   void selectAllEntries ();
-   void deselectAllEntries ();
+    void selectAllEntries();
+    void deselectAllEntries();
 
-   void configureCompletion();
-   void saveWordCompletion();
-   void saveCompletionOptions(KConfig *config);
-   void readCompletionOptions(KConfig *config);
+    void configureCompletion();
+    void saveWordCompletion();
+    void saveCompletionOptions(KConfig *config);
+    void readCompletionOptions(KConfig *config);
 
 protected slots:
-   void lineEntered (const QString &phrase);
-   void contextMenuRequested (const QPoint &pos);
-   void textChanged (const QString &s);
-   void selectionChanged ();
-   void keyPressEvent (QKeyEvent *e);
-   void configureCompletionCombo(const QStringList &list);
+    void lineEntered(const QString &phrase);
+    void contextMenuRequested(const QPoint &pos);
+    void textChanged(const QString &s);
+    void selectionChanged();
+    void keyPressEvent(QKeyEvent *e);
+    void configureCompletionCombo(const QStringList &list);
 
 private:
-   QListView *m_listView;
-   QStandardItemModel *m_model;
-   KComboBox *dictionaryCombo;
-   KLineEdit *lineEdit;
-   QPushButton *speakButton;
-   QString line;
-   WordCompletion *completion;
+    QListView *m_listView;
+    QStandardItemModel *m_model;
+    KComboBox *dictionaryCombo;
+    KLineEdit *lineEdit;
+    QPushButton *speakButton;
+    QString line;
+    WordCompletion *completion;
 
-   bool isInSlot;
+    bool isInSlot;
 
-   void speakPhrase (const QString &phrase);
-   void setEditLineText(const QString &s);
-   void insertIntoPhraseList (const QString &phrase, bool clearEditLine);
+    void speakPhrase(const QString &phrase);
+    void setEditLineText(const QString &s);
+    void insertIntoPhraseList(const QString &phrase, bool clearEditLine);
 
-   void enableMenuEntries ();
+    void enableMenuEntries();
 };
 
 #endif

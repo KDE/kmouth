@@ -27,27 +27,28 @@ class KConfig;
   *@author Gunnar Schmi Dt
   */
 
-class TextToSpeechSystem : public QObject{
-   Q_OBJECT
-   friend class TextToSpeechConfigurationWidget;
+class TextToSpeechSystem : public QObject
+{
+    Q_OBJECT
+    friend class TextToSpeechConfigurationWidget;
 public:
-   TextToSpeechSystem();
-   ~TextToSpeechSystem();
+    TextToSpeechSystem();
+    ~TextToSpeechSystem();
 
-   void readOptions (KConfig *config, const QString &langGroup);
-   void saveOptions (KConfig *config, const QString &langGroup);
+    void readOptions(KConfig *config, const QString &langGroup);
+    void saveOptions(KConfig *config, const QString &langGroup);
 
 public slots:
-   void speak (const QString &text, const QString &language);
+    void speak(const QString &text, const QString &language);
 
 private:
-   void buildCodecList ();
+    void buildCodecList();
 
-   QList<QTextCodec*> *codecList;
-   int codec;
-   QString ttsCommand;
-   bool stdIn;
-   bool useKttsd;
+    QList<QTextCodec*> *codecList;
+    int codec;
+    QString ttsCommand;
+    bool stdIn;
+    bool useKttsd;
 };
 
 #endif

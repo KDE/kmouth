@@ -26,24 +26,25 @@
   *@author Gunnar Schmi Dt
   */
 
-class TextToSpeechConfigurationWidget : public QWizardPage, public Ui::texttospeechconfigurationui {
-   friend class TextToSpeechConfigurationDialog;
+class TextToSpeechConfigurationWidget : public QWizardPage, public Ui::texttospeechconfigurationui
+{
+    friend class TextToSpeechConfigurationDialog;
 public:
-   TextToSpeechConfigurationWidget(QWidget *parent, const char *name);
-   ~TextToSpeechConfigurationWidget();
+    TextToSpeechConfigurationWidget(QWidget *parent, const char *name);
+    ~TextToSpeechConfigurationWidget();
 
-   TextToSpeechSystem *getTTSSystem() const;
+    TextToSpeechSystem *getTTSSystem() const;
 
-   void readOptions (KConfig *config, const QString &langGroup);
-   void saveOptions (KConfig *config, const QString &langGroup);
+    void readOptions(KConfig *config, const QString &langGroup);
+    void saveOptions(KConfig *config, const QString &langGroup);
 
-   void ok();
-   void cancel();
+    void ok();
+    void cancel();
 
 private:
-   void buildCodecList ();
+    void buildCodecList();
 
-   TextToSpeechSystem *ttsSystem;
+    TextToSpeechSystem *ttsSystem;
 };
 
 #endif // TEXTTOSPEECHCONFIGURATIONWIDGET_H

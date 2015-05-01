@@ -31,24 +31,25 @@ class KToolBarPopupAction;
  * This class represents a widget for configuring the initial phrasebook.
  * @author Gunnar Schmi Dt
  */
-class InitialPhraseBookWidget : public QWizardPage {
-   Q_OBJECT
+class InitialPhraseBookWidget : public QWizardPage
+{
+    Q_OBJECT
 public:
-   InitialPhraseBookWidget(QWidget *parent, const char *name);
-   ~InitialPhraseBookWidget();
+    InitialPhraseBookWidget(QWidget *parent, const char *name);
+    ~InitialPhraseBookWidget();
 
-   void createBook();
+    void createBook();
 
 private slots:
     void slotItemChanged(QStandardItem *item);
 
 private:
-   /** initializes the list of standard phrase books */
-   void initStandardPhraseBooks ();
+    /** initializes the list of standard phrase books */
+    void initStandardPhraseBooks();
 
-   void addChildrenToBook(PhraseBook &book, QStandardItem *item);
+    void addChildrenToBook(PhraseBook &book, QStandardItem *item);
 
-   QStandardItemModel *m_model;
+    QStandardItemModel *m_model;
 };
 
 #endif

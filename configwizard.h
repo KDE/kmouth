@@ -30,30 +30,31 @@ class CompletionWizardWidget;
  * time. It asks the user to provide a first set of configuration data.
  *@author Gunnar Schmi Dt
  */
-class ConfigWizard : public QWizard  {
-   Q_OBJECT
+class ConfigWizard : public QWizard
+{
+    Q_OBJECT
 public:
-   ConfigWizard (QWidget *parent, KConfig *config);
-   ~ConfigWizard();
+    ConfigWizard(QWidget *parent, KConfig *config);
+    ~ConfigWizard();
 
-   bool configurationNeeded ();
-   bool requestConfiguration ();
+    bool configurationNeeded();
+    bool requestConfiguration();
 
 public slots:
-   void saveConfig ();
+    void saveConfig();
 
 protected:
-   void help();
+    void help();
 
 private:
-   void initCommandPage ();
-   void initBookPage();
-   void initCompletion ();
+    void initCommandPage();
+    void initBookPage();
+    void initCompletion();
 
-   TextToSpeechConfigurationWidget *commandWidget;
-   InitialPhraseBookWidget *bookWidget;
-   CompletionWizardWidget *completionWidget;
-   KConfig *m_config;
+    TextToSpeechConfigurationWidget *commandWidget;
+    InitialPhraseBookWidget *bookWidget;
+    CompletionWizardWidget *completionWidget;
+    KConfig *m_config;
 };
 
 #endif
