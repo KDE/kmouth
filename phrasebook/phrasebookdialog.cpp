@@ -21,7 +21,6 @@
 #include <QClipboard>
 #include <QMimeData>
 #include <QStack>
-#include <QDebug>
 
 // include files for KDE
 #include <kactionmenu.h>
@@ -614,7 +613,6 @@ void PhraseBookDialog::slotImportPhrasebook()
 
 void PhraseBookDialog::slotImportPhrasebook(const KUrl &url)
 {
-    qDebug() << "slotImportPhraseBook called with url " << url.url();
     if (!url.isEmpty()) {
         QModelIndex parentIndex = getCurrentParent();
         QStandardItem *parentItem = m_bookModel->itemFromIndex(parentIndex);
@@ -638,7 +636,6 @@ void PhraseBookDialog::slotImportPhrasebook(const KUrl &url)
             }
             focusNewItem(parentIndex, item);
         } else {
-            qDebug() << "Unable to open file";
             KMessageBox::sorry(this, i18n("There was an error loading file\n%1", url.toLocalFile()));
         }
     }
