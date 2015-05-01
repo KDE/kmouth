@@ -120,7 +120,7 @@ QStandardItem* PhraseBookDialog::deserializeBook(const QDomNode &node, QStandard
     text = isBook ? node.attributes().namedItem(kName).nodeValue() : node.lastChild().nodeValue();
     shortcut = isBook ? QString() : node.attributes().namedItem(kShortcut).nodeValue();
 
-    QStandardItem *item = isBook ? new QStandardItem(kPhraseBookIcon, text) : new QStandardItem(text);
+    QStandardItem *item = isBook ? new QStandardItem(kPhraseBookIcon, text) : new QStandardItem(kPhraseIcon, text);
     QStandardItem *shortcutItem = new QStandardItem(shortcut);
 
     if (!isBook) {
@@ -557,7 +557,7 @@ void PhraseBookDialog::slotAddPhrasebook () {
 void PhraseBookDialog::slotAddPhrase () {
    QModelIndex parentIndex = getCurrentParent();
    QStandardItem *parent = m_bookModel->itemFromIndex(parentIndex);
-   QStandardItem *item = new QStandardItem(i18n("(New Phrase)"));
+   QStandardItem *item = new QStandardItem(kPhraseIcon, i18n("(New Phrase)"));
    QStandardItem *shortcutItem = new QStandardItem();
 
    item->setDropEnabled(false);
