@@ -37,217 +37,233 @@
 #include <kpagewidgetmodel.h>
 #include <kparts/componentfactory.h>
 
-PreferencesWidget::PreferencesWidget (QWidget *parent, const char *name)
-   : QWidget (parent)
+PreferencesWidget::PreferencesWidget(QWidget *parent, const char *name)
+    : QWidget(parent)
 {
-   setObjectName( QLatin1String( name ) );
-   setupUi(this);
-   speakCombo->setCurrentIndex (1);
-   speak = false;
+    setObjectName(QLatin1String(name));
+    setupUi(this);
+    speakCombo->setCurrentIndex(1);
+    speak = false;
 
-   closeCombo->setCurrentIndex (2);
-   save = 2;
+    closeCombo->setCurrentIndex(2);
+    save = 2;
 }
 
-PreferencesWidget::~PreferencesWidget() {
+PreferencesWidget::~PreferencesWidget()
+{
 }
 
-void PreferencesWidget::cancel() {
-   if (speak)
-      speakCombo->setCurrentIndex (0);
-   else
-      speakCombo->setCurrentIndex (1);
-   closeCombo->setCurrentIndex (save);
+void PreferencesWidget::cancel()
+{
+    if (speak)
+        speakCombo->setCurrentIndex(0);
+    else
+        speakCombo->setCurrentIndex(1);
+    closeCombo->setCurrentIndex(save);
 }
 
-void PreferencesWidget::ok() {
-   speak = speakCombo->currentIndex () == 0;
-   save  = closeCombo->currentIndex ();
+void PreferencesWidget::ok()
+{
+    speak = speakCombo->currentIndex() == 0;
+    save  = closeCombo->currentIndex();
 }
 
-void PreferencesWidget::readOptions (KConfig *config) {
-   KConfigGroup cg ( config,"Preferences");
-   if (cg.hasKey("AutomaticSpeak"))
-      if (cg.readEntry ("AutomaticSpeak") == QLatin1String( "Yes" ))
-         speak = true;
-      else
-         speak = false;
-   else
-      speak = false;
+void PreferencesWidget::readOptions(KConfig *config)
+{
+    KConfigGroup cg(config, "Preferences");
+    if (cg.hasKey("AutomaticSpeak"))
+        if (cg.readEntry("AutomaticSpeak") == QLatin1String("Yes"))
+            speak = true;
+        else
+            speak = false;
+    else
+        speak = false;
 
-   KConfigGroup cg2 ( config ,"Notification Messages");
-   if (cg2.hasKey("AutomaticSave"))
-      if (cg2.readEntry ("AutomaticSave") == QLatin1String( "Yes" ))
-         save = 0;
-      else
-         save = 1;
-   else
-      save = 2;
+    KConfigGroup cg2(config , "Notification Messages");
+    if (cg2.hasKey("AutomaticSave"))
+        if (cg2.readEntry("AutomaticSave") == QLatin1String("Yes"))
+            save = 0;
+        else
+            save = 1;
+    else
+        save = 2;
 
-   if (speak)
-      speakCombo->setCurrentIndex (0);
-   else
-      speakCombo->setCurrentIndex (1);
-   closeCombo->setCurrentIndex (save);
+    if (speak)
+        speakCombo->setCurrentIndex(0);
+    else
+        speakCombo->setCurrentIndex(1);
+    closeCombo->setCurrentIndex(save);
 }
 
-void PreferencesWidget::saveOptions (KConfig *config) {
-   KConfigGroup cg (config, "Preferences");
-   if (speak)
-      cg.writeEntry ("AutomaticSpeak", "Yes");
-   else
-      cg.writeEntry ("AutomaticSpeak", "No");
+void PreferencesWidget::saveOptions(KConfig *config)
+{
+    KConfigGroup cg(config, "Preferences");
+    if (speak)
+        cg.writeEntry("AutomaticSpeak", "Yes");
+    else
+        cg.writeEntry("AutomaticSpeak", "No");
 
-   KConfigGroup cg2 (config, "Notification Messages");
-   if (save == 0)
-      cg2.writeEntry ("AutomaticSave", "Yes");
-   else if (save == 1)
-      cg2.writeEntry ("AutomaticSave", "No");
-   else
-      cg2.deleteEntry ("AutomaticSave");
+    KConfigGroup cg2(config, "Notification Messages");
+    if (save == 0)
+        cg2.writeEntry("AutomaticSave", "Yes");
+    else if (save == 1)
+        cg2.writeEntry("AutomaticSave", "No");
+    else
+        cg2.deleteEntry("AutomaticSave");
 }
 
-bool PreferencesWidget::isSpeakImmediately () {
-   return speak;
+bool PreferencesWidget::isSpeakImmediately()
+{
+    return speak;
 }
 
 /***************************************************************************/
 
-OptionsDialog::OptionsDialog (QWidget *parent)
-   : KPageDialog(parent)
+OptionsDialog::OptionsDialog(QWidget *parent)
+    : KPageDialog(parent)
 {
-   setCaption(i18n("Configuration"));
-   setButtons(KDialog::Ok|KDialog::Apply|KDialog::Cancel|KDialog::Help);
-   setFaceType(KPageDialog::List);
-   setHelp (QLatin1String( "config-dialog" ));
+    setCaption(i18n("Configuration"));
+    setButtons(KDialog::Ok | KDialog::Apply | KDialog::Cancel | KDialog::Help);
+    setFaceType(KPageDialog::List);
+    setHelp(QLatin1String("config-dialog"));
 
 
-	   //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
+    //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
 
-   tabCtl = new KTabWidget();
-   tabCtl->setObjectName( QLatin1String("general" ));
+    tabCtl = new KTabWidget();
+    tabCtl->setObjectName(QLatin1String("general"));
 
-   behaviourWidget = new PreferencesWidget (tabCtl, "prefPage");
-   behaviourWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (behaviourWidget, i18n("&Preferences"));
+    behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");
+    behaviourWidget->layout()->setMargin(KDialog::marginHint());
+    tabCtl->addTab(behaviourWidget, i18n("&Preferences"));
 
-   commandWidget = new TextToSpeechConfigurationWidget (tabCtl, "ttsTab");
-   commandWidget->layout()->setMargin(KDialog::marginHint());
-   tabCtl->addTab (commandWidget, i18n("&Text-to-Speech"));
+    commandWidget = new TextToSpeechConfigurationWidget(tabCtl, "ttsTab");
+    commandWidget->layout()->setMargin(KDialog::marginHint());
+    tabCtl->addTab(commandWidget, i18n("&Text-to-Speech"));
 
-   KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
-   pageGeneral->setHeader(i18n("General Options"));
-   pageGeneral->setIcon(KIcon( QLatin1String( "configure" )));
-   addPage(pageGeneral);
+    KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
+    pageGeneral->setHeader(i18n("General Options"));
+    pageGeneral->setIcon(KIcon(QLatin1String("configure")));
+    addPage(pageGeneral);
 
-   completionWidget = new WordCompletionWidget(0, "Word Completion widget");
-   KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
-   pageCompletion->setHeader(i18n("Word Completion"));
-   pageCompletion->setIcon(KIcon( QLatin1String( "keyboard" )));
-   addPage(pageCompletion);
+    completionWidget = new WordCompletionWidget(0, "Word Completion widget");
+    KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
+    pageCompletion->setHeader(i18n("Word Completion"));
+    pageCompletion->setIcon(KIcon(QLatin1String("keyboard")));
+    addPage(pageCompletion);
 
-   kttsd = loadKttsd();
-   if (kttsd != 0) {
-      KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("Jovie Speech Service"));
-      pageKttsd->setIcon(KIcon( QLatin1String( "multimedia" )));
-      pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
-      addPage(pageKttsd);
-   }
+    kttsd = loadKttsd();
+    if (kttsd != 0) {
+        KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("Jovie Speech Service"));
+        pageKttsd->setIcon(KIcon(QLatin1String("multimedia")));
+        pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
+        addPage(pageKttsd);
+    }
 
-   setDefaultButton(KDialog::Cancel);
+    setDefaultButton(KDialog::Cancel);
 
-   connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
-   connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));
-   connect(this, SIGNAL(applyClicked()), this, SLOT(slotApply()));
+    connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
+    connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));
+    connect(this, SIGNAL(applyClicked()), this, SLOT(slotApply()));
 }
 
-OptionsDialog::~OptionsDialog() {
-   unloadKttsd();
+OptionsDialog::~OptionsDialog()
+{
+    unloadKttsd();
 }
 
-void OptionsDialog::slotCancel() {
+void OptionsDialog::slotCancel()
+{
 //   KDialog::slotCancel();
-   commandWidget->cancel();
-   behaviourWidget->cancel();
-   completionWidget->load();
-   if (kttsd != 0)
-      kttsd->load ();
+    commandWidget->cancel();
+    behaviourWidget->cancel();
+    completionWidget->load();
+    if (kttsd != 0)
+        kttsd->load();
 }
 
-void OptionsDialog::slotOk() {
+void OptionsDialog::slotOk()
+{
 //   KDialog::slotOk();
-   commandWidget->ok();
-   behaviourWidget->ok();
-   completionWidget->save();
-   emit configurationChanged();
-   if (kttsd != 0)
-      kttsd->save ();
+    commandWidget->ok();
+    behaviourWidget->ok();
+    completionWidget->save();
+    emit configurationChanged();
+    if (kttsd != 0)
+        kttsd->save();
 
 }
 
-void OptionsDialog::slotApply() {
+void OptionsDialog::slotApply()
+{
 //   KDialog::slotApply();
-   commandWidget->ok();
-   behaviourWidget->ok();
-   completionWidget->save();
-   emit configurationChanged();
-   if (kttsd != 0)
-      kttsd->save ();
+    commandWidget->ok();
+    behaviourWidget->ok();
+    completionWidget->save();
+    emit configurationChanged();
+    if (kttsd != 0)
+        kttsd->save();
 }
 
-TextToSpeechSystem *OptionsDialog::getTTSSystem() const {
-   return commandWidget->getTTSSystem();
+TextToSpeechSystem *OptionsDialog::getTTSSystem() const
+{
+    return commandWidget->getTTSSystem();
 }
 
-void OptionsDialog::readOptions (KConfig *config) {
-   commandWidget->readOptions (config, QLatin1String( "TTS System" ));
-   behaviourWidget->readOptions (config);
+void OptionsDialog::readOptions(KConfig *config)
+{
+    commandWidget->readOptions(config, QLatin1String("TTS System"));
+    behaviourWidget->readOptions(config);
 }
 
-void OptionsDialog::saveOptions (KConfig *config) {
-   commandWidget->saveOptions (config, QLatin1String( "TTS System" ));
-   behaviourWidget->saveOptions (config);
-   config->sync();
+void OptionsDialog::saveOptions(KConfig *config)
+{
+    commandWidget->saveOptions(config, QLatin1String("TTS System"));
+    behaviourWidget->saveOptions(config);
+    config->sync();
 }
 
-bool OptionsDialog::isSpeakImmediately () {
-   return behaviourWidget->isSpeakImmediately ();
+bool OptionsDialog::isSpeakImmediately()
+{
+    return behaviourWidget->isSpeakImmediately();
 }
 
-KCModule *OptionsDialog::loadKttsd () {
-   KLibLoader *loader = KLibLoader::self();
+KCModule *OptionsDialog::loadKttsd()
+{
+    KLibLoader *loader = KLibLoader::self();
 
-   QString libname = QLatin1String( "kcm_kttsd" );
-   KLibrary *lib = loader->library(QLatin1String( QFile::encodeName(libname) ));
+    QString libname = QLatin1String("kcm_kttsd");
+    KLibrary *lib = loader->library(QLatin1String(QFile::encodeName(libname)));
 
-   if (lib == 0) {
-      libname = QLatin1String( "libkcm_kttsd" );
-      lib = loader->library(QLatin1String( QFile::encodeName(QLatin1String( "libkcm_kttsd" )) ));
-   }
+    if (lib == 0) {
+        libname = QLatin1String("libkcm_kttsd");
+        lib = loader->library(QLatin1String(QFile::encodeName(QLatin1String("libkcm_kttsd"))));
+    }
 
-   if (lib != 0) {
-      QString initSym(QLatin1String( "init_" ));
-      initSym += libname;
+    if (lib != 0) {
+        QString initSym(QLatin1String("init_"));
+        initSym += libname;
 
-      if (lib->resolveFunction(QFile::encodeName(initSym))) {
-         // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
-         KLibFactory *factory = lib->factory();
-         if (factory != 0) {
-            KCModule *module = factory->create<KCModule> (factory);
-            if (module)
-                return module;
-         }
-      }
+        if (lib->resolveFunction(QFile::encodeName(initSym))) {
+            // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
+            KLibFactory *factory = lib->factory();
+            if (factory != 0) {
+                KCModule *module = factory->create<KCModule> (factory);
+                if (module)
+                    return module;
+            }
+        }
 
-      lib->unload();
-   }
-   return 0;
+        lib->unload();
+    }
+    return 0;
 }
 
-void OptionsDialog::unloadKttsd () {
-  KLibLoader *loader = KLibLoader::self();
-  loader->unloadLibrary(QLatin1String( QFile::encodeName(QLatin1String( "libkcm_kttsd" )) ));
-  loader->unloadLibrary(QLatin1String( QFile::encodeName(QLatin1String( "kcm_kttsd" )) ));
+void OptionsDialog::unloadKttsd()
+{
+    KLibLoader *loader = KLibLoader::self();
+    loader->unloadLibrary(QLatin1String(QFile::encodeName(QLatin1String("libkcm_kttsd"))));
+    loader->unloadLibrary(QLatin1String(QFile::encodeName(QLatin1String("kcm_kttsd"))));
 }
 
 #include "optionsdialog.moc"

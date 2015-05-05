@@ -25,45 +25,41 @@
 #include "version.h"
 
 static const char description[] =
-	I18N_NOOP("A type-and-say front end for speech synthesizers");
+    I18N_NOOP("A type-and-say front end for speech synthesizers");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
 
 
 int main(int argc, char *argv[])
 {
 
-	KAboutData aboutData( "kmouth", 0, ki18n("KMouth"),
-		KMOUTH_VERSION, ki18n(description), KAboutData::License_GPL,
-		ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
-	aboutData.addAuthor(ki18n("Gunnar Schmi Dt"),KLocalizedString(), "kmouth@schmi-dt.de");
-	KCmdLineArgs::init( argc, argv, &aboutData );
+    KAboutData aboutData("kmouth", 0, ki18n("KMouth"),
+                         KMOUTH_VERSION, ki18n(description), KAboutData::License_GPL,
+                         ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
+    aboutData.addAuthor(ki18n("Gunnar Schmi Dt"), KLocalizedString(), "kmouth@schmi-dt.de");
+    KCmdLineArgs::init(argc, argv, &aboutData);
 
-	KCmdLineOptions options;
-	options.add("+[File]", ki18n("History file to open"));
-	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+    KCmdLineOptions options;
+    options.add("+[File]", ki18n("History file to open"));
+    KCmdLineArgs::addCmdLineOptions(options);   // Add our own options.
 
-	aboutData.addCredit(ki18n("Olaf Schmidt"), ki18n("Tips, extended phrase books"));
-  KApplication app;
+    aboutData.addCredit(ki18n("Olaf Schmidt"), ki18n("Tips, extended phrase books"));
+    KApplication app;
 
-  if (app.isSessionRestored())
-  {
-    RESTORE(KMouthApp);
-  }
-  else
-  {
-    KMouthApp *kmouth = new KMouthApp();
-    if (!kmouth->configured())
-       return 0;
+    if (app.isSessionRestored()) {
+        RESTORE(KMouthApp);
+    } else {
+        KMouthApp *kmouth = new KMouthApp();
+        if (!kmouth->configured())
+            return 0;
 
-    kmouth->show();
+        kmouth->show();
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    if (args->count())
-    {
-        kmouth->openDocumentFile(args->url(0));
+        if (args->count()) {
+            kmouth->openDocumentFile(args->url(0));
+        }
+        args->clear();
     }
-    args->clear();
-  }
-  return app.exec();
+    return app.exec();
 }

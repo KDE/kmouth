@@ -1,7 +1,7 @@
 /***************************************************************************
-                          phraselistitem.h  -  description
+                          initialphrasebookwidget.h  -  description
                              -------------------
-    begin                : Fre Sep 6 2002
+    begin                : Don Sep 19 2002
     copyright            : (C) 2002 by Gunnar Schmi Dt
     email                : kmouth@schmi-dt.de
  ***************************************************************************/
@@ -15,29 +15,41 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef PHRASELISTITEM_H
-#define PHRASELISTITEM_H
+#ifndef INITIALPHRASEBOOKWIDGET_H
+#define INITIALPHRASEBOOKWIDGET_H
 
-#include <Qt3Support/Q3ListBox>
+#include <QWizardPage>
+
+#include "phrasebook.h"
+
+class QStandardItem;
+class QStandardItemModel;
+class KActionMenu;
+class KToolBarPopupAction;
 
 /**
- * This class represents a phrase in the list of spoken phrases. It extends
- * QListBoxText for providing support for a visible list cursor.
+ * This class represents a widget for configuring the initial phrasebook.
  * @author Gunnar Schmi Dt
  */
-
-class PhraseListItem : public Q3ListBoxText  {
+class InitialPhraseBookWidget : public QWizardPage
+{
+    Q_OBJECT
 public:
-   PhraseListItem (const QString & text);
-   ~PhraseListItem();
-   
-   bool drawCursor() const;
-   
-   int rtti() const;
-   static const int RTTI = 982734;
+    InitialPhraseBookWidget(QWidget *parent, const char *name);
+    ~InitialPhraseBookWidget();
 
-protected:
-   void  paint( QPainter * );
+    void createBook();
+
+private slots:
+    void slotItemChanged(QStandardItem *item);
+
+private:
+    /** initializes the list of standard phrase books */
+    void initStandardPhraseBooks();
+
+    void addChildrenToBook(PhraseBook &book, QStandardItem *item);
+
+    QStandardItemModel *m_model;
 };
 
 #endif

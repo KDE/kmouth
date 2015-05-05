@@ -22,9 +22,9 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
-#include <Q3ScrollView>
+#include <QScrollArea>
+#include <QWizard>
 
-#include <k3wizard.h>
 #include <kcombobox.h>
 #include <knuminput.h>
 
@@ -37,38 +37,57 @@ class QTextCodec;
 class KComboBox;
 class MergeWidget;
 
-class CreationSourceDetailsWidget : public QWidget, public Ui::CreationSourceDetailsUI {
-   Q_OBJECT
+class CreationSourceWidget : public QWizardPage, public Ui::CreationSourceUI
+{
+    Q_OBJECT
 public:
-   CreationSourceDetailsWidget(QWidget *parent, const char *name)
-      : QWidget(parent) {
-      setupUi(this);
-      setObjectName( QLatin1String( name ) );
-   }
+    CreationSourceWidget(QWidget *parent, const char *name)
+        : QWizardPage(parent)
+    {
+        setupUi(this);
+        setObjectName(QLatin1String(name));
+        connect(emptyButton, SIGNAL(toggled(bool)), this, SLOT(emptyToggled(bool)));
+    }
+
+    virtual int nextId() const;
+private slots:
+    void emptyToggled(bool checked);
 };
 
-class CreationSourceWidget : public QWidget, public Ui::CreationSourceUI {
-   Q_OBJECT
+class CreationSourceDetailsWidget : public QWizardPage, public Ui::CreationSourceDetailsUI
+{
+    Q_OBJECT
 public:
-   CreationSourceWidget(QWidget *parent, const char *name)
-      : QWidget(parent) {
-      setupUi(this);
-      setObjectName(QLatin1String( name ));
-   }
+    CreationSourceDetailsWidget(QWidget *parent, const char *name)
+        : QWizardPage(parent)
+    {
+        setupUi(this);
+        setObjectName(QLatin1String(name));
+    }
+    virtual int nextId() const
+    {
+        return -1;
+    }
 };
 
-class KDEDocSourceWidget : public QWidget, public Ui::KDEDocSourceUI {
-   Q_OBJECT
+class KDEDocSourceWidget : public QWizardPage, public Ui::KDEDocSourceUI
+{
+    Q_OBJECT
 public:
-   KDEDocSourceWidget(QWidget *parent, const char *name)
-      : QWidget(parent) {
-      setupUi(this);
-      setObjectName( QLatin1String( name ) );
-      languageButton->showLanguageCodes(true);
-      languageButton->loadAllLanguages();
+    KDEDocSourceWidget(QWidget *parent, const char *name)
+        : QWizardPage(parent)
+    {
+        setupUi(this);
+        setObjectName(QLatin1String(name));
+        languageButton->showLanguageCodes(true);
+        languageButton->loadAllLanguages();
 
-      ooDictURL->setFilter (QLatin1String( "*.dic" ));
-   }
+        ooDictURL->setFilter(QLatin1String("*.dic"));
+    }
+    virtual int nextId() const
+    {
+        return -1;
+    }
 };
 
 /**
@@ -76,33 +95,39 @@ public:
  * necessary information for creating a new dictionary for the word
  * completion.
  */
-class DictionaryCreationWizard : public K3Wizard {
-   Q_OBJECT
+class DictionaryCreationWizard : public QWizard
+{
+    Q_OBJECT
 public:
-   DictionaryCreationWizard (QWidget *parent, const char *name,
+    DictionaryCreationWizard(QWidget *parent, const char *name,
                              const QStringList &dictionaryNames,
                              const QStringList &dictionaryFiles,
                              const QStringList &dictionaryLanguages);
-   ~DictionaryCreationWizard();
+    virtual ~DictionaryCreationWizard();
 
-   QString createDictionary();
-   QString name();
-   QString language();
+    QString createDictionary();
+    QString name();
+    QString language();
 
-private slots:
-   void calculateAppropriate (bool);
+    enum Pages {
+        CreationSourcePage,
+        FilePage,
+        DirPage,
+        KDEDocPage,
+        MergePage
+    };
 
 private:
-   void buildCodecList ();
-   void buildCodecCombo (KComboBox *combo);
+    void buildCodecList();
+    void buildCodecCombo(KComboBox *combo);
 
-   CreationSourceWidget *creationSource;
-   CreationSourceDetailsWidget *fileWidget;
-   CreationSourceDetailsWidget *dirWidget;
-   KDEDocSourceWidget *kdeDocWidget;
-   MergeWidget *mergeWidget;
+    CreationSourceWidget *creationSource;
+    CreationSourceDetailsWidget *fileWidget;
+    CreationSourceDetailsWidget *dirWidget;
+    KDEDocSourceWidget *kdeDocWidget;
+    MergeWidget *mergeWidget;
 
-   QList<QTextCodec*> *codecList;
+    QList<QTextCodec*> *codecList;
 };
 
 /**
@@ -110,22 +135,24 @@ private:
  * KDE documentation.
  * @author Gunnar Schmi Dt
  */
-class MergeWidget : public Q3ScrollView {
-   Q_OBJECT
+class MergeWidget : public QWizardPage
+{
+    Q_OBJECT
 public:
-   MergeWidget(K3Wizard *parent, const char *name,
-               const QStringList &dictionaryNames,
-               const QStringList &dictionaryFiles,
-               const QStringList &dictionaryLanguages);
-   ~MergeWidget();
+    MergeWidget(QWidget *parent, const char *name,
+                const QStringList &dictionaryNames,
+                const QStringList &dictionaryFiles,
+                const QStringList &dictionaryLanguages);
+    ~MergeWidget();
 
-   QMap <QString, int> mergeParameters ();
-   QString language ();
+    QMap <QString, int> mergeParameters();
+    QString language();
 
 private:
-   QHash<QString, QCheckBox*> dictionaries;
-   QHash<QString, KIntNumInput*> weights;
-   QMap<QString,QString> languages;
+    QScrollArea *scrollArea;
+    QHash<QString, QCheckBox*> dictionaries;
+    QHash<QString, KIntNumInput*> weights;
+    QMap<QString, QString> languages;
 };
 
 /**
@@ -133,14 +160,15 @@ private:
  * KDE documentation.
  * @author Gunnar Schmi Dt
  */
-class CompletionWizardWidget : public QWidget, public Ui::KDEDocSourceUI {
-   Q_OBJECT
-   friend class ConfigWizard;
+class CompletionWizardWidget : public QWizardPage, public Ui::KDEDocSourceUI
+{
+    Q_OBJECT
+    friend class ConfigWizard;
 public:
-   CompletionWizardWidget(K3Wizard *parent, const char *name);
-   ~CompletionWizardWidget();
+    CompletionWizardWidget(QWidget *parent, const char *name);
+    ~CompletionWizardWidget();
 
-   void ok (KConfig *config);
+    void ok(KConfig *config);
 };
 
 #endif

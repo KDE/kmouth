@@ -19,7 +19,6 @@
 #define PHRASEBOOK_H
 
 #include <QtCore/QObject>
-#include <Qt3Support/Q3DragObject>
 #include <QtCore/QTextStream>
 #include <QtGui/QMenu>
 #include <QtGui/QPrinter>
@@ -32,26 +31,34 @@
 
 class KUrl;
 
+struct StandardBook {
+    QString name;
+    QString path;
+    QString filename;
+};
+typedef QList<StandardBook> StandardBookList;
+
 /**
  * The class Phrase represents one phrase in a phrase book.
  * @author Gunnar Schmi Dt
  */
-class Phrase {
-   friend class PhraseBookParser;
+class Phrase
+{
+    friend class PhraseBookParser;
 public:
-   Phrase();
-   Phrase (const QString &phrase);
-   Phrase (const QString &phrase, const QString &shortcut);
+    Phrase();
+    Phrase(const QString &phrase);
+    Phrase(const QString &phrase, const QString &shortcut);
 
-   QString getPhrase() const;
-   QString getShortcut() const;
+    QString getPhrase() const;
+    QString getShortcut() const;
 
-   void setPhrase (const QString &phrase);
-   void setShortcut (const QString &shortcut);
+    void setPhrase(const QString &phrase);
+    void setShortcut(const QString &shortcut);
 
 private:
-   QString phrase;
-   QString shortcut;
+    QString phrase;
+    QString shortcut;
 };
 
 /**
@@ -59,22 +66,23 @@ private:
  * a phrase or a start tag a sub phrase book.
  * @author Gunnar Schmi Dt
  */
-class PhraseBookEntry {
+class PhraseBookEntry
+{
 public:
-   PhraseBookEntry ();
-   explicit PhraseBookEntry (Phrase phrase, int level = 1, bool isPhrase = true);
-   ~PhraseBookEntry () {}
+    PhraseBookEntry();
+    explicit PhraseBookEntry(Phrase phrase, int level = 1, bool isPhrase = true);
+    ~PhraseBookEntry() {}
 
-   void setPhrase (Phrase phrase, int level = 1, bool isPhrase = true);
+    void setPhrase(Phrase phrase, int level = 1, bool isPhrase = true);
 
-   bool isPhrase() const;
-   Phrase getPhrase() const;
-   int getLevel() const;
+    bool isPhrase() const;
+    Phrase getPhrase() const;
+    int getLevel() const;
 
 private:
-   bool isPhraseValue;
-   Phrase phrase;
-   int level;
+    bool isPhraseValue;
+    Phrase phrase;
+    int level;
 };
 
 typedef QList<PhraseBookEntry> PhraseBookEntryList;
@@ -92,112 +100,96 @@ typedef QList<PhraseBookEntry> PhraseBookEntryList;
  *
  * @author Gunnar Schmi Dt
  */
-class PhraseBook : public PhraseBookEntryList {
+class PhraseBook : public PhraseBookEntryList
+{
 public:
-   PhraseBook() : PhraseBookEntryList() {}
-   ~PhraseBook() {}
+    PhraseBook() : PhraseBookEntryList() {}
+    ~PhraseBook() {}
 
-   /** opens a file containing a phrase book. Returns true if successful. */
-   bool open (const KUrl &url);
+    /** opens a file containing a phrase book. Returns true if successful. */
+    bool open(const KUrl &url);
 
-   /** decodes a phrase book. Returns true if successful. */
-   bool decode (const QString &xml);
+    /** decodes a phrase book. Returns true if successful. */
+    bool decode(const QString &xml);
 
-   /** decodes a phrase book. Returns true if successful. */
-   bool decode (QXmlInputSource &source);
+    /** decodes a phrase book. Returns true if successful. */
+    bool decode(QXmlInputSource &source);
 
-   /** Writes the phrases to a file. Returns true if successful. */
-   bool save (const KUrl &url);
+    /** Writes the phrases to a file. Returns true if successful. */
+    bool save(const KUrl &url);
 
-   /** Writes the phrases to a file. Returns true if successful. */
-   bool save (const KUrl &url, bool asPhrasebook);
+    /** Writes the phrases to a file. Returns true if successful. */
+    bool save(const KUrl &url, bool asPhrasebook);
 
-   /** Writes the phrases to a QTextStream. */
-   void save (QTextStream &stream, bool asPhrasebook);
+    /** Writes the phrases to a QTextStream. */
+    void save(QTextStream &stream, bool asPhrasebook);
 
-   /** Prints the phrases. */
-   void print (QPrinter *pPrinter);
+    /** Prints the phrases. */
+    void print(QPrinter *pPrinter);
 
-   /** Shows a file selector and writes the phrases to a file.
-    *  @return 1, if the file got successfully written,
-    *          0, if the user canceled the operation,
-    *         -1, if there was an error when saving the file.
-    */
-   int save (QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst = true);
+    /** Shows a file selector and writes the phrases to a file.
+     *  @return 1, if the file got successfully written,
+     *          0, if the user canceled the operation,
+     *         -1, if there was an error when saving the file.
+     */
+    int save(QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst = true);
 
-   /** encodes the phrase book. Returns the encoded xml code. */
-   QString encode ();
+    /** encodes the phrase book. Returns the encoded xml code. */
+    QString encode();
 
-   /** Stores all entries in a QStringList. All hierarchy information and all
-    * shortcuts are ignored during this operation.
-    */
-   QStringList toStringList();
+    /** Stores all entries in a QStringList. All hierarchy information and all
+     * shortcuts are ignored during this operation.
+     */
+    QStringList toStringList();
 
-   /** Adds the entries of the book to both the given popup menu and the given
-    * toolbar. The corresponding actions will be inserted into phrases.
-    */
-   void addToGUI (QMenu *popup, KToolBar *toolbar,
+    /** Adds the entries of the book to both the given popup menu and the given
+     * toolbar. The corresponding actions will be inserted into phrases.
+     */
+    void addToGUI(QMenu *popup, KToolBar *toolbar,
                   KActionCollection *phrases,
                   QObject *receiver, const char *slot) const;
 
-   /** Inserts book into a new sub phrase book.
-    * @param name the name of the new sub phrase book.
-    * @param book the phrase book to insert.
-    */
-   void insert (const QString &name, const PhraseBook &book);
-};
+    /** Inserts book into a new sub phrase book.
+     * @param name the name of the new sub phrase book.
+     * @param book the phrase book to insert.
+     */
+    void insert(const QString &name, const PhraseBook &book);
 
-/**
- * The class PhraseBookDrag implements drag and drop support for phrase books.
- * @author Gunnar Schmi Dt
- */
-class PhraseBookDrag: public Q3DragObject {
-   Q_OBJECT
-public:
-   explicit PhraseBookDrag (PhraseBook *book, QWidget *dragSource = 0, const char *name = 0);
-   explicit PhraseBookDrag (QWidget *dragSource = 0, const char *name = 0);
-   ~PhraseBookDrag ();
-
-   virtual void setBook (PhraseBook *book);
-
-   const char *format (int i) const;
-   virtual QByteArray encodedData (const char *) const;
-
-   static bool canDecode (const QMimeSource *e);
-   static bool decode (const QMimeSource *e, PhraseBook *book);
+    static StandardBookList standardPhraseBooks();
 
 private:
-   bool isEmpty;
-   Q3TextDrag xmlphrasebook;
-   Q3TextDrag xml;
-   Q3TextDrag plain;
+    static QString displayPath(QString path);
 };
 
-class PhraseAction : public KAction {
-   Q_OBJECT
+class PhraseAction : public KAction
+{
+    Q_OBJECT
 public:
-   PhraseAction (const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon(QLatin1String( "phrase" )), phrase, parent) {
-      this->setShortcut(cut);
-      this->phrase = phrase;
-      connect (this, SIGNAL(triggered()), this, SLOT(slotTriggered()));
-      connect (this, SIGNAL(slotActivated (const QString &)), receiver, slot);
-      parent->addAction(phrase, this);
-   }
-   ~PhraseAction () {
-   }
+    PhraseAction(const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
+        : KAction(KIcon(QLatin1String("phrase")), phrase, parent)
+    {
+        this->setShortcut(cut);
+        this->phrase = phrase;
+        connect(this, SIGNAL(triggered()), this, SLOT(slotTriggered()));
+        connect(this, SIGNAL(slotActivated(const QString &)), receiver, slot);
+        parent->addAction(phrase, this);
+    }
+    ~PhraseAction()
+    {
+    }
 
 public slots:
-   void slotTriggered () {
+    void slotTriggered()
+    {
 //      trigger();
-      emit slotActivated (phrase);
-   }
+        emit slotActivated(phrase);
+    }
 
 signals:
-   void slotActivated (const QString &phrase);
+    void slotActivated(const QString &phrase);
 
 private:
-   QString phrase;
+    QString phrase;
 };
 
 #endif

@@ -35,59 +35,61 @@ class WordCompletionWidget;
   *@author Gunnar Schmi Dt
   */
 
-class PreferencesWidget : public QWidget, public Ui::PreferencesUI {
-   Q_OBJECT
+class PreferencesWidget : public QWidget, public Ui::PreferencesUI
+{
+    Q_OBJECT
 public:
-   PreferencesWidget(QWidget *parent, const char *name);
-   ~PreferencesWidget();
+    PreferencesWidget(QWidget *parent, const char *name);
+    ~PreferencesWidget();
 
-   void readOptions (KConfig *config);
-   void saveOptions (KConfig *config);
+    void readOptions(KConfig *config);
+    void saveOptions(KConfig *config);
 
-   void ok();
-   void cancel();
+    void ok();
+    void cancel();
 
-   bool isSpeakImmediately();
+    bool isSpeakImmediately();
 
 private:
-   bool speak;
-   int save;
+    bool speak;
+    int save;
 };
 
 /**This class represents a configuration dialog for the options of KMouth.
   *@author Gunnar Schmi Dt
   */
 
-class OptionsDialog : public KPageDialog {
-   Q_OBJECT
-public: 
-   OptionsDialog(QWidget *parent);
-   ~OptionsDialog();
+class OptionsDialog : public KPageDialog
+{
+    Q_OBJECT
+public:
+    OptionsDialog(QWidget *parent);
+    ~OptionsDialog();
 
-   TextToSpeechSystem *getTTSSystem() const;
+    TextToSpeechSystem *getTTSSystem() const;
 
-   void readOptions (KConfig *config);
-   void saveOptions (KConfig *config);
+    void readOptions(KConfig *config);
+    void saveOptions(KConfig *config);
 
-   bool isSpeakImmediately();
+    bool isSpeakImmediately();
 
 signals:
-   void configurationChanged ();
-   
+    void configurationChanged();
+
 private slots:
-   void slotCancel();
-   void slotOk();
-   void slotApply();
+    void slotCancel();
+    void slotOk();
+    void slotApply();
 
 private:
-   KTabWidget *tabCtl;
-   TextToSpeechConfigurationWidget *commandWidget;
-   PreferencesWidget *behaviourWidget;
-   KCModule *kttsd;
-   WordCompletionWidget *completionWidget;
+    KTabWidget *tabCtl;
+    TextToSpeechConfigurationWidget *commandWidget;
+    PreferencesWidget *behaviourWidget;
+    KCModule *kttsd;
+    WordCompletionWidget *completionWidget;
 
-   KCModule *loadKttsd ();
-   void unloadKttsd ();
+    KCModule *loadKttsd();
+    void unloadKttsd();
 };
 
 #endif

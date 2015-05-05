@@ -29,46 +29,47 @@
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookParser : public QXmlDefaultHandler {
-public: 
-   PhraseBookParser();
-   ~PhraseBookParser();
+class PhraseBookParser : public QXmlDefaultHandler
+{
+public:
+    PhraseBookParser();
+    ~PhraseBookParser();
 
-   bool warning (const QXmlParseException &exception);
-   bool error (const QXmlParseException &exception);
-   bool fatalError (const QXmlParseException &exception);
-   QString errorString() const;
- 
-   /** Processes the start of the document. */
-   bool startDocument();
-                       
-   /** Processes the start tag of an element. */
-   bool startElement (const QString &, const QString &, const QString &name,
+    bool warning(const QXmlParseException &exception);
+    bool error(const QXmlParseException &exception);
+    bool fatalError(const QXmlParseException &exception);
+    QString errorString() const;
+
+    /** Processes the start of the document. */
+    bool startDocument();
+
+    /** Processes the start tag of an element. */
+    bool startElement(const QString &, const QString &, const QString &name,
                       const QXmlAttributes &attributes);
 
-   /** Processes a chunk of normal character data. */
-   bool characters (const QString &ch);
+    /** Processes a chunk of normal character data. */
+    bool characters(const QString &ch);
 
-   /** Processes whitespace. */
-   bool ignorableWhitespace (const QString &ch);
+    /** Processes whitespace. */
+    bool ignorableWhitespace(const QString &ch);
 
-   /** Processes the end tag of an element. */
-   bool endElement (const QString &, const QString &, const QString &name);
-   
-   /** Processes the end of the document. */
-   bool endDocument();
+    /** Processes the end tag of an element. */
+    bool endElement(const QString &, const QString &, const QString &name);
 
-   /** returns a list of phrase book entries */
-   PhraseBookEntryList getPhraseList();
+    /** Processes the end of the document. */
+    bool endDocument();
+
+    /** returns a list of phrase book entries */
+    PhraseBookEntryList getPhraseList();
 
 private:
-   bool isInPhrase;
-   bool starting;
-   int offset;
-   Phrase phrase;
-   
-   PhraseBookEntryList list;
-   int level;
+    bool isInPhrase;
+    bool starting;
+    int offset;
+    Phrase phrase;
+
+    PhraseBookEntryList list;
+    int level;
 };
 
 #endif

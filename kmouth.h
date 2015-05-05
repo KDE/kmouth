@@ -51,12 +51,12 @@ class KActionCollection;
   */
 class KMouthApp : public KXmlGuiWindow
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     /** construtor of KMouthApp, calls all init functions to create the application.
      */
-    explicit KMouthApp(QWidget* parent=0, const char* name=0);
+    explicit KMouthApp(QWidget* parent = 0, const char* name = 0);
     ~KMouthApp();
     /** Returns true if the configuration wizard was not needed or when it
      * was successfully completed.
@@ -64,7 +64,7 @@ class KMouthApp : public KXmlGuiWindow
     bool configured();
     /** opens a file specified by commandline option
      */
-    void openDocumentFile(const KUrl& url=KUrl());
+    void openDocumentFile(const KUrl& url = KUrl());
 
     TextToSpeechSystem *getTTSSystem() const;
 
@@ -73,7 +73,7 @@ class KMouthApp : public KXmlGuiWindow
      */
     void enableMenuEntries(bool existSelectedEntries, bool existDeselectedEntries);
 
-  protected:
+protected:
     /** save general Options like all bar positions and status as well as the geometry and the recent file list to the configuration
      * file
      */
@@ -96,7 +96,7 @@ class KMouthApp : public KXmlGuiWindow
      */
     virtual bool queryClose();
 
-  public slots:
+public slots:
     /** open a file and load it into the history */
     void slotFileOpen();
     /** save a document */
@@ -109,7 +109,7 @@ class KMouthApp : public KXmlGuiWindow
     void slotFileQuit();
     /** edits the phrase books
      */
-    void slotEditPhrasebook ();
+    void slotEditPhrasebook();
     /** toggles the menu bar
      */
     void slotViewMenuBar();
@@ -130,13 +130,13 @@ class KMouthApp : public KXmlGuiWindow
      */
     void slotStatusMsg(const QString &text);
 
-    void slotPhrasebookConfirmed (PhraseBook &book);
+    void slotPhrasebookConfirmed();
 
     void slotConfigurationChanged();
 
-    void slotPhraseSelected (const QString &phrase);
+    void slotPhraseSelected(const QString &phrase);
 
-  private:
+private:
     bool isConfigured;
     /** the configuration object of the application */
     KSharedConfigPtr config;

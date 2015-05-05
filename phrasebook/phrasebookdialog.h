@@ -18,127 +18,50 @@
 #ifndef PHRASEBOOKDIALOG_H
 #define PHRASEBOOKDIALOG_H
 
-#include <Qt3Support/Q3Button>
-#include <QtGui/QRadioButton>
-#include <Qt3Support/Q3ButtonGroup>
-#include <QtGui/QLabel>
-#include <Qt3Support/Q3ListView>
-#include <QtCore/QList>
-#include <QtGui/QGridLayout>
-#include <QtGui/QDropEvent>
-#include <QtGui/QPrinter>
+#include <QDomNode>
+#include <QStandardItemModel>
 
-#include <kxmlguiwindow.h>
-#include <klineedit.h>
-#include <kkeysequencewidget.h>
 #include <kurl.h>
+#include <kxmlguiwindow.h>
+
 #include "phrasebook.h"
-#include "ui_buttonboxui.h"
-#include <kicon.h>
+#include "ui_phrasebookdialog.h"
 
-class Q3ListViewItem;
-class PhraseTreeItem;
-class PhraseTree;
-class QString;
-class K3ListView;
-class KToolBarPopupAction;
 class KActionMenu;
-
-struct StandardBook {
-   QString name;
-   QString path;
-   QString filename;
-};
-typedef QList<StandardBook> StandardBookList;
-
-/**The class PhraseTreeItem is an ListViewItem for either a phrase or a phrase book.
-  *@author Gunnar Schmi Dt
-  */
-
-class CheckBookItem : public Q3CheckListItem {
-public:
-   CheckBookItem (Q3ListViewItem *parent, Q3ListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
-   CheckBookItem (Q3ListView *parent, Q3ListViewItem *last,
-            const QString &text, const QString &name, const QString &filename);
-   ~CheckBookItem();
-
-protected:
-   virtual void activate ();
-   virtual void stateChange (bool);
-   virtual void propagateStateChange ();
-   virtual void childChange (int numberDiff, int selDiff);
-
-private:
-   int numberOfBooks;
-   int selectedBooks;
-};
-
-/**
- * This class represents a widget for configuring the initial phrasebook.
- * @author Gunnar Schmi Dt
- */
-
-class InitialPhraseBookWidget : public QWidget {
-   Q_OBJECT
-public:
-   InitialPhraseBookWidget(QWidget *parent, const char *name);
-   ~InitialPhraseBookWidget();
-
-   void createBook();
-
-private:
-   /** initializes the list of standard phrase books */
-   void initStandardPhraseBooks ();
-
-   K3ListView *books;
-};
+class KToolBarPopupAction;
 
 /**
  * The class StandardPhraseBookInsertAction implements an Action for
  * inserting a standard phrase book.
  * @author Gunnar Schmi Dt
  */
-class StandardPhraseBookInsertAction : public KAction {
-   Q_OBJECT
+class StandardPhraseBookInsertAction : public KAction
+{
+    Q_OBJECT
 public:
-   StandardPhraseBookInsertAction (const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-   : KAction (KIcon(QLatin1String( "phrasebook" )), name, parent) {
-      this->url = url;
-      connect (this, SIGNAL(slotActivated (const KUrl &)), receiver, slot);
-      parent->addAction(name, this);
-   }
-   ~StandardPhraseBookInsertAction () {
-   }
+    StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+        : KAction(KIcon(QLatin1String("phrasebook")), name, parent)
+    {
+        this->url = url;
+        connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
+        connect(this, SIGNAL(slotActivated(const KUrl &)), receiver, slot);
+        parent->addAction(name, this);
+    }
+    ~StandardPhraseBookInsertAction()
+    {
+    }
 
 public slots:
-   void slotActivated () {
-      trigger();
-      emit slotActivated (url);
-   }
+    void slotActivated()
+    {
+        emit slotActivated(url);
+    }
 
 signals:
-   void slotActivated (const KUrl &url);
+    void slotActivated(const KUrl &url);
 
 private:
-   KUrl url;
-};
-
-/**
- * This class represents a widget holding the buttons of the phrase book
- * edit window.
- * @author Gunnar Schmi Dt
- */
-class ButtonBoxWidget : public QWidget, public Ui::ButtonBoxUI {
-public:
-   explicit ButtonBoxWidget (QWidget *parent = 0, const char *name = 0);
-   ~ButtonBoxWidget ();
-
-   KKeySequenceWidget *keyButton;
-   Q3ButtonGroup *group;
-
-protected:
-   QGridLayout *keyButtonPlaceLayout;
+    KUrl url;
 };
 
 /**
@@ -146,100 +69,103 @@ protected:
  * @author Gunnar Schmi Dt
  */
 
-class PhraseBookDialog : public KXmlGuiWindow {
-   friend class InitialPhraseBookWidget;
-   Q_OBJECT
+class PhraseBookDialog : public KXmlGuiWindow
+{
+    friend class InitialPhraseBookWidget;
+    Q_OBJECT
 private:
-   /** Constructor. It is private because this class implements the singleton
-    * pattern. For creating the instance of the dialog, use the get() method.
-    */
-   PhraseBookDialog ();
-
-   static QString displayPath (QString path);
+    /** Constructor. It is private because this class implements the singleton
+     * pattern. For creating the instance of the dialog, use the get() method.
+     */
+    PhraseBookDialog();
 
 public:
-   /** Returns a pointer to the instance of this dialog. As a part off the
-    * singleton pattern it will make sure that there is at most one instance
-    * of the dialog at a given time.
-    */
-   static PhraseBookDialog *get();
+    /** Returns a pointer to the instance of this dialog. As a part off the
+     * singleton pattern it will make sure that there is at most one instance
+     * of the dialog at a given time.
+     */
+    static PhraseBookDialog *get();
 
-   /** Destructor. */
-   ~PhraseBookDialog();
+    /** Destructor. */
+    ~PhraseBookDialog();
 
-   bool queryClose ();
+    bool queryClose();
 
 public slots:
-   void slotTextChanged (const QString &s);
-   void slotNoKey();
-   void slotCustomKey();
-   void capturedShortcut (const KShortcut& cut);
+    void slotTextChanged(const QString &s);
+    void slotNoKey();
+    void slotCustomKey();
+    void slotKeySequenceChanged(const QKeySequence& sequence);
 
-   void selectionChanged ();
-   void contextMenuRequested(Q3ListViewItem *, const QPoint &pos, int);
+    void selectionChanged();
+    void contextMenuRequested(const QPoint &pos);
 
-   void slotRemove ();
-   void slotCut ();
-   void slotCopy ();
-   void slotPaste ();
+    void slotRemove();
+    void slotCut();
+    void slotCopy();
+    void slotPaste();
 
-   void slotAddPhrasebook ();
-   void slotAddPhrase ();
+    void slotAddPhrasebook();
+    void slotAddPhrase();
 
-   void slotSave ();
-   void slotImportPhrasebook ();
-   void slotImportPhrasebook (const KUrl &url);
-   void slotExportPhrasebook ();
-   void slotPrint ();
+    void slotSave();
+    void slotImportPhrasebook();
+    void slotImportPhrasebook(const KUrl &url);
+    void slotExportPhrasebook();
+    //void slotPrint ();
 
-   void slotDropped (QDropEvent *e, Q3ListViewItem *parent, Q3ListViewItem *after);
-   void slotMoved (Q3ListViewItem *item, Q3ListViewItem *, Q3ListViewItem *);
+    void slotModelChanged();
 
 signals:
-   void phrasebookConfirmed (PhraseBook &book);
+    void phrasebookConfirmed();
 
 private:
-   static StandardBookList standardPhraseBooks ();
+    void initGUI();
+    /** initializes the KActions of the window */
+    void initActions();
+    /** initializes the list of standard phrase books */
+    void initStandardPhraseBooks();
 
-   void initGUI();
-   /** initializes the KActions of the window */
-   void initActions();
-   /** initializes the list of standard phrase books */
-   void initStandardPhraseBooks ();
+    void connectEditor();
+    void disconnectEditor();
 
-   Q3ListViewItem *addBook (Q3ListViewItem *parent, Q3ListViewItem *after, PhraseBook *book);
-   Q3ListViewItem *addBook (Q3ListViewItem *item, PhraseBook *book);
+    // Deserialize the book from the given QDomNode and under the given parent
+    // Return the new QStandardItem so it can get focused.
+    QStandardItem* deserializeBook(const QDomNode &node, QStandardItem *parent);
+    // Return a serialized string of the book or phrase at the given index.
+    QString serializeBook(const QModelIndex &index);
 
-   void setShortcut (const KShortcut &cut);
+    // Get the current parent, if the current index is not a book, get it's parent.
+    QModelIndex getCurrentParent();
 
-   void _warning (const QKeySequence &cut, const QString &sAction, const QString &sTitle);
+    // Expand to, select and focus a new item from the given parameters
+    void focusNewItem(QModelIndex parent, QStandardItem *item);
 
-   bool isGlobalKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isPhraseKeyPresent (const KShortcut& cut, bool warnUser);
-   bool isKeyPresent (const KShortcut& cut, bool warnUser);
+    void setShortcut(const QKeySequence &sequence);
 
-   PhraseBook book;
-   bool phrasebookChanged;
+    bool phrasebookChanged;
 
-   PhraseTree *treeView;
-   ButtonBoxWidget *buttonBox;
+    QAction* fileNewPhrase;
+    QAction* fileNewBook;
+    QAction* fileSave;
+    QAction* fileImport;
+    KToolBarPopupAction* toolbarImport;
+    KActionMenu* fileImportStandardBook;
+    QAction* fileExport;
+    //QAction* filePrint;
+    QAction* fileClose;
+    QAction* editCut;
+    QAction* editCopy;
+    QAction* editPaste;
+    QAction* editDelete;
 
-   QAction* fileNewPhrase;
-   QAction* fileNewBook;
-   QAction* fileSave;
-   QAction* fileImport;
-   KToolBarPopupAction* toolbarImport;
-   KActionMenu* fileImportStandardBook;
-   QAction* fileExport;
-   QAction* filePrint;
-   QAction* fileClose;
-   QAction* editCut;
-   QAction* editCopy;
-   QAction* editPaste;
-   QAction* editDelete;
+    QStandardItemModel* m_bookModel;
+    QStandardItem *m_rootItem;
 
-   // Keep QPrinter so settings persist
-   QPrinter *printer;
+    // Keep QPrinter so settings persist
+    //QPrinter *printer;
+
+    Ui::PhraseBookDialog *m_ui;
 };
 
 #endif

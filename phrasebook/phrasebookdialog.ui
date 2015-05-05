@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PhraseBookDialog</class>
+ <widget class="QWidget" name="PhraseBookDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>564</width>
+    <height>393</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Phrase Book</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="phrasebox">
+     <property name="title">
+      <string>&amp;Currently Selected Phrase or Phrase Book</string>
+     </property>
+     <layout class="QGridLayout">
+      <property name="margin">
+       <number>11</number>
+      </property>
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <item row="3" column="2">
+       <widget class="KKeySequenceWidget" name="keyButton" native="true">
+        <property name="whatsThis">
+         <string>By clicking on this button you can select the keyboard shortcut associated with the selected phrase.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="KLineEdit" name="lineEdit">
+        <property name="whatsThis">
+         <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QRadioButton" name="noKey">
+        <property name="whatsThis">
+         <string>If you select this option then the selected phrase will not be reachable by a keyboard shortcut.</string>
+        </property>
+        <property name="text">
+         <string>&amp;None</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QRadioButton" name="customKey">
+        <property name="whatsThis">
+         <string>If you select this option then the selected phrase will be reachable by a keyboard shortcut. You can change the shortcut with the button next to this option.</string>
+        </property>
+        <property name="text">
+         <string>C&amp;ustom</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QLabel" name="shortcutLabel">
+        <property name="text">
+         <string>Shortcut for the phrase:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="textLabel">
+        <property name="whatsThis">
+         <string>With this line edit you define the name of a sub-phrasebook or the contents of a phrase.</string>
+        </property>
+        <property name="text">
+         <string>Text of the &amp;phrase:</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QTreeView" name="treeView">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="whatsThis">
+      <string>This list contains the current phrase book in a tree structure. You can select and modify individual phrases and sub phrase books</string>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::InternalMove</enum>
+     </property>
+     <property name="defaultDropAction">
+      <enum>Qt::MoveAction</enum>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <property name="uniformRowHeights">
+      <bool>true</bool>
+     </property>
+     <property name="allColumnsShowFocus">
+      <bool>true</bool>
+     </property>
+     <attribute name="headerDefaultSectionSize">
+      <number>300</number>
+     </attribute>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KKeySequenceWidget</class>
+   <extends>QWidget</extends>
+   <header>kkeysequencewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

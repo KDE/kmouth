@@ -30,56 +30,63 @@
 #include "speech.h"
 #include <kurlrequester.h>
 
-TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget (QWidget *parent, const char *name)
-   : QWidget (parent)
+TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent, const char *name)
+    : QWizardPage(parent)
 {
-   setObjectName( QLatin1String( name ) );
-   setupUi(this);
-   ttsSystem = new TextToSpeechSystem();
+    setObjectName(QLatin1String(name));
+    setupUi(this);
+    ttsSystem = new TextToSpeechSystem();
 
-   buildCodecList();
+    buildCodecList();
 }
 
-TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget() {
+TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget()
+{
 }
 
-void TextToSpeechConfigurationWidget::buildCodecList () {
-   QString local = i18nc("Local characterset", "Local")+QLatin1String( " (" );
-   local += QLatin1String( QTextCodec::codecForLocale()->name() ) + QLatin1Char( ')' );
-   characterCodingBox->addItem (local, Speech::Local);
-   characterCodingBox->addItem (i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);
-   characterCodingBox->addItem (i18n("Unicode"), Speech::Unicode);
-   for (int i = 0; i < ttsSystem->codecList->count(); i++ )
-      characterCodingBox->addItem (QLatin1String( ttsSystem->codecList->at(i)->name() ), Speech::UseCodec + i);
+void TextToSpeechConfigurationWidget::buildCodecList()
+{
+    QString local = i18nc("Local characterset", "Local") + QLatin1String(" (");
+    local += QLatin1String(QTextCodec::codecForLocale()->name()) + QLatin1Char(')');
+    characterCodingBox->addItem(local, Speech::Local);
+    characterCodingBox->addItem(i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);
+    characterCodingBox->addItem(i18n("Unicode"), Speech::Unicode);
+    for (int i = 0; i < ttsSystem->codecList->count(); i++)
+        characterCodingBox->addItem(QLatin1String(ttsSystem->codecList->at(i)->name()), Speech::UseCodec + i);
 }
 
-void TextToSpeechConfigurationWidget::cancel() {
-  urlReq->setUrl (ttsSystem->ttsCommand);
-  stdInButton->setChecked (ttsSystem->stdIn);
-  characterCodingBox->setCurrentIndex(ttsSystem->codec);
-  useKttsd->setChecked (ttsSystem->useKttsd);
+void TextToSpeechConfigurationWidget::cancel()
+{
+    urlReq->setUrl(ttsSystem->ttsCommand);
+    stdInButton->setChecked(ttsSystem->stdIn);
+    characterCodingBox->setCurrentIndex(ttsSystem->codec);
+    useKttsd->setChecked(ttsSystem->useKttsd);
 }
 
-void TextToSpeechConfigurationWidget::ok() {
-  ttsSystem->ttsCommand = urlReq->url().path();
-  ttsSystem->stdIn = stdInButton->isChecked();
-  ttsSystem->codec = characterCodingBox->currentIndex();
-  ttsSystem->useKttsd = useKttsd->isChecked();
+void TextToSpeechConfigurationWidget::ok()
+{
+    ttsSystem->ttsCommand = urlReq->url().path();
+    ttsSystem->stdIn = stdInButton->isChecked();
+    ttsSystem->codec = characterCodingBox->currentIndex();
+    ttsSystem->useKttsd = useKttsd->isChecked();
 }
 
-TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const {
-   return ttsSystem;
+TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const
+{
+    return ttsSystem;
 }
 
-void TextToSpeechConfigurationWidget::readOptions (KConfig *config, const QString &langGroup) {
-  ttsSystem->readOptions (config, langGroup);
-  urlReq->setUrl (ttsSystem->ttsCommand);
-  stdInButton->setChecked (ttsSystem->stdIn);
-  characterCodingBox->setCurrentIndex(ttsSystem->codec);
-  useKttsd->setChecked (ttsSystem->useKttsd);
+void TextToSpeechConfigurationWidget::readOptions(KConfig *config, const QString &langGroup)
+{
+    ttsSystem->readOptions(config, langGroup);
+    urlReq->setUrl(ttsSystem->ttsCommand);
+    stdInButton->setChecked(ttsSystem->stdIn);
+    characterCodingBox->setCurrentIndex(ttsSystem->codec);
+    useKttsd->setChecked(ttsSystem->useKttsd);
 }
 
-void TextToSpeechConfigurationWidget::saveOptions (KConfig *config, const QString &langGroup) {
-  ttsSystem->saveOptions (config, langGroup);
+void TextToSpeechConfigurationWidget::saveOptions(KConfig *config, const QString &langGroup)
+{
+    ttsSystem->saveOptions(config, langGroup);
 }
 
