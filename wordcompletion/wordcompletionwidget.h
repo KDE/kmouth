@@ -22,6 +22,9 @@
 
 #include "ui_wordcompletionui.h"
 
+#include <KConfig>
+#include <KUrl>
+
 class QStandardItemModel;
 
 /**

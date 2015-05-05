@@ -23,10 +23,11 @@
 
 class KConfig;
 
+class QTextToSpeech;
+
 /**This class represents a text-to-speech system.
   *@author Gunnar Schmi Dt
   */
-
 class TextToSpeechSystem : public QObject
 {
     Q_OBJECT
@@ -48,7 +49,9 @@ private:
     int codec;
     QString ttsCommand;
     bool stdIn;
-    bool useKttsd;
+    bool useQtSpeech;
+    /** Text to Speech API */
+    QTextToSpeech *m_speech;
 };
 
 #endif

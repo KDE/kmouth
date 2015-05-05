@@ -1,17 +1,39 @@
+cmake_minimum_required(VERSION 2.8.12)
+
 project(kmouth)
 
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
+if(NOT MSVC)
+    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -O2 -g")
+    set(CMAKE_CXX_FLAGS_RELEASE "-Wall -Wno-switch -O2")
+    set(CMAKE_CXX_FLAGS_DEBUG  "-Wall -Wno-switch -g3 -ggdb -O0" CACHE STRING "Debug options." FORCE)
+endif(NOT MSVC)
 
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-add_definitions( -DQT_NO_CAST_FROM_ASCII )
-add_definitions( -DQT_NO_CAST_TO_ASCII )
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+include(FeatureSummary)
+find_package(Qt5 REQUIRED COMPONENTS Core TextToSpeech Xml Widgets)
 
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+find_package(ECM 1.7.0 NO_MODULE REQUIRED)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-# add_definitions (-DQT3_SUPPORT)
+include(ECMAddAppIcon)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(ECMInstallIcons)
+include(ECMAddAppIcon)
+
+find_package(KF5 REQUIRED COMPONENTS
+    I18n
+    Crash
+    Config
+    ConfigWidgets
+    CoreAddons
+    DocTools
+    KIO
+    KDELibs4Support
+)
+include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
+include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} )
+
 set(libphrasebook_SRCS
 	./phrasebook/phrasebookparser.cpp
 	./phrasebook/phrasebookdialog.cpp
@@ -19,7 +41,7 @@ set(libphrasebook_SRCS
 	./phrasebook/phrasebook.cpp
 	)
 
-kde4_add_ui_files(libphrasebook_SRCS ./phrasebook/phrasebookdialog.ui)
+ki18n_wrap_ui(libphrasebook_SRCS ./phrasebook/phrasebookdialog.ui)
 
 set(libwordcompletion_SRCS
 	./wordcompletion/wordlist.cpp
@@ -28,7 +50,7 @@ set(libwordcompletion_SRCS
 	./wordcompletion/dictionarycreationwizard.cpp
 	)
 
-kde4_add_ui_files(libwordcompletion_SRCS
+ki18n_wrap_ui(libwordcompletion_SRCS
 	./wordcompletion/creationsourceui.ui
 	./wordcompletion/creationsourcedetailsui.ui
 	./wordcompletion/kdedocsourceui.ui
@@ -53,14 +75,17 @@ set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
    kmouth.cpp
    main.cpp )
 
-set(kspeech_xml  ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml)
-qt4_add_dbus_interface(kmouth_SRCS ${kspeech_xml} kspeech_interface)
+ki18n_wrap_ui(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
 
-kde4_add_ui_files(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
+add_executable(kmouth ${kmouth_SRCS})
 
-kde4_add_executable(kmouth ${kmouth_SRCS})
-
-target_link_libraries(kmouth  ${KDE4_KIO_LIBS} ${KDE4_KDE3SUPPORT_LIBS} )
+target_link_libraries(kmouth
+                      KF5::ConfigCore
+                      KF5::KIOCore
+                      KF5::I18n
+                      KF5::KDELibs4Support
+                      Qt5::TextToSpeech
+                      Qt5::Widgets )
 
 install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -69,8 +94,8 @@ install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install( PROGRAMS kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES kmouthui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kmouth )
-install( FILES phrasebookdialogui.rc DESTINATION ${DATA_INSTALL_DIR}/kmouth )
+install( FILES kmouthui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kmouth )
+install( FILES phrasebookdialogui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kmouth )
 
 
 

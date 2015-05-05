@@ -27,6 +27,7 @@
 
 #include <kcombobox.h>
 #include <knuminput.h>
+#include <KConfig>
 
 #include "ui_creationsourceui.h"
 #include "ui_creationsourcedetailsui.h"

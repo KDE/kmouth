@@ -18,19 +18,22 @@
 #include "initialphrasebookwidget.h"
 
 // include files for Qt
+#include <QDir>
 #include <QLabel>
 #include <QStack>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 #include <QTreeView>
 #include <QVBoxLayout>
 
 // include files for KDE
 #include <kdialog.h>
 #include <klocalizedstring.h>
-#include <kstandarddirs.h>
 #include <kurl.h>
 
 #include "phrasebook.h"
+
+#include <QDebug>
 
 InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *name)
     : QWizardPage(parent)
@@ -116,8 +119,10 @@ void InitialPhraseBookWidget::createBook()
     QStandardItem *item = m_model->invisibleRootItem();
     addChildrenToBook(book, item);
 
-    QString bookLocation = KGlobal::dirs()->saveLocation("appdata", QLatin1String("/"));
+    QString bookLocation = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/');
     if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
+        QDir().mkpath(bookLocation);
+        qDebug() << "creating book at location " << bookLocation;
         book.save(KUrl(bookLocation + QLatin1String("standard.phrasebook")));
     }
 }

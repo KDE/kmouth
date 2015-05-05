@@ -19,10 +19,10 @@
 #include "wordcompletion.h"
 #include "dictionarycreationwizard.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLineEdit>
+#include <QLayout>
+#include <QLabel>
+#include <QCheckBox>
+#include <QLineEdit>
 #include <QStandardItemModel>
 
 #include <QDebug>
@@ -31,12 +31,14 @@
 #include <kurlrequester.h>
 #include <klocale.h>
 #include <kglobal.h>
-#include <kstandarddirs.h>
-#include <kconfig.h>
+
+#include <KConfig>
+#include <KConfigGroup>
 #include <kfiledialog.h>
 #include <kio/netaccess.h>
 #include <kmessagebox.h>
 #include <klanguagebutton.h>
+#include <QStandardPaths>
 
 WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     : QWidget(parent)
@@ -107,7 +109,7 @@ void WordCompletionWidget::load()
 
     // Clean up disc space
     for (QStringList::const_iterator it = newDictionaryFiles.constBegin(); it != newDictionaryFiles.constEnd(); ++it) {
-        QString filename = KGlobal::dirs()->findResource("appdata", *it);
+        QString filename = QStandardPaths::locate(QStandardPaths::DataLocation, *it);
         if (!filename.isEmpty() && !filename.isNull())
             QFile::remove(filename);
     }
@@ -134,7 +136,7 @@ void WordCompletionWidget::save()
 
     // Clean up disc space
     for (QStringList::const_iterator it = removedDictionaryFiles.constBegin(); it != removedDictionaryFiles.constEnd(); ++it) {
-        QString filename = KGlobal::dirs()->findResource("appdata", *it);
+        QString filename = QStandardPaths::locate(QStandardPaths::DataLocation, *it);
         if (!filename.isEmpty() && !filename.isNull())
             QFile::remove(filename);
     }
@@ -221,7 +223,7 @@ void WordCompletionWidget::exportDictionary()
             }
         }
         KUrl src;
-        src.setPath(KGlobal::dirs()->findResource("appdata", nameItem->data().toString()));
+        src.setPath(QStandardPaths::locate(QStandardPaths::DataLocation, nameItem->data().toString()));
         KIO::NetAccess::file_copy(src, url, this);
     }
 }

@@ -18,15 +18,15 @@
 #include "texttospeechconfigurationwidget.h"
 #include <kconfig.h>
 
-#include <QtCore/QTextCodec>
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QCheckBox>
+#include <QTextCodec>
+#include <QLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QCheckBox>
 
 #include <kcombobox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include "speech.h"
 #include <kurlrequester.h>
 
@@ -60,7 +60,7 @@ void TextToSpeechConfigurationWidget::cancel()
     urlReq->setUrl(ttsSystem->ttsCommand);
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
-    useKttsd->setChecked(ttsSystem->useKttsd);
+    useQtSpeech->setChecked(ttsSystem->useQtSpeech);
 }
 
 void TextToSpeechConfigurationWidget::ok()
@@ -68,7 +68,7 @@ void TextToSpeechConfigurationWidget::ok()
     ttsSystem->ttsCommand = urlReq->url().path();
     ttsSystem->stdIn = stdInButton->isChecked();
     ttsSystem->codec = characterCodingBox->currentIndex();
-    ttsSystem->useKttsd = useKttsd->isChecked();
+    ttsSystem->useQtSpeech = useQtSpeech->isChecked();
 }
 
 TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const
@@ -82,7 +82,7 @@ void TextToSpeechConfigurationWidget::readOptions(KConfig *config, const QString
     urlReq->setUrl(ttsSystem->ttsCommand);
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
-    useKttsd->setChecked(ttsSystem->useKttsd);
+    useQtSpeech->setChecked(ttsSystem->useQtSpeech);
 }
 
 void TextToSpeechConfigurationWidget::saveOptions(KConfig *config, const QString &langGroup)

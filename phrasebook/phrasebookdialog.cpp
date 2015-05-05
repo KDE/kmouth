@@ -27,9 +27,9 @@
 #include <kfiledialog.h>
 #include <kmenu.h>
 #include <kmessagebox.h>
-#include <kstandarddirs.h>
 #include <ktoolbarpopupaction.h>
 #include <kxmlguifactory.h>
+#include <QStandardPaths>
 
 #include "phrasebook.h"
 
@@ -70,7 +70,7 @@ PhraseBookDialog::PhraseBookDialog()
     initGUI();
     initActions();
     initStandardPhraseBooks();
-    QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::ReadOnly);
@@ -591,7 +591,7 @@ void PhraseBookDialog::slotAddPhrase()
 
 void PhraseBookDialog::slotSave()
 {
-    QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::WriteOnly);

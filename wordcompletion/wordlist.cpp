@@ -29,10 +29,9 @@
 #include <QProgressDialog>
 #include <QApplication>
 #include <QTextCodec>
+#include <QStandardPaths>
 
-#include <kstandarddirs.h>
-#include <klocale.h>
-#include <kapplication.h>
+#include <KLocalizedString>
 
 namespace WordList
 {
@@ -314,14 +313,10 @@ WordMap parseKDEDoc(QString language, QProgressDialog *pdlg)
     pdlg->show();
     qApp->processEvents(QEventLoop::AllEvents, 20);
 
-    QStringList files = KGlobal::dirs()->findAllResources("html", language + QLatin1String("/*.docbook"),
-                        KStandardDirs::Recursive |
-                        KStandardDirs::NoDuplicates);
+    QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("html/") + language + QLatin1String("/*.docbook"));
     if ((files.count() == 0) && (language.length() == 5)) {
         language = language.left(2);
-        files = KGlobal::dirs()->findAllResources("html", language + QLatin1String("/*.docbook"),
-                KStandardDirs::Recursive |
-                KStandardDirs::NoDuplicates);
+        files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("html/") + language + QLatin1String("/*.docbook"));
     }
 
     return parseFiles(files, QTextCodec::codecForName("UTF-8"), pdlg);

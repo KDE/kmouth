@@ -5,10 +5,10 @@
 #include <QtCore/QList>
 #include <QtCore/QTextStream>
 
-#include <kapplication.h>
-#include <kstandarddirs.h>
+
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <QStandardPaths>
 
 class WordCompletion::WordCompletionPrivate
 {
@@ -160,7 +160,7 @@ bool WordCompletion::setWordList(const QString &wordlist)
     }
 
     QString filename = d->dictDetails[d->current].filename;
-    QString dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
+    QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
     QFile file(dictionaryFile);
     if (file.exists() && file.open(QIODevice::ReadOnly)) {
         QTextStream stream(&file);
@@ -213,7 +213,7 @@ void WordCompletion::save()
 {
     if (d->wordsToSave) {
         QString filename = d->dictDetails[d->current].filename;
-        QString dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
+        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
         QFile file(dictionaryFile);
         if (!file.exists())
             return;

@@ -16,10 +16,15 @@
  ***************************************************************************/
 
 
-#include <kcmdlineargs.h>
+
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kuniqueapplication.h>
+#include <QApplication>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include "kmouth.h"
 #include "version.h"
@@ -32,18 +37,35 @@ static const char description[] =
 int main(int argc, char *argv[])
 {
 
-    KAboutData aboutData("kmouth", 0, ki18n("KMouth"),
-                         KMOUTH_VERSION, ki18n(description), KAboutData::License_GPL,
-                         ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
-    aboutData.addAuthor(ki18n("Gunnar Schmi Dt"), KLocalizedString(), "kmouth@schmi-dt.de");
-    KCmdLineArgs::init(argc, argv, &aboutData);
+    QApplication::setApplicationName("kmouth");
+    QApplication::setApplicationVersion(KMOUTH_VERSION);
+    QApplication::setOrganizationDomain("kde.org");
+    KLocalizedString::setApplicationDomain("kmouth");
+    QApplication::setApplicationDisplayName(i18n("KMouth"));
 
-    KCmdLineOptions options;
-    options.add("+[File]", ki18n("History file to open"));
-    KCmdLineArgs::addCmdLineOptions(options);   // Add our own options.
+    KAboutData aboutData(I18N_NOOP("kmouth"),
+                         i18n("KMouth"),
+                         KMOUTH_VERSION,
+                         i18n(description),
+                         KAboutLicense::GPL,
+                         i18n("(c) 2002/2003, Gunnar Schmi Dt"),
+                         QString(),
+                         I18N_NOOP("http://www.schmi-dt.de/kmouth/index.en.html"),
+                         I18N_NOOP("kmouth@schmi-dt.de"));
+    aboutData.addAuthor(i18n("Gunnar Schmi Dt"), QString(), "kmouth@schmi-dt.de");
+    QApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    //PORTING SCRIPT: adapt aboutdata variable if necessary
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-    aboutData.addCredit(ki18n("Olaf Schmidt"), ki18n("Tips, extended phrase books"));
-    KApplication app;
+    parser.addPositionalArgument(QLatin1String("[File]"), i18n("History file to open"));
+
+    aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
     if (app.isSessionRestored()) {
         RESTORE(KMouthApp);
@@ -54,12 +76,11 @@ int main(int argc, char *argv[])
 
         kmouth->show();
 
-        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-        if (args->count()) {
-            kmouth->openDocumentFile(args->url(0));
+        if (parser.positionalArguments().count()) {
+            kmouth->openDocumentFile(parser.positionalArguments().at(0));
         }
-        args->clear();
+
     }
     return app.exec();
 }

@@ -89,7 +89,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="KPushButton" name="addButton">
+      <widget class="QPushButton" name="addButton">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -105,7 +105,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="deleteButton">
+      <widget class="QPushButton" name="deleteButton">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -124,7 +124,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="moveUpButton">
+      <widget class="QPushButton" name="moveUpButton">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -143,7 +143,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="moveDownButton">
+      <widget class="QPushButton" name="moveDownButton">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -162,7 +162,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="exportButton">
+      <widget class="QPushButton" name="exportButton">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -237,7 +237,7 @@
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>KPushButton</class>
+   <class>QPushButton</class>
    <extends>QPushButton</extends>
    <header>kpushbutton.h</header>
   </customwidget>

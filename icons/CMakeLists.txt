@@ -1,4 +1,51 @@
 ########### install files ###############
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons(ICONS
+    16-actions-phrase.png
+    16-actions-phrase_new.png
+    16-actions-phrase_open.png
+    16-actions-phrase_save.png
+    16-actions-phrasebook.png
+    16-actions-phrasebook_closed.png
+    16-actions-phrasebook_new.png
+    16-actions-phrasebook_open.png
+    16-actions-phrasebook_save.png
+    16-actions-phrasehistory_open.png
+    16-actions-phrasehistory_print.png
+    16-actions-phrasehistory_save.png
+    16-actions-speak.png
+    16-apps-kmouth.png
+    22-actions-phrase.png
+    22-actions-phrase_new.png
+    22-actions-phrase_open.png
+    22-actions-phrase_save.png
+    22-actions-phrasebook.png
+    22-actions-phrasebook_closed.png
+    22-actions-phrasebook_new.png
+    22-actions-phrasebook_open.png
+    22-actions-phrasebook_save.png
+    22-actions-phrasehistory_open.png
+    22-actions-phrasehistory_print.png
+    22-actions-phrasehistory_save.png
+    22-actions-speak.png
+    22-apps-kmouth.png
+    32-actions-phrase.png
+    32-actions-phrase_new.png
+    32-actions-phrase_open.png
+    32-actions-phrase_save.png
+    32-actions-phrasebook.png
+    32-actions-phrasebook_closed.png
+    32-actions-phrasebook_new.png
+    32-actions-phrasebook_open.png
+    32-actions-phrasebook_save.png
+    32-actions-phrasehistory_open.png
+    32-actions-phrasehistory_print.png
+    32-actions-phrasehistory_save.png
+    32-actions-speak.png
+    32-apps-kmouth.png
+    48-actions-speak.png
+    48-apps-kmouth.png
+    DESTINATION ${ICON_INSTALL_DIR}
+    THEME hicolor
+)
 #

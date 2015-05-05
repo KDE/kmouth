@@ -22,12 +22,13 @@
 #include <klineedit.h>
 #include <kconfig.h>
 #include <kcombobox.h>
+#include <KUrl>
 
 // include files for Qt
-#include <QtGui/QWidget>
-#include <QtGui/QPushButton>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QPrinter>
+#include <QWidget>
+#include <QPushButton>
+#include <QKeyEvent>
+#include <QPrinter>
 
 class QListView;
 class QStandardItemModel;

@@ -20,11 +20,11 @@
 #define KMOUTH_H
 
 // include files for Qt
-#include <QtGui/QPrinter>
+#include <QPrinter>
 
 // include files for KDE
 #include <kxmlguiwindow.h>
-#include <kaction.h>
+#include <QAction>
 #include <kurl.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
@@ -36,6 +36,8 @@ class TextToSpeechSystem;
 class PhraseBook;
 class KToggleAction;
 class KActionCollection;
+class QLabel;
+
 /**
   * The base class for KMouth application windows. It sets up the main
   * window and reads the config file as well as providing a menubar, toolbar
@@ -145,10 +147,10 @@ private:
     /** The configuration dialog */
     OptionsDialog *optionsDialog;
 
-    // KAction pointers to enable/disable actions
-    KAction* fileOpen;
-    KAction* fileSaveAs;
-    KAction* filePrint;
+    // QAction pointers to enable/disable actions
+    QAction * fileOpen;
+    QAction * fileSaveAs;
+    QAction * filePrint;
     QAction* fileQuit;
 
     QAction* editCut;
@@ -171,6 +173,8 @@ private:
     QAction* phraseListCopy;
     QAction* phraselistSelectAll;
     QAction* phraselistDeselectAll;
+
+    QLabel* m_statusLabel;
 
     // Keep QPrinter so settings persist
     QPrinter *printer;

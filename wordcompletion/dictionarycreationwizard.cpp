@@ -18,26 +18,26 @@
 #include "dictionarycreationwizard.h"
 #include "wordlist.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
-#include <QtGui/QRadioButton>
-#include <QtGui/QLineEdit>
-#include <QtGui/QGridLayout>
-#include <QtCore/QTextCodec>
-#include <QtCore/QTextStream>
+#include <QLayout>
+#include <QLabel>
+#include <QCheckBox>
+#include <QRadioButton>
+#include <QLineEdit>
+#include <QGridLayout>
+#include <QTextCodec>
+#include <QTextStream>
 #include <QProgressDialog>
 #include <QDebug>
+#include <QLocale>
 
-#include <k3listview.h>
 #include <klineedit.h>
 #include <kurlrequester.h>
-#include <klocale.h>
 #include <kcombobox.h>
 #include <kapplication.h>
-#include <kstandarddirs.h>
 #include <kconfig.h>
+#include <KConfigGroup>
 #include <klanguagebutton.h>
+#include <QStandardPaths>
 
 int CreationSourceWidget::nextId() const
 {
@@ -193,10 +193,10 @@ QString DictionaryCreationWizard::createDictionary()
     do {
         dictnumber++;
         filename = QString(QLatin1String("wordcompletion%1.dict")).arg(dictnumber);
-        dictionaryFile = KGlobal::dirs()->findResource("appdata", filename);
-    } while (KStandardDirs::exists(dictionaryFile));
+        dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
+    } while (QFile::exists(dictionaryFile));
 
-    dictionaryFile = KGlobal::dirs()->saveLocation("appdata", QLatin1String("/")) + filename;
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("/") + filename;
     if (WordList::saveWordList(map, dictionaryFile))
         return filename;
     else
@@ -223,10 +223,7 @@ QString DictionaryCreationWizard::language()
     if (creationSource->mergeButton->isChecked()) {
         return mergeWidget->language();
     } else if (creationSource->emptyButton->isChecked()) {
-        if (KGlobal::locale())
-            return KGlobal::locale()->language();
-        else
-            return KLocale::defaultLanguage();
+        return QLocale::languageToString(QLocale::system().language());
     } else if (creationSource->fileButton->isChecked()) {
         return fileWidget->languageButton->current();
     } else if (creationSource->directoryButton->isChecked()) {
@@ -283,7 +280,7 @@ QMap <QString, int> MergeWidget::mergeParameters()
         it.next();
         if (it.value()->isChecked()) {
             QString name = it.key();
-            QString dictionaryFile = KGlobal::dirs()->findResource("appdata", name);
+            QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, name);
             files[dictionaryFile] = weights.value(name)->value();
         }
     }
@@ -334,7 +331,7 @@ void CompletionWizardWidget::ok(KConfig *config)
     QString filename;
     QString dictionaryFile;
 
-    dictionaryFile = KGlobal::dirs()->saveLocation("appdata", QLatin1String("/")) + QLatin1String("wordcompletion1.dict");
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("/");
     qDebug() << "dictionaryFile is " << dictionaryFile;
     if (WordList::saveWordList(map, dictionaryFile)) {
         KConfigGroup cg(config, "Dictionary 0");

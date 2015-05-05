@@ -18,11 +18,11 @@
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
-#include <QtCore/QObject>
-#include <QtCore/QTextStream>
-#include <QtGui/QMenu>
-#include <QtGui/QPrinter>
-#include <QtXml/QXmlInputSource>
+#include <QObject>
+#include <QTextStream>
+#include <QMenu>
+#include <QPrinter>
+#include <QXmlInputSource>
 
 #include <ktoolbar.h>
 #include <kaction.h>

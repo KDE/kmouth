@@ -18,7 +18,7 @@
 #ifndef CONFIGWIZARD_H
 #define CONFIGWIZARD_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <QWizard>
 
 class KConfig;

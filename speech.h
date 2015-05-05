@@ -18,9 +18,9 @@
 #ifndef SPEECH_H
 #define SPEECH_H
 
-#include <QtCore/QObject>
+#include <QObject>
+#include <QProcess>
 
-#include <k3process.h>
 #include <ktemporaryfile.h>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
@@ -59,13 +59,13 @@ public:
                            const QString &filename, const QString &language);
 
 public slots:
-    void wroteStdin(K3Process *p);
-    void processExited(K3Process *p);
-    void receivedStdout(K3Process *proc, char *buffer, int buflen);
-    void receivedStderr(K3Process *proc, char *buffer, int buflen);
+    //void wroteStdin(K3Process *p);
+    void processExited(int exitCode, QProcess::ExitStatus exitStatus);
+    //void receivedStdout(K3Process *proc, char *buffer, int buflen);
+    //void receivedStderr(K3Process *proc, char *buffer, int buflen);
 
 private:
-    K3ShellProcess process;
+    QProcess m_process;
     QByteArray encText;
     KTemporaryFile tempFile;
 };

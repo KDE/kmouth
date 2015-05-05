@@ -17,15 +17,16 @@
 
 #include "configwizard.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
+#include <QLayout>
+#include <QLabel>
 
-#include <k3listview.h>
 #include <klocale.h>
-#include <kapplication.h>
-#include <kstandarddirs.h>
+
 #include <kconfig.h>
+#include <KConfigGroup>
+#include <KHelpClient>
 #include <ktoolinvocation.h>
+#include <QStandardPaths>
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/initialphrasebookwidget.h"
@@ -65,7 +66,7 @@ void ConfigWizard::initCommandPage()
 
 void ConfigWizard::initBookPage()
 {
-    QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
     if (displayBook) {
@@ -82,7 +83,7 @@ void ConfigWizard::initBookPage()
 void ConfigWizard::initCompletion()
 {
     if (!WordCompletion::isConfigured()) {
-        QString dictionaryFile = KGlobal::dirs()->findResource("appdata", QLatin1String("dictionary.txt"));
+        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("dictionary.txt"));
         QFile file(dictionaryFile);
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
@@ -143,7 +144,7 @@ bool ConfigWizard::configurationNeeded()
 
 void ConfigWizard::help()
 {
-    KToolInvocation::invokeHelp(QLatin1String("Wizard"));
+    KHelpClient::invokeHelp(QLatin1String("Wizard"));
 }
 
 #include "configwizard.moc"

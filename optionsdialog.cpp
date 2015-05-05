@@ -21,11 +21,12 @@
 #include "texttospeechconfigurationwidget.h"
 #include "speech.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QPixmap>
-#include <QtCore/QFile>
+#include <QLayout>
+#include <QLabel>
+#include <QPixmap>
+#include <QFile>
 
+#include <QDialog>
 #include <kcombobox.h>
 #include <ktabwidget.h>
 #include <klocale.h>
@@ -35,7 +36,10 @@
 #include <klibloader.h>
 #include <kicon.h>
 #include <kpagewidgetmodel.h>
-#include <kparts/componentfactory.h>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 PreferencesWidget::PreferencesWidget(QWidget *parent, const char *name)
     : QWidget(parent)
@@ -122,10 +126,21 @@ bool PreferencesWidget::isSpeakImmediately()
 OptionsDialog::OptionsDialog(QWidget *parent)
     : KPageDialog(parent)
 {
-    setCaption(i18n("Configuration"));
-    setButtons(KDialog::Ok | KDialog::Apply | KDialog::Cancel | KDialog::Help);
+    setWindowTitle(i18n("Configuration"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Apply);
+    QWidget *mainWidget = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    setLayout(mainLayout);
+    mainLayout->addWidget(mainWidget);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
+    mainLayout->addWidget(buttonBox);
     setFaceType(KPageDialog::List);
-    setHelp(QLatin1String("config-dialog"));
+    //setHelp(QLatin1String("config-dialog"));
 
 
     //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
@@ -134,11 +149,11 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     tabCtl->setObjectName(QLatin1String("general"));
 
     behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");
-    behaviourWidget->layout()->setMargin(KDialog::marginHint());
+//TODO PORT QT5     behaviourWidget->layout()->setMargin(QDialog::marginHint());
     tabCtl->addTab(behaviourWidget, i18n("&Preferences"));
 
     commandWidget = new TextToSpeechConfigurationWidget(tabCtl, "ttsTab");
-    commandWidget->layout()->setMargin(KDialog::marginHint());
+//TODO PORT QT5     commandWidget->layout()->setMargin(QDialog::marginHint());
     tabCtl->addTab(commandWidget, i18n("&Text-to-Speech"));
 
     KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
@@ -160,11 +175,11 @@ OptionsDialog::OptionsDialog(QWidget *parent)
         addPage(pageKttsd);
     }
 
-    setDefaultButton(KDialog::Cancel);
+    buttonBox->button(QDialogButtonBox::Cancel)->setDefault(true);
 
-    connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
-    connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));
-    connect(this, SIGNAL(applyClicked()), this, SLOT(slotApply()));
+    connect(okButton, SIGNAL(clicked()), this, SLOT(slotOk()));
+    connect(buttonBox->button(QDialogButtonBox::Cancel), SIGNAL(clicked()), this, SLOT(slotCancel()));
+    connect(buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), this, SLOT(slotApply()));
 }
 
 OptionsDialog::~OptionsDialog()
@@ -174,7 +189,7 @@ OptionsDialog::~OptionsDialog()
 
 void OptionsDialog::slotCancel()
 {
-//   KDialog::slotCancel();
+//   QDialog::slotCancel();
     commandWidget->cancel();
     behaviourWidget->cancel();
     completionWidget->load();
@@ -184,7 +199,7 @@ void OptionsDialog::slotCancel()
 
 void OptionsDialog::slotOk()
 {
-//   KDialog::slotOk();
+//   QDialog::slotOk();
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();
@@ -196,7 +211,7 @@ void OptionsDialog::slotOk()
 
 void OptionsDialog::slotApply()
 {
-//   KDialog::slotApply();
+//   QDialog::slotApply();
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();

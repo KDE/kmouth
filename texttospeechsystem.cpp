@@ -23,47 +23,33 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kspeech.h>
 #include <kdebug.h>
-#include <kspeech_interface.h>
+
+#include <QTextToSpeech>
 
 #include "speech.h"
 
 TextToSpeechSystem::TextToSpeechSystem()
 {
     stdIn = true;
-    useKttsd = true;
+    useQtSpeech = true;
     codec = Speech::Local; // local encoding;
     buildCodecList();
+    m_speech = new QTextToSpeech();
 }
 
 TextToSpeechSystem::~TextToSpeechSystem()
 {
     delete codecList;
-}
-
-bool kttsdSay(const QString &text, const QString &language)
-{
-    // TODO: Would be better to save off this QDBusInterface pointer and
-    // set defaults only once.
-    org::kde::KSpeech kspeech(QLatin1String("org.kde.KSpeech"), QLatin1String("/KSpeech"), QDBusConnection::sessionBus());
-    kspeech.setApplicationName(QLatin1String("KMouth"));
-    kspeech.setDefaultTalker(language);
-
-    // FIXME: language is incorrect.
-    kDebug() << "kttsdSay: language = " << language;
-    kspeech.setDefaultPriority(KSpeech::jpWarning);
-    QDBusReply<int> val = kspeech.say(text, 0);
-
-    return (val > 0);
+    delete m_speech;
 }
 
 void TextToSpeechSystem::speak(const QString &text, const QString &language)
 {
     if (text.length() > 0) {
-        if (useKttsd) {
-            if (kttsdSay(text, language))
-                return;
+        if (useQtSpeech) {
+            m_speech->say(text);
+            return;
         }
 
         if (codec < Speech::UseCodec)
@@ -79,7 +65,7 @@ void TextToSpeechSystem::readOptions(KConfig *config, const QString &langGroup)
     KConfigGroup cg(config, langGroup);
     ttsCommand = cg.readPathEntry("Command", QString());
     stdIn = cg.readEntry("StdIn", true);
-    useKttsd = cg.readEntry("useKttsd", true);
+    useQtSpeech = cg.readEntry("useQtSpeech", true);
 
     QString codecString = cg.readEntry("Codec", "Local");
     if (codecString == QLatin1String("Local"))
@@ -101,7 +87,7 @@ void TextToSpeechSystem::saveOptions(KConfig *config, const QString &langGroup)
     KConfigGroup cg(config, langGroup);
     cg.writePathEntry("Command", ttsCommand);
     cg.writeEntry("StdIn", stdIn);
-    cg.writeEntry("useKttsd", useKttsd);
+    cg.writeEntry("useQtSpeech", useQtSpeech);
     if (codec == Speech::Local)
         cg.writeEntry("Codec", "Local");
     else if (codec == Speech::Latin1)

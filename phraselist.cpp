@@ -23,14 +23,14 @@
 #include "wordcompletion/wordcompletion.h"
 
 // include files for Qt
-#include <QtGui/QPainter>
-#include <QtGui/QLayout>
-#include <QtGui/QApplication>
-#include <QtGui/QMenu>
-#include <QtGui/QClipboard>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QKeyEvent>
+#include <QPainter>
+#include <QLayout>
+#include <QApplication>
+#include <QMenu>
+#include <QClipboard>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QKeyEvent>
 #include <QStandardItem>
 #include <QListView>
 
@@ -43,6 +43,7 @@
 #include <kcombobox.h>
 #include <kmessagebox.h>
 #include <kxmlguifactory.h>
+#include <KConfigGroup>
 
 #include <stdlib.h>
 
@@ -210,8 +211,8 @@ void PhraseList::readCompletionOptions(KConfig *config)
 
     if (config->hasGroup("Completion")) {
         KConfigGroup cg2(config, "Completion");
-        int mode = cg2.readEntry("Mode", int(KGlobalSettings::completionMode()));
-        lineEdit->setCompletionMode(static_cast<KGlobalSettings::Completion>(mode));
+        //int mode = cg2.readEntry("Mode", int(KGlobalSettings::completionMode()));
+        //lineEdit->setCompletionMode(static_cast<KGlobalSettings::Completion>(mode));
 
         QString current = cg2.readEntry("List", QString());
         const QStringList list = completion->wordLists();

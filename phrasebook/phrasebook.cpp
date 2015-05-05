@@ -18,14 +18,14 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
-#include <QtGui/QPainter>
-#include <QtCore/QFile>
-#include <QtCore/QRegExp>
-#include <QtCore/QStack>
-#include <QtCore/QTextStream>
-#include <QtGui/QMenu>
-#include <QtXml/QXmlInputSource>
-#include <QtXml/QXmlSimpleReader>
+#include <QPainter>
+#include <QFile>
+#include <QRegExp>
+#include <QStack>
+#include <QTextStream>
+#include <QMenu>
+#include <QXmlInputSource>
+#include <QXmlSimpleReader>
 
 #include <kactionmenu.h>
 #include <kactioncollection.h>
@@ -33,13 +33,14 @@
 #include <kaction.h>
 #include <kdesktopfile.h>
 #include <kmenu.h>
-#include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <ktemporaryfile.h>
 #include <kio/netaccess.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
+#include <KUrl>
+#include <KConfigGroup>
 
 Phrase::Phrase()
 {
@@ -287,7 +288,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, KUrl &url, bool phra
 
     QString empty;
     KFileDialog fdlg(empty, filters, parent);
-    fdlg.setCaption(title);
+    fdlg.setWindowTitle(title);
     fdlg.setOperationMode(KFileDialog::Saving);
 
     if (fdlg.exec() != QDialog::Accepted) {
@@ -394,10 +395,19 @@ bool PhraseBook::open(const KUrl &url)
 StandardBookList PhraseBook::standardPhraseBooks()
 {
     // Get all the standard phrasebook filenames in bookPaths.
-    QStringList bookPaths = KGlobal::mainComponent().dirs()->findAllResources(
-                                "data", QLatin1String("kmouth/books/*.phrasebook"),
-                                KStandardDirs::Recursive |
-                                KStandardDirs::NoDuplicates);
+    QStringList bookPaths;
+    const QStringList dirs =
+        QStandardPaths::locateAll(QStandardPaths::AppDataLocation, "books", QStandardPaths::LocateDirectory);
+    Q_FOREACH (const QString &dir, dirs) {
+        const QStringList locales = QDir(dir).entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+        Q_FOREACH (const QString &locale, locales) {
+            const QStringList fileNames =
+                QDir(dir + '/' + locale).entryList(QStringList() << QLatin1String("*.phrasebook"));
+            Q_FOREACH (const QString &file, fileNames) {
+                bookPaths.append(dir + '/' + locale + '/' + file);
+            }
+        }
+    }
     QStringList bookNames;
     QMap<QString, StandardBook> bookMap;
     QStringList::iterator it;
@@ -436,7 +446,7 @@ QString PhraseBook::displayPath(QString filename)
     while (path.length() > position) {
         file.setFile(path);
 
-        KDesktopFile *dirDesc = new KDesktopFile("data", path + QLatin1String("/.directory"));
+        KDesktopFile *dirDesc = new KDesktopFile(QStandardPaths::GenericDataLocation, path + QLatin1String("/.directory"));
         QString name = dirDesc->readName();
         delete dirDesc;
 

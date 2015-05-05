@@ -197,39 +197,38 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 
 
         // 3. create a new process
-        process << command;
-        connect(&process, SIGNAL(processExited(K3Process*)), this, SLOT(processExited(K3Process*)));
-        connect(&process, SIGNAL(wroteStdin(K3Process*)), this, SLOT(wroteStdin(K3Process*)));
-        connect(&process, SIGNAL(receivedStdout(K3Process*, char*, int)), this, SLOT(receivedStdout(K3Process*, char*, int)));
-        connect(&process, SIGNAL(receivedStderr(K3Process*, char*, int)), this, SLOT(receivedStderr(K3Process*, char*, int)));
+        connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processExited(int, QProcess::ExitStatus)));
+        //connect(&process, SIGNAL(wroteStdin(K3Process*)), this, SLOT(wroteStdin(K3Process*)));
+        //connect(&process, SIGNAL(receivedStdout(K3Process*, char*, int)), this, SLOT(receivedStdout(K3Process*, char*, int)));
+        //connect(&process, SIGNAL(receivedStderr(K3Process*, char*, int)), this, SLOT(receivedStderr(K3Process*, char*, int)));
 
         // 4. start the process
         if (stdIn) {
-            process.start(K3Process::NotifyOnExit, K3Process::All);
+            m_process.start(command);
             if (encText.size() > 0)
-                process.writeStdin(encText, encText.size());
+                m_process.write(encText, encText.size());
             else
-                process.closeStdin();
+                m_process.close();
         } else
-            process.start(K3Process::NotifyOnExit, K3Process::AllOutput);
+            m_process.start(command);
     }
 }
 
-void Speech::receivedStdout(K3Process *, char *buffer, int buflen)
-{
-    kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char('\n');
-}
-void Speech::receivedStderr(K3Process *, char *buffer, int buflen)
-{
-    kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char('\n');
-}
+//void Speech::receivedStdout(K3Process *, char *buffer, int buflen)
+//{
+//    kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char('\n');
+//}
+//void Speech::receivedStderr(K3Process *, char *buffer, int buflen)
+//{
+//    kDebug() << QString::fromLatin1(buffer, buflen) + QLatin1Char('\n');
+//}
 
-void Speech::wroteStdin(K3Process *)
-{
-    process.closeStdin();
-}
+//void Speech::wroteStdin(K3Process *)
+//{
+//    process.closeStdin();
+//}
 
-void Speech::processExited(K3Process *)
+void Speech::processExited(int exitCode, QProcess::ExitStatus exitStatus)
 {
     delete this;
 }

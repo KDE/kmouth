@@ -24,10 +24,10 @@
 #include "configwizard.h"
 
 // include files for Qt
-#include <QtCore/QDir>
-#include <QtGui/QPainter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QMenu>
+#include <QDir>
+#include <QPainter>
+#include <QPrintDialog>
+#include <QMenu>
 
 // include files for KDE
 #include <kxmlguifactory.h>
@@ -38,7 +38,8 @@
 #include <kconfig.h>
 #include <kstandardaction.h>
 #include <kmenu.h>
-#include <kstandarddirs.h>
+#include <KConfigGroup>
+
 #include <kglobal.h>
 #include <ktoolbar.h>
 #include <kactioncollection.h>
@@ -47,14 +48,15 @@
 #include <kstandardshortcut.h>
 #include <kapplication.h>
 #include <kdeprintdialog.h>
-
-#define ID_STATUS_MSG 1
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 KMouthApp::KMouthApp(QWidget* , const char* name): KXmlGuiWindow(0)
 {
+    setWindowIcon(KIcon(QLatin1String("kmouth")));
     setObjectName(QLatin1String(name));
     isConfigured = false;
-    config = KGlobal::config();
+    config = KSharedConfig::openConfig();
 
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
@@ -241,7 +243,8 @@ void KMouthApp::initStatusBar()
     ///////////////////////////////////////////////////////////////////
     // STATUSBAR
     // TODO: add your own items you need for displaying current application status.
-    statusBar()->insertItem(i18nc("The job is done", "Ready."), ID_STATUS_MSG);
+    m_statusLabel = new QLabel(i18nc("The job is done", "Ready."));
+    statusBar()->addPermanentWidget(m_statusLabel);
 }
 
 void KMouthApp::initPhraseList()
@@ -491,13 +494,12 @@ void KMouthApp::slotStatusMsg(const QString &text)
 {
     ///////////////////////////////////////////////////////////////////
     // change status message permanently
-    statusBar()->clearMessage();
-    statusBar()->changeItem(text, ID_STATUS_MSG);
+    m_statusLabel->setText(text);
 }
 
 void KMouthApp::slotPhrasebookConfirmed()
 {
-    QString standardBook = KGlobal::dirs()->findResource("appdata", QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     if (!standardBook.isEmpty()) {
         PhraseBook book;
         book.open(KUrl(standardBook));
