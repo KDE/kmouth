@@ -21,10 +21,12 @@
 #include <QDomNode>
 #include <QStandardItemModel>
 
-#include <kurl.h>
-#include <kxmlguiwindow.h>
+#include <KAction>
+#include <KIcon>
+#include <KUrl>
+#include <KXmlGuiWindow>
 
-#include "phrasebook.h"
+//#include "phrasebook.h"
 #include "ui_phrasebookdialog.h"
 
 class KActionMenu;
@@ -39,23 +41,11 @@ class StandardPhraseBookInsertAction : public KAction
 {
     Q_OBJECT
 public:
-    StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-        : KAction(KIcon(QLatin1String("phrasebook")), name, parent)
-    {
-        this->url = url;
-        connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
-        connect(this, SIGNAL(slotActivated(const KUrl &)), receiver, slot);
-        parent->addAction(name, this);
-    }
-    ~StandardPhraseBookInsertAction()
-    {
-    }
+    StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
+    ~StandardPhraseBookInsertAction();
 
 public slots:
-    void slotActivated()
-    {
-        emit slotActivated(url);
-    }
+    void slotActivated();
 
 signals:
     void slotActivated(const KUrl &url);

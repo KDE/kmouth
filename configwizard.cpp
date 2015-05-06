@@ -19,14 +19,12 @@
 
 #include <QLayout>
 #include <QLabel>
-
-#include <klocale.h>
+#include <QStandardPaths>
 
 #include <kconfig.h>
 #include <KConfigGroup>
 #include <KHelpClient>
-#include <ktoolinvocation.h>
-#include <QStandardPaths>
+#include <KLocalizedString>
 
 #include "texttospeechconfigurationwidget.h"
 #include "phrasebook/initialphrasebookwidget.h"

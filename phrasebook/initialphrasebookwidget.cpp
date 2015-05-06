@@ -27,11 +27,9 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <kdialog.h>
-#include <klocalizedstring.h>
-#include <kurl.h>
-
-#include "phrasebook.h"
+#include <KDialog>
+#include <KLocalizedString>
+#include <KUrl>
 
 #include <QDebug>
 

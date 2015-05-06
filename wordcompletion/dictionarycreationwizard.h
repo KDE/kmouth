@@ -20,23 +20,22 @@
 #ifndef DICTIONARYCREATIONWIZARD_H
 #define DICTIONARYCREATIONWIZARD_H
 
-#include <QtCore/QList>
-#include <QtCore/QMap>
-#include <QScrollArea>
+#include <QList>
+#include <QMap>
 #include <QWizard>
 
-#include <kcombobox.h>
-#include <knuminput.h>
-#include <KConfig>
+#include <KNumInput>
 
 #include "ui_creationsourceui.h"
 #include "ui_creationsourcedetailsui.h"
 #include "ui_kdedocsourceui.h"
 
 class CompletionWizardWidget;
-class QTextCodec;
 class KComboBox;
+class KConfig;
 class MergeWidget;
+class QScrollArea;
+class QTextCodec;
 
 class CreationSourceWidget : public QWizardPage, public Ui::CreationSourceUI
 {

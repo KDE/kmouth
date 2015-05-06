@@ -18,26 +18,19 @@
 #include "dictionarycreationwizard.h"
 #include "wordlist.h"
 
-#include <QLayout>
-#include <QLabel>
 #include <QCheckBox>
-#include <QRadioButton>
-#include <QLineEdit>
+#include <QLocale>
 #include <QGridLayout>
+#include <QProgressDialog>
+#include <QRadioButton>
+#include <QStandardPaths>
 #include <QTextCodec>
 #include <QTextStream>
-#include <QProgressDialog>
-#include <QDebug>
-#include <QLocale>
 
-#include <klineedit.h>
-#include <kurlrequester.h>
-#include <kcombobox.h>
-#include <kapplication.h>
-#include <kconfig.h>
+#include <QDebug>
+
+#include <KConfig>
 #include <KConfigGroup>
-#include <klanguagebutton.h>
-#include <QStandardPaths>
 
 int CreationSourceWidget::nextId() const
 {

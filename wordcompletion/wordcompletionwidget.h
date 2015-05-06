@@ -22,10 +22,8 @@
 
 #include "ui_wordcompletionui.h"
 
-#include <KConfig>
-#include <KUrl>
-
 class QStandardItemModel;
+class KConfig;
 
 /**
  * This class represents a configuration widget for managing dictionaries.

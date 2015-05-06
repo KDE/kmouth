@@ -18,29 +18,28 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
-#include <QPainter>
 #include <QFile>
+#include <QFontDatabase>
+#include <QPainter>
 #include <QRegExp>
 #include <QStack>
 #include <QTextStream>
-#include <QMenu>
 #include <QXmlInputSource>
 #include <QXmlSimpleReader>
 
-#include <kactionmenu.h>
-#include <kactioncollection.h>
-#include <klocale.h>
-#include <kaction.h>
-#include <kdesktopfile.h>
-#include <kmenu.h>
-#include <ktoolbar.h>
-#include <ktemporaryfile.h>
-#include <kio/netaccess.h>
-#include <kfiledialog.h>
-#include <kmessagebox.h>
-#include <kglobalsettings.h>
+#include <KAction>
+#include <KActionMenu>
+#include <KActionCollection>
+#include <KDesktopFile>
+#include <KFileDialog>
+#include <KLocalizedString>
+#include <KMenu>
+#include <KMessageBox>
+#include <KToolBar>
+#include <KTemporaryFile>
 #include <KUrl>
-#include <KConfigGroup>
+
+#include <kio/netaccess.h>
 
 Phrase::Phrase()
 {
@@ -122,7 +121,7 @@ void PhraseBook::print(QPrinter *pPrinter)
     int x = size.x();
     int y = size.y();
     int w = size.width();
-    printpainter.setFont(QFont(KGlobalSettings::generalFont().family(), 12));
+    printpainter.setFont(QFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont).family(), 12));
     QFontMetrics metrics = printpainter.fontMetrics();
 
     PhraseBookEntryList::iterator it;

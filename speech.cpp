@@ -17,15 +17,12 @@
 
 #include "speech.h"
 
-#include <QtCore/QStack>
-#include <QtCore/QRegExp>
-#include <QtCore/QTextCodec>
-#include <QtCore/QFile>
-#include <QtCore/QHash>
-#include <QtCore/QTextStream>
+#include <QHash>
+#include <QRegExp>
+#include <QStack>
+#include <QTextCodec>
+#include <QTextStream>
 
-#include <kdebug.h>
-#include <kdeversion.h>
 #define macroExpander
 #include <kmacroexpander.h>
 

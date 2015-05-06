@@ -18,8 +18,8 @@
 #ifndef TEXTTOSPEECHSYSTEM_H
 #define TEXTTOSPEECHSYSTEM_H
 
-#include <QtCore/QList>
-#include <QtCore/QObject>
+#include <QList>
+#include <QObject>
 
 class KConfig;
 

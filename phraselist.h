@@ -19,18 +19,18 @@
 #define PHRASELIST_H
 
 // include files for KDE
-#include <klineedit.h>
-#include <kconfig.h>
-#include <kcombobox.h>
 #include <KUrl>
 
 // include files for Qt
 #include <QWidget>
-#include <QPushButton>
-#include <QKeyEvent>
-#include <QPrinter>
 
+class KComboBox;
+class KConfig;
+class KLineEdit;
+class QKeyEvent;
 class QListView;
+class QPrinter;
+class QPushButton;
 class QStandardItemModel;
 class WordCompletion;
 

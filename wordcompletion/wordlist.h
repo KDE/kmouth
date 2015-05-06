@@ -20,12 +20,10 @@
 #ifndef WORDLIST_H
 #define WORDLIST_H
 
-#include <QtXml/QXmlDefaultHandler>
-#include <QtXml/QXmlParseException>
-#include <QtXml/QXmlAttributes>
-#include <QtCore/QObject>
-#include <QtCore/QMap>
-#include <QtCore/QTextStream>
+#include <QMap>
+#include <QXmlAttributes>
+#include <QXmlDefaultHandler>
+#include <QXmlParseException>
 
 class QTextCodec;
 class QProgressDialog;

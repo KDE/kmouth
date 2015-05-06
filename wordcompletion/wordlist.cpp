@@ -19,17 +19,18 @@
 
 #include "wordlist.h"
 
-#include <QtCore/QRegExp>
-#include <QtCore/QDir>
-#include <QtCore/QTextStream>
-#include <QtXml/QXmlParseException>
-#include <QtXml/QXmlAttributes>
-#include <QtXml/QXmlInputSource>
-#include <QtXml/QXmlSimpleReader>
-#include <QProgressDialog>
 #include <QApplication>
-#include <QTextCodec>
+#include <QDir>
+#include <QList>
+#include <QProgressDialog>
+#include <QRegExp>
 #include <QStandardPaths>
+#include <QTextCodec>
+#include <QTextStream>
+#include <QXmlAttributes>
+#include <QXmlInputSource>
+#include <QXmlParseException>
+#include <QXmlSimpleReader>
 
 #include <KLocalizedString>
 
@@ -228,11 +229,6 @@ void addWordsFromFile(WordMap &map, QString filename, QTextCodec *codec)
     }
 }
 
-}
-#include <kdebug.h>
-namespace WordList
-{
-
 WordMap parseFiles(QStringList files, QTextCodec *codec, QProgressDialog *pdlg)
 {
     int progress = 0;
@@ -364,9 +360,8 @@ WordMap parseDir(QString directory, QTextCodec *codec, QProgressDialog *pdlg)
 
     return parseFiles(files, codec, pdlg);
 }
-/***************************************************************************/
 
-#include <QList>
+/***************************************************************************/
 
 /* Structures used for storing *.aff files (part of OpenOffice.org dictionaries)
  */

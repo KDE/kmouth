@@ -21,15 +21,14 @@
 #include <QClipboard>
 #include <QMimeData>
 #include <QStack>
+#include <QStandardPaths>
 
 // include files for KDE
-#include <kactionmenu.h>
-#include <kfiledialog.h>
-#include <kmenu.h>
-#include <kmessagebox.h>
-#include <ktoolbarpopupaction.h>
-#include <kxmlguifactory.h>
-#include <QStandardPaths>
+#include <KActionMenu>
+#include <KFileDialog>
+#include <KMessageBox>
+#include <KToolBarPopupAction>
+#include <KXMLGUIFactory>
 
 #include "phrasebook.h"
 
@@ -50,6 +49,25 @@ const QString kWholeBookXML = QLatin1String("<?xml version=\"1.0\" encoding=\"UT
 
 const QIcon kPhraseBookIcon = KIcon(kPhraseBook);
 const QIcon kPhraseIcon = KIcon(kPhrase);
+
+StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+    : KAction(KIcon(QLatin1String("phrasebook")), name, parent)
+{
+    this->url = url;
+    connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
+    connect(this, SIGNAL(slotActivated(const KUrl &)), receiver, slot);
+    parent->addAction(name, this);
+}
+
+StandardPhraseBookInsertAction::~StandardPhraseBookInsertAction()
+{
+}
+
+void StandardPhraseBookInsertAction::slotActivated()
+{
+    emit slotActivated(url);
+}
+
 
 namespace PhraseBookPrivate
 {

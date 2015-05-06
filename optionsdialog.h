@@ -20,15 +20,15 @@
 #ifndef OPTIONSDIALOG_H
 #define OPTIONSDIALOG_H
 
-#include <kpagedialog.h>
-
-#include <QtCore/QObject>
+#include <KConfig>
+#include <KPageDialog>
 
 #include "ui_preferencesui.h"
-#include "texttospeechconfigurationwidget.h"
 
 class KTabWidget;
 class KCModule;
+class TextToSpeechSystem;
+class TextToSpeechConfigurationWidget;
 class WordCompletionWidget;
 
 /**This class represents a configuration widget for user preferences.

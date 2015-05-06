@@ -1,14 +1,13 @@
 #include "wordcompletion.h"
 
-#include <QtCore/QRegExp>
-#include <QtCore/QFile>
-#include <QtCore/QList>
-#include <QtCore/QTextStream>
-
-
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <QFile>
+#include <QList>
+#include <QRegExp>
 #include <QStandardPaths>
+#include <QTextStream>
+
+#include <KConfig>
+#include <KConfigGroup>
 
 class WordCompletion::WordCompletionPrivate
 {

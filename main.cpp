@@ -16,15 +16,12 @@
  ***************************************************************************/
 
 
-
-#include <kaboutdata.h>
-#include <klocale.h>
-#include <kuniqueapplication.h>
 #include <QApplication>
-#include <KAboutData>
-#include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+
+#include <KAboutData>
+#include <KLocalizedString>
 
 #include "kmouth.h"
 #include "version.h"

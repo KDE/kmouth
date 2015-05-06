@@ -18,8 +18,8 @@
 #ifndef PHRASEBOOKPARSER_H
 #define PHRASEBOOKPARSER_H
 
-#include <QtXml/QXmlParseException>
-#include <QtXml/QXmlAttributes>
+#include <QXmlAttributes>
+#include <QXmlParseException>
 
 #include "phrasebook.h"
 

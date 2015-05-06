@@ -16,16 +16,12 @@
  ***************************************************************************/
 
 #include "texttospeechsystem.h"
-#include <stdlib.h>
 
-#include <QtCore/QTextCodec>
-#include <QtDBus/QtDBus>
-
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kdebug.h>
-
+#include <QTextCodec>
 #include <QTextToSpeech>
+
+#include <KConfig>
+#include <KConfigGroup>
 
 #include "speech.h"
 

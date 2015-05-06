@@ -19,8 +19,11 @@
 #define TEXTTOSPEECHCONFIGURATIONWIDGET_H
 
 #include "ui_texttospeechconfigurationui.h"
-#include "texttospeechsystem.h"
+
 #include <QWizardPage>
+
+class KConfig;
+class TextToSpeechSystem;
 
 /**This class represents a configuration widget for the text-to-speech system.
   *@author Gunnar Schmi Dt

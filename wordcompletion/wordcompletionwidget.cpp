@@ -16,29 +16,22 @@
  ***************************************************************************/
 
 #include "wordcompletionwidget.h"
-#include "wordcompletion.h"
-#include "dictionarycreationwizard.h"
 
-#include <QLayout>
-#include <QLabel>
-#include <QCheckBox>
-#include <QLineEdit>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 
 #include <QDebug>
 
-#include <klineedit.h>
-#include <kurlrequester.h>
-#include <klocale.h>
-#include <kglobal.h>
-
 #include <KConfig>
 #include <KConfigGroup>
-#include <kfiledialog.h>
+#include <KFileDialog>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KUrl>
 #include <kio/netaccess.h>
-#include <kmessagebox.h>
-#include <klanguagebutton.h>
-#include <QStandardPaths>
+
+#include "dictionarycreationwizard.h"
+#include "wordcompletion.h"
 
 WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     : QWidget(parent)

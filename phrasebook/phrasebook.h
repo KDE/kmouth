@@ -19,15 +19,15 @@
 #define PHRASEBOOK_H
 
 #include <QObject>
-#include <QTextStream>
 #include <QMenu>
 #include <QPrinter>
+#include <QTextStream>
 #include <QXmlInputSource>
 
-#include <ktoolbar.h>
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <kicon.h>
+#include <KAction>
+#include <KActionCollection>
+#include <KIcon>
+#include <KToolBar>
 
 class KUrl;
 

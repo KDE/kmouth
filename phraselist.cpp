@@ -23,30 +23,25 @@
 #include "wordcompletion/wordcompletion.h"
 
 // include files for Qt
-#include <QPainter>
-#include <QLayout>
 #include <QApplication>
-#include <QMenu>
 #include <QClipboard>
-#include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QKeyEvent>
-#include <QStandardItem>
 #include <QListView>
+#include <QPushButton>
+#include <QStandardItem>
+#include <QVBoxLayout>
 
 // include files for KDE
-#include <klineedit.h>
-#include <kcursor.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kfiledialog.h>
-#include <kcombobox.h>
-#include <kmessagebox.h>
-#include <kxmlguifactory.h>
+#include <KComboBox>
 #include <KConfigGroup>
+#include <KIcon>
+#include <KLineEdit>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KXMLGUIFactory>
 
-#include <stdlib.h>
-
+#include <kfiledialog.h>
 
 PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
 {
@@ -322,7 +317,6 @@ void PhraseList::lineEntered(const QString &phrase)
 
 void PhraseList::speakPhrase(const QString &phrase)
 {
-    // QApplication::setOverrideCursor (KCursor::WaitCursor, false);
     QApplication::setOverrideCursor(Qt::WaitCursor);
     KMouthApp *theApp = (KMouthApp *) parentWidget();
     QString language = completion->languageOfWordList(completion->currentWordList());

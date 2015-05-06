@@ -16,19 +16,14 @@
  ***************************************************************************/
 
 #include "texttospeechconfigurationwidget.h"
-#include <kconfig.h>
 
 #include <QTextCodec>
-#include <QLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QCheckBox>
 
-#include <kcombobox.h>
+#include <KConfig>
 #include <KLocalizedString>
+
 #include "speech.h"
-#include <kurlrequester.h>
+#include "texttospeechsystem.h"
 
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent, const char *name)
     : QWizardPage(parent)
