@@ -51,7 +51,7 @@ const QIcon kPhraseBookIcon = KIcon(kPhraseBook);
 const QIcon kPhraseIcon = KIcon(kPhrase);
 
 StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-    : KAction(KIcon(QLatin1String("phrasebook")), name, parent)
+    : QAction(KIcon(QLatin1String("phrasebook")), name, parent)
 {
     this->url = url;
     connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
@@ -325,7 +325,7 @@ void PhraseBookDialog::initStandardPhraseBooks()
         }
         currentNamePath = dirs;
 
-        KAction *book = new StandardPhraseBookInsertAction(
+        QAction *book = new StandardPhraseBookInsertAction(
             url, (*it).name, this, SLOT(slotImportPhrasebook(KUrl)), actionCollection());
         parent->addAction(book);
         if (parent == fileImportStandardBook)

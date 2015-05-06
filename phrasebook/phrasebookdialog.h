@@ -21,7 +21,7 @@
 #include <QDomNode>
 #include <QStandardItemModel>
 
-#include <KAction>
+#include <QAction>
 #include <KIcon>
 #include <KUrl>
 #include <KXmlGuiWindow>
@@ -37,7 +37,7 @@ class KToolBarPopupAction;
  * inserting a standard phrase book.
  * @author Gunnar Schmi Dt
  */
-class StandardPhraseBookInsertAction : public KAction
+class StandardPhraseBookInsertAction : public QAction
 {
     Q_OBJECT
 public:

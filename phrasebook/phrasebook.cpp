@@ -27,7 +27,7 @@
 #include <QXmlInputSource>
 #include <QXmlSimpleReader>
 
-#include <KAction>
+#include <QAction>
 #include <KActionMenu>
 #include <KActionCollection>
 #include <KDesktopFile>
@@ -488,7 +488,7 @@ void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *ph
             }
             if ((*it).isPhrase()) {
                 Phrase phrase = (*it).getPhrase();
-                KAction *action = new PhraseAction(phrase.getPhrase(),
+                QAction *action = new PhraseAction(phrase.getPhrase(),
                                                    phrase.getShortcut(), receiver, slot, phrases);
                 if (parent == popup)
                     toolbar->addAction(action);

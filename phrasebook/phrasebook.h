@@ -24,7 +24,7 @@
 #include <QTextStream>
 #include <QXmlInputSource>
 
-#include <KAction>
+#include <QAction>
 #include <KActionCollection>
 #include <KIcon>
 #include <KToolBar>
@@ -161,12 +161,12 @@ private:
     static QString displayPath(QString path);
 };
 
-class PhraseAction : public KAction
+class PhraseAction : public QAction
 {
     Q_OBJECT
 public:
     PhraseAction(const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-        : KAction(KIcon(QLatin1String("phrase")), phrase, parent)
+        : QAction(KIcon(QLatin1String("phrase")), phrase, parent)
     {
         this->setShortcut(cut);
         this->phrase = phrase;
