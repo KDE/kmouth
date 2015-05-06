@@ -131,7 +131,10 @@ QStandardItem* PhraseBookDialog::deserializeBook(const QDomNode &node, QStandard
     }
     QList<QStandardItem*> items;
     items << item << shortcutItem;
-    parent->appendRow(items);
+    if (parent)
+        parent->appendRow(items);
+    else
+        m_bookModel->appendRow(items);
 
     if (isBook) {
         // Iterate over the document creating QStandardItems as needed
@@ -198,14 +201,14 @@ void PhraseBookDialog::initActions()
 {
     // The file menu
     fileNewPhrase = actionCollection()->addAction(QLatin1String("file_new_phrase"));
-    fileNewPhrase->setIcon(KIcon(QLatin1String("phrase_new")));
+    fileNewPhrase->setIcon(KIcon(QLatin1String("document-new")));
     fileNewPhrase->setText(i18n("&New Phrase"));
     connect(fileNewPhrase, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrase()));
     fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
     fileNewPhrase->setWhatsThis(i18n("Adds a new phrase"));
 
     fileNewBook = actionCollection()->addAction(QLatin1String("file_new_book"));
-    fileNewBook->setIcon(KIcon(QLatin1String("phrasebook_new")));
+    fileNewBook->setIcon(KIcon(QLatin1String("document-new")));
     fileNewBook->setText(i18n("New Phrase &Book"));
     connect(fileNewBook, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrasebook()));
     fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
@@ -216,26 +219,26 @@ void PhraseBookDialog::initActions()
     fileSave->setWhatsThis(i18n("Saves the phrase book onto the hard disk"));
 
     fileImport = actionCollection()->addAction(QLatin1String("file_import"));
-    fileImport->setIcon(KIcon(QLatin1String("phrasebook_open")));
+    fileImport->setIcon(KIcon(QLatin1String("document-open")));
     fileImport->setText(i18n("&Import..."));
     connect(fileImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     fileImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
-    toolbarImport = new KToolBarPopupAction(KIcon(QLatin1String("phrasebook_open")), i18n("&Import..."), this);
+    toolbarImport = new KToolBarPopupAction(KIcon(QLatin1String("document-open")), i18n("&Import..."), this);
     actionCollection()->addAction(QLatin1String("toolbar_import"), toolbarImport);
     connect(toolbarImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     toolbarImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
     fileImportStandardBook = actionCollection()->add<KActionMenu>(QLatin1String("file_import_standard_book"));
-    fileImportStandardBook->setIcon(KIcon(QLatin1String("phrasebook_open")));
+    fileImportStandardBook->setIcon(KIcon(QLatin1String("document-open")));
     fileImportStandardBook->setText(i18n("I&mport Standard Phrase Book"));
     fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
     fileImportStandardBook->setWhatsThis(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
     fileExport = actionCollection()->addAction(QLatin1String("file_export"));
-    fileExport->setIcon(KIcon(QLatin1String("phrasebook_save")));
+    fileExport->setIcon(KIcon(QLatin1String("document-save")));
     fileExport->setText(i18n("&Export..."));
     connect(fileExport, SIGNAL(triggered(bool)), this, SLOT(slotExportPhrasebook()));
     fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));

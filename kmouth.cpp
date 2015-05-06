@@ -109,7 +109,7 @@ void KMouthApp::initActions()
 {
 // The "File" menu
     fileOpen = actionCollection()->addAction(QLatin1String("file_open"));
-    fileOpen->setIcon(KIcon(QLatin1String("phrasehistory_open")));
+    fileOpen->setIcon(KIcon(QLatin1String("document-open")));
     fileOpen->setText(i18n("&Open as History..."));
     fileOpen->setShortcuts(KStandardShortcut::open());
     connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
@@ -117,7 +117,7 @@ void KMouthApp::initActions()
     fileOpen->setWhatsThis(i18n("Opens an existing file as history"));
 
     fileSaveAs = actionCollection()->addAction(QLatin1String("file_save_as"));
-    fileSaveAs->setIcon(KIcon(QLatin1String("phrasehistory_save")));
+    fileSaveAs->setIcon(KIcon(QLatin1String("document-save")));
     fileSaveAs->setText(i18n("Save &History As..."));
     fileSaveAs->setShortcuts(KStandardShortcut::save());
     connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
@@ -125,7 +125,7 @@ void KMouthApp::initActions()
     fileSaveAs->setWhatsThis(i18n("Saves the actual history as..."));
 
     filePrint = actionCollection()->addAction(QLatin1String("file_print"));
-    filePrint->setIcon(KIcon(QLatin1String("phrasehistory_print")));
+    filePrint->setIcon(KIcon(QLatin1String("document-print")));
     filePrint->setText(i18n("&Print History..."));
     filePrint->setShortcuts(KStandardShortcut::print());
     connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
@@ -150,7 +150,7 @@ void KMouthApp::initActions()
     editPaste->setWhatsThis(i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
     editSpeak = actionCollection()->addAction(QLatin1String("edit_speak"));
-    editSpeak->setIcon(KIcon(QLatin1String("speak")));
+    editSpeak->setIcon(KIcon(QLatin1String("text-speak")));
     editSpeak->setText(i18nc("Start speaking", "&Speak"));
     connect(editSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speak()));
     editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
@@ -190,7 +190,7 @@ void KMouthApp::initActions()
 
 // The popup menu of the list of spoken sentences
     phraseListSpeak = actionCollection()->addAction(QLatin1String("phraselist_speak"));
-    phraseListSpeak->setIcon(KIcon(QLatin1String("speak")));
+    phraseListSpeak->setIcon(KIcon(QLatin1String("text-speak")));
     phraseListSpeak->setText(i18n("&Speak"));
     phraseListSpeak->setToolTip(i18n("Speaks the currently selected phrases in the history"));
     connect(phraseListSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speakListSelection()));
