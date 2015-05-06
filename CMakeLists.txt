@@ -32,29 +32,6 @@ find_package(KF5 REQUIRED COMPONENTS
     KDELibs4Support
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} )
-
-set(libphrasebook_SRCS
-	./phrasebook/phrasebookparser.cpp
-	./phrasebook/phrasebookdialog.cpp
-        ./phrasebook/initialphrasebookwidget.cpp
-	./phrasebook/phrasebook.cpp
-	)
-
-ki18n_wrap_ui(libphrasebook_SRCS ./phrasebook/phrasebookdialog.ui)
-
-set(libwordcompletion_SRCS
-	./wordcompletion/wordlist.cpp
-	./wordcompletion/wordcompletion.cpp
-	./wordcompletion/wordcompletionwidget.cpp
-	./wordcompletion/dictionarycreationwizard.cpp
-	)
-
-ki18n_wrap_ui(libwordcompletion_SRCS
-	./wordcompletion/creationsourceui.ui
-	./wordcompletion/creationsourcedetailsui.ui
-	./wordcompletion/kdedocsourceui.ui
-	./wordcompletion/wordcompletionui.ui )
 
 add_subdirectory( doc )
 add_subdirectory( icons )
@@ -65,17 +42,32 @@ include_directories(./wordcompletion/  )
 
 ########### next target ###############
 
-set(kmouth_SRCS ${libwordcompletion_SRCS} ${libphrasebook_SRCS}
-   texttospeechconfigurationwidget.cpp
-   optionsdialog.cpp
-   configwizard.cpp
-   phraselist.cpp
-   speech.cpp
-   texttospeechsystem.cpp
-   kmouth.cpp
-   main.cpp )
+set(kmouth_SRCS
+    ./phrasebook/phrasebookparser.cpp
+    ./phrasebook/phrasebookdialog.cpp
+    ./phrasebook/initialphrasebookwidget.cpp
+    ./phrasebook/phrasebook.cpp
+    ./wordcompletion/wordlist.cpp
+    ./wordcompletion/wordcompletion.cpp
+    ./wordcompletion/wordcompletionwidget.cpp
+    ./wordcompletion/dictionarycreationwizard.cpp
+    texttospeechconfigurationwidget.cpp
+    optionsdialog.cpp
+    configwizard.cpp
+    phraselist.cpp
+    speech.cpp
+    texttospeechsystem.cpp
+    kmouth.cpp
+    main.cpp )
 
-ki18n_wrap_ui(kmouth_SRCS preferencesui.ui texttospeechconfigurationui.ui )
+ki18n_wrap_ui(kmouth_SRCS
+    ./phrasebook/phrasebookdialog.ui
+    ./wordcompletion/creationsourceui.ui
+    ./wordcompletion/creationsourcedetailsui.ui
+    ./wordcompletion/kdedocsourceui.ui
+    ./wordcompletion/wordcompletionui.ui
+    preferencesui.ui
+    texttospeechconfigurationui.ui )
 
 add_executable(kmouth ${kmouth_SRCS})
 
