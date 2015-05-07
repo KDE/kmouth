@@ -27,18 +27,19 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <KDialog>
+#include <QDialog>
 #include <KLocalizedString>
 #include <QUrl>
 
 #include <QDebug>
+#include <KConfigGroup>
 
 InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *name)
     : QWizardPage(parent)
 {
     setObjectName(QLatin1String(name));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->setSpacing(KDialog::spacingHint());
+//TODO PORT QT5     mainLayout->setSpacing(QDialog::spacingHint());
     QLabel *label = new QLabel(i18n("Please decide which phrase books you need:"), this);
     label->setObjectName(QLatin1String("booksTitle"));
     mainLayout->addWidget(label);

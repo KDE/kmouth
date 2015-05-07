@@ -9,7 +9,7 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-find_package(Qt5 REQUIRED COMPONENTS Core TextToSpeech Xml Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
 
 find_package(ECM 1.7.0 NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -22,14 +22,16 @@ include(ECMInstallIcons)
 include(ECMAddAppIcon)
 
 find_package(KF5 REQUIRED COMPONENTS
-    I18n
     Crash
+    Completion
     Config
     ConfigWidgets
     CoreAddons
     DocTools
+    I18n
     KIO
-    KDELibs4Support
+    WidgetsAddons
+    XmlGui
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
@@ -72,12 +74,18 @@ ki18n_wrap_ui(kmouth_SRCS
 add_executable(kmouth ${kmouth_SRCS})
 
 target_link_libraries(kmouth
+                      KF5::Completion
                       KF5::ConfigCore
+                      KF5::Crash
                       KF5::KIOCore
+                      KF5::KIOWidgets
                       KF5::I18n
-                      KF5::KDELibs4Support
+                      KF5::WidgetsAddons
+                      KF5::XmlGui
+                      Qt5::PrintSupport
                       Qt5::TextToSpeech
-                      Qt5::Widgets )
+                      Qt5::Widgets
+                      Qt5::Xml )
 
 install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

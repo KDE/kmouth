@@ -17,14 +17,11 @@
 
 // application specific includes
 #include "phraselist.h"
-#include "kmouth.h"
-#include "texttospeechsystem.h"
-#include "phrasebook/phrasebook.h"
-#include "wordcompletion/wordcompletion.h"
 
 // include files for Qt
 #include <QApplication>
 #include <QClipboard>
+#include <QFileDialog>
 #include <QHBoxLayout>
 #include <QKeyEvent>
 #include <QListView>
@@ -41,8 +38,10 @@
 #include <KMessageBox>
 #include <KXMLGUIFactory>
 
-#include <kfiledialog.h>
-#include <QFileDialog>
+#include "kmouth.h"
+#include "texttospeechsystem.h"
+#include "phrasebook/phrasebook.h"
+#include "wordcompletion/wordcompletion.h"
 
 PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
 {

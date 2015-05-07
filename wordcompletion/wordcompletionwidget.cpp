@@ -17,18 +17,19 @@
 
 #include "wordcompletionwidget.h"
 
+#include <QFileDialog>
 #include <QStandardItemModel>
 #include <QStandardPaths>
+#include <QUrl>
 
 #include <QDebug>
 
 #include <KConfigGroup>
-#include <KFileDialog>
+#include <KJobUiDelegate>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSharedConfig>
-#include <QUrl>
-#include <kio/netaccess.h>
+#include <KIO/FileCopyJob>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletion.h"
@@ -205,7 +206,7 @@ void WordCompletionWidget::exportDictionary()
         if (url.isEmpty() || !url.isValid())
             return;
 
-        if (KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, this)) {
+        if (url.isLocalFile() && QFile::exists(url.toLocalFile())) {
             if (KMessageBox::warningContinueCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("The file %1 already exists. "
                                                    "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
                 return;
@@ -213,7 +214,8 @@ void WordCompletionWidget::exportDictionary()
         }
         QUrl src;
         src.setPath(QStandardPaths::locate(QStandardPaths::DataLocation, nameItem->data().toString()));
-        KIO::NetAccess::file_copy(src, url, this);
+        KIO::FileCopyJob *job = KIO::file_copy(src, url);
+        job->exec();
     }
 }
 

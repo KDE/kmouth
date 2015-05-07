@@ -17,39 +17,32 @@
 
 // application specific includes
 #include "kmouth.h"
+
+// include files for Qt
+#include <QDir>
+#include <QMenu>
+#include <QMenuBar>
+#include <QPainter>
+#include <QPrintDialog>
+#include <QStandardPaths>
+#include <QStatusBar>
+
+// include files for KDE
+#include <KActionCollection>
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KStandardAction>
+#include <KStandardShortcut>
+#include <KToggleAction>
+#include <KToolBar>
+#include <KXMLGUIFactory>
+
 #include "phraselist.h"
 #include "phrasebook/phrasebook.h"
 #include "phrasebook/phrasebookdialog.h"
 #include "optionsdialog.h"
 #include "configwizard.h"
-
-// include files for Qt
-#include <QDir>
-#include <QPainter>
-#include <QPrintDialog>
-#include <QMenu>
-
-// include files for KDE
-#include <kxmlguifactory.h>
-#include <kiconloader.h>
-#include <kmenubar.h>
-#include <kstatusbar.h>
-#include <klocale.h>
-#include <kconfig.h>
-#include <kstandardaction.h>
-#include <kmenu.h>
-#include <KConfigGroup>
-
-#include <kglobal.h>
-#include <ktoolbar.h>
-#include <kactioncollection.h>
-#include <kactionmenu.h>
-#include <ktoggleaction.h>
-#include <kstandardshortcut.h>
-#include <kapplication.h>
-#include <kdeprintdialog.h>
-#include <QStandardPaths>
-#include <KSharedConfig>
 
 KMouthApp::KMouthApp(QWidget* , const char* name): KXmlGuiWindow(0)
 {
@@ -381,7 +374,7 @@ void KMouthApp::slotFilePrint()
         printer = new QPrinter();
     }
 
-    QPrintDialog *printDialog = KdePrint::createPrintDialog(printer, this);
+    QPrintDialog *printDialog = new QPrintDialog(printer, 0);
 
     if (printDialog->exec()) {
         phraseList->print(printer);

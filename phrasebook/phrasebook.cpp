@@ -19,6 +19,7 @@
 #include "phrasebookparser.h"
 
 #include <QAction>
+#include <QBuffer>
 #include <QFile>
 #include <QFileDialog>
 #include <QFontDatabase>
@@ -34,12 +35,11 @@
 #include <KActionMenu>
 #include <KActionCollection>
 #include <KDesktopFile>
+#include <KIO/StoredTransferJob>
 #include <KLocalizedString>
-#include <KMenu>
+#include <QMenu>
 #include <KMessageBox>
 #include <KToolBar>
-
-#include <kio/netaccess.h>
 
 #include <QDebug>
 
@@ -272,7 +272,8 @@ bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
         save(ts, asPhrasebook);
         ts.flush();
 
-        return KIO::NetAccess::upload(tempFile.fileName(), url, 0L);
+        KIO::StoredTransferJob *uploadJob = KIO::storedPut(&tempFile, url, -1);
+        return uploadJob->exec();
     }
 }
 
@@ -300,7 +301,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
         return -1;
     }
 
-    if (KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, 0L)) {
+    if (QFile::exists(url.toLocalFile())) {
         if (KMessageBox::warningContinueCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("The file %1 already exists. "
                                                "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
             return 0;
@@ -350,7 +351,6 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
 
 bool PhraseBook::open(const QUrl &url)
 {
-    QString tempFile;
     QUrl fileUrl = url;
 
     QString protocol = fileUrl.scheme();
@@ -359,14 +359,14 @@ bool PhraseBook::open(const QUrl &url)
         fileUrl.setPath(url.url());
     }
 
-    if (KIO::NetAccess::download(fileUrl, tempFile, 0L)) {
-        QStringList list = QStringList();
-
+    KIO::StoredTransferJob *downloadJob = KIO::storedGet(fileUrl);
+    if (downloadJob->exec()) {
         // First: try to load it as a normal phrase book
-        qDebug() << "opening file " << tempFile
-                 << " downloaded from " << fileUrl.toString();
-        QFile file(tempFile);
-        QXmlInputSource source(&file);
+        qDebug() << "opening file downloaded from " << fileUrl.toString();
+        QBuffer fileBuffer;
+        fileBuffer.setData(downloadJob->data());
+
+        QXmlInputSource source(&fileBuffer);
         bool error = !decode(source);
 
         // Second: if the file does not contain a phrase book, load it as
@@ -374,21 +374,15 @@ bool PhraseBook::open(const QUrl &url)
         if (error) {
             // Load each line of the plain text file as a new phrase
 
-            QFile file(tempFile);
-            if (file.open(QIODevice::ReadOnly)) {
-                QTextStream stream(&file);
+            QTextStream stream(&fileBuffer);
 
-                while (!stream.atEnd()) {
-                    QString s = stream.readLine();
-                    if (!(s.isNull() || s.isEmpty()))
-                        *this += PhraseBookEntry(Phrase(s, QLatin1String("")), 0, true);
-                }
-                file.close();
-                error = false;
-            } else
-                error = true;
+            while (!stream.atEnd()) {
+                QString s = stream.readLine();
+                if (!(s.isNull() || s.isEmpty()))
+                    *this += PhraseBookEntry(Phrase(s, QLatin1String("")), 0, true);
+            }
+            error = false;
         }
-        KIO::NetAccess::removeTempFile(tempFile);
 
         return !error;
     }

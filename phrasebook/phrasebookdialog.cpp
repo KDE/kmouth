@@ -33,6 +33,7 @@
 #include "phrasebook.h"
 
 #include <QDebug>
+#include <KConfigGroup>
 
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;
@@ -86,7 +87,7 @@ PhraseBookDialog::PhraseBookDialog()
     m_bookModel->setHeaderData(kShortcutColumn, Qt::Horizontal, i18n("Shortcut"));
 
     setObjectName(QLatin1String("phraseEditDialog"));
-    setCaption(i18n("Phrase Book"));
+    setWindowTitle(i18n("Phrase Book"));
     initGUI();
     initActions();
     initStandardPhraseBooks();

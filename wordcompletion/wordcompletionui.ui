@@ -236,11 +236,6 @@
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
   </customwidget>
-  <customwidget>
-   <class>QPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>addButton</tabstop>
