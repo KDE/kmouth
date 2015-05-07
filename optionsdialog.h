@@ -84,11 +84,7 @@ private:
     QTabWidget *tabCtl;
     TextToSpeechConfigurationWidget *commandWidget;
     PreferencesWidget *behaviourWidget;
-    KCModule *kttsd;
     WordCompletionWidget *completionWidget;
-
-    KCModule *loadKttsd();
-    void unloadKttsd();
 };
 
 #endif

@@ -16,30 +16,23 @@
  ***************************************************************************/
 
 #include "optionsdialog.h"
-#include "wordcompletion/wordcompletionwidget.h"
-
-#include "texttospeechconfigurationwidget.h"
-#include "speech.h"
-
-#include <QLayout>
-#include <QLabel>
-#include <QPixmap>
-#include <QFile>
 
 #include <QDialog>
-#include <kcombobox.h>
-#include <QTabWidget>
-#include <klocale.h>
-#include <kconfig.h>
-#include <kglobal.h>
-#include <kcmodule.h>
-#include <klibloader.h>
-#include <QIcon>
-#include <kpagewidgetmodel.h>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
+#include <QIcon>
+#include <QLabel>
 #include <QPushButton>
+#include <QTabWidget>
 #include <QVBoxLayout>
+
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KPageWidgetModel>
+#include <KSharedConfig>
+
+#include "speech.h"
+#include "texttospeechconfigurationwidget.h"
+#include "wordcompletion/wordcompletionwidget.h"
 
 PreferencesWidget::PreferencesWidget(QWidget *parent, const char *name)
     : QWidget(parent)
@@ -149,11 +142,9 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     tabCtl->setObjectName(QLatin1String("general"));
 
     behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");
-//TODO PORT QT5     behaviourWidget->layout()->setMargin(QDialog::marginHint());
     tabCtl->addTab(behaviourWidget, i18n("&Preferences"));
 
     commandWidget = new TextToSpeechConfigurationWidget(tabCtl, "ttsTab");
-//TODO PORT QT5     commandWidget->layout()->setMargin(QDialog::marginHint());
     tabCtl->addTab(commandWidget, i18n("&Text-to-Speech"));
 
     KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
@@ -167,14 +158,6 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     pageCompletion->setIcon(QIcon::fromTheme(QLatin1String("keyboard")));
     addPage(pageCompletion);
 
-    kttsd = loadKttsd();
-    if (kttsd != 0) {
-        KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("Jovie Speech Service"));
-        pageKttsd->setIcon(QIcon::fromTheme(QLatin1String("multimedia")));
-        pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
-        addPage(pageKttsd);
-    }
-
     buttonBox->button(QDialogButtonBox::Cancel)->setDefault(true);
 
     connect(okButton, SIGNAL(clicked()), this, SLOT(slotOk()));
@@ -184,7 +167,6 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
 OptionsDialog::~OptionsDialog()
 {
-    unloadKttsd();
 }
 
 void OptionsDialog::slotCancel()
@@ -193,8 +175,6 @@ void OptionsDialog::slotCancel()
     commandWidget->cancel();
     behaviourWidget->cancel();
     completionWidget->load();
-    if (kttsd != 0)
-        kttsd->load();
 }
 
 void OptionsDialog::slotOk()
@@ -204,9 +184,6 @@ void OptionsDialog::slotOk()
     behaviourWidget->ok();
     completionWidget->save();
     emit configurationChanged();
-    if (kttsd != 0)
-        kttsd->save();
-
 }
 
 void OptionsDialog::slotApply()
@@ -216,8 +193,6 @@ void OptionsDialog::slotApply()
     behaviourWidget->ok();
     completionWidget->save();
     emit configurationChanged();
-    if (kttsd != 0)
-        kttsd->save();
 }
 
 TextToSpeechSystem *OptionsDialog::getTTSSystem() const
@@ -241,44 +216,6 @@ void OptionsDialog::saveOptions()
 bool OptionsDialog::isSpeakImmediately()
 {
     return behaviourWidget->isSpeakImmediately();
-}
-
-KCModule *OptionsDialog::loadKttsd()
-{
-    KLibLoader *loader = KLibLoader::self();
-
-    QString libname = QLatin1String("kcm_kttsd");
-    KLibrary *lib = loader->library(QLatin1String(QFile::encodeName(libname)));
-
-    if (lib == 0) {
-        libname = QLatin1String("libkcm_kttsd");
-        lib = loader->library(QLatin1String(QFile::encodeName(QLatin1String("libkcm_kttsd"))));
-    }
-
-    if (lib != 0) {
-        QString initSym(QLatin1String("init_"));
-        initSym += libname;
-
-        if (lib->resolveFunction(QFile::encodeName(initSym))) {
-            // Reuse "lib" instead of letting createInstanceFromLibrary recreate it
-            KLibFactory *factory = lib->factory();
-            if (factory != 0) {
-                KCModule *module = factory->create<KCModule> (factory);
-                if (module)
-                    return module;
-            }
-        }
-
-        lib->unload();
-    }
-    return 0;
-}
-
-void OptionsDialog::unloadKttsd()
-{
-    KLibLoader *loader = KLibLoader::self();
-    loader->unloadLibrary(QLatin1String(QFile::encodeName(QLatin1String("libkcm_kttsd"))));
-    loader->unloadLibrary(QLatin1String(QFile::encodeName(QLatin1String("kcm_kttsd"))));
 }
 
 #include "optionsdialog.moc"
