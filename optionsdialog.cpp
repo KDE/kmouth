@@ -28,7 +28,7 @@
 
 #include <QDialog>
 #include <kcombobox.h>
-#include <ktabwidget.h>
+#include <QTabWidget>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
@@ -145,7 +145,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
     //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
 
-    tabCtl = new KTabWidget();
+    tabCtl = new QTabWidget();
     tabCtl->setObjectName(QLatin1String("general"));
 
     behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");

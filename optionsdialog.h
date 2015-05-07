@@ -24,7 +24,7 @@
 
 #include "ui_preferencesui.h"
 
-class KTabWidget;
+class QTabWidget;
 class KCModule;
 class TextToSpeechSystem;
 class TextToSpeechConfigurationWidget;
@@ -81,7 +81,7 @@ private slots:
     void slotApply();
 
 private:
-    KTabWidget *tabCtl;
+    QTabWidget *tabCtl;
     TextToSpeechConfigurationWidget *commandWidget;
     PreferencesWidget *behaviourWidget;
     KCModule *kttsd;
