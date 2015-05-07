@@ -34,7 +34,7 @@
 #include <kglobal.h>
 #include <kcmodule.h>
 #include <klibloader.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kpagewidgetmodel.h>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
@@ -158,19 +158,19 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
     KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
     pageGeneral->setHeader(i18n("General Options"));
-    pageGeneral->setIcon(KIcon(QLatin1String("configure")));
+    pageGeneral->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     addPage(pageGeneral);
 
     completionWidget = new WordCompletionWidget(0, "Word Completion widget");
     KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
     pageCompletion->setHeader(i18n("Word Completion"));
-    pageCompletion->setIcon(KIcon(QLatin1String("keyboard")));
+    pageCompletion->setIcon(QIcon::fromTheme(QLatin1String("keyboard")));
     addPage(pageCompletion);
 
     kttsd = loadKttsd();
     if (kttsd != 0) {
         KPageWidgetItem *pageKttsd = new KPageWidgetItem(kttsd, i18n("Jovie Speech Service"));
-        pageKttsd->setIcon(KIcon(QLatin1String("multimedia")));
+        pageKttsd->setIcon(QIcon::fromTheme(QLatin1String("multimedia")));
         pageKttsd->setHeader(i18n("KDE Text-to-Speech Daemon Configuration"));
         addPage(pageKttsd);
     }

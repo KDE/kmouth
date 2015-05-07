@@ -26,7 +26,7 @@
 
 #include <QAction>
 #include <KActionCollection>
-#include <KIcon>
+#include <QIcon>
 #include <KToolBar>
 
 class QUrl;
@@ -166,7 +166,7 @@ class PhraseAction : public QAction
     Q_OBJECT
 public:
     PhraseAction(const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-        : QAction(KIcon(QLatin1String("phrase")), phrase, parent)
+        : QAction(QIcon::fromTheme(QLatin1String("phrase")), phrase, parent)
     {
         this->setShortcut(cut);
         this->phrase = phrase;

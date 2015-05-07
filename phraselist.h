@@ -78,7 +78,7 @@ public slots:
 
     void save();
     void open();
-    void open(QUrl url);
+    void open(const QUrl &url);
 
     void selectAllEntries();
     void deselectAllEntries();

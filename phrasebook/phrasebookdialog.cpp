@@ -49,11 +49,11 @@ const QString kWholeBookXML = QLatin1String("<?xml version=\"1.0\" encoding=\"UT
                               "<phrasebook>\n%1"
                               "</phrasebook>");
 
-const QIcon kPhraseBookIcon = KIcon(kPhraseBook);
-const QIcon kPhraseIcon = KIcon(kPhrase);
+const QIcon kPhraseBookIcon = QIcon::fromTheme(kPhraseBook);
+const QIcon kPhraseIcon = QIcon::fromTheme(kPhrase);
 
 StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-    : QAction(KIcon(QLatin1String("phrasebook")), name, parent)
+    : QAction(QIcon::fromTheme(QLatin1String("phrasebook")), name, parent)
 {
     this->url = url;
     connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
@@ -218,14 +218,14 @@ void PhraseBookDialog::initActions()
 {
     // The file menu
     fileNewPhrase = actionCollection()->addAction(QLatin1String("file_new_phrase"));
-    fileNewPhrase->setIcon(KIcon(QLatin1String("phrase_new")));
+    fileNewPhrase->setIcon(QIcon::fromTheme(QLatin1String("phrase_new")));
     fileNewPhrase->setText(i18n("&New Phrase"));
     connect(fileNewPhrase, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrase()));
     fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
     fileNewPhrase->setWhatsThis(i18n("Adds a new phrase"));
 
     fileNewBook = actionCollection()->addAction(QLatin1String("file_new_book"));
-    fileNewBook->setIcon(KIcon(QLatin1String("phrasebook_new")));
+    fileNewBook->setIcon(QIcon::fromTheme(QLatin1String("phrasebook_new")));
     fileNewBook->setText(i18n("New Phrase &Book"));
     connect(fileNewBook, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrasebook()));
     fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
@@ -236,26 +236,26 @@ void PhraseBookDialog::initActions()
     fileSave->setWhatsThis(i18n("Saves the phrase book onto the hard disk"));
 
     fileImport = actionCollection()->addAction(QLatin1String("file_import"));
-    fileImport->setIcon(KIcon(QLatin1String("phrasebook_open")));
+    fileImport->setIcon(QIcon::fromTheme(QLatin1String("phrasebook_open")));
     fileImport->setText(i18n("&Import..."));
     connect(fileImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     fileImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
-    toolbarImport = new KToolBarPopupAction(KIcon(QLatin1String("phrasebook_open")), i18n("&Import..."), this);
+    toolbarImport = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("phrasebook_open")), i18n("&Import..."), this);
     actionCollection()->addAction(QLatin1String("toolbar_import"), toolbarImport);
     connect(toolbarImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     toolbarImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
     fileImportStandardBook = actionCollection()->add<KActionMenu>(QLatin1String("file_import_standard_book"));
-    fileImportStandardBook->setIcon(KIcon(QLatin1String("phrasebook_open")));
+    fileImportStandardBook->setIcon(QIcon::fromTheme(QLatin1String("phrasebook_open")));
     fileImportStandardBook->setText(i18n("I&mport Standard Phrase Book"));
     fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
     fileImportStandardBook->setWhatsThis(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
     fileExport = actionCollection()->addAction(QLatin1String("file_export"));
-    fileExport->setIcon(KIcon(QLatin1String("phrasebook_save")));
+    fileExport->setIcon(QIcon::fromTheme(QLatin1String("phrasebook_save")));
     fileExport->setText(i18n("&Export..."));
     connect(fileExport, SIGNAL(triggered(bool)), this, SLOT(slotExportPhrasebook()));
     fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
@@ -283,7 +283,7 @@ void PhraseBookDialog::initActions()
     editPaste->setWhatsThis(i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
     editDelete = actionCollection()->addAction(QLatin1String("edit_delete"));
-    editDelete->setIcon(KIcon(QLatin1String("edit-delete")));
+    editDelete->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     editDelete->setText(i18n("&Delete"));
     connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotRemove()));
     editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));
@@ -667,7 +667,7 @@ void PhraseBookDialog::slotExportPhrasebook()
     QModelIndex parentIndex = getCurrentParent();
     QString content = kWholeBookXML.arg(serializeBook(parentIndex));
 
-    QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Export Phrase Book"), QUrl(), QLatin1String("Phrase Books (*.phrasebook)"));
+    QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Export Phrase Book"), QUrl(), i18n("Phrase Books (*.phrasebook)"));
     QFile file(url.toLocalFile());
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);

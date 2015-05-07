@@ -35,7 +35,7 @@
 // include files for KDE
 #include <KComboBox>
 #include <KConfigGroup>
-#include <KIcon>
+#include <QIcon>
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -79,7 +79,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
     rowLayout->addWidget(lineEdit);
     lineEdit->setFocus();
 
-    QIcon icon = KIcon(QLatin1String("text-speak"));
+    QIcon icon = QIcon::fromTheme(QLatin1String("text-speak"));
     speakButton = new QPushButton(icon, i18n("&Speak"), this);
     speakButton->setFocusPolicy(Qt::NoFocus);
     speakButton->setAutoDefault(false);
@@ -482,7 +482,7 @@ void PhraseList::open()
         open(url);
 }
 
-void PhraseList::open(QUrl url)
+void PhraseList::open(const QUrl &url)
 {
     // We want to open a history of spoken sentences here. However, as
     // the class PhraseBook does already provide a method for opening

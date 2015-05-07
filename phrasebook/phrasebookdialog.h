@@ -22,7 +22,7 @@
 #include <QStandardItemModel>
 
 #include <QAction>
-#include <KIcon>
+#include <QIcon>
 #include <QUrl>
 #include <KXmlGuiWindow>
 
