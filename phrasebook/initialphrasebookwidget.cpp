@@ -29,7 +29,7 @@
 // include files for KDE
 #include <KDialog>
 #include <KLocalizedString>
-#include <KUrl>
+#include <QUrl>
 
 #include <QDebug>
 
@@ -121,7 +121,7 @@ void InitialPhraseBookWidget::createBook()
     if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
         QDir().mkpath(bookLocation);
         qDebug() << "creating book at location " << bookLocation;
-        book.save(KUrl(bookLocation + QLatin1String("standard.phrasebook")));
+        book.save(QUrl::fromLocalFile(bookLocation + QLatin1String("standard.phrasebook")));
     }
 }
 
@@ -131,7 +131,7 @@ void InitialPhraseBookWidget::addChildrenToBook(PhraseBook &book, QStandardItem 
         QStandardItem *child = item->child(i);
         if (child->checkState() != Qt::Unchecked) {
             PhraseBook localBook;
-            if (localBook.open(KUrl(child->data().toString()))) {
+            if (localBook.open(QUrl(child->data().toString()))) {
                 book += localBook;
             }
         }

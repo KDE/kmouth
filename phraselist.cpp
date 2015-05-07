@@ -42,6 +42,7 @@
 #include <KXMLGUIFactory>
 
 #include <kfiledialog.h>
+#include <QFileDialog>
 
 PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
 {
@@ -467,21 +468,21 @@ void PhraseList::save()
         book += PhraseBookEntry(Phrase(item->text()));
     }
 
-    KUrl url;
+    QUrl url;
     if (book.save(this, i18n("Save As"), url, false) == -1)
         KMessageBox::sorry(this, i18n("There was an error saving file\n%1", url.url()));
 }
 
 void PhraseList::open()
 {
-    KUrl url = KFileDialog::getOpenUrl(KUrl(),
-                                       i18n("*|All Files\n*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)"), this, i18n("Open File as History"));
+    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Open File as History"), QUrl(),
+                                           i18n("All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"));
 
     if (!url.isEmpty())
         open(url);
 }
 
-void PhraseList::open(KUrl url)
+void PhraseList::open(QUrl url)
 {
     // We want to open a history of spoken sentences here. However, as
     // the class PhraseBook does already provide a method for opening

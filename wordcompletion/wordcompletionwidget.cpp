@@ -27,7 +27,7 @@
 #include <KFileDialog>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KUrl>
+#include <QUrl>
 #include <kio/netaccess.h>
 
 #include "dictionarycreationwizard.h"
@@ -205,7 +205,7 @@ void WordCompletionWidget::exportDictionary()
     const QStandardItem *nameItem = model->item(dictionaryView->currentIndex().row(), 0);
 
     if (nameItem != 0) {
-        KUrl url = KFileDialog::getSaveUrl(QString(), QString(), this, i18n("Export Dictionary"));
+        QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Export Dictionary"));
         if (url.isEmpty() || !url.isValid())
             return;
 
@@ -215,7 +215,7 @@ void WordCompletionWidget::exportDictionary()
                 return;
             }
         }
-        KUrl src;
+        QUrl src;
         src.setPath(QStandardPaths::locate(QStandardPaths::DataLocation, nameItem->data().toString()));
         KIO::NetAccess::file_copy(src, url, this);
     }

@@ -257,7 +257,7 @@ void KMouthApp::initPhraseList()
     setCentralWidget(phraseList);
 }
 
-void KMouthApp::openDocumentFile(const KUrl& url)
+void KMouthApp::openDocumentFile(const QUrl &url)
 {
     slotStatusMsg(i18n("Opening file..."));
 
@@ -502,7 +502,7 @@ void KMouthApp::slotPhrasebookConfirmed()
     QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     if (!standardBook.isEmpty()) {
         PhraseBook book;
-        book.open(KUrl(standardBook));
+        book.open(QUrl(standardBook));
         QString name = QLatin1String("phrasebooks");
         QMenu *popup = (QMenu *)factory()->container(name, this);
         KToolBar *toolbar = toolBar(QLatin1String("phrasebookBar"));

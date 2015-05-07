@@ -19,7 +19,7 @@
 #define PHRASELIST_H
 
 // include files for KDE
-#include <KUrl>
+#include <QUrl>
 
 // include files for Qt
 #include <QWidget>
@@ -78,7 +78,7 @@ public slots:
 
     void save();
     void open();
-    void open(KUrl url);
+    void open(QUrl url);
 
     void selectAllEntries();
     void deselectAllEntries();

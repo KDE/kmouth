@@ -25,7 +25,7 @@
 
 // include files for KDE
 #include <ksharedconfig.h>
-#include <kurl.h>
+#include <QUrl>
 #include <kxmlguiwindow.h>
 
 // forward declaration of the KMouth classes
@@ -65,7 +65,7 @@ public:
     bool configured();
     /** opens a file specified by commandline option
      */
-    void openDocumentFile(const KUrl& url = KUrl());
+    void openDocumentFile(const QUrl &url = QUrl());
 
     TextToSpeechSystem *getTTSSystem() const;
 

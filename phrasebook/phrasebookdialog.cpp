@@ -19,18 +19,20 @@
 
 // include files for Qt
 #include <QClipboard>
+#include <QFileDialog>
 #include <QMimeData>
 #include <QStack>
 #include <QStandardPaths>
 
 // include files for KDE
 #include <KActionMenu>
-#include <KFileDialog>
 #include <KMessageBox>
 #include <KToolBarPopupAction>
 #include <KXMLGUIFactory>
 
 #include "phrasebook.h"
+
+#include <QDebug>
 
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;
@@ -50,12 +52,12 @@ const QString kWholeBookXML = QLatin1String("<?xml version=\"1.0\" encoding=\"UT
 const QIcon kPhraseBookIcon = KIcon(kPhraseBook);
 const QIcon kPhraseIcon = KIcon(kPhrase);
 
-StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
     : QAction(KIcon(QLatin1String("phrasebook")), name, parent)
 {
     this->url = url;
     connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
-    connect(this, SIGNAL(slotActivated(const KUrl &)), receiver, slot);
+    connect(this, SIGNAL(slotActivated(const QUrl &)), receiver, slot);
     parent->addAction(name, this);
 }
 
@@ -301,8 +303,7 @@ void PhraseBookDialog::initStandardPhraseBooks()
     QStack<KActionMenu *> stack;
     StandardBookList::iterator it;
     for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
-        KUrl url;
-        url.setPath((*it).filename);
+        QUrl url = QUrl::fromLocalFile((*it).filename);
 
         QString namePath = QLatin1String("x") + (*it).path;
         QStringList dirs = namePath.split(QLatin1Char('/'));
@@ -326,7 +327,7 @@ void PhraseBookDialog::initStandardPhraseBooks()
         currentNamePath = dirs;
 
         QAction *book = new StandardPhraseBookInsertAction(
-            url, (*it).name, this, SLOT(slotImportPhrasebook(KUrl)), actionCollection());
+            url, (*it).name, this, SLOT(slotImportPhrasebook(QUrl)), actionCollection());
         parent->addAction(book);
         if (parent == fileImportStandardBook)
             toolbarImport->menu()->addAction(book);
@@ -623,13 +624,13 @@ void PhraseBookDialog::slotSave()
 
 void PhraseBookDialog::slotImportPhrasebook()
 {
-    KUrl url = KFileDialog::getOpenUrl(KUrl(),
-                                       i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files"), this, i18n("Import Phrasebook"));
+    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Import Phrasebook"), QUrl(),
+                                       i18n("Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"));
 
     slotImportPhrasebook(url);
 }
 
-void PhraseBookDialog::slotImportPhrasebook(const KUrl &url)
+void PhraseBookDialog::slotImportPhrasebook(const QUrl &url)
 {
     if (!url.isEmpty()) {
         QModelIndex parentIndex = getCurrentParent();
@@ -654,6 +655,7 @@ void PhraseBookDialog::slotImportPhrasebook(const KUrl &url)
             }
             focusNewItem(parentIndex, item);
         } else {
+            qDebug() << "Unable to open file " << url.toLocalFile();
             KMessageBox::sorry(this, i18n("There was an error loading file\n%1", url.toLocalFile()));
         }
     }
@@ -665,14 +667,14 @@ void PhraseBookDialog::slotExportPhrasebook()
     QModelIndex parentIndex = getCurrentParent();
     QString content = kWholeBookXML.arg(serializeBook(parentIndex));
 
-    KUrl url = KFileDialog::getSaveFileName(KUrl(), QLatin1String("*.phrasebook"), this, i18n("Export Phrase Book"));
+    QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Export Phrase Book"), QUrl(), QLatin1String("Phrase Books (*.phrasebook)"));
     QFile file(url.toLocalFile());
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
         out << content;
         file.close();
     } else {
-        KMessageBox::sorry(this, i18n("There was an error saving file\n%1", url.url()));
+        KMessageBox::sorry(this, i18n("There was an error saving file\n%1", url.toLocalFile()));
     }
 }
 

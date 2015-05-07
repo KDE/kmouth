@@ -23,7 +23,7 @@
 
 #include <QAction>
 #include <KIcon>
-#include <KUrl>
+#include <QUrl>
 #include <KXmlGuiWindow>
 
 //#include "phrasebook.h"
@@ -41,17 +41,17 @@ class StandardPhraseBookInsertAction : public QAction
 {
     Q_OBJECT
 public:
-    StandardPhraseBookInsertAction(const KUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
+    StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
     ~StandardPhraseBookInsertAction();
 
 public slots:
     void slotActivated();
 
 signals:
-    void slotActivated(const KUrl &url);
+    void slotActivated(const QUrl &url);
 
 private:
-    KUrl url;
+    QUrl url;
 };
 
 /**
@@ -100,7 +100,7 @@ public slots:
 
     void slotSave();
     void slotImportPhrasebook();
-    void slotImportPhrasebook(const KUrl &url);
+    void slotImportPhrasebook(const QUrl &url);
     void slotExportPhrasebook();
     //void slotPrint ();
 

@@ -19,6 +19,7 @@
 #include "phrasebookparser.h"
 
 #include <QFile>
+#include <QFileDialog>
 #include <QFontDatabase>
 #include <QPainter>
 #include <QRegExp>
@@ -31,13 +32,12 @@
 #include <KActionMenu>
 #include <KActionCollection>
 #include <KDesktopFile>
-#include <KFileDialog>
 #include <KLocalizedString>
 #include <KMenu>
 #include <KMessageBox>
 #include <KToolBar>
 #include <KTemporaryFile>
-#include <KUrl>
+#include <QUrl>
 
 #include <kio/netaccess.h>
 
@@ -232,7 +232,7 @@ QStringList PhraseBook::toStringList()
     return result;
 }
 
-bool PhraseBook::save(const KUrl &url)
+bool PhraseBook::save(const QUrl &url)
 {
     QRegExp pattern(QLatin1String("*.phrasebook"), Qt::CaseSensitive, QRegExp::Wildcard);
     return save(url, pattern.exactMatch(url.fileName()));
@@ -247,7 +247,7 @@ void PhraseBook::save(QTextStream &stream, bool asPhrasebook)
         stream << toStringList().join(QLatin1String("\n"));
 }
 
-bool PhraseBook::save(const KUrl &url, bool asPhrasebook)
+bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
 {
     if (url.isLocalFile()) {
         QFile file(url.path());
@@ -274,27 +274,25 @@ bool PhraseBook::save(const KUrl &url, bool asPhrasebook)
     }
 }
 
-int PhraseBook::save(QWidget *parent, const QString &title, KUrl &url, bool phrasebookFirst)
+int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phrasebookFirst)
 {
     // KFileDialog::getSaveUrl(...) is not useful here as we need
     // to know the requested file type.
 
     QString filters;
     if (phrasebookFirst)
-        filters = i18n("*.phrasebook|Phrase Books (*.phrasebook)\n*.txt|Plain Text Files (*.txt)\n*|All Files");
+        filters = i18n("Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)");
     else
-        filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
+        filters = i18n("Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)");
 
-    QString empty;
-    KFileDialog fdlg(empty, filters, parent);
-    fdlg.setWindowTitle(title);
-    fdlg.setOperationMode(KFileDialog::Saving);
+    QFileDialog fdlg(parent, title, QString(), filters);
+    fdlg.setAcceptMode(QFileDialog::AcceptSave);
 
-    if (fdlg.exec() != QDialog::Accepted) {
+    if (fdlg.exec() != QDialog::Accepted || fdlg.selectedUrls().size() < 1) {
         return 0;
     }
 
-    url = fdlg.selectedUrl();
+    url = fdlg.selectedUrls().at(0);
 
     if (url.isEmpty() || !url.isValid()) {
         return -1;
@@ -308,9 +306,10 @@ int PhraseBook::save(QWidget *parent, const QString &title, KUrl &url, bool phra
     }
 
     bool result;
-    if (fdlg.currentFilter() == QLatin1String("*.phrasebook")) {
+    if (fdlg.selectedNameFilter() == QLatin1String("*.phrasebook")) {
         if (url.fileName(0).contains(QLatin1Char('.')) == 0) {
-            url.setFileName(url.fileName(0) + QLatin1String(".phrasebook"));
+            url = url.adjusted(QUrl::RemoveFilename);
+            url.setPath(url.path() + url.fileName(0) + QLatin1String(".phrasebook"));
         } else if (url.fileName(0).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
             int filetype = KMessageBox::questionYesNoCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                            "Do you wish to add <i>.phrasebook</i> to the filename?", url.fileName())), i18n("File Extension"), KGuiItem(i18n("Add")), KGuiItem(i18n("Do Not Add")));
@@ -318,11 +317,12 @@ int PhraseBook::save(QWidget *parent, const QString &title, KUrl &url, bool phra
                 return 0;
             }
             if (filetype == KMessageBox::Yes) {
-                url.setFileName(url.fileName(0) + QLatin1String(".phrasebook"));
+                url = url.adjusted(QUrl::RemoveFilename);
+                url.setPath(url.path() + url.fileName(0) + QLatin1String(".phrasebook"));
             }
         }
         result = save(url, true);
-    } else if (fdlg.currentFilter() == QLatin1String("*.txt")) {
+    } else if (fdlg.selectedNameFilter() == QLatin1String("*.txt")) {
         if (url.fileName(0).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
             result = save(url, false);
         } else {
@@ -346,14 +346,14 @@ int PhraseBook::save(QWidget *parent, const QString &title, KUrl &url, bool phra
         return -1;
 }
 
-bool PhraseBook::open(const KUrl &url)
+bool PhraseBook::open(const QUrl &url)
 {
     QString tempFile;
-    KUrl fileUrl = url;
+    QUrl fileUrl = url;
 
-    QString protocol = fileUrl.protocol();
+    QString protocol = fileUrl.scheme();
     if (protocol.isEmpty() || protocol.isNull()) {
-        fileUrl.setProtocol(QLatin1String("file"));
+        fileUrl.setScheme(QLatin1String("file"));
         fileUrl.setPath(url.url());
     }
 
@@ -361,6 +361,8 @@ bool PhraseBook::open(const KUrl &url)
         QStringList list = QStringList();
 
         // First: try to load it as a normal phrase book
+        qDebug() << "opening file " << tempFile
+                 << " downloaded from " << fileUrl.toString();
         QFile file(tempFile);
         QXmlInputSource source(&file);
         bool error = !decode(source);
@@ -414,7 +416,7 @@ StandardBookList PhraseBook::standardPhraseBooks()
     for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
         PhraseBook pbook;
         // Open the phrasebook.
-        if (pbook.open(KUrl(*it))) {
+        if (pbook.open(QUrl(*it))) {
             StandardBook book;
             book.name = (*pbook.begin()).getPhrase().getPhrase();
 
