@@ -24,8 +24,6 @@
 #include <QMap>
 #include <QWizard>
 
-#include <KNumInput>
-
 #include "ui_creationsourceui.h"
 #include "ui_creationsourcedetailsui.h"
 #include "ui_kdedocsourceui.h"
@@ -34,6 +32,7 @@ class CompletionWizardWidget;
 class KComboBox;
 class MergeWidget;
 class QScrollArea;
+class QSpinBox;
 class QTextCodec;
 
 class CreationSourceWidget : public QWizardPage, public Ui::CreationSourceUI
@@ -150,7 +149,7 @@ public:
 private:
     QScrollArea *scrollArea;
     QHash<QString, QCheckBox*> dictionaries;
-    QHash<QString, KIntNumInput*> weights;
+    QHash<QString, QSpinBox*> weights;
     QMap<QString, QString> languages;
 };
 

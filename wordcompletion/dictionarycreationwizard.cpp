@@ -23,6 +23,7 @@
 #include <QGridLayout>
 #include <QProgressDialog>
 #include <QRadioButton>
+#include <QSpinBox>
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QTextStream>
@@ -243,18 +244,18 @@ MergeWidget::MergeWidget(QWidget *parent, const char *name,
     QStringList::ConstIterator lIt = dictionaryLanguages.begin();
     for (; nIt != dictionaryNames.end(); ++nIt, ++fIt, ++lIt) {
         QCheckBox *checkbox = new QCheckBox(*nIt, this);
-        KIntNumInput *numInput = new KIntNumInput(this);
+        QSpinBox *spinBox = new QSpinBox(this);
         layout->addWidget(checkbox, row, 0);
-        layout->addWidget(numInput, row, 1);
+        layout->addWidget(spinBox, row, 1);
 
         checkbox->setChecked(true);
-        numInput->setRange(1, 100, 10);
-        numInput->setSliderEnabled(true);
-        numInput->setValue(100);
-        connect(checkbox, SIGNAL(toggled(bool)), numInput, SLOT(setEnabled(bool)));
+        spinBox->setRange(1, 100);
+        spinBox->setSingleStep(10);
+        spinBox->setValue(100);
+        connect(checkbox, SIGNAL(toggled(bool)), spinBox, SLOT(setEnabled(bool)));
 
         dictionaries.insert(*fIt, checkbox);
-        weights.insert(*fIt, numInput);
+        weights.insert(*fIt, spinBox);
         languages [*fIt] = *lIt;
         row++;
     }
