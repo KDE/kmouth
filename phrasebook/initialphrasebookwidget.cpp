@@ -131,7 +131,7 @@ void InitialPhraseBookWidget::addChildrenToBook(PhraseBook &book, QStandardItem 
         QStandardItem *child = item->child(i);
         if (child->checkState() != Qt::Unchecked) {
             PhraseBook localBook;
-            if (localBook.open(QUrl(child->data().toString()))) {
+            if (localBook.open(QUrl::fromLocalFile(child->data().toString()))) {
                 book += localBook;
             }
         }

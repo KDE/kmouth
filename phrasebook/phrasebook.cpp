@@ -416,7 +416,7 @@ StandardBookList PhraseBook::standardPhraseBooks()
     for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
         PhraseBook pbook;
         // Open the phrasebook.
-        if (pbook.open(QUrl(*it))) {
+        if (pbook.open(QUrl::fromLocalFile(*it))) {
             StandardBook book;
             book.name = (*pbook.begin()).getPhrase().getPhrase();
 

@@ -502,7 +502,7 @@ void KMouthApp::slotPhrasebookConfirmed()
     QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
     if (!standardBook.isEmpty()) {
         PhraseBook book;
-        book.open(QUrl(standardBook));
+        book.open(QUrl::fromLocalFile(standardBook));
         QString name = QLatin1String("phrasebooks");
         QMenu *popup = (QMenu *)factory()->container(name, this);
         KToolBar *toolbar = toolBar(QLatin1String("phrasebookBar"));
