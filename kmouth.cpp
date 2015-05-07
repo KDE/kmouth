@@ -56,7 +56,6 @@ KMouthApp::KMouthApp(QWidget* , const char* name): KXmlGuiWindow(0)
     setWindowIcon(QIcon::fromTheme(QLatin1String("kmouth")));
     setObjectName(QLatin1String(name));
     isConfigured = false;
-    config = KSharedConfig::openConfig();
 
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
@@ -72,7 +71,7 @@ KMouthApp::KMouthApp(QWidget* , const char* name): KXmlGuiWindow(0)
     phrases = new KActionCollection(static_cast<QWidget*>(this));
 
     readOptions();
-    ConfigWizard *wizard = new ConfigWizard(this, config.data());
+    ConfigWizard *wizard = new ConfigWizard(this);
     if (wizard->configurationNeeded()) {
         if (wizard->requestConfiguration()) {
             isConfigured = true;
@@ -268,7 +267,7 @@ void KMouthApp::openDocumentFile(const QUrl &url)
 void KMouthApp::saveOptions()
 {
     if (isConfigured) {
-        KConfigGroup cg(config, "General Options");
+        KConfigGroup cg(KSharedConfig::openConfig(), "General Options");
         cg.writeEntry("Geometry", size());
         cg.writeEntry("Show Menubar", viewMenuBar->isChecked());
         // FIXME: Toolbar disabled so it will compile.
@@ -279,11 +278,11 @@ void KMouthApp::saveOptions()
         // cg.writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
         if (phraseList != 0)
-            phraseList->saveCompletionOptions(config.data());
-        optionsDialog->saveOptions(config.data());
-        cg.changeGroup("mainToolBar");
-        toolBar(QLatin1String("mainToolBar"))->saveSettings(cg);
-        cg.changeGroup("phrasebookBar");
+            phraseList->saveCompletionOptions();
+        optionsDialog->saveOptions();
+        KConfigGroup cg2(KSharedConfig::openConfig(), "mainToolBar");
+        toolBar(QLatin1String("mainToolBar"))->saveSettings(cg2);
+        KConfigGroup cg3(KSharedConfig::openConfig(), "phrasebookBar");
         toolBar(QLatin1String("phrasebookBar"))->saveSettings(cg);
     }
 }
@@ -291,7 +290,7 @@ void KMouthApp::saveOptions()
 
 void KMouthApp::readOptions()
 {
-    KConfigGroup cg(config, "General Options");
+    KConfigGroup cg(KSharedConfig::openConfig(), "General Options");
 
     // bar status settings
     bool bViewMenubar = cg.readEntry("Show Menubar", true);
@@ -321,14 +320,14 @@ void KMouthApp::readOptions()
         resize(size);
     }
 
-    optionsDialog->readOptions(config.data());
+    optionsDialog->readOptions();
 
-    toolBar(QLatin1String("mainToolBar"))->applySettings(config->group("mainToolBar"));
-    toolBar(QLatin1String("phrasebookBar"))->applySettings(config->group("phrasebookBar"));
+    toolBar(QLatin1String("mainToolBar"))->applySettings(KSharedConfig::openConfig()->group("mainToolBar"));
+    toolBar(QLatin1String("phrasebookBar"))->applySettings(KSharedConfig::openConfig()->group("phrasebookBar"));
 
     slotPhrasebookConfirmed();
     if (phraseList != 0)
-        phraseList->readCompletionOptions(config.data());
+        phraseList->readCompletionOptions();
 }
 
 bool KMouthApp::queryClose()
@@ -515,7 +514,7 @@ void KMouthApp::slotPhrasebookConfirmed()
 
 void KMouthApp::slotConfigurationChanged()
 {
-    optionsDialog->saveOptions(config.data());
+    optionsDialog->saveOptions();
 }
 
 void KMouthApp::slotPhraseSelected(const QString &phrase)

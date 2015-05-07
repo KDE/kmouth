@@ -20,7 +20,7 @@
 #include <QTextCodec>
 #include <QTextToSpeech>
 
-#include <KConfig>
+#include <KSharedConfig>
 #include <KConfigGroup>
 
 #include "speech.h"
@@ -56,9 +56,9 @@ void TextToSpeechSystem::speak(const QString &text, const QString &language)
     }
 }
 
-void TextToSpeechSystem::readOptions(KConfig *config, const QString &langGroup)
+void TextToSpeechSystem::readOptions(const QString &langGroup)
 {
-    KConfigGroup cg(config, langGroup);
+    KConfigGroup cg(KSharedConfig::openConfig(), langGroup);
     ttsCommand = cg.readPathEntry("Command", QString());
     stdIn = cg.readEntry("StdIn", true);
     useQtSpeech = cg.readEntry("useQtSpeech", true);
@@ -78,9 +78,9 @@ void TextToSpeechSystem::readOptions(KConfig *config, const QString &langGroup)
     }
 }
 
-void TextToSpeechSystem::saveOptions(KConfig *config, const QString &langGroup)
+void TextToSpeechSystem::saveOptions(const QString &langGroup)
 {
-    KConfigGroup cg(config, langGroup);
+    KConfigGroup cg(KSharedConfig::openConfig(), langGroup);
     cg.writePathEntry("Command", ttsCommand);
     cg.writeEntry("StdIn", stdIn);
     cg.writeEntry("useQtSpeech", useQtSpeech);

@@ -139,8 +139,6 @@ public slots:
 
 private:
     bool isConfigured;
-    /** the configuration object of the application */
-    KSharedConfigPtr config;
     /** The phrase list */
     PhraseList *phraseList;
     /** The configuration dialog */

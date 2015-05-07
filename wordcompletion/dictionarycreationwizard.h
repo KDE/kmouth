@@ -32,7 +32,6 @@
 
 class CompletionWizardWidget;
 class KComboBox;
-class KConfig;
 class MergeWidget;
 class QScrollArea;
 class QTextCodec;
@@ -168,7 +167,7 @@ public:
     CompletionWizardWidget(QWidget *parent, const char *name);
     ~CompletionWizardWidget();
 
-    void ok(KConfig *config);
+    void ok();
 };
 
 #endif

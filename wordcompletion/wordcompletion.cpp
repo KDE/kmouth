@@ -6,8 +6,8 @@
 #include <QStandardPaths>
 #include <QTextStream>
 
-#include <KConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 class WordCompletion::WordCompletionPrivate
 {
@@ -106,9 +106,7 @@ QString WordCompletion::currentWordList()
 
 bool WordCompletion::isConfigured()
 {
-    KConfig *config = new KConfig(QLatin1String("kmouthrc"));
-    bool result = config->hasGroup("Dictionary 0");
-    delete config;
+    bool result = KSharedConfig::openConfig()->hasGroup("Dictionary 0");
 
     return result;
 }
@@ -122,11 +120,10 @@ void WordCompletion::configure()
     d->dictionaries.clear();
     d->dictDetails.clear();
 
-    KConfig *config = new KConfig(QLatin1String("kmouthrc"));
-    const QStringList groups = config->groupList();
+    const QStringList groups = KSharedConfig::openConfig()->groupList();
     for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
         if ((*it).startsWith(QLatin1String("Dictionary "))) {
-            KConfigGroup cg(config, *it);
+            KConfigGroup cg(KSharedConfig::openConfig(), *it);
             WordCompletionPrivate::DictionaryDetails details;
             details.filename = cg.readEntry("Filename");
             details.language = cg.readEntry("Language");
@@ -134,7 +131,6 @@ void WordCompletion::configure()
             d->dictDetails[name] = details;
             d->dictionaries += name;
         }
-    delete config;
 
     d->blockCurrentListSignal = true;
     setWordList(d->current);

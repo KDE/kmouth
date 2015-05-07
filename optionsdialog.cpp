@@ -72,9 +72,9 @@ void PreferencesWidget::ok()
     save  = closeCombo->currentIndex();
 }
 
-void PreferencesWidget::readOptions(KConfig *config)
+void PreferencesWidget::readOptions()
 {
-    KConfigGroup cg(config, "Preferences");
+    KConfigGroup cg(KSharedConfig::openConfig(), "Preferences");
     if (cg.hasKey("AutomaticSpeak"))
         if (cg.readEntry("AutomaticSpeak") == QLatin1String("Yes"))
             speak = true;
@@ -83,7 +83,7 @@ void PreferencesWidget::readOptions(KConfig *config)
     else
         speak = false;
 
-    KConfigGroup cg2(config , "Notification Messages");
+    KConfigGroup cg2(KSharedConfig::openConfig() , "Notification Messages");
     if (cg2.hasKey("AutomaticSave"))
         if (cg2.readEntry("AutomaticSave") == QLatin1String("Yes"))
             save = 0;
@@ -99,15 +99,15 @@ void PreferencesWidget::readOptions(KConfig *config)
     closeCombo->setCurrentIndex(save);
 }
 
-void PreferencesWidget::saveOptions(KConfig *config)
+void PreferencesWidget::saveOptions()
 {
-    KConfigGroup cg(config, "Preferences");
+    KConfigGroup cg(KSharedConfig::openConfig(), "Preferences");
     if (speak)
         cg.writeEntry("AutomaticSpeak", "Yes");
     else
         cg.writeEntry("AutomaticSpeak", "No");
 
-    KConfigGroup cg2(config, "Notification Messages");
+    KConfigGroup cg2(KSharedConfig::openConfig(), "Notification Messages");
     if (save == 0)
         cg2.writeEntry("AutomaticSave", "Yes");
     else if (save == 1)
@@ -225,17 +225,17 @@ TextToSpeechSystem *OptionsDialog::getTTSSystem() const
     return commandWidget->getTTSSystem();
 }
 
-void OptionsDialog::readOptions(KConfig *config)
+void OptionsDialog::readOptions()
 {
-    commandWidget->readOptions(config, QLatin1String("TTS System"));
-    behaviourWidget->readOptions(config);
+    commandWidget->readOptions(QLatin1String("TTS System"));
+    behaviourWidget->readOptions();
 }
 
-void OptionsDialog::saveOptions(KConfig *config)
+void OptionsDialog::saveOptions()
 {
-    commandWidget->saveOptions(config, QLatin1String("TTS System"));
-    behaviourWidget->saveOptions(config);
-    config->sync();
+    commandWidget->saveOptions(QLatin1String("TTS System"));
+    behaviourWidget->saveOptions();
+    KSharedConfig::openConfig()->sync();
 }
 
 bool OptionsDialog::isSpeakImmediately()

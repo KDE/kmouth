@@ -22,7 +22,6 @@
 
 #include <QWizardPage>
 
-class KConfig;
 class TextToSpeechSystem;
 
 /**This class represents a configuration widget for the text-to-speech system.
@@ -38,8 +37,8 @@ public:
 
     TextToSpeechSystem *getTTSSystem() const;
 
-    void readOptions(KConfig *config, const QString &langGroup);
-    void saveOptions(KConfig *config, const QString &langGroup);
+    void readOptions(const QString &langGroup);
+    void saveOptions(const QString &langGroup);
 
     void ok();
     void cancel();

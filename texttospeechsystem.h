@@ -21,8 +21,6 @@
 #include <QList>
 #include <QObject>
 
-class KConfig;
-
 class QTextToSpeech;
 
 /**This class represents a text-to-speech system.
@@ -36,8 +34,8 @@ public:
     TextToSpeechSystem();
     ~TextToSpeechSystem();
 
-    void readOptions(KConfig *config, const QString &langGroup);
-    void saveOptions(KConfig *config, const QString &langGroup);
+    void readOptions(const QString &langGroup);
+    void saveOptions(const QString &langGroup);
 
 public slots:
     void speak(const QString &text, const QString &language);

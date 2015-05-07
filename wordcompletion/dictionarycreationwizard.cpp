@@ -29,8 +29,8 @@
 
 #include <QDebug>
 
-#include <KConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 int CreationSourceWidget::nextId() const
 {
@@ -307,7 +307,7 @@ CompletionWizardWidget::~CompletionWizardWidget()
 {
 }
 
-void CompletionWizardWidget::ok(KConfig *config)
+void CompletionWizardWidget::ok()
 {
     WordList::WordMap map;
     QProgressDialog *pdlg = WordList::progressDialog();
@@ -327,7 +327,7 @@ void CompletionWizardWidget::ok(KConfig *config)
     dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("/");
     qDebug() << "dictionaryFile is " << dictionaryFile;
     if (WordList::saveWordList(map, dictionaryFile)) {
-        KConfigGroup cg(config, "Dictionary 0");
+        KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");
         cg.writeEntry("Filename", "wordcompletion1.dict");
         cg.writeEntry("Name",     i18nc("Default dictionary", "Default"));
         cg.writeEntry("Language", language);

@@ -25,7 +25,6 @@
 #include <QWidget>
 
 class KComboBox;
-class KConfig;
 class KLineEdit;
 class QKeyEvent;
 class QListView;
@@ -85,8 +84,8 @@ public slots:
 
     void configureCompletion();
     void saveWordCompletion();
-    void saveCompletionOptions(KConfig *config);
-    void readCompletionOptions(KConfig *config);
+    void saveCompletionOptions();
+    void readCompletionOptions();
 
 protected slots:
     void lineEntered(const QString &phrase);

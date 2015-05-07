@@ -20,7 +20,6 @@
 #ifndef OPTIONSDIALOG_H
 #define OPTIONSDIALOG_H
 
-#include <KConfig>
 #include <KPageDialog>
 
 #include "ui_preferencesui.h"
@@ -42,8 +41,8 @@ public:
     PreferencesWidget(QWidget *parent, const char *name);
     ~PreferencesWidget();
 
-    void readOptions(KConfig *config);
-    void saveOptions(KConfig *config);
+    void readOptions();
+    void saveOptions();
 
     void ok();
     void cancel();
@@ -68,8 +67,8 @@ public:
 
     TextToSpeechSystem *getTTSSystem() const;
 
-    void readOptions(KConfig *config);
-    void saveOptions(KConfig *config);
+    void readOptions();
+    void saveOptions();
 
     bool isSpeakImmediately();
 

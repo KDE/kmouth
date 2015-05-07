@@ -20,7 +20,6 @@
 
 #include <QWizard>
 
-class KConfig;
 class TextToSpeechConfigurationWidget;
 class InitialPhraseBookWidget;
 class CompletionWizardWidget;
@@ -33,7 +32,7 @@ class ConfigWizard : public QWizard
 {
     Q_OBJECT
 public:
-    ConfigWizard(QWidget *parent, KConfig *config);
+    ConfigWizard(QWidget *parent);
     ~ConfigWizard();
 
     bool configurationNeeded();
@@ -53,7 +52,6 @@ private:
     TextToSpeechConfigurationWidget *commandWidget;
     InitialPhraseBookWidget *bookWidget;
     CompletionWizardWidget *completionWidget;
-    KConfig *m_config;
 };
 
 #endif

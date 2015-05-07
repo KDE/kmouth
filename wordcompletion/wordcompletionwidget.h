@@ -23,7 +23,6 @@
 #include "ui_wordcompletionui.h"
 
 class QStandardItemModel;
-class KConfig;
 
 /**
  * This class represents a configuration widget for managing dictionaries.
@@ -72,10 +71,6 @@ private slots:
     }
 
 private:
-    /**
-     * Object holding all the configuration
-     */
-    KConfig *config;
     QStringList newDictionaryFiles;
     QStringList removedDictionaryFiles;
     QStandardItemModel *model;

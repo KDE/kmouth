@@ -21,7 +21,7 @@
 #include <QLabel>
 #include <QStandardPaths>
 
-#include <kconfig.h>
+#include <KSharedConfig>
 #include <KConfigGroup>
 #include <KHelpClient>
 #include <KLocalizedString>
@@ -31,8 +31,8 @@
 #include "wordcompletion/wordcompletion.h"
 #include "wordcompletion/dictionarycreationwizard.h"
 
-ConfigWizard::ConfigWizard(QWidget *parent, KConfig *config)
-    : QWizard(parent), m_config(config)
+ConfigWizard::ConfigWizard(QWidget *parent)
+    : QWizard(parent)
 {
     setWindowTitle(i18n("Initial Configuration - KMouth"));
     initCommandPage();
@@ -47,14 +47,14 @@ ConfigWizard::~ConfigWizard()
 
 void ConfigWizard::initCommandPage()
 {
-    KConfigGroup cg(m_config, QLatin1String("TTS System"));
+    KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("TTS System"));
     bool displayCommand = false;
     if (!cg.hasKey("StdIn"))   displayCommand = true;
     if (!cg.hasKey("Codec"))   displayCommand = true;
 
     if (displayCommand) {
         commandWidget = new TextToSpeechConfigurationWidget(this, "ttsPage");
-        commandWidget->readOptions(m_config, QLatin1String("TTS System"));
+        commandWidget->readOptions(QLatin1String("TTS System"));
         commandWidget->setTitle(i18n("Text-to-Speech Configuration"));
         addPage(commandWidget);
         commandWidget->setFinalPage(true);
@@ -86,7 +86,7 @@ void ConfigWizard::initCompletion()
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
             // configuration file, we need to add it there.
-            KConfigGroup cg(m_config , "Dictionary 0");
+            KConfigGroup cg(KSharedConfig::openConfig() , "Dictionary 0");
             cg.writeEntry("Filename", "dictionary.txt");
             cg.writeEntry("Name",     "Default");
             cg.writeEntry("Language", QString());
@@ -94,7 +94,7 @@ void ConfigWizard::initCompletion()
         }
     }
 
-    if (m_config->hasGroup("Completion")) {
+    if (KSharedConfig::openConfig()->hasGroup("Completion")) {
         completionWidget = 0;
         return;
     }
@@ -117,14 +117,14 @@ void ConfigWizard::saveConfig()
 {
     if (commandWidget != 0) {
         commandWidget->ok();
-        commandWidget->saveOptions(m_config, QLatin1String("TTS System"));
+        commandWidget->saveOptions(QLatin1String("TTS System"));
     }
 
     if (bookWidget != 0)
         bookWidget->createBook();
 
     if (completionWidget != 0)
-        completionWidget->ok(m_config);
+        completionWidget->ok();
 }
 
 bool ConfigWizard::requestConfiguration()

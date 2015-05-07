@@ -19,7 +19,6 @@
 
 #include <QTextCodec>
 
-#include <KConfig>
 #include <KLocalizedString>
 
 #include "speech.h"
@@ -71,17 +70,17 @@ TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const
     return ttsSystem;
 }
 
-void TextToSpeechConfigurationWidget::readOptions(KConfig *config, const QString &langGroup)
+void TextToSpeechConfigurationWidget::readOptions(const QString &langGroup)
 {
-    ttsSystem->readOptions(config, langGroup);
+    ttsSystem->readOptions(langGroup);
     urlReq->setUrl(ttsSystem->ttsCommand);
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
     useQtSpeech->setChecked(ttsSystem->useQtSpeech);
 }
 
-void TextToSpeechConfigurationWidget::saveOptions(KConfig *config, const QString &langGroup)
+void TextToSpeechConfigurationWidget::saveOptions(const QString &langGroup)
 {
-    ttsSystem->saveOptions(config, langGroup);
+    ttsSystem->saveOptions(langGroup);
 }
 

@@ -22,11 +22,11 @@
 
 #include <QDebug>
 
-#include <KConfig>
 #include <KConfigGroup>
 #include <KFileDialog>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
 #include <QUrl>
 #include <kio/netaccess.h>
 
@@ -56,9 +56,6 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     connect(dictionaryName, SIGNAL(textChanged(QString)), this, SLOT(nameChanged(QString)));
     connect(languageButton, SIGNAL(activated(QString)), this, SLOT(languageSelected()));
 
-    // Object for the KCMKTTSD configuration
-    config = new KConfig(QLatin1String("kmouthrc"));
-
     // Load the configuration from the file
     load();
     qDebug() << "horizontal header data is " << model->headerData(0, Qt::Horizontal) << model->headerData(1, Qt::Horizontal);
@@ -69,7 +66,6 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
  */
 WordCompletionWidget::~WordCompletionWidget()
 {
-    delete config;
 }
 
 /***************************************************************************/
@@ -83,10 +79,10 @@ void WordCompletionWidget::load()
     model->setHorizontalHeaderLabels(labels);
 
     // Set the group general for the configuration of kttsd itself (no plug ins)
-    const QStringList groups = config->groupList();
+    const QStringList groups = KSharedConfig::openConfig()->groupList();
     for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
         if ((*it).startsWith(QLatin1String("Dictionary "))) {
-            KConfigGroup cg(config, *it);
+            KConfigGroup cg(KSharedConfig::openConfig(), *it);
             QString filename = cg.readEntry("Filename");
             QString languageTag = cg.readEntry("Language");
             QStandardItem *nameItem = new QStandardItem(cg.readEntry("Name"));
@@ -111,21 +107,21 @@ void WordCompletionWidget::load()
 
 void WordCompletionWidget::save()
 {
-    const QStringList groups = config->groupList();
+    const QStringList groups = KSharedConfig::openConfig()->groupList();
     for (QStringList::const_iterator it = groups.constBegin(); it != groups.constEnd(); ++it)
         if ((*it).startsWith(QLatin1String("Dictionary ")))
-            config->deleteGroup(*it);
+            KSharedConfig::openConfig()->deleteGroup(*it);
 
     int row = 0;
     for (int row = 0; row < model->rowCount(); ++row) {
         const QStandardItem *nameItem = model->item(row, 0);
         const QStandardItem *languageItem = model->item(row, 1);
-        KConfigGroup cg(config, QString(QLatin1String("Dictionary %1")).arg(row));
+        KConfigGroup cg(KSharedConfig::openConfig(), QString(QLatin1String("Dictionary %1")).arg(row));
         cg.writeEntry("Filename", nameItem->data().toString());
         cg.writeEntry("Name",     nameItem->text());
         cg.writeEntry("Language", languageItem->text());
     }
-    config->sync();
+    KSharedConfig::openConfig()->sync();
 
     // Clean up disc space
     for (QStringList::const_iterator it = removedDictionaryFiles.constBegin(); it != removedDictionaryFiles.constEnd(); ++it) {
