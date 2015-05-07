@@ -18,17 +18,19 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
+#include <QAction>
 #include <QFile>
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QPainter>
 #include <QRegExp>
 #include <QStack>
+#include <QTemporaryFile>
 #include <QTextStream>
+#include <QUrl>
 #include <QXmlInputSource>
 #include <QXmlSimpleReader>
 
-#include <QAction>
 #include <KActionMenu>
 #include <KActionCollection>
 #include <KDesktopFile>
@@ -36,10 +38,10 @@
 #include <KMenu>
 #include <KMessageBox>
 #include <KToolBar>
-#include <KTemporaryFile>
-#include <QUrl>
 
 #include <kio/netaccess.h>
+
+#include <QDebug>
 
 Phrase::Phrase()
 {
@@ -263,7 +265,7 @@ bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
         else
             return true;
     } else {
-        KTemporaryFile tempFile;
+        QTemporaryFile tempFile;
         tempFile.open();
 
         QTextStream ts(&tempFile);
