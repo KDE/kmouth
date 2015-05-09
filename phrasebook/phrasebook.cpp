@@ -265,14 +265,12 @@ bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
         else
             return true;
     } else {
-        QTemporaryFile tempFile;
-        tempFile.open();
-
-        QTextStream ts(&tempFile);
+        QByteArray data;
+        QTextStream ts(&data);
         save(ts, asPhrasebook);
         ts.flush();
 
-        KIO::StoredTransferJob *uploadJob = KIO::storedPut(&tempFile, url, -1);
+        KIO::StoredTransferJob *uploadJob = KIO::storedPut(data, url, -1);
         return uploadJob->exec();
     }
 }
