@@ -184,7 +184,7 @@ void KMouthApp::initActions()
 
 // The popup menu of the list of spoken sentences
     phraseListSpeak = actionCollection()->addAction(QLatin1String("phraselist_speak"));
-    phraseListSpeak->setIcon(QIcon::fromTheme(QLatin1String("speak")));
+    phraseListSpeak->setIcon(QIcon::fromTheme(QLatin1String("text-speak")));
     phraseListSpeak->setText(i18n("&Speak"));
     phraseListSpeak->setToolTip(i18n("Speaks the currently selected phrases in the history"));
     connect(phraseListSpeak, SIGNAL(triggered(bool)), phraseList, SLOT(speakListSelection()));
