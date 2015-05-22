@@ -360,7 +360,6 @@ bool PhraseBook::open(const QUrl &url)
     KIO::StoredTransferJob *downloadJob = KIO::storedGet(fileUrl);
     if (downloadJob->exec()) {
         // First: try to load it as a normal phrase book
-        qDebug() << "opening file downloaded from " << fileUrl.toString();
         QBuffer fileBuffer;
         fileBuffer.setData(downloadJob->data());
 

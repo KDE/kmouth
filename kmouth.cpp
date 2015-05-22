@@ -105,7 +105,7 @@ void KMouthApp::initActions()
     fileOpen = actionCollection()->addAction(QLatin1String("file_open"));
     fileOpen->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
     fileOpen->setText(i18n("&Open as History..."));
-    fileOpen->setShortcuts(KStandardShortcut::open());
+    actionCollection()->setDefaultShortcuts(fileOpen, KStandardShortcut::open());
     connect(fileOpen, SIGNAL(triggered(bool)), this, SLOT(slotFileOpen()));
     fileOpen->setToolTip(i18n("Opens an existing file as history"));
     fileOpen->setWhatsThis(i18n("Opens an existing file as history"));
@@ -113,7 +113,7 @@ void KMouthApp::initActions()
     fileSaveAs = actionCollection()->addAction(QLatin1String("file_save_as"));
     fileSaveAs->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
     fileSaveAs->setText(i18n("Save &History As..."));
-    fileSaveAs->setShortcuts(KStandardShortcut::save());
+    actionCollection()->setDefaultShortcuts(fileSaveAs, KStandardShortcut::save());
     connect(fileSaveAs, SIGNAL(triggered(bool)), this, SLOT(slotFileSaveAs()));
     fileSaveAs->setToolTip(i18n("Saves the actual history as..."));
     fileSaveAs->setWhatsThis(i18n("Saves the actual history as..."));
@@ -121,7 +121,7 @@ void KMouthApp::initActions()
     filePrint = actionCollection()->addAction(QLatin1String("file_print"));
     filePrint->setIcon(QIcon::fromTheme(QLatin1String("document-print")));
     filePrint->setText(i18n("&Print History..."));
-    filePrint->setShortcuts(KStandardShortcut::print());
+    actionCollection()->setDefaultShortcuts(filePrint, KStandardShortcut::print());
     connect(filePrint, SIGNAL(triggered(bool)), this, SLOT(slotFilePrint()));
     filePrint->setToolTip(i18n("Prints out the actual history"));
     filePrint->setWhatsThis(i18n("Prints out the actual history"));

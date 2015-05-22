@@ -59,7 +59,6 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
 
     // Load the configuration from the file
     load();
-    qDebug() << "horizontal header data is " << model->headerData(0, Qt::Horizontal) << model->headerData(1, Qt::Horizontal);
 }
 
 /**
