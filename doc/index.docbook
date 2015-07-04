@@ -59,7 +59,7 @@
     user can select sentences to be re-spoken.
   </para>
   <para>
-    Note that &kmouth; does not include speech synthesizer. Instead it requires
+    Note that &kmouth; does not include any speech synthesizers. Instead it requires
     a speech synthesizer installed in the system.
   </para>
 </chapter>
@@ -67,10 +67,10 @@
 <chapter id="using-kmouth">
   <title>Using &kmouth;</title>
   <sect1 id="Wizard">
-    <title>The First Start</title>
+    <title>The First Time Setup</title>
     <para>
-      During the first start of &kmouth;, a wizard is displayed into which you
-      can enter some basic configuration.
+      During the first use of &kmouth;, a wizard is displayed in which you
+      can configure it.
     </para>
     <para>
       <screenshot>
@@ -87,7 +87,7 @@
     </para>
     <para>
       With the first page of the wizard you specify
-      the command that shall later be used for the text-to-speech conversion.
+      the command that shall be used for the text-to-speech conversion.
       For more details look into the <link linkend="tts-config">description
       of the configuration dialog.</link>
     </para>
@@ -106,7 +106,7 @@
     </para>
     <para>
       With the second page you select which standard phrase books you need.
-      From the phrase books you later can select often used phrases so that
+      From the phrase books you can select often used phrases so that
       you do not need to type them in. Of course &kmouth; also has an edit
       dialog for the case that you later want to edit your phrase books.
     </para>
@@ -126,7 +126,7 @@
     <para>
       With the third page you define the dictionary
       for a word completion. &kmouth; will parse the &kde; documentation of
-      the chosen language in order to detect the frequentness of individual
+      the chosen language in order to detect the regularity of individual
       words. Optionally you can compare the word list to an OpenOffice.org
       dictionary in order to only add correctly spelled words to the word
       completion.
@@ -403,7 +403,7 @@
             <imagedata fileref="kmouthedit.png" format="PNG"/>
           </imageobject>
           <textobject>
-            <phrase>Screens hot</phrase>
+            <phrase>Screenshot</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -497,9 +497,9 @@
             </menuchoice></term>
             <listitem><para><action>
               Cuts the selected section and puts it to the clipboard. If there
-              is some text selected in the edit field it is placed it on the
+              is some text selected in the edit field it is placed in the
               clipboard. Otherwise the selected sentences in the history (if
-              any) are placed on the clipboard.
+              any) are placed in the clipboard.
             </action></para></listitem>
           </varlistentry>
           <varlistentry>
@@ -861,7 +861,7 @@ of the &kde; Fundamentals.
       </question>
       <answer>
         <para>
-          Most likely you did not configure correctly (or not at all?) the
+          Most likely you did not configure correctly (or at all) the
           text-to-speech command. Use
           <menuchoice>
             <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
