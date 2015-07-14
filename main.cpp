@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData("kmouth", 0, ki18n("KMouth"),
                          KMOUTH_VERSION, ki18n(description), KAboutData::License_GPL,
-                         ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "http://www.schmi-dt.de/kmouth/index.en.html", "kmouth@schmi-dt.de");
+                         ki18n("(c) 2002/2003, Gunnar Schmi Dt"), KLocalizedString(), "https://www.kde.org/applications/utilities/kmouth/", "kmouth@schmi-dt.de");
     aboutData.addAuthor(ki18n("Gunnar Schmi Dt"), ki18n("Original Author"), "kmouth@schmi-dt.de");
     aboutData.addAuthor(ki18n("Jeremy Whiting"), ki18n("Current Maintainer"), "jpwhiting@kde.org");
     KCmdLineArgs::init(argc, argv, &aboutData);
