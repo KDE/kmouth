@@ -97,5 +97,5 @@ install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
 install( FILES kmouthui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kmouth )
 install( FILES phrasebookdialogui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kmouth )
 
-
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
