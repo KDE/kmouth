@@ -92,7 +92,7 @@ install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
 install( FILES kmouthui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kmouth )
 install( FILES phrasebookdialogui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kmouth )
