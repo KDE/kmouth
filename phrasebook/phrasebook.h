@@ -166,11 +166,11 @@ class PhraseAction : public QAction
     Q_OBJECT
 public:
     PhraseAction(const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
-        : QAction(QIcon::fromTheme(QLatin1String("phrase")), phrase, parent)
+        : QAction(QIcon::fromTheme(QStringLiteral("phrase")), phrase, parent)
     {
         this->setShortcut(cut);
         this->phrase = phrase;
-        connect(this, SIGNAL(triggered()), this, SLOT(slotTriggered()));
+        connect(this, &QAction::triggered, this, &PhraseAction::slotTriggered);
         connect(this, SIGNAL(slotActivated(const QString &)), receiver, slot);
         parent->addAction(phrase, this);
     }

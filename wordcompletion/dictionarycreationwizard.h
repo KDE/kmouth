@@ -44,7 +44,7 @@ public:
     {
         setupUi(this);
         setObjectName(QLatin1String(name));
-        connect(emptyButton, SIGNAL(toggled(bool)), this, SLOT(emptyToggled(bool)));
+        connect(emptyButton, &QAbstractButton::toggled, this, &CreationSourceWidget::emptyToggled);
     }
 
     virtual int nextId() const;
@@ -80,7 +80,7 @@ public:
         languageButton->showLanguageCodes(true);
         languageButton->loadAllLanguages();
 
-        ooDictURL->setFilter(QLatin1String("*.dic"));
+        ooDictURL->setFilter(QStringLiteral("*.dic"));
     }
     virtual int nextId() const
     {

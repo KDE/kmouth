@@ -40,7 +40,7 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget()
 
 void TextToSpeechConfigurationWidget::buildCodecList()
 {
-    QString local = i18nc("Local characterset", "Local") + QLatin1String(" (");
+    QString local = i18nc("Local characterset", "Local") + QStringLiteral(" (");
     local += QLatin1String(QTextCodec::codecForLocale()->name()) + QLatin1Char(')');
     characterCodingBox->addItem(local, Speech::Local);
     characterCodingBox->addItem(i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);

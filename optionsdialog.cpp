@@ -128,8 +128,8 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
     mainLayout->addWidget(buttonBox);
     setFaceType(KPageDialog::List);
@@ -139,7 +139,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
 
     tabCtl = new QTabWidget();
-    tabCtl->setObjectName(QLatin1String("general"));
+    tabCtl->setObjectName(QStringLiteral("general"));
 
     behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");
     tabCtl->addTab(behaviourWidget, i18n("&Preferences"));
@@ -149,20 +149,20 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
     KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));
     pageGeneral->setHeader(i18n("General Options"));
-    pageGeneral->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    pageGeneral->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     addPage(pageGeneral);
 
     completionWidget = new WordCompletionWidget(0, "Word Completion widget");
     KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
     pageCompletion->setHeader(i18n("Word Completion"));
-    pageCompletion->setIcon(QIcon::fromTheme(QLatin1String("keyboard")));
+    pageCompletion->setIcon(QIcon::fromTheme(QStringLiteral("keyboard")));
     addPage(pageCompletion);
 
     buttonBox->button(QDialogButtonBox::Cancel)->setDefault(true);
 
-    connect(okButton, SIGNAL(clicked()), this, SLOT(slotOk()));
-    connect(buttonBox->button(QDialogButtonBox::Cancel), SIGNAL(clicked()), this, SLOT(slotCancel()));
-    connect(buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), this, SLOT(slotApply()));
+    connect(okButton, &QAbstractButton::clicked, this, &OptionsDialog::slotOk);
+    connect(buttonBox->button(QDialogButtonBox::Cancel), &QAbstractButton::clicked, this, &OptionsDialog::slotCancel);
+    connect(buttonBox->button(QDialogButtonBox::Apply), &QAbstractButton::clicked, this, &OptionsDialog::slotApply);
 }
 
 OptionsDialog::~OptionsDialog()
@@ -202,13 +202,13 @@ TextToSpeechSystem *OptionsDialog::getTTSSystem() const
 
 void OptionsDialog::readOptions()
 {
-    commandWidget->readOptions(QLatin1String("TTS System"));
+    commandWidget->readOptions(QStringLiteral("TTS System"));
     behaviourWidget->readOptions();
 }
 
 void OptionsDialog::saveOptions()
 {
-    commandWidget->saveOptions(QLatin1String("TTS System"));
+    commandWidget->saveOptions(QStringLiteral("TTS System"));
     behaviourWidget->saveOptions();
     KSharedConfig::openConfig()->sync();
 }

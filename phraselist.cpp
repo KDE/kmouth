@@ -78,7 +78,7 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
     rowLayout->addWidget(lineEdit);
     lineEdit->setFocus();
 
-    QIcon icon = QIcon::fromTheme(QLatin1String("text-speak"));
+    QIcon icon = QIcon::fromTheme(QStringLiteral("text-speak"));
     speakButton = new QPushButton(icon, i18n("&Speak"), this);
     speakButton->setFocusPolicy(Qt::NoFocus);
     speakButton->setAutoDefault(false);
@@ -86,12 +86,12 @@ PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
     rowLayout->addWidget(speakButton);
 
     connect(dictionaryCombo, SIGNAL(activated(QString)), completion, SLOT(setWordList(QString)));
-    connect(completion, SIGNAL(wordListsChanged(QStringList)), this, SLOT(configureCompletionCombo(QStringList)));
-    connect(m_listView->selectionModel(),  SIGNAL(selectionChanged(QItemSelection, QItemSelection)), SLOT(selectionChanged()));
-    connect(m_listView,  SIGNAL(customContextMenuRequested(QPoint)), SLOT(contextMenuRequested(QPoint)));
+    connect(completion, &WordCompletion::wordListsChanged, this, &PhraseList::configureCompletionCombo);
+    connect(m_listView->selectionModel(),  &QItemSelectionModel::selectionChanged, this, &PhraseList::selectionChanged);
+    connect(m_listView,  &QWidget::customContextMenuRequested, this, &PhraseList::contextMenuRequested);
     connect(lineEdit, SIGNAL(returnPressed(QString)), SLOT(lineEntered(QString)));
-    connect(lineEdit, SIGNAL(textChanged(QString)), SLOT(textChanged(QString)));
-    connect(speakButton, SIGNAL(clicked()), SLOT(speak()));
+    connect(lineEdit, &QLineEdit::textChanged, this, &PhraseList::textChanged);
+    connect(speakButton, &QAbstractButton::clicked, this, &PhraseList::speak);
 }
 
 PhraseList::~PhraseList()
@@ -277,7 +277,7 @@ void PhraseList::insert(const QString &s)
 
 void PhraseList::speakListSelection()
 {
-    speakPhrase(getListSelection().join(QLatin1String("\n")));
+    speakPhrase(getListSelection().join(QStringLiteral("\n")));
 }
 
 void PhraseList::removeListSelection()
@@ -302,7 +302,7 @@ void PhraseList::cutListSelection()
 
 void PhraseList::copyListSelection()
 {
-    QApplication::clipboard()->setText(getListSelection().join(QLatin1String("\n")));
+    QApplication::clipboard()->setText(getListSelection().join(QStringLiteral("\n")));
 }
 
 void PhraseList::lineEntered(const QString &phrase)
@@ -345,9 +345,9 @@ void PhraseList::contextMenuRequested(const QPoint &pos)
 {
     QString name;
     if (existListSelection())
-        name = QLatin1String("phraselist_selection_popup");
+        name = QStringLiteral("phraselist_selection_popup");
     else
-        name = QLatin1String("phraselist_popup");
+        name = QStringLiteral("phraselist_popup");
 
     KMouthApp *theApp = (KMouthApp *) parentWidget();
     KXMLGUIFactory *factory = theApp->factory();

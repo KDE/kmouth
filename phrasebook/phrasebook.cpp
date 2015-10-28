@@ -158,7 +158,7 @@ bool PhraseBook::decode(QXmlInputSource &source)
 {
     PhraseBookParser parser;
     QXmlSimpleReader reader;
-    reader.setFeature(QLatin1String("http://trolltech.com/xml/features/report-start-end-entity"), true);
+    reader.setFeature(QStringLiteral("http://trolltech.com/xml/features/report-start-end-entity"), true);
     reader.setContentHandler(&parser);
 
     if (reader.parse(source)) {
@@ -187,7 +187,7 @@ QByteArray encodeString(const QString str)
 QString PhraseBook::encode()
 {
     QString result;
-    result  = QLatin1String("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+    result  = QStringLiteral("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
     result += QLatin1String("<!DOCTYPE phrasebook>\n");
     result += QLatin1String("<phrasebook>\n");
 
@@ -206,11 +206,11 @@ QString PhraseBook::encode()
 
         if ((*it).isPhrase()) {
             Phrase phrase = (*it).getPhrase();
-            result += QLatin1String("<phrase shortcut=\"") + QLatin1String(encodeString(phrase.getShortcut()));
-            result += QLatin1String("\">") + QLatin1String(encodeString(phrase.getPhrase())) + QLatin1String("</phrase>\n");
+            result += QStringLiteral("<phrase shortcut=\"") + QLatin1String(encodeString(phrase.getShortcut()));
+            result += QStringLiteral("\">") + QLatin1String(encodeString(phrase.getPhrase())) + QStringLiteral("</phrase>\n");
         } else {
             Phrase phrase = (*it).getPhrase();
-            result += QLatin1String("<phrasebook name=\"") + QLatin1String(encodeString(phrase.getPhrase())) + QLatin1String("\">\n");
+            result += QStringLiteral("<phrasebook name=\"") + QLatin1String(encodeString(phrase.getPhrase())) + QStringLiteral("\">\n");
             level++;
         }
     }
@@ -236,7 +236,7 @@ QStringList PhraseBook::toStringList()
 
 bool PhraseBook::save(const QUrl &url)
 {
-    QRegExp pattern(QLatin1String("*.phrasebook"), Qt::CaseSensitive, QRegExp::Wildcard);
+    QRegExp pattern(QStringLiteral("*.phrasebook"), Qt::CaseSensitive, QRegExp::Wildcard);
     return save(url, pattern.exactMatch(url.fileName()));
 }
 
@@ -246,7 +246,7 @@ void PhraseBook::save(QTextStream &stream, bool asPhrasebook)
     if (asPhrasebook)
         stream << encode();
     else
-        stream << toStringList().join(QLatin1String("\n"));
+        stream << toStringList().join(QStringLiteral("\n"));
 }
 
 bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
@@ -300,7 +300,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
     }
 
     if (QFile::exists(url.toLocalFile())) {
-        if (KMessageBox::warningContinueCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("The file %1 already exists. "
+        if (KMessageBox::warningContinueCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
             return 0;
         }
@@ -310,24 +310,24 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
     if (fdlg.selectedNameFilter() == QLatin1String("*.phrasebook")) {
         if (url.fileName(0).contains(QLatin1Char('.')) == 0) {
             url = url.adjusted(QUrl::RemoveFilename);
-            url.setPath(url.path() + url.fileName(0) + QLatin1String(".phrasebook"));
-        } else if (url.fileName(0).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-            int filetype = KMessageBox::questionYesNoCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
+            url.setPath(url.path() + url.fileName(0) + QStringLiteral(".phrasebook"));
+        } else if (url.fileName(0).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
+            int filetype = KMessageBox::questionYesNoCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                            "Do you wish to add <i>.phrasebook</i> to the filename?", url.fileName())), i18n("File Extension"), KGuiItem(i18n("Add")), KGuiItem(i18n("Do Not Add")));
             if (filetype == KMessageBox::Cancel) {
                 return 0;
             }
             if (filetype == KMessageBox::Yes) {
                 url = url.adjusted(QUrl::RemoveFilename);
-                url.setPath(url.path() + url.fileName(0) + QLatin1String(".phrasebook"));
+                url.setPath(url.path() + url.fileName(0) + QStringLiteral(".phrasebook"));
             }
         }
         result = save(url, true);
     } else if (fdlg.selectedNameFilter() == QLatin1String("*.txt")) {
-        if (url.fileName(0).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
+        if (url.fileName(0).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
             result = save(url, false);
         } else {
-            int filetype = KMessageBox::questionYesNoCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+            int filetype = KMessageBox::questionYesNoCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
                            "Do you wish to save in phrasebook format?", url.fileName())), i18n("File Extension"), KGuiItem(i18n("As Phrasebook")), KGuiItem(i18n("As Plain Text")));
             if (filetype == KMessageBox::Cancel) {
                 return 0;
@@ -353,7 +353,7 @@ bool PhraseBook::open(const QUrl &url)
 
     QString protocol = fileUrl.scheme();
     if (protocol.isEmpty() || protocol.isNull()) {
-        fileUrl.setScheme(QLatin1String("file"));
+        fileUrl.setScheme(QStringLiteral("file"));
         fileUrl.setPath(url.url());
     }
 
@@ -391,12 +391,12 @@ StandardBookList PhraseBook::standardPhraseBooks()
     // Get all the standard phrasebook filenames in bookPaths.
     QStringList bookPaths;
     const QStringList dirs =
-        QStandardPaths::locateAll(QStandardPaths::AppDataLocation, "books", QStandardPaths::LocateDirectory);
+        QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("books"), QStandardPaths::LocateDirectory);
     Q_FOREACH (const QString &dir, dirs) {
         const QStringList locales = QDir(dir).entryList(QDir::Dirs | QDir::NoDotAndDotDot);
         Q_FOREACH (const QString &locale, locales) {
             const QStringList fileNames =
-                QDir(dir + '/' + locale).entryList(QStringList() << QLatin1String("*.phrasebook"));
+                QDir(dir + '/' + locale).entryList(QStringList() << QStringLiteral("*.phrasebook"));
             Q_FOREACH (const QString &file, fileNames) {
                 bookPaths.append(dir + '/' + locale + '/' + file);
             }
@@ -435,12 +435,12 @@ QString PhraseBook::displayPath(QString filename)
     QFileInfo file(filename);
     QString path = file.path();
     QString dispPath;
-    int position = path.indexOf(QLatin1String("/kmouth/books/")) + QString(QLatin1String("/kmouth/books/")).length();
+    int position = path.indexOf(QLatin1String("/kmouth/books/")) + QStringLiteral("/kmouth/books/").length();
 
     while (path.length() > position) {
         file.setFile(path);
 
-        KDesktopFile *dirDesc = new KDesktopFile(QStandardPaths::GenericDataLocation, path + QLatin1String("/.directory"));
+        KDesktopFile *dirDesc = new KDesktopFile(QStandardPaths::GenericDataLocation, path + QStringLiteral("/.directory"));
         QString name = dirDesc->readName();
         delete dirDesc;
 
@@ -466,7 +466,7 @@ void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *ph
         for (it = begin(); it != end(); ++it) {
             int newLevel = (*it).getLevel();
             while (newLevel > level) {
-                KActionMenu *menu = phrases->add<KActionMenu>(QLatin1String("phrasebook"));
+                KActionMenu *menu = phrases->add<KActionMenu>(QStringLiteral("phrasebook"));
                 menu->setDelayed(false);
                 if (parent == popup)
                     toolbar->addAction(menu);
@@ -491,7 +491,7 @@ void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *ph
                     parent->addAction(action);
             } else {
                 Phrase phrase = (*it).getPhrase();
-                KActionMenu *menu = phrases->add<KActionMenu>(QLatin1String("phrasebook"));
+                KActionMenu *menu = phrases->add<KActionMenu>(QStringLiteral("phrasebook"));
                 menu->setText(phrase.getPhrase());
                 menu->setDelayed(false);
                 if (parent == popup)

@@ -38,14 +38,14 @@
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;
 
-const QString kName = QLatin1String("name");
-const QString kShortcut = QLatin1String("shortcut");
-const QString kPhraseBook = QLatin1String("phrasebook");
-const QString kPhrase = QLatin1String("phrase");
+const QString kName = QStringLiteral("name");
+const QString kShortcut = QStringLiteral("shortcut");
+const QString kPhraseBook = QStringLiteral("phrasebook");
+const QString kPhrase = QStringLiteral("phrase");
 
-const QString kPhraseBookXML = QLatin1String("<phrasebook name=\"%1\">\n%2</phrasebook>\n");
-const QString kPhraseXML = QLatin1String("<phrase shortcut=\"%2\">%1</phrase>\n");
-const QString kWholeBookXML = QLatin1String("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+const QString kPhraseBookXML = QStringLiteral("<phrasebook name=\"%1\">\n%2</phrasebook>\n");
+const QString kPhraseXML = QStringLiteral("<phrase shortcut=\"%2\">%1</phrase>\n");
+const QString kWholeBookXML = QStringLiteral("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                               "<!DOCTYPE phrasebook>\n"
                               "<phrasebook>\n%1"
                               "</phrasebook>");
@@ -54,7 +54,7 @@ const QIcon kPhraseBookIcon = QIcon::fromTheme(kPhraseBook);
 const QIcon kPhraseIcon = QIcon::fromTheme(kPhrase);
 
 StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
-    : QAction(QIcon::fromTheme(QLatin1String("phrasebook")), name, parent)
+    : QAction(QIcon::fromTheme(QStringLiteral("phrasebook")), name, parent)
 {
     this->url = url;
     connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
@@ -86,12 +86,12 @@ PhraseBookDialog::PhraseBookDialog()
     m_bookModel->setHeaderData(kTextColumn, Qt::Horizontal, i18n("Phrase"));
     m_bookModel->setHeaderData(kShortcutColumn, Qt::Horizontal, i18n("Shortcut"));
 
-    setObjectName(QLatin1String("phraseEditDialog"));
+    setObjectName(QStringLiteral("phraseEditDialog"));
     setWindowTitle(i18n("Phrase Book"));
     initGUI();
     initActions();
     initStandardPhraseBooks();
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::ReadOnly);
@@ -109,14 +109,14 @@ PhraseBookDialog::PhraseBookDialog()
     }
 
     // Watch any changes in the model.
-    connect(m_bookModel, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
-            this, SLOT(slotModelChanged()));
-    connect(m_bookModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
-            this, SLOT(slotModelChanged()));
-    connect(m_bookModel, SIGNAL(rowsMoved(QModelIndex, int, int, QModelIndex, int)),
-            this, SLOT(slotModelChanged()));
-    connect(m_bookModel, SIGNAL(rowsRemoved(QModelIndex, int, int)),
-            this, SLOT(slotModelChanged()));
+    connect(m_bookModel, &QAbstractItemModel::dataChanged,
+            this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsInserted,
+            this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsMoved,
+            this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsRemoved,
+            this, &PhraseBookDialog::slotModelChanged);
 
     //printer = 0;
     // i18n("Edit Phrase Book")
@@ -202,10 +202,10 @@ void PhraseBookDialog::initGUI()
     setCentralWidget(page);
 
     m_ui->treeView->setModel(m_bookModel);
-    connect(m_ui->treeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)),
-            this, SLOT(selectionChanged()));
-    connect(m_ui->treeView, SIGNAL(customContextMenuRequested(QPoint)),
-            SLOT(contextMenuRequested(QPoint)));
+    connect(m_ui->treeView->selectionModel(), &QItemSelectionModel::selectionChanged,
+            this, &PhraseBookDialog::selectionChanged);
+    connect(m_ui->treeView, &QWidget::customContextMenuRequested,
+            this, &PhraseBookDialog::contextMenuRequested);
     connectEditor();
 }
 
@@ -218,17 +218,17 @@ void PhraseBookDialog::slotModelChanged()
 void PhraseBookDialog::initActions()
 {
     // The file menu
-    fileNewPhrase = actionCollection()->addAction(QLatin1String("file_new_phrase"));
-    fileNewPhrase->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
+    fileNewPhrase = actionCollection()->addAction(QStringLiteral("file_new_phrase"));
+    fileNewPhrase->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     fileNewPhrase->setText(i18n("&New Phrase"));
-    connect(fileNewPhrase, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrase()));
+    connect(fileNewPhrase, &QAction::triggered, this, &PhraseBookDialog::slotAddPhrase);
     fileNewPhrase->setToolTip(i18n("Adds a new phrase"));
     fileNewPhrase->setWhatsThis(i18n("Adds a new phrase"));
 
-    fileNewBook = actionCollection()->addAction(QLatin1String("file_new_book"));
-    fileNewBook->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
+    fileNewBook = actionCollection()->addAction(QStringLiteral("file_new_book"));
+    fileNewBook->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     fileNewBook->setText(i18n("New Phrase &Book"));
-    connect(fileNewBook, SIGNAL(triggered(bool)), this, SLOT(slotAddPhrasebook()));
+    connect(fileNewBook, &QAction::triggered, this, &PhraseBookDialog::slotAddPhrasebook);
     fileNewBook->setToolTip(i18n("Adds a new phrase book into which other books and phrases can be placed"));
     fileNewBook->setWhatsThis(i18n("Adds a new phrase book into which other books and phrases can be placed"));
 
@@ -236,29 +236,29 @@ void PhraseBookDialog::initActions()
     fileSave->setToolTip(i18n("Saves the phrase book onto the hard disk"));
     fileSave->setWhatsThis(i18n("Saves the phrase book onto the hard disk"));
 
-    fileImport = actionCollection()->addAction(QLatin1String("file_import"));
-    fileImport->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
+    fileImport = actionCollection()->addAction(QStringLiteral("file_import"));
+    fileImport->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     fileImport->setText(i18n("&Import..."));
     connect(fileImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     fileImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     fileImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
-    toolbarImport = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("document-open")), i18n("&Import..."), this);
-    actionCollection()->addAction(QLatin1String("toolbar_import"), toolbarImport);
+    toolbarImport = new KToolBarPopupAction(QIcon::fromTheme(QStringLiteral("document-open")), i18n("&Import..."), this);
+    actionCollection()->addAction(QStringLiteral("toolbar_import"), toolbarImport);
     connect(toolbarImport, SIGNAL(triggered(bool)), this, SLOT(slotImportPhrasebook()));
     toolbarImport->setToolTip(i18n("Imports a file and adds its contents to the phrase book"));
     toolbarImport->setWhatsThis(i18n("Imports a file and adds its contents to the phrase book"));
 
-    fileImportStandardBook = actionCollection()->add<KActionMenu>(QLatin1String("file_import_standard_book"));
-    fileImportStandardBook->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
+    fileImportStandardBook = actionCollection()->add<KActionMenu>(QStringLiteral("file_import_standard_book"));
+    fileImportStandardBook->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     fileImportStandardBook->setText(i18n("I&mport Standard Phrase Book"));
     fileImportStandardBook->setToolTip(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
     fileImportStandardBook->setWhatsThis(i18n("Imports a standard phrase book and adds its contents to the phrase book"));
 
-    fileExport = actionCollection()->addAction(QLatin1String("file_export"));
-    fileExport->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
+    fileExport = actionCollection()->addAction(QStringLiteral("file_export"));
+    fileExport->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
     fileExport->setText(i18n("&Export..."));
-    connect(fileExport, SIGNAL(triggered(bool)), this, SLOT(slotExportPhrasebook()));
+    connect(fileExport, &QAction::triggered, this, &PhraseBookDialog::slotExportPhrasebook);
     fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
     fileExport->setWhatsThis(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
@@ -283,15 +283,15 @@ void PhraseBookDialog::initActions()
     editPaste->setToolTip(i18n("Pastes the clipboard contents to current position"));
     editPaste->setWhatsThis(i18n("Pastes the clipboard contents at the current cursor position into the edit field."));
 
-    editDelete = actionCollection()->addAction(QLatin1String("edit_delete"));
-    editDelete->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
+    editDelete = actionCollection()->addAction(QStringLiteral("edit_delete"));
+    editDelete->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     editDelete->setText(i18n("&Delete"));
-    connect(editDelete, SIGNAL(triggered(bool)), this, SLOT(slotRemove()));
+    connect(editDelete, &QAction::triggered, this, &PhraseBookDialog::slotRemove);
     editDelete->setToolTip(i18n("Deletes the selected entries from the phrase book"));
     editDelete->setWhatsThis(i18n("Deletes the selected entries from the phrase book"));
 
     // use the absolute path to your kmouthui.rc file for testing purpose in createGUI();
-    createGUI(QLatin1String("phrasebookdialogui.rc"));
+    createGUI(QStringLiteral("phrasebookdialogui.rc"));
 }
 
 void PhraseBookDialog::initStandardPhraseBooks()
@@ -300,13 +300,13 @@ void PhraseBookDialog::initStandardPhraseBooks()
 
     KActionMenu *parent = fileImportStandardBook;
     QStringList currentNamePath;
-    currentNamePath << QLatin1String("x");
+    currentNamePath << QStringLiteral("x");
     QStack<KActionMenu *> stack;
     StandardBookList::iterator it;
     for (it = bookPaths.begin(); it != bookPaths.end(); ++it) {
         QUrl url = QUrl::fromLocalFile((*it).filename);
 
-        QString namePath = QLatin1String("x") + (*it).path;
+        QString namePath = QStringLiteral("x") + (*it).path;
         QStringList dirs = namePath.split(QLatin1Char('/'));
 
         QStringList::iterator it1 = currentNamePath.begin();
@@ -337,23 +337,23 @@ void PhraseBookDialog::initStandardPhraseBooks()
 
 void PhraseBookDialog::connectEditor()
 {
-    connect(m_ui->lineEdit, SIGNAL(textChanged(QString)), SLOT(slotTextChanged(QString)));
-    connect(m_ui->noKey, SIGNAL(clicked()), SLOT(slotNoKey()));
-    connect(m_ui->customKey, SIGNAL(clicked()), SLOT(slotCustomKey()));
-    connect(m_ui->keyButton, SIGNAL(keySequenceChanged(QKeySequence)),
-            SLOT(slotKeySequenceChanged(QKeySequence)));
+    connect(m_ui->lineEdit, &QLineEdit::textChanged, this, &PhraseBookDialog::slotTextChanged);
+    connect(m_ui->noKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotNoKey);
+    connect(m_ui->customKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotCustomKey);
+    connect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged,
+            this, &PhraseBookDialog::slotKeySequenceChanged);
 }
 
 void PhraseBookDialog::disconnectEditor()
 {
-    disconnect(m_ui->lineEdit, SIGNAL(textChanged(QString)),
-               this, SLOT(slotTextChanged(QString)));
-    disconnect(m_ui->noKey, SIGNAL(clicked()),
-               this, SLOT(slotNoKey()));
-    disconnect(m_ui->customKey, SIGNAL(clicked()),
-               this, SLOT(slotCustomKey()));
-    disconnect(m_ui->keyButton, SIGNAL(keySequenceChanged(QKeySequence)),
-               this, SLOT(slotKeySequenceChanged(QKeySequence)));
+    disconnect(m_ui->lineEdit, &QLineEdit::textChanged,
+               this, &PhraseBookDialog::slotTextChanged);
+    disconnect(m_ui->noKey, &QAbstractButton::clicked,
+               this, &PhraseBookDialog::slotNoKey);
+    disconnect(m_ui->customKey, &QAbstractButton::clicked,
+               this, &PhraseBookDialog::slotCustomKey);
+    disconnect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged,
+               this, &PhraseBookDialog::slotKeySequenceChanged);
 }
 
 void PhraseBookDialog::selectionChanged()
@@ -420,7 +420,7 @@ bool PhraseBookDialog::queryClose()
                      i18n("<qt>There are unsaved changes.<br />Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
                      i18n("Closing \"Phrase Book\" Window"),
                      KStandardGuiItem::apply(), KStandardGuiItem::discard(),
-                     KStandardGuiItem::cancel(), QLatin1String("AutomaticSave"));
+                     KStandardGuiItem::cancel(), QStringLiteral("AutomaticSave"));
         if (answer == KMessageBox::Yes) {
             slotSave();
             return true;
@@ -501,9 +501,9 @@ void PhraseBookDialog::contextMenuRequested(const QPoint &pos)
 {
     QString name;
     if (m_ui->treeView->selectionModel()->hasSelection())
-        name = QLatin1String("phrasebook_popup_sel");
+        name = QStringLiteral("phrasebook_popup_sel");
     else
-        name = QLatin1String("phrasebook_popup_nosel");
+        name = QStringLiteral("phrasebook_popup_nosel");
 
     QMenu *popup = (QMenu *)factory()->container(name, this);
     if (popup != 0) {
@@ -611,7 +611,7 @@ void PhraseBookDialog::slotAddPhrase()
 
 void PhraseBookDialog::slotSave()
 {
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::WriteOnly);

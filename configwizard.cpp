@@ -38,7 +38,7 @@ ConfigWizard::ConfigWizard(QWidget *parent)
     initCommandPage();
     initBookPage();
     initCompletion();
-    connect(this, SIGNAL(accepted()), this, SLOT(saveConfig()));
+    connect(this, &QDialog::accepted, this, &ConfigWizard::saveConfig);
 }
 
 ConfigWizard::~ConfigWizard()
@@ -47,14 +47,14 @@ ConfigWizard::~ConfigWizard()
 
 void ConfigWizard::initCommandPage()
 {
-    KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("TTS System"));
+    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("TTS System"));
     bool displayCommand = false;
     if (!cg.hasKey("StdIn"))   displayCommand = true;
     if (!cg.hasKey("Codec"))   displayCommand = true;
 
     if (displayCommand) {
         commandWidget = new TextToSpeechConfigurationWidget(this, "ttsPage");
-        commandWidget->readOptions(QLatin1String("TTS System"));
+        commandWidget->readOptions(QStringLiteral("TTS System"));
         commandWidget->setTitle(i18n("Text-to-Speech Configuration"));
         addPage(commandWidget);
         commandWidget->setFinalPage(true);
@@ -64,7 +64,7 @@ void ConfigWizard::initCommandPage()
 
 void ConfigWizard::initBookPage()
 {
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
     bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
     if (displayBook) {
@@ -81,7 +81,7 @@ void ConfigWizard::initBookPage()
 void ConfigWizard::initCompletion()
 {
     if (!WordCompletion::isConfigured()) {
-        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String("dictionary.txt"));
+        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("dictionary.txt"));
         QFile file(dictionaryFile);
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
@@ -117,7 +117,7 @@ void ConfigWizard::saveConfig()
 {
     if (commandWidget != 0) {
         commandWidget->ok();
-        commandWidget->saveOptions(QLatin1String("TTS System"));
+        commandWidget->saveOptions(QStringLiteral("TTS System"));
     }
 
     if (bookWidget != 0)
@@ -142,7 +142,7 @@ bool ConfigWizard::configurationNeeded()
 
 void ConfigWizard::help()
 {
-    KHelpClient::invokeHelp(QLatin1String("Wizard"));
+    KHelpClient::invokeHelp(QStringLiteral("Wizard"));
 }
 
 #include "configwizard.moc"

@@ -112,7 +112,7 @@ void DictionaryCreationWizard::buildCodecList()
 
 void DictionaryCreationWizard::buildCodecCombo(KComboBox *combo)
 {
-    QString local = i18nc("Local characterset", "Local") + QLatin1String(" (");
+    QString local = i18nc("Local characterset", "Local") + QStringLiteral(" (");
     local += QLatin1String(QTextCodec::codecForLocale()->name()) + QLatin1Char(')');
     combo->addItem(local, 0);
     combo->addItem(i18nc("Latin characterset", "Latin1"), 1);
@@ -186,11 +186,11 @@ QString DictionaryCreationWizard::createDictionary()
     QString dictionaryFile;
     do {
         dictnumber++;
-        filename = QString(QLatin1String("wordcompletion%1.dict")).arg(dictnumber);
+        filename = QStringLiteral("wordcompletion%1.dict").arg(dictnumber);
         dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
     } while (QFile::exists(dictionaryFile));
 
-    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("/") + filename;
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QStringLiteral("/") + filename;
     if (WordList::saveWordList(map, dictionaryFile))
         return filename;
     else
@@ -252,7 +252,7 @@ MergeWidget::MergeWidget(QWidget *parent, const char *name,
         spinBox->setRange(1, 100);
         spinBox->setSingleStep(10);
         spinBox->setValue(100);
-        connect(checkbox, SIGNAL(toggled(bool)), spinBox, SLOT(setEnabled(bool)));
+        connect(checkbox, &QAbstractButton::toggled, spinBox, &QWidget::setEnabled);
 
         dictionaries.insert(*fIt, checkbox);
         weights.insert(*fIt, spinBox);
@@ -325,7 +325,7 @@ void CompletionWizardWidget::ok()
     QString filename;
     QString dictionaryFile;
 
-    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("/");
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QStringLiteral("/");
     qDebug() << "dictionaryFile is " << dictionaryFile;
     if (WordList::saveWordList(map, dictionaryFile)) {
         KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");

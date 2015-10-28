@@ -46,16 +46,16 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     languageButton->loadAllLanguages();
 
     // Connect the signals from hte KCMKTTSDWidget to this class
-    connect(addButton, SIGNAL(clicked()), this, SLOT(addDictionary()));
-    connect(deleteButton, SIGNAL(clicked()), this, SLOT(deleteDictionary()));
-    connect(moveUpButton, SIGNAL(clicked()), this, SLOT(moveUp()));
-    connect(moveDownButton, SIGNAL(clicked()), this, SLOT(moveDown()));
-    connect(exportButton, SIGNAL(clicked()), this, SLOT(exportDictionary()));
+    connect(addButton, &QAbstractButton::clicked, this, &WordCompletionWidget::addDictionary);
+    connect(deleteButton, &QAbstractButton::clicked, this, &WordCompletionWidget::deleteDictionary);
+    connect(moveUpButton, &QAbstractButton::clicked, this, &WordCompletionWidget::moveUp);
+    connect(moveDownButton, &QAbstractButton::clicked, this, &WordCompletionWidget::moveDown);
+    connect(exportButton, &QAbstractButton::clicked, this, &WordCompletionWidget::exportDictionary);
 
-    connect(dictionaryView->selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)),
-            this, SLOT(selectionChanged()));
-    connect(dictionaryName, SIGNAL(textChanged(QString)), this, SLOT(nameChanged(QString)));
-    connect(languageButton, SIGNAL(activated(QString)), this, SLOT(languageSelected()));
+    connect(dictionaryView->selectionModel(), &QItemSelectionModel::selectionChanged,
+            this, &WordCompletionWidget::selectionChanged);
+    connect(dictionaryName, &QLineEdit::textChanged, this, &WordCompletionWidget::nameChanged);
+    connect(languageButton, &KLanguageButton::activated, this, &WordCompletionWidget::languageSelected);
 
     // Load the configuration from the file
     load();
@@ -116,7 +116,7 @@ void WordCompletionWidget::save()
     for (int row = 0; row < model->rowCount(); ++row) {
         const QStandardItem *nameItem = model->item(row, 0);
         const QStandardItem *languageItem = model->item(row, 1);
-        KConfigGroup cg(KSharedConfig::openConfig(), QString(QLatin1String("Dictionary %1")).arg(row));
+        KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Dictionary %1").arg(row));
         cg.writeEntry("Filename", nameItem->data().toString());
         cg.writeEntry("Name",     nameItem->text());
         cg.writeEntry("Language", languageItem->text());
@@ -206,7 +206,7 @@ void WordCompletionWidget::exportDictionary()
             return;
 
         if (url.isLocalFile() && QFile::exists(url.toLocalFile())) {
-            if (KMessageBox::warningContinueCancel(0, QString(QLatin1String("<qt>%1</qt>")).arg(i18n("The file %1 already exists. "
+            if (KMessageBox::warningContinueCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                    "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
                 return;
             }

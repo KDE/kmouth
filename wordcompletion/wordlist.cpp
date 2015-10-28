@@ -154,11 +154,11 @@ bool saveWordList(WordMap map, QString filename)
 
 void addWords(WordMap &map, QString line)
 {
-    const QStringList words = line.split(QRegExp(QLatin1String("\\W")));
+    const QStringList words = line.split(QRegExp(QStringLiteral("\\W")));
 
     QStringList::ConstIterator it;
     for (it = words.constBegin(); it != words.constEnd(); ++it) {
-        if (!(*it).contains(QRegExp(QLatin1String("\\d|_")))) {
+        if (!(*it).contains(QRegExp(QStringLiteral("\\d|_")))) {
             QString key = (*it).toLower();
             if (map.contains(key))
                 map[key] += 1;
@@ -184,7 +184,7 @@ void addWordsFromFile(WordMap &map, QString filename, QTextCodec *codec)
     QXmlInputSource source(&xmlfile);
     XMLParser parser;
     QXmlSimpleReader reader;
-    reader.setFeature(QLatin1String("http://trolltech.com/xml/features/report-start-end-entity"), true);
+    reader.setFeature(QStringLiteral("http://trolltech.com/xml/features/report-start-end-entity"), true);
     reader.setContentHandler(&parser);
 
     WordMap words;
@@ -309,10 +309,10 @@ WordMap parseKDEDoc(QString language, QProgressDialog *pdlg)
     pdlg->show();
     qApp->processEvents(QEventLoop::AllEvents, 20);
 
-    QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("html/") + language + QLatin1String("/*.docbook"));
+    QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("html/") + language + QStringLiteral("/*.docbook"));
     if ((files.count() == 0) && (language.length() == 5)) {
         language = language.left(2);
-        files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("html/") + language + QLatin1String("/*.docbook"));
+        files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("html/") + language + QStringLiteral("/*.docbook"));
     }
 
     return parseFiles(files, QTextCodec::codecForName("UTF-8"), pdlg);
@@ -386,7 +386,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
         QTextStream stream(&afile);
         while (!stream.atEnd()) {
             QString s = stream.readLine();
-            QStringList fields = s.split(QRegExp(QLatin1String("\\s")));
+            QStringList fields = s.split(QRegExp(QStringLiteral("\\s")));
 
             if (fields.count() == 4) {
                 cross = (fields[2] == QLatin1String("Y"));
@@ -516,7 +516,7 @@ WordMap spellCheck(WordMap map, QString dictionary, QProgressDialog *pdlg)
         AffMap prefixes;
         AffMap suffixes;
         WordMap checkedMap;
-        loadAffFile(dictionary.left(dictionary.length() - 4) + QLatin1String(".aff"), prefixes, suffixes);
+        loadAffFile(dictionary.left(dictionary.length() - 4) + QStringLiteral(".aff"), prefixes, suffixes);
 
         pdlg->reset();
         //pdlg->setAllowCancel (false);

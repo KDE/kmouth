@@ -41,7 +41,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *na
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 //TODO PORT QT5     mainLayout->setSpacing(QDialog::spacingHint());
     QLabel *label = new QLabel(i18n("Please decide which phrase books you need:"), this);
-    label->setObjectName(QLatin1String("booksTitle"));
+    label->setObjectName(QStringLiteral("booksTitle"));
     mainLayout->addWidget(label);
 
     m_model = new QStandardItemModel(0, 1, this);
@@ -56,8 +56,8 @@ InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *na
     mainLayout->addWidget(view);
 
     initStandardPhraseBooks();
-    connect(m_model, SIGNAL(itemChanged(QStandardItem*)),
-            this, SLOT(slotItemChanged(QStandardItem*)));
+    connect(m_model, &QStandardItemModel::itemChanged,
+            this, &InitialPhraseBookWidget::slotItemChanged);
 }
 
 InitialPhraseBookWidget::~InitialPhraseBookWidget()
@@ -122,7 +122,7 @@ void InitialPhraseBookWidget::createBook()
     if (!bookLocation.isNull() && !bookLocation.isEmpty()) {
         QDir().mkpath(bookLocation);
         qDebug() << "creating book at location " << bookLocation;
-        book.save(QUrl::fromLocalFile(bookLocation + QLatin1String("standard.phrasebook")));
+        book.save(QUrl::fromLocalFile(bookLocation + QStringLiteral("standard.phrasebook")));
     }
 }
 
