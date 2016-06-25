@@ -51,7 +51,7 @@ void TextToSpeechConfigurationWidget::buildCodecList()
 
 void TextToSpeechConfigurationWidget::cancel()
 {
-    urlReq->setUrl(ttsSystem->ttsCommand);
+    urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
     useQtSpeech->setChecked(ttsSystem->useQtSpeech);
@@ -59,7 +59,7 @@ void TextToSpeechConfigurationWidget::cancel()
 
 void TextToSpeechConfigurationWidget::ok()
 {
-    ttsSystem->ttsCommand = urlReq->url().path();
+    ttsSystem->ttsCommand = urlReq->url().toLocalFile();
     ttsSystem->stdIn = stdInButton->isChecked();
     ttsSystem->codec = characterCodingBox->currentIndex();
     ttsSystem->useQtSpeech = useQtSpeech->isChecked();
@@ -73,7 +73,7 @@ TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const
 void TextToSpeechConfigurationWidget::readOptions(const QString &langGroup)
 {
     ttsSystem->readOptions(langGroup);
-    urlReq->setUrl(ttsSystem->ttsCommand);
+    urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
     useQtSpeech->setChecked(ttsSystem->useQtSpeech);

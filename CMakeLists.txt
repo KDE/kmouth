@@ -35,6 +35,8 @@ find_package(KF5 REQUIRED COMPONENTS
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+
 add_subdirectory( doc )
 add_subdirectory( icons )
 add_subdirectory( books )

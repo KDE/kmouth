@@ -349,15 +349,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
 
 bool PhraseBook::open(const QUrl &url)
 {
-    QUrl fileUrl = url;
-
-    QString protocol = fileUrl.scheme();
-    if (protocol.isEmpty() || protocol.isNull()) {
-        fileUrl.setScheme(QStringLiteral("file"));
-        fileUrl.setPath(url.url());
-    }
-
-    KIO::StoredTransferJob *downloadJob = KIO::storedGet(fileUrl);
+    KIO::StoredTransferJob *downloadJob = KIO::storedGet(url);
     if (downloadJob->exec()) {
         // First: try to load it as a normal phrase book
         QBuffer fileBuffer;

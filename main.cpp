@@ -19,6 +19,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QDir>
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -74,8 +75,9 @@ int main(int argc, char *argv[])
         kmouth->show();
 
 
-        if (parser.positionalArguments().count()) {
-            kmouth->openDocumentFile(parser.positionalArguments().at(0));
+        if (!parser.positionalArguments().isEmpty()) {
+            const QUrl url = QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath());
+            kmouth->openDocumentFile(url);
         }
 
     }
