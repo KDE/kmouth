@@ -35,9 +35,7 @@ static const char description[] =
 int main(int argc, char *argv[])
 {
 
-    QApplication::setApplicationName(QStringLiteral("kmouth"));
-    QApplication::setApplicationVersion(KMOUTH_VERSION);
-    QApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+    QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("kmouth");
     QApplication::setApplicationDisplayName(i18n("KMouth"));
 
@@ -51,19 +49,18 @@ int main(int argc, char *argv[])
                          I18N_NOOP("http://www.schmi-dt.de/kmouth/index.en.html"),
                          I18N_NOOP("kmouth@schmi-dt.de"));
     aboutData.addAuthor(i18n("Gunnar Schmi Dt"), QString(), QStringLiteral("kmouth@schmi-dt.de"));
-    QApplication app(argc, argv);
+    aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
+
+    aboutData.setOrganizationDomain(QByteArray("kde.org"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    //PORTING SCRIPT: adapt aboutdata variable if necessary
+    parser.addPositionalArgument(QStringLiteral("[File]"), i18n("History file to open"));
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    parser.addPositionalArgument(QStringLiteral("[File]"), i18n("History file to open"));
-
-    aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
     if (app.isSessionRestored()) {
         RESTORE(KMouthApp);
