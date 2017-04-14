@@ -1,20 +1,22 @@
 /***************************************************************************
-                          main.cpp  -  description
-                             -------------------
-    begin                : Mon Aug 26 15:41:23 CEST 2002
-    copyright            : (C) 2002 by Gunnar Schmi Dt
-    email                : kmouth@schmi-dt.de
- ***************************************************************************/
-
-/***************************************************************************
+ *   Copyright (C) 2002 by Gunnar Schmi Dt <kmouth@schmi-dt.de             *
+ *             (C) 2015 by Jeremy Whiting <jpwhiting@kde.org>              *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
  *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -46,9 +48,10 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL,
                          i18n("(c) 2002/2003, Gunnar Schmi Dt"),
                          QString(),
-                         I18N_NOOP("http://www.schmi-dt.de/kmouth/index.en.html"),
+                         I18N_NOOP("https://www.kde.org/applications/utilities/kmouth/"),
                          I18N_NOOP("kmouth@schmi-dt.de"));
-    aboutData.addAuthor(i18n("Gunnar Schmi Dt"), QString(), QStringLiteral("kmouth@schmi-dt.de"));
+    aboutData.addAuthor(i18n("Gunnar Schmi Dt"), i18n("Original Author"), QStringLiteral("kmouth@schmi-dt.de"));
+    aboutData.addAuthor(i18n("Jeremy Whiting"), ki18n("Current Maintainer"), "jpwhiting@kde.org");
     aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
