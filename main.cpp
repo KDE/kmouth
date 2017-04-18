@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
                          I18N_NOOP("https://www.kde.org/applications/utilities/kmouth/"),
                          I18N_NOOP("kmouth@schmi-dt.de"));
     aboutData.addAuthor(i18n("Gunnar Schmi Dt"), i18n("Original Author"), QStringLiteral("kmouth@schmi-dt.de"));
-    aboutData.addAuthor(i18n("Jeremy Whiting"), ki18n("Current Maintainer"), "jpwhiting@kde.org");
+    aboutData.addAuthor(i18n("Jeremy Whiting"), i18n("Current Maintainer"), "jpwhiting@kde.org");
     aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
