@@ -58,7 +58,7 @@ public:
     /**
      * Finds completions to the given text.
      */
-    virtual QString makeCompletion(const QString&);
+    QString makeCompletion(const QString&) Q_DECL_OVERRIDE;
 
     static bool isConfigured();
 

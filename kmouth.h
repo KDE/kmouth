@@ -97,7 +97,7 @@ protected:
      * @see KMainWindow#queryClose
      * @see KMainWindow#closeEvent
      */
-    virtual bool queryClose();
+    bool queryClose() Q_DECL_OVERRIDE;
 
 public slots:
     /** open a file and load it into the history */

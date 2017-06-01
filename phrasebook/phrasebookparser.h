@@ -38,29 +38,29 @@ public:
     PhraseBookParser();
     ~PhraseBookParser();
 
-    bool warning(const QXmlParseException &exception);
-    bool error(const QXmlParseException &exception);
-    bool fatalError(const QXmlParseException &exception);
-    QString errorString() const;
+    bool warning(const QXmlParseException &exception) Q_DECL_OVERRIDE;
+    bool error(const QXmlParseException &exception) Q_DECL_OVERRIDE;
+    bool fatalError(const QXmlParseException &exception) Q_DECL_OVERRIDE;
+    QString errorString() const Q_DECL_OVERRIDE;
 
     /** Processes the start of the document. */
-    bool startDocument();
+    bool startDocument() Q_DECL_OVERRIDE;
 
     /** Processes the start tag of an element. */
     bool startElement(const QString &, const QString &, const QString &name,
-                      const QXmlAttributes &attributes);
+                      const QXmlAttributes &attributes) Q_DECL_OVERRIDE;
 
     /** Processes a chunk of normal character data. */
-    bool characters(const QString &ch);
+    bool characters(const QString &ch) Q_DECL_OVERRIDE;
 
     /** Processes whitespace. */
-    bool ignorableWhitespace(const QString &ch);
+    bool ignorableWhitespace(const QString &ch) Q_DECL_OVERRIDE;
 
     /** Processes the end tag of an element. */
-    bool endElement(const QString &, const QString &, const QString &name);
+    bool endElement(const QString &, const QString &, const QString &name) Q_DECL_OVERRIDE;
 
     /** Processes the end of the document. */
-    bool endDocument();
+    bool endDocument() Q_DECL_OVERRIDE;
 
     /** returns a list of phrase book entries */
     PhraseBookEntryList getPhraseList();
