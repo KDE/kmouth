@@ -82,7 +82,7 @@ public:
     /** Destructor. */
     ~PhraseBookDialog();
 
-    bool queryClose() Q_DECL_OVERRIDE;
+    bool queryClose() override;
 
 public slots:
     void slotTextChanged(const QString &s);

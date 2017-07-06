@@ -48,7 +48,7 @@ public:
         connect(emptyButton, &QAbstractButton::toggled, this, &CreationSourceWidget::emptyToggled);
     }
 
-    int nextId() const Q_DECL_OVERRIDE;
+    int nextId() const override;
 private slots:
     void emptyToggled(bool checked);
 };
@@ -63,7 +63,7 @@ public:
         setupUi(this);
         setObjectName(QLatin1String(name));
     }
-    int nextId() const Q_DECL_OVERRIDE
+    int nextId() const override
     {
         return -1;
     }
@@ -83,7 +83,7 @@ public:
 
         ooDictURL->setFilter(QStringLiteral("*.dic"));
     }
-    int nextId() const Q_DECL_OVERRIDE
+    int nextId() const override
     {
         return -1;
     }

@@ -95,7 +95,7 @@ protected slots:
     void contextMenuRequested(const QPoint &pos);
     void textChanged(const QString &s);
     void selectionChanged();
-    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) override;
     void configureCompletionCombo(const QStringList &list);
 
 private:
