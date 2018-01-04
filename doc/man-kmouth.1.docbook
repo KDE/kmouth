@@ -7,8 +7,9 @@
 <refentryinfo>
 <title>&kde; User's Manual</title>
 <author>&Lauri.Watts; &Lauri.Watts.mail;</author>
-<date>2010-09-15</date>
-<productname>K Desktop Environment</productname>
+<date>2018-01-03</date>
+<releaseinfo>Applications 17.12</releaseinfo>
+<productname>KDE Applications</productname>
 </refentryinfo>
 
 <refmeta>
@@ -25,15 +26,13 @@
 <cmdsynopsis>
 <command>kmouth</command>
 <arg choice="opt"><replaceable>filename</replaceable></arg>
-<arg choice="opt">&kde; Generic Options</arg>
-<arg choice="opt">&Qt; Generic Options</arg>
 </cmdsynopsis>
 </refsynopsisdiv>
 
 <refsect1>
 <title>Description</title>
 <para>&kmouth; is an application that enables persons that cannot speak to
-let their computers speak.It includes a history of spoken sentences from
+let their computers speak. It includes a history of spoken sentences from
 which the user can select sentences to be re-spoken.</para>
 <para>Note that &kmouth; does not include speech synthesizer. Instead it
 requires a speech synthesizer installed in the system.</para> 

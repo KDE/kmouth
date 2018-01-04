@@ -1,8 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kmouth '<application>KMouth</application>'>
-  <!ENTITY kappname "&kmouth;">
-  <!ENTITY package "kdeaccessibility">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -31,8 +28,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2013-06-23</date>
-  <releaseinfo>1.1.1 (&kde; 4.11)</releaseinfo>
+  <date>2018-01-04</date>
+  <releaseinfo>1.2.0 (Applications 17.12)</releaseinfo>
 
   <abstract>
     <para>
@@ -199,7 +196,7 @@
         &kmouth; in certain situations.
       </para>
       <para>
-        With the first combo box, <guilabel>Selection of phrases in the phrase book:</guilabel>,
+        With the first combo box <guilabel>Selection of phrases in the phrase book</guilabel>
         you specify which action is triggered by typing the shortcut of a
         phrase or by selecting a phrase in the <guimenu>Phrase Book</guimenu>
         menu or in the phrase book bar.
@@ -213,7 +210,7 @@
       </para>
       <para>
         With the second combo box, <guilabel>Closing the phrase book
-        edit window:</guilabel>, you specify whether the phrase book
+        edit window</guilabel>, you specify whether the phrase book
         gets saved if you just close the phrase book edit window.
       </para>
       <para>
@@ -239,6 +236,22 @@
             </textobject>
           </mediaobject>
         </screenshot>
+      </para>
+      <para>
+        By selecting <guilabel>Use default speech system</guilabel> you tell &kmouth;
+        first to try to use the system speech service prior to calling the speech
+        synthesizer directly. If this succeeds the other configuration entries on
+        this tab are ignored. The system speech service is a &Qt; library which
+        wraps speech-dispatcher on &Linux;, and native speech systems on other platforms.
+        On a Debian based system you need the packages speech-dispatcher, libqt5texttospeech5
+        and one of the speech-dispatcher modules, usually <application>espeak</application>.
+        <note><para>Use the commandline tool <command>spd-conf</command> (Debian package python3-speechd)
+        to adjust settings like rate, pitch, volume, voice type and language &etc; for the default speech system.
+        Additionally <command>spd-conf</command> will let you choose between all installed
+        speech-dispatcher modules, &ie; <application>espeak</application>,
+        <application>festival</application>, <application>flite</application>,
+        <application>mbrola</application> &etc;
+        </para></note>
       </para>
       <para>
         Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
@@ -279,16 +292,8 @@
       <para>
         Of course the command for speaking texts is dependent on which speech
         synthesizer you use. Please look into the documentation of your speech
-        synthesizer for the command for speaking texts. You can find examples
-        for the command in the <link linkend="tts">appendix</link>.
-      </para>
-      <para>
-        By selecting <guilabel>Use Jovie speech service if possible</guilabel> you tell &kmouth;
-        first to try to send the text to the Jovie speech service. If this succeeds the
-        other configuration entries on this tab are ignored. The Jovie speech
-        service is a &kde; daemon which gives &kde; applications a standardized
-        interface for speech synthesis and is currently developed in <acronym>Git</acronym>. It
-        is safe to select this option even if Jovie is not installed.
+        synthesizer for the command for speaking texts.<!--FIXME comment until appendix tts is up to date You can find examples
+        for the command in the <link linkend="tts">appendix</link>.-->
       </para>
     </sect2>
     <sect2 id="completion-config">
@@ -379,11 +384,6 @@
           </para>
         </listitem>
       </itemizedlist>
-    </sect2>
-    <sect2 id="kttsd-speech-service-config">
-      <title>The Jovie Speech Service page</title>
-      <para>The configuration of the &kde; Speech Service is described in detail in the
-        <ulink url="help:jovie">Jovie Handbook</ulink>.</para>
     </sect2>
   </sect1>
   <sect1 id="phrasebook-editor">
@@ -565,78 +565,6 @@ of the &kde; Fundamentals.
 </para>
     </sect2>
 
-
-    <sect2 id="popup-menu">
-      <title>The pop up menu of history entries</title>
-        <variablelist>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Speak</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              The selected sentences are spoken.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Delete</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              The selected sentences are removed from the history.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Cut</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              The selected sentences are deleted and placed on the clipboard.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Copy</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              The selected sentences are copied to the clipboard.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Select All Entries</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              All history entries are selected.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <guimenuitem>Deselect All Entries</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              All history entries are deselected.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <shortcut><keycombo>&Ctrl;<keycap>O</keycap></keycombo></shortcut>
-              <guimenuitem>Open as History...</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              Opens a text file into as history of spoken sentences.
-            </action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-<shortcut><keycombo>&Ctrl;<keycap>S</keycap></keycombo></shortcut>
-              <guimenuitem>Save History As...</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>
-              Saves the history into a text file.
-            </action></para></listitem>
-          </varlistentry>
-        </variablelist>
-    </sect2>
   </sect1>
 
   <sect1 id="pb-editor-commands">
@@ -688,16 +616,6 @@ of the &kde; Fundamentals.
               <guimenuitem>Export...</guimenuitem>
             </menuchoice></term>
             <listitem><para><action>Exports the currently selected phrase(s) or phrase book(s) to a file</action></para></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><menuchoice>
-              <shortcut>
-                <keycombo>&Ctrl;<keycap>P</keycap></keycombo>
-              </shortcut>
-              <guimenu>File</guimenu>
-              <guimenuitem>Print...</guimenuitem>
-            </menuchoice></term>
-            <listitem><para><action>Prints the currently selected phrase(s) or phrase book(s)</action></para></listitem>
           </varlistentry>
           <varlistentry>
             <term><menuchoice>
@@ -848,38 +766,11 @@ of the &kde; Fundamentals.
 
 </chapter>
 
-<chapter id="faq">
-  <title>Questions and Answers</title>
-
-  &reporting.bugs;
-  &updating.documentation;
-
-  <qandaset id="faqlist">
-    <qandaentry>
-      <question>
-        <para>I do not hear anything.</para>
-      </question>
-      <answer>
-        <para>
-          Most likely you did not configure correctly (or at all) the
-          text-to-speech command. Use
-          <menuchoice>
-            <guimenu>Settings</guimenu><guimenuitem>Configure &kmouth;...</guimenuitem>
-          </menuchoice>, open the page <guilabel>General Options</guilabel>
-          and enter the command for speaking texts on the tab <guilabel>Text-to-Speech</guilabel>.
-          (See section about the <link linkend="tts-config">configuration
-          dialog for the speech synthesizer</link> for more details.)
-        </para>
-      </answer>
-    </qandaentry>
-  </qandaset>
-</chapter>
-
 <chapter id="credits">
   <title>Credits and License</title>
 
   <para>
-    &kappname;
+    &kmouth;
   </para>
   <para>
     Program copyright 2002-2004 Gunnar Schmi Dt <email>gunnar@schmi-dt.de</email>
@@ -894,10 +785,11 @@ of the &kde; Fundamentals.
   &underGPL;
 </chapter>
 
+<!--
 <appendix id="tts">
   <title>Examples for the text-to-speech configuration</title>
   <qandaset id="ttslist">
-    <qandaentry>
+      <qandaentry>
       <question>
         <para>Festival</para>
       </question>
@@ -915,7 +807,7 @@ of the &kde; Fundamentals.
           command for speaking texts then is as follows:
         </para>
         <para>
-          <screen><userinput><command>/usr/local/festival/bin/festival</command> <option>--tts</option></userinput></screen>
+          <screen><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
         </para>
         <para>
           The option <guilabel>Send the data as standard input</guilabel> must
@@ -992,57 +884,9 @@ of the &kde; Fundamentals.
         </para>
       </answer>
     </qandaentry>
-    <qandaentry>
-      <question>
-        <para>The &kde; Text-to-Speech Daemon</para>
-      </question>
-      <answer>
-        <para>
-          The &kde; Text-to-Speech Daemon (Jovie) is a &kde; wide text-to-speech service
-          which gives &kde; applications a standardized interface for speech synthesis
-          and is currently developed in <acronym>Git</acronym>. It uses plug-ins in
-          order to support various text-to-speech systems.
-        </para>
-        <para>
-          As the configuration of the speech synthesizer is done in Jovie the only
-          &kmouth;-specific option you need to activate is <guilabel>Use Jovie speech
-          service if possible</guilabel>.
-        </para>
-        <para>
-          Of course you need to configure Jovie. You may do this with the configuration
-          page <guilabel>Jovie Speech Service</guilabel> that is added to the configuration
-          dialog of &kmouth; if Jovie is installed.
-        </para>
-      </answer>
-    </qandaentry>
   </qandaset>
 </appendix>
-
-<appendix id="installation">
-  <title>Installation</title>
-
-  <sect1 id="getting-kmouth">
-    <title>How to obtain &kmouth;</title>
-
-  &install.intro.documentation;
-
-  </sect1>
-
-  <sect1 id="requirements">
-    <title>Requirements</title>
-
-    <para>
-      In order to successfully use &kmouth;, you need a speech synthesizer.</para>
-  </sect1>
-
-
-  <sect1 id="compilation">
-  <title>Compilation and Installation</title>
-
-  &install.compile.documentation;
-
-  </sect1>
-</appendix>
+-->
 
 </book>
 <!--
