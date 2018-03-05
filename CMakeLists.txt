@@ -98,6 +98,7 @@ install( PROGRAMS org.kde.kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
 install( FILES kmouthui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kmouth )
 install( FILES phrasebookdialogui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kmouth )
+install(FILES org.kde.kmouth.appdata.xml DESTINATION ${CMAKE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
