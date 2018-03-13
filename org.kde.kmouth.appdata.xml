@@ -5,21 +5,26 @@
   <project_license>GPL-2.0+</project_license>
   <name>KMouth</name>
   <name xml:lang="ca">KMouth</name>
+  <name xml:lang="ca-valencia">KMouth</name>
   <name xml:lang="de">KMouth</name>
   <name xml:lang="en-GB">KMouth</name>
+  <name xml:lang="fr">KMouth</name>
   <name xml:lang="nl">KMouth</name>
   <name xml:lang="nn">KMouth</name>
   <name xml:lang="pt">KMouth</name>
+  <name xml:lang="sk">KMouth</name>
   <name xml:lang="sv">Kmouth</name>
   <name xml:lang="uk">KMouth</name>
   <name xml:lang="x-test">xxKMouthxx</name>
   <summary>Speech Synthesizer Frontend</summary>
   <summary xml:lang="ca">Frontal del sintetitzador de veu</summary>
+  <summary xml:lang="ca-valencia">Frontal del sintetitzador de veu</summary>
   <summary xml:lang="de">Oberfläche für Sprachsynthesizer</summary>
   <summary xml:lang="en-GB">Speech Synthesiser Frontend</summary>
   <summary xml:lang="nl">Spraaksynthesizerfrontend</summary>
   <summary xml:lang="nn">Grensesnitt for talesyntese</summary>
   <summary xml:lang="pt">Interface de Síntese de Fala</summary>
+  <summary xml:lang="sk">Rozhranie pre syntezátor reči</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
   <summary xml:lang="uk">Оболонка для синтезу мовлення з тексту</summary>
   <summary xml:lang="x-test">xxSpeech Synthesizer Frontendxx</summary>
@@ -28,6 +33,8 @@
      KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mutal people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.
     </p>
     <p xml:lang="ca">El KMouth és un programa que habilita a les persones que no poden parlar a que ho faci el seu ordinador, p. ex. la gent muda o la gent que ha perdut la seva veu. Té un camp d'entrada de text i pronuncia les frases que s'introdueixen. També permet llibres de frases definits per l'usuari.</p>
+    <p xml:lang="ca-valencia">El KMouth és un programa que habilita a les persones que no poden parlar a que ho faça el seu ordinador, p. ex. la gent muda o la gent que ha perdut la seua veu. Té un camp d'entrada de text i pronuncia les frases que s'introdueixen. També permet llibres de frases definits per l'usuari.</p>
+    <p xml:lang="de">KMouth ist ein Programm, mit dem stumme Benutzer ihren Computer für sich sprechen lassen können. Es gibt ein Texteingabefeld, dessen Inhalt vorgelesen wird. Außerdem können benutzerdefinierte Textpassagenbücher benutzt werden.</p>
     <p xml:lang="en-GB">KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrase books.</p>
     <p xml:lang="nl">KMouth is een programma die personen die niet kunnen spreken om hun computer te laten spreken, bijv. mensen zonder stem of mensen die hun stem hebben verloren. Het heeft een tekst invoerveld en spreekt de zinnen uit die u invoert. Het ondersteunt ook gebruikergedefinieerde boeken met frasen.</p>
     <p xml:lang="nn">KMouth er eit program som gjer det mogleg for folk som ikkje sjølve kan tala å la datamaskina tala. Det har eit skrivefelt og les opp setningane du skriv inn. Det har òg støtte for brukardefinerte parlørar.</p>
