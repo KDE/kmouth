@@ -37,7 +37,7 @@
   <summary xml:lang="zh-CN">语音合成器前端</summary>
   <description>
     <p>
-     KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mutal people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.
+     KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.
     </p>
     <p xml:lang="ca">El KMouth és un programa que habilita a les persones que no poden parlar a que ho faci el seu ordinador, p. ex. la gent muda o la gent que ha perdut la seva veu. Té un camp d'entrada de text i pronuncia les frases que s'introdueixen. També permet llibres de frases definits per l'usuari.</p>
     <p xml:lang="ca-valencia">El KMouth és un programa que habilita a les persones que no poden parlar a que ho faça el seu ordinador, p. ex. la gent muda o la gent que ha perdut la seua veu. Té un camp d'entrada de text i pronuncia les frases que s'introdueixen. També permet llibres de frases definits per l'usuari.</p>
