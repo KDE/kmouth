@@ -47,6 +47,7 @@
     <p xml:lang="pt">O KMouth é um programa que permite às pessoas que não conseguem falar deixar que o computador deles fale, p.ex. pessoas mudas ou que tenham perdido a sua voz. Tem um campo de texto e fala as frases que lá introduzir. Também tem suporte para livros de frases definidas pelo utilizador.</p>
     <p xml:lang="uk">KMouth — програма, яка надає змогу тим, хто не може говорити, спілкуватися за допомогою комп'ютера. У ній передбачено поле для введення тексту, який вимовлятиме комп'ютер. Також можна створювати визначені користувачем набори заздалегідь приготованих фраз.</p>
     <p xml:lang="x-test">xxKMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.xx</p>
+    <p xml:lang="zh-CN">KMouth 是为那些不能说话的人发声的程序，比如聋哑人或失声的人。它有一个文本输入框，可以输入您键入的语句。它也支持用户定义的短语集。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kmouth</url>
   <url type="donation">https://www.kde.org/community/donations/</url>
