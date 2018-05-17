@@ -10,6 +10,7 @@
   <name xml:lang="de">KMouth</name>
   <name xml:lang="en-GB">KMouth</name>
   <name xml:lang="es">KMouth</name>
+  <name xml:lang="fi">KMouth</name>
   <name xml:lang="fr">KMouth</name>
   <name xml:lang="gl">KMouth</name>
   <name xml:lang="nl">KMouth</name>
@@ -26,6 +27,7 @@
   <summary xml:lang="de">Oberfläche für Sprachsynthesizer</summary>
   <summary xml:lang="en-GB">Speech Synthesiser Frontend</summary>
   <summary xml:lang="es">Interfaz de síntesis de voz</summary>
+  <summary xml:lang="fi">Puhesyntetisaattorin käyttöliittymä</summary>
   <summary xml:lang="gl">Interface de sintetizador de voz</summary>
   <summary xml:lang="nl">Spraaksynthesizerfrontend</summary>
   <summary xml:lang="nn">Grensesnitt for talesyntese</summary>
