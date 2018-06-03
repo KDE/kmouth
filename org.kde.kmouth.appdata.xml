@@ -17,6 +17,7 @@
   <name xml:lang="nn">KMouth</name>
   <name xml:lang="pl">KMouth</name>
   <name xml:lang="pt">KMouth</name>
+  <name xml:lang="pt-BR">KMouth</name>
   <name xml:lang="sk">KMouth</name>
   <name xml:lang="sv">Kmouth</name>
   <name xml:lang="uk">KMouth</name>
@@ -29,11 +30,13 @@
   <summary xml:lang="en-GB">Speech Synthesiser Frontend</summary>
   <summary xml:lang="es">Interfaz de síntesis de voz</summary>
   <summary xml:lang="fi">Puhesyntetisaattorin käyttöliittymä</summary>
+  <summary xml:lang="fr">Interface graphique de synthèse vocale</summary>
   <summary xml:lang="gl">Interface de sintetizador de voz</summary>
   <summary xml:lang="nl">Spraaksynthesizerfrontend</summary>
   <summary xml:lang="nn">Grensesnitt for talesyntese</summary>
   <summary xml:lang="pl">Nakładka syntetyzatora mowy</summary>
   <summary xml:lang="pt">Interface de Síntese de Fala</summary>
+  <summary xml:lang="pt-BR">Interface do sintetizador de voz</summary>
   <summary xml:lang="sk">Rozhranie pre syntezátor reči</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
   <summary xml:lang="uk">Оболонка для синтезу мовлення з тексту</summary>
@@ -49,6 +52,7 @@
     <p xml:lang="en-GB">KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrase books.</p>
     <p xml:lang="es">KMouth es un programa que permite hablar a las personas que no pueden hacerlo, como las personas mudas o las que han perdido la voz. Consta de un campo de entrada de texto y pronuncia las frases que introduzca en él. También permite usar libros de frases definidos por el usuario.</p>
     <p xml:lang="fi">KMouth on ohjelma, jolla puhumaan kykenemättömät ihmiset kuten mykät tai äänensä menettäneet voivat panna tietokoneensa puhumaan puolestaan. Kone puhuu tekstin, jonka syötät tekstikenttään. Ohjelma tukee myös käyttäjän määrittämiä fraasikirjoja.</p>
+    <p xml:lang="fr">KMouth est un programme qui permet aux personnes qui ne peuvent pas parler de s'exprimer à travers l'ordinateur. Il vient en aide aux personnes muettes ou aphones. Il comporte un champ de saisie de texte et prononce les phrases que vous saisissez. Il prend également en charge les carnets de phrases définis par les utilisateurs.</p>
     <p xml:lang="gl">KMouth é un programa que permite ás persoas que non poden falar que fagan que o seu computador fale, como a xente muda ou a xente que perdeu a voz. Ten un campo de entrada de texto e pronuncia as frases que se escriben. Tamén permite gardar frases para usalas máis adiante.</p>
     <p xml:lang="nl">KMouth is een programma die personen die niet kunnen spreken om hun computer te laten spreken, bijv. mensen zonder stem of mensen die hun stem hebben verloren. Het heeft een tekst invoerveld en spreekt de zinnen uit die u invoert. Het ondersteunt ook gebruikergedefinieerde boeken met frasen.</p>
     <p xml:lang="nn">KMouth er eit program som gjer det mogleg for folk som ikkje sjølve kan tala å la datamaskina tala. Det har eit skrivefelt og les opp setningane du skriv inn. Det har òg støtte for brukardefinerte parlørar.</p>
