@@ -57,8 +57,6 @@ int main(int argc, char *argv[])
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
     parser.addPositionalArgument(QStringLiteral("[File]"), i18n("History file to open"));
     aboutData.setupCommandLine(&parser);
     parser.process(app);
