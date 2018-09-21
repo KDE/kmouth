@@ -27,10 +27,10 @@
 #include "speech.h"
 #include "texttospeechsystem.h"
 
-TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent, const char *name)
+TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent, const QString &name)
     : QWizardPage(parent)
 {
-    setObjectName(QLatin1String(name));
+    setObjectName(name);
     setupUi(this);
     ttsSystem = new TextToSpeechSystem();
 

@@ -40,11 +40,11 @@ class CreationSourceWidget : public QWizardPage, public Ui::CreationSourceUI
 {
     Q_OBJECT
 public:
-    CreationSourceWidget(QWidget *parent, const char *name)
+    CreationSourceWidget(QWidget *parent, const QString &name)
         : QWizardPage(parent)
     {
         setupUi(this);
-        setObjectName(QLatin1String(name));
+        setObjectName(name);
         connect(emptyButton, &QAbstractButton::toggled, this, &CreationSourceWidget::emptyToggled);
     }
 
@@ -57,11 +57,11 @@ class CreationSourceDetailsWidget : public QWizardPage, public Ui::CreationSourc
 {
     Q_OBJECT
 public:
-    CreationSourceDetailsWidget(QWidget *parent, const char *name)
+    CreationSourceDetailsWidget(QWidget *parent, const QString &name)
         : QWizardPage(parent)
     {
         setupUi(this);
-        setObjectName(QLatin1String(name));
+        setObjectName(name);
     }
     int nextId() const override
     {

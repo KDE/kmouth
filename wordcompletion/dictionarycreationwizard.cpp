@@ -63,19 +63,19 @@ DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent, const char *
 {
     buildCodecList();
 
-    creationSource = new CreationSourceWidget(this, "source page");
+    creationSource = new CreationSourceWidget(this, QStringLiteral("source page"));
     creationSource->setTitle(i18n("Source of New Dictionary (1)"));
     setPage(CreationSourcePage, creationSource);
     setOption(QWizard::HaveHelpButton, false);
     //setFinishEnabled (creationSource, false);
 
-    fileWidget = new CreationSourceDetailsWidget(this, "file source page");
+    fileWidget = new CreationSourceDetailsWidget(this, QStringLiteral("file source page"));
     fileWidget->setTitle(i18n("Source of New Dictionary (2)"));
     fileWidget->setFinalPage(true);
     setPage(FilePage, fileWidget);
     buildCodecCombo(fileWidget->encodingCombo);
 
-    dirWidget = new CreationSourceDetailsWidget(this, "directory source page");
+    dirWidget = new CreationSourceDetailsWidget(this, QStringLiteral("directory source page"));
     dirWidget->setTitle(i18n("Source of New Dictionary (2)"));
     dirWidget->setFinalPage(true);
     setPage(DirPage, dirWidget);

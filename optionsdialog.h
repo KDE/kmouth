@@ -39,7 +39,7 @@ class PreferencesWidget : public QWidget, public Ui::PreferencesUI
 {
     Q_OBJECT
 public:
-    PreferencesWidget(QWidget *parent, const char *name);
+    explicit PreferencesWidget(QWidget *parent, const QString &name);
     ~PreferencesWidget();
 
     void readOptions();

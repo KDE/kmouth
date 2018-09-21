@@ -49,7 +49,7 @@ class PhraseList : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PhraseList(QWidget *parent = 0, const char *name = 0);
+    explicit PhraseList(QWidget *parent = nullptr, const QString &name = QString());
     ~PhraseList();
 
     /** contains the implementation for printing functionality */

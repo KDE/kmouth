@@ -35,7 +35,7 @@ class TextToSpeechConfigurationWidget : public QWizardPage, public Ui::texttospe
 {
     friend class TextToSpeechConfigurationDialog;
 public:
-    TextToSpeechConfigurationWidget(QWidget *parent, const char *name);
+    explicit TextToSpeechConfigurationWidget(QWidget *parent, const QString &name);
     ~TextToSpeechConfigurationWidget();
 
     TextToSpeechSystem *getTTSSystem() const;

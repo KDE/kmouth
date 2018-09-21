@@ -59,7 +59,7 @@ class KMouthApp : public KXmlGuiWindow
 public:
     /** construtor of KMouthApp, calls all init functions to create the application.
      */
-    explicit KMouthApp(QWidget* parent = 0, const char* name = 0);
+    explicit KMouthApp(QWidget* parent = nullptr, const QString &name = QString());
     ~KMouthApp();
     /** Returns true if the configuration wizard was not needed or when it
      * was successfully completed.

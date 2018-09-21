@@ -46,7 +46,7 @@
 #include "phrasebook/phrasebook.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(QWidget *parent, const char *name) : QWidget(parent)
+PhraseList::PhraseList(QWidget *parent, const QString &name) : QWidget(parent)
 {
     Q_UNUSED(name);
     isInSlot = false;

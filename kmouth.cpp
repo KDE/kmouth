@@ -47,10 +47,10 @@
 #include "optionsdialog.h"
 #include "configwizard.h"
 
-KMouthApp::KMouthApp(QWidget* , const char* name): KXmlGuiWindow(0)
+KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(0)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmouth")));
-    setObjectName(QLatin1String(name));
+    setObjectName(name);
     isConfigured = false;
 
     ///////////////////////////////////////////////////////////////////

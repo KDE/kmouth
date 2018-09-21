@@ -37,10 +37,10 @@
 #include "texttospeechconfigurationwidget.h"
 #include "wordcompletion/wordcompletionwidget.h"
 
-PreferencesWidget::PreferencesWidget(QWidget *parent, const char *name)
+PreferencesWidget::PreferencesWidget(QWidget *parent, const QString &name)
     : QWidget(parent)
 {
-    setObjectName(QLatin1String(name));
+    setObjectName(name);
     setupUi(this);
     speakCombo->setCurrentIndex(1);
     speak = false;
@@ -144,10 +144,10 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     tabCtl = new QTabWidget();
     tabCtl->setObjectName(QStringLiteral("general"));
 
-    behaviourWidget = new PreferencesWidget(tabCtl, "prefPage");
+    behaviourWidget = new PreferencesWidget(tabCtl, QStringLiteral("prefPage"));
     tabCtl->addTab(behaviourWidget, i18n("&Preferences"));
 
-    commandWidget = new TextToSpeechConfigurationWidget(tabCtl, "ttsTab");
+    commandWidget = new TextToSpeechConfigurationWidget(tabCtl, QStringLiteral("ttsTab"));
     tabCtl->addTab(commandWidget, i18n("&Text-to-Speech"));
 
     KPageWidgetItem *pageGeneral = new KPageWidgetItem(tabCtl, i18n("General Options"));

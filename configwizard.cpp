@@ -56,7 +56,7 @@ void ConfigWizard::initCommandPage()
     if (!cg.hasKey("Codec"))   displayCommand = true;
 
     if (displayCommand) {
-        commandWidget = new TextToSpeechConfigurationWidget(this, "ttsPage");
+        commandWidget = new TextToSpeechConfigurationWidget(this, QStringLiteral("ttsPage"));
         commandWidget->readOptions(QStringLiteral("TTS System"));
         commandWidget->setTitle(i18n("Text-to-Speech Configuration"));
         addPage(commandWidget);

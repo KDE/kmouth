@@ -77,11 +77,11 @@ void StandardPhraseBookInsertAction::slotActivated()
 
 namespace PhraseBookPrivate
 {
-PhraseBookDialog *instance = 0;
+PhraseBookDialog *instance = nullptr;
 }
 
 PhraseBookDialog::PhraseBookDialog()
-    : KXmlGuiWindow(0)
+    : KXmlGuiWindow(nullptr)
 {
     // Create model with 2 columns and no rows
     m_bookModel = new QStandardItemModel(0, 2, this);
@@ -101,7 +101,7 @@ PhraseBookDialog::PhraseBookDialog()
         QDomDocument document;
         document.setContent(&file);
 
-        QDomNodeList nodes = document.documentElement().childNodes();
+        const QDomNodeList nodes = document.documentElement().childNodes();
         for (int i = 0; i < nodes.count(); ++i) {
             deserializeBook(nodes.at(i), m_rootItem);
         }
@@ -127,14 +127,14 @@ PhraseBookDialog::PhraseBookDialog()
 
 PhraseBookDialog *PhraseBookDialog::get()
 {
-    if (PhraseBookPrivate::instance == 0)
+    if (PhraseBookPrivate::instance == nullptr)
         PhraseBookPrivate::instance = new PhraseBookDialog();
     return PhraseBookPrivate::instance;
 }
 
 PhraseBookDialog::~PhraseBookDialog()
 {
-    PhraseBookPrivate::instance = 0;
+    PhraseBookPrivate::instance = nullptr;
     //delete printer;
 }
 
@@ -162,7 +162,7 @@ QStandardItem* PhraseBookDialog::deserializeBook(const QDomNode &node, QStandard
 
     if (isBook) {
         // Iterate over the document creating QStandardItems as needed
-        QDomNodeList childNodes = node.childNodes();
+        const QDomNodeList childNodes = node.childNodes();
         for (int i = 0; i < childNodes.count(); ++i) {
             const QDomNode child = childNodes.at(i);
             deserializeBook(child, item);
