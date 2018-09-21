@@ -60,7 +60,7 @@ public:
     bool existListSelection();
     bool existEditSelection();
 
-public slots:
+public Q_SLOTS:
     /** Called whenever the user wants the contents of the edit line to be spoken. */
     void speak();
 
@@ -90,7 +90,7 @@ public slots:
     void saveCompletionOptions();
     void readCompletionOptions();
 
-protected slots:
+protected Q_SLOTS:
     void lineEntered(const QString &phrase);
     void contextMenuRequested(const QPoint &pos);
     void textChanged(const QString &s);

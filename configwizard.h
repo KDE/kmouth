@@ -41,7 +41,7 @@ public:
     bool configurationNeeded();
     bool requestConfiguration();
 
-public slots:
+public Q_SLOTS:
     void saveConfig();
 
 protected:

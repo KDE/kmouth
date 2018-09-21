@@ -181,14 +181,14 @@ public:
     {
     }
 
-public slots:
+public Q_SLOTS:
     void slotTriggered()
     {
 //      trigger();
         emit slotActivated(phrase);
     }
 
-signals:
+Q_SIGNALS:
     void slotActivated(const QString &phrase);
 
 private:

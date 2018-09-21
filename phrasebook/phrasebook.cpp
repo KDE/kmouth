@@ -391,9 +391,9 @@ StandardBookList PhraseBook::standardPhraseBooks()
         const QStringList locales = QDir(dir).entryList(QDir::Dirs | QDir::NoDotAndDotDot);
         Q_FOREACH (const QString &locale, locales) {
             const QStringList fileNames =
-                QDir(dir + '/' + locale).entryList(QStringList() << QStringLiteral("*.phrasebook"));
+                QDir(dir + QLatin1Char('/') + locale).entryList(QStringList() << QStringLiteral("*.phrasebook"));
             Q_FOREACH (const QString &file, fileNames) {
-                bookPaths.append(dir + '/' + locale + '/' + file);
+                bookPaths.append(dir + QLatin1Char('/') + locale + QLatin1Char('/') + file);
             }
         }
     }

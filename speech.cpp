@@ -205,7 +205,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
         if (stdIn) {
             m_process.start(command);
             if (encText.size() > 0)
-                m_process.write(encText, encText.size());
+                m_process.write(encText.constData(), encText.size());
             else
                 m_process.close();
         } else

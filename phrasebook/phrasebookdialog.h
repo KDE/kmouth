@@ -47,10 +47,10 @@ public:
     StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
     ~StandardPhraseBookInsertAction();
 
-public slots:
+public Q_SLOTS:
     void slotActivated();
 
-signals:
+Q_SIGNALS:
     void slotActivated(const QUrl &url);
 
 private:
@@ -84,7 +84,7 @@ public:
 
     bool queryClose() override;
 
-public slots:
+public Q_SLOTS:
     void slotTextChanged(const QString &s);
     void slotNoKey();
     void slotCustomKey();
@@ -109,7 +109,7 @@ public slots:
 
     void slotModelChanged();
 
-signals:
+Q_SIGNALS:
     void phrasebookConfirmed();
 
 private:

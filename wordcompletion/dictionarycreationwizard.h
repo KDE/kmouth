@@ -49,7 +49,7 @@ public:
     }
 
     int nextId() const override;
-private slots:
+private Q_SLOTS:
     void emptyToggled(bool checked);
 };
 

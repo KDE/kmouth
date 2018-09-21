@@ -29,10 +29,6 @@
 #include "kmouth.h"
 #include "version.h"
 
-static const char description[] =
-    I18N_NOOP("A type-and-say front end for speech synthesizers");
-// INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-
 
 int main(int argc, char *argv[])
 {
@@ -41,17 +37,17 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kmouth");
     QApplication::setApplicationDisplayName(i18n("KMouth"));
 
-    KAboutData aboutData(I18N_NOOP("kmouth"),
+    KAboutData aboutData(QStringLiteral("kmouth"),
                          i18n("KMouth"),
-                         KMOUTH_VERSION,
-                         i18n(description),
+                         QLatin1String(KMOUTH_VERSION),
+                         i18n("A type-and-say front end for speech synthesizers"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002/2003, Gunnar Schmi Dt"),
                          QString(),
-                         I18N_NOOP("https://www.kde.org/applications/utilities/kmouth/"),
-                         I18N_NOOP("kmouth@schmi-dt.de"));
+                         QStringLiteral("https://www.kde.org/applications/utilities/kmouth/"),
+                         QStringLiteral("kmouth@schmi-dt.de"));
     aboutData.addAuthor(i18n("Gunnar Schmi Dt"), i18n("Original Author"), QStringLiteral("kmouth@schmi-dt.de"));
-    aboutData.addAuthor(i18n("Jeremy Whiting"), i18n("Current Maintainer"), "jpwhiting@kde.org");
+    aboutData.addAuthor(i18n("Jeremy Whiting"), i18n("Current Maintainer"), QStringLiteral("jpwhiting@kde.org"));
     aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));

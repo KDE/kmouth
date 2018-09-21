@@ -67,7 +67,7 @@ public:
      */
     void addSentence(const QString &sentence);
 
-public slots:
+public Q_SLOTS:
     /**
      * Re-reads the configuration.
      */
@@ -86,7 +86,7 @@ public slots:
      */
     void save();
 
-signals:
+Q_SIGNALS:
     void wordListsChanged(const QStringList &wordLists);
     void currentListChanged(const QString &wordList);
 

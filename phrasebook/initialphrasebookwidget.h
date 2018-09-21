@@ -43,7 +43,7 @@ public:
 
     void createBook();
 
-private slots:
+private Q_SLOTS:
     void slotItemChanged(QStandardItem *item);
 
 private:

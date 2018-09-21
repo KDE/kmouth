@@ -40,7 +40,7 @@ public:
     void readOptions(const QString &langGroup);
     void saveOptions(const QString &langGroup);
 
-public slots:
+public Q_SLOTS:
     void speak(const QString &text, const QString &language);
 
 private:

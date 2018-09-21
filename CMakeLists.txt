@@ -9,19 +9,24 @@ if(NOT MSVC)
 endif(NOT MSVC)
 
 include(FeatureSummary)
-find_package(Qt5 REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
 
-find_package(ECM 1.7.0 NO_MODULE REQUIRED)
+set(QT_MIN_VERSION "5.9.0")
+set(KF5_VERSION "5.46.0")
+
+
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
+
+find_package(ECM ${KF5_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 include(ECMAddAppIcon)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 
-find_package(KF5 REQUIRED COMPONENTS
+find_package(KF5  ${KF5_VERSION} REQUIRED COMPONENTS
     Crash
     Completion
     Config

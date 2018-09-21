@@ -99,7 +99,7 @@ protected:
      */
     bool queryClose() override;
 
-public slots:
+public Q_SLOTS:
     /** open a file and load it into the history */
     void slotFileOpen();
     /** save a document */

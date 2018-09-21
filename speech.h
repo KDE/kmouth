@@ -60,7 +60,7 @@ public:
     QString prepareCommand(QString command, const QString &text,
                            const QString &filename, const QString &language);
 
-public slots:
+public Q_SLOTS:
     //void wroteStdin(K3Process *p);
     void processExited(int exitCode, QProcess::ExitStatus exitStatus);
     //void receivedStdout(K3Process *proc, char *buffer, int buflen);

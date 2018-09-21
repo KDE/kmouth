@@ -73,10 +73,10 @@ public:
 
     bool isSpeakImmediately();
 
-signals:
+Q_SIGNALS:
     void configurationChanged();
 
-private slots:
+private Q_SLOTS:
     void slotCancel();
     void slotOk();
     void slotApply();

@@ -48,10 +48,10 @@ public:
      */
     void save();
 
-signals:
+Q_SIGNALS:
     void changed(bool);
 
-private slots:
+private Q_SLOTS:
     void addDictionary();
     void deleteDictionary();
     void moveUp();
