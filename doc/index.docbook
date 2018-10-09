@@ -170,8 +170,7 @@
       </menuchoice>
       you open the configuration dialog of &kmouth;. This dialog consists of
       the pages <guilabel>General Options</guilabel> with the two tabs <guilabel>Preferences</guilabel>
-      and <guilabel>Text-to-Speech</guilabel>, the page <guilabel>Word Completion</guilabel> and
-       the page <guilabel>Jovie Speech Service</guilabel>.
+      and <guilabel>Text-to-Speech</guilabel> and the page <guilabel>Word Completion</guilabel>.
     </para>
     <sect2 id="preferences">
       <title>The Preferences tab</title>
