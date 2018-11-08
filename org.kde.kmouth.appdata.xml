@@ -80,7 +80,7 @@
     <p xml:lang="zh-CN">KMouth 是为那些不能说话的人发声的程序，比如聋哑人或失声的人。它有一个文本输入框，可以输入您键入的语句。它也支持用户定义的短语集。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kmouth</url>
-  <url type="donation">https://www.kde.org/community/donations/</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kmouth&amp;source=appdata</url>
   <url type="help">https://docs.kde.org/?application=kmouth</url>
   <url type="homepage">https://www.kde.org/applications/utilities/kmouth/</url>
   <screenshots>
