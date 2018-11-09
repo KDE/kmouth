@@ -88,11 +88,11 @@ PhraseList::PhraseList(QWidget *parent, const QString &name) : QWidget(parent)
     speakButton->setWhatsThis(i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
     rowLayout->addWidget(speakButton);
 
-    connect(dictionaryCombo, SIGNAL(activated(QString)), completion, SLOT(setWordList(QString)));
+    connect(dictionaryCombo, QOverload<const QString &>::of(&KComboBox::activated), completion, &WordCompletion::setWordList);
     connect(completion, &WordCompletion::wordListsChanged, this, &PhraseList::configureCompletionCombo);
     connect(m_listView->selectionModel(),  &QItemSelectionModel::selectionChanged, this, &PhraseList::selectionChanged);
     connect(m_listView,  &QWidget::customContextMenuRequested, this, &PhraseList::contextMenuRequested);
-    connect(lineEdit, SIGNAL(returnPressed(QString)), SLOT(lineEntered(QString)));
+    connect(lineEdit, &KLineEdit::returnPressed, this, &PhraseList::lineEntered);
     connect(lineEdit, &QLineEdit::textChanged, this, &PhraseList::textChanged);
     connect(speakButton, &QAbstractButton::clicked, this, &PhraseList::speak);
 }
