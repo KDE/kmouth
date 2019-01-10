@@ -273,4 +273,3 @@ void WordCompletionWidget::languageSelected()
     }
 }
 
-#include "wordcompletionwidget.moc"

@@ -232,4 +232,3 @@ void Speech::processExited(int exitCode, QProcess::ExitStatus exitStatus)
     delete this;
 }
 
-#include "speech.moc"

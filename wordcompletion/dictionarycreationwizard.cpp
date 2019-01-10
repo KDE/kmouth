@@ -339,4 +339,3 @@ void CompletionWizardWidget::ok()
     }
 }
 
-#include "dictionarycreationwizard.moc"

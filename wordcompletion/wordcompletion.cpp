@@ -252,5 +252,3 @@ void WordCompletion::save()
     }
 }
 
-#include "wordcompletion.moc"
-

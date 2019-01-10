@@ -109,4 +109,3 @@ void TextToSpeechSystem::buildCodecList()
     }
 }
 
-#include "texttospeechsystem.moc"

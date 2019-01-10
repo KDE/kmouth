@@ -221,4 +221,3 @@ bool OptionsDialog::isSpeakImmediately()
     return behaviourWidget->isSpeakImmediately();
 }
 
-#include "optionsdialog.moc"

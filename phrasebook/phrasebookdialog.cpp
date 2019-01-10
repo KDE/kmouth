@@ -702,4 +702,3 @@ void PhraseBookDialog::slotExportPhrasebook()
 //   delete printDialog;
 //}
 
-#include "phrasebookdialog.moc"

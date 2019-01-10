@@ -510,4 +510,3 @@ void PhraseBook::insert(const QString &name, const PhraseBook &book)
     }
 }
 
-#include "phrasebook.moc"
