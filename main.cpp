@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData(QStringLiteral("kmouth"),
                          i18n("KMouth"),
-                         QLatin1String(KMOUTH_VERSION),
+                         QStringLiteral(KMOUTH_VERSION),
                          i18n("A type-and-say front end for speech synthesizers"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002/2003, Gunnar Schmi Dt"),

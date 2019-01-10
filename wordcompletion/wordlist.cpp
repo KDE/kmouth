@@ -128,7 +128,7 @@ WordMap XMLParser::getList()
 QProgressDialog *progressDialog()
 {
     QProgressDialog *pdlg = new QProgressDialog(i18n("Creating Word List"), i18n("Parsing the KDE documentation..."), 0, 100);
-    pdlg->setCancelButton(0);
+    pdlg->setCancelButton(nullptr);
     pdlg->setAutoReset(false);
     pdlg->setAutoClose(false);
     return pdlg;
@@ -219,7 +219,7 @@ void addWordsFromFile(WordMap &map, QString filename, QTextCodec *codec)
                     QFile file(filename);
                     if (file.open(QIODevice::ReadOnly)) {
                         QTextStream stream(&file);
-                        Q_ASSERT(codec != 0);
+                        Q_ASSERT(codec != nullptr);
                         stream.setCodec(codec);
                         while (!stream.atEnd())
                             addWords(map, stream.readLine());

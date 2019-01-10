@@ -52,7 +52,7 @@ void TextToSpeechSystem::speak(const QString &text, const QString &language)
         }
 
         if (codec < Speech::UseCodec)
-            (new Speech())->speak(ttsCommand, stdIn, text, language, codec, 0);
+            (new Speech())->speak(ttsCommand, stdIn, text, language, codec, nullptr);
         else
             (new Speech())->speak(ttsCommand, stdIn, text, language, Speech::UseCodec,
                                   codecList->at(codec - Speech::UseCodec));

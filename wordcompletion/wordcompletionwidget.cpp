@@ -173,7 +173,7 @@ void WordCompletionWidget::deleteDictionary()
     int row = dictionaryView->currentIndex().row();
     const QStandardItem *nameItem = model->item(row, 0);
 
-    if (nameItem != 0) {
+    if (nameItem != nullptr) {
         removedDictionaryFiles += nameItem->data().toString();
         qDeleteAll(model->takeRow(row));
     }
@@ -203,13 +203,13 @@ void WordCompletionWidget::exportDictionary()
 {
     const QStandardItem *nameItem = model->item(dictionaryView->currentIndex().row(), 0);
 
-    if (nameItem != 0) {
+    if (nameItem != nullptr) {
         QUrl url = QFileDialog::getSaveFileUrl(this, i18n("Export Dictionary"));
         if (url.isEmpty() || !url.isValid())
             return;
 
         if (url.isLocalFile() && QFile::exists(url.toLocalFile())) {
-            if (KMessageBox::warningContinueCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+            if (KMessageBox::warningContinueCancel(nullptr, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                    "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
                 return;
             }
@@ -245,7 +245,7 @@ void WordCompletionWidget::nameChanged(const QString &text)
 {
     const QStandardItem *nameItem = model->item(dictionaryView->currentIndex().row(), 0);
 
-    if (nameItem != 0) {
+    if (nameItem != nullptr) {
         QString old = nameItem->text();
 
         if (old != text) {
@@ -261,7 +261,7 @@ void WordCompletionWidget::languageSelected()
 {
     const QStandardItem *languageItem = model->item(dictionaryView->currentIndex().row(), 1);
 
-    if (languageItem != 0) {
+    if (languageItem != nullptr) {
         QString old = languageItem->text();
         QString text = languageButton->current();
 

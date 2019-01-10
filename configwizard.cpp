@@ -62,7 +62,7 @@ void ConfigWizard::initCommandPage()
         addPage(commandWidget);
         commandWidget->setFinalPage(true);
     } else
-        commandWidget = 0;
+        commandWidget = nullptr;
 }
 
 void ConfigWizard::initBookPage()
@@ -75,10 +75,10 @@ void ConfigWizard::initBookPage()
         bookWidget->setTitle(i18n("Initial Phrase Book"));
         addPage(bookWidget);
         bookWidget->setFinalPage(true);
-        if (commandWidget != 0)
+        if (commandWidget != nullptr)
             commandWidget->setFinalPage(false);
     } else
-        bookWidget = 0;
+        bookWidget = nullptr;
 }
 
 void ConfigWizard::initCompletion()
@@ -98,7 +98,7 @@ void ConfigWizard::initCompletion()
     }
 
     if (KSharedConfig::openConfig()->hasGroup("Completion")) {
-        completionWidget = 0;
+        completionWidget = nullptr;
         return;
     }
 
@@ -108,31 +108,31 @@ void ConfigWizard::initCompletion()
         addPage(completionWidget);
         completionWidget->setFinalPage(true);
 
-        if (commandWidget != 0)
+        if (commandWidget != nullptr)
             commandWidget->setFinalPage(false);
-        if (bookWidget != 0)
+        if (bookWidget != nullptr)
             bookWidget->setFinalPage(false);
     } else
-        completionWidget = 0;
+        completionWidget = nullptr;
 }
 
 void ConfigWizard::saveConfig()
 {
-    if (commandWidget != 0) {
+    if (commandWidget != nullptr) {
         commandWidget->ok();
         commandWidget->saveOptions(QStringLiteral("TTS System"));
     }
 
-    if (bookWidget != 0)
+    if (bookWidget != nullptr)
         bookWidget->createBook();
 
-    if (completionWidget != 0)
+    if (completionWidget != nullptr)
         completionWidget->ok();
 }
 
 bool ConfigWizard::requestConfiguration()
 {
-    if (commandWidget != 0 || bookWidget != 0 || completionWidget != 0)
+    if (commandWidget != nullptr || bookWidget != nullptr || completionWidget != nullptr)
         return (exec() == QDialog::Accepted);
     else
         return false;
@@ -140,7 +140,7 @@ bool ConfigWizard::requestConfiguration()
 
 bool ConfigWizard::configurationNeeded()
 {
-    return (commandWidget != 0 || bookWidget != 0 || completionWidget != 0);
+    return (commandWidget != nullptr || bookWidget != nullptr || completionWidget != nullptr);
 }
 
 void ConfigWizard::help()

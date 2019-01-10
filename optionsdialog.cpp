@@ -155,7 +155,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     pageGeneral->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     addPage(pageGeneral);
 
-    completionWidget = new WordCompletionWidget(0, "Word Completion widget");
+    completionWidget = new WordCompletionWidget(nullptr, "Word Completion widget");
     KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
     pageCompletion->setHeader(i18n("Word Completion"));
     pageCompletion->setIcon(QIcon::fromTheme(QStringLiteral("keyboard")));

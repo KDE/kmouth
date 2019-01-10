@@ -303,7 +303,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
     }
 
     if (QFile::exists(url.toLocalFile())) {
-        if (KMessageBox::warningContinueCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
+        if (KMessageBox::warningContinueCancel(nullptr, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
                                                "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
             return 0;
         }
@@ -311,26 +311,26 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
 
     bool result;
     if (fdlg.selectedNameFilter() == QLatin1String("*.phrasebook")) {
-        if (url.fileName(0).contains(QLatin1Char('.')) == 0) {
+        if (url.fileName(nullptr).contains(QLatin1Char('.')) == 0) {
             url = url.adjusted(QUrl::RemoveFilename);
-            url.setPath(url.path() + url.fileName(0) + QStringLiteral(".phrasebook"));
-        } else if (url.fileName(0).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-            int filetype = KMessageBox::questionYesNoCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
+            url.setPath(url.path() + url.fileName(nullptr) + QStringLiteral(".phrasebook"));
+        } else if (url.fileName(nullptr).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
+            int filetype = KMessageBox::questionYesNoCancel(nullptr, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
                            "Do you wish to add <i>.phrasebook</i> to the filename?", url.fileName())), i18n("File Extension"), KGuiItem(i18n("Add")), KGuiItem(i18n("Do Not Add")));
             if (filetype == KMessageBox::Cancel) {
                 return 0;
             }
             if (filetype == KMessageBox::Yes) {
                 url = url.adjusted(QUrl::RemoveFilename);
-                url.setPath(url.path() + url.fileName(0) + QStringLiteral(".phrasebook"));
+                url.setPath(url.path() + url.fileName(nullptr) + QStringLiteral(".phrasebook"));
             }
         }
         result = save(url, true);
     } else if (fdlg.selectedNameFilter() == QLatin1String("*.txt")) {
-        if (url.fileName(0).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
+        if (url.fileName(nullptr).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
             result = save(url, false);
         } else {
-            int filetype = KMessageBox::questionYesNoCancel(0, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+            int filetype = KMessageBox::questionYesNoCancel(nullptr, QStringLiteral("<qt>%1</qt>").arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
                            "Do you wish to save in phrasebook format?", url.fileName())), i18n("File Extension"), KGuiItem(i18n("As Phrasebook")), KGuiItem(i18n("As Plain Text")));
             if (filetype == KMessageBox::Cancel) {
                 return 0;
@@ -452,7 +452,7 @@ QString PhraseBook::displayPath(QString filename)
 void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *phrases,
                           QObject *receiver, const char *slot) const
 {
-    if ((popup != 0) || (toolbar != 0)) {
+    if ((popup != nullptr) || (toolbar != nullptr)) {
         QStack<QWidget*> stack;
         QWidget *parent = popup;
         int level = 0;
@@ -465,7 +465,7 @@ void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *ph
                 menu->setDelayed(false);
                 if (parent == popup)
                     toolbar->addAction(menu);
-                if (parent != 0) {
+                if (parent != nullptr) {
                     parent->addAction(menu);
                     stack.push(parent);
                 }
@@ -482,7 +482,7 @@ void PhraseBook::addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *ph
                                                    phrase.getShortcut(), receiver, slot, phrases);
                 if (parent == popup)
                     toolbar->addAction(action);
-                if (parent != 0)
+                if (parent != nullptr)
                     parent->addAction(action);
             } else {
                 Phrase phrase = (*it).getPhrase();

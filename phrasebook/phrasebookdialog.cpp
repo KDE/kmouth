@@ -512,8 +512,8 @@ void PhraseBookDialog::contextMenuRequested(const QPoint &pos)
         name = QStringLiteral("phrasebook_popup_nosel");
 
     QMenu *popup = (QMenu *)factory()->container(name, this);
-    if (popup != 0) {
-        popup->popup(m_ui->treeView->mapToGlobal(pos), 0);
+    if (popup != nullptr) {
+        popup->popup(m_ui->treeView->mapToGlobal(pos), nullptr);
     }
 }
 
@@ -553,7 +553,7 @@ void PhraseBookDialog::slotPaste()
     const QMimeData *data = QApplication::clipboard()->mimeData();
     QModelIndex index = m_ui->treeView->selectionModel()->currentIndex();
     QStandardItem *item = m_bookModel->itemFromIndex(index);
-    while (item != NULL && !item->isDropEnabled())
+    while (item != nullptr && !item->isDropEnabled())
         item = item->parent();
     QDomDocument document;
     document.setContent(data->text());
@@ -565,7 +565,7 @@ QModelIndex PhraseBookDialog::getCurrentParent()
 {
     QModelIndex currentIndex = m_ui->treeView->currentIndex();
     QStandardItem *item = m_bookModel->itemFromIndex(currentIndex);
-    if (item != NULL && !item->isDropEnabled()) // If it's not a book
+    if (item != nullptr && !item->isDropEnabled()) // If it's not a book
         currentIndex = currentIndex.parent();
     return currentIndex;
 }
@@ -648,7 +648,7 @@ void PhraseBookDialog::slotImportPhrasebook(const QUrl &url)
             document.setContent(&file);
 
             QDomNode node = document.documentElement();
-            QStandardItem *item = 0;
+            QStandardItem *item = nullptr;
             if (node.hasAttributes()) {
                 // It has attributes, so add it directly
                 item = deserializeBook(node, parentItem);

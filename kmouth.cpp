@@ -47,7 +47,7 @@
 #include "optionsdialog.h"
 #include "configwizard.h"
 
-KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(0)
+KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(nullptr)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmouth")));
     setObjectName(name);
@@ -89,7 +89,7 @@ KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(0)
     fileSaveAs->setEnabled(false);
     filePrint->setEnabled(false);
 
-    printer = 0;
+    printer = nullptr;
 }
 
 KMouthApp::~KMouthApp()
@@ -273,7 +273,7 @@ void KMouthApp::saveOptions()
         // FIXME: KToolBar no longer has barPos() method.
         // cg.writeEntry("ToolBarPos", (int) toolBar("mainToolBar")->barPos());
 
-        if (phraseList != 0)
+        if (phraseList != nullptr)
             phraseList->saveCompletionOptions();
         optionsDialog->saveOptions();
         KConfigGroup cg2(KSharedConfig::openConfig(), "mainToolBar");
@@ -322,7 +322,7 @@ void KMouthApp::readOptions()
     toolBar(QStringLiteral("phrasebookBar"))->applySettings(KSharedConfig::openConfig()->group("phrasebookBar"));
 
     slotPhrasebookConfirmed();
-    if (phraseList != 0)
+    if (phraseList != nullptr)
         phraseList->readCompletionOptions();
 }
 
@@ -373,11 +373,11 @@ void KMouthApp::slotFilePrint()
 {
     slotStatusMsg(i18n("Printing..."));
 
-    if (printer == 0) {
+    if (printer == nullptr) {
         printer = new QPrinter();
     }
 
-    QPrintDialog *printDialog = new QPrintDialog(printer, 0);
+    QPrintDialog *printDialog = new QPrintDialog(printer, nullptr);
 
     if (printDialog->exec()) {
         phraseList->print(printer);

@@ -355,8 +355,8 @@ void PhraseList::contextMenuRequested(const QPoint &pos)
     KMouthApp *theApp = (KMouthApp *) parentWidget();
     KXMLGUIFactory *factory = theApp->factory();
     QMenu *popup = (QMenu *)factory->container(name, theApp);
-    if (popup != 0) {
-        popup->exec(pos, 0);
+    if (popup != nullptr) {
+        popup->exec(pos, nullptr);
     }
 }
 
