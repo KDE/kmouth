@@ -37,7 +37,7 @@ Speech::~Speech()
 {
 }
 
-QString Speech::prepareCommand(QString command, const QString &text,
+QString Speech::prepareCommand(const QString &command, const QString &text,
                                const QString &filename, const QString &language)
 {
 #ifdef macroExpander

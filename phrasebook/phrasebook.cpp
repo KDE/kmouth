@@ -93,7 +93,7 @@ PhraseBookEntry::PhraseBookEntry()
     isPhraseValue = false;
 }
 
-PhraseBookEntry::PhraseBookEntry(Phrase phrase, int level, bool isPhrase)
+PhraseBookEntry::PhraseBookEntry(const Phrase &phrase, int level, bool isPhrase)
 {
     this->phrase = phrase;
     this->level = level;
@@ -172,7 +172,7 @@ bool PhraseBook::decode(QXmlInputSource &source)
         return false;
 }
 
-QByteArray encodeString(const QString str)
+QByteArray encodeString(const QString &str)
 {
     QByteArray res = "";
     for (int i = 0; i < (int)str.length(); i++) {
@@ -425,7 +425,7 @@ StandardBookList PhraseBook::standardPhraseBooks()
     return result;
 }
 
-QString PhraseBook::displayPath(QString filename)
+QString PhraseBook::displayPath(const QString &filename)
 {
     QFileInfo file(filename);
     QString path = file.path();

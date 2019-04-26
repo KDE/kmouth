@@ -73,7 +73,7 @@ class PhraseBookEntry
 {
 public:
     PhraseBookEntry();
-    explicit PhraseBookEntry(Phrase phrase, int level = 1, bool isPhrase = true);
+    explicit PhraseBookEntry(const Phrase &phrase, int level = 1, bool isPhrase = true);
     ~PhraseBookEntry() {}
 
     void setPhrase(Phrase phrase, int level = 1, bool isPhrase = true);
@@ -161,7 +161,7 @@ public:
     static StandardBookList standardPhraseBooks();
 
 private:
-    static QString displayPath(QString path);
+    static QString displayPath(const QString &path);
 };
 
 class PhraseAction : public QAction

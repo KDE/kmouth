@@ -570,7 +570,7 @@ QModelIndex PhraseBookDialog::getCurrentParent()
     return currentIndex;
 }
 
-void PhraseBookDialog::focusNewItem(QModelIndex parent, QStandardItem *item)
+void PhraseBookDialog::focusNewItem(const QModelIndex &parent, QStandardItem *item)
 {
     m_ui->treeView->expand(parent);
     QModelIndex newIndex = m_bookModel->indexFromItem(item);

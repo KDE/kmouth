@@ -37,13 +37,13 @@ typedef QMap<QString, int> WordMap;
 QProgressDialog *progressDialog();
 
 WordMap parseKDEDoc(QString language, QProgressDialog *pdlg);
-WordMap parseFile(QString filename, QTextCodec *codec, QProgressDialog *pdlg);
-WordMap parseDir(QString directory, QTextCodec *codec, QProgressDialog *pdlg);
-WordMap mergeFiles(QMap<QString, int> files, QProgressDialog *pdlg);
+WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap mergeFiles(const QMap<QString, int> &files, QProgressDialog *pdlg);
 
-WordMap spellCheck(WordMap wordlist,  QString dictionary,   QProgressDialog *pdlg);
+WordMap spellCheck(WordMap wordlist,  const QString &dictionary,   QProgressDialog *pdlg);
 
-bool saveWordList(WordMap map, QString filename);
+bool saveWordList(const WordMap &map, const QString &filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word

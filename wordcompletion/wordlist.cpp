@@ -37,7 +37,7 @@
 
 namespace WordList
 {
-void addWords(WordMap &map, QString line);
+void addWords(WordMap &map, const QString &line);
 
 XMLParser::XMLParser()
 {
@@ -134,7 +134,7 @@ QProgressDialog *progressDialog()
     return pdlg;
 }
 
-bool saveWordList(WordMap map, QString filename)
+bool saveWordList(const WordMap &map, const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly))
@@ -153,7 +153,7 @@ bool saveWordList(WordMap map, QString filename)
 
 /***************************************************************************/
 
-void addWords(WordMap &map, QString line)
+void addWords(WordMap &map, const QString &line)
 {
     const QStringList words = line.split(QRegExp(QStringLiteral("\\W")));
 
@@ -169,7 +169,7 @@ void addWords(WordMap &map, QString line)
     }
 }
 
-void addWords(WordMap &map, WordMap add)
+void addWords(WordMap &map, const WordMap &add)
 {
     WordList::WordMap::ConstIterator it;
     for (it = add.constBegin(); it != add.constEnd(); ++it)
@@ -179,7 +179,7 @@ void addWords(WordMap &map, WordMap add)
             map[it.key()] = it.value();
 }
 
-void addWordsFromFile(WordMap &map, QString filename, QTextCodec *codec)
+void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
 {
     QFile xmlfile(filename);
     QXmlInputSource source(&xmlfile);
@@ -230,7 +230,7 @@ void addWordsFromFile(WordMap &map, QString filename, QTextCodec *codec)
     }
 }
 
-WordMap parseFiles(QStringList files, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseFiles(const QStringList &files, QTextCodec *codec, QProgressDialog *pdlg)
 {
     int progress = 0;
     int steps = files.count();
@@ -250,7 +250,7 @@ WordMap parseFiles(QStringList files, QTextCodec *codec, QProgressDialog *pdlg)
     return map;
 }
 
-WordMap mergeFiles(QMap<QString, int> files, QProgressDialog *pdlg)
+WordMap mergeFiles(const QMap<QString, int> &files, QProgressDialog *pdlg)
 {
     pdlg->setLabelText(i18n("Merging dictionaries..."));
     pdlg->show();
@@ -319,7 +319,7 @@ WordMap parseKDEDoc(QString language, QProgressDialog *pdlg)
     return parseFiles(files, QTextCodec::codecForName("UTF-8"), pdlg);
 }
 
-WordMap parseFile(QString filename, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *pdlg)
 {
     pdlg->setLabelText(i18n("Parsing file..."));
     pdlg->show();
@@ -331,7 +331,7 @@ WordMap parseFile(QString filename, QTextCodec *codec, QProgressDialog *pdlg)
     return parseFiles(files, codec, pdlg);
 }
 
-WordMap parseDir(QString directory, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *pdlg)
 {
     pdlg->setLabelText(i18n("Parsing directory..."));
     pdlg->show();
@@ -510,7 +510,7 @@ void checkWord(const QString &word, const QString &modifiers, const WordMap &map
     }
 }
 
-WordMap spellCheck(WordMap map, QString dictionary, QProgressDialog *pdlg)
+WordMap spellCheck(WordMap map, const QString &dictionary, QProgressDialog *pdlg)
 {
 
     if (dictionary.endsWith(QLatin1String(".dic"))) {

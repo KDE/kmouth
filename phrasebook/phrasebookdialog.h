@@ -132,7 +132,7 @@ private:
     QModelIndex getCurrentParent();
 
     // Expand to, select and focus a new item from the given parameters
-    void focusNewItem(QModelIndex parent, QStandardItem *item);
+    void focusNewItem(const QModelIndex &parent, QStandardItem *item);
 
     void setShortcut(const QKeySequence &sequence);
 
