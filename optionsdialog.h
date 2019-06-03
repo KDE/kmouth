@@ -26,7 +26,6 @@
 #include "ui_preferencesui.h"
 
 class QTabWidget;
-class KCModule;
 class TextToSpeechSystem;
 class TextToSpeechConfigurationWidget;
 class WordCompletionWidget;

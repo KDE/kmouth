@@ -27,8 +27,6 @@
 
 class QStandardItem;
 class QStandardItemModel;
-class KActionMenu;
-class KToolBarPopupAction;
 
 /**
  * This class represents a widget for configuring the initial phrasebook.

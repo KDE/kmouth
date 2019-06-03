@@ -34,7 +34,6 @@
 class PhraseList;
 class OptionsDialog;
 class TextToSpeechSystem;
-class PhraseBook;
 
 class QLabel;
 
