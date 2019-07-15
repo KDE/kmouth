@@ -22,10 +22,8 @@
 #include "kmouth.h"
 
 // include files for Qt
-#include <QDir>
 #include <QMenu>
 #include <QMenuBar>
-#include <QPainter>
 #include <QPrintDialog>
 #include <QStandardPaths>
 #include <QStatusBar>

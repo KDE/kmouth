@@ -35,7 +35,6 @@
 #include <QUrl>
 
 #include <QDebug>
-#include <KConfigGroup>
 
 InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *name)
     : QWizardPage(parent)

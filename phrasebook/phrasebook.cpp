@@ -29,7 +29,6 @@
 #include <QPainter>
 #include <QRegExp>
 #include <QStack>
-#include <QTemporaryFile>
 #include <QTextStream>
 #include <QUrl>
 #include <QXmlInputSource>
@@ -44,7 +43,6 @@
 #include <KMessageBox>
 #include <KToolBar>
 
-#include <QDebug>
 
 Phrase::Phrase()
 {

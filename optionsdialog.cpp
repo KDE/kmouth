@@ -23,14 +23,12 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QIcon>
-#include <QLabel>
 #include <QPushButton>
 #include <QTabWidget>
 #include <QVBoxLayout>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KPageWidgetModel>
 #include <KSharedConfig>
 
 #include "speech.h"

@@ -25,10 +25,8 @@
 #include <QStandardPaths>
 #include <QUrl>
 
-#include <QDebug>
 
 #include <KConfigGroup>
-#include <KJobUiDelegate>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSharedConfig>

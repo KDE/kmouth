@@ -25,11 +25,9 @@
 #include <QLocale>
 #include <QGridLayout>
 #include <QProgressDialog>
-#include <QRadioButton>
 #include <QSpinBox>
 #include <QStandardPaths>
 #include <QTextCodec>
-#include <QTextStream>
 
 #include <QDebug>
 

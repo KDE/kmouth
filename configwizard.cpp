@@ -20,8 +20,6 @@
 
 #include "configwizard.h"
 
-#include <QLayout>
-#include <QLabel>
 #include <QStandardPaths>
 
 #include <KSharedConfig>

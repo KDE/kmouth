@@ -25,7 +25,6 @@
 #include <QStandardItemModel>
 
 #include <QAction>
-#include <QIcon>
 #include <QUrl>
 #include <KXmlGuiWindow>
 
