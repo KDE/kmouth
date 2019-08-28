@@ -280,7 +280,7 @@ void PhraseList::insert(const QString &s)
 
 void PhraseList::speakListSelection()
 {
-    speakPhrase(getListSelection().join(QStringLiteral("\n")));
+    speakPhrase(getListSelection().join(QLatin1String("\n")));
 }
 
 void PhraseList::removeListSelection()
@@ -305,7 +305,7 @@ void PhraseList::cutListSelection()
 
 void PhraseList::copyListSelection()
 {
-    QApplication::clipboard()->setText(getListSelection().join(QStringLiteral("\n")));
+    QApplication::clipboard()->setText(getListSelection().join(QLatin1String("\n")));
 }
 
 void PhraseList::lineEntered(const QString &phrase)

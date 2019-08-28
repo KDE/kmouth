@@ -247,7 +247,7 @@ void PhraseBook::save(QTextStream &stream, bool asPhrasebook)
     if (asPhrasebook)
         stream << encode();
     else
-        stream << toStringList().join(QStringLiteral("\n"));
+        stream << toStringList().join(QLatin1String("\n"));
 }
 
 bool PhraseBook::save(const QUrl &url, bool asPhrasebook)
