@@ -180,7 +180,7 @@ QString PhraseBookDialog::serializeBook(const QModelIndex &index)
         if (isBook) {
             QString childrenText;
             for (int i = 0; i < item->rowCount(); ++i) {
-                childrenText += serializeBook(index.child(i, 0));
+                childrenText += serializeBook(index.model()->index(i, 0, index));
             }
             value = kPhraseBookXML.arg(item->text()).arg(childrenText);
         } else {
@@ -520,7 +520,7 @@ void PhraseBookDialog::slotRemove()
 {
     if (m_ui->treeView->selectionModel()->hasSelection()) {
         QList<QModelIndex> selected = m_ui->treeView->selectionModel()->selectedRows();
-        qSort(selected.begin(), selected.end());
+        std::sort(selected.begin(), selected.end());
         // Iterate over the rows backwards so we don't modify the .row of any indexes in selected.
         for (int i = selected.size() - 1; i >= 0; --i) {
             QModelIndex index = selected.at(i);

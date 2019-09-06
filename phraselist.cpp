@@ -287,7 +287,7 @@ void PhraseList::removeListSelection()
 {
     if (m_listView->selectionModel()->hasSelection()) {
         QList<QModelIndex> selected = m_listView->selectionModel()->selectedRows();
-        qSort(selected.begin(), selected.end());
+        std::sort(selected.begin(), selected.end());
         // Iterate over the rows backwards so we don't modify the .row of any indexes in selected.
         for (int i = selected.size() - 1; i >= 0; --i) {
             QModelIndex index = selected.at(i);

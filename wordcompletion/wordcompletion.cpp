@@ -82,7 +82,7 @@ QString WordCompletion::makeCompletion(const QString &text)
             for (it = d->map.constBegin(); it != d->map.constEnd(); ++it)
                 if (it.key().startsWith(suffix))
                     matches += Match(-it.value(), it.key());
-            qSort(matches);
+            std::sort(matches.begin(), matches.end());
 
             MatchList::ConstIterator iter = matches.constBegin();
             for (int count = 0; (iter != matches.constEnd()) && (count < 10); ++iter, ++count) {
