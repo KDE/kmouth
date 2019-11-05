@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
 
     if (app.isSessionRestored()) {
-        RESTORE(KMouthApp);
+        kRestoreMainWindows<KMouthApp>();
     } else {
         KMouthApp *kmouth = new KMouthApp();
         if (!kmouth->configured())
