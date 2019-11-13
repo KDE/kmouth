@@ -159,7 +159,7 @@ bool PhraseBook::decode(QXmlInputSource &source)
 {
     PhraseBookParser parser;
     QXmlSimpleReader reader;
-    reader.setFeature(QStringLiteral("http://trolltech.com/xml/features/report-start-end-entity"), true);
+    reader.setFeature(QStringLiteral("http://qt-project.org/xml/features/report-start-end-entity"), true);
     reader.setContentHandler(&parser);
 
     if (reader.parse(source)) {
