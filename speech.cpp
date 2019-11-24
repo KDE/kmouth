@@ -196,7 +196,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
         command = prepareCommand(command, QLatin1String(encText), filename, language);
 
         // 3. create a new process
-        connect(&m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processExited(int, QProcess::ExitStatus)));
+        connect(&m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &Speech::processExited);
         //connect(&process, SIGNAL(wroteStdin(K3Process*)), this, SLOT(wroteStdin(K3Process*)));
         //connect(&process, SIGNAL(receivedStdout(K3Process*, char*, int)), this, SLOT(receivedStdout(K3Process*, char*, int)));
         //connect(&process, SIGNAL(receivedStderr(K3Process*, char*, int)), this, SLOT(receivedStderr(K3Process*, char*, int)));
