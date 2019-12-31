@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phrasebook>
+<phrasebook name="Salutacions">
+<phrase shortcut="">Hola.</phrase>
+<phrase shortcut="">Bon dia.</phrase>
+<phrase shortcut="">Bona tarda.</phrase>
+<phrase shortcut="">Bona nit.</phrase>
+<phrase shortcut="">Quina alegria! Vine, seu a la meva vora.</phrase>
+<phrase shortcut="">Déu vos guard.</phrase>
+<phrase shortcut="">Benvolgut amic.</phrase>
+<phrase shortcut="">Company.</phrase>
+<phrase shortcut="">Companya.</phrase>
+<phrase shortcut="">Adeu!</phrase>
+<phrase shortcut="">A reveure!</phrase>
+<phrase shortcut="">Passi-ho bé!</phrase>
+<phrase shortcut="">Salut!</phrase>
+<phrase shortcut="">Et veig després!</phrase>
+<phrase shortcut="">Cuida't!</phrase>
+<phrase shortcut="">No et menystinguis.</phrase>
+</phrasebook>
