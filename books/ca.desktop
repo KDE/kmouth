@@ -1,3 +1,10 @@
 # KDE Config File
 [Desktop Entry]
 Name=Catalan
+Name[ca]=Català
+Name[et]=Katalaani
+Name[nl]=Catalaans
+Name[pt]=Catalão
+Name[sv]=Katalanska
+Name[uk]=Каталанська
+Name[x-test]=xxCatalanxx
