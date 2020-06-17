@@ -32,7 +32,6 @@
   <name xml:lang="sl">KMouth</name>
   <name xml:lang="sv">Kmouth</name>
   <name xml:lang="uk">KMouth</name>
-  <name xml:lang="x-test">xxKMouthxx</name>
   <name xml:lang="zh-CN">KMouth</name>
   <name xml:lang="zh-TW">KMouth</name>
   <summary>Speech Synthesizer Frontend</summary>
@@ -64,7 +63,6 @@
   <summary xml:lang="sl">Začelje generatorja govora</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
   <summary xml:lang="uk">Оболонка для синтезу мовлення з тексту</summary>
-  <summary xml:lang="x-test">xxSpeech Synthesizer Frontendxx</summary>
   <summary xml:lang="zh-CN">语音合成器前端</summary>
   <summary xml:lang="zh-TW">語音合成器前端</summary>
   <description>
@@ -97,7 +95,6 @@
     <p xml:lang="sl">KMouth je program, ki omogoča osebam, ki ne morejo govoriti kot npr. nemi ljudje ali ljudje, ki so izgubili glas, da njihov računalnik govori namesto njih.  Ima polje za vnos besedila in govori stavke, ki jih vnesete. Prav tako ima podporo za uporabniško določene zbirke fraz. Opomba prevajalca: zaenkrat je podprt samo angleški generator govora.</p>
     <p xml:lang="sv">Kmouth är ett program som gör det möjligt för personer som inte kan tala att låta datorn tala, t.ex. stumma eller personer som har förlorat rösten. Det har ett textinmatningsfält och läser upp meningarna som skrivs in. Det har också stöd för användardefinierade parlörer.</p>
     <p xml:lang="uk">KMouth — програма, яка надає змогу тим, хто не може говорити, спілкуватися за допомогою комп'ютера. У ній передбачено поле для введення тексту, який вимовлятиме комп'ютер. Також можна створювати визначені користувачем набори заздалегідь приготованих фраз.</p>
-    <p xml:lang="x-test">xxKMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.xx</p>
     <p xml:lang="zh-CN">KMouth 是为那些不能说话的人发声的程序，比如聋哑人或失声的人。它有一个文本输入框，可以输入您键入的语句。它也支持用户定义的短语集。</p>
     <p xml:lang="zh-TW">KMouth 是個為喪失說話能力且想讓電腦代你說話的人們準備的一款程式。例如：無法說話或喪失說話能力的人們。KMouth 有個文字輸入欄位，且它會念出你輸入的句子。它同時也支援使用者定義的片語簿。</p>
   </description>
