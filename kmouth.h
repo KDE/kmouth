@@ -26,7 +26,7 @@
 #include <QPrinter>
 
 // include files for KDE
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 #include <QUrl>
 #include <kxmlguiwindow.h>
 

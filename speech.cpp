@@ -27,7 +27,7 @@
 #include <QTextStream>
 
 #define macroExpander
-#include <kmacroexpander.h>
+#include <KMacroExpander>
 
 Speech::Speech()
 {

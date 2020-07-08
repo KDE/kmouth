@@ -21,7 +21,7 @@
 #ifndef WORDCOMPLETION_H
 #define WORDCOMPLETION_H
 
-#include <kcompletion.h>
+#include <KCompletion>
 
 /**
  * This class does completion based on a dictionary of words.
