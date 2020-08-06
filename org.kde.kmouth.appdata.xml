@@ -114,5 +114,5 @@
   <provides>
     <binary>kmouth</binary>
   </provides>
-  <launchable type="desktop-id">org.kde.kmouth</launchable>
+  <launchable type="desktop-id">org.kde.kmouth.desktop</launchable>
 </component>
