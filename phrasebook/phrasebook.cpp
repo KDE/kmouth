@@ -21,7 +21,6 @@
 #include "phrasebook.h"
 #include "phrasebookparser.h"
 
-#include <QAction>
 #include <QBuffer>
 #include <QFile>
 #include <QFileDialog>
@@ -29,19 +28,14 @@
 #include <QPainter>
 #include <QRegExp>
 #include <QStack>
-#include <QTextStream>
 #include <QUrl>
-#include <QXmlInputSource>
 #include <QXmlSimpleReader>
 
 #include <KActionMenu>
-#include <KActionCollection>
 #include <KDesktopFile>
 #include <KIO/StoredTransferJob>
 #include <KLocalizedString>
-#include <QMenu>
 #include <KMessageBox>
-#include <KToolBar>
 
 
 Phrase::Phrase()

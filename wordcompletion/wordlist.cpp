@@ -28,9 +28,7 @@
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QTextStream>
-#include <QXmlAttributes>
 #include <QXmlInputSource>
-#include <QXmlParseException>
 #include <QXmlSimpleReader>
 
 #include <KLocalizedString>

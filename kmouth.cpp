@@ -32,7 +32,6 @@
 #include <KActionCollection>
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <KStandardAction>
 #include <KStandardShortcut>
 #include <KToggleAction>
