@@ -24,7 +24,7 @@
 #include <QDir>
 #include <QList>
 #include <QProgressDialog>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QTextStream>
@@ -153,11 +153,11 @@ bool saveWordList(const WordMap &map, const QString &filename)
 
 void addWords(WordMap &map, const QString &line)
 {
-    const QStringList words = line.split(QRegExp(QStringLiteral("\\W")));
+    const QStringList words = line.split(QRegularExpression(QStringLiteral("\\W")));
 
     QStringList::ConstIterator it;
     for (it = words.constBegin(); it != words.constEnd(); ++it) {
-        if (!(*it).contains(QRegExp(QStringLiteral("\\d|_")))) {
+        if (!(*it).contains(QRegularExpression(QStringLiteral("\\d|_")))) {
             QString key = (*it).toLower();
             if (map.contains(key))
                 map[key] += 1;
@@ -385,7 +385,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
         QTextStream stream(&afile);
         while (!stream.atEnd()) {
             QString s = stream.readLine();
-            QStringList fields = s.split(QRegExp(QStringLiteral("\\s")));
+            QStringList fields = s.split(QRegularExpression(QStringLiteral("\\s")));
 
             if (fields.count() == 4) {
                 cross = (fields[2] == QLatin1String("Y"));

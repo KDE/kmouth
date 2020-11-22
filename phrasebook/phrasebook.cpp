@@ -26,7 +26,6 @@
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QPainter>
-#include <QRegExp>
 #include <QStack>
 #include <QUrl>
 #include <QXmlSimpleReader>
@@ -231,8 +230,7 @@ QStringList PhraseBook::toStringList()
 
 bool PhraseBook::save(const QUrl &url)
 {
-    QRegExp pattern(QStringLiteral("*.phrasebook"), Qt::CaseSensitive, QRegExp::Wildcard);
-    return save(url, pattern.exactMatch(url.fileName()));
+    return save(url, url.fileName().endsWith(QLatin1String(".phrasebook")));
 }
 
 
