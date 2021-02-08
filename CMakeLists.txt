@@ -94,16 +94,16 @@ target_link_libraries(kmouth
                       Qt5::Widgets
                       Qt5::Xml )
 
-install(TARGETS kmouth  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS kmouth  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kmouth.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES kmouthrc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES kmouthui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kmouth )
-install( FILES phrasebookdialogui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kmouth )
-install(FILES org.kde.kmouth.appdata.xml DESTINATION ${CMAKE_INSTALL_METAINFODIR})
+install( PROGRAMS org.kde.kmouth.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES kmouthrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
+install( FILES kmouthui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
+install( FILES phrasebookdialogui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
+install(FILES org.kde.kmouth.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

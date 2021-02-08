@@ -11,7 +11,7 @@ ecm_install_icons(ICONS
     32-actions-phrasebook.png
     32-apps-kmouth.png
     48-apps-kmouth.png
-    DESTINATION ${ICON_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_ICONDIR}
     THEME hicolor
 )
 #
