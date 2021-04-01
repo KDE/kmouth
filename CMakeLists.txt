@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.5)
 
 project(kmouth)
 
@@ -10,8 +10,8 @@ endif(NOT MSVC)
 
 include(FeatureSummary)
 
-set(QT_MIN_VERSION "5.9.0")
-set(KF5_MIN_VERSION "5.46.0")
+set(QT_MIN_VERSION "5.14.0")
+set(KF5_MIN_VERSION "5.72.0")
 
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
