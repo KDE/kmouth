@@ -89,10 +89,10 @@ target_link_libraries(kmouth
                       KF5::I18n
                       KF5::WidgetsAddons
                       KF5::XmlGui
-                      Qt5::PrintSupport
-                      Qt5::TextToSpeech
-                      Qt5::Widgets
-                      Qt5::Xml )
+                      Qt::PrintSupport
+                      Qt::TextToSpeech
+                      Qt::Widgets
+                      Qt::Xml )
 
 install(TARGETS kmouth  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
