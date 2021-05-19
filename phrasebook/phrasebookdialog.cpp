@@ -70,7 +70,7 @@ StandardPhraseBookInsertAction::~StandardPhraseBookInsertAction()
 
 void StandardPhraseBookInsertAction::slotActivated()
 {
-    emit slotActivated(url);
+    Q_EMIT slotActivated(url);
 }
 
 
@@ -537,9 +537,9 @@ void PhraseBookDialog::slotCut()
 
 void PhraseBookDialog::slotCopy()
 {
-    QList<QModelIndex> selected = m_ui->treeView->selectionModel()->selectedRows();
+    const QList<QModelIndex> selected = m_ui->treeView->selectionModel()->selectedRows();
     QString xml;
-    foreach (const QModelIndex index, selected) {
+    for (const QModelIndex index : selected) {
         xml += serializeBook(index);
     }
     QMimeData *data = new QMimeData();
@@ -622,7 +622,7 @@ void PhraseBookDialog::slotSave()
         file.open(QIODevice::WriteOnly);
         file.write(serializeBook(QModelIndex()).toUtf8());
         file.close();
-        emit phrasebookConfirmed();
+        Q_EMIT phrasebookConfirmed();
         phrasebookChanged = false;
         fileSave->setEnabled(false);
     }

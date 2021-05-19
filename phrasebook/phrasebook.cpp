@@ -377,12 +377,12 @@ StandardBookList PhraseBook::standardPhraseBooks()
     QStringList bookPaths;
     const QStringList dirs =
         QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("books"), QStandardPaths::LocateDirectory);
-    Q_FOREACH (const QString &dir, dirs) {
+    for (const QString &dir : dirs) {
         const QStringList locales = QDir(dir).entryList(QDir::Dirs | QDir::NoDotAndDotDot);
-        Q_FOREACH (const QString &locale, locales) {
+        for (const QString &locale: locales) {
             const QStringList fileNames =
                 QDir(dir + QLatin1Char('/') + locale).entryList(QStringList() << QStringLiteral("*.phrasebook"));
-            Q_FOREACH (const QString &file, fileNames) {
+            for (const QString &file : fileNames) {
                 bookPaths.append(dir + QLatin1Char('/') + locale + QLatin1Char('/') + file);
             }
         }

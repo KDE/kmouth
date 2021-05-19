@@ -155,8 +155,8 @@ void WordCompletion::configure()
     d->blockCurrentListSignal = true;
     setWordList(d->current);
     d->blockCurrentListSignal = false;
-    emit wordListsChanged(wordLists());
-    emit currentListChanged(d->current);
+    Q_EMIT wordListsChanged(wordLists());
+    Q_EMIT currentListChanged(d->current);
 }
 
 bool WordCompletion::setWordList(const QString &wordlist)
@@ -197,7 +197,7 @@ bool WordCompletion::setWordList(const QString &wordlist)
         file.close();
     }
     if (!d->blockCurrentListSignal)
-        emit currentListChanged(d->current);
+        Q_EMIT currentListChanged(d->current);
     d->lastText.clear();
     d->wordsToSave = false;
     return result;

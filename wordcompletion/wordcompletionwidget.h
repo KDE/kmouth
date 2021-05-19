@@ -68,7 +68,7 @@ private Q_SLOTS:
      */
     void configChanged()
     {
-        emit changed(true);
+        Q_EMIT changed(true);
     }
 
 private:

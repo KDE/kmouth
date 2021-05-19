@@ -185,7 +185,7 @@ public Q_SLOTS:
     void slotTriggered()
     {
 //      trigger();
-        emit slotActivated(phrase);
+        Q_EMIT slotActivated(phrase);
     }
 
 Q_SIGNALS:

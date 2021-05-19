@@ -184,7 +184,7 @@ void OptionsDialog::slotOk()
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();
-    emit configurationChanged();
+    Q_EMIT configurationChanged();
 }
 
 void OptionsDialog::slotApply()
@@ -193,7 +193,7 @@ void OptionsDialog::slotApply()
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();
-    emit configurationChanged();
+    Q_EMIT configurationChanged();
 }
 
 TextToSpeechSystem *OptionsDialog::getTTSSystem() const

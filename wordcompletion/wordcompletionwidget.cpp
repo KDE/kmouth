@@ -250,7 +250,7 @@ void WordCompletionWidget::nameChanged(const QString &text)
             QStandardItem *newItem = new QStandardItem(text);
             newItem->setData(nameItem->data());
             model->setItem(dictionaryView->currentIndex().row(), 0, newItem);
-            emit changed(true);
+            Q_EMIT changed(true);
         }
     }
 }
@@ -266,7 +266,7 @@ void WordCompletionWidget::languageSelected()
         if (old != text) {
             QStandardItem *newItem = new QStandardItem(text);
             model->setItem(dictionaryView->currentIndex().row(), 1, newItem);
-            emit changed(true);
+            Q_EMIT changed(true);
         }
     }
 }
