@@ -40,8 +40,6 @@ find_package(KF5  ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 
-add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
-
 add_subdirectory( doc )
 add_subdirectory( icons )
 add_subdirectory( books )
@@ -50,8 +48,9 @@ include_directories(./wordcompletion/  )
 
 
 ########### next target ###############
+add_executable(kmouth)
 
-set(kmouth_SRCS
+target_sources(kmouth PRIVATE
     ./phrasebook/phrasebookparser.cpp
     ./phrasebook/phrasebookdialog.cpp
     ./phrasebook/initialphrasebookwidget.cpp
@@ -69,7 +68,7 @@ set(kmouth_SRCS
     kmouth.cpp
     main.cpp )
 
-ki18n_wrap_ui(kmouth_SRCS
+ki18n_wrap_ui(kmouth
     ./phrasebook/phrasebookdialog.ui
     ./wordcompletion/creationsourceui.ui
     ./wordcompletion/creationsourcedetailsui.ui
@@ -78,7 +77,6 @@ ki18n_wrap_ui(kmouth_SRCS
     preferencesui.ui
     texttospeechconfigurationui.ui )
 
-add_executable(kmouth ${kmouth_SRCS})
 
 target_link_libraries(kmouth
                       KF5::Completion
