@@ -113,7 +113,6 @@ void WordCompletionWidget::save()
         if ((*it).startsWith(QLatin1String("Dictionary ")))
             KSharedConfig::openConfig()->deleteGroup(*it);
 
-    int row = 0;
     for (int row = 0; row < model->rowCount(); ++row) {
         const QStandardItem *nameItem = model->item(row, 0);
         const QStandardItem *languageItem = model->item(row, 1);
@@ -147,7 +146,7 @@ void WordCompletionWidget::addDictionary()
         dictionaryFiles += nameItem->data().toString();
         dictionaryLanguages += languageItem->text();
     }
-    DictionaryCreationWizard *wizard = new DictionaryCreationWizard(this, "Dictionary creation wizard", dictionaryNames, dictionaryFiles, dictionaryLanguages);
+    DictionaryCreationWizard *wizard = new DictionaryCreationWizard(this, dictionaryNames, dictionaryFiles, dictionaryLanguages);
     if (wizard->exec() == QDialog::Accepted) {
         QString filename = wizard->createDictionary();
         newDictionaryFiles += filename;

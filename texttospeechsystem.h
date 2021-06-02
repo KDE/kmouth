@@ -34,8 +34,8 @@ class TextToSpeechSystem : public QObject
     Q_OBJECT
     friend class TextToSpeechConfigurationWidget;
 public:
-    TextToSpeechSystem();
-    ~TextToSpeechSystem();
+    explicit TextToSpeechSystem(QObject *parent = nullptr);
+    ~TextToSpeechSystem() override;
 
     void readOptions(const QString &langGroup);
     void saveOptions(const QString &langGroup);

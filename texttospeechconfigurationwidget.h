@@ -49,7 +49,7 @@ public:
 private:
     void buildCodecList();
 
-    TextToSpeechSystem *ttsSystem;
+    TextToSpeechSystem *ttsSystem = nullptr;
 };
 
 #endif // TEXTTOSPEECHCONFIGURATIONWIDGET_H

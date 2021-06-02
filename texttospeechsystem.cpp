@@ -28,7 +28,8 @@
 
 #include "speech.h"
 
-TextToSpeechSystem::TextToSpeechSystem()
+TextToSpeechSystem::TextToSpeechSystem(QObject *parent)
+    : QObject(parent)
 {
     stdIn = true;
     useQtSpeech = true;

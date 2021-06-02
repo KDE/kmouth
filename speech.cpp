@@ -91,7 +91,7 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
         // 4. start the process
         if (stdIn) {
             m_process.start(command);
-            if (encText.size() > 0)
+            if (!encText.isEmpty())
                 m_process.write(encText.constData(), encText.size());
             else
                 m_process.close();

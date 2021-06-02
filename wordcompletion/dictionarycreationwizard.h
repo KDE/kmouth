@@ -98,7 +98,7 @@ class DictionaryCreationWizard : public QWizard
 {
     Q_OBJECT
 public:
-    DictionaryCreationWizard(QWidget *parent, const char *name,
+    DictionaryCreationWizard(QWidget *parent,
                              const QStringList &dictionaryNames,
                              const QStringList &dictionaryFiles,
                              const QStringList &dictionaryLanguages);

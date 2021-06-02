@@ -32,7 +32,7 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent
 {
     setObjectName(name);
     setupUi(this);
-    ttsSystem = new TextToSpeechSystem();
+    ttsSystem = new TextToSpeechSystem(this);
 
     buildCodecList();
 }

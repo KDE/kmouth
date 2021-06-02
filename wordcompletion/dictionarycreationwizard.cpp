@@ -54,7 +54,7 @@ void CreationSourceWidget::emptyToggled(bool checked)
     setFinalPage(checked);
 }
 
-DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent, const char *name,
+DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
         const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
         const QStringList &dictionaryLanguages)
     : QWizard(parent)
