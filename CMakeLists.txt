@@ -11,7 +11,7 @@ endif(NOT MSVC)
 include(FeatureSummary)
 
 set(QT_MIN_VERSION "5.15.0")
-set(KF5_MIN_VERSION "5.83.0")
+set(KF5_MIN_VERSION "5.85.0")
 
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
@@ -39,6 +39,12 @@ find_package(KF5  ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
 )
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
+add_definitions(
+	#-DQT_DISABLE_DEPRECATED_BEFORE=0x050F00
+    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+    -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055600
+    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
+)
 
 add_subdirectory( doc )
 add_subdirectory( icons )
