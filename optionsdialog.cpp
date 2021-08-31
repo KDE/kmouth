@@ -121,21 +121,9 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     : KPageDialog(parent)
 {
     setWindowTitle(i18n("Configuration"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Apply);
-    QWidget *mainWidget = new QWidget(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-    mainLayout->addWidget(mainWidget);
-    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
-    okButton->setDefault(true);
-    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    //PORTING SCRIPT: WARNING mainLayout->addWidget(buttonBox) must be last item in layout. Please move it.
-    mainLayout->addWidget(buttonBox);
     setFaceType(KPageDialog::List);
     //setHelp(QLatin1String("config-dialog"));
-
+    setStandardButtons(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Apply);
 
     //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
 
@@ -158,12 +146,9 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     pageCompletion->setHeader(i18n("Word Completion"));
     pageCompletion->setIcon(QIcon::fromTheme(QStringLiteral("keyboard")));
     addPage(pageCompletion);
-
-    buttonBox->button(QDialogButtonBox::Cancel)->setDefault(true);
-
-    connect(okButton, &QAbstractButton::clicked, this, &OptionsDialog::slotOk);
-    connect(buttonBox->button(QDialogButtonBox::Cancel), &QAbstractButton::clicked, this, &OptionsDialog::slotCancel);
-    connect(buttonBox->button(QDialogButtonBox::Apply), &QAbstractButton::clicked, this, &OptionsDialog::slotApply);
+    connect(button(QDialogButtonBox::Ok), &QAbstractButton::clicked, this, &OptionsDialog::slotOk);
+    connect(button(QDialogButtonBox::Cancel), &QAbstractButton::clicked, this, &OptionsDialog::slotCancel);
+    connect(button(QDialogButtonBox::Apply), &QAbstractButton::clicked, this, &OptionsDialog::slotApply);
 }
 
 OptionsDialog::~OptionsDialog()
