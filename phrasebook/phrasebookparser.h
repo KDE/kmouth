@@ -36,7 +36,7 @@ class PhraseBookParser : public QXmlDefaultHandler
 {
 public:
     PhraseBookParser();
-    ~PhraseBookParser();
+    ~PhraseBookParser() override;
 
     bool warning(const QXmlParseException &exception) override;
     bool error(const QXmlParseException &exception) override;

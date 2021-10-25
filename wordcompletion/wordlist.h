@@ -55,7 +55,7 @@ class XMLParser : public QXmlDefaultHandler
 {
 public:
     XMLParser();
-    ~XMLParser();
+    ~XMLParser() override;
 
     bool warning(const QXmlParseException &exception) override;
     bool error(const QXmlParseException &exception) override;

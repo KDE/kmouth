@@ -41,7 +41,7 @@ public:
     };
 
     Speech();
-    ~Speech();
+    ~Speech() override;
 
     /**
      * Speaks the given text.

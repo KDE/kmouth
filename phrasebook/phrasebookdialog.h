@@ -44,7 +44,7 @@ class StandardPhraseBookInsertAction : public QAction
     Q_OBJECT
 public:
     StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
-    ~StandardPhraseBookInsertAction();
+    ~StandardPhraseBookInsertAction() override;
 
 public Q_SLOTS:
     void slotActivated();
@@ -79,7 +79,7 @@ public:
     static PhraseBookDialog *get();
 
     /** Destructor. */
-    ~PhraseBookDialog();
+    ~PhraseBookDialog() override;
 
     bool queryClose() override;
 

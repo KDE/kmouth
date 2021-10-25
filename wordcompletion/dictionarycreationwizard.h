@@ -102,7 +102,7 @@ public:
                              const QStringList &dictionaryNames,
                              const QStringList &dictionaryFiles,
                              const QStringList &dictionaryLanguages);
-    virtual ~DictionaryCreationWizard();
+    ~DictionaryCreationWizard() override;
 
     QString createDictionary();
     QString name();
@@ -142,7 +142,7 @@ public:
                 const QStringList &dictionaryNames,
                 const QStringList &dictionaryFiles,
                 const QStringList &dictionaryLanguages);
-    ~MergeWidget();
+    ~MergeWidget() override;
 
     QMap <QString, int> mergeParameters();
     QString language();
@@ -165,7 +165,7 @@ class CompletionWizardWidget : public QWizardPage, public Ui::KDEDocSourceUI
     friend class ConfigWizard;
 public:
     CompletionWizardWidget(QWidget *parent, const char *name);
-    ~CompletionWizardWidget();
+    ~CompletionWizardWidget() override;
 
     void ok();
 };

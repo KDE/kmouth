@@ -37,7 +37,7 @@ class InitialPhraseBookWidget : public QWizardPage
     Q_OBJECT
 public:
     InitialPhraseBookWidget(QWidget *parent, const char *name);
-    ~InitialPhraseBookWidget();
+    ~InitialPhraseBookWidget() override;
 
     void createBook();
 

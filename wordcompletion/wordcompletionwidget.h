@@ -34,7 +34,7 @@ class WordCompletionWidget : public QWidget, public Ui::WordCompletionUI
     Q_OBJECT
 public:
     WordCompletionWidget(QWidget *parent, const char *name);
-    ~WordCompletionWidget();
+    ~WordCompletionWidget() override;
 
     /**
      * This method is invoked whenever the widget should read its configuration

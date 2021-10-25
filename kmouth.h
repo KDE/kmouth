@@ -59,7 +59,7 @@ public:
     /** construtor of KMouthApp, calls all init functions to create the application.
      */
     explicit KMouthApp(QWidget* parent = nullptr, const QString &name = QString());
-    ~KMouthApp();
+    ~KMouthApp() override;
     /** Returns true if the configuration wizard was not needed or when it
      * was successfully completed.
      */

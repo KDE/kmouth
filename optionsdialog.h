@@ -39,7 +39,7 @@ class PreferencesWidget : public QWidget, public Ui::PreferencesUI
     Q_OBJECT
 public:
     explicit PreferencesWidget(QWidget *parent, const QString &name);
-    ~PreferencesWidget();
+    ~PreferencesWidget() override;
 
     void readOptions();
     void saveOptions();
@@ -63,7 +63,7 @@ class OptionsDialog : public KPageDialog
     Q_OBJECT
 public:
     OptionsDialog(QWidget *parent);
-    ~OptionsDialog();
+    ~OptionsDialog() override;
 
     TextToSpeechSystem *getTTSSystem() const;
 

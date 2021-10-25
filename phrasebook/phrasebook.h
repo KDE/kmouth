@@ -177,7 +177,7 @@ public:
         connect(this, SIGNAL(slotActivated(const QString &)), receiver, slot);
         parent->addAction(phrase, this);
     }
-    ~PhraseAction()
+    ~PhraseAction() override
     {
     }
 

@@ -36,7 +36,7 @@ class ConfigWizard : public QWizard
     Q_OBJECT
 public:
     explicit ConfigWizard(QWidget *parent);
-    ~ConfigWizard();
+    ~ConfigWizard() override;
 
     bool configurationNeeded();
     bool requestConfiguration();

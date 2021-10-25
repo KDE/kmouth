@@ -32,7 +32,7 @@ class WordCompletion : public KCompletion
     Q_OBJECT
 public:
     WordCompletion();
-    virtual ~WordCompletion();
+    ~WordCompletion() override;
 
     /**
      * Returns the names for the available word lists
