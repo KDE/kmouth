@@ -14,17 +14,24 @@ set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.85.0")
 
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core PrintSupport TextToSpeech Xml Widgets)
-
 find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
-include(ECMAddAppIcon)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+
+include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
+
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+    Core
+    PrintSupport
+    TextToSpeech
+    Xml
+    Widgets
+)
 
 find_package(KF5  ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Crash
