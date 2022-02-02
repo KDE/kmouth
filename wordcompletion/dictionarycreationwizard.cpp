@@ -303,6 +303,8 @@ CompletionWizardWidget::CompletionWizardWidget(QWidget *parent, const char *name
 {
     setupUi(this);
     setObjectName(QLatin1String(name));
+    languageButton->showLanguageCodes(true);
+    languageButton->loadAllLanguages();
 }
 
 CompletionWizardWidget::~CompletionWizardWidget()
