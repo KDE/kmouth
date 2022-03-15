@@ -27,6 +27,8 @@
 #include "speech.h"
 #include "texttospeechsystem.h"
 
+#include <QtTextToSpeech>
+
 TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent, const QString &name)
     : QWizardPage(parent)
 {
@@ -34,7 +36,24 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent
     setupUi(this);
     ttsSystem = new TextToSpeechSystem(this);
 
+    connect(qtspeechGroupBox, &QGroupBox::toggled,
+            this, &TextToSpeechConfigurationWidget::useQtspeechChanged);
     buildCodecList();
+
+    // BEGIN Text-to-speech section
+    // Populate tts engines and use their names directly as key and item text:
+    const QStringList engines = QTextToSpeech::availableEngines();
+    for (const QString &engine : engines) {
+        engineComboBox->addItem(engine);
+    }
+
+    connect(engineComboBox, qOverload<int>(&QComboBox::currentIndexChanged),
+            this, &TextToSpeechConfigurationWidget::slotTTSEngineChanged);
+    connect(voiceComboBox, &QComboBox::currentTextChanged,
+            this, &TextToSpeechConfigurationWidget::slotTTSVoiceChanged);
+
+    // Preload voice list
+    slotTTSEngineChanged();
 }
 
 TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget()
@@ -57,7 +76,39 @@ void TextToSpeechConfigurationWidget::cancel()
     urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
-    useQtSpeech->setChecked(ttsSystem->useQtSpeech);
+    qtspeechGroupBox->setChecked(ttsSystem->useQtSpeech);
+}
+
+void TextToSpeechConfigurationWidget::useQtspeechChanged(bool enabled)
+{
+    alternativeGroupBox->setEnabled(!enabled);
+}
+
+void TextToSpeechConfigurationWidget::slotTTSEngineChanged()
+{
+    QString engine = engineComboBox->currentText();
+    ttsSystem->ttsEngine = engine;
+
+    // Get list of voices and repopulate voice tts combobox
+    QTextToSpeech *ttsEngine = new QTextToSpeech(engine);
+    const QVector<QVoice> voices = ttsEngine->availableVoices();
+    voiceComboBox->blockSignals(true);
+    voiceComboBox->clear();
+    for (const QVoice &voice : voices) {
+        voiceComboBox->addItem(voice.name());
+    }
+    delete ttsEngine;
+
+    // If there's a voice set, try to load it
+    if (!ttsSystem->ttsVoice.isEmpty()) {
+        voiceComboBox->setCurrentText(ttsSystem->ttsVoice);
+    }
+    voiceComboBox->blockSignals(false);
+}
+
+void TextToSpeechConfigurationWidget::slotTTSVoiceChanged(QString voice)
+{
+    ttsSystem->ttsVoice = voice;
 }
 
 void TextToSpeechConfigurationWidget::ok()
@@ -65,7 +116,7 @@ void TextToSpeechConfigurationWidget::ok()
     ttsSystem->ttsCommand = urlReq->url().toLocalFile();
     ttsSystem->stdIn = stdInButton->isChecked();
     ttsSystem->codec = characterCodingBox->currentIndex();
-    ttsSystem->useQtSpeech = useQtSpeech->isChecked();
+    ttsSystem->useQtSpeech = qtspeechGroupBox->isChecked();
 }
 
 TextToSpeechSystem *TextToSpeechConfigurationWidget::getTTSSystem() const
@@ -79,7 +130,12 @@ void TextToSpeechConfigurationWidget::readOptions(const QString &langGroup)
     urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
     characterCodingBox->setCurrentIndex(ttsSystem->codec);
-    useQtSpeech->setChecked(ttsSystem->useQtSpeech);
+    qtspeechGroupBox->setChecked(ttsSystem->useQtSpeech);
+    engineComboBox->setCurrentText(ttsSystem->ttsEngine);
+
+    if (!ttsSystem->ttsVoice.isEmpty()) {
+        voiceComboBox->setCurrentText(ttsSystem->ttsVoice);
+    }
 }
 
 void TextToSpeechConfigurationWidget::saveOptions(const QString &langGroup)

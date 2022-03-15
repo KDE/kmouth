@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2002 by Gunnar Schmi Dt <kmouth@schmi-dt.de             *
- *             (C) 2015 by Jeremy Whiting <jpwhiting@kde.org>              *
+ *             (C) 2015, 2022 by Jeremy Whiting <jpwhiting@kde.org>        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -45,6 +45,13 @@ public:
 
     void ok();
     void cancel();
+
+private Q_SLOTS:
+    void useQtspeechChanged(bool enabled);
+
+    void slotTTSEngineChanged();
+
+    void slotTTSVoiceChanged(QString voice);
 
 private:
     void buildCodecList();
