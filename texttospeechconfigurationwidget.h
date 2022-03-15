@@ -51,7 +51,7 @@ private Q_SLOTS:
 
     void slotTTSEngineChanged();
 
-    void slotTTSVoiceChanged(QString voice);
+    void slotTTSVoiceChanged(const QString &voice);
 
 private:
     void buildCodecList();

@@ -106,7 +106,7 @@ void TextToSpeechConfigurationWidget::slotTTSEngineChanged()
     voiceComboBox->blockSignals(false);
 }
 
-void TextToSpeechConfigurationWidget::slotTTSVoiceChanged(QString voice)
+void TextToSpeechConfigurationWidget::slotTTSVoiceChanged(const QString &voice)
 {
     ttsSystem->ttsVoice = voice;
 }

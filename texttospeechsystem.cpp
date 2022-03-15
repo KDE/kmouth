@@ -29,15 +29,14 @@
 #include "speech.h"
 
 TextToSpeechSystem::TextToSpeechSystem(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      codec(Speech::Local),
+      stdIn(true),
+      useQtSpeech(true),
+      ttsEngine(QLatin1String("speechd")),
+      m_speech(new QTextToSpeech(ttsEngine))
 {
-    stdIn = true;
-    useQtSpeech = true;
-    // Default to speechd
-    ttsEngine = QLatin1String("speechd");
-    codec = Speech::Local; // local encoding;
     buildCodecList();
-    m_speech = new QTextToSpeech(ttsEngine);
 }
 
 TextToSpeechSystem::~TextToSpeechSystem()
