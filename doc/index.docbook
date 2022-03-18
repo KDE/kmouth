@@ -28,8 +28,8 @@
   <legalnotice>&FDLNotice;</legalnotice>
 
 
-  <date>2018-01-04</date>
-  <releaseinfo>1.2.0 (Applications 17.12)</releaseinfo>
+  <date>2022-03-18</date>
+  <releaseinfo>1.2.0 (KDE Gear 22.04)</releaseinfo>
 
   <abstract>
     <para>
@@ -84,28 +84,9 @@
     </para>
     <para>
       With the first page of the wizard you specify
-      the command that shall be used for the text-to-speech conversion.
+      the engine and voice that shall be used for the text-to-speech conversion.
       For more details look into the <link linkend="tts-config">description
       of the configuration dialog.</link>
-    </para>
-    <para>
-      <screenshot>
-        <screeninfo>Initial Phrase Book</screeninfo>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
-          </imageobject>
-          <textobject>
-            <phrase>Initial Phrase Book</phrase>
-          </textobject>
-        </mediaobject>
-      </screenshot>
-    </para>
-    <para>
-      With the second page you select which standard phrase books you need.
-      From the phrase books you can select often used phrases so that
-      you do not need to type them in. Of course &kmouth; also has an edit
-      dialog for the case that you later want to edit your phrase books.
     </para>
     <para>
       <screenshot>
@@ -181,9 +162,6 @@
             <imageobject>
               <imagedata fileref="kmouthcpref.png" format="PNG"/>
             </imageobject>
-            <imageobject>
-              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
-            </imageobject>
             <textobject>
               <phrase>Screen shot</phrase>
             </textobject>
@@ -253,8 +231,11 @@
         </para></note>
       </para>
       <para>
-        Into the edit field of the <guilabel>Text-to-Speech</guilabel> tab you enter the command
-        for calling the speech synthesizer. With the combo box below the edit
+          It is also possible to select the <guilabel>Engine</guilabel> and <guilabel>Voice</guilabel> for the speech system.
+      </para>
+      <para>
+        Should the <guilabel>Use default speech system</guilabel> item is not selected you can enter the command
+        for calling the speech synthesize into the edit field of the <guilabel>Alternative</guilabel> panel. With the combo box below the edit
         field you specify the character encoding that is used for passing the
         text to the speech synthesizer.
       </para>

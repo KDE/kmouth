@@ -5,11 +5,13 @@
 
 <refentry lang="&language;">
 <refentryinfo>
-<title>&kde; User's Manual</title>
-<author>&Lauri.Watts; &Lauri.Watts.mail;</author>
-<date>2018-01-03</date>
-<releaseinfo>Applications 17.12</releaseinfo>
-<productname>KDE Applications</productname>
+<title>KMouth User's Manual</title>
+<author><firstname>Lauri</firstname><surname>Watts</surname>
+<contrib>KMouth man page.</contrib>
+&Lauri.Watts.mail;</author>
+<date>2022-03-18</date>
+<releaseinfo>KMouth 22.04</releaseinfo>
+<productname>KDE Gear</productname>
 </refentryinfo>
 
 <refmeta>
