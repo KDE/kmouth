@@ -22,10 +22,10 @@
 #define PHRASEBOOK_H
 
 #include <QObject>
+#include <QIODevice>
 #include <QMenu>
 #include <QPrinter>
 #include <QTextStream>
-#include <QXmlInputSource>
 
 #include <QAction>
 #include <KActionCollection>
@@ -47,7 +47,6 @@ typedef QList<StandardBook> StandardBookList;
  */
 class Phrase
 {
-    friend class PhraseBookParser;
 public:
     Phrase();
     Phrase(const QString &phrase);
@@ -113,10 +112,7 @@ public:
     bool open(const QUrl &url);
 
     /** decodes a phrase book. Returns true if successful. */
-    bool decode(const QString &xml);
-
-    /** decodes a phrase book. Returns true if successful. */
-    bool decode(QXmlInputSource &source);
+    bool decode(QIODevice *source);
 
     /** Writes the phrases to a file. Returns true if successful. */
     bool save(const QUrl &url);

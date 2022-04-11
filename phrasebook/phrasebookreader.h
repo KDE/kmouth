@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2002 by Gunnar Schmi Dt <kmouth@schmi-dt.de             *
- *             (C) 2015 by Jeremy Whiting <jpwhiting@kde.org>              *
+ *             (C) 2015,2022 by Jeremy Whiting <jpwhiting@kde.org>         *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,61 +18,43 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#ifndef PHRASEBOOKPARSER_H
-#define PHRASEBOOKPARSER_H
+#ifndef PHRASEBOOKREADER_H
+#define PHRASEBOOKREADER_H
 
-#include <QXmlAttributes>
-#include <QXmlParseException>
+#include <QXmlStreamReader>
 
 #include "phrasebook.h"
 
 /**
- * This class implements a parser for both the phrase list and for phrase
- * books. It is intended to be used together with the Qt SAX2 framework.
- * @author Gunnar Schmi Dt
+ * This class implements a reader for both the phrase list and for phrase
+ * books. Pass a QIODevice to read check the return value and get the list.
  */
 
-class PhraseBookParser : public QXmlDefaultHandler
+class PhraseBookReader
 {
 public:
-    PhraseBookParser();
-    ~PhraseBookParser() override;
+    PhraseBookReader();
+    ~PhraseBookReader();
 
-    bool warning(const QXmlParseException &exception) override;
-    bool error(const QXmlParseException &exception) override;
-    bool fatalError(const QXmlParseException &exception) override;
-    QString errorString() const override;
+    bool read(QIODevice *device);
 
-    /** Processes the start of the document. */
-    bool startDocument() override;
-
-    /** Processes the start tag of an element. */
-    bool startElement(const QString &, const QString &, const QString &name,
-                      const QXmlAttributes &attributes) override;
-
-    /** Processes a chunk of normal character data. */
-    bool characters(const QString &ch) override;
-
-    /** Processes whitespace. */
-    bool ignorableWhitespace(const QString &ch) override;
-
-    /** Processes the end tag of an element. */
-    bool endElement(const QString &, const QString &, const QString &name) override;
-
-    /** Processes the end of the document. */
-    bool endDocument() override;
+    QString errorString() const;
 
     /** returns a list of phrase book entries */
     PhraseBookEntryList getPhraseList();
 
 private:
-    bool isInPhrase;
-    bool starting;
-    int offset;
-    Phrase phrase;
+    // Read an entire book
+    void readbook();
+
+    // Read a phrase
+    void readphrase();
 
     PhraseBookEntryList list;
+    QXmlStreamReader xml;
+
     int level;
+    bool starting;
 };
 
 #endif

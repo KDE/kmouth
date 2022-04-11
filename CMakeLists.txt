@@ -64,7 +64,7 @@ include_directories(./wordcompletion/  )
 add_executable(kmouth)
 
 target_sources(kmouth PRIVATE
-    ./phrasebook/phrasebookparser.cpp
+    ./phrasebook/phrasebookreader.cpp
     ./phrasebook/phrasebookdialog.cpp
     ./phrasebook/initialphrasebookwidget.cpp
     ./phrasebook/phrasebook.cpp

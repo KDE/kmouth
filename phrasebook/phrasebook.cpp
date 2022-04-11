@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include "phrasebook.h"
-#include "phrasebookparser.h"
+#include "phrasebookreader.h"
 
 #include <QBuffer>
 #include <QFile>
@@ -36,6 +36,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QtDebug>
 
 Phrase::Phrase()
 {
@@ -141,26 +142,18 @@ void PhraseBook::print(QPrinter *pPrinter)
     printpainter.end();
 }
 
-bool PhraseBook::decode(const QString &xml)
+bool PhraseBook::decode(QIODevice *source)
 {
-    QXmlInputSource source;
-    source.setData(xml);
-    return decode(source);
-}
+    PhraseBookReader reader;
 
-bool PhraseBook::decode(QXmlInputSource &source)
-{
-    PhraseBookParser parser;
-    QXmlSimpleReader reader;
-    reader.setFeature(QStringLiteral("http://qt-project.org/xml/features/report-start-end-entity"), true);
-    reader.setContentHandler(&parser);
-
-    if (reader.parse(source)) {
+    if (reader.read(source)) {
         PhraseBookEntryList::clear();
-        *(PhraseBookEntryList *)this += parser.getPhraseList();
+        *(PhraseBookEntryList *)this += reader.getPhraseList();
         return true;
-    } else
+    } else {
+        qDebug() << "Unable to read xml file: " << reader.errorString();
         return false;
+    }
 }
 
 QByteArray encodeString(const QString &str)
@@ -348,8 +341,9 @@ bool PhraseBook::open(const QUrl &url)
         QBuffer fileBuffer;
         fileBuffer.setData(downloadJob->data());
 
-        QXmlInputSource source(&fileBuffer);
-        bool error = !decode(source);
+        fileBuffer.open(QIODevice::ReadOnly);
+
+        bool error = !decode(&fileBuffer);
 
         // Second: if the file does not contain a phrase book, load it as
         // a plain text file
