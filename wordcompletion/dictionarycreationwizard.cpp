@@ -90,7 +90,7 @@ DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
     kdeDocWidget->languageButton->showLanguageCodes(true);
     kdeDocWidget->languageButton->loadAllLanguages();
 
-    mergeWidget = new MergeWidget(this, "merge source page", dictionaryNames, dictionaryFiles, dictionaryLanguages);
+    mergeWidget = new MergeWidget(this, dictionaryNames, dictionaryFiles, dictionaryLanguages);
     mergeWidget->setTitle(i18n("Source of New Dictionary (2)"));
     mergeWidget->setFinalPage(true);
     setPage(MergePage, mergeWidget);
@@ -230,7 +230,7 @@ QString DictionaryCreationWizard::language()
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(QWidget *parent, const char *name,
+MergeWidget::MergeWidget(QWidget *parent,
                          const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
                          const QStringList &dictionaryLanguages)
     : QWizardPage(parent)

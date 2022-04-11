@@ -116,6 +116,8 @@ void Speech::speak(QString command, bool stdIn, const QString &text, const QStri
 
 void Speech::processExited(int exitCode, QProcess::ExitStatus exitStatus)
 {
+    Q_UNUSED(exitCode);
+    Q_UNUSED(exitStatus);
     delete this;
 }
 

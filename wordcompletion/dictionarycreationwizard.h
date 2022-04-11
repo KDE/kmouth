@@ -138,7 +138,7 @@ class MergeWidget : public QWizardPage
 {
     Q_OBJECT
 public:
-    MergeWidget(QWidget *parent, const char *name,
+    MergeWidget(QWidget *parent,
                 const QStringList &dictionaryNames,
                 const QStringList &dictionaryFiles,
                 const QStringList &dictionaryLanguages);
