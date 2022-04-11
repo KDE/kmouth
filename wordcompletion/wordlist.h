@@ -22,9 +22,7 @@
 #define WORDLIST_H
 
 #include <QMap>
-#include <QXmlAttributes>
-#include <QXmlDefaultHandler>
-#include <QXmlParseException>
+#include <QXmlStreamReader>
 
 class QTextCodec;
 class QProgressDialog;
@@ -47,39 +45,18 @@ bool saveWordList(const WordMap &map, const QString &filename);
 
 /**
  * This class implements a parser for reading docbooks and generating word
- * lists. It is intended to be used together with the Qt SAX2 framework.
- * @author Gunnar Schmi Dt
+ * lists.
  */
 
-class XMLParser : public QXmlDefaultHandler
+class XMLReader
 {
 public:
-    XMLParser();
-    ~XMLParser() override;
+    XMLReader();
+    ~XMLReader();
 
-    bool warning(const QXmlParseException &exception) override;
-    bool error(const QXmlParseException &exception) override;
-    bool fatalError(const QXmlParseException &exception) override;
-    QString errorString() const override;
+    bool read(QIODevice *device);
 
-    /** Processes the start of the document. */
-    bool startDocument() override;
-
-    /** Processes the start tag of an element. */
-    bool startElement(const QString &, const QString &, const QString &name,
-                      const QXmlAttributes &attributes) override;
-
-    /** Processes a chunk of normal character data. */
-    bool characters(const QString &ch) override;
-
-    /** Processes whitespace. */
-    bool ignorableWhitespace(const QString &ch) override;
-
-    /** Processes the end tag of an element. */
-    bool endElement(const QString &, const QString &, const QString &name) override;
-
-    /** Processes the end of the document. */
-    bool endDocument() override;
+    QString errorString() const;
 
     /** returns a list of words */
     WordMap getList();
@@ -87,6 +64,8 @@ public:
 private:
     WordMap list;
     QString text;
+
+    QXmlStreamReader xml;
 };
 
 }

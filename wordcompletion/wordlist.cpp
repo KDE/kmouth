@@ -37,86 +37,37 @@ namespace WordList
 {
 void addWords(WordMap &map, const QString &line);
 
-XMLParser::XMLParser()
+XMLReader::XMLReader()
 {
 }
 
-XMLParser::~XMLParser()
+XMLReader::~XMLReader()
 {
 }
 
-bool XMLParser::warning(const QXmlParseException &)
+bool XMLReader::read(QIODevice *device)
 {
-    return false;
-}
+    xml.setDevice(device);
 
-bool XMLParser::error(const QXmlParseException &)
-{
-    return false;
-}
+    list.clear();
 
-bool XMLParser::fatalError(const QXmlParseException &)
-{
-    return false;
-}
-
-QString XMLParser::errorString() const
-{
-    return QLatin1String("");
-}
-
-bool XMLParser::startDocument()
-{
-    text.clear();
-    return true;
-}
-
-bool XMLParser::startElement(const QString &, const QString &,
-                             const QString &,
-                             const QXmlAttributes &)
-{
-    if (!text.isNull() && !text.isEmpty()) {
-        addWords(list, text);
-        text.clear();
+    while (xml.readNextStartElement()) {
+        const QString *word = xml.name().string();
+        addWords(list, *word);
     }
-    return true;
+
+    return !xml.error();
 }
 
-bool XMLParser::characters(const QString &ch)
+QString XMLReader::errorString() const
 {
-    text += ch;
-    return true;
+    return QLatin1String("%1\nLine %2, column %3")
+            .arg(xml.errorString())
+            .arg(xml.lineNumber())
+            .arg(xml.columnNumber());
 }
 
-bool XMLParser::ignorableWhitespace(const QString &)
-{
-    if (!text.isNull() && !text.isEmpty()) {
-        addWords(list, text);
-        text.clear();
-    }
-    return true;
-}
-
-bool XMLParser::endElement(const QString &, const QString &,
-                           const QString &)
-{
-    if (!text.isNull() && !text.isEmpty()) {
-        addWords(list, text);
-        text.clear();
-    }
-    return true;
-}
-
-bool XMLParser::endDocument()
-{
-    if (!text.isNull() && !text.isEmpty()) {
-        addWords(list, text);
-        text.clear();
-    }
-    return true;
-}
-
-WordMap XMLParser::getList()
+WordMap XMLReader::getList()
 {
     return list;
 }
@@ -180,15 +131,11 @@ void addWords(WordMap &map, const WordMap &add)
 void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
 {
     QFile xmlfile(filename);
-    QXmlInputSource source(&xmlfile);
-    XMLParser parser;
-    QXmlSimpleReader reader;
-    reader.setFeature(QStringLiteral("http://qt-project.org/xml/features/report-start-end-entity"), true);
-    reader.setContentHandler(&parser);
+    XMLReader reader;
 
     WordMap words;
-    if (reader.parse(source)) // try to load the file as an xml-file
-        addWords(map, parser.getList());
+    if (reader.read(&xmlfile)) // try to load the file as an xml-file
+        addWords(map, reader.getList());
     else {
         QFile wpdfile(filename);
         if (wpdfile.open(QIODevice::ReadOnly)) {
