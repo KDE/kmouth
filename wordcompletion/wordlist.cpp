@@ -142,8 +142,8 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
             stream.setCodec("UTF-8");
 
             if (!stream.atEnd()) {
-                QString s = stream.readLine();
-                if (s == QLatin1String("WPDictFile")) {   // Contains the file a weighted word list?
+                QString line = stream.readLine();
+                if (line == QLatin1String("WPDictFile")) {   // Contains the file a weighted word list?
                     // We can assume that weighted word lists are always UTF8 coded.
                     while (!stream.atEnd()) {
                         QString s = stream.readLine();
@@ -162,11 +162,11 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
                 } else { // Count the words in an ordinary text file
                     QFile file(filename);
                     if (file.open(QIODevice::ReadOnly)) {
-                        QTextStream stream(&file);
+                        QTextStream plainstream(&file);
                         Q_ASSERT(codec != nullptr);
-                        stream.setCodec(codec);
-                        while (!stream.atEnd())
-                            addWords(map, stream.readLine());
+                        plainstream.setCodec(codec);
+                        while (!plainstream.atEnd())
+                            addWords(map, plainstream.readLine());
                     }
                 }
             }
@@ -324,7 +324,6 @@ typedef QMap<QChar, AffList>  AffMap;
  */
 void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
 {
-    bool cross = false;
 
     QFile afile(filename);
     if (afile.open(QIODevice::ReadOnly)) {
@@ -333,6 +332,7 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
             QString s = stream.readLine();
             QStringList fields = s.split(QRegularExpression(QStringLiteral("\\s")));
 
+            bool cross = false;
             if (fields.count() == 4) {
                 cross = (fields[2] == QLatin1String("Y"));
             } else {
@@ -472,13 +472,13 @@ WordMap spellCheck(WordMap map, const QString &dictionary, QProgressDialog *pdlg
         pdlg->setMaximum(100);
         pdlg->setValue(0);
         qApp->processEvents(QEventLoop::AllEvents, 20);
-        int progress = 0;
-        int steps = 0;
-        int percent = 0;
 
         QFile dfile(dictionary);
         if (dfile.open(QIODevice::ReadOnly)) {
             QTextStream stream(&dfile);
+            int progress = 0;
+            int steps = 0;
+            int percent = 0;
 
             if (!stream.atEnd()) {
                 QString s = stream.readLine(); // Number of words

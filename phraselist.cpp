@@ -158,7 +158,7 @@ void PhraseList::enableMenuEntries()
             break;
         }
     }
-    KMouthApp *theApp = (KMouthApp *) parentWidget();
+    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
     theApp->enableMenuEntries(selected, deselected);
 }
 
@@ -322,7 +322,7 @@ void PhraseList::lineEntered(const QString &phrase)
 void PhraseList::speakPhrase(const QString &phrase)
 {
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    KMouthApp *theApp = (KMouthApp *) parentWidget();
+    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
     QString language = completion->languageOfWordList(completion->currentWordList());
     theApp->getTTSSystem()->speak(phrase, language);
     QApplication::restoreOverrideCursor();
@@ -353,7 +353,7 @@ void PhraseList::contextMenuRequested(const QPoint &pos)
     else
         name = QStringLiteral("phraselist_popup");
 
-    KMouthApp *theApp = (KMouthApp *) parentWidget();
+    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
     KXMLGUIFactory *factory = theApp->factory();
     QMenu *popup = (QMenu *)factory->container(name, theApp);
     if (popup != nullptr) {
