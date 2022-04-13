@@ -32,6 +32,12 @@
 class WordCompletion::WordCompletionPrivate
 {
     friend class WordCompletion;
+public:
+    WordCompletionPrivate()
+        :blockCurrentListSignal(false),
+          wordsToSave(false)
+    {}
+
 private:
     typedef QMap<QString, int> WordMap;
     struct DictionaryDetails {
@@ -52,8 +58,6 @@ private:
 WordCompletion::WordCompletion() : KCompletion()
 {
     d = new WordCompletionPrivate();
-    d->blockCurrentListSignal = false;
-    d->wordsToSave = false;
     configure();
 }
 
