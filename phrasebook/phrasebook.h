@@ -49,8 +49,8 @@ class Phrase
 {
 public:
     Phrase();
-    Phrase(const QString &phrase);
-    Phrase(const QString &phrase, const QString &shortcut);
+    explicit Phrase(const QString &phrase);
+    explicit Phrase(const QString &phrase, const QString &shortcut);
 
     QString getPhrase() const;
     QString getShortcut() const;

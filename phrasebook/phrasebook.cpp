@@ -80,7 +80,6 @@ void Phrase::setShortcut(const QString &shortcut)
 
 PhraseBookEntry::PhraseBookEntry()
 {
-    phrase = Phrase();
     level = 1;
     isPhraseValue = false;
 }

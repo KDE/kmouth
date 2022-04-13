@@ -62,7 +62,7 @@ class OptionsDialog : public KPageDialog
 {
     Q_OBJECT
 public:
-    OptionsDialog(QWidget *parent);
+    explicit OptionsDialog(QWidget *parent);
     ~OptionsDialog() override;
 
     TextToSpeechSystem *getTTSSystem() const;

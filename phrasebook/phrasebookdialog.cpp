@@ -60,7 +60,7 @@ StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url, 
 {
     this->url = url;
     connect(this, SIGNAL(triggered(bool)), this, SLOT(slotActivated()));
-    connect(this, SIGNAL(slotActivated(const QUrl &)), receiver, slot);
+    connect(this, SIGNAL(slotActivated(QUrl)), receiver, slot);
     parent->addAction(name, this);
 }
 
@@ -182,9 +182,9 @@ QString PhraseBookDialog::serializeBook(const QModelIndex &index)
             for (int i = 0; i < item->rowCount(); ++i) {
                 childrenText += serializeBook(index.model()->index(i, 0, index));
             }
-            value = kPhraseBookXML.arg(item->text()).arg(childrenText);
+            value = kPhraseBookXML.arg(item->text(), childrenText);
         } else {
-            value = kPhraseXML.arg(item->text()).arg(shortcutItem->text());
+            value = kPhraseXML.arg(item->text(), shortcutItem->text());
         }
     } else {
         // Do the whole model, inside a <phrasebook> tag.

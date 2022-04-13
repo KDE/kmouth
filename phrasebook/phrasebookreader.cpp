@@ -23,6 +23,8 @@
 #include <QtDebug>
 
 PhraseBookReader::PhraseBookReader()
+    :level(0),
+     starting(true)
 {
 }
 

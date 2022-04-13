@@ -233,7 +233,8 @@ QString DictionaryCreationWizard::language()
 MergeWidget::MergeWidget(QWidget *parent,
                          const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
                          const QStringList &dictionaryLanguages)
-    : QWizardPage(parent)
+    : QWizardPage(parent),
+      scrollArea(nullptr)
 {
     QGridLayout *layout = new QGridLayout(this);
     layout->setColumnStretch(0, 0);
@@ -325,7 +326,6 @@ void CompletionWizardWidget::ok()
     pdlg->close();
     delete pdlg;
 
-    QString filename;
     QString dictionaryFile;
 
     dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QStringLiteral("/");

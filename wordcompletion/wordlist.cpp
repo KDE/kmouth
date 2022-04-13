@@ -133,7 +133,6 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
     QFile xmlfile(filename);
     XMLReader reader;
 
-    WordMap words;
     if (reader.read(&xmlfile)) // try to load the file as an xml-file
         addWords(map, reader.getList());
     else {
