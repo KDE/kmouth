@@ -253,6 +253,22 @@ void PhraseList::speak()
     }
 }
 
+void PhraseList::stopSpeaking()
+{
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
+    theApp->getTTSSystem()->stop();
+    QApplication::restoreOverrideCursor();
+}
+
+void PhraseList::pauseResume()
+{
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
+    theApp->getTTSSystem()->pauseResume();
+    QApplication::restoreOverrideCursor();
+}
+
 void PhraseList::cut()
 {
     if (lineEdit->hasSelectedText())

@@ -150,6 +150,20 @@ void KMouthApp::initActions()
     editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
     editSpeak->setWhatsThis(i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
 
+    editStop = actionCollection()->addAction(QStringLiteral("edit_stop"));
+    editStop->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-stop")));
+    editStop->setText(i18nc("Stop speaking", "S&top"));
+    connect(editStop, &QAction::triggered, phraseList, &PhraseList::stopSpeaking);
+    editStop->setToolTip(i18n("Stops speaking the currently speaking sentence(s)"));
+    editStop->setWhatsThis(i18n("Stops speaking the currently speaking sentence(s). If there isn't anything being spoken nothing happens."));
+
+    editPauseResume = actionCollection()->addAction(QStringLiteral("edit_pauseresume"));
+    editPauseResume->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-pause")));
+    editPauseResume->setText(i18nc("Pause/Resume speaking", "&Pause/Resume speaking"));
+    connect(editPauseResume, &QAction::triggered, phraseList, &PhraseList::pauseResume);
+    editPauseResume->setToolTip(i18n("Pause or resume the currently speaking sentence(s)"));
+    editPauseResume->setWhatsThis(i18n("Pause or resume speaking the currently speaking sentence(s)."));
+
 // The "Phrase book" menu
     phrasebookEdit = actionCollection()->addAction(QStringLiteral("phrasebook_edit"));
     phrasebookEdit->setText(i18n("&Edit..."));

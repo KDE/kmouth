@@ -61,6 +61,30 @@ void TextToSpeechSystem::speak(const QString &text, const QString &language)
     }
 }
 
+void TextToSpeechSystem::stop()
+{
+    if (useQtSpeech) {
+        m_speech->stop();
+    } else {
+        // Tell other speech system to stop somehow...
+    }
+}
+
+void TextToSpeechSystem::pauseResume()
+{
+    if (useQtSpeech) {
+        if (!paused) {
+           m_speech->pause();
+           paused = true;
+        } else {
+            m_speech->resume();
+            paused = false;
+        }
+    } else {
+        // Tell other speech system to pause or resume
+    }
+}
+
 void TextToSpeechSystem::readOptions(const QString &langGroup)
 {
     KConfigGroup cg(KSharedConfig::openConfig(), langGroup);

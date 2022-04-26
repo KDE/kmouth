@@ -64,6 +64,10 @@ public Q_SLOTS:
     /** Called whenever the user wants the contents of the edit line to be spoken. */
     void speak();
 
+    void stopSpeaking();
+
+    void pauseResume();
+
     void cut();
     void copy();
     void paste();

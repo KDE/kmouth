@@ -11,6 +11,8 @@
   </Menu>
   <Menu name="edit"><text>&amp;Edit</text>
     <Action name="edit_speak"/>
+    <Action name="edit_stop"/>
+    <Action name="edit_pauseresume"/>
   </Menu>
   <Menu name="phrasebooks"><text>&amp;Phrase Books</text>
     <Action name="phrasebook_edit"/>

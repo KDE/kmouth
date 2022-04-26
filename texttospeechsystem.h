@@ -42,6 +42,8 @@ public:
 
 public Q_SLOTS:
     void speak(const QString &text, const QString &language);
+    void stop();
+    void pauseResume();
 
 private:
     void buildCodecList();
@@ -55,6 +57,7 @@ private:
     QString ttsVoice;
     /** Text to Speech API */
     QTextToSpeech *m_speech;
+    bool paused;
 };
 
 #endif

@@ -155,6 +155,8 @@ private:
     QAction* editCopy;
     QAction* editPaste;
     QAction* editSpeak;
+    QAction* editStop;
+    QAction* editPauseResume;
 
     KActionCollection *phrases;
     QAction* phrasebookEdit;
