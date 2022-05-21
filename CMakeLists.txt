@@ -116,5 +116,8 @@ install( FILES kmouthui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
 install( FILES phrasebookdialogui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
 install(FILES org.kde.kmouth.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
+ki18n_install(po)
+kdoctools_install(po)
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
