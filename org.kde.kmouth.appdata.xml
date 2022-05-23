@@ -109,6 +109,7 @@
   <url type="donation">https://www.kde.org/community/donations/?app=kmouth&amp;source=appdata</url>
   <url type="help">https://docs.kde.org/?application=kmouth</url>
   <url type="homepage">https://apps.kde.org/kmouth/</url>
+  <content_rating type="oars-1.1"/>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kmouth/kmouth.png</image>
