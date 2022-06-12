@@ -11,7 +11,7 @@ endif(NOT MSVC)
 include(FeatureSummary)
 
 set(QT_MIN_VERSION "5.15.0")
-set(KF5_MIN_VERSION "5.85.0")
+set(KF5_MIN_VERSION "5.90.0")
 
 
 find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
@@ -25,7 +25,7 @@ include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     PrintSupport
     TextToSpeech
