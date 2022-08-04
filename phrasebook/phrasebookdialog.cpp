@@ -486,7 +486,7 @@ void PhraseBookDialog::setShortcut(const QKeySequence& sequence)
 //         QString s = i18n("In order to use the '%1' key as a shortcut, "
 //                          "it must be combined with the "
 //                          "Win, Alt, Ctrl, and/or Shift keys.", QChar(key.sym()));
-//         KMessageBox::sorry( this, s, i18n("Invalid Shortcut Key") );
+//         KMessageBox::error( this, s, i18n("Invalid Shortcut Key") );
 //         return;
 //      }
 //#endif
@@ -662,7 +662,7 @@ void PhraseBookDialog::slotImportPhrasebook(const QUrl &url)
             focusNewItem(parentIndex, item);
         } else {
             qDebug() << "Unable to open file " << url.toLocalFile();
-            KMessageBox::sorry(this, i18n("There was an error loading file\n%1", url.toLocalFile()));
+            KMessageBox::error(this, i18n("There was an error loading file\n%1", url.toLocalFile()));
         }
     }
 }
@@ -680,7 +680,7 @@ void PhraseBookDialog::slotExportPhrasebook()
         out << content;
         file.close();
     } else {
-        KMessageBox::sorry(this, i18n("There was an error saving file\n%1", url.toLocalFile()));
+        KMessageBox::error(this, i18n("There was an error saving file\n%1", url.toLocalFile()));
     }
 }
 

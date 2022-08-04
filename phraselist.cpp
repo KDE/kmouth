@@ -473,7 +473,7 @@ void PhraseList::save()
 
     QUrl url;
     if (book.save(this, i18n("Save As"), url, false) == -1)
-        KMessageBox::sorry(this, i18n("There was an error saving file\n%1", url.url()));
+        KMessageBox::error(this, i18n("There was an error saving file\n%1", url.url()));
 }
 
 void PhraseList::open()
@@ -500,6 +500,6 @@ void PhraseList::open(const QUrl &url)
         for (it = list.begin(); it != list.end(); ++it)
             insertIntoPhraseList(*it, false);
     } else
-        KMessageBox::sorry(this, i18n("There was an error loading file\n%1", url.toDisplayString()));
+        KMessageBox::error(this, i18n("There was an error loading file\n%1", url.toDisplayString()));
 }
 
