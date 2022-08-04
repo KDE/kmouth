@@ -34,16 +34,15 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("kmouth");
-    QApplication::setApplicationDisplayName(i18n("KMouth"));
 
     KAboutData aboutData(QStringLiteral("kmouth"),
                          i18n("KMouth"),
-                         QStringLiteral(KMOUTH_VERSION),
+                         QStringLiteral(KMOUTH_VERSION_STRING),
                          i18n("A type-and-say front end for speech synthesizers"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002/2003, Gunnar Schmi Dt"),
                          QString(),
-                         QStringLiteral("https://www.kde.org/applications/utilities/kmouth/"),
+                         QStringLiteral("https://apps.kde.org/kmouth"),
                          QStringLiteral("kmouth@schmi-dt.de"));
     aboutData.addAuthor(i18n("Gunnar Schmi Dt"), i18n("Original Author"), QStringLiteral("kmouth@schmi-dt.de"));
     aboutData.addAuthor(i18n("Jeremy Whiting"), i18n("Current Maintainer"), QStringLiteral("jpwhiting@kde.org"));

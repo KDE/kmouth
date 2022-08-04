@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(kmouth)
+# KDE Gear version, managed by release script
+set (RELEASE_SERVICE_VERSION_MAJOR "22")
+set (RELEASE_SERVICE_VERSION_MINOR "11")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+
+project(kmouth VERSION ${RELEASE_SERVICE_VERSION})
 
 if(NOT MSVC)
     set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -O2 -g")
@@ -21,6 +27,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
+include(ECMSetupVersion)
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
@@ -45,6 +52,12 @@ find_package(KF5  ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     WidgetsAddons
     XmlGui
 )
+
+ecm_setup_version(${kmouth_VERSION}
+    VARIABLE_PREFIX KMOUTH
+    VERSION_HEADER version.h
+)
+
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 add_definitions(
 	#-DQT_DISABLE_DEPRECATED_BEFORE=0x050F00
