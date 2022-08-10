@@ -123,4 +123,7 @@
     <binary>kmouth</binary>
   </provides>
   <launchable type="desktop-id">org.kde.kmouth.desktop</launchable>
+  <releases>
+    <release version="22.08.0" date="2022-08-18"/>
+  </releases>
 </component>
