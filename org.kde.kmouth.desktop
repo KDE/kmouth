@@ -4,7 +4,6 @@ Type=Application
 Exec=kmouth
 Icon=kmouth
 X-DocPath=kmouth/index.html
-Terminal=false
 Name=KMouth
 Name[ar]=فم كي
 Name[ast]=KMouth
