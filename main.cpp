@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Jeremy Whiting"), i18n("Current Maintainer"), QStringLiteral("jpwhiting@kde.org"));
     aboutData.addCredit(i18n("Olaf Schmidt"), i18n("Tips, extended phrase books"));
 
-    aboutData.setOrganizationDomain(QByteArray("kde.org"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addPositionalArgument(QStringLiteral("[File]"), i18n("History file to open"));
