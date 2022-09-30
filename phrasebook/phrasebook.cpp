@@ -28,7 +28,6 @@
 #include <QPainter>
 #include <QStack>
 #include <QUrl>
-#include <QXmlSimpleReader>
 
 #include <KActionMenu>
 #include <KDesktopFile>

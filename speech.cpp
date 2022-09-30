@@ -21,7 +21,6 @@
 #include "speech.h"
 
 #include <QHash>
-#include <QStack>
 #include <QTextCodec>
 #include <QTextStream>
 

@@ -25,7 +25,6 @@
 #include <QIcon>
 #include <QPushButton>
 #include <QTabWidget>
-#include <QVBoxLayout>
 
 #include <KConfigGroup>
 #include <KLocalizedString>

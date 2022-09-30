@@ -28,8 +28,6 @@
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QTextStream>
-#include <QXmlInputSource>
-#include <QXmlSimpleReader>
 
 #include <KLocalizedString>
 
