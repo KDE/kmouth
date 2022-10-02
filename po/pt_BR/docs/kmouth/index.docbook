@@ -1,0 +1,1216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Brazilian-Portuguese "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>Manual do &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  <othercredit role="translator"
+><firstname
+>Marcus</firstname
+><surname
+>Gama</surname
+><affiliation
+><address
+><email
+>marcus.gama@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>04/01/2018</date>
+  <releaseinfo
+>1.2.0 (Applications 17.12)</releaseinfo>
+
+  <abstract>
+    <para
+>O &kmouth; é um aplicativo que permite às pessoas que não conseguem falar deixar que os seus computadores falem por elas. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeaccesibility</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>conversão do sintetizador de voz</keyword>
+    <keyword
+>pessoas mudas</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Introdução</title>
+
+  <para
+>O &kmouth; é um aplicativo que permite às pessoas que não conseguem falar deixar que os seus computadores falem por elas. Inclui um histórico das palavras faladas a partir das quais o usuário pode selecionar as frases a serem faladas novamente. </para>
+  <para
+>Observe que o &kmouth; não inclui qualquer sintetizador de voz. Em vez disso, necessita que exista um sintetizador de voz instalado no sistema. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Usando o &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>A configuração inicial</title>
+    <para
+>Durante o primeiro uso do &kmouth; é apresentado um assistente no qual você poderá configurá-lo. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Configuração do Texto-para-Voz</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Configuração do Texto-para-Voz</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Com a primeira página do assistente você especifica o comando que deverá ser usado para a conversão de texto para voz. Para mais detalhes veja a <link linkend="tts-config"
+>descrição da janela de configuração.</link
+> </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Livro de Frases Inicial</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Livro de Frases Inicial</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Com a segunda página você seleciona quais livros de frases você necessita. A partir dos livros de frases você poderá selecionar as frases mais usadas para que não tenha que digitá-las de novo. Claro que o &kmouth; também tem uma janela de edição para caso você queira editar os seus livros de frases. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Completação de Palavras</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Completação de Palavras</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Com a terceira página, você define o dicionário para o completamento de uma palavra. O &kmouth; irá processar a documentação do &kde; do idioma escolhido para detectar a regularidade das palavras individuais. Opcionalmente, você poderá comparar a lista de palavras a um dicionário do OpenOffice.org para poder adicionar apenas as palavras corretas ao completamento de palavras. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>A janela principal</title>
+    <para
+>A janela principal do &kmouth; é relativamente simples. Consiste basicamente num campo de edição onde você pode digitar suas frases (o campo branco em baixo na imagem) e um histórico das frases faladas (o campo branco superior na imagem). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>A janela principal do &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>A janela principal do &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Assumindo que você tenha <link linkend="config-dialog"
+>configurado corretamente o &kmouth;</link
+>, você poderá usar o campo de edição para digitar as frases que deseja ouvir. Logo que uma frase seja pronunciada, a mesma será adicionada ao histórico. No histórico, você poderá selecionar as frases a serem faladas novamente. </para>
+    <para
+>Nos livros de frases (localizados na linha abaixo da barra de ferramentas), você poderá selecionar as frases mais usadas. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>O diálogo de configuração</title>
+    <para
+>Ao usar o item do menu <menuchoice
+> <guimenu
+>Configurações</guimenu
+><guimenuitem
+>Configurar &kmouth;...</guimenuitem
+> </menuchoice
+> você irá abrir a janela de configuração do &kmouth;. Esta janela consiste das páginas  <guilabel
+>Opções gerais</guilabel
+> com duas abas <guilabel
+>Preferências</guilabel
+> e <guilabel
+>Sintetizador de voz</guilabel
+> e a página <guilabel
+>Complementação de palavras</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>Aba Preferências</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Aba <guilabel
+>Preferências</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de tela</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>A aba <guilabel
+>Preferências</guilabel
+> contém as opções que alteram o comportamento do &kmouth; em determinadas situações. </para>
+      <para
+>Com a primeira lista <guilabel
+>Seleção de frases no livro de frases:</guilabel
+>, você indica a ação que é disparada ao escrever o atalho de uma frase ou selecionando a frase no menu do <guimenu
+>Livro de frases</guimenu
+> ou na barra do livro de frases. </para>
+      <para
+>Ao selecionar a opção <guilabel
+>Falar imediatamente</guilabel
+>, a frase selecionada é imediatamente sintetizada e introduzida no histórico. Se você selecionar a opção <guilabel
+>Inserir no campo de edição</guilabel
+>, a frase selecionada é somente introduzida no campo de edição. </para>
+      <para
+>Com a segunda lista  <guilabel
+>Fechar a janela de edição do livro de frases</guilabel
+>, você pode indicar se o livro de frases é gravado se você fechar simplesmente a janela de edição do livro de frases. </para>
+      <para
+>Ao optar por <guilabel
+>Salvar o livro de frases</guilabel
+>, o livro de frases é de fato salvo. Selecionar a opção <guilabel
+>Descartar as alterações</guilabel
+>, as modificações são descartadas e o livro de frases não é mais salvo. Se você selecionar a opção <guilabel
+>Perguntar para salvar</guilabel
+>, o &kmouth; lhe perguntará se deverá ou não salvar o livro de frases. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>Aba Sintetizador de voz</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Aba <guilabel
+>Sintetizador de voz</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de tela</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Ao selecionar a opção <guilabel
+>Usar sistema de fala padrão</guilabel
+>, você indicará ao &kmouth; para tentar em primeiro lugar usar o serviço de fala do sistema antes de chamar o sintetizador de voz diretamente. Se isto for bem sucedido, os outros itens de configuração desta página serão ignorados. O serviço de fala do sistema é uma biblioteca &Qt; que envolve o encaminhamento de fala no &Linux; e os sistemas de fala nativos em outras plataformas. Em um sistema baseado no Debian, você irá precisar dos pacotes speech-dispatcher, libqt5texttospeech5 e um dos módulos do speech-dispatcher, geralmente o <application
+>espeak</application
+>. <note
+><para
+>Use a ferramente de linha de comando <command
+>spd-conf</command
+> (pacote Debian python3-speechd) para ajustar as configurações como taxa, timbre, idioma &etc; para o sistema de fala padrão. Adicionalmente o <command
+>spd-conf</command
+> permite a você escolher entre todos os módulos do speech-dispatcher,&ie; <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+> &etc; </para
+></note>
+      </para>
+      <para
+>No campo de edição da aba <guilabel
+>Sintetizador de voz</guilabel
+> você pode indicar o comando para invocar o sintetizador de voz. Com a lista abaixo do campo de edição você poderá indicar a codificação de caracteres que é usada para passar o texto para o sintetizador de voz. </para>
+      <para
+>O &kmouth; tem duas formas de passar o texto: Se o comando esperar o texto no entrada padrão você deverá selecionar a opção. </para>
+      <para
+>A outra forma é passando o texto como um parâmetro: Antes de invocar o comando, o &kmouth; substituirá certos símbolos com conteúdo: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Símbolo</entry
+><entry
+>Substituído por</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>O texto atual que deverá ser falado</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>O nome de um arquivo temporário que contém o texto que deverá ser falado</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>O código do idioma associado ao dicionário da complementação de palavras atual</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Um sinal de porcentagem</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Como é óbvio, o comando para gerar as frases é dependente do sintetizador de voz que você usa. Por favor veja a documentação do seu sintetizador de voz para descobrir o comando usado para sintetizar os textos. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>Página Completação de palavras</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Página <guilabel
+>Complementação de palavras</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de tela</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>A página <guilabel
+>Complementação de palavras</guilabel
+> contém uma lista dos dicionários usados para a complementação de palavras (o &kmouth; irá mostrar uma lista ao lado do campo de edição da janela principal se esta lista contiver mais de um dicionário. Você poderá usar esta lista para poder selecionar o dicionário que é usado atualmente para a complementação de palavras.) </para>
+      <para
+>Com os botões do lado direito da página você poderá adicionar e remover dicionários, alterar a ordem dos mesmo ou exportar os dicionários para um arquivo. Com o campo de edição e com a caixa combinada, você poderá alterar o nome e o idioma associado ao dicionário. </para>
+      <para
+>Quando você adicionar um novo dicionário, você poderá escolher entre várias fontes: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Criar um novo dicionário a partir da documentação do &kde;</para>
+          <para
+>Quando você usar esta fonte, o &kmouth; lhe perguntará o idioma pretendido e, depois disso, processará a documentação do &kde;. A frequência das palavras individuais é detectada, contando as ocorrências de cada palavra. Opcionalmente, você poderá comparar a lista de palavras com um dicionário do OpenOffice.org para adicionar apenas as palavras corretas ao novo dicionário. </para>
+        </listitem>
+        <listitem>
+          <para
+>Criar um novo dicionário a partir de um arquivo</para>
+          <para
+>Se você usar esta fonte, o &kmouth; irá solicitar o arquivo desejado para dicionário. Você tanto poderá selecionar um arquivo &XML;, um arquivo de texto normal ou um arquivo que contém um dicionário de completamento de palavras criado tanto pelo &kmouth; como pelo GOK (o GNOME On-screen Keyboard - Teclado na tela do GNOME). Se você selecionar um arquivo normal ou em &XML;, a frequência das palavras individuais é detectada, contando simplesmente as ocorrências de cada palavra. Opcionalmente, você poderá comparar a lista de palavras com um dicionário do OpenOffice.org para poder adicionar apenas as palavras corretas ao novo dicionário. </para>
+        </listitem>
+        <listitem>
+          <para
+>Criar um novo dicionário a partir de uma pasta</para>
+          <para
+>Se você utilizar esta fonte o &kmouth; solicitará a pasta desejada. O &kmouth; abre todos os arquivos nessa pasta e nas suas subpastas. Cada arquivo é carregado como um dicionário de completamento, como um arquivo &XML; ou como um arquivo de texto normal. Nos últimos dois casos as ocorrências de cada palavra individual no arquivo são contadas. Opcionalmente você pode comparar a lista de palavras a um dicionário do OpenOffice.org para apenas adicionar as palavras corretas aos novo dicionário. </para>
+        </listitem>
+        <listitem>
+          <para
+>Mesclar os dicionários</para>
+          <para
+>Você pode usar esta opção para poder mesclar os dicionários disponíveis. O &kmouth; irá perguntar quais os dicionários que deverão ser reunidos e como é que os dicionários individuais deverão ser pesados. </para>
+        </listitem>
+        <listitem>
+          <para
+>Criar uma lista de palavras vazia</para>
+          <para
+>Você poderá usar esta opção para poder criar um dicionário em branco sem nenhum item. Uma vez que o &kmouth; adiciona automaticamente as palavras digitadas como novas aos dicionários, ele vai aprendendo o seu vocabulário com o tempo. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>A janela de edição do livro de frases</title>
+    <para
+>Ao usar o item do menu <menuchoice
+> <guimenu
+>Livro de frases</guimenu
+><guimenuitem
+>Editar...</guimenuitem
+> </menuchoice
+>, você irá abrir a janela de edição do livro de frases. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>A janela de edição do livro de frases</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Captura de tela</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>A área principal da janela de edição do livro de frases está dividida em duas partes. Na parte superior, os livros de frases são mostrados numa estrutura em árvore. </para>
+    <para
+>Na parte inferior você poderá modificar um item selecionado. Se você tiver selecionado uma frase, você poderá modificar o conteúdo da frase, assim como o seu atalho. Se você tiver selecionado um livro de frases só poderá modificar seu nome. </para>
+    <para
+>As ações como a adição de frases e livro de frases novos, assim como a remoção de livros de frases e frases individuais, poderão ser efetuadas através da seleção das mesmas no menu, na barra de ferramentas ou no menu de contexto. </para>
+    <para
+>Você pode alterar a ordem dos livros de frases e das frases em si arrastando-os para os seus novos locais ou usando as teclas de seta enquanto pressiona a tecla &Alt;. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Referência de comandos</title>
+
+  <sect1 id="main-commands">
+    <title
+>Comandos dentro da janela principal</title>
+    <sect2 id="file-menu">
+      <title
+>Menu Arquivo</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Abrir como histórico...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Abre um arquivo de texto como um histórico de frases faladas.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Salvar histórico como...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Salva o histórico num arquivo de texto.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Imprimir o histórico...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Imprime o histórico.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Sair</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sai do &kmouth;</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>Menu Editar</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Recortar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Corta a seção selecionada e coloca-a na área de transferência. Se existir algum texto selecionado no campo de edição, este é colocado na área de transferência. Caso contrário, as sequências selecionadas no histórico (se existirem) são colocadas na área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia a seção selecionada para a área de transferência. Se existir algum texto selecionado no campo de edição, este é colocado na área de transferência. Caso contrário, as sequências selecionadas no histórico (se existirem) são colocadas na área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edit</guimenu
+> <guimenuitem
+>Colar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Cola o conteúdo da área de transferência na posição atual do campo de edição. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Falar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fala as frases atualmente ativas. Se existir algum texto no campo de edição, este será falado. Caso contrário, as frases selecionadas no histórico (se existirem) serão faladas. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>Menu Livro de frases</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Livros de frases</guimenu
+> <guimenuitem
+>Editar...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Abre a <link linkend="phrasebook-editor"
+>janela de edição dos livros de frases</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>O &kmouth; possui os itens dos menus <guimenu
+>Configurações</guimenu
+> e <guimenu
+>Ajuda</guimenu
+>, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menu Configurações</ulink
+> e o <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menu Ajuda</ulink
+> dos Fundamentos do &kde;. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Os comandos da janela de edição do livro de frases</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>Menu Arquivo</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Nova frase</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Adiciona uma nova frase.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Novo livro de frases</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Adiciona um novo livro de frases.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Salvar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Salva o livro de frases.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Importar...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa um arquivo e adiciona o seu conteúdo ao livro de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Importar o livro de frases padrão</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa um livro de frases padrão e adiciona o seu conteúdo ao livro de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Exportar...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporta a frase ou frases ou os livros de frases atualmente selecionados para um arquivo</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arquivo</guimenu
+> <guimenuitem
+>Fechar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fecha a janela</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>Menu Editar</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Recortar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Corta os itens selecionados e coloca-os na área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia os itens selecionados para a área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edit</guimenu
+> <guimenuitem
+>Colar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Cola o conteúdo da área de transferência no livro de frases. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Excluir</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exclui os itens selecionados. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>Menu Ajuda</title>
+      <para
+>Os itens neste menu são os mesmos descritos na janela principal.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>O menu de contexto</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Nova frase</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Adiciona uma nova frase.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Novo livro de frases</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Adiciona um novo livro de frases.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importar...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa um arquivo e adiciona o seu conteúdo ao livro de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importar o livro de frases padrão</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa um livro de frases padrão e adiciona o seu conteúdo ao livro de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Exportar...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporta a frase ou frases ou os livros de frases atualmente selecionados para um arquivo</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Recortar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Corta os itens selecionados e coloca-os na área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia os itens selecionados para a área de transferência. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Colar</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Cola o conteúdo da área de transferência nesta posição do livro de frases. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Excluir</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exclui os itens selecionados. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Créditos e licença</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Direitos autorais do programa 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Direitos autorais da documentação 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  <para
+>Tradução de Marcus Gama <email
+>marcus.gama@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

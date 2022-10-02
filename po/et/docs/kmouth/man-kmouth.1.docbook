@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Estonian  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kde; kasutaja käsiraamat</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2010-09-15</date>
+<productname
+>KDE töökeskkond</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Kirjutatut kõnelev kasutajaliides kõnesüntesaatoritele</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>failinimi</replaceable
+></arg
+> <arg choice="opt"
+>&kde; üldised võtmed</arg
+> <arg choice="opt"
+>&Qt; üldised võtmed</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Kirjeldus</title>
+<para
+>&kmouth; võimaldab inimestel, kes ise ei suuda kõnelda, lasta seda enda eest teha arvutil. Rakendus pakub ka kõneldud lausete ajaloo võimalust, lubades kasutajal valida varemkõneldud lauseid, mida uuesti kõnelda.</para>
+<para
+>Pane tähele, et &kmouth; ei sisalda kõnesüntesaatorit, vaid eeldab, et see on juba süsteemi paigaldatud.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Võtmed</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>failinimi</replaceable
+></option
+></term>
+<listitem>
+<para
+>Avatav ajaloofail.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Vaata ka</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Põhjalikumat kasutaja dokumentatsiooni pakub <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (kirjuta see &URL; &konqueror;i või käivita käsuga <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Täiendavat infot leiab ka <ulink url="http://accessibility.kde.org/"
+>&kde; hõlbustusprojekti koduleheküljelt</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autorid</title>
+<para
+>&kmouth;i autor on <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

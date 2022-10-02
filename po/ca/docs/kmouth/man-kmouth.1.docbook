@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Catalan  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual d'usuari del KMouth</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Pàgina «man» del KMouth.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>18 de març de 2022</date>
+<releaseinfo
+>KMouth 22.04</releaseinfo>
+<productname
+>KDE Gear</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Un frontal d'escriptura i síntesi per a sintetitzadors de veu</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>nom_fitxer</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripció</title>
+<para
+>El &kmouth; és una aplicació que habilita a persones que no poden parlar, de manera que l'ordinador parli per elles. Això inclou un historial de frases sintetitzades des del qual l'usuari podrà seleccionar les frases a dir.</para>
+<para
+>Tingueu present que el &kmouth; no inclou un sintetitzador de veu. Pel que requereix tenir-ne un d'instal·lat en el sistema.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Opcions</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>nom_fitxer</replaceable
+></option
+></term>
+<listitem>
+<para
+>El fitxer d'historial a obrir.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Vegeu també</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Hi ha informació més detallada disponible en <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (podeu emprar aquest &URL; al &konqueror;, o bé executar <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>També hi ha informació disponible en la <ulink url="https://community.kde.org/Accessibility"
+>pàgina principal del projecte d'accessibilitat del &kde;</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autors</title>
+<para
+>El &kmouth; ha estat escrit per <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

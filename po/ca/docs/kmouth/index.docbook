@@ -1,0 +1,1188 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>El manual del &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  &traductor.Antoni.Bella; 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>18 de març de 2022</date>
+  <releaseinfo
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
+
+  <abstract>
+    <para
+>El &kmouth; és una aplicació que fa possible que les persones que no poden parlar, l'ordinador ho faci per elles. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeaccesibility</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>conversió de text-a-veu</keyword>
+    <keyword
+>persones mudes</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Introducció</title>
+
+  <para
+>El &kmouth; és un programa que fa possible que les persones que no poden parlar, l'ordinador ho faci per elles. Inclou un historial de frases que l'usuari pot seleccionar perquè siguin sintetitzades. </para>
+  <para
+>Tingueu present que el &kmouth; no inclou cap sintetitzador de veu. Pel que requereix tenir-ne un d'instal·lat en el sistema. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Usar el &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>La configuració per primera vegada</title>
+    <para
+>Durant la primera execució del &kmouth; es mostrarà un assistent des del qual podreu configurar-lo. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Configuració de la síntesi</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Configuració de la síntesi</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>En la primera pàgina de l'assistent s'especifica el motor i la veu que s'usarà més endavant per a la conversió de text a veu. Per a més detalls, vegeu la <link linkend="tts-config"
+>descripció del diàleg de configuració.</link
+> </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Compleció de paraules</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Compleció de paraules</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>A la tercera pàgina definiu el diccionari per a la compleció de paraules. El &kmouth; analitzarà la documentació del &kde; per a l'idioma seleccionat amb l'objectiu de detectar la regularitat de les distintes paraules. De manera opcional podeu comparar la llista de paraules contra un diccionari de l'OpenOffice.org amb l'objectiu d'afegir només a la compleció de paraules aquelles que estiguin escrites correctament. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>La finestra principal</title>
+    <para
+>La finestra principal del &kmouth; és força senzilla. Bàsicament consisteix d'un camp d'edició en el qual s'escriuen les frases (el camp en blanc a la part inferior de la captura de pantalla) i un historial de les frases sintetitzades (el camp en blanc a la part superior de la captura de pantalla). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>La finestra principal del &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>La finestra principal del &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Assumint que heu <link linkend="config-dialog"
+>configurat el &kmouth;</link
+> correctament podeu utilitzar el camp d'edició per a introduir les frases que voleu sentir. Una vegada que la frase ha estat dita, aquesta serà afegida a l'historial. Des de l'historial podreu seleccionar les frases perquè es tornin a dir. </para>
+    <para
+>Des dels llibres de frases (ubicats a sota de la barra d'eines) es poden seleccionar les frases emprades sovint. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>El diàleg de configuració</title>
+    <para
+>Utilitzant l'entrada de menú <menuchoice
+> <guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kmouth;...</guimenuitem
+> </menuchoice
+> s'obrirà el diàleg de configuració del &kmouth;. Aquest diàleg consisteix en la pàgina <guilabel
+>Opcions generals</guilabel
+> amb les dues pestanyes <guilabel
+>Preferències</guilabel
+> i <guilabel
+>Text-a-veu</guilabel
+>, la pàgina <guilabel
+>Compleció de paraules</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>La pestanya Preferències</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>La pestanya <guilabel
+>Preferències</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de pantalla</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>La pestanya <guilabel
+>Preferències</guilabel
+> conté opcions que modifiquen el comportament del &kmouth; en certes situacions. </para>
+      <para
+>En el primer quadre combinat, <guilabel
+>Selecció de frases en el llibre de frases</guilabel
+>, especificareu quina acció executar en escriure l'abreujament d'una frase o en seleccionar una frase en el menú <guimenu
+>Llibre de frases</guimenu
+> o en la barra del llibre de frases. </para>
+      <para
+>En seleccionar <guilabel
+>Pronuncia immediatament</guilabel
+> la frase seleccionada serà pronunciada immediatament i introduïda en l'historial. Si seleccioneu <guilabel
+>Insereix en el camp d'edició</guilabel
+> la frase seleccionada tan sols serà inserida en el camp d'edició. </para>
+      <para
+>En el segon quadre combinat, <guilabel
+>Tanca la finestra d'edició del llibre de frases</guilabel
+>, especificareu si el llibre de frases serà desat en tancar la finestra d'edició pel llibre de frases. </para>
+      <para
+>Seleccionant <guilabel
+>Desa el llibre de frases</guilabel
+> es desarà el llibre de frases. Si seleccioneu <guilabel
+>Descarta els canvis</guilabel
+>, els canvis seran descartats i el llibre de frases no serà desat. Si seleccioneu <guilabel
+>Demana si s'ha de desar</guilabel
+>, el &kmouth; demanarà si ha de desar el llibre de frases. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>La pestanya Text-a-veu</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>La pestanya <guilabel
+>Text-a-veu</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de pantalla</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Seleccionant <guilabel
+>Usa el sistema de veu per omissió</guilabel
+>, se li diu al &kmouth; que primer miri d'enviar el text al servei de síntesi del sistema. Si això funciona, s'ignoraran la resta de les entrades de configuració en aquesta pestanya. El servei de síntesi del sistema és una biblioteca de les &Qt;, la qual embolcalla l'«speech-dispatcher» a &Linux; i als sistemes de síntesi nadius en altres plataformes. En un sistema basat en Debian, necessitareu els paquets speech-dispatcher, libqt5texttospeech5 i un dels mòduls de speech-dispatcher, generalment <application
+>espeak</application
+>. <note
+><para
+>Utilitzeu l'eina de la línia d'ordres <command
+>spd-conf</command
+> (paquet python3-speechd a la Debian) per ajustar les opcions com la velocitat, el to, el volum, el tipus de veu, l'idioma, &etc; per al sistema de síntesi per omissió. De manera addicional, l'<command
+>spd-conf</command
+> permet triar entre tots els mòduls instal·lats del speech-dispatcher, &ead;, <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+>, &etc; </para
+></note>
+      </para>
+      <para
+>També és possible seleccionar el <guilabel
+>Motor</guilabel
+> i la <guilabel
+>Veu</guilabel
+> per al sistema de síntesi. </para>
+      <para
+>Si l'element <guilabel
+>Usa el sistema de veu per omissió</guilabel
+> no està seleccionat, podeu introduir l'ordre per cridar la síntesi de veu en el camp d'edició del plafó <guilabel
+>Alternativa</guilabel
+>. Amb el quadre combinat a sota del camp d'edició especifiqueu la codificació de caràcters que s'utilitza per passar el text al sintetitzador de veu. </para>
+      <para
+>El &kmouth; coneix dues maneres de passar el text. Si l'ordre espera el text des de l'entrada estàndard, seleccioneu la casella de selecció. </para>
+      <para
+>L'altra manera és passar el text com a paràmetre. Abans de cridar l'ordre, el &kmouth; substituirà els marcadors de posició pel contingut real: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Marcador de posició</entry
+><entry
+>Substituït amb</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>El text real que s'ha de parlar</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>El nom d'un fitxer temporal que conté el text que s'ha de parlar</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>El codi d'idioma associat amb el diccionari actual de compleció de paraules</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Un signe de percentatge</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Per descomptat, l'ordre per a parlar texts dependrà del sintetitzador de veu que empreu. Si us plau, consulteu la documentació del vostre sintetitzador de veu per a l'ordre a emprar. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>La pàgina Compleció de paraules</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>La pàgina <guilabel
+>Compleció de paraules</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Captura de pantalla</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>La pàgina <guilabel
+>Compleció de paraules</guilabel
+> conté una llista de diccionaris emprats per a la compleció de paraules. (Si aquesta llista conté més d'un diccionari, el &kmouth; mostrarà un quadre combinat al costat del camp d'edició a la finestra principal. La funció d'aquest quadre combinat és la de permetre seleccionar el diccionari a emprar per a la compleció de paraules). </para>
+      <para
+>Amb els botons a la part dreta de la pàgina podeu afegir o suprimir els diccionaris, canviar el seu ordre o exportar-los a un fitxer. Amb el camp d'edició i el quadre combinat de sota, és possible canviar l'idioma associat amb el diccionari. </para>
+      <para
+>Quan vulgueu afegir un diccionari nou, podreu escollir entre diverses fonts: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Crear un diccionari nou a partir de la documentació del &kde;</para>
+          <para
+>Si empreu aquesta font, el &kmouth; demanarà especificar l'idioma a emprar i després analitzarà la documentació del &kde;. La freqüència de cada paraula serà detectada mitjançant l'enumeració de les ocurrències de cada paraula. De manera opcional també és possible comparar la llista de paraules obtingudes, contra un diccionari OpenOffice.org. Aquest últim mètode ajuda que tan sols s'afegeixin al diccionari aquelles paraules expressades correctament. </para>
+        </listitem>
+        <listitem>
+          <para
+>Crear un diccionari nou a partir d'un fitxer</para>
+          <para
+>Si empreu aquesta font, el &kmouth; demanarà pel fitxer a emprar. És possible emprar un fitxer XML, un fitxer de text estàndard o un fitxer creat prèviament amb el &kmouth; o GOK (la utilitat de teclat dinàmic en pantalla del Gnome). Si se selecciona un fitxer de text estàndard o un XML, la freqüència de les paraules serà detectada per la simple enumeració d'ocurrències de cada paraula. De manera opcional també és possible comparar la llista de paraules obtingudes contra un diccionari OpenOffice.org, de manera que tan sols s'afegeixin al diccionari aquelles paraules expressades correctament. </para>
+        </listitem>
+        <listitem>
+          <para
+>Crear un diccionari nou a partir d'una carpeta</para>
+          <para
+>Si empreu aquesta font, el &kmouth; demanarà per la carpeta a emprar. El &kmouth; obrirà tots els fitxers en aquesta carpeta i els seus subdirectoris. Cada fitxer es carregarà com a un diccionari de compleció, un fitxer &XML; o un fitxer de text net estàndard. En els dos últims casos es comptarà cadascuna de les paraules en cada ocurrència. De manera opcional podeu comparar la llista de paraules contra un diccionari OpenOffice.org amb l'objectiu d'eliminar les paraules que poguessin contenir errors ortogràfics o d'altre tipus. </para>
+        </listitem>
+        <listitem>
+          <para
+>Fusionar els diccionaris</para>
+          <para
+>Podeu emprar aquesta opció amb l'objectiu de fusionar els diccionaris disponibles. El &kmouth; demanarà pels diccionaris a fusionar i mostrarà com serà ponderat cada diccionari. </para>
+        </listitem>
+        <listitem>
+          <para
+>Crear una llista de paraules buida</para>
+          <para
+>Aquesta opció s'utilitza per a crear un diccionari en blanc sense cap entrada. Com el &kmouth; afegeix automàticament les paraules noves als diccionaris, aquest que en un començament estava en blanc, amb el temps anirà aprenent el vostre vocabulari. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>La finestra d'edició pel llibre de frases</title>
+    <para
+>Utilitzant l'entrada de menú <menuchoice
+> <guimenu
+>Llibres de frases</guimenu
+><guimenuitem
+>Edita...</guimenuitem
+> </menuchoice
+> obrireu la finestra d'edició pel llibre de frases. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>La finestra d'edició pel llibre de frases</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Captura de pantalla</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>La finestra d'edició pel llibre de frases es divideix en dues parts. A la part superior, les frases apareixen en una estructura en arbre. </para>
+    <para
+>A la part inferior podeu modificar un element seleccionat. Si heu seleccionat una frase en podeu modificar el contingut així com la seva drecera. Si heu seleccionat un llibre de frases tan sols podreu canviar el seu nom. </para>
+    <para
+>Per a executar accions com afegir llibres de frases i frases, suprimir llibres de frases i frases, podeu o bé seleccionar aquestes accions a la barra de menús, a la barra d'eines o en un menú emergent. </para>
+    <para
+>Podeu canviar l'ordre dels llibres de frases i les frases arrossegant-les a la seva nova ubicació o utilitzant el cursor del teclat mentre es prem la tecla &Alt;. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Referència d'ordres</title>
+
+  <sect1 id="main-commands">
+    <title
+>Ordres dins de la finestra principal</title>
+    <sect2 id="file-menu">
+      <title
+>El menú Fitxer</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Obre com a historial...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Obre un fitxer de text com a historial de les frases sintetitzades.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa l'historial com a...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Desa l'historial a un fitxer de text.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Imprimeix l'historial...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Imprimeix l'historial.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Surt del &kmouth;</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>El menú Edita</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Retalla</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Talla la secció seleccionada i la posa al porta-retalls. Si hi ha cap text seleccionat en el camp d'edició, aquest serà ubicat al porta-retalls. D'altra manera, les frases seleccionades en l'historial (si n'hi ha cap) seran ubicades al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia la secció seleccionada i la posa al porta-retalls. Si hi ha cap text seleccionat en el camp d'edició, aquest serà copiat al porta-retalls. D'altra manera, les frases seleccionades a l'historial (si n'hi ha cap) seran ubicades al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Enganxa</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Enganxa el contingut del porta-retalls a la posició actual del cursor en el camp d'edició. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Sintetitza</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sintetitza les frases actualment actives. Si hi ha text en el camp d'edició, se sintetitzarà aquest. D'altra manera se sintetitzaran les frases seleccionades a l'historial (si n'hi ha cap). </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>El menú Llibres de frases</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Llibres de frases</guimenu
+> <guimenuitem
+>Edita...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Obre la <link linkend="phrasebook-editor"
+>finestra d'edició pels llibres de frases</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>El &kmouth; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, vegeu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Ordres dins de la finestra d'edició pels llibres de frases</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>El menú Fitxer</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Frase nova</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Afegeix una frase nova.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Llibre de frases nou</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Afegeix un llibre de frases nou.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Desa el llibre de frases.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Importa...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa un fitxer i afegeix el seu contingut al llibre de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Importa un llibre de frases estàndard</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa un fitxer de frases estàndard i afegeix el seu contingut al llibre de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Exporta...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporta les frases o llibres de frases seleccionats a un fitxer</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Tanca</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tanca la finestra</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>El menú Edita</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Retalla</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Talla els elements seleccionats i els situa al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia els elements seleccionats al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Enganxa</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Enganxa el contingut del porta-retalls en el llibre de frases. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Suprimeix</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Suprimeix els elements seleccionats. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>El menú Ajuda</title>
+      <para
+>Els elements d'aquest menú són els mateixos que a la finestra principal.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>El menú emergent</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Frase nova</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Afegeix una frase nova.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Llibre de frases nou</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Afegeix un llibre de frases nou.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importa...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa un fitxer i afegeix el seu contingut al llibre de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importa un llibre de frases estàndard</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importa un fitxer de frases estàndard i afegeix el seu contingut al llibre de frases</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Exporta...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporta les frases o llibres de frases seleccionats a un fitxer</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Retalla</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Talla els elements seleccionats i els situa al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Copia</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Copia els elements seleccionats al porta-retalls. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Enganxa</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Enganxa el contingut del porta-retalls en aquesta posició en el llibre de frases. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Suprimeix</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Suprimeix els elements seleccionats. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Crèdits i llicència</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Copyright del programa 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Copyright de la documentació 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  <para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

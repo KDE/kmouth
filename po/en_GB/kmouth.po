@@ -1,0 +1,1448 @@
+# translation of kmouth.po to British English
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
+# Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2003, 2004, 2005.
+# Jonathan Riddell <kde-en-gb@jriddell.org>, 2003.
+# Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2009, 2010, 2015.
+# Steve Allewell <steve.allewell@gmail.com>, 2017, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmouth\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"PO-Revision-Date: 2022-04-02 16:51+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Jonathan Riddell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-en-gb@jriddell.org"
+
+#: configwizard.cpp:38
+#, kde-format
+msgid "Initial Configuration - KMouth"
+msgstr "Initial Configuration - KMouth"
+
+#: configwizard.cpp:59
+#, kde-format
+msgid "Text-to-Speech Configuration"
+msgstr "Text-to-Speech Configuration"
+
+#: configwizard.cpp:73
+#, kde-format
+msgid "Initial Phrase Book"
+msgstr "Initial Phrase Book"
+
+#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#, kde-format
+msgid "Word Completion"
+msgstr "Word Completion"
+
+#: kmouth.cpp:107
+#, kde-format
+msgid "&Open as History..."
+msgstr "&Open as History..."
+
+#: kmouth.cpp:110 kmouth.cpp:111
+#, kde-format
+msgid "Opens an existing file as history"
+msgstr "Opens an existing file as history"
+
+#: kmouth.cpp:115
+#, kde-format
+msgid "Save &History As..."
+msgstr "Save &History As..."
+
+#: kmouth.cpp:118 kmouth.cpp:119
+#, kde-format
+msgid "Saves the actual history as..."
+msgstr "Saves the actual history as..."
+
+#: kmouth.cpp:123
+#, kde-format
+msgid "&Print History..."
+msgstr "&Print History..."
+
+#: kmouth.cpp:126 kmouth.cpp:127
+#, kde-format
+msgid "Prints out the actual history"
+msgstr "Prints out the actual history"
+
+#: kmouth.cpp:130 kmouth.cpp:131
+#, kde-format
+msgid "Quits the application"
+msgstr "Quits the application"
+
+#: kmouth.cpp:135
+#, kde-format
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Cuts the selected section and puts it to the clipboard"
+
+#: kmouth.cpp:136
+#, kde-format
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+msgstr ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+
+#: kmouth.cpp:139
+#, kde-format
+msgid "Copies the selected section to the clipboard"
+msgstr "Copies the selected section to the clipboard"
+
+#: kmouth.cpp:140
+#, kde-format
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+msgstr ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#, kde-format
+msgid "Pastes the clipboard contents to current position"
+msgstr "Pastes the clipboard contents to current position"
+
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#, kde-format
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+
+#: kmouth.cpp:148
+#, kde-format
+msgctxt "Start speaking"
+msgid "&Speak"
+msgstr "&Speak"
+
+#: kmouth.cpp:150
+#, kde-format
+msgid "Speaks the currently active sentence(s)"
+msgstr "Speaks the currently active sentence(s)"
+
+#: kmouth.cpp:151 phraselist.cpp:88
+#, kde-format
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+
+#: kmouth.cpp:155
+#, kde-format
+msgid "&Edit..."
+msgstr "&Edit..."
+
+#: kmouth.cpp:166
+#, kde-format
+msgid "Show P&hrasebook Bar"
+msgstr "Show P&hrasebook Bar"
+
+#: kmouth.cpp:168 kmouth.cpp:169
+#, kde-format
+msgid "Enables/disables the phrasebook bar"
+msgstr "Enables/disables the phrasebook bar"
+
+#: kmouth.cpp:172 kmouth.cpp:173
+#, kde-format
+msgid "Enables/disables the statusbar"
+msgstr "Enables/disables the statusbar"
+
+#: kmouth.cpp:177
+#, kde-format
+msgid "&Configure KMouth..."
+msgstr "&Configure KMouth..."
+
+#: kmouth.cpp:179 kmouth.cpp:180
+#, kde-format
+msgid "Opens the configuration dialog"
+msgstr "Opens the configuration dialogue"
+
+#: kmouth.cpp:188 phraselist.cpp:85
+#, kde-format
+msgid "&Speak"
+msgstr "&Speak"
+
+#: kmouth.cpp:189 kmouth.cpp:191
+#, kde-format
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Speaks the currently selected phrases in the history"
+
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#, kde-format
+msgid "&Delete"
+msgstr "&Delete"
+
+#: kmouth.cpp:197 kmouth.cpp:198
+#, kde-format
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Deletes the currently selected phrases from the history"
+
+#: kmouth.cpp:202
+#, kde-format
+msgid "Cu&t"
+msgstr "Cu&t"
+
+#: kmouth.cpp:204 kmouth.cpp:205
+#, kde-format
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+
+#: kmouth.cpp:209
+#, kde-format
+msgid "&Copy"
+msgstr "&Copy"
+
+#: kmouth.cpp:211 kmouth.cpp:212
+#, kde-format
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr ""
+"Copies the currently selected phrases from the history to the clipboard"
+
+#: kmouth.cpp:215
+#, kde-format
+msgid "Select &All Entries"
+msgstr "Select &All Entries"
+
+#: kmouth.cpp:217 kmouth.cpp:218
+#, kde-format
+msgid "Selects all phrases in the history"
+msgstr "Selects all phrases in the history"
+
+#: kmouth.cpp:221
+#, kde-format
+msgid "D&eselect All Entries"
+msgstr "D&eselect All Entries"
+
+#: kmouth.cpp:223 kmouth.cpp:224
+#, kde-format
+msgid "Deselects all phrases in the history"
+msgstr "Deselects all phrases in the history"
+
+#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
+#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#, kde-format
+msgctxt "The job is done"
+msgid "Ready."
+msgstr "Ready."
+
+#: kmouth.cpp:254 kmouth.cpp:353
+#, kde-format
+msgid "Opening file..."
+msgstr "Opening file..."
+
+#: kmouth.cpp:362
+#, kde-format
+msgid "Saving history with a new filename..."
+msgstr "Saving history with a new filename..."
+
+#: kmouth.cpp:371
+#, kde-format
+msgid "Printing..."
+msgstr "Printing..."
+
+#: kmouth.cpp:388
+#, kde-format
+msgctxt "Shutting down the application"
+msgid "Exiting..."
+msgstr "Exiting..."
+
+#: kmouth.cpp:425
+#, kde-format
+msgid "Toggling menubar..."
+msgstr "Toggling menubar..."
+
+#: kmouth.cpp:437
+#, kde-format
+msgid "Toggling toolbar..."
+msgstr "Toggling toolbar..."
+
+#: kmouth.cpp:451
+#, kde-format
+msgid "Toggling phrasebook bar..."
+msgstr "Toggling phrasebook bar..."
+
+#: kmouth.cpp:465
+#, kde-format
+msgid "Toggle the statusbar..."
+msgstr "Toggle the statusbar..."
+
+#. i18n: ectx: Menu (file)
+#: kmouthui.rc:5 phrasebookdialogui.rc:6
+#, kde-format
+msgid "&File"
+msgstr "&File"
+
+#. i18n: ectx: Menu (edit)
+#: kmouthui.rc:12 phrasebookdialogui.rc:20
+#, kde-format
+msgid "&Edit"
+msgstr "&Edit"
+
+#. i18n: ectx: Menu (phrasebooks)
+#: kmouthui.rc:15
+#, kde-format
+msgid "&Phrase Books"
+msgstr "&Phrase Books"
+
+#. i18n: ectx: Menu (settings)
+#: kmouthui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr "&Settings"
+
+#: main.cpp:39
+#, kde-format
+msgid "KMouth"
+msgstr "KMouth"
+
+#: main.cpp:41
+#, kde-format
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "A type-and-say front end for speech synthesisers"
+
+#: main.cpp:43
+#, kde-format
+msgid "(c) 2002/2003, Gunnar Schmi Dt"
+msgstr "(c) 2002/2003, Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Gunnar Schmi Dt"
+msgstr "Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Original Author"
+msgstr "Original Author"
+
+#: main.cpp:48
+#, kde-format
+msgid "Jeremy Whiting"
+msgstr "Jeremy Whiting"
+
+#: main.cpp:48
+#, kde-format
+msgid "Current Maintainer"
+msgstr "Current Maintainer"
+
+#: main.cpp:49
+#, kde-format
+msgid "Olaf Schmidt"
+msgstr "Olaf Schmidt"
+
+#: main.cpp:49
+#, kde-format
+msgid "Tips, extended phrase books"
+msgstr "Tips, extended phrase books"
+
+#: main.cpp:53
+#, kde-format
+msgid "History file to open"
+msgstr "History file to open"
+
+#: optionsdialog.cpp:122
+#, kde-format
+msgid "Configuration"
+msgstr "Configuration"
+
+#: optionsdialog.cpp:133
+#, kde-format
+msgid "&Preferences"
+msgstr "&Preferences"
+
+#: optionsdialog.cpp:136
+#, kde-format
+msgid "&Text-to-Speech"
+msgstr "&Text-to-Speech"
+
+#: optionsdialog.cpp:138 optionsdialog.cpp:139
+#, kde-format
+msgid "General Options"
+msgstr "General Options"
+
+#: phrasebook/initialphrasebookwidget.cpp:45
+#, kde-format
+msgid "Please decide which phrase books you need:"
+msgstr "Please decide which phrase books you need:"
+
+#: phrasebook/initialphrasebookwidget.cpp:50
+#, kde-format
+msgid "Book"
+msgstr "Book"
+
+#: phrasebook/phrasebook.cpp:269
+#, kde-format
+msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+msgstr "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+
+#: phrasebook/phrasebook.cpp:271
+#, kde-format
+msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+msgstr "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+
+#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#, kde-format
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "The file %1 already exists. Do you want to overwrite it?"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "File Exists"
+msgstr "File Exists"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "&Overwrite"
+msgstr "&Overwrite"
+
+#: phrasebook/phrasebook.cpp:299
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+
+#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "File Extension"
+msgstr "File Extension"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Add"
+msgstr "Add"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Do Not Add"
+msgstr "Do Not Add"
+
+#: phrasebook/phrasebook.cpp:314
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+msgstr ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Phrasebook"
+msgstr "As Phrasebook"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Plain Text"
+msgstr "As Plain Text"
+
+#: phrasebook/phrasebookdialog.cpp:88
+#, kde-format
+msgid "Phrase"
+msgstr "Phrase"
+
+#: phrasebook/phrasebookdialog.cpp:89
+#, kde-format
+msgid "Shortcut"
+msgstr "Shortcut"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
+#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#, kde-format
+msgid "Phrase Book"
+msgstr "Phrase Book"
+
+#: phrasebook/phrasebookdialog.cpp:228
+#, kde-format
+msgid "&New Phrase"
+msgstr "&New Phrase"
+
+#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#, kde-format
+msgid "Adds a new phrase"
+msgstr "Adds a new phrase"
+
+#: phrasebook/phrasebookdialog.cpp:235
+#, kde-format
+msgid "New Phrase &Book"
+msgstr "New Phrase &Book"
+
+#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#, kde-format
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr ""
+"Adds a new phrase book into which other books and phrases can be placed"
+
+#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#, kde-format
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Saves the phrase book onto the hard disk"
+
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#, kde-format
+msgid "&Import..."
+msgstr "&Import..."
+
+#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
+#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#, kde-format
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr "Imports a file and adds its contents to the phrase book"
+
+#: phrasebook/phrasebookdialog.cpp:259
+#, kde-format
+msgid "I&mport Standard Phrase Book"
+msgstr "I&mport Standard Phrase Book"
+
+#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#, kde-format
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr ""
+"Imports a standard phrase book and adds its contents to the phrase book"
+
+#: phrasebook/phrasebookdialog.cpp:265
+#, kde-format
+msgid "&Export..."
+msgstr "&Export..."
+
+#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#, kde-format
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr "Exports the currently selected phrase(s) or phrase book(s) into a file"
+
+#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#, kde-format
+msgid "Closes the window"
+msgstr "Closes the window"
+
+#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#, kde-format
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+
+#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#, kde-format
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+
+#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#, kde-format
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Deletes the selected entries from the phrase book"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.ui:82
+#, kde-format
+msgid "Text of the &phrase:"
+msgstr "Text of the &phrase:"
+
+#: phrasebook/phrasebookdialog.cpp:404
+#, kde-format
+msgid "Name of the &phrase book:"
+msgstr "Name of the &phrase book:"
+
+#: phrasebook/phrasebookdialog.cpp:425
+#, kde-format
+msgid ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+msgstr ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+
+#: phrasebook/phrasebookdialog.cpp:426
+#, kde-format
+msgid "Closing \"Phrase Book\" Window"
+msgstr "Closing \"Phrase Book\" Window"
+
+#: phrasebook/phrasebookdialog.cpp:586
+#, kde-format
+msgid "(New Phrase Book)"
+msgstr "(New Phrase Book)"
+
+#: phrasebook/phrasebookdialog.cpp:602
+#, kde-format
+msgid "(New Phrase)"
+msgstr "(New Phrase)"
+
+#: phrasebook/phrasebookdialog.cpp:633
+#, kde-format
+msgid "Import Phrasebook"
+msgstr "Import Phrasebook"
+
+#: phrasebook/phrasebookdialog.cpp:634
+#, kde-format
+msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+msgstr "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+
+#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#, kde-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"There was an error loading file\n"
+"%1"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Export Phrase Book"
+msgstr "Export Phrase Book"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Phrase Books (*.phrasebook)"
+msgstr "Phrase Books (*.phrasebook)"
+
+#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#, kde-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"There was an error saving file\n"
+"%1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
+#: phrasebook/phrasebookdialog.ui:26
+#, kde-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "&Currently Selected Phrase or Phrase Book"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
+#: phrasebook/phrasebookdialog.ui:38
+#, kde-format
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+msgstr ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.ui:45 phrasebook/phrasebookdialog.ui:79
+#, kde-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+msgstr ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:52
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+msgstr ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+
+#. i18n: ectx: property (text), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:55
+#, kde-format
+msgid "&None"
+msgstr "&None"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:62
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+
+#. i18n: ectx: property (text), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:65
+#, kde-format
+msgid "C&ustom"
+msgstr "C&ustom"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: phrasebook/phrasebookdialog.ui:72
+#, kde-format
+msgid "Shortcut for the phrase:"
+msgstr "Shortcut for the phrase:"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
+#: phrasebook/phrasebookdialog.ui:98
+#, kde-format
+msgid ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+msgstr ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+
+#: phraselist.cpp:62
+#, kde-format
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+
+#: phraselist.cpp:80
+#, kde-format
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+msgstr ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+
+#: phraselist.cpp:475
+#, kde-format
+msgid "Save As"
+msgstr "Save As"
+
+#: phraselist.cpp:481
+#, kde-format
+msgid "Open File as History"
+msgstr "Open File as History"
+
+#: phraselist.cpp:482
+#, kde-format
+msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+msgstr "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
+#: preferencesui.ui:21
+#, kde-format
+msgid "Preferences"
+msgstr "Preferences"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, speakLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, speakCombo)
+#: preferencesui.ui:49 preferencesui.ui:62
+#, kde-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+
+#. i18n: ectx: property (text), widget (QLabel, speakLabel)
+#: preferencesui.ui:52
+#, kde-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "&Selection of phrases in the phrase book:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:66
+#, kde-format
+msgid "Speak Immediately"
+msgstr "Speak Immediately"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:71
+#, kde-format
+msgid "Insert Into Edit Field"
+msgstr "Insert Into Edit Field"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
+#: preferencesui.ui:97 preferencesui.ui:110
+#, kde-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+
+#. i18n: ectx: property (text), widget (QLabel, closeLabel)
+#: preferencesui.ui:100
+#, kde-format
+msgid "Closing the phrase &book edit window:"
+msgstr "Closing the phrase &book edit window:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:114
+#, kde-format
+msgid "Save Phrase Book"
+msgstr "Save Phrase Book"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:119
+#, kde-format
+msgid "Discard Changes"
+msgstr "Discard Changes"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:124
+#, kde-format
+msgid "Ask Whether to Save"
+msgstr "Ask Whether to Save"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
+#: texttospeechconfigurationui.ui:14
+#, kde-format
+msgid "Text-to-Speech"
+msgstr "Text-to-Speech"
+
+#. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
+#: texttospeechconfigurationui.ui:32
+#, kde-format
+msgid "&Use default speech system"
+msgstr "&Use default speech system"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: texttospeechconfigurationui.ui:41
+#, kde-format
+msgid "&Engine:"
+msgstr "&Engine:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: texttospeechconfigurationui.ui:61
+#, kde-format
+msgid "&Voice:"
+msgstr "&Voice:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
+#: texttospeechconfigurationui.ui:87
+#, kde-format
+msgid "Alternative"
+msgstr "Alternative"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
+#: texttospeechconfigurationui.ui:120 texttospeechconfigurationui.ui:143
+#, no-c-format, kde-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: texttospeechconfigurationui.ui:123
+#, kde-format
+msgid "Command for speaking &texts:"
+msgstr "Command for speaking &texts:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:152
+#, kde-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"This tickbox specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+
+#. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:155
+#, kde-format
+msgid "Send the data as standard &input"
+msgstr "Send the data as standard &input"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
+#: texttospeechconfigurationui.ui:185 texttospeechconfigurationui.ui:198
+#, kde-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+msgstr ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+
+#. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
+#: texttospeechconfigurationui.ui:188
+#, kde-format
+msgid "Character encodin&g:"
+msgstr "Character encodin&g:"
+
+#: texttospeechconfigurationwidget.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:116
+#, kde-format
+msgctxt "Local characterset"
+msgid "Local"
+msgstr "Local"
+
+#: texttospeechconfigurationwidget.cpp:68
+#, kde-format
+msgctxt "Latin1 characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: texttospeechconfigurationwidget.cpp:69
+#: wordcompletion/dictionarycreationwizard.cpp:120
+#, kde-format
+msgid "Unicode"
+msgstr "Unicode"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"If you select this tickbox the words are spell-checked before they are "
+"inserted into the new dictionary."
+
+#. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:25
+#: wordcompletion/kdedocsourceui.ui:25
+#, kde-format
+msgid "C&ompare to OpenOffice.org dictionary:"
+msgstr "C&ompare to OpenOffice.org dictionary:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
+#: wordcompletion/creationsourcedetailsui.ui:43
+#: wordcompletion/creationsourcedetailsui.ui:100
+#, kde-format
+msgid ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+
+#. i18n: ectx: property (text), widget (QLabel, encodingLabel)
+#: wordcompletion/creationsourcedetailsui.ui:46
+#, kde-format
+msgid "Character &encoding:"
+msgstr "Character &encoding:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
+#: wordcompletion/creationsourcedetailsui.ui:64
+#: wordcompletion/creationsourcedetailsui.ui:85
+#, kde-format
+msgid ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+msgstr ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: wordcompletion/creationsourcedetailsui.ui:67
+#, kde-format
+msgid "&Filename:"
+msgstr "&Filename:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
+#: wordcompletion/creationsourcedetailsui.ui:118
+#: wordcompletion/kdedocsourceui.ui:44
+#, kde-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+msgstr ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:136
+#, kde-format
+msgid ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+msgstr ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:139
+#: wordcompletion/kdedocsourceui.ui:67 wordcompletion/wordcompletionui.ui:50
+#, kde-format
+msgid "&Language:"
+msgstr "&Language:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:16
+#, kde-format
+msgid "C&reate new dictionary:"
+msgstr "C&reate new dictionary:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+
+#. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:29
+#, kde-format
+msgid "&Merge dictionaries"
+msgstr "&Merge dictionaries"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:32
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+
+#. i18n: ectx: property (text), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:50
+#, kde-format
+msgid "From &file"
+msgstr "From &file"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:53
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+msgstr ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+
+#. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:71
+#, kde-format
+msgid "From &KDE documentation"
+msgstr "From &KDE documentation"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:77
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+
+#. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:95
+#, kde-format
+msgid "From f&older"
+msgstr "From f&older"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:98
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+
+#. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:121
+#, kde-format
+msgid "Create an &empty wordlist"
+msgstr "Create an &empty wordlist"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:124
+#, kde-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+msgstr ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+
+#: wordcompletion/dictionarycreationwizard.cpp:65
+#, kde-format
+msgid "Source of New Dictionary (1)"
+msgstr "Source of New Dictionary (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:71
+#: wordcompletion/dictionarycreationwizard.cpp:77
+#: wordcompletion/dictionarycreationwizard.cpp:87
+#: wordcompletion/dictionarycreationwizard.cpp:94
+#, kde-format
+msgid "Source of New Dictionary (2)"
+msgstr "Source of New Dictionary (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:80
+#, kde-format
+msgctxt "In which directory is the file located?"
+msgid "&Directory:"
+msgstr "&Directory:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:83
+#, kde-format
+msgid ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+msgstr ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+
+#: wordcompletion/dictionarycreationwizard.cpp:119
+#, kde-format
+msgctxt "Latin characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: wordcompletion/dictionarycreationwizard.cpp:204
+#, kde-format
+msgid "Merge result"
+msgstr "Merge result"
+
+#: wordcompletion/dictionarycreationwizard.cpp:206
+#, kde-format
+msgctxt "In the sense of a blank word list"
+msgid "Empty list"
+msgstr "Empty list"
+
+#: wordcompletion/dictionarycreationwizard.cpp:212
+#, kde-format
+msgid "KDE Documentation"
+msgstr "KDE Documentation"
+
+#: wordcompletion/dictionarycreationwizard.cpp:336
+#, kde-format
+msgctxt "Default dictionary"
+msgid "Default"
+msgstr "Default"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/kdedocsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+msgstr ""
+"If you select this tickbox the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/kdedocsourceui.ui:64
+#, kde-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+msgstr ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+
+#. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
+#: wordcompletion/wordcompletionui.ui:32
+#, kde-format
+msgid "&Selected Dictionary"
+msgstr "&Selected Dictionary"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/wordcompletionui.ui:47
+#, kde-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
+#: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
+#, kde-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "With this input field you specify the name of the selected dictionary."
+
+#. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
+#: wordcompletion/wordcompletionui.ui:66
+#, kde-format
+msgid "&Name:"
+msgstr "&Name:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:100
+#, kde-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:103
+#, kde-format
+msgid "Add D&ictionary..."
+msgstr "Add D&ictionary..."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:119
+#, kde-format
+msgid "With this button you delete the selected dictionary."
+msgstr "With this button you delete the selected dictionary."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:122
+#, kde-format
+msgid "&Delete Dictionary"
+msgstr "&Delete Dictionary"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:138
+#, kde-format
+msgid "With this button you move the selected dictionary up."
+msgstr "With this button you move the selected dictionary up."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:141
+#, kde-format
+msgid "Move &Up"
+msgstr "Move &Up"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:157
+#, kde-format
+msgid "With this button you move the selected dictionary down."
+msgstr "With this button you move the selected dictionary down."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:160
+#, kde-format
+msgid "&Move Down"
+msgstr "&Move Down"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:176
+#, kde-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "With this button you export the selected dictionary to a file."
+
+#. i18n: ectx: property (text), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:179
+#, kde-format
+msgid "&Export Dictionary..."
+msgstr "&Export Dictionary..."
+
+#. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
+#: wordcompletion/wordcompletionui.ui:204
+#, kde-format
+msgid ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+msgstr ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Dictionary"
+msgstr "Dictionary"
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Language"
+msgstr "Language"
+
+#: wordcompletion/wordcompletionwidget.cpp:97
+#: wordcompletion/wordcompletionwidget.cpp:155
+#, kde-format
+msgid "without name"
+msgstr "without name"
+
+#: wordcompletion/wordcompletionwidget.cpp:204
+#, kde-format
+msgid "Export Dictionary"
+msgstr "Export Dictionary"
+
+#: wordcompletion/wordlist.cpp:77
+#, kde-format
+msgid "Creating Word List"
+msgstr "Creating Word List"
+
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#, kde-format
+msgid "Parsing the KDE documentation..."
+msgstr "Parsing the KDE documentation..."
+
+#: wordcompletion/wordlist.cpp:197
+#, kde-format
+msgid "Merging dictionaries..."
+msgstr "Merging dictionaries..."
+
+#: wordcompletion/wordlist.cpp:266
+#, kde-format
+msgid "Parsing file..."
+msgstr "Parsing file..."
+
+#: wordcompletion/wordlist.cpp:278
+#, kde-format
+msgid "Parsing directory..."
+msgstr "Parsing directory..."
+
+#: wordcompletion/wordlist.cpp:469
+#, kde-format
+msgid "Performing spell check..."
+msgstr "Performing spell check..."
+
+#~ msgid ""
+#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
+#~ "system speech service prior to calling the speech synthesizer directly. "
+#~ "The system speech service is a Qt library which wraps speech-dispatcher "
+#~ "on linux, and native speech systems on other platforms.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>This tick box specifies KMouth tries to use the "
+#~ "system speech service prior to calling the speech synthesiser directly. "
+#~ "The system speech service is a Qt library which wraps speech-dispatcher "
+#~ "on linux, and native speech systems on other platforms.</p></body></html>"
+
+#~ msgid "kmouth"
+#~ msgstr "kmouth"
+
+#~ msgid "https://www.kde.org/applications/utilities/kmouth/"
+#~ msgstr "https://www.kde.org/applications/utilities/kmouth/"
+
+#~ msgid "kmouth@schmi-dt.de"
+#~ msgstr "kmouth@schmi-dt.de"
+
+#~ msgid "Jovie Speech Service"
+#~ msgstr "Jovie Speech Service"
+
+#~ msgid "KDE Text-to-Speech Daemon Configuration"
+#~ msgstr "KDE Text-to-Speech Dæmon Configuration"
+
+#~ msgid "&Use Jovie speech service if possible"
+#~ msgstr "&Use Jovie speech service if possible"
+
+#~ msgid "Currently Selected Phrase or Phrase Book"
+#~ msgstr "Currently Selected Phrase or Phrase Book"
+
+#~ msgid " (%2 of 1 book selected)"
+#~ msgid_plural " (%2 of %1 books selected)"
+#~ msgstr[0] " (%2 of 1 book selected)"
+#~ msgstr[1] " (%2 of %1 books selected)"
+
+#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
+#~ msgstr "Prints the currently selected phrase(s) or phrase book(s)"
+
+#~ msgid ""
+#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
+#~ "Win, Alt, Ctrl, and/or Shift keys."
+#~ msgstr ""
+#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
+#~ "Win, Alt, Ctrl, and/or Shift keys."
+
+#~ msgid "Invalid Shortcut Key"
+#~ msgstr "Invalid Shortcut Key"
+
+#~ msgid ""
+#~ "The '%1' key combination has already been allocated to %2.\n"
+#~ "Please choose a unique key combination."
+#~ msgstr ""
+#~ "The '%1' key combination has already been allocated to %2.\n"
+#~ "Please choose a unique key combination."
+
+#~ msgid "the standard \"%1\" action"
+#~ msgstr "the standard \"%1\" action"
+
+#~ msgid "Conflict with Standard Application Shortcut"
+#~ msgstr "Conflict with Standard Application Shortcut"
+
+#~ msgid "the global \"%1\" action"
+#~ msgstr "the global \"%1\" action"
+
+#~ msgid "Conflict with Global Shortcuts"
+#~ msgstr "Conflict with Global Shortcuts"
+
+#~ msgid "an other phrase"
+#~ msgstr "an other phrase"
+
+#~ msgid "Key Conflict"
+#~ msgstr "Key Conflict"
+
+#, fuzzy
+#~| msgid "&Language:"
+#~ msgid "Language:"
+#~ msgstr "&Language:"
+
+#~ msgid "Other"
+#~ msgstr "Other"
+
+#~ msgid "Create Custom Language"
+#~ msgstr "Create Custom Language"
+
+#~ msgid "Please enter the code for the custom language:"
+#~ msgstr "Please enter the code for the custom language:"
+
+#~ msgid "Enables/disables the toolbar"
+#~ msgstr "Enables/disables the toolbar"

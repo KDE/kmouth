@@ -1,0 +1,1216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>Das Handbuch zu &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  <othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2018-01-04</date>
+  <releaseinfo
+>1.2.0 (Anwendungen 17.12)</releaseinfo>
+
+  <abstract>
+    <para
+>&kmouth; ist ein Programm, mit dem stumme Benutzer ihren Computer für sich sprechen lassen können. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeaccesibility</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>Umwandlung von Text in Sprache </keyword>
+    <keyword
+>stumme Personen</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Einführung</title>
+
+  <para
+>Mit dem Programm &kmouth; können stumme Benutzer den Computer für sich sprechen lassen. Der Benutzer kann aus einer Liste mit dem Gesprächsverlauf Sätze wählen, die erneut gesprochen werden sollen.  </para>
+  <para
+>Beachten Sie, dass &kmouth; keinen Sprachsynthesizer beinhaltet Auf dem Rechner muss ein Sprachsynthesizer installiert sein. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Arbeiten mit &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>Einstellungen beim ersten Start</title>
+    <para
+>Beim ersten Start von &kmouth; erscheint ein Assistent für die Einstellungen. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Einrichtung der Sprachausgabe</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Einrichtung der Sprachausgabe</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Auf der ersten Seite des Assistenten geben Sie den Befehl ein, der für die Sprachausgabe von Text verwendet wird. Weitere Einzelheiten finden Sie in der <link linkend="tts-config"
+>Beschreibung des Einrichtungsdialogs.</link
+> </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Erstes Textpassagen-Buch</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Erstes Textpassagen-Buch</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Auf der zweiten Seite wählen Sie das Standard-Textpassagen-Buch. Aus den Textpassagen-Büchern können Sie oft verwendete Textpassagen wählen, ohne sie eintippen zu müssen. Die Textpassagen können natürlich bearbeitet werden. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Wortergänzung</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Wortergänzung</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Auf der dritten Seite bestimmen Sie das Wörterbuch für die Wortergänzung. &kmouth; liest die KDE-Dokumentation der gewählten Sprache ein, um die Häufigkeit der einzelnen Worte zu bestimmen. Zusätzlich können Sie die Wortlisten mit einem OpenOffice.org-Wörterbuch abgleichen, damit nur richtig buchstabierte Worte in die Wortergänzung aufgenommen werden. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>Das Hauptfenster</title>
+    <para
+>Das Hauptfenster von &kmouth; ist übersichtlich und enthält im Wesentlichen ein Eingabefeld für die Tastatureingabe Ihrer Sätze (das untere weiße Feld im Bildschirmfoto) und einen Verlaufsspeicher der schon gesprochenen Sätze (das obere weiße Feld im Bildschirmfoto). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Das Hauptfenster von &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Das Hauptfenster von &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Wenn Sie <link linkend="config-dialog"
+>&kmouth; richtig einrichtet</link
+> haben, können Sie im Eingabefeld die Sätze eingeben, die Sie hören wollen. Jeder gesprochene Satz wird an den Verlaufsspeicher angehängt. Sie können daraus Sätze auswählen, die erneut gesprochen werden sollen. </para>
+    <para
+>Im Textpassagen-Buch (in der Zeile unter der Werkzeugleiste) können Sie oft benutzte Textpassagen wählen. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>Der Einrichtungsdialog</title>
+    <para
+>Mit dem Menü-Eintrag <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>&kmouth; einrichten ...</guimenuitem
+></menuchoice
+> öffnen Sie den Einstellungsdialog von &kmouth;. Dieser Dialog besteht aus der Seite <guilabel
+>Allgemeine Einstellungen</guilabel
+> mit den zwei Karteikarten <guilabel
+>Persönliche Einstellungen</guilabel
+> und <guilabel
+>Sprachausgabe</guilabel
+> und der Seite <guilabel
+>Wortergänzung</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>Die Karteikarte Persönliche Einstellungen</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Die Karteikarte <guilabel
+>Persönliche Einstellungen</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Bildschirmfoto</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Auf der Karteikarte <guilabel
+>Persönliche Einstellungen</guilabel
+> kann das Verhalten von &kmouth; eingestellt werden. </para>
+      <para
+>Mit dem ersten Auswahlfeld <guilabel
+>Aktion nach der Auswahl einer Textpassage</guilabel
+> bestimmen Sie, welche Aktion durch das Tastenkürzel oder durch die Wahl einer Textpassage im Menü <guimenu
+>Textpassagen-Buch</guimenu
+> oder in der Leiste für Textpassagen-Bücher ausgelöst wird. </para>
+      <para
+>Mit der Auswahl von <guilabel
+>Sofort sprechen</guilabel
+> wird die gewählte Textpassage direkt gesprochen und zusätzlich in den Verlaufsspeicher eingefügt. Mit der Auswahl von <guilabel
+>In das Eingabefeld übertragen</guilabel
+> wird die gewählte Textpassage zunächst nur in das Eingabefeld eingetragen. </para>
+      <para
+>Mit dem zweiten Auswahlfeld <guilabel
+>Schließen des Bearbeitungsfensters für Textpassagen-Buch</guilabel
+> können Sie festlegen, ob das Textpassagen-Buch beim Schließen des Bearbeitungsfensters automatisch gespeichert werden soll. </para>
+      <para
+>Mit der Auswahl von <guilabel
+>Textpassagen-Buch speichern</guilabel
+> wird das Buch gespeichert. Wenn Sie <guilabel
+>Änderungen verwerfen</guilabel
+> wählen, wird das Textpassagen-Buch nicht gespeichert. Wählen Sie <guilabel
+>Vor Speichern nachfragen</guilabel
+>, wird &kmouth; fragen, ob das Textpassagen-Buch gespeichert werden soll. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>Die Karteikarte Sprachausgabe </title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Die Karteikarte <guilabel
+>Sprachausgabe</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Bildschirmfoto</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Mit <guilabel
+>Voreingestelltes Sprachausgabesystem verwenden</guilabel
+> wird als erstes versucht, den Sprachausgabedienst des Systems zu benutzen, dann erst direkt den Sprachsynthesizer. Wenn das erfolgreich ist, werden die weiteren Einstellungen auf dieser Seite ignoriert. Der Sprachausgabedienst des Systems ist eine &Qt;-Bibliothek, die eine standardisierte Schnittstelle für Sprachausgabe zu speech-dispatcher unter &Linux; und zu den nativen Sprachausgabesystemen auf anderen Plattformen zur Verfügung stellt. Auf einen Debian basierten System benötigen Sie die Pakete speech-dispatcher, libqt5texttospeech5 und ein Modul für speech-dispatcher wie normalerweise <application
+>espeak</application
+>. <note
+><para
+>Mit dem Befehlszeilenprogramm <command
+>spd-conf</command
+> (Debian-Paket python3-speechd) können Sie Einstellungen wie Geschwindigkeit, Tonlage, Lautstärke, Stimmtyp und Sprache &etc; für das Standard-Sprachsystem ändern. Außerdem können Sie mit <command
+>spd-conf</command
+> zwischen allen installierten speech-dispatcher-Modulen &ie;  <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+> &etc; wechseln. </para
+></note>
+      </para>
+      <para
+>Im Eingabefeld der Karteikarte <guilabel
+>Sprachausgabe</guilabel
+> geben Sie den Befehl zum Aufruf des Sprachgenerators ein. Im Auswahlfeld unter dem Eingabefeld legen Sie die Zeichenkodierung fest, mit der Text an den Sprachgenerator weitergegeben wird.  </para>
+      <para
+>&kmouth; kennt zwei Arten, den Text weiterzugeben. Wählen Sie das Ankreuzfeld, wenn der Text unverändert als Standardeingabe an den Sprachgenerator weitergegeben werden soll. </para>
+      <para
+>Ist das Ankreuzfeld nicht ausgewählt, wird der Text als Parameter weitergegeben. Sie können dabei die folgenden Platzhalter verwenden: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Platzhalter</entry
+><entry
+>Ersetzt durch</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>Der aktuelle Text, der gesprochen werden soll</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>Der Name der temporären Datei mit dem Text, der gesprochen werden soll</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>Der Sprachcode für das aktuelle Wortergänzungsbuch </entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Ein Prozentzeichen</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Natürlich hängt der Befehl zur Sprachausgabe von Ihrem Sprachgenerator ab. Diesen Befehl finden Sie in der Dokumentation zu Ihrem Sprachgenerator. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>Die Seite Wortergänzung</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Die Seite <guilabel
+>Wortergänzung</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Bildschirmfoto</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Die Seite <guilabel
+>Wortergänzung</guilabel
+> enthält eine Liste von Wörterbüchern für die Wortergänzung. Im Hauptfenster neben dem Eingabefeld zeigt &kmouth; ein Auswahlfeld an, wenn diese Liste mehr als ein Wörterbuch enthält. Mit diesem Auswahlfeld können Sie das aktuell benutzte Wörterbuch zur Wortergänzung wählen. </para>
+      <para
+>Mit den Knöpfen rechts auf der Seite können Sie Wörterbücher löschen oder hinzufügen, die Reihenfolge der Bücher ändern oder sie in eine Datei exportieren. Unterhalb der Liste können Sie im Eingabefeld den Namen und im Auswahlfeld die Sprache für das Wörterbuch einstellen. </para>
+      <para
+>Wenn Sie ein neues Wörterbuch einfügen, können Sie dafür mehrere Quellen benutzen: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Neues Wörterbuch aus der Dokumentation von &kde; erstellen</para>
+          <para
+>Wählen Sie für diese Quelle die gewünschte Sprache; &kmouth; liest daraufhin die &kde;-Dokumentation ein. Die Häufigkeit der einzelnen Worte wird einfach durch Abzählen des Auftretens ermittelt. Zusätzlich können Sie die Wortliste mit einem OpenOffice.org-Wörterbuch vergleichen, um nur richtig geschriebene Worte in das neue Wörterbuch einzufügen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Neues Wörterbuch aus einer Datei erstellen</para>
+          <para
+>Wählen Sie für diese Quelle die gewünschte Datei. Sie können entweder eine &XML;-Datei, eine Textdatei oder eine Wörterbuchdatei angeben, die entweder mit &kmouth; oder mit GOK (GNOME On-Screen-Keyboard) erzeugt wurde. Bei einer Textdatei oder einer &XML;-Datei wird die Häufigkeit der einzelnen Worte einfach durch Abzählen des Auftretens ermittelt. Zusätzlich können Sie die Wortliste mit einem OpenOffice.org-Wörterbuch vergleichen, um nur richtig geschriebene Worte in das neue Wörterbuch einzufügen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Neues Wörterbuch aus einem Ordner erstellen</para>
+          <para
+>Wählen Sie für diese Quelle den gewünschten Ordner. &kmouth; öffnet alle Dateien in dem Ordner und in den Unterordnern. Jede Datei wird als Wörterbuch, als &XML;-Datei oder als Textdatei geladen. In den letzten beiden Fällen wird die Häufigkeit der Worte in den Dateien gezählt. Zusätzlich können Sie die Wortliste mit einem OpenOffice.org-Wörterbuch vergleichen, um nur richtig geschriebene Worte in das neue Wörterbuch einzufügen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Wörterbücher zusammenführen</para>
+          <para
+>Mit dieser Option können Sie die verfügbaren Wörterbücher zusammenführen. &kmouth; fragt dann, welche Wörterbücher zusammengeführt, und wie diese gewichtet werden sollen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Leere Wortliste erstellen</para>
+          <para
+>Mit dieser Option legen Sie ein neues, leeres Wörterbuch ohne Einträge an. Da &kmouth; neu eingegebene Worte automatisch in das Wörterbuch einfügt, erzeugen Sie im Laufe der Zeit ein Wörterbuch mit Ihren Vokabeln. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>Das Bearbeitungsfenster für Textpassagen-Bücher</title>
+    <para
+>Mit dem Menüeintrag <menuchoice
+> <guimenu
+>Textpassagen-Buch</guimenu
+> <guimenuitem
+>Bearbeiten ...</guimenuitem
+></menuchoice
+> öffnen Sie das Bearbeitungsfenster für Textpassagen-Bücher. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Das Bearbeitungsfenster für Textpassagen-Bücher</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Bildschirmfoto</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Der Hauptbereich des Fensters zur Bearbeitung von Textpassagen-Büchern ist zweigeteilt. Im oberen Teil werden die Textpassagen-Bücher als Baumstruktur dargestellt. </para>
+    <para
+>Im unteren Teil können Sie einen ausgewählten Eintrag bearbeiten. Wenn Sie eine Textpassage ausgewählt haben, können Sie die Textpassage oder das zugehörige Tastenkürzel ändern. Wenn Sie ein Textpassagen-Buch ausgewählt haben, können Sie nur dessen Namen ändern. </para>
+    <para
+>Aktionen wie neue Textpassagen oder Bücher hinzufügen oder ausgewählte Textpassagen und Bücher löschen können Sie entweder über die Auswahl in der Menüleiste, in der Werkzeugleiste oder über ein Aufklappmenü erreichen. </para>
+    <para
+>Die Reihenfolge von Textpassagen-Büchern oder Textpassagen können Sie durch Ziehen mit der Maus an die neue Stelle oder mit den Pfeiltasten und der &Alt;-Taste ändern. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Befehlsreferenz</title>
+
+  <sect1 id="main-commands">
+    <title
+>Befehle im Hauptfenster</title>
+    <sect2 id="file-menu">
+      <title
+>Das Menü Datei</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Datei</guimenu
+> <guimenuitem
+>Öffnen als Verlauf ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Öffnet eine Textdatei als Verlaufsspeicher für die gesprochenen Sätze.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Datei</guimenu
+> <guimenuitem
+>Verlauf speichern unter ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Speichert den Verlauf in eine Textdatei.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Datei</guimenu
+> <guimenuitem
+>Verlauf drucken ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Druckt den Verlaufsspeicher.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Beenden</guimenuitem
+>  </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Beendet &kmouth;.</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>Das Menü Bearbeiten</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Ausschneiden</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Der gewählte Text wird ausgeschnitten und in die Zwischenablage kopiert. Falls im Eingabefeld ein Textabschnitt ausgewählt ist, wird dieser verwendet, anderenfalls die ausgewählten Bereiche des Verlaufsspeichers. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Kopieren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Der gewählte Text wird in die Zwischenablage kopiert. Falls im Eingabefeld ein Textabschnitt ausgewählt ist, wird dieser verwendet, anderenfalls die ausgewählten Bereiche des Verlaufsspeichers.  </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Einfügen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt den Inhalt der Zwischenablage an der aktuellen Cursor-Position in das Eingabefeld ein. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Sprechen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Der momentan aktive Satz wird gesprochen. Falls sich Text im Eingabefeld befindet, wird dieser verwendet, anderenfalls die ausgewählten Sätze des Verlaufsspeichers. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>Das Menü Textpassagen-Bücher</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Textpassagen-Bücher</guimenu
+> <guimenuitem
+>Bearbeiten ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Öffnet das <link linkend="phrasebook-editor"
+>Bearbeitungsfenster für Textpassagen-Bücher</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>&kmouth; benutzt die bekannten &kde;-Menüeinträge <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>. Mehr dazu erfahren Sie in den Abschnitten zu den Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> in den &kde;-Grundlagen. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Befehle im Bearbeitungsfenster für Textpassagen-Bücher</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>Das Menü Datei</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Neue Textpassage</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt eine neue Textpassage hinzu</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Neues Textpassagen-Buch</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt eine neues Textpassagen-Buch hinzu</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+> S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Datei</guimenu
+> <guimenuitem
+>Speichern</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Speichert das Textpassagen-Buch. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Importieren ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importiert eine Datei und fügt ihren Inhalt in das Textpassagen-Buch ein</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Textpassagen-Buch mit Standardtexten importieren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importiert ein Textpassagen-Buch mit Standardtexten und fügt seinen Inhalt in das Textpassagen-Buch ein</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Exportieren ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exportiert die ausgewählten Textpassagen oder Textpassagen-Bücher in eine Datei</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+> W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Datei</guimenu
+><guimenuitem
+>Schließen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Schließt das Fenster</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>Das Menü Bearbeiten</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Ausschneiden</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Schneidet den gewählten Bereich aus und kopiert ihn in die Zwischenablage. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Kopieren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopiert den ausgewählten Bereich in die Zwischenablage. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bearbeiten</guimenu
+><guimenuitem
+>Einfügen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt den Inhalt der Zwischenablage wird in das Textpassagen-Buch ein. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bearbeiten</guimenu
+> <guimenuitem
+>Löschen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Entfernt die ausgewählten Einträge. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>Das Menü Hilfe</title>
+      <para
+>Dieses Menü hat die gleichen Einträge wie im Hauptfenster.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>Das Kontextmenü</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Neue Textpassage</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt eine neue Textpassage hinzu</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Neues Textpassagen-Buch</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt eine neues Textpassagen-Buch hinzu</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importieren ...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importiert eine Datei und fügt ihren Inhalt in das Textpassagen-Buch ein</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Standard-Textpassagen-Buch importieren</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importiert ein Textpassagen-Buch mit Standardtexten und fügt seinen Inhalt in das Textpassagen-Buch ein</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Exportieren ...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exportiert die ausgewählten Textpassagen oder Textpassagen-Bücher in eine Datei</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+> X</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Ausschneiden</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Schneidet den gewählten Bereich aus und kopiert ihn in die Zwischenablage. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Kopieren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopiert den ausgewählten Bereich in die Zwischenablage. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Einfügen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Fügt den Inhalt der Zwischenablage an der aktuellen Cursor-Position in das Textpassagen-Buch ein. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Löschen</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Entfernt die ausgewählten Einträge. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Danksagungen und Lizenz</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Programm Copyright 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Copyright der Dokumentation 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  <para
+>Übersetzung Burkhard Lück <email
+>lueck@hube-lueck.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

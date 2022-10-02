@@ -1,0 +1,1204 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>Handbok &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  <othercredit role="translator"
+><firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+><affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+><contrib
+>Översättare</contrib
+></othercredit
+> 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2022-03-18</date>
+  <releaseinfo
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
+
+  <abstract>
+    <para
+>&kmouth; är ett program som gör det möjligt för personer som inte kan tala, att låta sina datorer tala. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeaccesibility</keyword>
+    <keyword
+>Kmouth</keyword>
+    <keyword
+>text till tal konvertering</keyword>
+    <keyword
+>stumma personer</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Inledning</title>
+
+  <para
+>&kmouth; är ett program som gör det möjligt för personer som inte kan tala, att låta sina datorer tala. Det innehåller en historik med talade meningar, där användaren kan välja meningar som ska sägas igen. </para>
+  <para
+>Observera att &kmouth; inte innehåller någon talsyntes. Det kräver istället att ett talsyntesprogram är installerat på systemet. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Att använda &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>Första inställningen</title>
+    <para
+>Första gången &kmouth; används, visas en guide där du kan anpassa det. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Inställning av text till tal</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Inställning av text till tal</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Du anger gränssnitt och röst som ska användas för konvertering från text till tal på guidens första sida. För mer information se <link linkend="tts-config"
+>beskrivningen av inställningsdialogrutan.</link
+> </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Ordkomplettering</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Ordkomplettering</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>På den tredje sidan definierar du ordlistan för ordkomplettering. &kmouth; tolkar &kde;:s dokumentation på valt språk för att detektera relativa förekomsten av enskilda ord. Du kan också valfritt jämföra ordlistan med en Openoffice.org-ordlista för att bara lägga till rättstavade ord i ordkompletteringen. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>Huvudfönstret</title>
+    <para
+>&kmouth;s huvudfönster är ganska enkelt. Det består egentligen av ett redigeringsfält där du skriver in meningar (det neder vita fältet på skärmbilden) och en historik med upplästa meningar (det övre vita fältet i skärmbilden). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>&kmouth;s huvudfönster</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Huvudfönstret i &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Med antagandet att du har <link linkend="config-dialog"
+>anpassat &kmouth;</link
+> riktigt, kan du använda redigeringsfältet för att skriva in meningar som du vill höra. Så fort en mening har lästs upp, läggs den till i historiken. Du kan välja meningar i historiken som ska läsas upp igen. </para>
+    <para
+>Du kan välja meningar som ofta används i parlörerna (placerade i raden under verktygsraden). </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>Inställningsdialogrutan</title>
+    <para
+>Du visar inställningsdialogrutan i &kmouth; genom att använda menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kmouth;...</guimenuitem
+></menuchoice
+>. Dialogrutan består av sidan <guilabel
+>Allmänna alternativ</guilabel
+> med de två flikarna <guilabel
+>Inställningar</guilabel
+> och <guilabel
+>Text till tal</guilabel
+> ochsidan <guilabel
+>Ordkomplettering</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>Inställningsfliken</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Fliken <guilabel
+>Inställningar</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skärmbild</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Fliken <guilabel
+>Inställningar</guilabel
+> innehåller alternativ som ändrar &kmouth;s beteende i vissa fall. </para>
+      <para
+>Med den första kombinationsrutan, <guilabel
+>Markering av meningar i parlören</guilabel
+>, anger du vilken åtgärd som utförs genom att skriva in snabbtangenten för en mening, eller genom att välja en mening i menyn <guimenu
+>Parlör</guimenu
+> eller i parlörraden. </para>
+      <para
+>Genom att välja <guilabel
+>Läs upp omedelbart</guilabel
+> läses den markerade meningen omedelbart upp och skrivs in i historiken. Om du väljer <guilabel
+>Infoga i redigeringsfält</guilabel
+>, infogas bara den markerade meningen i redigeringsfältet. </para>
+      <para
+>Med den andra kombinationsrutan, <guilabel
+>När parlörens redigeringsfönster stängs</guilabel
+>, anger du om parlören sparas när du bara stänger parlörens redigeringsfönster. </para>
+      <para
+>Genom att välja <guilabel
+>Spara parlör</guilabel
+>, sparas parlören. Om du väljer <guilabel
+>Kasta ändringar</guilabel
+>, kastas ändringarna och parlören sparas inte. Om du väljer <guilabel
+>Fråga om de ska sparas</guilabel
+>, frågar &kmouth; dig om parlören ska sparas. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>Fliken Text till tal</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Fliken <guilabel
+>Text-till-tal</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skärmbild</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Genom att välja <guilabel
+>Använd standardsystem för talsyntes</guilabel
+> talar du om för &kmouth; att först försöka använda systemets taltjänst innan talsyntes anropas direkt. Om det lyckas, ignoreras övriga inställningar under den här fliken. Systemets taltjänst är ett &Qt;-bibliotek som omger speech-dispatcher på &Linux; och inbyggda talsystem på andra plattformar. På ett Debian-baserat system behövs paketen speech-dispatcher, libqt5texttospeech5 och en av modulerna i speech-dispatcher, oftast <application
+>espeak</application
+>. <note
+><para
+>Använd kommandoradsverktyget <command
+>spd-conf</command
+> (Debian-paketet python3-speechd) för att justera inställningar som hastighet, tonhöjd, volym, rösttyp och språk, etc. för standardtalsystemet. Dessutom låter <command
+>spd-conf</command
+> dig välja mellan alla installerade speech-dispatcher moduler, dvs. <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+> etc. </para
+></note>
+      </para>
+      <para
+>Det är också möjligt att ange talsystemets <guilabel
+>Gränssnitt</guilabel
+> och <guilabel
+>Röst</guilabel
+>. </para>
+      <para
+>Skulle alternativet <guilabel
+>Använd förvalt talsystem</guilabel
+> inte vara markerat, kan du skriva in kommandot för att anropa talsyntesprogrammet i redigeringsfältet på panelen <guilabel
+>Alternativ</guilabel
+>. Du anger teckenkodningen som används för att skicka text till talsyntesprogrammet i kombinationsrutan under redigeringsfältet. </para>
+      <para
+>&kmouth; känner till två sätt att skicka texten: Om kommandot förväntar sig texten som standardinmatning markerar du kryssrutan. </para>
+      <para
+>Det andra sättet är att skicka texten som en parameter. Innan kommandot anropas, ersätter &kmouth; vissa platsmarkörer med verkligt innehåll: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Platsmarkör</entry
+><entry
+>Ersätts med</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>Den verkliga texten som ska läsas upp</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>Namnet på en tillfällig fil som innehåller texten som ska läsas upp</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>Språkkoden som hör ihop med aktuell ordkompletteringslista</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Ett procenttecken</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Naturligtvis beror kommandot för att läsa upp text på vilket talsyntesprogram du använder. Titta i dokumentationen för talsyntesprogrammet för att hitta kommandot för att läsa upp texter. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>Sidan Ordkomplettering</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Sidan <guilabel
+>Ordkomplettering</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skärmbild</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Sidan <guilabel
+>Ordkomplettering</guilabel
+> innehåller en lista med ordlistor som används för ordkompletteringen (&kmouth; visar en kombinationsruta intill redigeringsfältet i huvudfönstret om listan innehåller mer än en ordlista. Du kan använda kombinationsrutan för att välja ordlistan som verkligen används vid ordkomplettering.) </para>
+      <para
+>Med knapparna till höger kan du lägga till och ta bort ordlistor, ändra ordning på ordlistor, eller exportera ordlistor till en fil. Med redigeringsfältet och kombinationsrutan under listan kan du ändra namn och språk som hör ihop med ordlistan. </para>
+      <para
+>När du lägger till en ny ordlista kan du välja mellan flera källor: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Skapa en ny ordlista från &kde;:s dokumentation</para>
+          <para
+>Om du använder den här källan, frågar &kmouth; dig om önskat språk och tolkar därefter &kde;:s dokumentation. Relativa förekomsten av enskilda ord detekteras genom att helt enkelt räkna förekomsten av varje ord. Du kan också valfritt jämföra ordlistan med en Openoffice.org-ordlista för att bara lägga till rättstavade ord i ordkompletteringen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Skapa en ny ordlista från en fil</para>
+          <para
+>Om du använder den här källan, frågar &kmouth; dig om önskad fil. Du kan antingen välja en &XML;-fil, en vanlig textfil eller en fil som innehåller ordkompletteringskatalog som antingen skapats av &kmouth; eller GOK (GNOME On-screen Keyboard). Om du väljer en vanlig textfil eller en &XML;-fil, detekteras relativa förekomsten av enskilda ord genom att helt enkelt räkna förekomsten av varje ord. Du kan också valfritt jämföra ordlistan med en Openoffice.org-ordlista för att bara lägga till rättstavade ord i den nya ordlistan. </para>
+        </listitem>
+        <listitem>
+          <para
+>Skapa en ny ordlista från en katalog</para>
+          <para
+>Om du använder den här källan, frågar &kmouth; dig om önskad katalog. &kmouth; öppnar alla filer i den katalogen och dess underkataloger. Varje fil laddas antingen som en ordkompletteringslista, som en &XML;-fil eller som en vanlig textfil. I de två senare fallen, räknas förekomsten av varje enskilt ord. Du kan också valfritt jämföra ordlistan med en Openoffice.org-ordlista för att bara lägga till rättstavade ord i den nya ordlistan. </para>
+        </listitem>
+        <listitem>
+          <para
+>Slå ihop ordlistor</para>
+          <para
+>Du kan använda det här alternativet för att sammanfoga tillgängliga ordlistor. &kmouth; frågar vilka ordlistor som ska sammanfogas och hur de enskilda ordlistorna ska viktas. </para>
+        </listitem>
+        <listitem>
+          <para
+>Skapa en tom ordlista</para>
+          <para
+>Du kan använda det här alternativet för att skapa en tom ordlista utan några poster. Eftersom &kmouth; automatiskt lägger till nyinskrivna ord i ordlistor, lär den sig ditt ordförråd med tiden. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>Parlörens redigeringsfönster</title>
+    <para
+>Genom att använda menyalternativet <menuchoice
+><guimenu
+>Parlörer</guimenu
+><guimenuitem
+>Redigera...</guimenuitem
+></menuchoice
+> visas parlörens redigeringsfönster. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Parlörens redigeringsfönster</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Skärmbild</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Huvudområdet i parlörens redigeringsfönster är uppdelat i två delar. I den övre delen visas parlörerna i en trädstruktur. </para>
+    <para
+>I den nedre delen kan du ändra en markerad post. Om du har markerat en mening, kan du ändra innehållet i meningen samt dess snabbtangent. Om du har markerat en parlör kan du bara ändra dess namn. </para>
+    <para
+>Åtgärder som att lägga till nya meningar och parlörer, och ta bort markerade meningar och parlörer kan utföras genom att välja dem antingen i menyraden, verktygsraden eller i en meny som visas med höger musknapp. </para>
+    <para
+>Du kan ändra ordning för parlörer och meningar genom att dra dem till deras nya platser, eller genom att använda piltangenterna medan &Alt; tangenten hålls nere. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Kommandoreferens</title>
+
+  <sect1 id="main-commands">
+    <title
+>Kommandon i huvudfönstret</title>
+    <sect2 id="file-menu">
+      <title
+>Menyn Arkiv</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Öppna som historik...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Öppnar en textfil som en historik med upplästa meningar.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara historik som...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sparar historiken i en textfil.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Skriv ut historik...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Skriver ut historiken.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Avslutar &kmouth;</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>Menyn Redigera</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klipp ut</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper ut den markerade delen och lägger den på klippbordet. Om det finns markerad text i redigeringsfältet läggs den på klippbordet. Annars läggs de markerade meningarna i historiken (om det finns några) på klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Kopiera</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierar den markerade delen till klippbordet. Om det finns markerad text i redigeringsfältet kopieras den till klippbordet. Annars kopieras de markerade meningarna i historiken (om det finns några) till klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klistra in</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klistrar in klippbordets innehåll på markörens nuvarande plats i redigeringsfältet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Läs upp</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Läser upp meningar som för närvarande är aktiva. Om det finns någon text i redigeringsfältet läses den upp. Annars läses eventuella markerade meningar i historiken upp. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>Menyn Parlörer</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Parlörer</guimenu
+> <guimenuitem
+>Redigera...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Visar <link linkend="phrasebook-editor"
+>parlörens redigeringsfönster</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>&kmouth; har de vanliga menyalternativen i &kde;, <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+>. För mer information läs avsnitten om <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s grunder. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Kommandon inne i parlörens redigeringsfönster</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>Menyn Arkiv</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny mening</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Lägger till en ny mening.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny parlör</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Lägger till en ny parlör.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sparar parlören.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Importera...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerar en fil och lägger till innehållet till parlören</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Importera standardparlör</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerar en standardparlör och lägger till innehållet till parlören</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Exportera...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporterar meningar eller parlörer som för närvarande är markerade till en fil</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Stäng</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Stänger fönstret</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>Menyn Redigera</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klipp ut</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper ut markerade objekt och lägger dem på klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Kopiera</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierar markerade objekt till klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Klistra in</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klistrar in klippbordets innehåll i parlören. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Redigera</guimenu
+> <guimenuitem
+>Ta bort</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tar bort markerade objekt. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>Menyn Hjälp</title>
+      <para
+>Alternativen i den här menyn är likadana som i huvudfönstret.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>Menyn som visas</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Ny mening</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Lägger till en ny mening.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Ny parlör</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Lägger till en ny parlör.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importera...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerar en fil och lägger till innehållet till parlören</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importera standardparlör</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerar en standardparlör och lägger till innehållet till parlören</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Exportera...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporterar meningar eller parlörer som för närvarande är markerade till en fil</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Klipp ut</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper ut markerade objekt och lägger dem på klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Kopiera</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierar markerade objekt till klippbordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Klistra in</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klistrar in klippbordets innehåll på det här platsen i parlören. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Ta bort</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tar bort markerade objekt. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Tack till och licens</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Program copyright 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Dokumentation copyright 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  <para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,1538 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kmouth '<application
+>KMouth</application
+>'>
+  <!ENTITY kappname "&kmouth;">
+  <!ENTITY package "kdeaccessibility">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Danish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book lang="&language;">
+<bookinfo>
+  <title
+>&kmouth;-håndbogen</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  &erik.kjaer.pedersen.role; 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2006-05-20</date>
+  <releaseinfo
+>1.1.1</releaseinfo>
+
+  <abstract>
+    <para
+>&kmouth; er et program der gør mennesker der ikke kan tale i stand til at lade deres computere tale. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeutils</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>tekst-til-tale konvertering</keyword>
+    <keyword
+>forskellige personer</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Indledning</title>
+
+  <para
+>&kmouth; er et program der gør mennesker der ikke kan tale i stand til at lade deres computere tale. Det inkluderer en historik af udtalte sætninger fra hvilke brugeren kan vælge sætninger til at blive udtalt. </para>
+  <para
+>Bemærk at &kmouth; ikke inkluderer en tale-synthesizer. I stedet kræver den at der er en tale-synthesizer installeret på systemet. </para>
+  <para
+>Rapportér venligst problemer og ønsker om nye egenskaber til forfatteren af &kmouth;. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Brug af &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>Den første start</title>
+    <para
+>Når &kmouth; startes første gang vil en guide blive vist i hvilken du kan indgive nogle basale indstillinger. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Guiden</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Guiden</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>På den første side i guiden (skærmbilledet til venstre) angiver du den kommando der senere vil blive brugt til tekst-til-tale konvertering. For flere detaljer kig i <link linkend="tts-config"
+>beskrivelse af indstillingsdialogen.</link
+> </para>
+    <para
+>På den anden side vælger du hvilke standard-udtryksbøger du har brug for. Fra udtryksbøgerne kan du senere vælge ofte brugte udtryk så du ikke  behøver at skrive dem ind. &kmouth; har naturligvis også en redigeringsdialog for det tilfælde at du senere ønsker at ændre i dine udtryksbøger. </para>
+    <para
+>Med den tredje side (skærmaftrykket til højre) definere du ordbogen for en ordkomplettering. &kmouth; vil gennemgå  &kde;'s dokumentation for det valgte sprog for at detektere hyppigheden af individuelle ord. Derudover kan du vælge at sammenligne ordlisten med en OpenOffice.org ordbog for kun at tilføje rigtigt stavede ord til ordkompletteringen. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>Hovedvinduet</title>
+    <para
+>Hovedvinduet for &kmouth; er ret simpelt. Det består basalt set af et redigeringsfelt i hvilket du skriver dine sætninger (det nederste hvide felt i skærmbilledet) og en historik af udtalte sætninger (det øverste hvide felt i skærmbilledet). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Hovedvinduet for &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Skærmbillede</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Hvis vi antager at du har <link linkend="config-dialog"
+>indstillet &kmouth;</link
+> rigtigt, så du kan bruge redigeringsfeltet til at indtaste de sætninger du ønsker at høre. Så vil en en sætning der er blevet udtalt blive tilføjet il historikken. Fra historikken kan du så vælge sætninger der skal udtales igen. </para>
+    <para
+>Fra udtryksbøgerne (der findes i linjen under værktøjslinjen) kan du vælge ofte brugte udtryk. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>Indstillingsdialogen</title>
+    <para
+>Ved at bruge menuindgangen <menuchoice
+> <guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil &kmouth;...</guimenuitem
+> </menuchoice
+> åbner du &kmouth;'s indstillingsdialog. Denne dialog består af  siderne <guilabel
+>Generelle indstillinger</guilabel
+> med de to faneblade <guilabel
+>Tekst-til-Tale</guilabel
+> og <guilabel
+>Indstillinger</guilabel
+>, siden <guilabel
+>Ordkomplettering</guilabel
+> og siden <guilabel
+>KTTSD Tale-tjeneste</guilabel
+> </para>
+    <sect2 id="tts-config">
+      <title
+><guilabel
+>Tekst-til-tale</guilabel
+>-fanebladet</title>
+      <para>
+        <screenshot>
+          <screeninfo
+><guilabel
+>Tekst-til-tale</guilabel
+>-fanebladet</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skærmbillede</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>I redigeringsfeltet i <guilabel
+>Tekst-til-tale</guilabel
+>-fanebladet indtaster du kommandoen der kalder en tale-synthesizer. Med kombinationsbopksen under redigeringsfeltet angiver du det tegnsæt der bliver brugt til at videregive tekst til tale-synthesizer. </para>
+      <para
+>&kmouth; kender til to måder at videregive teksten: Hvis kommandoen forventer tekst som standard inddata markerer du afkrydsningsfeltet. </para>
+      <para
+>Den anden måde er at videregive teksten som en parameter: Før kommandoen &kmouth; kaldes, erstattes visse pladsholdere med faktisk indhold: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Pladsholder</entry
+><entry
+>Erstattet med</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>Den faktiske tekst der skal udtales</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>Navnet på en midlertidig fil der indeholder teksten der skal udtales</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>Sprogkoden knyttet til den nuværende ordkompletteringsordbog</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Et procent-tegn</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Kommandoen til at udtale teksterne er naturligvis afhængig af hvilken tale-synthesizer du bruger. Kig venligst i dokumentation for din tale-synthesizer for kommandoen til at udtale teksterne. Du kan finde eksempler på kommandoen i <link linkend="tts"
+>appendiks</link
+>. </para>
+      <para
+>Ved at vælge <guilabel
+>Brug KTTSD-taleservice om muligt</guilabel
+> beder du &kmouth; om først at prøve at sende teksten til KTTSD-taleservice. Hvis det  lykkes bliver de andre indgange i indstillingen i dette faneblad ignoreret. KTTSD taleservice er en &kde;-dæmon som giver &kde;-programmer en standardiseret grænseflade til tale-synthesis og for øjeblikket udvikles i <acronym
+>SVN</acronym
+>. Det er sikkert at vælge dette selvom KTTSD ikke er installeret. </para>
+    </sect2>
+    <sect2 id="preferences">
+      <title
+><guilabel
+>Indstillinger</guilabel
+>-fanebladet</title>
+      <para>
+        <screenshot>
+          <screeninfo
+><guilabel
+>Indstillinger</guilabel
+>-fanebladet</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skærmbillede</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+><guilabel
+>Indstillinger</guilabel
+>-fanebladet indeholder tilvalg der ændrer &kmouth;'s opførsel i visse situationer. </para>
+      <para
+>Med det første kombinationsfelt, <guilabel
+>Valg af udtryk i udtryksbogen:</guilabel
+>, angiver du hvilken handling der udløses ved at skrive genvejen for et udtryk eller ved at vælge udtrykket i <guimenu
+>Udtryksbog</guimenu
+>-menuen eller i udtryksbogslinjen. </para>
+      <para
+>Ved at vælge <guilabel
+>Tal med det samme</guilabel
+> vil detvalgte udtryk blive udtalt med det samme og indgår i historikken. Hvis du vælger <guilabel
+>Indsæt i redigeringsfelt</guilabel
+>  bliver det valgte udtryk blot indsat i redigeringsfeltet. </para>
+      <para
+>Med det andet kombinationsfelt, <guilabel
+>Lukker udtryksbogens redigeringsvindue:</guilabel
+>, angiver du om udtryksbogen bliver gemt hvis du blot lukker udtryksbogens redigeringsvindue. </para>
+      <para
+>Ved at vælge <guilabel
+>Gem udtryksbog</guilabel
+> bliver udtryksbogen gemt. Hvis du vælger <guilabel
+>Kassér ændringer</guilabel
+> bliver ændringerne kasserede og udtryksbogen bliver ikke gemt. Hvis du vælger <guilabel
+>Spørg om der skal gemmes</guilabel
+> vil &kmouth; spørge dig om den skal gemme udtryksbogen. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+><guilabel
+>Ordkompletterings</guilabel
+>siden</title>
+      <para>
+        <screenshot>
+          <screeninfo
+><guilabel
+>Ordkompletterings</guilabel
+>siden</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.eps" format="EPS"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Skærmbillede</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+><guilabel
+>Ordkompletterings</guilabel
+>siden indeholder en liste af ordbøger der bruges til ordkompletteringen. (&kmouth; vil vise et kombinationsfelt ved siden af redigeringsfeltet i hovedvinduet hvis denne liste indeholder mere end en ordbog. Du kan bruge dette kombinationsfelt til at vælge ordbogen der rent faktisk bliver brugt til ordkompletteringen.) </para>
+      <para
+>Med knapperne i højre side af siden kan du tilføje og slette ordbøger, ændre rækkefølgen af ordbøgerne eller eksportere ordbøger til en fil. Med redigeringsfeltet og kombinationsfeltet nedenfor listen kan du ændre navnet og sproget der er knyttet til ordbogen. </para>
+      <para
+>Når du tilføjer en ny ordbog kan du vælge mellem adskillige kilder: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Lav en ny ordbog ud fra &kde;'s dokumentation</para>
+          <para
+>Hvis du bruger denne kilde vil &kmouth; spørge dig om hvilket sprog du vil have og derefter gennemsøge &kde;'s dokumentation. Hyppigheden af de individuelle ord detekteres ved simpelthen at tælle forekomsterne af hvert ord. Derudover kan du sammenligne ordlisten med en OpenOffice.org ordbog for kun at tilføje rigtigt stavede ord til den nye ordbog. </para>
+        </listitem>
+        <listitem>
+          <para
+>Lav en ny ordbog ud fra en fil</para>
+          <para
+>Hvis du bruger denne kilde vil &kmouth; spørge dig om hvilken fil det skal være. Du kan enten vælge en &XML;-fil, en standard tekstfil eller en fil der indeholder en ordkompletteringsordbog lavet enten af &kmouth; eller GOK (GNOME On-screen Keyboard). Hvis du vælger en standard tekstfil eller en &XML;-fil bliver hyppigheden af de individuelle ord detekteret ved blot at tælle forekomsterne af hvert ord. Du kan også vælge at sammenligne ordlisten med en OpenOffice.org ordbog for kun at tilføje rigtigt stavede ord til den nye ordbog. </para>
+        </listitem>
+        <listitem>
+          <para
+>Lav en ny ordbog ud fra en mappe</para>
+          <para
+>Hvis du bruger denne kilde vil &kmouth; spørge dig om hvilken mappe det skal være. &kmouth; vil åbne alle filer i den mappe og dens undermapper. Hver fil indlæses enten som en kompletteringsordbog, som en &XML;-fil eller som en standard tekstfil. I de sidste to tilfælde bliver forekomstrene af hvert individuelt ord i filen talt. Du kan også vælge at sammenligne ordlisten med en OpenOffice.org ordbog forkun at tilføje rigtigt stavede ord til den nye ordbog. </para>
+        </listitem>
+        <listitem>
+          <para
+>Sammenflet ordbøger</para>
+          <para
+>Du kan bruge dette til at flette de tilgængelige ordbøger sammen. &kmouth; vil spørge dig hvilke ordbøger der skal flettes og hvordan de individuelle ordbøger skal vægtes. </para>
+        </listitem>
+        <listitem>
+          <para
+>Lav en tom ordliste</para>
+          <para
+>Du kan bruge dette til at lave en tom ordbog uden nogen indgange. Da &kmouth; automatisk tilføjer nyligt skrevne ord til ordbøgerne vil den lære dit ordforrød med tiden. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    <sect2 id="kttsd-speech-service-config">
+      <title
+>Siden <guilabel
+>KTTSD Taletjeneste</guilabel
+></title>
+      <para
+>Indstillingen af &kde;'s taletjeneste er detaljeret beskrevet i <ulink url="help:kttsd"
+>KTTS-håndbogen</ulink
+>.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>Udtryksbogens redigeringsvindue</title>
+    <para
+>Ved at bruge menuindgangen <menuchoice
+> <guimenu
+>Udtryksbog</guimenu
+><guimenuitem
+>Redigér...</guimenuitem
+> </menuchoice
+> åbner du udtryksbogens redigeringsvindue. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Udtryksbogens redigeringsvindue</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.eps" format="EPS"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Skærmbillede</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Hovedområdet i udtryksbogens redigeringsvindue er opdelt i to dele. I den øvre der vises udtryksbøger i en træstruktur. </para>
+    <para
+>I den nedre del kan du ændre et valgt punkt. Hvis du har valgt et udtryk kan du ændre indholdet af udtrykket så vel som dets genvej. Hvis du har valgt en udtryksbog kan du kun ændre dens navn. </para>
+    <para
+>Handlinger såsom at tilføje nye udtryk og udtryksbøger og slette udvalgte udtryk og udtryksbøger kan udføres ved at  vælge dem enten i menulinjen, i værktøjslinjen eller en popop-menu. </para>
+    <para
+>Du kan ændre udtryksbøgernes rækkefølge ved at trække dem til deres nye pladser eller ved at bruge piletaster med &Alt;-tasten nede. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Kommandoreference</title>
+
+  <sect1 id="main-commands">
+    <title
+>Kommandoer indeni hovedvinduet</title>
+    <sect2 id="file-menu">
+      <title
+><guimenu
+>Fil</guimenu
+>-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Åbn som historik...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Åbner en tekstfil som en historik af udtalte sætninger.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Gem historik som...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Gemme historikken som en tekstfil.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Udskriv historik...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Udskriver historikken.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Afslut</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Afslutter &kmouth;</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+><guimenu
+>Redigér</guimenu
+>-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Klip</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper det markerede afsnit og putter det ind på klippebordet. Hvis der er noget tekst valgt i redigeringsfeltet placeres den i klippebordet. Ellers placeres de valgte sætninger i historikken (om nogen) på klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Kopiér</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierer det markerede afsnit og putter det ind på klippebordet. Hvis der er noget tekst valgt i redigeringsfeltet placeres den i klippebordet. Ellers kopieres de valgte sætninger i historikken (om nogen) på klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Indsæt</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Indsætter klippebordets indhold ved markørens position i redigeringsfelt. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Tal</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Siger de aktive sætninger. Hvis der er noget tekst i redigeringsfeltet siges dette. Ellers siges de valgte sætninger (om nogen) i historikken. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+><guimenu
+>Udtryksbøger</guimenu
+>-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Udtryksbøger</guimenu
+> <guimenuitem
+>Redigér...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Åbner <link linkend="phrasebook-editor"
+>udtryksbogens redigeringsvindue</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="settings-menu">
+      <title
+><guimenu
+>Opsætnings</guimenu
+>menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Vis menulinje</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Når dette er afkrydset vises menulinjen. Når det ikke er afkrydset er menulinjen skjult. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Vis værktøjslinje</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+> Når dette er afkrydset vises en flytbar værktøjslinje der indeholder knapper brugt til at starte ofte brugte kommandoer. Værktøjslinjen er mest almindeligt placeret for oven i editoren lige under menuen. Når dette ikke er afkrydset er værktøjslinjen skjult. </action
+> Klik og træk i dette håndtag tillade brugeren at flytte linjen. </para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Vis statuslinje</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Når dette er afkrydset vises en lille linje forneden i hovedvinduet der indeholder information om status for &kmouth;. Når det ikke er afkrydset er statuslinjen skjult. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Vis udtrykslinje</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+> Når dette er afkrydset vises en flytbar udtryksbogslinje der indeholder knapper brugt til udtryksbogens indgange. Udtryksbogen er mest almindeligt placeret for oven i editoren lige under menuen. Når dette ikke er afkrydset er udtryksbogen skjult. </action
+> Klik og træk i dette håndtag tillade brugeren at flytte linjen. </para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Indstil KMouth...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Åbner <link linkend="config-dialog"
+>indstillingsdialogen for tale-synthesizer</link
+> og andre af &kmouth;'s indstillinger. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="help-menu">
+      <title
+><guimenu
+>Hjælp</guimenu
+>menuen</title>
+&help.menu.documentation; </sect2>
+
+    <sect2 id="popup-menu">
+      <title
+>Popop-menuen af historik-indgange</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Tal</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Den valgte sætning bliver udtalt. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Slet</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>De valgte sætninger bliver fjernet fra historikken. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Klip</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>De valgte sætninger bliver slettede og placeret på klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Kopiér</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>De valgte sætninger bliver kopieret til klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Vælg alle indgange</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Alle historik-indgange bliver markerede. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Fravælg alle indgange</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Alle markeringer fra historik-indgange bliver fjernet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Åbn som historik...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Åbner en tekstfil som en historik af udtalte sætninger. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenuitem
+>Gem historik som...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Gemme historikken som en tekstfil. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Kommandoer i udtryksbogens redigeringsvindue</title>
+    <sect2 id="pbe-file-menu">
+      <title
+><guimenu
+>Fil</guimenu
+>-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Nyt udtryk</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tilføjer et nyt udtryk.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Ny udtryksbog</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tilføjer en ny udtryksbog.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Gem</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Gemmer udtryksbogen.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Importér...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerer en fil og tilføjer dens indhold til udtryksbogen</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Importér  standard udtryksbog</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerer en standard-udtryksbog og tilføjer dens indhold til udtryksbogen</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Eksportér...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Eksportere de valgte udtryk eller udtryksbøger til en fil</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Udskriv...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Udskriver de valgte udtryk eller udtryksbøger</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Luk</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Lukker vinduet</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+><guimenu
+>Redigér</guimenu
+>-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Klip</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper de valgte punkter og putter dem i klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Kopiér</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierer de valgte punkter til klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Indsæt</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Indsætter klippebordets indhold i udtryksbogen. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Slet</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sletter de valgte punkter. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+><guimenu
+>Hjælp</guimenu
+>menuen</title>
+&help.menu.documentation; </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>Popop-menuen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Nyt udtryk</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tilføjer et nyt udtryk.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Ny udtryksbog</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Tilføjer en ny udtryksbog.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importér...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerer en fil og tilføjer dens indhold til udtryksbogen</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importér standard-udtryksbog</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importerer en standard-udtryksbog og tilføjer dens indhold til udtryksbogen</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Eksportér...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Eksportere de valgte udtryk eller udtryksbøger til en fil</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Klip</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Klipper de valgte punkter og putter dem i klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Kopiér</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopierer de valgte punkter til klippebordet. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Indsæt</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Indsætter klippebordets indhold på dette sted i udtryksbogen. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Slet</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sletter de valgte punkter. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="faq">
+  <title
+>Spørgsmål og svar</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist"
+> <qandaentry>
+      <question>
+        <para
+>Jeg hører ikke noget.</para>
+      </question>
+      <answer>
+        <para
+>Det mest sandsynlige er at du ikke indstillede tekst-til-tale kommandoen rigtigt (eller i det hele taget?). Brug <menuchoice
+> <guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil &kmouth;...</guimenuitem
+> </menuchoice
+>, åbn siden <guilabel
+>Generelle indstillinger</guilabel
+> og angiv kommandoen for at oplæse tekster i fanebladet <guilabel
+>Tekst-til-tale</guilabel
+>. (Se afsnittet om <link linkend="tts-config"
+>indstillingsdialogen for tale-synthesizeren</link
+> for flere detaljer.) </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</chapter>
+
+<chapter id="credits">
+  <title
+>Medvirkende og licens</title>
+
+  <para
+>&kappname; </para>
+  <para
+>Program ophavsret 2002-2004 Gunnar Schmi Dt<email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Dokumentation ophavsret 2002-2004 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  &erik.kjaer.pedersen.credit; 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="tts">
+  <title
+>Eksempler på tekst-til-tale indstilling</title>
+  <qandaset id="ttslist">
+    <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para
+>Festival er et tekst-til-tale system skrevet på University of Edinburgh. For øjeblikket understøtter det engelsk, spansk og valisisk tale. Dets licens tillader at bruge og distribuere Festival gratis uden begrænsninger. </para>
+        <para
+>For at lave kommandolinje eksemplet for tekst-til-tale indstillingen antager vi at Festival er installeret i mappen <filename class="directory"
+>/usr/local/festival/</filename
+>. Kommandoen for at udtale tekster er så som følger: </para>
+        <para>
+          <screen
+><userinput
+><command
+>/usr/local/festival/bin/festival</command
+> <option
+>--tts</option
+></userinput
+></screen>
+        </para>
+        <para
+>Tilvalget <guilabel
+>Send data som standard-inddata</guilabel
+> skal være  aktiveret. </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para
+>FreeTTS er en tale-synthesizer skrevet helt i &Java;™ programmeringssproget.  Det har for øjeblikket støtte for engelsk udtale. Dets licens tillader at bruge og distribuere FreeTTS gratis uden restriktioner. </para>
+        <para
+>For at lave kommandolinje eksemplet på tekst-til-tale indstillingen antager vi at FreeTTS er installeret i mappen <filename class="directory"
+>/usr/local/freetts/</filename
+>. Kommandoen  for at udtale tekster er så en af følgende tre eksempler: </para>
+        <para>
+          <screen
+><userinput
+><command
+>java</command
+> <option
+>-jar /usr/local/freetts/lib/freetts.jar</option
+> <option
+>-text %t</option
+></userinput
+></screen>
+        </para>
+        <para>
+          <screen
+><userinput
+><command
+>java</command
+> <option
+>-jar /usr/local/freetts/lib/freetts.jar</option
+> <option
+>-file %f</option
+></userinput
+></screen>
+        </para>
+        <para>
+          <screen
+><userinput
+><command
+>java</command
+> <option
+>-jar /usr/local/freetts/lib/freetts.jar</option
+></userinput
+></screen>
+        </para>
+        <para
+>For det tredje eksempel skal tilvalget <guilabel
+>Send data som standard-inddata</guilabel
+> være aktiveret. (Dette er det foretrukne eksempel for brugen med FreeTTS.) </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para
+>MBROLA er en tale-synthesizer for et stort antal sprog. Den konverterer en liste af fonemer til en wave-fil, så du har brug for et andet værktøj til at konvertere teksten til en liste af fonemer. Licensen for MBROLA tillader at bruge MBROLA gratis for ikke-kommercielle, ikke-militære anvendelser. </para>
+        <para
+>For vores eksempel vil vi bruge Hadifax til at konvertere tyske ekster til en  liste af fonemer passende for MBROLA. Vi vil antage at Hadifax og MBROLA er installeret i <filename class="directory"
+>/usr/local/hadifax/</filename
+> og <filename class="directory"
+>/usr/local/mbrola/</filename
+>. </para>
+        <para
+>Uheldigvis sluger Hadifax ofte det sidste tegn i teksten, så vi vil måske ønske at tilføje et yderligere tegn til teksten. Den fuldstændige kommando er derfor mere kompleks end de tidligere eksempler: </para>
+        <para>
+          <screen
+><userinput
+>(<command
+>cat</command
+> <option
+>-</option
+>; <command
+>echo</command
+> <option
+>&quot; &quot;</option
+>) | <command
+>/usr/local/hadifax/txt2pho</command
+> <option
+>-f</option>
+          | <command
+>/usr/local/mbrola/mbrola</command
+> <option
+>-e</option>
+          <option
+>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option
+>;
+          <command
+>artsplay</command
+> <option
+>/tmp/tmp.wav</option
+>; <command
+>rm</command
+> <option
+>/tmp/tmp.wav</option
+></userinput
+></screen>
+        </para>
+        <para
+>Alle dele af denne kommando skal skrives på en linje. Tilvalget <guilabel
+>Send data som standard-inddata</guilabel
+> skal være slået til. </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>&kde;'s tekst-til-tale dæmon</para>
+      </question>
+      <answer>
+        <para
+>&kde;'s Tekst-til-tale dæmon (KTTSD) en en &kde; omfattende tekst-til-tale tjeneste som giver &kde;-programmer en standardiseret grænseflade for tale-syntese og som for øjeblikket udvikles i <acronym
+>SVN</acronym
+>. Det bruger plugin for at understøtte forskellige tekst-til-tale systemer. </para>
+        <para
+>Idet indstillingen af tale-synthesizer udføres i KTTSD er det eneste &kmouth;-specifikke tilvalg du har brug for at aktivere <guilabel
+>Brug KTTSD taletjenesten om muligt</guilabel
+>. </para>
+        <para
+>Du skal naturligvis indstille KTTSD. Du kan gøre dette med indstillingssiden <guilabel
+>KTTSD taletjeneste</guilabel
+> der er tilføjet til indstillingsdialogen i &kmouth; hvis KTTSD er installeret. </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+
+<appendix id="installation">
+  <title
+>Installation</title>
+
+  <sect1 id="getting-kmouth">
+    <title
+>Hvordan får man fat på &kmouth;</title>
+&install.intro.documentation; </sect1>
+
+  <sect1 id="requirements">
+    <title
+>Krav</title>
+
+    <para
+>For at det skal lykkes at bruge &kmouth;, har du brug for en tale-synthesizer (og naturligvis &kde; 3.x). &kmouth; bruger omkring 15 MB hukommelse for at køre (plus den mængde hukommelse der skal bruges af din tale-synthesizer), men dette kan variere afhængig af din platform og indstilling. </para>
+  </sect1>
+
+
+  <sect1 id="compilation">
+  <title
+>Kompilering og installation</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

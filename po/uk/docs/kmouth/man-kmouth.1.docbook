@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Ukrainian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Посібник користувача KMouth</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Сторінка підручника KMouth.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>18 березня 2022 року</date>
+<releaseinfo
+>KMouth 22.04</releaseinfo>
+<productname
+>KDE Gear</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Програма для вимови введеного тексту</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>назва файла</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Опис</title>
+<para
+>&kmouth; - програма, що допомагає людям, які не можуть говорити. Комп'ютер говорить замість них. Включає історію розмови, з якої користувач може вибрати речення, які треба сказати ще раз.</para>
+<para
+>Майте на увазі, що &kmouth; не включає в себе синтезатор мовлення, замість цього він вимагає, щоб синтезатор був встановлений в системі.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Параметри</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>назва файла</replaceable
+></option
+></term>
+<listitem>
+<para
+>Відкрити файл історії.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Прочитайте також</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Докладніша документація для користувачів знаходиться на <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (або введіть цю адресу &URL; в &konqueror;, або запустіть <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Більше інформації можна знайти на <ulink url="https://community.kde.org/Accessibility"
+>вебсайті проєкту доступності в &kde;</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Автори</title>
+<para
+>&kmouth; написав <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

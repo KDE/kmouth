@@ -1,0 +1,1188 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>Het handboek van &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  &Rob.Lalau;&Pieter.Hoekstra;&Tom.Albers;&Natalie.Koning;&Antoon.Tolboom;&Freek.de.Kruijf; 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2022-03-18</date>
+  <releaseinfo
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
+
+  <abstract>
+    <para
+>&kmouth; is een toepassing die mensen die niet kunnen praten in staat stelt de computer te laten praten. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdeaccesibility</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>omzetting van tekst naar spraak</keyword>
+    <keyword
+>doofstomme mensen</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Inleiding</title>
+
+  <para
+>&kmouth; is een programma dat mensen die niet kunnen praten, in staat stelt de computer te laten praten. Het programma houdt een geschiedenis bij van gesproken zinnen, zodat de gebruiker zinnen kan selecteren om opnieuw uit te spreken. </para>
+  <para
+>Houd er rekening mee dat &kmouth; niet voorzien is van een spraaksynthesizer. Een spraaksynthesizer moet apart geïnstalleerd zijn. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>&kmouth; gebruiken</title>
+  <sect1 id="Wizard">
+    <title
+>De eerste keer opzetten</title>
+    <para
+>Als u &kmouth; voor het eerst gebruikt, wordt u een assistent gepresenteerd waarmee u het kunt configureren. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Instellingen van tekst-naar-spraak</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Instellingen van tekst-naar-spraak</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Op de eerste pagina van de assistent specificeert u de engine en stem die gebruikt zal worden voor de tekst-naar-spraak-conversie. Zie voor meer informatie de <link linkend="config-dialog"
+>beschrijving van het configuratievenster</link
+>. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Woordaanvulling</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Woordaanvulling</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Met de derde pagina kunt u het woordenboek aangeven dat moet worden gebruikt voor het automatisch aanvullen van woorden. &kmouth; zal de &kde; documentatie inlezen van de gekozen taal om het geregeld voorkomen te bepalen van de afzonderlijke woorden. Optioneel kunt u de woordenlijst vergelijken met een woordenboek van OpenOffice.org om alleen correct gespelde woorden toe te laten tot het woordenboek. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>Het hoofdvenster</title>
+    <para
+>Het hoofdvenster van &kmouth; is vrij eenvoudig. De twee belangrijkste onderdelen zijn een invoerveld waar u uw zinnen typt (het onderste witte veld in de schermafdruk), en een lijst met zinnen die al uitgesproken zijn (het bovenste witte veld in de schermafdruk). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Het hoofdvenster van &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Het hoofdvenster van &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Als u &kmouth; goed hebt <link linkend="config-dialog"
+>ingesteld</link
+> kunt u het invoerveld gebruiken om zinnen in te voeren die u wilt horen. Als een zin uitgesproken is, wordt hij aan de geschiedenislijst toegevoegd. Om een zin opnieuw te horen, kunt u hem in de lijst selecteren. </para>
+    <para
+>Uit de uitdrukkingenboeken (in de balk onder de werkbalk) kunt u vaakgebruikte uitdrukkingen selecteren. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>Het configuratievenster</title>
+    <para
+>Via de menuoptie <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kmouth; instellen...</guimenuitem
+></menuchoice
+> opent u het configuratievenster van &kmouth;. Deze dialoog bestaat uit de pagina's <guilabel
+>Algemene opties</guilabel
+> met de twee tabbladen <guilabel
+>Voorkeuren</guilabel
+> en <guilabel
+>Tekst-naar-spraak</guilabel
+> en de pagina <guilabel
+>Woordaanvulling</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>Het tabblad Voorkeuren</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Het tabblad <guilabel
+>Voorkeuren</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Schermafdruk</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Op het tabblad <guilabel
+>Voorkeuren</guilabel
+> vindt u opties die het gedrag van &kmouth; in bepaalde situaties wijzigen. </para>
+      <para
+>Met het eerste selectieveld, <guilabel
+>Selectie van uitdrukkingen in het uitdrukkingenboek</guilabel
+>, geeft u aan welke actie ondernomen moet worden als u een uitdrukking kiest uit een uitdrukkingenboek (door een sneltoets te gebruiken of door een uitdrukking te kiezen uit het menu <guimenu
+>Uitdrukkingenboeken</guimenu
+> of uit de Uitdrukkingenboek-balk. </para>
+      <para
+>Als u <guilabel
+>Onmiddellijk uitspreken</guilabel
+> kiest, wordt de geselecteerde uitdrukking direct uitgesproken en aan de geschiedenis toegevoegd. Als u <guilabel
+>Invoegen in tekstinvoerveld</guilabel
+> selecteert, wordt de tekst in het invoerveld geplaatst. </para>
+      <para
+>Met het tweede selectieveld, <guilabel
+>Sluit het tekstinvoervenster van het uitdrukkingenboek</guilabel
+>, geeft u aan of u wilt dat het uitdrukkingenboek opgeslagen wordt als u het bewerkingsvenster voor uitdrukkingenboeken sluit. </para>
+      <para
+>Als u <guilabel
+>Uitdrukkingenboek opslaan</guilabel
+> selecteert, wordt het uitdrukkingenboek opgeslagen. Als u kiest voor <guilabel
+>Wijzigingen negeren</guilabel
+> worden de gemaakte wijzigingen niet opgeslagen. Als u <guilabel
+>Vragen of er dient te worden opgeslagen </guilabel
+>kiest, vraagt &kmouth; of het uitdrukkingenboek moet worden opgeslagen. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>Het tabblad Tekst-naar-spraak</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Het tabblad <guilabel
+>Tekst-naar-spraak</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Schermafdruk</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Door <guilabel
+>Standaard spraaksysteem gebruiken</guilabel
+> te selecteren vertelt u &kmouth; eerst om de systeemspraakservice te proberen alvorens de spraaksynthesizer direct aan te roepen. Als dat lukt worden de andere configuratie-items op dit tabblad genegeerd. De systeemspraakservice is een &Qt;-bibliotheek die de spraak-dispatcher in &Linux; en eigen spraaksystemen op andere platforms omgeeft. Op een Debian gebaseerd systeem hebt u de pakketten speech-dispatcher, libqt5texttospeech5 en een van de spraak-dispatcher modules, gewoonlijk <application
+>espeak</application
+>. <note
+><para
+>Gebruik het hulpmiddel op de opdrachtregel <command
+>spd-conf</command
+> (Debian pakket python3-speechd) om instellingen zoals snelheid, toonhoogte, volume, type stem en taal &etc; aan te passen voor het standaard spraaksysteem. Bovendien zal <command
+>spd-conf</command
+> u toestaan te kiezen tussen alle geïnstalleerde spraak-dispatchermodulen, &ie; <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+> &etc; </para
+></note>
+      </para>
+      <para
+>Het is ook mogelijk om de <guilabel
+>Engine</guilabel
+> en <guilabel
+>Stem</guilabel
+> voor het spraaksysteem te selecteren. </para>
+      <para
+>Zou het item <guilabel
+>Standaard spraaksysteem gebruiken</guilabel
+> niet geselecteerd zijn, dan kunt u het commando voor aanroepen van de spraaksynthesizer in het bewerkingsveld van het paneel <guilabel
+>Alternatief</guilabel
+> invoeren. Met de keuzelijst onder het bewerkingsveld kunt u het tekencodering specificeren die gebruikt is voor het doorgeven van de tekst naar de spraaksynthesizer. </para>
+      <para
+>&kmouth; kan de tekst op twee manieren naar het commando sturen: als het commando de tekst via standaardinvoer verwacht, selecteer dan deze optie. </para>
+      <para
+>Het is ook mogelijk om de tekst als parameter naar het commando te sturen: voordat het commando aangeroepen wordt, vervangt &kmouth; enkele plaatshouders door tekst: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Plaatshouder</entry
+><entry
+>Vervangen door</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>De tekst die moet worden uitgesproken</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>De naam van het tijdelijke bestand met de tekst die moet worden uitgesproken</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>De taalcode die is verbonden met het huidige woordaanvulling-woordenboek</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Het procentteken</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Uiteraard is het commando dat gebruikt wordt om teksten uit te spreken afhankelijk van de spraaksynthesizer die u gebruikt. Zie de documentatie van uw spraaksynthesizer voor het commando dat u dient te gebruiken. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>De pagina Woordaanvulling</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>De pagina <guilabel
+>Woordaanvulling</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Schermafdruk</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Het tabblad <guilabel
+>Woordaanvulling</guilabel
+> bevat een lijst met woordenboeken die worden gebruikt voor het aanvullen van woorden. (&kmouth; zal een keuzelijst tonen naast het invoervak in het hoofdvenster als deze lijst meer dan één woordenboek bevat. U kunt in deze keuzelijst het woordenboek selecteren dat moet worden gebruikt voor het automatisch aanvullen van de woorden. </para>
+      <para
+>Met de knoppen aan de rechterkant van de pagina kunt u woordenboeken toevoegen en verwijderen, de volgorde van de woordenboeken veranderen of ze exporteren naar een bestand. Met het invoervak en de keuzelijst onder de lijst kunt u de naam en de taal veranderen die zijn verbonden met het woordenboek. </para>
+      <para
+>Als u een nieuw woordenboek toevoegt, kunt u kiezen uit verschillende bronnen: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Maak een nieuw woordenboek op basis van de &kde; documentatie</para>
+          <para
+>Als u deze bron gebruikt zal &kmouth; u vragen naar de bedoelde taal en daarna de &kde; documentatie inlezen. De frequentie van de afzonderlijke woorden wordt bepaald door de instanties te tellen van elk woord. Optioneel kunt u de lijst vergelijken met een woordenboek van OpenOffice.org om alleen correct gespelde woorden toe te laten tot het nieuwe woordenboek. </para>
+        </listitem>
+        <listitem>
+          <para
+>Maak een nieuw woordenboek van een bestand</para>
+          <para
+>Als u deze bron selecteert zal &kmouth; u vragen naar de bestandsnaam. U kunt een &XML; bestand, een standaard tekstbestand of een bestand dat een woordaanvulling-woordenboek bevat dat werd gemaakt door &kmouth; of GOK (het Toetsenbord op het scherm van GNOME) selecteren. Als u een standaard tekstbestand of een &XML; bestand selecteert wordt de frequentie bepaald van elk woord door de instanties van elk woord te tellen. Optioneel kunt u de lijst vergelijken met een woordenboek van OpenOffice.org om alleen correct gespelde woorden toe te laten tot het nieuwe woordenboek. </para>
+        </listitem>
+        <listitem>
+          <para
+>Maak een nieuw woordenboek van een map</para>
+          <para
+>Als u deze bron gebruikt zal &kmouth; u vragen naar de bedoelde map. &kmouth; zal alle bestanden in de map en submappen openen. Elk bestand wordt gelezen als een woordaanvulling-woordenboek, als een &XML; bestand of als een standaard tekstbestand. In de laatste twee gevallen wordt de frequentie bepaald van elk woord in het bestand. Optioneel kunt u de lijst vergelijken met een woordenboek van OpenOffice.org om alleen correct gespelde woorden toe te laten tot het nieuwe woordenboek. </para>
+        </listitem>
+        <listitem>
+          <para
+>Woordenboeken samenvoegen</para>
+          <para
+>U kunt deze optie gebruiken om alle beschikbare woordenboeken samen te voegen. &kmouth; zal vragen welke woordenboeken samengevoegd moeten worden en hoe zwaar de afzonderlijke woordenboeken moeten worden gewogen. </para>
+        </listitem>
+        <listitem>
+          <para
+>Maak een lege woordenlijst</para>
+          <para
+>U kunt deze optie gebruiken om een leeg woordenboek zonder enige lemma's te maken. Omdat &kmouth; automatisch nieuw getypte woorden toevoegt aan de woordenboeken zal het uw vocabulaire leren kennen. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>Het bewerkingsvenster voor uitdrukkingenboeken</title>
+    <para
+>U opent het bewerkingsvenster voor uitdrukkingenboeken door de menuoptie  <menuchoice
+><guimenu
+>Uitdrukkingenboeken</guimenu
+><guimenuitem
+>Bewerken...</guimenuitem
+></menuchoice
+> te kiezen. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Het bewerkingsvenster voor uitdrukkingenboeken</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Schermafdruk</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Het hoofdveld van het bewerkingsvenster voor uitdrukkingenboeken bestaat uit twee delen. In het bovenste deel worden de uitdrukkingenboeken in een boomstructuur weergegeven. </para>
+    <para
+>In het onderste deel kunt u het geselecteerde item bewerken. Als u een uitdrukking hebt geselecteerd kunt u de uitdrukking en de sneltoets bewerken. Als u een uitdrukkingenboek geselecteerd hebt kunt u alleen de naam bewerken. </para>
+    <para
+>U kunt uitdrukkingen en uitdrukkingenboeken toevoegen en verwijderen via  de menubalk, de werkbalk of het contextmenu. </para>
+    <para
+>U kunt de volgorde van de uitdrukkingenboeken en uitdrukkingen wijzigen door ze te slepen, of door de pijltoetsen te gebruiken terwijl u de &Alt;-toets ingedrukt houdt. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Commandoreferentie</title>
+
+  <sect1 id="main-commands">
+    <title
+>Commando's in het hoofdvenster</title>
+    <sect2 id="file-menu">
+      <title
+>Het menu Bestand</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Openen als geschiedenis...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Leest een tekstbestand, en plaatst het in de geschiedenislijst.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Geschiedenis opslaan als...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Slaat de geschiedenislijst op als tekstbestand.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Geschiedenis afdrukken...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Drukt de geschiedenislijst af.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sluit &kmouth; af.</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>Het menu Bewerken</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Knippen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Knipt de selectie en plaatst deze op het klembord. Als er een stuk tekst is geselecteerd in het invoerveld, dan wordt deze op het klembord geplaatst. Anders worden de geselecteerde uitdrukkingen in de geschiedenis (indien aanwezig) op het klembord geplaatst. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopieert de geselecteerde sectie naar het klembord. Als er een stuk tekst is geselecteerd in het tekstinvoerveld, dan wordt deze op het klembord geplaatst. Anders worden de geselecteerde zinnen in de geschiedenis (indien aanwezig) op het klembord geplaatst. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Plakken</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Plakt de inhoud van het klembord op de huidige positie van de muisaanwijzer in het invoerveld. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Spreken</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>De momenteel actieve zin(nen) worden gesproken. Als er tekst in het tekstinvoerveld staat wordt deze gesproken. Anders worden de geselecteerde zinnen in de geschiedenis (indien aanwezig) gesproken. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>Het menu Boeken met uitdrukkingen</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Uitdrukkingenboeken</guimenu
+><guimenuitem
+>Bewerken...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Opent het <link linkend="phrasebook-editor"
+>venster voor het bewerken van uitdrukkingenboeken</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>&kmouth; heeft de algemene menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over het <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde; Fundamentals. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Commando's in het venster voor het bewerken van uitdrukkingenboeken</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>Het menu Bestand</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Nieuwe uitdrukking</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Voegt een nieuwe uitdrukking toe.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Nieuw uitdrukkingenboek</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Voegt een nieuw uitdrukkingenboek toe.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Opslaan</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Slaat het uitdrukkingenboek op.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Importeren...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importeert een bestand en voegt de inhoud ervan toe aan het uitdrukkingenboek.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Standaard uitdrukkingenboek importeren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importeert een standaard uitdrukkingenboek en voegt de inhoud ervan toe aan het uitdrukkingenboek.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Exporteren...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporteert de geselecteerde uitdrukkingen of uitdrukkingenboeken naar een bestand.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+><keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Bestand</guimenu
+><guimenuitem
+>Sluiten</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Sluit het venster.</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>Het menu Bewerken</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Knippen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Verwijdert de geselecteerde items en plaatst ze op het klembord. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopieert de geselecteerde items naar het klembord. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Plakken</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Plakt de inhoud van het klembord in het uitdrukkingenboek. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Verwijderen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Verwijdert de geselecteerde items. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>Het menu Help</title>
+      <para
+>De items in dit menu zijn hetzelfde als in het hoofdvenster.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>Het contextmenu</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Nieuwe uitdrukking</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Voegt een nieuwe uitdrukking toe.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Nieuw uitdrukkingenboek</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Voegt een nieuw uitdrukkingenboek toe.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Importeren...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importeert een bestand en voegt de inhoud ervan toe aan het uitdrukkingenboek.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Standaard uitdrukkingenboek importeren</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Importeert een standaard uitdrukkingenboek en voegt de inhoud ervan toe aan het uitdrukkingenboek.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Exporteren...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Exporteert de geselecteerde uitdrukkingen of uitdrukkingenboeken naar een bestand.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Knippen</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Verwijdert de geselecteerde items en plaatst ze op het klembord. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Kopieert de geselecteerde items naar het klembord. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Plakken</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Plakt de inhoud van het klembord op deze positie in het uitdrukkingenboek. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Verwijderen</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Verwijdert de geselecteerde items. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Dankbetuigingen en licentie</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Programma copyright 2002, 2003 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>Documentatie copyright 2002, 2003 Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  &meld.fouten;&vertaling.rob;&vertaling.pieter;&vertaling.tom;&nagelezen.rinse;&nagelezen.natalie;<para
+>De vertaling werd nagelezen door Antoon Tolboom</para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

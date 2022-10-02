@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Dutch "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Gebruikersgids van KMouth</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>KMouth man-pagina.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>2022-03-18</date>
+<releaseinfo
+>KMouth 22.04</releaseinfo>
+<productname
+>KDE Gear</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Een tekstinvoerprogramma voor spraaksynthesizers</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>bestandsnaam</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beschrijving</title>
+<para
+>&kmouth; is een programma dat mensen die niet kunnen praten, in staat stelt de computer te laten praten. Het programma houdt een geschiedenis bij van gesproken zinnen, zodat de gebruiker zinnen kan selecteren om opnieuw uit te spreken.</para>
+<para
+>Houd er rekening mee dat &kmouth; niet voorzien is van een spraaksynthesizer. Een spraaksynthesizer moet apart geïnstalleerd zijn.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Opties</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>bestandsnaam</replaceable
+></option
+></term>
+<listitem>
+<para
+>Het  te openen geschiedenis bestand</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Zie ook</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Meer gedetailleerde gebruikers documentatie is verkrijgbaar van <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> ( geef deze &URL; in &konqueror;, of voer <userinput
+><command
+> khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+> uit).</para>
+
+<para
+>Er is ook meer informatie verkrijgbaar van <ulink url="http://community.kde.org/"
+> De site van het Accessibility project van &kde;</ulink
+>. </para>
+</refsect1>
+
+<refsect1>
+<title
+>Auteurs</title>
+<para
+>&kmouth; is geschreven door <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

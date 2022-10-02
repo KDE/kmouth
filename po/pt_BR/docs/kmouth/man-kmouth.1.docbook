@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Brazilian-Portuguese "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual do usuário do &kde;</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>03/01/2018</date>
+<releaseinfo
+>Applications 17.12</releaseinfo>
+<productname
+>Aplicativos do KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Uma interface de escreve-e-fala para os sintetizadores de voz</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>nome do arquivo</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrição</title>
+<para
+>O &kmouth; é um aplicativo que permite às pessoas que não conseguem falar deixar que os seus computadores façam isso por elas. Inclui um histórico das frases ditas pelo usuário e que ele poderá selecionar para sintetizar novamente.</para>
+<para
+>Note que o &kmouth; não inclui um sintetizador de voz. Em vez disso, ele necessita que você tenha um sintetizador de voz instalado no sistema.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Opções</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>nome do arquivo</replaceable
+></option
+></term>
+<listitem>
+<para
+>O arquivo de histórico a abrir.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Veja também</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Uma informação mais detalhada está disponível em <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (você tanto poderá escrever este &URL; no &konqueror;, como executar <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Existe também mais alguma informação disponível no <ulink url="https://community.kde.org/Accessibility"
+>site do projeto de acessibilidade do &kde;</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autores</title>
+<para
+>O &kmouth; foi criado por <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

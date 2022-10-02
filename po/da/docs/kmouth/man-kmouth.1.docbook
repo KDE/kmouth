@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Danish "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kde;'s brugerhåndbog</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>12. juni 2005</date
+> <productname
+>K Desktopmiljøet</productname
+> </refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>En skriv-og-sig forende for tale-synthesizere</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>filnavn</replaceable
+></arg
+> <arg choice="opt"
+>&kde; Generiske tilvalg</arg
+> <arg choice="opt"
+>&Qt; Generiske tilvalg</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beskrivelse</title>
+<para
+>&kmouth; er et program der gør personer der ikke kan tale i stand til at lade deres computere tale. Det inkluderer en historik af udtalte sætninger ud fra hvilke brugeren kan vælge sætninger til at blive udtalt.</para>
+<para
+>Bemærk at &kmouth; ikke inkluderer en tale-synthesizer. I stedet kræver den at der er en tale-synthesizer installeret på systemet.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Tilvalg</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>filnavn</replaceable
+></option
+></term>
+<listitem>
+<para
+>Historikfilen der skal åbnes.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Se også</title>
+<para
+>kttsd(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Mere detaljeret brugerdokumentation findes på <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (skriv enten denne &URL; i &konqueror;, eller kør <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Der er også yderligere information tilgængelig på <ulink url="http://accessibility.kde.org/"
+>&kde;'s tilgængelighedsprojekts netsted</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Forfattere</title>
+<para
+>&kmouth; er skrevet af <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

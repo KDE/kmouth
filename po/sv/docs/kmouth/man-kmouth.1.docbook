@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Swedish "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Kmouth användarhandbok</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Kmouth manualsida.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>2022-03-18</date>
+<releaseinfo
+>Kmouth 22.04</releaseinfo>
+<productname
+>KDE Gear</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Skriv-och-läs-gränssnitt för talsyntes</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>filnamn</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beskrivning</title>
+<para
+>&kmouth; är ett program som gör det möjligt för personer som inte kan tala, att låta sina datorer tala. Det innehåller en historik med talade meningar, där användaren kan välja meningar som ska sägas igen.</para>
+<para
+>Observera att &kmouth; inte innehåller talsyntes. Det kräver istället att ett talsyntesprogram är installerat på systemet.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Väljare</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>filnamn</replaceable
+></option
+></term>
+<listitem>
+<para
+>Historikfilen att öppna.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Se också</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Mer detaljerad användardokumentation är tillgänglig med <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (skriv antingen in webbadressen i &konqueror;, eller kör <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Det finns också ytterligare information tillgänglig på <ulink url="https://community.kde.org/Accessibility"
+>hemsidan för &kde;:s handikappstödsprojekt</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Upphovsmän</title>
+<para
+>&kmouth; är skrivet av <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

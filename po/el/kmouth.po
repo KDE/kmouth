@@ -1,0 +1,1455 @@
+# translation of kmouth.po to greek
+#
+# Spiros Georgaras <sng@hellug.gr>, 2005, 2006, 2007, 2008.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2005, 2009.
+# Stelios <sstavra@gmail.com>, 2011, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmouth\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"PO-Revision-Date: 2017-09-21 11:16+0200\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Σπύρος Γεωργαράς,Τούσης Μανώλης"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sng@hellug.gr,manolis@koppermind.homelinux.org"
+
+#: configwizard.cpp:38
+#, kde-format
+msgid "Initial Configuration - KMouth"
+msgstr "Αρχική διαμόρφωση -KMouth"
+
+#: configwizard.cpp:59
+#, kde-format
+msgid "Text-to-Speech Configuration"
+msgstr "Διαμόρφωση κειμένου-σε-ομιλία"
+
+#: configwizard.cpp:73
+#, kde-format
+msgid "Initial Phrase Book"
+msgstr "Αρχικό βιβλίο φράσεων"
+
+#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#, kde-format
+msgid "Word Completion"
+msgstr "Συμπλήρωση λέξεων"
+
+#: kmouth.cpp:107
+#, kde-format
+msgid "&Open as History..."
+msgstr "Ά&νοιγμα ως ιστορικό..."
+
+#: kmouth.cpp:110 kmouth.cpp:111
+#, kde-format
+msgid "Opens an existing file as history"
+msgstr "Ανοίγει ένα υπάρχον αρχείο ως ιστορικό"
+
+#: kmouth.cpp:115
+#, kde-format
+msgid "Save &History As..."
+msgstr "Αποθήκευση &ιστορικού ως..."
+
+#: kmouth.cpp:118 kmouth.cpp:119
+#, kde-format
+msgid "Saves the actual history as..."
+msgstr "Αποθηκεύει το πραγματικό ιστορικό ως..."
+
+#: kmouth.cpp:123
+#, kde-format
+msgid "&Print History..."
+msgstr "&Εκτύπωση ιστορικού..."
+
+#: kmouth.cpp:126 kmouth.cpp:127
+#, kde-format
+msgid "Prints out the actual history"
+msgstr "Εκτυπώνει το τρέχον ιστορικό"
+
+#: kmouth.cpp:130 kmouth.cpp:131
+#, kde-format
+msgid "Quits the application"
+msgstr "Έξοδος από την εφαρμογή"
+
+#: kmouth.cpp:135
+#, kde-format
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Αποκοπή του επιλεγμένου τμήματος και τοποθέτηση στο πρόχειρο"
+
+#: kmouth.cpp:136
+#, kde-format
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+msgstr ""
+"Αποκοπή του επιλεγμένου τμήματος και τοποθέτηση στο πρόχειρο. Αν υπάρχει "
+"επιλεγμένο κείμενο στο πεδίο επεξεργασίας κειμένου τοποθετείται στο "
+"πρόχειρο. Σε άλλη περίπτωση οι επιλεγμένες προτάσεις του ιστορικού (αν "
+"υπάρχουν) τοποθετούνται στο πρόχειρο."
+
+#: kmouth.cpp:139
+#, kde-format
+msgid "Copies the selected section to the clipboard"
+msgstr "Αντιγραφή του επιλεγμένου τμήματος και τοποθέτηση στο πρόχειρο"
+
+#: kmouth.cpp:140
+#, kde-format
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+msgstr ""
+"Αντιγραφή του επιλεγμένου τμήματος και τοποθέτηση στο πρόχειρο. Αν υπάρχει "
+"επιλεγμένο κείμενο στο πεδίο επεξεργασίας κειμένου αντιγράφεται στο "
+"πρόχειρο. Σε άλλη περίπτωση οι επιλεγμένες προτάσεις του ιστορικού (αν "
+"υπάρχουν) αντιγράφονται στο πρόχειρο."
+
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#, kde-format
+msgid "Pastes the clipboard contents to current position"
+msgstr "Επικόλληση των περιεχομένων του πρόχειρου στην τρέχουσα θέση"
+
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#, kde-format
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr ""
+"Επικόλληση των περιεχομένων του πρόχειρου στην τρέχουσα θέση του δρομέα μέσα "
+"στο πεδίο επεξεργασίας κειμένου."
+
+#: kmouth.cpp:148
+#, kde-format
+msgctxt "Start speaking"
+msgid "&Speak"
+msgstr "&Υπαγόρευση"
+
+#: kmouth.cpp:150
+#, kde-format
+msgid "Speaks the currently active sentence(s)"
+msgstr "Υπαγορεύει τις τρέχουσες ενεργές προτάσεις"
+
+#: kmouth.cpp:151 phraselist.cpp:88
+#, kde-format
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Υπαγορεύει τις τρέχουσες ενεργές προτάσεις. Αν υπάρχει κάποιο κείμενο στο "
+"πεδίο επεξεργασίας κειμένου αυτό υπαγορεύεται. Σε άλλη περίπτωση οι "
+"επιλεγμένες προτάσεις του ιστορικού (αν υπάρχουν) υπαγορεύονται."
+
+#: kmouth.cpp:155
+#, kde-format
+msgid "&Edit..."
+msgstr "&Επεξεργασία..."
+
+#: kmouth.cpp:166
+#, kde-format
+msgid "Show P&hrasebook Bar"
+msgstr "Εμφάνιση γραμμής του βι&βλίου φράσεων"
+
+#: kmouth.cpp:168 kmouth.cpp:169
+#, kde-format
+msgid "Enables/disables the phrasebook bar"
+msgstr "Ενεργοποίηση/απενεργοποίηση της γραμμής του βιβλίου φράσεων"
+
+#: kmouth.cpp:172 kmouth.cpp:173
+#, kde-format
+msgid "Enables/disables the statusbar"
+msgstr "Ενεργοποίηση/απενεργοποίηση της γραμμής κατάστασης"
+
+#: kmouth.cpp:177
+#, kde-format
+msgid "&Configure KMouth..."
+msgstr "&Διαμόρφωση KMouth..."
+
+#: kmouth.cpp:179 kmouth.cpp:180
+#, kde-format
+msgid "Opens the configuration dialog"
+msgstr "Άνοιγμα του διαλόγου διαμόρφωσης"
+
+#: kmouth.cpp:188 phraselist.cpp:85
+#, kde-format
+msgid "&Speak"
+msgstr "&Υπαγόρευση"
+
+#: kmouth.cpp:189 kmouth.cpp:191
+#, kde-format
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Υπαγόρευση των επιλεγμένων φράσεων στο ιστορικό"
+
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#, kde-format
+msgid "&Delete"
+msgstr "&Διαγραφή"
+
+#: kmouth.cpp:197 kmouth.cpp:198
+#, kde-format
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Διαγραφή των επιλεγμένων φράσεων από το ιστορικό"
+
+#: kmouth.cpp:202
+#, kde-format
+msgid "Cu&t"
+msgstr "Α&ποκοπή"
+
+#: kmouth.cpp:204 kmouth.cpp:205
+#, kde-format
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr ""
+"Αποκοπή των επιλεγμένων φράσεων από το ιστορικό και τοποθέτησή τους στο "
+"πρόχειρο"
+
+#: kmouth.cpp:209
+#, kde-format
+msgid "&Copy"
+msgstr "&Αντιγραφή"
+
+#: kmouth.cpp:211 kmouth.cpp:212
+#, kde-format
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr "Αντιγραφή των επιλεγμένων φράσεων από το ιστορικό στο πρόχειρο"
+
+#: kmouth.cpp:215
+#, kde-format
+msgid "Select &All Entries"
+msgstr "Επιλογή ό&λων των καταχωρήσεων"
+
+#: kmouth.cpp:217 kmouth.cpp:218
+#, kde-format
+msgid "Selects all phrases in the history"
+msgstr "Επιλογή όλων των φράσεων από το ιστορικό"
+
+#: kmouth.cpp:221
+#, kde-format
+msgid "D&eselect All Entries"
+msgstr "Α&ποεπιλογή όλων των καταχωρήσεων"
+
+#: kmouth.cpp:223 kmouth.cpp:224
+#, kde-format
+msgid "Deselects all phrases in the history"
+msgstr "Αποεπιλογή όλων των φράσεων από το ιστορικό"
+
+#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
+#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#, kde-format
+msgctxt "The job is done"
+msgid "Ready."
+msgstr "Έτοιμο."
+
+#: kmouth.cpp:254 kmouth.cpp:353
+#, kde-format
+msgid "Opening file..."
+msgstr "Άνοιγμα αρχείου..."
+
+#: kmouth.cpp:362
+#, kde-format
+msgid "Saving history with a new filename..."
+msgstr "Αποθήκευση ιστορικού με ένα νέο όνομα αρχείου..."
+
+#: kmouth.cpp:371
+#, kde-format
+msgid "Printing..."
+msgstr "Εκτύπωση..."
+
+#: kmouth.cpp:388
+#, kde-format
+msgctxt "Shutting down the application"
+msgid "Exiting..."
+msgstr "Έξοδος..."
+
+#: kmouth.cpp:425
+#, kde-format
+msgid "Toggling menubar..."
+msgstr "Εναλλαγή γραμμής μενού..."
+
+#: kmouth.cpp:437
+#, kde-format
+msgid "Toggling toolbar..."
+msgstr "Εναλλαγή γραμμής εργαλείων..."
+
+#: kmouth.cpp:451
+#, kde-format
+msgid "Toggling phrasebook bar..."
+msgstr "Εναλλαγή γραμμής βιβλίου φράσεων..."
+
+#: kmouth.cpp:465
+#, kde-format
+msgid "Toggle the statusbar..."
+msgstr "Εναλλαγή της γραμμής κατάστασης..."
+
+#. i18n: ectx: Menu (file)
+#: kmouthui.rc:5 phrasebookdialogui.rc:6
+#, kde-format
+msgid "&File"
+msgstr "&Αρχείο"
+
+#. i18n: ectx: Menu (edit)
+#: kmouthui.rc:12 phrasebookdialogui.rc:20
+#, kde-format
+msgid "&Edit"
+msgstr "&Επεξεργασία"
+
+#. i18n: ectx: Menu (phrasebooks)
+#: kmouthui.rc:15
+#, kde-format
+msgid "&Phrase Books"
+msgstr "&Βιβλία φράσεων"
+
+#. i18n: ectx: Menu (settings)
+#: kmouthui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr "Ρ&υθμίσεις"
+
+#: main.cpp:39
+#, kde-format
+msgid "KMouth"
+msgstr "KMouth"
+
+#: main.cpp:41
+#, kde-format
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "Μία εφαρμογή πληκτρολόγησης-και-υπαγόρευσης για συνθέτες ομιλίας"
+
+#: main.cpp:43
+#, kde-format
+msgid "(c) 2002/2003, Gunnar Schmi Dt"
+msgstr "(c) 2002/2003, Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Gunnar Schmi Dt"
+msgstr "Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Original Author"
+msgstr "Αρχικός συγγραφέας"
+
+#: main.cpp:48
+#, kde-format
+msgid "Jeremy Whiting"
+msgstr "Jeremy Whiting"
+
+#: main.cpp:48
+#, kde-format
+msgid "Current Maintainer"
+msgstr "Τρέχων συντηρητής"
+
+#: main.cpp:49
+#, kde-format
+msgid "Olaf Schmidt"
+msgstr "Olaf Schmidt"
+
+#: main.cpp:49
+#, kde-format
+msgid "Tips, extended phrase books"
+msgstr "Συμβουλές, επεκταμένα βιβλία φράσεων"
+
+#: main.cpp:53
+#, kde-format
+msgid "History file to open"
+msgstr "Αρχείο ιστορικού για άνοιγμα"
+
+#: optionsdialog.cpp:122
+#, kde-format
+msgid "Configuration"
+msgstr "Διαμόρφωση"
+
+#: optionsdialog.cpp:133
+#, kde-format
+msgid "&Preferences"
+msgstr "&Προτιμήσεις"
+
+#: optionsdialog.cpp:136
+#, kde-format
+msgid "&Text-to-Speech"
+msgstr "&Κείμενο-σε-ομιλία"
+
+#: optionsdialog.cpp:138 optionsdialog.cpp:139
+#, kde-format
+msgid "General Options"
+msgstr "Γενικές επιλογές"
+
+#: phrasebook/initialphrasebookwidget.cpp:45
+#, kde-format
+msgid "Please decide which phrase books you need:"
+msgstr "Παρακαλώ αποφασίστε ποια βιβλία φράσεων χρειάζεστε:"
+
+#: phrasebook/initialphrasebookwidget.cpp:50
+#, kde-format
+msgid "Book"
+msgstr "Βιβλίο"
+
+#: phrasebook/phrasebook.cpp:269
+#, kde-format
+msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+msgstr ""
+"Βιβλία φράσεων (*.phrasebook);;Απλά αρχεία κειμένου (*.txt);;Όλα τα αρχεία "
+"(*)"
+
+#: phrasebook/phrasebook.cpp:271
+#, kde-format
+msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+msgstr ""
+"Απλά αρχεία κειμένου (*.txt);;Βιβλία φράσεων (*.phrasebook);;Όλα τα αρχεία "
+"(*)"
+
+#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#, kde-format
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "Το αρχείο %1 υπάρχει ήδη. Θέλετε να το αντικαταστήσετε;"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "File Exists"
+msgstr "Το αρχείο υπάρχει"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "&Overwrite"
+msgstr "&Αντικατάσταση"
+
+#: phrasebook/phrasebook.cpp:299
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"Το επιλεγμένο όνομα αρχείου <i>%1</i> έχει διαφορετική επέκταση από την <i>."
+"phrasebook</i>. Επιθυμείτε την προσθήκη του <i>.phrasebook</i> στο όνομα "
+"αρχείου;"
+
+#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "File Extension"
+msgstr "Επέκταση αρχείου"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Do Not Add"
+msgstr "Να μην προστεθεί"
+
+#: phrasebook/phrasebook.cpp:314
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+msgstr ""
+"Το επιλεγμένο όνομα αρχείου <i>%1</i> περιέχει την επέκταση <i>.phrasebook</"
+"i>. Επιθυμείτε την αποθήκευση με τη μορφή βιβλίου φράσεων;"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Phrasebook"
+msgstr "Ως βιβλίο φράσεων"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Plain Text"
+msgstr "Ως απλό κείμενο"
+
+#: phrasebook/phrasebookdialog.cpp:88
+#, kde-format
+msgid "Phrase"
+msgstr "Φράση"
+
+#: phrasebook/phrasebookdialog.cpp:89
+#, kde-format
+msgid "Shortcut"
+msgstr "Συντόμευση"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
+#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#, kde-format
+msgid "Phrase Book"
+msgstr "Βιβλίο φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:228
+#, kde-format
+msgid "&New Phrase"
+msgstr "&Νέα φράση"
+
+#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#, kde-format
+msgid "Adds a new phrase"
+msgstr "Προσθήκη μιας νέας φράσης"
+
+#: phrasebook/phrasebookdialog.cpp:235
+#, kde-format
+msgid "New Phrase &Book"
+msgstr "Νέο βιβλίο φ&ράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#, kde-format
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr ""
+"Προσθήκη ενός νέου βιβλίου φράσεων μέσα στο οποίο μπορούν να τοποθετηθούν "
+"άλλα βιβλία φράσεων και φράσεις"
+
+#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#, kde-format
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Αποθήκευση του βιβλίου φράσεων στο σκληρό δίσκο"
+
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#, kde-format
+msgid "&Import..."
+msgstr "Εισαγ&ωγή..."
+
+#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
+#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#, kde-format
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr ""
+"Εισαγωγή ενός αρχείου και προσθήκη των περιεχομένων του στο βιβλίο φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:259
+#, kde-format
+msgid "I&mport Standard Phrase Book"
+msgstr "Ε&ισαγωγή τυπικού βιβλίου φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#, kde-format
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr ""
+"Εισαγωγή ενός τυπικού βιβλίου φράσεων και προσθήκη των περιεχομένων του στο "
+"βιβλίο φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:265
+#, kde-format
+msgid "&Export..."
+msgstr "&Εξαγωγή..."
+
+#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#, kde-format
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr ""
+"Εξαγωγή της τρέχουσας επιλεγμένης φράσης ή του βιβλίου φράσεων σε ένα αρχείο"
+
+#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#, kde-format
+msgid "Closes the window"
+msgstr "Κλείσιμο του παραθύρου"
+
+#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#, kde-format
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr ""
+"Αποκοπή των τρεχόντων επιλεγμένων καταχωρήσεων από το βιβλίο φράσεων και "
+"τοποθέτησή τους στο πρόχειρο"
+
+#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#, kde-format
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr ""
+"Αντιγραφή της τρέχουσας επιλεγμένης καταχώρησης από το βιβλίο φράσεων στο "
+"πρόχειρο"
+
+#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#, kde-format
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Διαγραφή των επιλεγμένων καταχωρήσεων από το βιβλίο φράσεων"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.ui:82
+#, kde-format
+msgid "Text of the &phrase:"
+msgstr "Κείμενο της φ&ράσης:"
+
+#: phrasebook/phrasebookdialog.cpp:404
+#, kde-format
+msgid "Name of the &phrase book:"
+msgstr "Όνομα του βιβλίου φρά&σεων:"
+
+#: phrasebook/phrasebookdialog.cpp:425
+#, kde-format
+msgid ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+msgstr ""
+"<qt>Υπάρχουν μη αποθηκευμένες αλλαγές.<br />Θέλετε να εφαρμοστούν οι αλλαγές "
+"πριν το κλείσιμο του  παραθύρου \"βιβλίου φράσεων\" ή να απορριφθούν οι "
+"αλλαγές;</qt>"
+
+#: phrasebook/phrasebookdialog.cpp:426
+#, kde-format
+msgid "Closing \"Phrase Book\" Window"
+msgstr "Κλείσιμο παραθύρου \"βιβλίου φράσεων\""
+
+#: phrasebook/phrasebookdialog.cpp:586
+#, kde-format
+msgid "(New Phrase Book)"
+msgstr "(Νέο βιβλίο φράσεων)"
+
+#: phrasebook/phrasebookdialog.cpp:602
+#, kde-format
+msgid "(New Phrase)"
+msgstr "(Νέα φράση)"
+
+#: phrasebook/phrasebookdialog.cpp:633
+#, kde-format
+msgid "Import Phrasebook"
+msgstr "Εισαγωγή βιβλίου φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:634
+#, kde-format
+msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+msgstr ""
+"Βιβλία φράσεων (*.phrasebook);;Απλά αρχεία κειμένου (*.txt);;Όλα τα αρχεία "
+"(*)"
+
+#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#, kde-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"Υπήρξε ένα σφάλμα κατά τη φόρτωση του αρχείου\n"
+"%1"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Export Phrase Book"
+msgstr "Εξαγωγή βιβλίου φράσεων"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Phrase Books (*.phrasebook)"
+msgstr "Βιβλία φράσεων (*.phrasebook)"
+
+#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#, kde-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"Υπήρξε ένα σφάλμα κατά την αποθήκευση του αρχείου\n"
+"%1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
+#: phrasebook/phrasebookdialog.ui:26
+#, kde-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "&Τρέχουσα επιλεγμένη φράση ή βιβλίο φράσεων"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
+#: phrasebook/phrasebookdialog.ui:38
+#, kde-format
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+msgstr ""
+"Κάνοντας κλικ σε αυτό το κουμπί μπορείτε να επιλέξετε το συνδυασμό "
+"πληκτρολογίου που θα συσχετιστεί με την επιλεγμένη φράση."
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.ui:45 phrasebook/phrasebookdialog.ui:79
+#, kde-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+msgstr ""
+"Σε αυτή τη γραμμή επεξεργασίας ορίζετε το όνομα ενός υπο-βιβλίου φράσεων ή "
+"τα περιεχόμενα μιας φράσης."
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:52
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+msgstr ""
+"Αν επιλέξετε αυτή την επιλογή, η επιλεγμένη φράση δε θα είναι προσπελάσιμη "
+"μέσω μιας συντόμευσης πληκτρολογίου."
+
+#. i18n: ectx: property (text), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:55
+#, kde-format
+msgid "&None"
+msgstr "&Καμία"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:62
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"Αν επιλέξετε αυτή την επιλογή, η επιλεγμένη φράση θα είναι προσπελάσιμη μέσω "
+"μιας συντόμευσης πληκτρολογίου. Μπορείτε να αλλάξετε τη συντόμευση με το "
+"κουμπί δίπλα σε αυτή την επιλογή."
+
+#. i18n: ectx: property (text), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:65
+#, kde-format
+msgid "C&ustom"
+msgstr "&Προσαρμοσμένο"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: phrasebook/phrasebookdialog.ui:72
+#, kde-format
+msgid "Shortcut for the phrase:"
+msgstr "Συντόμευση για τη φράση:"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
+#: phrasebook/phrasebookdialog.ui:98
+#, kde-format
+msgid ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+msgstr ""
+"Αυτή η λίστα περιέχει το τρέχον βιβλίο φράσεων σε μια δομή δέντρου. Μπορείτε "
+"να επιλέξετε και να τροποποιήσετε αυτόνομες φράσεις και βιβλία υπο-φράσεων"
+
+#: phraselist.cpp:62
+#, kde-format
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"Αυτή η λίστα περιέχει το ιστορικό των προτάσεων που έχουν υπαγορευθεί. "
+"Μπορείτε να επιλέξτε προτάσεις και να πιέσετε το κουμπί υπαγόρευσης για "
+"υπαγόρευση ξανά."
+
+#: phraselist.cpp:80
+#, kde-format
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+msgstr ""
+"Μέσα σε αυτό το πεδίο επεξεργασίας μπορείτε να πληκτρολογήσετε μια φράση. "
+"Κάντε κλικ στο κουμπί υπαγόρευσης για την υπαγόρευση της εισηγμένης φράσης."
+
+#: phraselist.cpp:475
+#, kde-format
+msgid "Save As"
+msgstr "Αποθήκευση ως"
+
+#: phraselist.cpp:481
+#, kde-format
+msgid "Open File as History"
+msgstr "Άνοιγμα αρχείου ως ιστορικό"
+
+#: phraselist.cpp:482
+#, kde-format
+msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+msgstr ""
+"Όλα τα αρχεία (*);;Βιβλία φράσεων (*.phrasebook);;Απλά αρχεία κειμένου (*."
+"txt)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
+#: preferencesui.ui:21
+#, kde-format
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, speakLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, speakCombo)
+#: preferencesui.ui:49 preferencesui.ui:62
+#, kde-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"Αυτό το πλαίσιο συνδυασμών ορίζει αν οι επιλεγμένες φράσεις του βιβλίου "
+"φράσεων υπαγορεύονται αμέσως ή απλά εισάγονται στο πεδίο επεξεργασίας "
+"κειμένου."
+
+#. i18n: ectx: property (text), widget (QLabel, speakLabel)
+#: preferencesui.ui:52
+#, kde-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "&Επιλογή φράσεων μέσα στο βιβλίο φράσεων:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:66
+#, kde-format
+msgid "Speak Immediately"
+msgstr "Άμεση υπαγόρευση"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:71
+#, kde-format
+msgid "Insert Into Edit Field"
+msgstr "Εισαγωγή στο πεδίο επεξεργασίας"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
+#: preferencesui.ui:97 preferencesui.ui:110
+#, kde-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"Αυτό το πλαίσιο συνδυασμών ορίζει αν το βιβλίο φράσεων αποθηκεύεται αυτόματα "
+"όταν το παράθυρο επεξεργασίας κλείσει."
+
+#. i18n: ectx: property (text), widget (QLabel, closeLabel)
+#: preferencesui.ui:100
+#, kde-format
+msgid "Closing the phrase &book edit window:"
+msgstr "Κλείσιμο του παραθύρου επεξεργασίας του &βιβλίου φράσεων:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:114
+#, kde-format
+msgid "Save Phrase Book"
+msgstr "Αποθήκευση βιβλίου φράσεων"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:119
+#, kde-format
+msgid "Discard Changes"
+msgstr "Απόρριψη αλλαγών"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:124
+#, kde-format
+msgid "Ask Whether to Save"
+msgstr "Ερώτηση για την αποθήκευση"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
+#: texttospeechconfigurationui.ui:14
+#, kde-format
+msgid "Text-to-Speech"
+msgstr "Κείμενο-σε-ομιλία"
+
+#. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
+#: texttospeechconfigurationui.ui:32
+#, kde-format
+msgid "&Use default speech system"
+msgstr "&Να γίνει χρήση του προκαθορισμένου συστήματος ομιλίας"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: texttospeechconfigurationui.ui:41
+#, kde-format
+msgid "&Engine:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: texttospeechconfigurationui.ui:61
+#, kde-format
+msgid "&Voice:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
+#: texttospeechconfigurationui.ui:87
+#, kde-format
+msgid "Alternative"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
+#: texttospeechconfigurationui.ui:120 texttospeechconfigurationui.ui:143
+#, no-c-format, kde-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"Αυτό το πεδίο ορίζει τόσο την εντολή που χρησιμοποιείται για την υπαγόρευση "
+"κειμένου καθώς και για τις παραμέτρους της. Το KMouth αναγνωρίζει τους "
+"παρακάτω αντικαταστάτες:\n"
+"%t -- το κείμενο που θα υπαγορευθεί\n"
+"%f -- το όνομα του αρχείου που περιέχει το κείμενο\n"
+"%l -- ο κωδικός γλώσσας\n"
+"%% -- ένα σύμβολο ποσοστού"
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: texttospeechconfigurationui.ui:123
+#, fuzzy, kde-format
+#| msgid "Alternative command for speaking &texts:"
+msgid "Command for speaking &texts:"
+msgstr "Εναλλακτική εντολή για υπαγόρευση &κειμένων:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:152
+#, kde-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"Αυτό το πλαίσιο επιλογής ορίζει αν το κείμενο στέλνεται ως τυπική είσοδος "
+"στο συνθέτη ομιλίας."
+
+#. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:155
+#, kde-format
+msgid "Send the data as standard &input"
+msgstr "Αποστολή των δεδομένων σαν τυπική &είσοδος"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
+#: texttospeechconfigurationui.ui:185 texttospeechconfigurationui.ui:198
+#, kde-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+msgstr ""
+"Αυτό το πλαίσιο συνδυασμών ορίζει την κωδικοποίηση χαρακτήρων που θα "
+"χρησιμοποιηθεί για την ανάλυση του κειμένου."
+
+#. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
+#: texttospeechconfigurationui.ui:188
+#, kde-format
+msgid "Character encodin&g:"
+msgstr "Κωδικοποίηση χαρακτήρω&ν:"
+
+#: texttospeechconfigurationwidget.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:116
+#, kde-format
+msgctxt "Local characterset"
+msgid "Local"
+msgstr "Τοπικό"
+
+#: texttospeechconfigurationwidget.cpp:68
+#, kde-format
+msgctxt "Latin1 characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: texttospeechconfigurationwidget.cpp:69
+#: wordcompletion/dictionarycreationwizard.cpp:120
+#, kde-format
+msgid "Unicode"
+msgstr "Unicode"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"Αν επιλέξετε αυτή το πλαίσιο επιλογής οι λέξεις ελέγχονται ορθογραφικά πριν "
+"εισαχθούν στο νέο λεξικό."
+
+#. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:25
+#: wordcompletion/kdedocsourceui.ui:25
+#, kde-format
+msgid "C&ompare to OpenOffice.org dictionary:"
+msgstr "&Σύγκριση με το λεξικό του OpenOffice.org:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
+#: wordcompletion/creationsourcedetailsui.ui:43
+#: wordcompletion/creationsourcedetailsui.ui:100
+#, kde-format
+msgid ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"Με αυτό το πλαίσιο συνδυασμών επιλέγετε την κωδικοποίηση χαρακτήρων που θα "
+"χρησιμοποιηθεί κατά τη φόρτωση των αρχείων κειμένου. Αυτό το πλαίσιο "
+"συνδυασμών δε χρησιμοποιείται για αρχεία XML ή για αρχεία λεξικών."
+
+#. i18n: ectx: property (text), widget (QLabel, encodingLabel)
+#: wordcompletion/creationsourcedetailsui.ui:46
+#, kde-format
+msgid "Character &encoding:"
+msgstr "&Κωδικοποίηση χαρακτήρων:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
+#: wordcompletion/creationsourcedetailsui.ui:64
+#: wordcompletion/creationsourcedetailsui.ui:85
+#, kde-format
+msgid ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+msgstr ""
+"Με αυτό το πεδίο εισαγωγής ορίζετε το αρχείο που θέλετε να φορτώσετε για τη "
+"δημιουργία του νέου λεξικού."
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: wordcompletion/creationsourcedetailsui.ui:67
+#, kde-format
+msgid "&Filename:"
+msgstr "Ό&νομα αρχείου:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
+#: wordcompletion/creationsourcedetailsui.ui:118
+#: wordcompletion/kdedocsourceui.ui:44
+#, kde-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+msgstr ""
+"Με αυτό το πεδίο εισαγωγής ορίζετε τον κατάλογο OpenOffice.org που θα "
+"χρησιμοποιηθεί για τον ορθογραφικό έλεγχο των λέξεων του νέου λεξικού."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:136
+#, kde-format
+msgid ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+msgstr ""
+"Με αυτό το πλαίσιο συνδυασμών αποφασίζετε ποια γλώσσα θα συσχετισθεί με το "
+"νέο λεξικό."
+
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:139
+#: wordcompletion/kdedocsourceui.ui:67 wordcompletion/wordcompletionui.ui:50
+#, kde-format
+msgid "&Language:"
+msgstr "&Γλώσσα:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:16
+#, kde-format
+msgid "C&reate new dictionary:"
+msgstr "&Δημιουργία νέου λεξικού:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό δημιουργείται είτε φορτώνοντας "
+"ένα αρχείο λεξικού ή μετρώντας τις μοναδικές λέξεις μέσα σε ένα κείμενο."
+
+#. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:29
+#, kde-format
+msgid "&Merge dictionaries"
+msgstr "&Συγχώνευση λεξικών"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:32
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό θα δημιουργηθεί με τη συγχώνευση "
+"των υπάρχοντων λεξικών."
+
+#. i18n: ectx: property (text), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:50
+#, kde-format
+msgid "From &file"
+msgstr "Από αρ&χείο"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:53
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό θα δημιουργηθεί με τη φόρτωση "
+"ενός αρχείου. Μπορείτε να επιλέξετε είτε ένα αρχείο XML, είτε ένα τυπικό "
+"αρχείο κειμένου είτε ένα αρχείο που περιέχει ένα λεξικό συμπλήρωσης λέξεων. "
+"Αν επιλέξετε ένα τυπικό αρχείο κειμένου ή ένα αρχείο XML η συχνότητα των "
+"μοναδικών λέξεων εντοπίζεται μετρώντας απλά τις εμφανίσεις της κάθε λέξης."
+
+#. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:71
+#, kde-format
+msgid "From &KDE documentation"
+msgstr "Από την &τεκμηρίωση του KDE"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:77
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό θα δημιουργηθεί από την ανάλυση "
+"της τεκμηρίωσης του KDE. Η συχνότητα των μοναδικών λέξεων εντοπίζεται "
+"μετρώντας απλά τις εμφανίσεις της κάθε λέξης."
+
+#. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:95
+#, kde-format
+msgid "From f&older"
+msgstr "Από &φάκελο"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:98
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό θα δημιουργηθεί από τη φόρτωση "
+"όλων των αρχείων μέσα σε ένα φάκελο και σε όλους τους υποκαταλόγους του."
+
+#. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:121
+#, kde-format
+msgid "Create an &empty wordlist"
+msgstr "Δημιουργία ά&δειας λίστας λέξεων"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:124
+#, kde-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+msgstr ""
+"Αν επιλέξετε αυτό το πλαίσιο ένα νέο άδειο λεξικό θα δημιουργηθεί χωρίς "
+"καμία καταχώρηση. Καθώς το KMouth αυτόματα προσθέτει νέες λέξεις που "
+"πληκτρολογείτε στα λεξικά θα μάθει το λεξιλόγιό σας με το χρόνο."
+
+#: wordcompletion/dictionarycreationwizard.cpp:65
+#, kde-format
+msgid "Source of New Dictionary (1)"
+msgstr "Πηγή του νέου λεξικού (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:71
+#: wordcompletion/dictionarycreationwizard.cpp:77
+#: wordcompletion/dictionarycreationwizard.cpp:87
+#: wordcompletion/dictionarycreationwizard.cpp:94
+#, kde-format
+msgid "Source of New Dictionary (2)"
+msgstr "Πηγή του νέου λεξικού (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:80
+#, kde-format
+msgctxt "In which directory is the file located?"
+msgid "&Directory:"
+msgstr "&Κατάλογος:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:83
+#, kde-format
+msgid ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+msgstr ""
+"Με αυτό το πεδίο εισαγωγής κειμένου ορίζετε τον κατάλογο που θέλετε να "
+"χρησιμοποιηθεί για τη δημιουργία του νέου λεξικού."
+
+#: wordcompletion/dictionarycreationwizard.cpp:119
+#, kde-format
+msgctxt "Latin characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: wordcompletion/dictionarycreationwizard.cpp:204
+#, kde-format
+msgid "Merge result"
+msgstr "Συγχώνευση αποτελέσματος"
+
+#: wordcompletion/dictionarycreationwizard.cpp:206
+#, kde-format
+msgctxt "In the sense of a blank word list"
+msgid "Empty list"
+msgstr "Άδεια λίστα"
+
+#: wordcompletion/dictionarycreationwizard.cpp:212
+#, kde-format
+msgid "KDE Documentation"
+msgstr "Τεκμηρίωση KDE"
+
+#: wordcompletion/dictionarycreationwizard.cpp:336
+#, kde-format
+msgctxt "Default dictionary"
+msgid "Default"
+msgstr "Προκαθορισμένο"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/kdedocsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+msgstr ""
+"Αν επιλέξετε αυτή το πλαίσιο επιλογής οι λέξεις της τεκμηρίωσης του KDE "
+"ελέγχονται ορθογραφικά πριν εισαχθούν στο νέο λεξικό."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/kdedocsourceui.ui:64
+#, kde-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+msgstr ""
+"Με αυτό το πλαίσιο συνδυασμών επιλέγετε ποια από τις εγκατεστημένες γλώσσες "
+"χρησιμοποιείται στη δημιουργία του νέου λεξικού. Το KMouth θα αναλύσει μόνο "
+"τα αρχεία τεκμηρίωσης αυτής της γλώσσας."
+
+#. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
+#: wordcompletion/wordcompletionui.ui:32
+#, kde-format
+msgid "&Selected Dictionary"
+msgstr "&Επιλεγμένο λεξικό"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/wordcompletionui.ui:47
+#, kde-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr ""
+"Με αυτό το πλαίσιο συνδυασμών επιλέγετε τη γλώσσα που θα συσχετισθεί με το "
+"επιλεγμένο λεξικό."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
+#: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
+#, kde-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "Με αυτό το πεδίο εισαγωγής ορίζετε το όνομα του επιλεγμένου λεξικού."
+
+#. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
+#: wordcompletion/wordcompletionui.ui:66
+#, kde-format
+msgid "&Name:"
+msgstr "Ό&νομα:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:100
+#, kde-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr ""
+"Με αυτό το κουμπί μπορείτε να προσθέσετε ένα νέο λεξικό στη λίστα των "
+"διαθέσιμων λεξικών."
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:103
+#, kde-format
+msgid "Add D&ictionary..."
+msgstr "Προσθήκη &λεξικού..."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:119
+#, kde-format
+msgid "With this button you delete the selected dictionary."
+msgstr "Με αυτό το κουμπί μπορείτε να διαγράψετε το επιλεγμένο λεξικό."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:122
+#, kde-format
+msgid "&Delete Dictionary"
+msgstr "&Διαγραφή λεξικού"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:138
+#, kde-format
+msgid "With this button you move the selected dictionary up."
+msgstr "Με αυτό το κουμπί μετακινείτε το επιλεγμένο λεξικό πάνω."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:141
+#, kde-format
+msgid "Move &Up"
+msgstr "Μετακίνηση &πάνω"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:157
+#, kde-format
+msgid "With this button you move the selected dictionary down."
+msgstr "Με αυτό το κουμπί μετακινείτε το επιλεγμένο λεξικό κάτω."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:160
+#, kde-format
+msgid "&Move Down"
+msgstr "Μετακίνηση &κάτω"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:176
+#, kde-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "Με αυτό το κουμπί εξάγετε το επιλεγμένο λεξικό σε ένα αρχείο."
+
+#. i18n: ectx: property (text), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:179
+#, kde-format
+msgid "&Export Dictionary..."
+msgstr "Ε&ξαγωγή λεξικού..."
+
+#. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
+#: wordcompletion/wordcompletionui.ui:204
+#, kde-format
+msgid ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+msgstr ""
+"Αυτή η λίστα περιέχει όλα τα διαθέσιμα λεξικά για τη συμπλήρωση λέξεων. Το "
+"KMouth θα εμφανίζει ένα πλαίσιο συνδυασμών δίπλα από το πεδίο επεξεργασίας "
+"στο κύριο παράθυρο αν η λίστα περιέχει περισσότερα από ένα λεξικά. Μπορείτε "
+"να χρησιμοποιήσετε το πλαίσιο συνδυασμών για την επιλογή του λεξικού που θα "
+"χρησιμοποιηθεί για τη συμπλήρωση λέξεων."
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Dictionary"
+msgstr "Λεξικό"
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: wordcompletion/wordcompletionwidget.cpp:97
+#: wordcompletion/wordcompletionwidget.cpp:155
+#, kde-format
+msgid "without name"
+msgstr "χωρίς όνομα"
+
+#: wordcompletion/wordcompletionwidget.cpp:204
+#, kde-format
+msgid "Export Dictionary"
+msgstr "Εξαγωγή λεξικού"
+
+#: wordcompletion/wordlist.cpp:77
+#, kde-format
+msgid "Creating Word List"
+msgstr "Δημιουργία λίστας λέξεων"
+
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#, kde-format
+msgid "Parsing the KDE documentation..."
+msgstr "Ανάλυση της τεκμηρίωσης KDE..."
+
+#: wordcompletion/wordlist.cpp:197
+#, kde-format
+msgid "Merging dictionaries..."
+msgstr "Συγχώνευση λεξικών..."
+
+#: wordcompletion/wordlist.cpp:266
+#, kde-format
+msgid "Parsing file..."
+msgstr "Ανάλυση αρχείου..."
+
+#: wordcompletion/wordlist.cpp:278
+#, kde-format
+msgid "Parsing directory..."
+msgstr "Ανάλυση καταλόγου..."
+
+#: wordcompletion/wordlist.cpp:469
+#, kde-format
+msgid "Performing spell check..."
+msgstr "Εκτέλεση ορθογραφικού ελέγχου..."
+
+#~ msgid ""
+#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
+#~ "system speech service prior to calling the speech synthesizer directly. "
+#~ "The system speech service is a Qt library which wraps speech-dispatcher "
+#~ "on linux, and native speech systems on other platforms.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Αυτό το πλαίσιο επιλογής ορίζει ότι το KMouth "
+#~ "προσπαθεί να χρησιμοποιήσει την υπηρεσία ομιλίας του συστήματος πριν την "
+#~ "απευθείας κλήση του συνθέτη ομιλίας. Η υπηρεσία ομιλίας του συστήματος "
+#~ "είναι μία βιβλιοθήκη της Qt που αναδιπλώνει τον ανταποκριτή ομιλίας στο "
+#~ "linux και τα εγγενή συστήματα ομιλίας σε άλλες πλατφόρμες</p></body></"
+#~ "html>."
+
+#~ msgid "kmouth"
+#~ msgstr "kmouth"
+
+#~ msgid "https://www.kde.org/applications/utilities/kmouth/"
+#~ msgstr "https://www.kde.org/applications/utilities/kmouth/"
+
+#~ msgid "kmouth@schmi-dt.de"
+#~ msgstr "kmouth@schmi-dt.de"
+
+#~ msgid "Jovie Speech Service"
+#~ msgstr "Υπηρεσία ομιλίας Jovie"
+
+#~ msgid "KDE Text-to-Speech Daemon Configuration"
+#~ msgstr "Διαμόρφωση δαίμονα κειμένου-σε-ομιλία του KDE"
+
+#~ msgid "&Use Jovie speech service if possible"
+#~ msgstr "&Χρήση της υπηρεσίας ομιλίας Jovie αν αυτό είναι δυνατό"
+
+#~ msgid "Currently Selected Phrase or Phrase Book"
+#~ msgstr "Τρέχουσα επιλεγμένη φράση ή βιβλίο φράσεων"
+
+#~ msgid " (%2 of 1 book selected)"
+#~ msgid_plural " (%2 of %1 books selected)"
+#~ msgstr[0] " (%2 από %1 βιβλίο επιλεγμένο)"
+#~ msgstr[1] " (%2 από %1 βιβλία επιλεγμένα)"
+
+#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
+#~ msgstr "Εκτύπωση της τρέχουσας επιλεγμένης φράσης ή βιβλίου φράσεων"
+
+#~ msgid ""
+#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
+#~ "Win, Alt, Ctrl, and/or Shift keys."
+#~ msgstr ""
+#~ "Για να χρησιμοποιήσετε το πλήκτρο '%1' σαν συντόμευση, πρέπει να "
+#~ "συνδυαστεί με τα πλήκτρα Win, Alt, Ctrl και/ή Shift."
+
+#~ msgid "Invalid Shortcut Key"
+#~ msgstr "Μη έγκυρο πλήκτρο συντόμευσης"
+
+#~ msgid ""
+#~ "The '%1' key combination has already been allocated to %2.\n"
+#~ "Please choose a unique key combination."
+#~ msgstr ""
+#~ "Ο συνδυασμός πλήκτρων '%1' έχει ήδη αποδοθεί στο %2.\n"
+#~ "Παρακαλώ επιλέξτε έναν μοναδικό συνδυασμό πλήκτρων."
+
+#~ msgid "the standard \"%1\" action"
+#~ msgstr "η τυπική ενέργεια \"%1\""
+
+#~ msgid "Conflict with Standard Application Shortcut"
+#~ msgstr "Σύγκρουση με τυπική συντόμευση εφαρμογής"
+
+#~ msgid "the global \"%1\" action"
+#~ msgstr "η καθολική ενέργεια \"%1\""
+
+#~ msgid "Conflict with Global Shortcuts"
+#~ msgstr "Σύγκρουση με καθολικές συντομεύσεις"
+
+#~ msgid "an other phrase"
+#~ msgstr "μια άλλη φράση"
+
+#~ msgid "Key Conflict"
+#~ msgstr "Σύγκρουση συντόμευσης πλήκτρων"
+
+#~ msgid "Language:"
+#~ msgstr "Γλώσσα:"

@@ -1,0 +1,1326 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2016, 2017, 2019.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
+# cihlarov <cihlarov@suse.cz>, 2015.
+# Vit Pelcak <vpelcak@suse.cz>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmouth\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"PO-Revision-Date: 2022-04-06 11:30+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ivo Jánský,Klára Cihlářová,Marián Kyral,David Kolibáč"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Ivo.Jansky@seznam.cz,koty@seznam.cz,mkyral@email.cz,david@kolibac.cz"
+
+#: configwizard.cpp:38
+#, kde-format
+msgid "Initial Configuration - KMouth"
+msgstr "Počáteční nastavení - KMouth"
+
+#: configwizard.cpp:59
+#, kde-format
+msgid "Text-to-Speech Configuration"
+msgstr "Nastavení hlasové syntézy"
+
+#: configwizard.cpp:73
+#, kde-format
+msgid "Initial Phrase Book"
+msgstr "Počáteční kniha frází"
+
+#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#, kde-format
+msgid "Word Completion"
+msgstr "Dokončování slov"
+
+#: kmouth.cpp:107
+#, kde-format
+msgid "&Open as History..."
+msgstr "&Otevřít jako historii..."
+
+#: kmouth.cpp:110 kmouth.cpp:111
+#, kde-format
+msgid "Opens an existing file as history"
+msgstr "Otevřít existující soubor jako historii"
+
+#: kmouth.cpp:115
+#, kde-format
+msgid "Save &History As..."
+msgstr "Uložit &historie jako..."
+
+#: kmouth.cpp:118 kmouth.cpp:119
+#, kde-format
+msgid "Saves the actual history as..."
+msgstr "Uloží současnou historii jako..."
+
+#: kmouth.cpp:123
+#, kde-format
+msgid "&Print History..."
+msgstr "&Tisknout historii..."
+
+#: kmouth.cpp:126 kmouth.cpp:127
+#, kde-format
+msgid "Prints out the actual history"
+msgstr "Vytiskne současnou historii"
+
+#: kmouth.cpp:130 kmouth.cpp:131
+#, kde-format
+msgid "Quits the application"
+msgstr "Ukončí aplikaci"
+
+#: kmouth.cpp:135
+#, kde-format
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Vyjme současný výběr a umístí jej do schránky"
+
+#: kmouth.cpp:136
+#, kde-format
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+msgstr "Vyjme zvolenou část a vloží jí do schránky."
+
+#: kmouth.cpp:139
+#, kde-format
+msgid "Copies the selected section to the clipboard"
+msgstr "Zkopíruje vybranou sekci do schránky"
+
+#: kmouth.cpp:140
+#, kde-format
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+msgstr ""
+"Překopírování zvolené části do schránky. Do schránky se překopíruje text z "
+"editačního pole. Pokud žádný text v tomto poli není, překopírují se vety z "
+"historie."
+
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#, kde-format
+msgid "Pastes the clipboard contents to current position"
+msgstr "Vloží současný obsah schránky na aktuální pozici"
+
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#, kde-format
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr "Vloží současný obsah schránky na aktuální pozici do editovaného pole."
+
+#: kmouth.cpp:148
+#, kde-format
+msgctxt "Start speaking"
+msgid "&Speak"
+msgstr "&Mluvit"
+
+#: kmouth.cpp:150
+#, kde-format
+msgid "Speaks the currently active sentence(s)"
+msgstr "Vysloví současné aktivní věty"
+
+#: kmouth.cpp:151 phraselist.cpp:88
+#, kde-format
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Přečtení aktuálních vět. Pokud je v editačním poli text, bude přečten. Pokud "
+"ne, budou přečteny věty z historie."
+
+#: kmouth.cpp:155
+#, kde-format
+msgid "&Edit..."
+msgstr "&Upravit..."
+
+#: kmouth.cpp:166
+#, kde-format
+msgid "Show P&hrasebook Bar"
+msgstr "Zobrazit panel slovníku &frází"
+
+#: kmouth.cpp:168 kmouth.cpp:169
+#, kde-format
+msgid "Enables/disables the phrasebook bar"
+msgstr "Povolí/zakáže panel slovníku frází"
+
+#: kmouth.cpp:172 kmouth.cpp:173
+#, kde-format
+msgid "Enables/disables the statusbar"
+msgstr "Povolí/zakáže stavový panel"
+
+#: kmouth.cpp:177
+#, kde-format
+msgid "&Configure KMouth..."
+msgstr "&Nastavit KMouth..."
+
+#: kmouth.cpp:179 kmouth.cpp:180
+#, kde-format
+msgid "Opens the configuration dialog"
+msgstr "Otevře dialog nastavení"
+
+#: kmouth.cpp:188 phraselist.cpp:85
+#, kde-format
+msgid "&Speak"
+msgstr "&Mluvit"
+
+#: kmouth.cpp:189 kmouth.cpp:191
+#, kde-format
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Vysloví aktuálně vybrané fráze v historii"
+
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#, kde-format
+msgid "&Delete"
+msgstr "&Smazat"
+
+#: kmouth.cpp:197 kmouth.cpp:198
+#, kde-format
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Odebere vybrané fráze z historie"
+
+#: kmouth.cpp:202
+#, kde-format
+msgid "Cu&t"
+msgstr "Vyjmou&t"
+
+#: kmouth.cpp:204 kmouth.cpp:205
+#, kde-format
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr "Vyjme aktuálně vybrané fráze z historie a vloží je do schránky"
+
+#: kmouth.cpp:209
+#, kde-format
+msgid "&Copy"
+msgstr "&Kopírovat"
+
+#: kmouth.cpp:211 kmouth.cpp:212
+#, kde-format
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr "Kopíruje aktuálně vybrané fráze z historie do schránky"
+
+#: kmouth.cpp:215
+#, kde-format
+msgid "Select &All Entries"
+msgstr "Vybrat &všechny záznamy"
+
+#: kmouth.cpp:217 kmouth.cpp:218
+#, kde-format
+msgid "Selects all phrases in the history"
+msgstr "Vybrat všechny fráze z historie"
+
+#: kmouth.cpp:221
+#, kde-format
+msgid "D&eselect All Entries"
+msgstr "&Zrušit výběr všech záznamů"
+
+#: kmouth.cpp:223 kmouth.cpp:224
+#, kde-format
+msgid "Deselects all phrases in the history"
+msgstr "Zruší výběr všech frází z historie"
+
+#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
+#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#, kde-format
+msgctxt "The job is done"
+msgid "Ready."
+msgstr "Připraven."
+
+#: kmouth.cpp:254 kmouth.cpp:353
+#, kde-format
+msgid "Opening file..."
+msgstr "Otevírá se soubor..."
+
+#: kmouth.cpp:362
+#, kde-format
+msgid "Saving history with a new filename..."
+msgstr "Ukládání historie pod novým názvem souboru..."
+
+#: kmouth.cpp:371
+#, kde-format
+msgid "Printing..."
+msgstr "Probíhá tisk..."
+
+#: kmouth.cpp:388
+#, kde-format
+msgctxt "Shutting down the application"
+msgid "Exiting..."
+msgstr "Ukončuje se..."
+
+#: kmouth.cpp:425
+#, kde-format
+msgid "Toggling menubar..."
+msgstr "Přepínání nabídky..."
+
+#: kmouth.cpp:437
+#, kde-format
+msgid "Toggling toolbar..."
+msgstr "Přepínání panelu nástrojů..."
+
+#: kmouth.cpp:451
+#, kde-format
+msgid "Toggling phrasebook bar..."
+msgstr "Přepínání knihy frází..."
+
+#: kmouth.cpp:465
+#, kde-format
+msgid "Toggle the statusbar..."
+msgstr "Přepnout stavový panel..."
+
+#. i18n: ectx: Menu (file)
+#: kmouthui.rc:5 phrasebookdialogui.rc:6
+#, kde-format
+msgid "&File"
+msgstr "&Soubor"
+
+#. i18n: ectx: Menu (edit)
+#: kmouthui.rc:12 phrasebookdialogui.rc:20
+#, kde-format
+msgid "&Edit"
+msgstr "Ú&pravy"
+
+#. i18n: ectx: Menu (phrasebooks)
+#: kmouthui.rc:15
+#, kde-format
+msgid "&Phrase Books"
+msgstr "&Kniha frází"
+
+#. i18n: ectx: Menu (settings)
+#: kmouthui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr "Nastav&ení"
+
+#: main.cpp:39
+#, kde-format
+msgid "KMouth"
+msgstr "KMouth"
+
+#: main.cpp:41
+#, kde-format
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "Rozhraní hlasové syntézy pro čtení textu"
+
+#: main.cpp:43
+#, kde-format
+msgid "(c) 2002/2003, Gunnar Schmi Dt"
+msgstr "(c) 2002/2003, Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Gunnar Schmi Dt"
+msgstr "Gunnar Schmi Dt"
+
+#: main.cpp:47
+#, kde-format
+msgid "Original Author"
+msgstr "Původní autor"
+
+#: main.cpp:48
+#, kde-format
+msgid "Jeremy Whiting"
+msgstr "Jeremy Whiting"
+
+#: main.cpp:48
+#, kde-format
+msgid "Current Maintainer"
+msgstr "Současný správce"
+
+#: main.cpp:49
+#, kde-format
+msgid "Olaf Schmidt"
+msgstr "Olaf Schmidt"
+
+#: main.cpp:49
+#, kde-format
+msgid "Tips, extended phrase books"
+msgstr "Tipy, rozšířená kniha frází"
+
+#: main.cpp:53
+#, kde-format
+msgid "History file to open"
+msgstr "Soubor historie k otevření"
+
+#: optionsdialog.cpp:122
+#, kde-format
+msgid "Configuration"
+msgstr "Nastavení"
+
+#: optionsdialog.cpp:133
+#, kde-format
+msgid "&Preferences"
+msgstr "&Předvolby"
+
+#: optionsdialog.cpp:136
+#, kde-format
+msgid "&Text-to-Speech"
+msgstr "&Text do mluveného slova"
+
+#: optionsdialog.cpp:138 optionsdialog.cpp:139
+#, kde-format
+msgid "General Options"
+msgstr "Obecné volby"
+
+#: phrasebook/initialphrasebookwidget.cpp:45
+#, kde-format
+msgid "Please decide which phrase books you need:"
+msgstr "Prosím, rozhodněte, kterou knihu frází potřebujete:"
+
+#: phrasebook/initialphrasebookwidget.cpp:50
+#, kde-format
+msgid "Book"
+msgstr "Kniha"
+
+#: phrasebook/phrasebook.cpp:269
+#, kde-format
+msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+msgstr "Knihy frází (*.phrasebook);;Prostý text (*.txt);;Všechny soubory (*)"
+
+#: phrasebook/phrasebook.cpp:271
+#, kde-format
+msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+msgstr "Prostý text (*.txt);;Knihy frází (*.phrasebook);;Všechny soubory (*)"
+
+#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#, kde-format
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "Soubor %1 již existuje. Přejete si jej přepsat?"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "File Exists"
+msgstr "Soubor existuje"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "&Overwrite"
+msgstr "&Přepsat"
+
+#: phrasebook/phrasebook.cpp:299
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"Vámi zvolený soubor <i>%1</i> má jinou příponu než <i>.phrasebook</i>. "
+"Přejte si ke jménu souboru <i>.phrasebook</i> doplnit?"
+
+#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "File Extension"
+msgstr "Typ souboru"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Add"
+msgstr "Přidat"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Do Not Add"
+msgstr "Nepřidávat"
+
+#: phrasebook/phrasebook.cpp:314
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+msgstr ""
+"Vámi zvolený soubor <i>%1</i> má příponu <i>.phrasebook</i>. Přejete si jej "
+"uložit ve formátu knihy frází?"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Phrasebook"
+msgstr "Jako knihu frází"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Plain Text"
+msgstr "Jako prostý text"
+
+#: phrasebook/phrasebookdialog.cpp:88
+#, kde-format
+msgid "Phrase"
+msgstr "Fráze"
+
+#: phrasebook/phrasebookdialog.cpp:89
+#, kde-format
+msgid "Shortcut"
+msgstr "Zkratka"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
+#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#, kde-format
+msgid "Phrase Book"
+msgstr "Kniha frází"
+
+#: phrasebook/phrasebookdialog.cpp:228
+#, kde-format
+msgid "&New Phrase"
+msgstr "&Nová fráze"
+
+#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#, kde-format
+msgid "Adds a new phrase"
+msgstr "Přidá nové fráze"
+
+#: phrasebook/phrasebookdialog.cpp:235
+#, kde-format
+msgid "New Phrase &Book"
+msgstr "&Nová kniha frází"
+
+#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#, kde-format
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr "Vložení nové knihy frází, do které lze vkládat další knihy a fráze"
+
+#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#, kde-format
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Uloží knihu frází na disk"
+
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#, kde-format
+msgid "&Import..."
+msgstr "&Importovat..."
+
+#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
+#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#, kde-format
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr "Importuje soubor a přidá jeho obsah do knihy frází"
+
+#: phrasebook/phrasebookdialog.cpp:259
+#, kde-format
+msgid "I&mport Standard Phrase Book"
+msgstr "I&mportovat standardní knihu frází"
+
+#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#, kde-format
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr "Importovat standardní knihu frází a přidá její obsah do knihy frází"
+
+#: phrasebook/phrasebookdialog.cpp:265
+#, kde-format
+msgid "&Export..."
+msgstr "&Exportovat..."
+
+#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#, kde-format
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr "Exportuje aktuálně vybrané fráze nebo knihy frází do souboru"
+
+#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#, kde-format
+msgid "Closes the window"
+msgstr "Zavře okno"
+
+#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#, kde-format
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr "Vyjme aktuálně vybrané položky z knihy frází a vloží je do schránky"
+
+#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#, kde-format
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr "Kopíruje aktuálně vybrané položky z knihy frází do schránky"
+
+#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#, kde-format
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Odebere aktuálně vybrané položky z knihy frází"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.ui:82
+#, kde-format
+msgid "Text of the &phrase:"
+msgstr "Text frá&ze:"
+
+#: phrasebook/phrasebookdialog.cpp:404
+#, kde-format
+msgid "Name of the &phrase book:"
+msgstr "Název knihy frá&zí:"
+
+#: phrasebook/phrasebookdialog.cpp:425
+#, kde-format
+msgid ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+msgstr ""
+"<qt>Jsou zde neuložené změny.<br />Přejete si před uzavřením okna „knihy "
+"frází“ změny aplikovat, nebo je zahodit?</qt>"
+
+#: phrasebook/phrasebookdialog.cpp:426
+#, kde-format
+msgid "Closing \"Phrase Book\" Window"
+msgstr "Zavírám okno „Knihy frází“"
+
+#: phrasebook/phrasebookdialog.cpp:586
+#, kde-format
+msgid "(New Phrase Book)"
+msgstr "(Nová kniha frází)"
+
+#: phrasebook/phrasebookdialog.cpp:602
+#, kde-format
+msgid "(New Phrase)"
+msgstr "(Nová fráze)"
+
+#: phrasebook/phrasebookdialog.cpp:633
+#, kde-format
+msgid "Import Phrasebook"
+msgstr "Importovat knihu frází"
+
+#: phrasebook/phrasebookdialog.cpp:634
+#, kde-format
+msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+msgstr "Knihy frází (*.phrasebook);Prostý text (*.txt);Všechny soubory (*)"
+
+#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#, kde-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"Nastala chyba při načítání souboru\n"
+"%1"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Export Phrase Book"
+msgstr "Exportovat knihu frází"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Phrase Books (*.phrasebook)"
+msgstr "Knihy frází (*.phrasebook)"
+
+#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#, kde-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"Nastala chyba při ukládání souboru\n"
+"%1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
+#: phrasebook/phrasebookdialog.ui:26
+#, kde-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "&Aktuálně vybraná fráze nebo kniha frází"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
+#: phrasebook/phrasebookdialog.ui:38
+#, kde-format
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+msgstr ""
+"Kliknutím na toto tlačítko můžete zvolit klávesovou zkratku spojenou se "
+"zvolenou frází."
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.ui:45 phrasebook/phrasebookdialog.ui:79
+#, kde-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+msgstr "Zde můžete nastavit jméno podřazené knihy frází nebo obsah fráze."
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:52
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+msgstr ""
+"Pokud zvolíte tuto volbu, nebude zvolená fráze dostupná pomocí klávesové "
+"zkratky."
+
+#. i18n: ectx: property (text), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:55
+#, kde-format
+msgid "&None"
+msgstr "&Nic"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:62
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"Pokud zvolíte tuto možnost, bude zvolená fráze dostupná pomocí klávesové "
+"zkratky.  Klávesovou zkratku můžete změnit tlačítkem za touto volbou."
+
+#. i18n: ectx: property (text), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:65
+#, kde-format
+msgid "C&ustom"
+msgstr "&Vlastní"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: phrasebook/phrasebookdialog.ui:72
+#, kde-format
+msgid "Shortcut for the phrase:"
+msgstr "Zkratka pro frázi:"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
+#: phrasebook/phrasebookdialog.ui:98
+#, kde-format
+msgid ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+msgstr ""
+"Tento seznam obsahuje aktuální knihu frází ve stromové struktuře. Můžete "
+"volit a měnit jednotlivé fráze a podřazené knihy frází"
+
+#: phraselist.cpp:62
+#, kde-format
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"Seznam s historií přečtených vět. Pro opětovné přečtení zvolte větu a "
+"stiskněte tlačítko mluvení."
+
+#: phraselist.cpp:80
+#, kde-format
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+msgstr ""
+"V tomto editačním poli můžete napsat větu k přečtení. Věta se přečte "
+"kliknutím na tlačítko mluvení."
+
+#: phraselist.cpp:475
+#, kde-format
+msgid "Save As"
+msgstr "Uložit jako"
+
+#: phraselist.cpp:481
+#, kde-format
+msgid "Open File as History"
+msgstr "Otevřít soubor jako historii"
+
+#: phraselist.cpp:482
+#, kde-format
+msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+msgstr "Všechny soubory (*);;Knihy frází (*.phrasebook);;Prostý text (*.txt)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
+#: preferencesui.ui:21
+#, kde-format
+msgid "Preferences"
+msgstr "Předvolby"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, speakLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, speakCombo)
+#: preferencesui.ui:49 preferencesui.ui:62
+#, kde-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"Tento rozbalovací seznam určuje, zda se vybrané fráze z knihy frází okamžitě "
+"vysloví, nebo jsou vloženy do pole úprav."
+
+#. i18n: ectx: property (text), widget (QLabel, speakLabel)
+#: preferencesui.ui:52
+#, kde-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "&Výběr frází v knize frází:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:66
+#, kde-format
+msgid "Speak Immediately"
+msgstr "Vyslovit okamžitě"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:71
+#, kde-format
+msgid "Insert Into Edit Field"
+msgstr "Vložit do editačního pole"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
+#: preferencesui.ui:97 preferencesui.ui:110
+#, kde-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"Tento rozbalovací seznam určuje, zda se frázová kniha automaticky uloží, "
+"když se zavře okno úprav."
+
+#. i18n: ectx: property (text), widget (QLabel, closeLabel)
+#: preferencesui.ui:100
+#, kde-format
+msgid "Closing the phrase &book edit window:"
+msgstr "Zavírám okno ú&pravy frázové knihy:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:114
+#, kde-format
+msgid "Save Phrase Book"
+msgstr "Uložit knihu frází"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:119
+#, kde-format
+msgid "Discard Changes"
+msgstr "Zahodit změny"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:124
+#, kde-format
+msgid "Ask Whether to Save"
+msgstr "Dotázat se zda uložit"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
+#: texttospeechconfigurationui.ui:14
+#, kde-format
+msgid "Text-to-Speech"
+msgstr "Hlasová syntéza"
+
+#. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
+#: texttospeechconfigurationui.ui:32
+#, kde-format
+msgid "&Use default speech system"
+msgstr "Po&užít výchozí systém pro syntézu řeči"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: texttospeechconfigurationui.ui:41
+#, kde-format
+msgid "&Engine:"
+msgstr "&Databáze:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: texttospeechconfigurationui.ui:61
+#, kde-format
+msgid "&Voice:"
+msgstr "&Hlas:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
+#: texttospeechconfigurationui.ui:87
+#, kde-format
+msgid "Alternative"
+msgstr "Alternativní"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
+#: texttospeechconfigurationui.ui:120 texttospeechconfigurationui.ui:143
+#, no-c-format, kde-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"V tomto poli můžete zadat příkaz k mluvení a jeho parametry. KMouth používá "
+"tyto proměnné:\n"
+"%t -- text k přečtení\n"
+"%f -- název souboru s textem k přečtení\n"
+"%l -- kód jazyka\n"
+"%% -- procento"
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: texttospeechconfigurationui.ui:123
+#, kde-format
+msgid "Command for speaking &texts:"
+msgstr "Příkaz pro mluvené &texty:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:152
+#, kde-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"V poli se určuje, zda bude text odeslán jako standardní výstup na hlasový "
+"syntezátor."
+
+#. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:155
+#, kde-format
+msgid "Send the data as standard &input"
+msgstr "&Poslat data jako standardní vstup"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
+#: texttospeechconfigurationui.ui:185 texttospeechconfigurationui.ui:198
+#, kde-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+msgstr ""
+"Tento rozbalovací seznam určuje, jaké kódování se použije pro předávání "
+"textu."
+
+#. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
+#: texttospeechconfigurationui.ui:188
+#, kde-format
+msgid "Character encodin&g:"
+msgstr "Kódování zna&ku:"
+
+#: texttospeechconfigurationwidget.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:116
+#, kde-format
+msgctxt "Local characterset"
+msgid "Local"
+msgstr "Místní"
+
+#: texttospeechconfigurationwidget.cpp:68
+#, kde-format
+msgctxt "Latin1 characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: texttospeechconfigurationwidget.cpp:69
+#: wordcompletion/dictionarycreationwizard.cpp:120
+#, kde-format
+msgid "Unicode"
+msgstr "Unicode"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"V tomto poli můžete nastavit kontrolu pravopisu slov před vložením do nového "
+"slovníku."
+
+#. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:25
+#: wordcompletion/kdedocsourceui.ui:25
+#, kde-format
+msgid "C&ompare to OpenOffice.org dictionary:"
+msgstr "&Porovnat se slovníkem OpenOffice.org:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
+#: wordcompletion/creationsourcedetailsui.ui:43
+#: wordcompletion/creationsourcedetailsui.ui:100
+#, kde-format
+msgid ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"V tomto rozbalovacím seznamu můžete zvolit kódování textových souborů. Tato "
+"volba není používána pro XML soubory a slovníky."
+
+#. i18n: ectx: property (text), widget (QLabel, encodingLabel)
+#: wordcompletion/creationsourcedetailsui.ui:46
+#, kde-format
+msgid "Character &encoding:"
+msgstr "Kódování zna&ku:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
+#: wordcompletion/creationsourcedetailsui.ui:64
+#: wordcompletion/creationsourcedetailsui.ui:85
+#, kde-format
+msgid ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+msgstr "V tomto vstupním poli zadáváte soubor nového slovníku."
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: wordcompletion/creationsourcedetailsui.ui:67
+#, kde-format
+msgid "&Filename:"
+msgstr "&Název souboru:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
+#: wordcompletion/creationsourcedetailsui.ui:118
+#: wordcompletion/kdedocsourceui.ui:44
+#, kde-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+msgstr ""
+"V tomto vstupním poli volíte adresář OpenOffice.org, který se použije pro "
+"kontrolu pravopisu nového slovníku."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:136
+#, kde-format
+msgid ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+msgstr ""
+"V tomto rozbalovacím seznamu můžete zvolit jazyk spojený s novým slovníkem."
+
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:139
+#: wordcompletion/kdedocsourceui.ui:67 wordcompletion/wordcompletionui.ui:50
+#, kde-format
+msgid "&Language:"
+msgstr "&Jazyk:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:16
+#, kde-format
+msgid "C&reate new dictionary:"
+msgstr "Vy&tvořit nový slovník:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"Pokud zvolíte tuto volbu, vytvoří se slovník buď načtením souboru slovníku, "
+"nebo vyjmutím jednotlivých slov z textu."
+
+#. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:29
+#, kde-format
+msgid "&Merge dictionaries"
+msgstr "&Sloučit slovníky"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:32
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"Pokud zvolíte tuto možnost, vytvoří se nový slovník sloučením již "
+"existujících slovníků."
+
+#. i18n: ectx: property (text), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:50
+#, kde-format
+msgid "From &file"
+msgstr "Ze &souboru"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:53
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+msgstr ""
+"Pokud zvolíte tuto možnosti, vytvoří se slovník načtením souboru. Zvolit "
+"můžete buď XML soubor, textový soubor, nebo soubor obsahující doplňování "
+"slov. Pokud zvolíte XML nebo textový soubor, jednotlivá slova se detekují "
+"podle mezer."
+
+#. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:71
+#, kde-format
+msgid "From &KDE documentation"
+msgstr "Z &dokumentace KDE"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:77
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"Pokud zvolíte tuto možnost, vytvoří se slovník analýzou dokumentace KDE. "
+"Slova jsou detekována podle mezer."
+
+#. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:95
+#, kde-format
+msgid "From f&older"
+msgstr "Ze sl&ožky"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:98
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"Pokud zvolíte tuto volbu, vytvoří se nový slovník načtením všech souborů ve "
+"zvolené složce a v jejích podsložkách."
+
+#. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:121
+#, kde-format
+msgid "Create an &empty wordlist"
+msgstr "&Prázdný seznam slov"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:124
+#, kde-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+msgstr ""
+"Touto volbou vytvoříte prázdný slovník bez položek. KMouth pak všechna nově "
+"napsaná slova automaticky vloží do tohoto slovníku."
+
+#: wordcompletion/dictionarycreationwizard.cpp:65
+#, kde-format
+msgid "Source of New Dictionary (1)"
+msgstr "Zdroj nového slovníku (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:71
+#: wordcompletion/dictionarycreationwizard.cpp:77
+#: wordcompletion/dictionarycreationwizard.cpp:87
+#: wordcompletion/dictionarycreationwizard.cpp:94
+#, kde-format
+msgid "Source of New Dictionary (2)"
+msgstr "Zdroj nového slovníku (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:80
+#, kde-format
+msgctxt "In which directory is the file located?"
+msgid "&Directory:"
+msgstr "A&dresář:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:83
+#, kde-format
+msgid ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+msgstr ""
+"V tomto vstupním poli zadáváte adresář, který si přejete načíst pro "
+"vytvoření nového slovníku."
+
+#: wordcompletion/dictionarycreationwizard.cpp:119
+#, kde-format
+msgctxt "Latin characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: wordcompletion/dictionarycreationwizard.cpp:204
+#, kde-format
+msgid "Merge result"
+msgstr "Výsledek sloučení"
+
+#: wordcompletion/dictionarycreationwizard.cpp:206
+#, kde-format
+msgctxt "In the sense of a blank word list"
+msgid "Empty list"
+msgstr "Prázdný seznam"
+
+#: wordcompletion/dictionarycreationwizard.cpp:212
+#, kde-format
+msgid "KDE Documentation"
+msgstr "Dokumentace KDE"
+
+#: wordcompletion/dictionarycreationwizard.cpp:336
+#, kde-format
+msgctxt "Default dictionary"
+msgid "Default"
+msgstr "Výchozí"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/kdedocsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+msgstr ""
+"Touto volbou před vytvořením slovníku z dokumentace KDE dojde ke kontrole "
+"pravopisu."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/kdedocsourceui.ui:64
+#, kde-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+msgstr ""
+"V tomto rozbalovacím seznamu můžete zvolit jazyk pro vytvoření slovníku. "
+"KMouth pouze analyzuje soubory dokumentace pro zvolený jazyk."
+
+#. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
+#: wordcompletion/wordcompletionui.ui:32
+#, kde-format
+msgid "&Selected Dictionary"
+msgstr "Vybraný &slovník"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/wordcompletionui.ui:47
+#, kde-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr "Zde můžete zvolit jazyk spojený se zvoleným slovníkem."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
+#: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
+#, kde-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "Do tohoto vstupního pole zadejte název zvoleného slovníku."
+
+#. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
+#: wordcompletion/wordcompletionui.ui:66
+#, kde-format
+msgid "&Name:"
+msgstr "&Název:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:100
+#, kde-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr "Tímto tlačítkem vložíte slovník do seznamu dostupných slovníků."
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:103
+#, kde-format
+msgid "Add D&ictionary..."
+msgstr "Př&idat Slovník..."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:119
+#, kde-format
+msgid "With this button you delete the selected dictionary."
+msgstr "Tímto tlačítkem smažete zvolený slovník."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:122
+#, kde-format
+msgid "&Delete Dictionary"
+msgstr "&Smazat Slovník"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:138
+#, kde-format
+msgid "With this button you move the selected dictionary up."
+msgstr "Tímto tlačítkem posunete slovník nahoru."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:141
+#, kde-format
+msgid "Move &Up"
+msgstr "Posunout nahor&u"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:157
+#, kde-format
+msgid "With this button you move the selected dictionary down."
+msgstr "Tímto tlačítkem posunete slovník dolů."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:160
+#, kde-format
+msgid "&Move Down"
+msgstr "&Posunout dolů"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:176
+#, kde-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "Tímto slovník exportujete slovník do souboru."
+
+#. i18n: ectx: property (text), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:179
+#, kde-format
+msgid "&Export Dictionary..."
+msgstr "&Exportovat slovník..."
+
+#. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
+#: wordcompletion/wordcompletionui.ui:204
+#, kde-format
+msgid ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+msgstr ""
+"Seznam všech dostupných slovník k doplňování slov. KMouth vám nabídne, pokud "
+"seznam obsahuje více než jeden slovník, seznam, ze kterého si můžete slovník "
+"pro doplňování vybrat."
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Dictionary"
+msgstr "Slovník"
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Language"
+msgstr "Jazyk"
+
+#: wordcompletion/wordcompletionwidget.cpp:97
+#: wordcompletion/wordcompletionwidget.cpp:155
+#, kde-format
+msgid "without name"
+msgstr "bez jména"
+
+#: wordcompletion/wordcompletionwidget.cpp:204
+#, kde-format
+msgid "Export Dictionary"
+msgstr "Exportovat slovník"
+
+#: wordcompletion/wordlist.cpp:77
+#, kde-format
+msgid "Creating Word List"
+msgstr "Vytváří se seznam slov"
+
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#, kde-format
+msgid "Parsing the KDE documentation..."
+msgstr "Analyzuje se dokumentace KDE..."
+
+#: wordcompletion/wordlist.cpp:197
+#, kde-format
+msgid "Merging dictionaries..."
+msgstr "Slučují se slovníky..."
+
+#: wordcompletion/wordlist.cpp:266
+#, kde-format
+msgid "Parsing file..."
+msgstr "Analyzuje se soubor..."
+
+#: wordcompletion/wordlist.cpp:278
+#, kde-format
+msgid "Parsing directory..."
+msgstr "Analyzuje se adresář..."
+
+#: wordcompletion/wordlist.cpp:469
+#, kde-format
+msgid "Performing spell check..."
+msgstr "Provádění kontroly pravopisu..."

@@ -1,0 +1,1491 @@
+# Malay translation.
+# FIRST AUTHOR MIMOS <opensource@mimos.my>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mimos\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"PO-Revision-Date: 2006-10-06 21:52+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "MIMOS"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "opensource@mimos.my"
+
+#: configwizard.cpp:38
+#, kde-format
+msgid "Initial Configuration - KMouth"
+msgstr "Konfigurasi Awal - KMouth"
+
+#: configwizard.cpp:59
+#, kde-format
+msgid "Text-to-Speech Configuration"
+msgstr "Konfigurasi Teks-ke-Tutur"
+
+#: configwizard.cpp:73
+#, kde-format
+msgid "Initial Phrase Book"
+msgstr "Buku Frasa Awal"
+
+#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#, kde-format
+msgid "Word Completion"
+msgstr "Pelengkapan Kata"
+
+#: kmouth.cpp:107
+#, kde-format
+msgid "&Open as History..."
+msgstr "&Buka sebagai Sejarah..."
+
+#: kmouth.cpp:110 kmouth.cpp:111
+#, kde-format
+msgid "Opens an existing file as history"
+msgstr "Membuka fail sedia ada sebagai sejarah"
+
+#: kmouth.cpp:115
+#, kde-format
+msgid "Save &History As..."
+msgstr "Simpan &Sejarah Sebagai..."
+
+#: kmouth.cpp:118 kmouth.cpp:119
+#, kde-format
+msgid "Saves the actual history as..."
+msgstr "Menyimpan sejarah sebenar sebagai..."
+
+#: kmouth.cpp:123
+#, kde-format
+msgid "&Print History..."
+msgstr "&Cetak Sejarah..."
+
+#: kmouth.cpp:126 kmouth.cpp:127
+#, kde-format
+msgid "Prints out the actual history"
+msgstr "Mencetak sejarah sebenar"
+
+#: kmouth.cpp:130 kmouth.cpp:131
+#, kde-format
+msgid "Quits the application"
+msgstr "Keluar aplikasi"
+
+#: kmouth.cpp:135
+#, kde-format
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Memotong keratan yang dipilih dan meletakkannya dalam klipbod"
+
+#: kmouth.cpp:136
+#, kde-format
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+msgstr ""
+"Memotong keratan yang dipilih dan meletakkannya dalam klipbod. Jika terdapat "
+"teks yang dipilih dalam medan edit, ia diletakkan dalam klipbod. Jika tidak, "
+"ayat yang dipilih dalam sejarah (jika ada) diletakkan dalam klipbod."
+
+#: kmouth.cpp:139
+#, kde-format
+msgid "Copies the selected section to the clipboard"
+msgstr "Menyalin keratan yang dipilih ke dalam klipbod"
+
+#: kmouth.cpp:140
+#, kde-format
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+msgstr ""
+"Menyalin keratan yang dipilih ke dalam klipbod. Jika terdapat teks yang "
+"dipilih dalam medan edit, ia disalin ke dalam klipbod. Jika tidak, ayat yang "
+"dipilih dalam sejarah (jika ada) disalin ke dalam klipbod."
+
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#, fuzzy, kde-format
+#| msgid "Pastes the clipboard contents to actual position"
+msgid "Pastes the clipboard contents to current position"
+msgstr "Menampal kandungan klipbod ke posisi sebenar"
+
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#, kde-format
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr ""
+"Menampalkan kandungan klipbod di posisi kursor semasa ke dalam medan edit."
+
+#: kmouth.cpp:148
+#, fuzzy, kde-format
+#| msgid "&Speak"
+msgctxt "Start speaking"
+msgid "&Speak"
+msgstr "&Tutur"
+
+#: kmouth.cpp:150
+#, kde-format
+msgid "Speaks the currently active sentence(s)"
+msgstr "Menuturkan ayat aktif semasa"
+
+#: kmouth.cpp:151 phraselist.cpp:88
+#, kde-format
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Menuturkan ayat aktif semasa. Jika terdapat teks dalam medan edit, ia "
+"dituturkan. Jika tidak, ayat yang dipilih dalam sejarah (jika ada) "
+"dituturkan."
+
+#: kmouth.cpp:155
+#, kde-format
+msgid "&Edit..."
+msgstr "&Edit..."
+
+#: kmouth.cpp:166
+#, kde-format
+msgid "Show P&hrasebook Bar"
+msgstr "Tayangkan Bar &Buku Frasa"
+
+#: kmouth.cpp:168 kmouth.cpp:169
+#, kde-format
+msgid "Enables/disables the phrasebook bar"
+msgstr "Mengaktifkan/menyahaktifkan bar buku frasa"
+
+#: kmouth.cpp:172 kmouth.cpp:173
+#, kde-format
+msgid "Enables/disables the statusbar"
+msgstr "Mengaktifkan/menyahaktifkan bar status"
+
+#: kmouth.cpp:177
+#, kde-format
+msgid "&Configure KMouth..."
+msgstr "&Konfigur KMouth..."
+
+#: kmouth.cpp:179 kmouth.cpp:180
+#, kde-format
+msgid "Opens the configuration dialog"
+msgstr "Membuka dialog konfigurasi"
+
+#: kmouth.cpp:188 phraselist.cpp:85
+#, kde-format
+msgid "&Speak"
+msgstr "&Tutur"
+
+#: kmouth.cpp:189 kmouth.cpp:191
+#, kde-format
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Menuturkan frasa semasa yang dipilih dalam sejarah"
+
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#, kde-format
+msgid "&Delete"
+msgstr ""
+
+#: kmouth.cpp:197 kmouth.cpp:198
+#, kde-format
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Menghapuskan frasa semasa yang dipilih daripada sejarah"
+
+#: kmouth.cpp:202
+#, kde-format
+msgid "Cu&t"
+msgstr "&Potong"
+
+#: kmouth.cpp:204 kmouth.cpp:205
+#, kde-format
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr ""
+"Memotong frasa semasa yang dipilih daripada sejarah dan meletakkannya dalam "
+"klipbod"
+
+#: kmouth.cpp:209
+#, kde-format
+msgid "&Copy"
+msgstr ""
+
+#: kmouth.cpp:211 kmouth.cpp:212
+#, kde-format
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr "Menyalin frasa semasa yang dipilih daripada sejarah ke dalam klipbod"
+
+#: kmouth.cpp:215
+#, kde-format
+msgid "Select &All Entries"
+msgstr "Pilih &Semua entri"
+
+#: kmouth.cpp:217 kmouth.cpp:218
+#, kde-format
+msgid "Selects all phrases in the history"
+msgstr "Pilih semua frasa dalam sejarah"
+
+#: kmouth.cpp:221
+#, kde-format
+msgid "D&eselect All Entries"
+msgstr "&Nyahpilih Semua Entri"
+
+#: kmouth.cpp:223 kmouth.cpp:224
+#, kde-format
+msgid "Deselects all phrases in the history"
+msgstr "Nyahpilih semua frasa dalam sejarah"
+
+#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
+#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#, fuzzy, kde-format
+#| msgid "Ready."
+msgctxt "The job is done"
+msgid "Ready."
+msgstr "Sedia."
+
+#: kmouth.cpp:254 kmouth.cpp:353
+#, kde-format
+msgid "Opening file..."
+msgstr "Membuka fail..."
+
+#: kmouth.cpp:362
+#, kde-format
+msgid "Saving history with a new filename..."
+msgstr "Menyimpan sejarah dengan nama fail baru..."
+
+#: kmouth.cpp:371
+#, kde-format
+msgid "Printing..."
+msgstr "Mencetak..."
+
+#: kmouth.cpp:388
+#, fuzzy, kde-format
+#| msgid "Exiting..."
+msgctxt "Shutting down the application"
+msgid "Exiting..."
+msgstr "Keluar..."
+
+#: kmouth.cpp:425
+#, kde-format
+msgid "Toggling menubar..."
+msgstr "Menoggel menubar..."
+
+#: kmouth.cpp:437
+#, kde-format
+msgid "Toggling toolbar..."
+msgstr "Menoggel bar alat..."
+
+#: kmouth.cpp:451
+#, kde-format
+msgid "Toggling phrasebook bar..."
+msgstr "Menoggel bar frasa buku..."
+
+#: kmouth.cpp:465
+#, kde-format
+msgid "Toggle the statusbar..."
+msgstr "Menoggel bar status..."
+
+#. i18n: ectx: Menu (file)
+#: kmouthui.rc:5 phrasebookdialogui.rc:6
+#, fuzzy, kde-format
+msgid "&File"
+msgstr "&Nama Fail:"
+
+#. i18n: ectx: Menu (edit)
+#: kmouthui.rc:12 phrasebookdialogui.rc:20
+#, fuzzy, kde-format
+msgid "&Edit"
+msgstr "&Edit..."
+
+#. i18n: ectx: Menu (phrasebooks)
+#: kmouthui.rc:15
+#, kde-format
+msgid "&Phrase Books"
+msgstr "&Buku Frasa"
+
+#. i18n: ectx: Menu (settings)
+#: kmouthui.rc:18
+#, kde-format
+msgid "&Settings"
+msgstr ""
+
+#: main.cpp:39
+#, kde-format
+msgid "KMouth"
+msgstr "KMouth"
+
+#: main.cpp:41
+#, kde-format
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "Antaramuka taip-dan-tutur bagi pensintesis tutur"
+
+#: main.cpp:43
+#, kde-format
+msgid "(c) 2002/2003, Gunnar Schmi Dt"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Gunnar Schmi Dt"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Original Author"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Jeremy Whiting"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Current Maintainer"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Olaf Schmidt"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Tips, extended phrase books"
+msgstr "Tips, buku frasa lanjutan"
+
+#: main.cpp:53
+#, kde-format
+msgid "History file to open"
+msgstr "Sejarah fail yang hendak dibuka"
+
+#: optionsdialog.cpp:122
+#, fuzzy, kde-format
+msgid "Configuration"
+msgstr "Konfigurasi Teks-ke-Tutur"
+
+#: optionsdialog.cpp:133
+#, kde-format
+msgid "&Preferences"
+msgstr "&Keutamaan"
+
+#: optionsdialog.cpp:136
+#, kde-format
+msgid "&Text-to-Speech"
+msgstr "&Teks-ke-Tutur"
+
+#: optionsdialog.cpp:138 optionsdialog.cpp:139
+#, kde-format
+msgid "General Options"
+msgstr "Pilihan Umum"
+
+#: phrasebook/initialphrasebookwidget.cpp:45
+#, kde-format
+msgid "Please decide which phrase books you need:"
+msgstr "Putuskan buku frasa mana yang anda perlu:"
+
+#: phrasebook/initialphrasebookwidget.cpp:50
+#, kde-format
+msgid "Book"
+msgstr "Buku"
+
+#: phrasebook/phrasebook.cpp:269
+#, fuzzy, kde-format
+#| msgid ""
+#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
+#| "*.txt|Plain Text Files (*.txt)\n"
+#| "*|All Files"
+msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+msgstr ""
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*.txt|Plain Text Files (*.txt)\n"
+"*|All Files"
+
+#: phrasebook/phrasebook.cpp:271
+#, fuzzy, kde-format
+#| msgid ""
+#| "*.txt|Plain Text Files (*.txt)\n"
+#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
+#| "*|All Files"
+msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+msgstr ""
+"*.txt|Plain Text Files (*.txt)\n"
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*|Semua Fail"
+
+#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#, kde-format
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "Fail %1 sudah wujud. Anda ingin tulis gantikan fail ini?"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "File Exists"
+msgstr "Fail Wujud"
+
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "&Overwrite"
+msgstr "&Tulis Ganti"
+
+#: phrasebook/phrasebook.cpp:299
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"Nama fail <i>%1</i> yang anda pilih mempunyai sambungan yang berbeza "
+"daripada <i>.buku frasa</i>. Anda ingin menambah <i>.buku frasa</i> kepada "
+"nama fail?"
+
+#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "File Extension"
+msgstr "Sambungan Fail"
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Add"
+msgstr ""
+
+#: phrasebook/phrasebook.cpp:300
+#, kde-format
+msgid "Do Not Add"
+msgstr ""
+
+#: phrasebook/phrasebook.cpp:314
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+msgstr ""
+"Nama fail <i>%1</i> yang anda pilih mempunyai sambungan <i>.buku frasa</i>. "
+"Anda ingin simpan dalam format buku frasa?"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Phrasebook"
+msgstr "Sebagai Buku Frasa"
+
+#: phrasebook/phrasebook.cpp:315
+#, kde-format
+msgid "As Plain Text"
+msgstr "Sebagai Teks Biasa"
+
+#: phrasebook/phrasebookdialog.cpp:88
+#, kde-format
+msgid "Phrase"
+msgstr "Frasa"
+
+#: phrasebook/phrasebookdialog.cpp:89
+#, kde-format
+msgid "Shortcut"
+msgstr "Kekunci Pintas"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
+#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#, kde-format
+msgid "Phrase Book"
+msgstr "Buku Frasa"
+
+#: phrasebook/phrasebookdialog.cpp:228
+#, kde-format
+msgid "&New Phrase"
+msgstr "Frasa &Baru"
+
+#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#, kde-format
+msgid "Adds a new phrase"
+msgstr "Tambah frasa baru"
+
+#: phrasebook/phrasebookdialog.cpp:235
+#, kde-format
+msgid "New Phrase &Book"
+msgstr "Buku &Frasa Baru"
+
+#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#, kde-format
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr ""
+"Menambah buku frasa baru yang di dalamnya buku dan frasa lain boleh "
+"ditempatkan"
+
+#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#, kde-format
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Menyimpan buku frasa pada cakera keras"
+
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#, kde-format
+msgid "&Import..."
+msgstr "&Import..."
+
+#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
+#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#, kde-format
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr "Mengimport fail dan menambah kandungannya ke dalam buku frasa"
+
+#: phrasebook/phrasebookdialog.cpp:259
+#, kde-format
+msgid "I&mport Standard Phrase Book"
+msgstr "&Import Buku Frasa Standard"
+
+#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#, kde-format
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr ""
+"Mengimport buku frasa standard dan menambah kandungannya ke dalam buku frasa"
+
+#: phrasebook/phrasebookdialog.cpp:265
+#, kde-format
+msgid "&Export..."
+msgstr "&Eksport..."
+
+#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#, kde-format
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr "Mengeksport frasa semasa atau buku frasa yang dipilih ke dalam fail"
+
+#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#, kde-format
+msgid "Closes the window"
+msgstr "Menutup tetingkap"
+
+#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#, kde-format
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr ""
+"Memotong entri semasa yang dipilih dari buku frasa dan meletakkannya dalam "
+"klipbod"
+
+#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#, kde-format
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr "Menyalin entri semasa yang dipilih dari buku frasa ke dalam klipbod"
+
+#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#, kde-format
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Menghapuskan entri yang dipilih dari buku frasa"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.ui:82
+#, kde-format
+msgid "Text of the &phrase:"
+msgstr "Teks &frasa:"
+
+#: phrasebook/phrasebookdialog.cpp:404
+#, kde-format
+msgid "Name of the &phrase book:"
+msgstr "Nama buku &frasa:"
+
+#: phrasebook/phrasebookdialog.cpp:425
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>There are unsaved changes.<br>Do you want to apply the changes before "
+#| "closing the \"phrase book\" window or discard the changes?</qt>"
+msgid ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+msgstr ""
+"<qt>Terdapat perubahan yang tak disimpan.<br>Anda ingin melaksanakan "
+"perubahan sebelum menutup tetingkap \"phrase book\" atau membuang perubahan "
+"tersebut?</qt>"
+
+#: phrasebook/phrasebookdialog.cpp:426
+#, kde-format
+msgid "Closing \"Phrase Book\" Window"
+msgstr "Menutup tetingkap \"Phrase Book\""
+
+#: phrasebook/phrasebookdialog.cpp:586
+#, kde-format
+msgid "(New Phrase Book)"
+msgstr "(Buku Frasa Baru)"
+
+#: phrasebook/phrasebookdialog.cpp:602
+#, kde-format
+msgid "(New Phrase)"
+msgstr "(Frasa Baru)"
+
+#: phrasebook/phrasebookdialog.cpp:633
+#, kde-format
+msgid "Import Phrasebook"
+msgstr "Import Buku Frasa"
+
+#: phrasebook/phrasebookdialog.cpp:634
+#, fuzzy, kde-format
+#| msgid ""
+#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
+#| "*.txt|Plain Text Files (*.txt)\n"
+#| "*|All Files"
+msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+msgstr ""
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*.txt|Plain Text Files (*.txt)\n"
+"*|All Files"
+
+#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#, kde-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"Terdapat ralat semasa memuatkan fail\n"
+"%1"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Export Phrase Book"
+msgstr "Eksport Buku Frasa"
+
+#: phrasebook/phrasebookdialog.cpp:676
+#, fuzzy, kde-format
+#| msgid "&Phrase Books"
+msgid "Phrase Books (*.phrasebook)"
+msgstr "&Buku Frasa"
+
+#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#, kde-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"Terdapat ralat semasa menyimpan fail\n"
+"%1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
+#: phrasebook/phrasebookdialog.ui:26
+#, kde-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "&Frasa Semasa Yang Dipilih atau Buku Frasa"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
+#: phrasebook/phrasebookdialog.ui:38
+#, kde-format
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+msgstr ""
+"Dengan mengklik butang ini, anda boleh memlih jalan pintas papan kekunci "
+"yang berkait dengan frasa yang dipilih."
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.ui:45 phrasebook/phrasebookdialog.ui:79
+#, kde-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+msgstr ""
+"Dengan baris edit ini anda mentakrif nama subbukufrasa atau kandungan frasa."
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:52
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+msgstr ""
+"Jika anda memilih pilihan ini, maka frasa yang dipilih tidak akan dapat "
+"dicapai oleh jalan pintas kekunci."
+
+#. i18n: ectx: property (text), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:55
+#, kde-format
+msgid "&None"
+msgstr "&Tiada"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:62
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"Jika anda memilih pilihan ini, frasa yang dipilih akan dapat dicapai oleh "
+"jalan pintas kekunci. Anda boleh mengubah jalan pintas dengan butang "
+"bersebelahan dengan pilihan ini."
+
+#. i18n: ectx: property (text), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:65
+#, kde-format
+msgid "C&ustom"
+msgstr "&Langganan"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: phrasebook/phrasebookdialog.ui:72
+#, kde-format
+msgid "Shortcut for the phrase:"
+msgstr "Kekunci pintas ke frasa:"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
+#: phrasebook/phrasebookdialog.ui:98
+#, kde-format
+msgid ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+msgstr ""
+"Senarai ini mengandungi buku frasa semasa dalam struktur pepohon. Anda boleh "
+"memilih dan mengubah suai frasa dan buku frasa"
+
+#: phraselist.cpp:62
+#, kde-format
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"Senarai ini mengandungi sejarah ayat yang ditutur. Anda boleh memilih ayat "
+"dan menekan butang untuk ulang tutur."
+
+#: phraselist.cpp:80
+#, kde-format
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+msgstr ""
+"Anda boleh taip frasa ke dalam medan edit ini. Klik butang tutur untuk "
+"menuturkan frasa yang dimasukkan."
+
+#: phraselist.cpp:475
+#, kde-format
+msgid "Save As"
+msgstr ""
+
+#: phraselist.cpp:481
+#, kde-format
+msgid "Open File as History"
+msgstr "Buka Fail sebagai Sejarah"
+
+#: phraselist.cpp:482
+#, fuzzy, kde-format
+#| msgid ""
+#| "*|All Files\n"
+#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
+#| "*.txt|Plain Text Files (*.txt)"
+msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+msgstr ""
+"*|Semua Fail\n"
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*.txt|Plain Text Files (*.txt)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
+#: preferencesui.ui:21
+#, kde-format
+msgid "Preferences"
+msgstr "Keutamaan"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, speakLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, speakCombo)
+#: preferencesui.ui:49 preferencesui.ui:62
+#, kde-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"Kotak kombo ini menyatakan sama ada buku frasa yang dipilih ditutur serta-"
+"merta atau hanya diselitkan ke dalam medan edit."
+
+#. i18n: ectx: property (text), widget (QLabel, speakLabel)
+#: preferencesui.ui:52
+#, kde-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "&Pemilihan frasa dalam buku frasa:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:66
+#, kde-format
+msgid "Speak Immediately"
+msgstr "Tutur Serta-merta"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:71
+#, kde-format
+msgid "Insert Into Edit Field"
+msgstr "Selitkan Ke Dalam Medan Edit"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
+#: preferencesui.ui:97 preferencesui.ui:110
+#, kde-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"Kotak kombo ini menyatakan sama ada buku frasa disimpan secara automatik "
+"apabila tetingkap edit ditutup."
+
+#. i18n: ectx: property (text), widget (QLabel, closeLabel)
+#: preferencesui.ui:100
+#, kde-format
+msgid "Closing the phrase &book edit window:"
+msgstr "Menutup tetingkap edit &buku frasa:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:114
+#, kde-format
+msgid "Save Phrase Book"
+msgstr "Simpan Buku Frasa"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:119
+#, kde-format
+msgid "Discard Changes"
+msgstr "Buang Perubahan"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:124
+#, kde-format
+msgid "Ask Whether to Save"
+msgstr "Tanya Sama Ada Hendak Disimpan"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
+#: texttospeechconfigurationui.ui:14
+#, kde-format
+msgid "Text-to-Speech"
+msgstr "Teks-ke-Tutur"
+
+#. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
+#: texttospeechconfigurationui.ui:32
+#, kde-format
+msgid "&Use default speech system"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: texttospeechconfigurationui.ui:41
+#, kde-format
+msgid "&Engine:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: texttospeechconfigurationui.ui:61
+#, kde-format
+msgid "&Voice:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
+#: texttospeechconfigurationui.ui:87
+#, kde-format
+msgid "Alternative"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
+#: texttospeechconfigurationui.ui:120 texttospeechconfigurationui.ui:143
+#, no-c-format, kde-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"Medan ini menyatakan arahan yang digunakan untuk teks tutur dan "
+"parameternya. KMouth kenal pemegang tempat:\n"
+"%t -- teks yang patut dituturkan\n"
+"%f -- nama fail yang mengnadungi teks\n"
+"%l -- kod bahasa\n"
+"%% -- tanda peratus"
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: texttospeechconfigurationui.ui:123
+#, fuzzy, kde-format
+#| msgid "C&ommand for speaking texts:"
+msgid "Command for speaking &texts:"
+msgstr "&Arahan untuk teks tutur:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:152
+#, kde-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"Kotak tanda ini menyatakan sama ada teks dihantar sebagai input standard ke "
+"pensisntesis tutur."
+
+#. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:155
+#, kde-format
+msgid "Send the data as standard &input"
+msgstr "Hantar data sebagai &input standard"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
+#: texttospeechconfigurationui.ui:185 texttospeechconfigurationui.ui:198
+#, kde-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+msgstr ""
+"Kotak kombo ini menyatakan pengekodan aksara mana yang digunakan untuk "
+"menghantar teks."
+
+#. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
+#: texttospeechconfigurationui.ui:188
+#, fuzzy, kde-format
+#| msgid "Character &encoding:"
+msgid "Character encodin&g:"
+msgstr "&Pengekodan aksara:"
+
+#: texttospeechconfigurationwidget.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:116
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "Local characterset"
+msgid "Local"
+msgstr "Setempat"
+
+#: texttospeechconfigurationwidget.cpp:68
+#, fuzzy, kde-format
+#| msgid "Latin1"
+msgctxt "Latin1 characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: texttospeechconfigurationwidget.cpp:69
+#: wordcompletion/dictionarycreationwizard.cpp:120
+#, kde-format
+msgid "Unicode"
+msgstr "Ekakod"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"Jika anda memilih kotak tanda ini, perkataan disemak akan eja sebelum ia "
+"dimasukkan ke dalam kamus."
+
+#. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:25
+#: wordcompletion/kdedocsourceui.ui:25
+#, fuzzy, kde-format
+#| msgid "&Compare to OpenOffice.org dictionary:"
+msgid "C&ompare to OpenOffice.org dictionary:"
+msgstr "&Bandingkan dengan OpenOffice.org dictionary:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
+#: wordcompletion/creationsourcedetailsui.ui:43
+#: wordcompletion/creationsourcedetailsui.ui:100
+#, kde-format
+msgid ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"Dengan kotak kombo ini anda pilih pengekodan aksara yang digunakan untuk "
+"memuatkan fail teks. Kotak kombo ini tidak digunakan untuk fail XML atau "
+"untuk fail kamus."
+
+#. i18n: ectx: property (text), widget (QLabel, encodingLabel)
+#: wordcompletion/creationsourcedetailsui.ui:46
+#, kde-format
+msgid "Character &encoding:"
+msgstr "&Pengekodan aksara:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
+#: wordcompletion/creationsourcedetailsui.ui:64
+#: wordcompletion/creationsourcedetailsui.ui:85
+#, kde-format
+msgid ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+msgstr ""
+"Dengan medan input ini, anda menyatakan fail mana anda ingin muatkan untuk "
+"mencipta kamus baru."
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: wordcompletion/creationsourcedetailsui.ui:67
+#, kde-format
+msgid "&Filename:"
+msgstr "&Nama Fail:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
+#: wordcompletion/creationsourcedetailsui.ui:118
+#: wordcompletion/kdedocsourceui.ui:44
+#, kde-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+msgstr ""
+"Dengan medan input ini anda pilih direktori OpenOffice.org yang akan "
+"digunakan untuk menyemak eja perkataan kamus baru."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:136
+#, kde-format
+msgid ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+msgstr ""
+"Dengan kotak kombo ini, anda putuskan bahasa mana patut dikaitkan dengan "
+"kamus baru."
+
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:139
+#: wordcompletion/kdedocsourceui.ui:67 wordcompletion/wordcompletionui.ui:50
+#, kde-format
+msgid "&Language:"
+msgstr "&Bahasa:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:16
+#, kde-format
+msgid "C&reate new dictionary:"
+msgstr "&Cipta kamus baru:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"Jika anda memilih kotak ini, kamus baru dicipta oleh sama ada dengan "
+"memuatkan fail kamus atau dengan mengira perkataan berasingan dalam teks."
+
+#. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:29
+#, kde-format
+msgid "&Merge dictionaries"
+msgstr "&Cantumkan kamus"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:32
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"Jika anda pilih kotak ini, kamus baru dicipta dengan mencantumkan kamus "
+"sedia ada."
+
+#. i18n: ectx: property (text), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:50
+#, kde-format
+msgid "From &file"
+msgstr "Dari &fail"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:53
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+msgstr ""
+"Jika anda memilih kotak ini, kamus baru dicipta dengan memuatkan fail. Anda "
+"boleh sama ada memilih fail XML, fail teks standard atau fail yang "
+"mengandungi kamus pelengkapan kata. Jika anda memilih fail teks standard "
+"atau fail XML, kekerapan kata dikesan dengan hanya mengira kemunculan setiap "
+"kata."
+
+#. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:71
+#, kde-format
+msgid "From &KDE documentation"
+msgstr "Dari dokumentasi &KDE"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:77
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"Jika anda memilih kotak ini, kamus baru dicipta dengan mengkaji hurai "
+"dokumentasi KDE. Kekerapan kata dikesan dengan hanya mengira kemunculan "
+"setiap kata."
+
+#. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:95
+#, kde-format
+msgid "From f&older"
+msgstr "Dari &folder"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:98
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"Jika anda memilih kotak ini, kamus baru dicipta dengan memuatkan fail ke "
+"dalam folder dan subdirektorinya."
+
+#. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:121
+#, kde-format
+msgid "Create an &empty wordlist"
+msgstr "Cipta senarai kata &kosong"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:124
+#, kde-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+msgstr ""
+"Jika anda memilih kotak ini, kamus kosong tanpa sebarang entri dicipta. "
+"Semasa KMouth, secara automatik, menambah kata ke dalam kamus, ia akan "
+"belajar perbendaharaan kata anda."
+
+#: wordcompletion/dictionarycreationwizard.cpp:65
+#, kde-format
+msgid "Source of New Dictionary (1)"
+msgstr "Sumber Kamus Baru (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:71
+#: wordcompletion/dictionarycreationwizard.cpp:77
+#: wordcompletion/dictionarycreationwizard.cpp:87
+#: wordcompletion/dictionarycreationwizard.cpp:94
+#, kde-format
+msgid "Source of New Dictionary (2)"
+msgstr "Sumber Kamus Baru (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:80
+#, fuzzy, kde-format
+#| msgid "&Directory:"
+msgctxt "In which directory is the file located?"
+msgid "&Directory:"
+msgstr "&Direktori:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:83
+#, kde-format
+msgid ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+msgstr ""
+"Dengan medan input ini anda nyatakan direktori mana yang anda ingin muatkan "
+"untuk mencipta kamus baru."
+
+#: wordcompletion/dictionarycreationwizard.cpp:119
+#, fuzzy, kde-format
+#| msgid "Latin1"
+msgctxt "Latin characterset"
+msgid "Latin1"
+msgstr "Latin1"
+
+#: wordcompletion/dictionarycreationwizard.cpp:204
+#, kde-format
+msgid "Merge result"
+msgstr "Cantumkan keputusan"
+
+#: wordcompletion/dictionarycreationwizard.cpp:206
+#, kde-format
+msgctxt "In the sense of a blank word list"
+msgid "Empty list"
+msgstr "Senarai kosong"
+
+#: wordcompletion/dictionarycreationwizard.cpp:212
+#, kde-format
+msgid "KDE Documentation"
+msgstr "Dokumentasi KDE"
+
+#: wordcompletion/dictionarycreationwizard.cpp:336
+#, kde-format
+msgctxt "Default dictionary"
+msgid "Default"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/kdedocsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+msgstr ""
+"Jika anda memilih kotak tanda ini, kata dari dokumentasi KDE disemak eja "
+"sebelum dimasukkan ke dalam kamus baru."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/kdedocsourceui.ui:64
+#, kde-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+msgstr ""
+"Dengan kotak kombo ini, anda pilih bahasa yang digunakan untuk mencipta "
+"kamus baru daripada bahasa yang sudah dipasang. KMouth akan hanya mengkaji "
+"hurai fail dokumentasi bagi bahasa ini."
+
+#. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
+#: wordcompletion/wordcompletionui.ui:32
+#, kde-format
+msgid "&Selected Dictionary"
+msgstr "Kamus Yang &Dipilih"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/wordcompletionui.ui:47
+#, kde-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr ""
+"Dengan kotak kombo ini, anda pilih bahasa yang berkait dengan kamus yang "
+"dipilih."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
+#: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
+#, kde-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "Dengan medan input ini, anda menyatakan nama kamus yang dipilih."
+
+#. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
+#: wordcompletion/wordcompletionui.ui:66
+#, kde-format
+msgid "&Name:"
+msgstr "&Nama:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:100
+#, kde-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr ""
+"Dengan butang ini anda boleh menambah kamus baru ke alam kamus sedia ada."
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:103
+#, kde-format
+msgid "Add D&ictionary..."
+msgstr "Tambah &Kamus"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:119
+#, kde-format
+msgid "With this button you delete the selected dictionary."
+msgstr "Dengan butang ini, anda hapuskan kamus yang dipilih."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:122
+#, kde-format
+msgid "&Delete Dictionary"
+msgstr "&Hapuskan Kamus"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:138
+#, kde-format
+msgid "With this button you move the selected dictionary up."
+msgstr "Dengan butang ini anda mengalihkan kamus yang dilpilih ke atas."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:141
+#, kde-format
+msgid "Move &Up"
+msgstr "Alihkan &Ke Atas"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:157
+#, kde-format
+msgid "With this button you move the selected dictionary down."
+msgstr "Dengan butang ini anda mengalihkan kamus yang dipilih ke bawah."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:160
+#, kde-format
+msgid "&Move Down"
+msgstr "&Alih Ke Bawah"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:176
+#, kde-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "Dengan butang ini, anda mengekspot kamus yang dipilih ke fail."
+
+#. i18n: ectx: property (text), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:179
+#, kde-format
+msgid "&Export Dictionary..."
+msgstr "&Eksport Kamus..."
+
+#. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
+#: wordcompletion/wordcompletionui.ui:204
+#, kde-format
+msgid ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+msgstr ""
+"Senarai ini mengandungi semua kamus yang ada untuk pelengkapan kata. KMouth "
+"akan memaparkan kotak kombo bersebelahan medan edit dalam tetingkap utama "
+"jika senarai ini mengandungi lebih daripada satu kamus. Anda boleh "
+"menggunakan kamus yang sebenarnya biasa dengan pelengkapan kata."
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Dictionary"
+msgstr "Kamus"
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Language"
+msgstr "Bahasa"
+
+#: wordcompletion/wordcompletionwidget.cpp:97
+#: wordcompletion/wordcompletionwidget.cpp:155
+#, kde-format
+msgid "without name"
+msgstr "tanpa nama"
+
+#: wordcompletion/wordcompletionwidget.cpp:204
+#, kde-format
+msgid "Export Dictionary"
+msgstr "Eksport Kamus"
+
+#: wordcompletion/wordlist.cpp:77
+#, kde-format
+msgid "Creating Word List"
+msgstr "Mencipta Senarai Word"
+
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#, kde-format
+msgid "Parsing the KDE documentation..."
+msgstr "Mengkaji hurai ayat dokumentasi KDE..."
+
+#: wordcompletion/wordlist.cpp:197
+#, kde-format
+msgid "Merging dictionaries..."
+msgstr "Mencantumkan kamus..."
+
+#: wordcompletion/wordlist.cpp:266
+#, kde-format
+msgid "Parsing file..."
+msgstr "Mengkaji hurai fail..."
+
+#: wordcompletion/wordlist.cpp:278
+#, kde-format
+msgid "Parsing directory..."
+msgstr "Mengkaji hurai direktori..."
+
+#: wordcompletion/wordlist.cpp:469
+#, kde-format
+msgid "Performing spell check..."
+msgstr "Melaksanakan semak eja..."
+
+#, fuzzy
+#~| msgid ""
+#~| "This check box specifies KMouth tries to use the KTTSD speech service "
+#~| "prior to calling the speech synthesizer directly. The KTTSD speech "
+#~| "service is a KDE daemon which gives KDE applications a standardized "
+#~| "interface for speech synthesis and is currently developed in CVS."
+#~ msgid ""
+#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
+#~ "system speech service prior to calling the speech synthesizer directly. "
+#~ "The system speech service is a Qt library which wraps speech-dispatcher "
+#~ "on linux, and native speech systems on other platforms.</p></body></html>"
+#~ msgstr ""
+#~ "Kotan semak ini menyatakan KMouth cuba menggunakan servis tutur KTTSD "
+#~ "sebelum memanggil pensisntesis tutur secara langsung. Servis tutur KTTSD "
+#~ "ialah daemon KDE yang memberikan antara muka terstandard untuk sintesis "
+#~ "tutur kepada aplikasi KDE dan sedang dibangunkan dalam CVS."
+
+#, fuzzy
+#~| msgid "KMouth"
+#~ msgid "kmouth"
+#~ msgstr "KMouth"
+
+#, fuzzy
+#~| msgid "KTTSD Speech Service"
+#~ msgid "Jovie Speech Service"
+#~ msgstr "Servis Tutur KTTSD"
+
+#~ msgid "KDE Text-to-Speech Daemon Configuration"
+#~ msgstr "Konfigurasi Daemon Teks-ke-Tutur KDE"
+
+#, fuzzy
+#~| msgid "&Use KTTSD speech service if possible"
+#~ msgid "&Use Jovie speech service if possible"
+#~ msgstr "&Guna servis tutur KTTSD, jika boleh"
+
+#~ msgid "Currently Selected Phrase or Phrase Book"
+#~ msgstr "Frasa Semasa Yang Dipilih atau Buku Frasa"
+
+#, fuzzy
+#~ msgid " (%2 of 1 book selected)"
+#~ msgid_plural " (%2 of %1 books selected)"
+#~ msgstr[0] " (%1 daripada %2 buku dipilih)"
+#~ msgstr[1] " (%1 daripada %2 buku dipilih)"
+
+#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
+#~ msgstr "Mencetak frasa semasa atau frasa buku yang dipilih"
+
+#~ msgid ""
+#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
+#~ "Win, Alt, Ctrl, and/or Shift keys."
+#~ msgstr ""
+#~ "Untuk menggunakan kekunci %1 sebagai jalan pintas, ia mesti digabungkan "
+#~ "dengan kekunci Win, Alt, Ctrl dan/atau Shift."
+
+#~ msgid "Invalid Shortcut Key"
+#~ msgstr "Kekunci Pintas Tak Sah"
+
+#~ msgid ""
+#~ "The '%1' key combination has already been allocated to %2.\n"
+#~ "Please choose a unique key combination."
+#~ msgstr ""
+#~ "Kombinasi kekunci '%1' telah diperuntukkan kepada %2.\n"
+#~ "Pilih kombinasi kekunci yang unik."
+
+#~ msgid "the standard \"%1\" action"
+#~ msgstr "tindakan \"%1\" standard"
+
+#~ msgid "Conflict with Standard Application Shortcut"
+#~ msgstr "Konflik dengan Kekunci Pintas Aplikasi Standard"
+
+#~ msgid "the global \"%1\" action"
+#~ msgstr "tindakan \"%1\" global"
+
+#~ msgid "Conflict with Global Shortcuts"
+#~ msgstr "Konflik dengan Kekunci Pintas Global"
+
+#~ msgid "an other phrase"
+#~ msgstr "frasa lain"
+
+#~ msgid "Key Conflict"
+#~ msgstr "Konflik Kekunci"
+
+#, fuzzy
+#~| msgid "&Language:"
+#~ msgid "Language:"
+#~ msgstr "&Bahasa:"
+
+#~ msgid "Other"
+#~ msgstr "Lain"
+
+#~ msgid "Create Custom Language"
+#~ msgstr "Cipta Bahasa Langganan"
+
+#~ msgid "Please enter the code for the custom language:"
+#~ msgstr "Masukkan kod bagi bahasa langganan:"
+
+#~ msgid "Enables/disables the toolbar"
+#~ msgstr "Mengaktifkan/Menyahaktifkan bar alat"

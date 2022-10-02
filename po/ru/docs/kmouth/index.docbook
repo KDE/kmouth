@@ -1,0 +1,1222 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>Руководство пользователя &kmouth;</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  <othercredit role="translator"
+><firstname
+>Антон</firstname
+><surname
+>Горбачёв</surname
+> <affiliation
+><address
+><email
+>justoff@hotmail.ru</email
+></address
+></affiliation
+> <contrib
+>Перевод на русский язык</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода на русский язык</contrib
+></othercredit
+> 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>Gunnar Schmi Dt</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2022-03-18</date>
+  <releaseinfo
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
+
+  <abstract>
+    <para
+>&kmouth; — это приложение, которое позволяет компьютеру озвучивать текст. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>специальные возможности</keyword>
+    <keyword
+>KMouth</keyword>
+    <keyword
+>синтез речи</keyword>
+    <keyword
+>люди с нарушениями речи</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>Введение</title>
+
+  <para
+>&kmouth; — это приложение, которое позволяет людям с нарушениями речи использовать компьютер для синтеза речи. Приложение содержит журнал произнесённых фраз, в котором возможно выбирать фразы для повторного озвучивания. </para>
+  <para
+>Обратите внимание, что в приложение &kmouth; не входит синтезатор речи. Для работы приложения требуется уже установленный в системе синтезатор речи. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>Использование &kmouth;</title>
+  <sect1 id="Wizard">
+    <title
+>Первый запуск</title>
+    <para
+>При первом запуске &kmouth; запускается мастер, который позволяет настроить приложение. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Настройка синтеза речи</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Настройка синтеза речи</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>На первой странице мастера настройки следует указать движок и голос, которые будут использоваться для преобразования текста в речь. Дополнительные сведения доступны в <link linkend="tts-config"
+>описании диалога конфигурации</link
+>. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Автодополнение слов</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Автодополнение слов</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>На третьей странице следует выбрать словарь, который будет использоваться для автодополнения слов. &kmouth; будет обрабатывать документацию &kde; на выбранном языке, чтобы определить правильность отдельных слов. Список слов также возможно проверить по словарю OpenOffice.org — это позволит добавить в словарь автодополнения только те слова, которые не содержат орфографических ошибок. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>Главное окно</title>
+    <para
+>Главное окно &kmouth; состоит из двух основных частей — поля для ввода фразы, которую нужно произнести (нижнее белое поле на снимке экрана), и журнала произнесённых фраз (верхнее белое поле). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Главное окно &kmouth;</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Главное окно &kmouth;</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Если <link linkend="config-dialog"
+>настройка &kmouth;</link
+> выполнена правильно, в поле редактирования возможно ввести фразу, которую следует озвучить. После того, как компьютер озвучил фразу, она помещается в журнал произнесённых фраз. Фразы из журнала возможно выбирать для повторного озвучивания. </para>
+    <para
+>В разговорниках (расположенных в строке под панелью инструментов) возможно выбирать наиболее часто используемые фразы. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>Диалог конфигурации</title>
+    <para
+>Чтобы открыть диалог конфигурации &kmouth;, выберите пункт меню <menuchoice
+> <guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настроить &kmouth;...</guimenuitem
+> </menuchoice
+>. Диалог содержит страницы <guilabel
+>Основные параметры</guilabel
+> (вкладки: <guilabel
+>Параметры</guilabel
+>, <guilabel
+>Синтез речи</guilabel
+>) и<guilabel
+>Автодополнение слов</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>Вкладка «Параметры»</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Вкладка <guilabel
+>Параметры</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Снимок экрана</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>На вкладке <guilabel
+>Параметры</guilabel
+> возможно настроить поведение &kmouth; в различных ситуациях. </para>
+      <para
+>С помощью первого раскрывающегося списка, <guilabel
+>Выбор фраз в разговорнике</guilabel
+>, возможно указать действие, которое будет выполняться при наборе комбинации клавиш, соответствующей фразе, или выборе фразы в меню <guimenu
+>Разговорник</guimenu
+> или в панели инструментов разговорника. </para>
+      <para
+>Если выбран пункт <guilabel
+>Произнести сразу</guilabel
+>, выбранная фраза будет сразу произнесена и добавлена в журнал произнесённых фраз. Если выбран пункт <guilabel
+>Вставить в поле редактирования</guilabel
+>, фраза будет скопирована в поле редактирования. </para>
+      <para
+>С помощью второго раскрывающегося списка, <guilabel
+>При закрытии окна редактирования разговорника</guilabel
+>, возможно указать, следует ли сохранять разговорник при закрытии окна редактирования. </para>
+      <para
+>Если выбран пункт <guilabel
+>Сохранить разговорник</guilabel
+>, разговорник будет сохранён. Если выбран пункт <guilabel
+>Отклонить изменения</guilabel
+>, изменения разговорника будут отменены. Если выбран пункт <guilabel
+>Спрашивать, следует ли сохранить изменения</guilabel
+>, &kmouth; будет выдавать запрос о необходимости сохранения разговорника. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>Вкладка «Синтез речи»</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Вкладка <guilabel
+>Синтез речи</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Снимок экрана</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Если включён параметр <guilabel
+>Использовать систему синтеза речи по умолчанию</guilabel
+>, &kmouth; выполнит попытку использования системной службы синтеза речи перед вызовом непосредственно синтезатора речи. Если попытка окажется удачной, все другие параметры на этой вкладке будут проигнорированы. Системная служба синтеза речи — это библиотека &Qt;, которая предоставляет стандартизированный интерфейс синтеза речи для &Linux;, а также позволяет использовать встроенные системы синтеза речи на других платформах. В Debian-подобных системах потребуется установить пакет диспетчера речи, libqt5texttospeech5, и модуль синтеза речи (как правило, это <application
+>espeak</application
+>). <note
+><para
+>Утилита командной строки <command
+>spd-conf</command
+> (Debian package python3-speechd) позволяет настроить такие параметры системы синтеза речи по умолчанию, как скорость, тональность, громкость, тип голоса, язык и так далее. Кроме того, с помощью <command
+>spd-conf</command
+> возможно выбрать нужный модуль диспетчера речи среди всех установленных (например, <application
+>espeak</application
+>, <application
+>festival</application
+>, <application
+>flite</application
+>, <application
+>mbrola</application
+> и так далее). </para
+></note>
+      </para>
+      <para
+>Также возможно задать параметры <guilabel
+>Движок</guilabel
+> и <guilabel
+>Голос</guilabel
+> системы синтеза речи. </para>
+      <para
+>Если параметр <guilabel
+>Использовать систему синтеза речи по умолчанию</guilabel
+> отключён, команду для вызова синтезатора речи возможно указать в поле ввода на панели <guilabel
+>Альтернатива</guilabel
+>. Под этим полем располагается раскрывающийся список для выбора кодировки, в которой текст будет передаваться синтезатору речи. </para>
+      <para
+>Приложение &kmouth; поддерживает два способа передачи текста синтезатору. Если синтезатор требует передачи текста в виде стандартного ввода, отметьте соответствующий флажок. </para>
+      <para
+>Другим способом является передача текста в качестве параметра. Перед вызовом синтезатора &kmouth; заменяет шаблоны подстановки фактическим содержимым: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>Шаблон подстановки</entry
+><entry
+>Заменяется на</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>Текст фразы</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>Имя временного файлы с текстом фразы</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>Код языка, связанный с текущим словарём автодополнения</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>Знак %</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>Команда озвучивания зависит от используемого синтезатора речи. Её описание доступно в документации соответствующего синтезатора. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>Страница «Автодополнение слов»</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>Страница <guilabel
+>Автодополнение слов</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Снимок экрана</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>На странице <guilabel
+>Автодополнение слов</guilabel
+> представлен список словарей, которые используются для автодополнения слов. (Если в списке содержится более одного словаря, в главном окне &kmouth; рядом с полем редактирования отображается поле со списком, позволяющее выбрать словарь, который будет фактически использован для автодополнения.) </para>
+      <para
+>С помощью кнопок, которые находятся в правой части страницы, возможно добавлять и удалять словари, изменять их порядок или выполнять экспорт в файл. Поле редактирования и расположенный под ним раскрывающийся список позволяют изменять название и язык словаря. </para>
+      <para
+>Существует несколько вариантов добавления нового словаря: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>Создать новый словарь из документации &kde;</para>
+          <para
+>При использовании этого варианта &kmouth; выведет окно, в котором будет предложено задать язык, и затем обработает документацию &kde;. Частота упоминания отдельных слов определяется путём подсчёта количества вхождений каждого из них. Список слов также возможно проверить по словарю OpenOffice.org — это позволит добавить в новый словарь только те слова, которые не содержат орфографических ошибок. </para>
+        </listitem>
+        <listitem>
+          <para
+>Создать новый словарь из файла</para>
+          <para
+>При использовании этого варианта &kmouth; выведет окно, в котором будет предложено указать файл. Возможно выбрать файл в формате &XML; текстовый файл или файл, который содержит словарь автодополнения, созданный с помощью &kmouth; или GOK (экранная клавиатура GNOME). Если выбран текстовый файл или файл &XML;, частота упоминания отдельных слов определяется путём подсчёта количества вхождений каждого из них. Список слов также возможно проверить по словарю OpenOffice.org — это позволит добавить в новый словарь только те слова, которые не содержат орфографических ошибок. </para>
+        </listitem>
+        <listitem>
+          <para
+>Создать новый словарь из папки</para>
+          <para
+>При использовании этого варианта &kmouth; выведет окно, в котором будет предложено указать папку. &kmouth; откроет все файлы, которые находятся в этой папке и вложенных папках. Поддерживается загрузка словарей автодополнения, файлов в формате &XML; и текстовых файлов. В последних двух случаях выполняется подсчёт количества вхождений каждого отдельного слова. Список слов также возможно проверить по словарю OpenOffice.org — это позволит добавить в новый словарь только те слова, которые не содержат орфографических ошибок. </para>
+        </listitem>
+        <listitem>
+          <para
+>Объединить словари</para>
+          <para
+>Этот параметр позволяет объединить доступные словари. &kmouth; выведет окно, в котором будет предложено выбрать словари для объединения и указать вес отдельных словарей. </para>
+        </listitem>
+        <listitem>
+          <para
+>Пустой словарь</para>
+          <para
+>Этот параметр позволяет создать пустой словарь (словарь, в котором нет записей). Так как &kmouth; автоматически сохраняет в словарях новые введённые слова, в созданном словаре будут постепенно накапливаться записи. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>Окно редактирования разговорника</title>
+    <para
+>Чтобы открыть окно редактирования разговорника, выберите пункт меню <menuchoice
+> <guimenu
+>Разговорники</guimenu
+><guimenuitem
+>Правка...</guimenuitem
+> </menuchoice
+>. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>Окно редактирования разговорника</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Снимок экрана</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>Основная часть окна редактирования разговорника делится на две части. В верхней части в виде дерева показаны разговорники. </para>
+    <para
+>Нижняя часть окна предназначена для редактирования выбранного элемента. Если выбрана фраза, возможно изменить как её саму, так и соответствующую ей комбинацию клавиш. Если выбран разговорник, возможно изменить только его название. </para>
+    <para
+>Добавление новых фраз и разговорников или удаление выбранных фраз и разговорников возможно выполнять с помощью главного меню, панели инструментов или всплывающего меню. </para>
+    <para
+>Чтобы изменить порядок следования фраз или разговорников, перетащите их с помощью мыши или клавиш со стрелками при нажатой клавише &Alt;. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>Список команд</title>
+
+  <sect1 id="main-commands">
+    <title
+>Команды главного окна</title>
+    <sect2 id="file-menu">
+      <title
+>Меню «Файл»</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Загрузить журнал...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Загружает текстовый файл в журнал произнесённых фраз.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Сохранить журнал как...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Сохраняет журнал произнесённых фраз в текстовый файл.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Печать журнала...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Распечатывает журнал произнесённых фраз.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Закрывает &kmouth;.</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>Меню «Правка»</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вырезать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Вырезает выделение и помещает его в буфер обмена. Если в поле редактирования был выделен текст, он будет помещён в буфер обмена. В ином случае в буфер обмена будут помещены выделенные фразы из журнала произнесённых фраз. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Копировать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Копирует выделение в буфер обмена. Если в поле редактирования был выделен текст, он будет помещён в буфер обмена. В ином случае в буфер обмена будут помещены выделенные фразы из журнала произнесённых фраз. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вставить</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Вставляет содержимое буфера обмена в текущую позицию курсора в поле редактирования. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Сказать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Произносит текущую фразу (фразы). Если поле редактирования содержит текст, он будет произнесён. В ином случае будут произнесены выделенные фразы из журнала произнесённых фраз. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>Меню «Разговорники»</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Разговорники</guimenu
+> <guimenuitem
+>Правка...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>Открывает <link linkend="phrasebook-editor"
+>окно редактирования разговорника</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>В приложении &kmouth; присутствуют стандартные меню &kde;: <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>. Дополнительные сведения доступны в разделе справки «Основы &kde;» (подразделы <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+>). </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>Команды окна редактирования разговорника</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>Меню «Файл»</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Новая фраза</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Добавляет новую фразу.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Новый разговорник</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Создаёт новый разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Сохранить</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Сохраняет разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Импорт...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Импортирует файл и добавляет его содержимое в разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Импорт из разговорника</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Импортирует разговорник и добавляет его содержимое в текущий разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Экспорт...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Экспортирует выделенные фразы или разговорники в файл.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Закрыть</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Закрывает окно.</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>Меню «Правка»</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вырезать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Вырезает выделенные элементы и помещает их в буфер обмена. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Копировать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Копирует выделенные элементы в буфер обмена. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вставить</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Помещает содержимое буфера обмена в разговорник. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Удалить</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Удаляет выделенные элементы. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>Меню «Справка»</title>
+      <para
+>В этом меню доступны те же элементы, что и в главном окне.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>Всплывающее меню</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Новая фраза</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Добавляет новую фразу.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Новый разговорник</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Создаёт новый разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Импорт...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Импортирует файл и добавляет его содержимое в разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Импорт из разговорника</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Импортирует разговорник и добавляет его содержимое в текущий разговорник.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Экспорт...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Экспортирует выделенные фразы или разговорники в файл.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Вырезать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Вырезает выделенные элементы и помещает их в буфер обмена. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Копировать</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Копирует выделенные элементы в буфер обмена. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>Вставить</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Вставляет содержимое буфера обмена в текущую позицию курсора в разговорнике. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>Удалить</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>Удаляет выделенные элементы. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>Авторские права и лицензия</title>
+
+  <para
+>&kmouth; </para>
+  <para
+>Авторские права на приложение © Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+>, 2002-2004 </para>
+  <para
+>Авторские права на документацию © Gunnar Schmi Dt <email
+>gunnar@schmi-dt.de</email
+>, 2002-2004 </para>
+
+  <para
+>Перевод на русский язык: Антон Горбачёв <email
+>justoff@hotmail.ru</email
+></para
+><para
+>Обновление перевода на русский язык: Олеся Герасименко<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

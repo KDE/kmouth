@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Russian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Руководство пользователя KMouth</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Man-страница KMouth.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>2022-03-18</date>
+<releaseinfo
+>KMouth 22.04</releaseinfo>
+<productname
+>KDE Gear</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Интерфейс для синтезаторов речи</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>filename</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Описание</title>
+<para
+>&kmouth; — это приложение, которое позволяет людям с нарушениями речи использовать компьютер для синтеза речи. Приложение содержит журнал произнесённых фраз, в котором возможно выбирать фразы для повторного озвучивания.</para>
+<para
+>Обратите внимание, что в приложение &kmouth; не входит синтезатор речи. Для работы приложения требуется уже установленный в системе синтезатор речи.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>Параметры</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>filename</replaceable
+></option
+></term>
+<listitem>
+<para
+>Файл журнала, который следует открыть.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Смотрите также</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>Более подробное руководство пользователя: <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (либо введите этот &URL;-адрес в приложении &konqueror;, либо выполните команду <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>Дополнительные сведения доступны на <ulink url="https://community.kde.org/Accessibility"
+>веб-сайте специальных возможностей &kde;</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Авторы</title>
+<para
+>Автор приложения &kmouth;: <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>

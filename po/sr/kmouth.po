@@ -1,0 +1,1357 @@
+# Translation of kmouth.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2003, 2005, 2009, 2010, 2011, 2012, 2015, 2017.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
+# Slobodan Simic <slsimic@gmail.com>, 2004, 2005, 2009.
+# Mladen Pejakovic <pejakm@gmail.com>, 2009.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmouth\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-09-19 02:49+0200\n"
+"PO-Revision-Date: 2017-09-28 17:58+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Часлав Илић,Слободан Симић,Младен Пејаковић"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "caslav.ilic@gmx.net,slsimic@gmail.com,pejakm@gmail.com"
+
+#: configwizard.cpp:38
+#, kde-format
+msgid "Initial Configuration - KMouth"
+msgstr "Почетно подешавање — К‑уста"
+
+#: configwizard.cpp:59
+#, kde-format
+msgid "Text-to-Speech Configuration"
+msgstr "Подешавање текста‑у‑говор"
+
+#: configwizard.cpp:73
+#, kde-format
+msgid "Initial Phrase Book"
+msgstr "Почетна књига израза"
+
+#: configwizard.cpp:105 optionsdialog.cpp:157 optionsdialog.cpp:158
+#, kde-format
+msgid "Word Completion"
+msgstr "Допуна речи"
+
+#: kmouth.cpp:108
+#, kde-format
+msgid "&Open as History..."
+msgstr "&Отвори као историјат..."
+
+#: kmouth.cpp:111 kmouth.cpp:112
+#, kde-format
+msgid "Opens an existing file as history"
+msgstr "Отвара постојећи фајл као историјат"
+
+#: kmouth.cpp:116
+#, kde-format
+msgid "Save &History As..."
+msgstr "Сачувај &историјат као..."
+
+#: kmouth.cpp:119 kmouth.cpp:120
+#, kde-format
+msgid "Saves the actual history as..."
+msgstr "Уписује текући историјат као..."
+
+#: kmouth.cpp:124
+#, kde-format
+msgid "&Print History..."
+msgstr "Ш&тампај историјат..."
+
+#: kmouth.cpp:127 kmouth.cpp:128
+#, kde-format
+msgid "Prints out the actual history"
+msgstr "Штампа текући историјат"
+
+#: kmouth.cpp:131 kmouth.cpp:132
+#, kde-format
+msgid "Quits the application"
+msgstr "Напушта програм"
+
+#: kmouth.cpp:136
+#, kde-format
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Исеца изабрани одељак и ставља га у клипборд"
+
+#: kmouth.cpp:137
+#, kde-format
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some "
+"text selected in the edit field it is placed it on the clipboard. Otherwise "
+"the selected sentences in the history (if any) are placed on the clipboard."
+msgstr ""
+"Исеца изабрани одељак и ставља га у клипборд. Ако је неки текст изабран у "
+"пољу за уређивање, ставља се у клипборд. У супротном, у клипборд се стављају "
+"изабране реченице из историјата (ако их има)."
+
+#: kmouth.cpp:140
+#, kde-format
+msgid "Copies the selected section to the clipboard"
+msgstr "Копира тренутни избор у клипборд"
+
+#: kmouth.cpp:141
+#, kde-format
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected "
+"in the edit field it is copied to the clipboard. Otherwise the selected "
+"sentences in the history (if any) are copied to the clipboard."
+msgstr ""
+"Копира тренутни избор у клипборд. Ако је неки текст изабран у пољу за "
+"уређивање, копира се у клипборд. У супротном, у клипборд се копирају "
+"изабране реченице из историјата (ако их има)."
+
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:288
+#, kde-format
+msgid "Pastes the clipboard contents to current position"
+msgstr "Налепљује садржај клипборда на текући положај."
+
+# skip-rule: t-pointer
+#: kmouth.cpp:145 phrasebook/phrasebookdialog.cpp:289
+#, kde-format
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr ""
+"Налепљује садржај клипборда на текући положај курсора у пољу за уређивање."
+
+#: kmouth.cpp:149
+#, kde-format
+msgctxt "Start speaking"
+msgid "&Speak"
+msgstr "&Изговори"
+
+#: kmouth.cpp:151
+#, kde-format
+msgid "Speaks the currently active sentence(s)"
+msgstr "Изговара тренутно активне реченице"
+
+#: kmouth.cpp:152 phraselist.cpp:88
+#, kde-format
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Изговара тренутно активне реченице. Ако има текста у пољу за уређивање, "
+"изговара се. У супротном, изговарају се изабране реченице из историјата (ако "
+"их има)."
+
+#: kmouth.cpp:156
+#, kde-format
+msgid "&Edit..."
+msgstr "&Уреди..."
+
+#: kmouth.cpp:167
+#, kde-format
+msgid "Show P&hrasebook Bar"
+msgstr "Прикажи траку књиге &израза"
+
+#: kmouth.cpp:169 kmouth.cpp:170
+#, kde-format
+msgid "Enables/disables the phrasebook bar"
+msgstr "Укључује/искључује траку књиге израза"
+
+#: kmouth.cpp:173 kmouth.cpp:174
+#, kde-format
+msgid "Enables/disables the statusbar"
+msgstr "Укључује/искључује траку стања"
+
+#: kmouth.cpp:178
+#, kde-format
+msgid "&Configure KMouth..."
+msgstr "&Подеси К‑уста..."
+
+#: kmouth.cpp:180 kmouth.cpp:181
+#, kde-format
+msgid "Opens the configuration dialog"
+msgstr "Отвара дијалог за подешавање"
+
+#: kmouth.cpp:189 phraselist.cpp:85
+#, kde-format
+msgid "&Speak"
+msgstr "&Изговори"
+
+#: kmouth.cpp:190 kmouth.cpp:192
+#, kde-format
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Изговара тренутно изабрани израз у историјату"
+
+#: kmouth.cpp:196 phrasebook/phrasebookdialog.cpp:293
+#, kde-format
+msgid "&Delete"
+msgstr "&Обриши"
+
+#: kmouth.cpp:198 kmouth.cpp:199
+#, kde-format
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Уклања тренутно изабрани израз из историјата"
+
+#: kmouth.cpp:203
+#, kde-format
+msgid "Cu&t"
+msgstr "&Исеци"
+
+#: kmouth.cpp:205 kmouth.cpp:206
+#, kde-format
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr "Исеца тренутно изабране изразе из историјата и ставља их у клипборд"
+
+#: kmouth.cpp:210
+#, kde-format
+msgid "&Copy"
+msgstr "&Копирај"
+
+#: kmouth.cpp:212 kmouth.cpp:213
+#, kde-format
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr "Копира тренутно изабране изразе из историјата у клипборд"
+
+#: kmouth.cpp:216
+#, kde-format
+msgid "Select &All Entries"
+msgstr "Изабери &све ставке"
+
+#: kmouth.cpp:218 kmouth.cpp:219
+#, kde-format
+msgid "Selects all phrases in the history"
+msgstr "Бира све изразе у историјату"
+
+#: kmouth.cpp:222
+#, kde-format
+msgid "D&eselect All Entries"
+msgstr "Поништи сав &избор"
+
+#: kmouth.cpp:224 kmouth.cpp:225
+#, kde-format
+msgid "Deselects all phrases in the history"
+msgstr "Поништава избор свих израза у историјату"
+
+#: kmouth.cpp:239 kmouth.cpp:258 kmouth.cpp:358 kmouth.cpp:367 kmouth.cpp:384
+#: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
+#, kde-format
+msgctxt "The job is done"
+msgid "Ready."
+msgstr "Спреман."
+
+#: kmouth.cpp:255 kmouth.cpp:354
+#, kde-format
+msgid "Opening file..."
+msgstr "Отварам фајл..."
+
+#: kmouth.cpp:363
+#, kde-format
+msgid "Saving history with a new filename..."
+msgstr "Уписујем историјат са новим именом фајла..."
+
+#: kmouth.cpp:372
+#, kde-format
+msgid "Printing..."
+msgstr "Штампам..."
+
+#: kmouth.cpp:389
+#, kde-format
+msgctxt "Shutting down the application"
+msgid "Exiting..."
+msgstr "Излазим..."
+
+#: kmouth.cpp:427
+#, kde-format
+msgid "Toggling menubar..."
+msgstr "Укључујем/искључујем траку менија..."
+
+#: kmouth.cpp:439
+#, kde-format
+msgid "Toggling toolbar..."
+msgstr "Укључујем/искључујем траку алатки..."
+
+#: kmouth.cpp:453
+#, kde-format
+msgid "Toggling phrasebook bar..."
+msgstr "Укључујем/искључујем траку књиге израза..."
+
+#: kmouth.cpp:467
+#, kde-format
+msgid "Toggle the statusbar..."
+msgstr "Укључујем/искључујем траку стања..."
+
+#. i18n: ectx: Menu (file)
+#: kmouthui.rc:4 phrasebookdialogui.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Фајл"
+
+#. i18n: ectx: Menu (edit)
+#: kmouthui.rc:11 phrasebookdialogui.rc:19
+#, kde-format
+msgid "&Edit"
+msgstr "&Уређивање"
+
+#. i18n: ectx: Menu (phrasebooks)
+#: kmouthui.rc:14
+#, kde-format
+msgid "&Phrase Books"
+msgstr "&Књиге израза"
+
+#. i18n: ectx: Menu (settings)
+#: kmouthui.rc:17
+#, kde-format
+msgid "&Settings"
+msgstr "&Подешавање"
+
+#: main.cpp:37 main.cpp:40
+#, kde-format
+msgid "KMouth"
+msgstr "К‑уста"
+
+#: main.cpp:42
+#, kde-format
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "„Упиши и изговори“ прочеље за синтетизаторе говора"
+
+#: main.cpp:44
+#, kde-format
+msgid "(c) 2002/2003, Gunnar Schmi Dt"
+msgstr "© 2002–2003, Гунар Шмит"
+
+#: main.cpp:48
+#, kde-format
+msgid "Gunnar Schmi Dt"
+msgstr "Гунар Шмит"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original Author"
+msgstr "Првобитни аутор"
+
+#: main.cpp:49
+#, kde-format
+msgid "Jeremy Whiting"
+msgstr "Џереми Вајтинг"
+
+#: main.cpp:49
+#, kde-format
+msgid "Current Maintainer"
+msgstr "Тренутни одржавалац"
+
+#: main.cpp:50
+#, kde-format
+msgid "Olaf Schmidt"
+msgstr "Олаф Јан Шмит"
+
+#: main.cpp:50
+#, kde-format
+msgid "Tips, extended phrase books"
+msgstr "Савети, проширене књиге израза"
+
+#: main.cpp:55
+#, kde-format
+msgid "History file to open"
+msgstr "Фајл историјата за отварање"
+
+#: optionsdialog.cpp:123
+#, kde-format
+msgid "Configuration"
+msgstr "Подешавање"
+
+#: optionsdialog.cpp:146
+#, kde-format
+msgid "&Preferences"
+msgstr "&Поставке"
+
+#: optionsdialog.cpp:149
+#, kde-format
+msgid "&Text-to-Speech"
+msgstr "&Текст‑у‑говор"
+
+#: optionsdialog.cpp:151 optionsdialog.cpp:152
+#, kde-format
+msgid "General Options"
+msgstr "Опште опције"
+
+#: phrasebook/initialphrasebookwidget.cpp:45
+#, kde-format
+msgid "Please decide which phrase books you need:"
+msgstr "Одлучите које књиге израза желите:"
+
+# >> @title:column
+#: phrasebook/initialphrasebookwidget.cpp:50
+#, kde-format
+msgid "Book"
+msgstr "књига"
+
+# >> @item
+#: phrasebook/phrasebook.cpp:286
+#, kde-format
+msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
+msgstr ""
+"књиге израза (*.phrasebook);;обични текстуални фајлови (*.txt);;сви фајлови "
+"(*)"
+
+# >> @item
+#: phrasebook/phrasebook.cpp:288
+#, kde-format
+msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
+msgstr ""
+"обични текстуални фајлови (*.txt);;књиге израза (*.phrasebook);;сви фајлови "
+"(*)"
+
+#: phrasebook/phrasebook.cpp:304 wordcompletion/wordcompletionwidget.cpp:210
+#, kde-format
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "Фајл %1 већ постоји. Желите ли да га пребришете?"
+
+#: phrasebook/phrasebook.cpp:305 wordcompletion/wordcompletionwidget.cpp:211
+#, kde-format
+msgid "File Exists"
+msgstr "Фајл постоји"
+
+#: phrasebook/phrasebook.cpp:305 wordcompletion/wordcompletionwidget.cpp:211
+#, kde-format
+msgid "&Overwrite"
+msgstr "&Пребриши"
+
+#: phrasebook/phrasebook.cpp:316
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"<html>Изабрано име фајла <tt>%1</tt> има наставак другачији од <tt>."
+"phrasebook</tt>. Желите ли да додате овај наставак имену?</html>"
+
+#: phrasebook/phrasebook.cpp:317 phrasebook/phrasebook.cpp:332
+#, kde-format
+msgid "File Extension"
+msgstr "Наставак фајла"
+
+#: phrasebook/phrasebook.cpp:317
+#, kde-format
+msgid "Add"
+msgstr "Додај"
+
+#: phrasebook/phrasebook.cpp:317
+#, kde-format
+msgid "Do Not Add"
+msgstr "Немој да додаш"
+
+#: phrasebook/phrasebook.cpp:331
+#, kde-format
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
+"wish to save in phrasebook format?"
+msgstr ""
+"<html>Изабрано име фајла <tt>%1</tt> има наставак <tt>.phrasebook</tt>. "
+"Желите ли да га сачувате као фајл књиге израза?</html>"
+
+# >> @action:button
+#: phrasebook/phrasebook.cpp:332
+#, kde-format
+msgid "As Phrasebook"
+msgstr "Као књига израза"
+
+# >> @action:button
+#: phrasebook/phrasebook.cpp:332
+#, kde-format
+msgid "As Plain Text"
+msgstr "Као обични текст"
+
+# >> @title:column
+#: phrasebook/phrasebookdialog.cpp:88
+#, kde-format
+msgid "Phrase"
+msgstr "израз"
+
+# >> @title:column
+#: phrasebook/phrasebookdialog.cpp:89
+#, kde-format
+msgid "Shortcut"
+msgstr "пречица"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
+#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#, kde-format
+msgid "Phrase Book"
+msgstr "Књига израза"
+
+#: phrasebook/phrasebookdialog.cpp:228
+#, kde-format
+msgid "&New Phrase"
+msgstr "&Нови израз"
+
+#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#, kde-format
+msgid "Adds a new phrase"
+msgstr "Додаје нови израз"
+
+#: phrasebook/phrasebookdialog.cpp:235
+#, kde-format
+msgid "New Phrase &Book"
+msgstr "Нова &књига израза"
+
+#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#, kde-format
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr "Додаје нову књигу израза у коју се могу сместити друге књиге и изрази"
+
+#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#, kde-format
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Уписује књигу израза на хард‑диск"
+
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#, kde-format
+msgid "&Import..."
+msgstr "&Увези..."
+
+#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
+#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#, kde-format
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr "Увози фајл и додаје његов садржај у књигу израза"
+
+#: phrasebook/phrasebookdialog.cpp:259
+#, kde-format
+msgid "I&mport Standard Phrase Book"
+msgstr "У&вези стандардну књигу израза"
+
+#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#, kde-format
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr "Увози стандардну књигу израза и додаје њен садржај у књигу израза"
+
+#: phrasebook/phrasebookdialog.cpp:265
+#, kde-format
+msgid "&Export..."
+msgstr "&Извези..."
+
+#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#, kde-format
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr "Извози тренутно означене изразе или књиге израза у фајл"
+
+#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#, kde-format
+msgid "Closes the window"
+msgstr "Затвара прозор"
+
+#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#, kde-format
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr "Исеца тренутно изабране изразе из историјата и ставља их у клипборд"
+
+#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#, kde-format
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr "Копира тренутно означени унос из књиге израза у клипборд"
+
+#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#, kde-format
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Брише означене уносе из књиге израза"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.ui:82
+#, kde-format
+msgid "Text of the &phrase:"
+msgstr "Текст &израза:"
+
+#: phrasebook/phrasebookdialog.cpp:404
+#, kde-format
+msgid "Name of the &phrase book:"
+msgstr "Име књиге &израза:"
+
+#: phrasebook/phrasebookdialog.cpp:425
+#, kde-format
+msgid ""
+"<qt>There are unsaved changes.<br />Do you want to apply the changes before "
+"closing the \"phrase book\" window or discard the changes?</qt>"
+msgstr ""
+"<qt>Има несачуваних измена.<br />Желите ли да примените измене пре затварања "
+"прозора књиге израза, или да их одбаците?</qt>"
+
+# >> @title:window
+#: phrasebook/phrasebookdialog.cpp:426
+#, kde-format
+msgid "Closing \"Phrase Book\" Window"
+msgstr "Затварање прозора књиге израза"
+
+#: phrasebook/phrasebookdialog.cpp:586
+#, kde-format
+msgid "(New Phrase Book)"
+msgstr "(Нова књига израза)"
+
+#: phrasebook/phrasebookdialog.cpp:602
+#, kde-format
+msgid "(New Phrase)"
+msgstr "(Нови израз)"
+
+#: phrasebook/phrasebookdialog.cpp:633
+#, kde-format
+msgid "Import Phrasebook"
+msgstr "Увези књигу израза"
+
+# >> @item
+#: phrasebook/phrasebookdialog.cpp:634
+#, kde-format
+msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
+msgstr ""
+"књиге израза (*.phrasebook);;обични текстуални фајлови (*.txt);;сви фајлови "
+"(*)"
+
+#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:507
+#, kde-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"Грешка при учитавању фајла\n"
+"%1"
+
+# >> @title:window
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Export Phrase Book"
+msgstr "Извоз књиге израза"
+
+# >> @item
+#: phrasebook/phrasebookdialog.cpp:676
+#, kde-format
+msgid "Phrase Books (*.phrasebook)"
+msgstr "књиге израза (*.phrasebook)"
+
+#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:480
+#, kde-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"Грешка при уписивању фајла\n"
+"%1"
+
+#. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
+#: phrasebook/phrasebookdialog.ui:26
+#, kde-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "&Тренутно означени изрази или књиге израза"
+
+#. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
+#: phrasebook/phrasebookdialog.ui:38
+#, kde-format
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated "
+"with the selected phrase."
+msgstr ""
+"Кликом на ово дугме моћи ћете да изаберете пречицу тастатуре придружену "
+"означеном изразу."
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
+#: phrasebook/phrasebookdialog.ui:45 phrasebook/phrasebookdialog.ui:79
+#, kde-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents "
+"of a phrase."
+msgstr "Овде можете унети име поткњиге израза или садржај израза."
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:52
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by "
+"a keyboard shortcut."
+msgstr ""
+"Ако означите ову опцију, изабрани израз неће бити доступан путем пречице са "
+"тастатуре."
+
+#. i18n: ectx: property (text), widget (QRadioButton, noKey)
+#: phrasebook/phrasebookdialog.ui:55
+#, kde-format
+msgid "&None"
+msgstr "&Ниједна"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:62
+#, kde-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"Ако изаберете ову опцију, изабрани израз биће доступан путем пречице са "
+"тастатуре. Пречицу можете мењати дугметом поред ове опције."
+
+#. i18n: ectx: property (text), widget (QRadioButton, customKey)
+#: phrasebook/phrasebookdialog.ui:65
+#, kde-format
+msgid "C&ustom"
+msgstr "&Посебна"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: phrasebook/phrasebookdialog.ui:72
+#, kde-format
+msgid "Shortcut for the phrase:"
+msgstr "Пречица за израз:"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
+#: phrasebook/phrasebookdialog.ui:98
+#, kde-format
+msgid ""
+"This list contains the current phrase book in a tree structure. You can "
+"select and modify individual phrases and sub phrase books"
+msgstr ""
+"Овај списак даје тренутну књигу израза у облику стабла. Можете бирати и "
+"мењати поједине изразе и поткњиге израза."
+
+#: phraselist.cpp:62
+#, kde-format
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"Списак даје историјат изговорених реченица. Да би нека реченица била поново "
+"изговорена, можете је изабрати и притиснути дугме за изговарање."
+
+#: phraselist.cpp:80
+#, kde-format
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in "
+"order to speak the entered phrase."
+msgstr ""
+"У овом пољу можете унети израз. Кликните на дугме за изговарање да би унети "
+"израз био изговорен."
+
+# >> @title:window
+#: phraselist.cpp:479
+#, kde-format
+msgid "Save As"
+msgstr "Уписивање као"
+
+# >> @title:window
+#: phraselist.cpp:485
+#, kde-format
+msgid "Open File as History"
+msgstr "Отварање фајла као историјата"
+
+# >> @item
+#: phraselist.cpp:486
+#, kde-format
+msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
+msgstr ""
+"сви фајлови (*);;књиге израза (*.phrasebook);;обични текстуални фајлови (*."
+"txt)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
+#: preferencesui.ui:21
+#, kde-format
+msgid "Preferences"
+msgstr "Поставке"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, speakLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, speakCombo)
+#: preferencesui.ui:49 preferencesui.ui:62
+#, kde-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"Да ли се изабрани изрази одмах изговарају или се само убацују у поље за "
+"уређивање."
+
+#. i18n: ectx: property (text), widget (QLabel, speakLabel)
+#: preferencesui.ui:52
+#, kde-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "При &избору израза из књиге:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:66
+#, kde-format
+msgid "Speak Immediately"
+msgstr "изговори одмах"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
+#: preferencesui.ui:71
+#, kde-format
+msgid "Insert Into Edit Field"
+msgstr "убаци у поље за уређивање"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
+#: preferencesui.ui:97 preferencesui.ui:110
+#, kde-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"Да ли књига израза бива аутоматски сачувана када се затвори прозор за "
+"уређивање."
+
+#. i18n: ectx: property (text), widget (QLabel, closeLabel)
+#: preferencesui.ui:100
+#, kde-format
+msgid "Closing the phrase &book edit window:"
+msgstr "При затварању прозора за уређивање &књиге израза:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:114
+#, kde-format
+msgid "Save Phrase Book"
+msgstr "сачувај књигу израза"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:119
+#, kde-format
+msgid "Discard Changes"
+msgstr "одбаци измене"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
+#: preferencesui.ui:124
+#, kde-format
+msgid "Ask Whether to Save"
+msgstr "питај да ли да се сачува"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
+#: texttospeechconfigurationui.ui:14
+#, kde-format
+msgid "Text-to-Speech"
+msgstr "Текст‑у‑говор"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useQtSpeech)
+#: texttospeechconfigurationui.ui:35
+#, kde-format
+msgid ""
+"<html><head/><body><p>This check box specifies KMouth tries to use the "
+"system speech service prior to calling the speech synthesizer directly. The "
+"system speech service is a Qt library which wraps speech-dispatcher on "
+"linux, and native speech systems on other platforms.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Ова кућица одређује К‑устима да покуша да употреби "
+"системски говорни сервис пре директног позивања синтетизатора говора. "
+"Системски говорни сервис је КуТ библиотека која омотава Отправник говора на "
+"Линуксу, а самосвојне говорне системе на другим платформама.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useQtSpeech)
+#: texttospeechconfigurationui.ui:38
+#, kde-format
+msgid "&Use default speech system"
+msgstr "&Подразумевани говорни систем"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
+#: texttospeechconfigurationui.ui:72 texttospeechconfigurationui.ui:95
+#, no-c-format, kde-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"<html><p>Наредба помоћу које ће се изговарати текст, као и њени параметри. "
+"К‑уста познаје следеће местодржаче:</p><ul><li><tt>%t</tt> — текст који "
+"треба изговорити</li><li><tt>%f</tt> — име фајла који садржи текст</"
+"li><li><tt>%l</tt> — кôд језика</li><li><tt>%%</tt> — знак процента</li></"
+"ul></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: texttospeechconfigurationui.ui:75
+#, kde-format
+msgid "Alternative command for speaking &texts:"
+msgstr "&Алтернативна наредба за изговарање текста:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
+#: texttospeechconfigurationui.ui:127 texttospeechconfigurationui.ui:140
+#, kde-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the "
+"text."
+msgstr "Кодирање знакова које се користи при прослеђивању текста."
+
+#. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
+#: texttospeechconfigurationui.ui:130
+#, kde-format
+msgid "Character encodin&g:"
+msgstr "Кодирање &знакова:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:149
+#, kde-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"Ова кућица одређује ли се текст шаље синтетизатору као стандардни улаз."
+
+#. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
+#: texttospeechconfigurationui.ui:152
+#, kde-format
+msgid "Send the data as standard &input"
+msgstr "Пошаљи податке као стандардни &улаз"
+
+#: texttospeechconfigurationwidget.cpp:46
+#: wordcompletion/dictionarycreationwizard.cpp:116
+#, kde-format
+msgctxt "Local characterset"
+msgid "Local"
+msgstr "локално"
+
+#: texttospeechconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "Latin1 characterset"
+msgid "Latin1"
+msgstr "латиница‑1"
+
+#: texttospeechconfigurationwidget.cpp:50
+#: wordcompletion/dictionarycreationwizard.cpp:120
+#, kde-format
+msgid "Unicode"
+msgstr "уникод"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"Попуните ли ову кућицу, биће провераван правопис речи пре него што буду "
+"убачене у нови речник."
+
+#. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/creationsourcedetailsui.ui:25
+#: wordcompletion/kdedocsourceui.ui:25
+#, kde-format
+msgid "C&ompare to OpenOffice.org dictionary:"
+msgstr "&Упореди са речником Опенофиса.орг:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
+#. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
+#: wordcompletion/creationsourcedetailsui.ui:43
+#: wordcompletion/creationsourcedetailsui.ui:100
+#, kde-format
+msgid ""
+"With this combo box you select the character encoding used to load text "
+"files. This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"Овде бирате које кодирање знакова ће се користити при учитавању текстуалних "
+"фајлова. Оно се не користи за ИксМЛ фајлове или за речнике."
+
+#. i18n: ectx: property (text), widget (QLabel, encodingLabel)
+#: wordcompletion/creationsourcedetailsui.ui:46
+#, kde-format
+msgid "Character &encoding:"
+msgstr "Кодирање &знакова:"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
+#: wordcompletion/creationsourcedetailsui.ui:64
+#: wordcompletion/creationsourcedetailsui.ui:85
+#, kde-format
+msgid ""
+"With this input field you specify which file you want to load for creating "
+"the new dictionary."
+msgstr ""
+"Овде уносите име фајла који желите да учитате за стварање новог речника."
+
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: wordcompletion/creationsourcedetailsui.ui:67
+#, kde-format
+msgid "&Filename:"
+msgstr "&Име фајла:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
+#: wordcompletion/creationsourcedetailsui.ui:118
+#: wordcompletion/kdedocsourceui.ui:44
+#, kde-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be "
+"used to spellcheck the words of the new dictionary."
+msgstr ""
+"Овде одређујете фасциклу Опенофиса.орг која ће се користити за проверу "
+"правописа речи из новог речника."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:136
+#, kde-format
+msgid ""
+"With this combo box you decide which language should be associated with the "
+"new dictionary."
+msgstr "Овде одлучујете који језик ће бити придружен новом речнику."
+
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: wordcompletion/creationsourcedetailsui.ui:139
+#: wordcompletion/kdedocsourceui.ui:67 wordcompletion/wordcompletionui.ui:50
+#, kde-format
+msgid "&Language:"
+msgstr "&Језик:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:16
+#, kde-format
+msgid "C&reate new dictionary:"
+msgstr "&Направи нови речник:"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
+#: wordcompletion/creationsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"Ако попуните ово, нови речник биће направљен или учитавањем фајла речника "
+"или бројањем појединачних речи у тексту."
+
+#. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:29
+#, kde-format
+msgid "&Merge dictionaries"
+msgstr "&Стопи речнике"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
+#: wordcompletion/creationsourceui.ui:32
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"Ако попуните ово, нови речник ће бити направљен стапањем постојећих речника."
+
+#. i18n: ectx: property (text), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:50
+#, kde-format
+msgid "From &file"
+msgstr "Из &фајла"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
+#: wordcompletion/creationsourceui.ui:53
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You "
+"may either select an XML file, a standard text file or a file containing a "
+"word completion dictionary. If you select a standard text file or an XML "
+"file the frequentness of the individual words is detected by simply counting "
+"the occurrences of each word."
+msgstr ""
+"Ако попуните ово, нови речник се ствара учитавањем из фајла. Можете изабрати "
+"ИксМЛ фајл, обичан текстуални фајл или фајл који садржи речи‑допуне. Ако "
+"изаберете текстуални или ИксМЛ фајл, учесталост појединачне речи се "
+"проналази простим бројањем појављивања сваке речи."
+
+#. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:71
+#, kde-format
+msgid "From &KDE documentation"
+msgstr "Из &документације КДЕ‑а"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, kdeDocButton)
+#: wordcompletion/creationsourceui.ui:77
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"Ако попуните ово, нови речник се ствара рашчлањивањем документације КДЕ‑а. "
+"Учесталост појединачне речи се проналази простим бројањем појављивања сваке "
+"речи."
+
+#. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:95
+#, kde-format
+msgid "From f&older"
+msgstr "Из &фасцикле"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, directoryButton)
+#: wordcompletion/creationsourceui.ui:98
+#, kde-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"Ако попуните ово, нови речник се ствара учитавањем свих фајлова из фасцикле "
+"и њених потфасцикли."
+
+#. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:121
+#, kde-format
+msgid "Create an &empty wordlist"
+msgstr "&Празан списак речи"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
+#: wordcompletion/creationsourceui.ui:124
+#, kde-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will "
+"learn your vocabulary with the time."
+msgstr ""
+"Ако попуните ово, биће направљен празан речник без икаквих уноса. Пошто "
+"К‑уста аутоматски додаје новоукуцане речи у речник, временом ће научити и "
+"ваш."
+
+#: wordcompletion/dictionarycreationwizard.cpp:65
+#, kde-format
+msgid "Source of New Dictionary (1)"
+msgstr "Извор новог речника (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:71
+#: wordcompletion/dictionarycreationwizard.cpp:77
+#: wordcompletion/dictionarycreationwizard.cpp:87
+#: wordcompletion/dictionarycreationwizard.cpp:94
+#, kde-format
+msgid "Source of New Dictionary (2)"
+msgstr "Извор новог речника (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:80
+#, kde-format
+msgctxt "In which directory is the file located?"
+msgid "&Directory:"
+msgstr "&Фасцикла:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:83
+#, kde-format
+msgid ""
+"With this input field you specify which directory you want to load for "
+"creating the new dictionary."
+msgstr ""
+"У овом пољу задајете фасциклу коју желите да учитате за стварање новог "
+"речника."
+
+#: wordcompletion/dictionarycreationwizard.cpp:119
+#, kde-format
+msgctxt "Latin characterset"
+msgid "Latin1"
+msgstr "латиница‑1"
+
+# >> @title of a newly created dictionary
+#: wordcompletion/dictionarycreationwizard.cpp:204
+#, kde-format
+msgid "Merge result"
+msgstr "Резултат стапања"
+
+# >> @title of a newly created dictionary
+#: wordcompletion/dictionarycreationwizard.cpp:206
+#, kde-format
+msgctxt "In the sense of a blank word list"
+msgid "Empty list"
+msgstr "Празан списак"
+
+# >> @title of a newly created dictionary
+#: wordcompletion/dictionarycreationwizard.cpp:212
+#, kde-format
+msgid "KDE Documentation"
+msgstr "Документација КДЕ‑а"
+
+#: wordcompletion/dictionarycreationwizard.cpp:334
+#, kde-format
+msgctxt "Default dictionary"
+msgid "Default"
+msgstr "подразумевани"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
+#: wordcompletion/kdedocsourceui.ui:22
+#, kde-format
+msgid ""
+"If you select this check box the words from the KDE documentation are spell-"
+"checked before they are inserted into the new dictionary."
+msgstr ""
+"Ако попуните ову кућицу, биће проверен правопис речи из документације КДЕ‑а "
+"пре него што се унесу у нови речник."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/kdedocsourceui.ui:64
+#, kde-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of "
+"this language."
+msgstr ""
+"Овде бирате који од инсталираних језика ће се користити за прављење новог "
+"речника. К‑уста ће рашчланити само фајлове документације на том језику."
+
+#. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
+#: wordcompletion/wordcompletionui.ui:32
+#, kde-format
+msgid "&Selected Dictionary"
+msgstr "&Изабрани речник"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
+#: wordcompletion/wordcompletionui.ui:47
+#, kde-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr "У овом пољу бирате језик придружен изабраном речнику."
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
+#: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
+#, kde-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "Овде уносите име изабраног речника."
+
+#. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
+#: wordcompletion/wordcompletionui.ui:66
+#, kde-format
+msgid "&Name:"
+msgstr "&Име:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:100
+#, kde-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr "Овим дугметом можете додати речник на списак доступних речника."
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#: wordcompletion/wordcompletionui.ui:103
+#, kde-format
+msgid "Add D&ictionary..."
+msgstr "&Додај речник..."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:119
+#, kde-format
+msgid "With this button you delete the selected dictionary."
+msgstr "Овим дугметом можете обрисати изабрани речник."
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: wordcompletion/wordcompletionui.ui:122
+#, kde-format
+msgid "&Delete Dictionary"
+msgstr "&Обриши речник"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:138
+#, kde-format
+msgid "With this button you move the selected dictionary up."
+msgstr "Овим дугметом померате означени речник нагоре."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: wordcompletion/wordcompletionui.ui:141
+#, kde-format
+msgid "Move &Up"
+msgstr "Помери на&горе"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:157
+#, kde-format
+msgid "With this button you move the selected dictionary down."
+msgstr "Овим дугметом померате означени речник надоле."
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: wordcompletion/wordcompletionui.ui:160
+#, kde-format
+msgid "&Move Down"
+msgstr "Помери над&оле"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:176
+#, kde-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "Овим дугметом можете извести изабрани речник у фајл."
+
+#. i18n: ectx: property (text), widget (QPushButton, exportButton)
+#: wordcompletion/wordcompletionui.ui:179
+#, kde-format
+msgid "&Export Dictionary..."
+msgstr "&Извези речник..."
+
+#. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
+#: wordcompletion/wordcompletionui.ui:204
+#, kde-format
+msgid ""
+"This list contains all available dictionaries for the word completion. "
+"KMouth will display a combo box next to the edit field in the main window if "
+"this list contains more than one dictionary. You can use this combo box in "
+"order to select the dictionary that actually gets used for the word "
+"completion."
+msgstr ""
+"Списак свих доступних речника за допуну речи. Ако садржи више од једног "
+"речника, К‑уста ће приказати падајући списак поред поља за уређивање у "
+"главном прозору. Њиме можете изабрати речник који ће бити коришћен за допуну "
+"речи."
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Dictionary"
+msgstr "речник"
+
+#: wordcompletion/wordcompletionwidget.cpp:79
+#, kde-format
+msgid "Language"
+msgstr "језик"
+
+#: wordcompletion/wordcompletionwidget.cpp:97
+#: wordcompletion/wordcompletionwidget.cpp:156
+#, kde-format
+msgid "without name"
+msgstr "без имена"
+
+# >> @title:window
+#: wordcompletion/wordcompletionwidget.cpp:205
+#, kde-format
+msgid "Export Dictionary"
+msgstr "Извоз речника"
+
+# >> @title:window
+#: wordcompletion/wordlist.cpp:130
+#, kde-format
+msgid "Creating Word List"
+msgstr "Стварање списка речи"
+
+#: wordcompletion/wordlist.cpp:130 wordcompletion/wordlist.cpp:309
+#, kde-format
+msgid "Parsing the KDE documentation..."
+msgstr "Рашчлањујем документацију КДЕ‑а..."
+
+#: wordcompletion/wordlist.cpp:255
+#, kde-format
+msgid "Merging dictionaries..."
+msgstr "Стапам речнике..."
+
+#: wordcompletion/wordlist.cpp:324
+#, kde-format
+msgid "Parsing file..."
+msgstr "Рашчлањујем фајл..."
+
+#: wordcompletion/wordlist.cpp:336
+#, kde-format
+msgid "Parsing directory..."
+msgstr "Рашчлањујем из фасцикле..."
+
+#: wordcompletion/wordlist.cpp:527
+#, kde-format
+msgid "Performing spell check..."
+msgstr "Проверавам правопис..."
