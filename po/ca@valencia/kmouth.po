@@ -952,7 +952,7 @@ msgid ""
 "inserted into the new dictionary."
 msgstr ""
 "Si marqueu esta casella de selecció, es comprovarà l'ortografia abans que "
-"les paraules s'inserisquen al nou diccionari."
+"les paraules s'inserisquen al diccionari nou."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
@@ -1017,7 +1017,7 @@ msgid ""
 "new dictionary."
 msgstr ""
 "Amb este quadro combinat decidireu quin idioma s'hauria d'associar amb el "
-"nou diccionari."
+"diccionari nou."
 
 #. i18n: ectx: property (text), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:139
@@ -1055,7 +1055,7 @@ msgid ""
 "If you select this box a new dictionary is created by merging existing "
 "dictionaries."
 msgstr ""
-"Si seleccioneu esta casella, es crea un nou diccionari barrejant diccionaris "
+"Si seleccioneu esta casella, es crea un diccionari nou barrejant diccionaris "
 "existents."
 
 #. i18n: ectx: property (text), widget (QRadioButton, fileButton)
@@ -1094,7 +1094,7 @@ msgid ""
 "documentation. The frequentness of the individual words is detect by simply "
 "counting the occurrences of each word."
 msgstr ""
-"Si seleccioneu esta casella, es crea un nou diccionari analitzant la "
+"Si seleccioneu esta casella, es crea un diccionari nou analitzant la "
 "documentació KDE. La freqüència de les paraules individuals es detecta "
 "senzillament contant les ocurrències de cada paraula."
 
@@ -1247,7 +1247,7 @@ msgid ""
 "With this button you can add a new dictionary to the list of available "
 "dictionaries."
 msgstr ""
-"Amb este botó podeu afegir un nou diccionari a la llista de diccionaris "
+"Amb este botó podeu afegir un diccionari nou a la llista de diccionaris "
 "disponibles."
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
