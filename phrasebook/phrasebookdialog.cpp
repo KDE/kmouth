@@ -93,7 +93,7 @@ PhraseBookDialog::PhraseBookDialog()
     initGUI();
     initActions();
     initStandardPhraseBooks();
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::ReadOnly);
@@ -616,7 +616,7 @@ void PhraseBookDialog::slotAddPhrase()
 
 void PhraseBookDialog::slotSave()
 {
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("standard.phrasebook"));
     if (!standardBook.isNull() && !standardBook.isEmpty()) {
         QFile file(standardBook);
         file.open(QIODevice::WriteOnly);

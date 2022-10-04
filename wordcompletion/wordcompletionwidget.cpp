@@ -99,7 +99,7 @@ void WordCompletionWidget::load()
 
     // Clean up disc space
     for (QStringList::const_iterator it = newDictionaryFiles.constBegin(); it != newDictionaryFiles.constEnd(); ++it) {
-        QString filename = QStandardPaths::locate(QStandardPaths::DataLocation, *it);
+        QString filename = QStandardPaths::locate(QStandardPaths::AppDataLocation, *it);
         if (!filename.isEmpty() && !filename.isNull())
             QFile::remove(filename);
     }
@@ -125,7 +125,7 @@ void WordCompletionWidget::save()
 
     // Clean up disc space
     for (QStringList::const_iterator it = removedDictionaryFiles.constBegin(); it != removedDictionaryFiles.constEnd(); ++it) {
-        QString filename = QStandardPaths::locate(QStandardPaths::DataLocation, *it);
+        QString filename = QStandardPaths::locate(QStandardPaths::AppDataLocation, *it);
         if (!filename.isEmpty() && !filename.isNull())
             QFile::remove(filename);
     }
@@ -212,7 +212,7 @@ void WordCompletionWidget::exportDictionary()
             }
         }
         QUrl src;
-        src.setPath(QStandardPaths::locate(QStandardPaths::DataLocation, nameItem->data().toString()));
+        src.setPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, nameItem->data().toString()));
         KIO::FileCopyJob *job = KIO::file_copy(src, url);
         job->exec();
     }

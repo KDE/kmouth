@@ -490,7 +490,7 @@ void KMouthApp::slotStatusMsg(const QString &text)
 
 void KMouthApp::slotPhrasebookConfirmed()
 {
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("standard.phrasebook"));
     if (!standardBook.isEmpty()) {
         PhraseBook book;
         book.open(QUrl::fromLocalFile(standardBook));

@@ -188,10 +188,10 @@ QString DictionaryCreationWizard::createDictionary()
     do {
         dictnumber++;
         filename = QStringLiteral("wordcompletion%1.dict").arg(dictnumber);
-        dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
+        dictionaryFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, filename);
     } while (QFile::exists(dictionaryFile));
 
-    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QStringLiteral("/") + filename;
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + QStringLiteral("/") + filename;
     if (WordList::saveWordList(map, dictionaryFile))
         return filename;
     else
@@ -276,7 +276,7 @@ QMap <QString, int> MergeWidget::mergeParameters()
         it.next();
         if (it.value()->isChecked()) {
             QString name = it.key();
-            QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, name);
+            QString dictionaryFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, name);
             files[dictionaryFile] = weights.value(name)->value();
         }
     }
@@ -328,7 +328,7 @@ void CompletionWizardWidget::ok()
 
     QString dictionaryFile;
 
-    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QStringLiteral("/");
+    dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + QStringLiteral("/");
     qDebug() << "dictionaryFile is " << dictionaryFile;
     if (WordList::saveWordList(map, dictionaryFile)) {
         KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");

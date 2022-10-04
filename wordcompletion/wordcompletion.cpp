@@ -179,11 +179,13 @@ bool WordCompletion::setWordList(const QString &wordlist)
     }
 
     QString filename = d->dictDetails[d->current].filename;
-    QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
+    QString dictionaryFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, filename);
     QFile file(dictionaryFile);
     if (file.exists() && file.open(QIODevice::ReadOnly)) {
         QTextStream stream(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         stream.setCodec("UTF-8");
+#endif
         if (!stream.atEnd()) {
             if (stream.readLine() == QLatin1String("WPDictFile")) {
                 while (!stream.atEnd()) {
@@ -232,7 +234,7 @@ void WordCompletion::save()
 {
     if (d->wordsToSave) {
         QString filename = d->dictDetails[d->current].filename;
-        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, filename);
+        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, filename);
         QFile file(dictionaryFile);
         if (!file.exists())
             return;
@@ -240,8 +242,9 @@ void WordCompletion::save()
             return;
 
         QTextStream stream(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         stream.setCodec("UTF-8");
-
+#endif
         stream << "WPDictFile\n";
         QMap<QString, int>::ConstIterator it;
         for (it = d->map.constBegin(); it != d->map.constEnd(); ++it) {

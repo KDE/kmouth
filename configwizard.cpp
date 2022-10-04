@@ -65,7 +65,7 @@ void ConfigWizard::initCommandPage()
 
 void ConfigWizard::initBookPage()
 {
-    QString standardBook = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("standard.phrasebook"));
+    QString standardBook = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("standard.phrasebook"));
     bool displayBook = (standardBook.isNull() || standardBook.isEmpty());
 
     if (displayBook) {
@@ -82,7 +82,7 @@ void ConfigWizard::initBookPage()
 void ConfigWizard::initCompletion()
 {
     if (!WordCompletion::isConfigured()) {
-        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("dictionary.txt"));
+        QString dictionaryFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("dictionary.txt"));
         QFile file(dictionaryFile);
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
