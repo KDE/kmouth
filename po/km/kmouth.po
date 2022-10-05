@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2009-06-03 15:22+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -434,7 +434,7 @@ msgstr "មាន​ឯកសារ"
 msgid "&Overwrite"
 msgstr "សរសេរ​ជាន់លើ"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -443,22 +443,22 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "ផ្នែក​បន្ថែម​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "បន្ថែម"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "កុំបន្ថែម"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -467,12 +467,12 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "ជា​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "ជាអត្ថបទ​ធម្មតា"
@@ -1322,27 +1322,27 @@ msgstr "នាំចេញ​ថត​"
 msgid "Creating Word List"
 msgstr "បង្កើត​បញ្ជី​ពាក្យ"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "កំពុង​ញែក​ឯកសារ​របស់ KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "កំពុង​បញ្ចូល​វចនានុក្រម​ចូល​គ្នា..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "កំពុង​ញែក​ឯកសារ..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "កំពុង​ញែក​ថត​..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "កំពុង​អនុវត្ត​ការ​ពិនិត្យ​អក្ខរាវិរុទ្ធ..."

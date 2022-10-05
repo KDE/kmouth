@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2011-07-24 13:06+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -412,41 +412,41 @@ msgstr "Datoteka postoji"
 msgid "&Overwrite"
 msgstr "Pr&epiši"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "Nastavak datoteke"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nemoj dodati"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Kao knjiga izraza"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "Kao čisti tekst"
@@ -1236,27 +1236,27 @@ msgstr "Izvezi rječnik"
 msgid "Creating Word List"
 msgstr "Stvaram listu riječi"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Obrađujem dokumentaciju KDE-a…"
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Spajam rječnike…"
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "Obrađujem datoteku…"
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Obrađujem direktorij…"
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Vršim provjeru pravopisa…"

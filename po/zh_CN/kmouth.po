@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -414,7 +414,7 @@ msgstr "文件存在"
 msgid "&Overwrite"
 msgstr "覆盖(&O)"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -423,22 +423,22 @@ msgstr ""
 "您所选的文件 <i>%1</i> 的扩展名不是 <i>phrasebook</i>。您想要给此文件添加 "
 "<i>.phrasebook</i> 扩展名吗？"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "文件扩展名"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "添加"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "不添加"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -447,12 +447,12 @@ msgstr ""
 "您所选的文件 <i>%1</i> 的扩展名是 <i>phrasebook</i>。您想要以词组本格式保存它"
 "吗？"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "作为词组本"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "作为纯文本"
@@ -1270,27 +1270,27 @@ msgstr "导出字典"
 msgid "Creating Word List"
 msgstr "正在创建单词列表"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "正在解析 KDE 文档..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "正在合并字典..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "正在解析文件..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "正在解析目录..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "正在执行拼写检查..."

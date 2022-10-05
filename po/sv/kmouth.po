@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2022-03-17 17:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -424,7 +424,7 @@ msgstr "Filen finns"
 msgid "&Overwrite"
 msgstr "Skriv &över"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -433,22 +433,22 @@ msgstr ""
 "Det valda filnamnet <i>%1</i> har en annan filändelse än <i>.phrasebook</i>. "
 "Vill du lägga till <i>.phrasebook</i> i slutet på filnamnet?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "Filändelse"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "Lägg till"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "Lägg inte till"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -457,12 +457,12 @@ msgstr ""
 "Det valda filnamnet <i>%1</i> har filändelsen <i>.phrasebook</i>. Vill du "
 "spara med parlörformat?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Som parlör"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "Som vanlig text"
@@ -1328,27 +1328,27 @@ msgstr "Exportera ordlista"
 msgid "Creating Word List"
 msgstr "Skapar ordlista"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Tolkar KDE:s dokumentation..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Slår ihop ordlistor..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "Tolkar fil..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Tolkar katalog..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Utför stavningskontroll..."

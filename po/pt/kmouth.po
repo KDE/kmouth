@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2022-03-28 02:06+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -427,7 +427,7 @@ msgstr "O Ficheiro Existe"
 msgid "&Overwrite"
 msgstr "S&obrepor"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -436,22 +436,22 @@ msgstr ""
 "O nome de ficheiro escolhido <i>%1</i> tem uma extensão diferente de <i>."
 "phrasebook</i>. Deseja adicionar <i>.phrasebook</i> ao nome do ficheiro?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "Extensão do Ficheiro"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "Não Adicionar"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -460,12 +460,12 @@ msgstr ""
 "O nome de ficheiro escolhido <i>%1</i> tem a extensão <i>.phrasebook</i>. "
 "Deseja gravar no formato de livro de frases?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Como Livro de Frases"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "Como Texto Normal"
@@ -1340,27 +1340,27 @@ msgstr "Exportar o Dicionário"
 msgid "Creating Word List"
 msgstr "A Criar a Lista de Palavras"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "A processar a documentação do KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "A juntar os dicionários..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "A analisar o ficheiro..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "A analisar a pasta..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "A efectuar a verificação ortográfica..."

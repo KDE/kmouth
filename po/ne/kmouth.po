@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2007-08-19 15:01+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -434,7 +434,7 @@ msgstr "फाइल अवस्थित छ"
 msgid "&Overwrite"
 msgstr "अधिलेखन गर्नुहोस्"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -443,22 +443,22 @@ msgstr ""
 "तपाईँले रोजेको फाइलनाम <i>%1</i> मा <i>.phrasebook</i> मा भन्दा फरक विस्तार छन् । "
 "तपाईँ फाइलनाममा <i>.phrasebook</i> थाप्न चाहनुहुन्छ?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "फाइल विस्तार"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "नथप्नुहोस्"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -467,12 +467,12 @@ msgstr ""
 "तपाईँले रोजेको <i>%1</i> फाइलनाममा <i>.phrasebook</i> छन् । तपाईँ वाक्यांश पुस्तक "
 "ढाँचामा बचत गर्न चाहनुहुन्छ?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "वाक्यांश पुस्तक जस्तै"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "सादा पाठ जस्तै"
@@ -1341,27 +1341,27 @@ msgstr "शब्दकोश निर्यात गर्नुहोस्"
 msgid "Creating Word List"
 msgstr "शब्द सूची सिर्जना गर्दैछ"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "केडीई मिसिलीकरण पद वर्णन गर्दैछ..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "शब्दकोश गाभ्दैछ..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "फाइल पद वर्णन गर्दैछ..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "शब्दकोश पद वर्णन गर्दैछ..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "हिज्जे परीक्षण सम्पादन गर्दैछ..."

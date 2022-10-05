@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop-kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2009-02-07 16:42-0800\n"
 "Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -434,7 +434,7 @@ msgstr "ഫയല്‍ നിലവിലുണ്ട്"
 msgid "&Overwrite"
 msgstr "&മാച്ചെഴുത്ത്"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -443,22 +443,22 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയലായ <i>%1</i>ന് <i>phrasebook</i>നെ അപേക്ഷിച്ച് വ്യ‌ത്യ‌സ്തമായ "
 "അനുബന്ധമാണുള്ളത്. ഫയല്‍ നാമത്തോടൊപ്പം <i>.phrasebook</i> ചേര്‍ക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "ഫയല്‍ അനുബന്ധം"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "ചേര്‍ക്കുക"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "ചേര്‍ക്കണ്ട"
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -467,12 +467,12 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയല്‍ നാമം <i>%1</i>ന് <i>.phrasebook</i> അനുബന്ധമുണ്ട്. phrasebook "
 "ഘടനയില്‍ സൂക്ഷിക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Phrasebook ആയി"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "സാധാരണ പദാവലി ഫയലായി"
@@ -1346,27 +1346,27 @@ msgstr "നിഘണ്ടു പുറത്തുവയ്ക്കുക"
 msgid "Creating Word List"
 msgstr "വാക്കുകളുടെ പട്ടിക ഉണ്ടാക്കുന്നു"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "കെഡിഇ സഹായക്കുറിപ്പുകള്‍ മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "നിഘണ്ടുക്കള്‍ തുന്നിച്ചേര്‍ത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr " ഫയല്‍ മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "തട്ടു് മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "അക്ഷരപിശക് പരിശോധന നടത്തുന്നു...."

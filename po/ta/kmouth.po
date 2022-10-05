@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:38+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2005-03-09 20:55-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -448,7 +448,7 @@ msgstr "கோப்பு ஏற்கனவே உள்ளது"
 msgid "&Overwrite"
 msgstr "&மேல் எழுது"
 
-#: phrasebook/phrasebook.cpp:299
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -457,22 +457,22 @@ msgstr ""
 "நீங்கள் தேர்ந்தெடுத்த கோப்பு பெயர் %1 சொற்றொடர் .phrasebook வேறு விரிவாக்கம் கொண்டுள்ளது. ."
 "phrasebook ஐ கோப்பில் சேர்க்க நீங்கள் விரும்புகிறீர்களா?"
 
-#: phrasebook/phrasebook.cpp:300 phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "கோப்பு விரிவுகள்"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:314
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -481,12 +481,12 @@ msgstr ""
 "நீங்கள் தேர்ந்தெடுத்த கோப்பு பெயர் <i>%1</i> சொற்றொடர்<i>.phrasebook</i>  என விரிவாக்கம் "
 "கொண்டுள்ளது. .phrasebook  வடிவத்தை சேமிக்க நீங்கள் விரும்புகிறீர்களா?"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "சொற்றொடர் கையேடாக"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "சாதா உரை "
@@ -1380,27 +1380,27 @@ msgstr "அகராதியை ஏற்றுமதி "
 msgid "Creating Word List"
 msgstr "வார்தை பட்டியலை உறுவாக்கு "
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "KDE ஆவணத்தை பாகுபடுத்தவும்..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "ஒன்றிணை..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "பாகுபடுத்தல் கோபு..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "பாகுபடுத்தல் அகராதி..."
 
-#: wordcompletion/wordlist.cpp:469
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "சொல் திருத்தி ஆற்று..."
