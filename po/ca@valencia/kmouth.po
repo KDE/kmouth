@@ -55,7 +55,7 @@ msgstr "Compleció de paraules"
 #: kmouth.cpp:107
 #, kde-format
 msgid "&Open as History..."
-msgstr "&Obri com a historial..."
+msgstr "O&bri com a historial..."
 
 #: kmouth.cpp:110 kmouth.cpp:111
 #, kde-format
@@ -75,7 +75,7 @@ msgstr "Guarda l'historial real com a..."
 #: kmouth.cpp:123
 #, kde-format
 msgid "&Print History..."
-msgstr "&Imprimix l'historial..."
+msgstr "Im&primix l'historial..."
 
 #: kmouth.cpp:126 kmouth.cpp:127
 #, kde-format
@@ -302,7 +302,7 @@ msgstr "S'està canviant la barra d'estat..."
 #: kmouthui.rc:5 phrasebookdialogui.rc:6
 #, kde-format
 msgid "&File"
-msgstr "&Fitxer"
+msgstr "Fi&txer"
 
 #. i18n: ectx: Menu (edit)
 #: kmouthui.rc:12 phrasebookdialogui.rc:20
@@ -847,7 +847,7 @@ msgstr "Síntesi"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr "&Utilitza el sistema de veu predeterminat"
+msgstr "Utilit&za el sistema de veu predeterminat"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
@@ -996,7 +996,7 @@ msgstr ""
 #: wordcompletion/creationsourcedetailsui.ui:67
 #, kde-format
 msgid "&Filename:"
-msgstr "Nom de &fitxer:"
+msgstr "Nom de fi&txer:"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
 #: wordcompletion/creationsourcedetailsui.ui:118
@@ -1062,7 +1062,7 @@ msgstr ""
 #: wordcompletion/creationsourceui.ui:50
 #, kde-format
 msgid "From &file"
-msgstr "Des del &fitxer"
+msgstr "Des del fi&txer"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
 #: wordcompletion/creationsourceui.ui:53
