@@ -22,6 +22,7 @@
   <name xml:lang="ia">KMouth</name>
   <name xml:lang="id">KMouth</name>
   <name xml:lang="it">KMouth</name>
+  <name xml:lang="ka">KMouth</name>
   <name xml:lang="ko">KMouth</name>
   <name xml:lang="nl">KMouth</name>
   <name xml:lang="nn">KMouth</name>
@@ -56,6 +57,7 @@
   <summary xml:lang="ia">Fronte anterior de synthetisator de parola</summary>
   <summary xml:lang="id">Frontend Synthesizer Lisan</summary>
   <summary xml:lang="it">Interfaccia al sintetizzatore vocale</summary>
+  <summary xml:lang="ka">საუბრის სინთეზატორის წინაბოლო</summary>
   <summary xml:lang="ko">음성 합성 프론트엔드</summary>
   <summary xml:lang="nl">Spraaksynthesizerfrontend</summary>
   <summary xml:lang="nn">Grensesnitt for talesyntese</summary>
