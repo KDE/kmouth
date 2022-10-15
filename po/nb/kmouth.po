@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:39+0000\n"
+"POT-Creation-Date: 2022-10-05 00:40+0000\n"
 "PO-Revision-Date: 2010-12-24 08:26+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -48,7 +48,7 @@ msgstr "Innstillinger for tekst til tale"
 msgid "Initial Phrase Book"
 msgstr "Første parlør"
 
-#: configwizard.cpp:105 optionsdialog.cpp:145 optionsdialog.cpp:146
+#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
 msgstr "Fullføring av ord"
@@ -369,22 +369,22 @@ msgstr "Tips, utvidede parlører"
 msgid "History file to open"
 msgstr "Historiefil som skal åpnes"
 
-#: optionsdialog.cpp:123
+#: optionsdialog.cpp:122
 #, kde-format
 msgid "Configuration"
 msgstr "Oppsett"
 
-#: optionsdialog.cpp:134
+#: optionsdialog.cpp:133
 #, kde-format
 msgid "&Preferences"
 msgstr "&Innstillinger"
 
-#: optionsdialog.cpp:137
+#: optionsdialog.cpp:136
 #, kde-format
 msgid "&Text-to-Speech"
 msgstr "&Tekst-til-tale"
 
-#: optionsdialog.cpp:139 optionsdialog.cpp:140
+#: optionsdialog.cpp:138 optionsdialog.cpp:139
 #, kde-format
 msgid "General Options"
 msgstr "Generelle valg"
@@ -399,32 +399,32 @@ msgstr "Bestem deg for hvilke parlører du trenger:"
 msgid "Book"
 msgstr "Bok"
 
-#: phrasebook/phrasebook.cpp:270
+#: phrasebook/phrasebook.cpp:269
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:272
+#: phrasebook/phrasebook.cpp:271
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Fila %1 finnes fra før. Vil du skrive over den?"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "File Exists"
 msgstr "Fila finnes"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Skriv over"
 
-#: phrasebook/phrasebook.cpp:300
+#: phrasebook/phrasebook.cpp:303
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -433,22 +433,22 @@ msgstr ""
 "Filnavnet du valgte <i>%1</i> har et etternavn som skiller seg fra <i>."
 "phrasebook</i>. Vil du legge til <i>.phrasebook</i> i navnet?"
 
-#: phrasebook/phrasebook.cpp:301 phrasebook/phrasebook.cpp:316
+#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "File Extension"
 msgstr "Fil-etternavn"
 
-#: phrasebook/phrasebook.cpp:301
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Add"
 msgstr "Legg til"
 
-#: phrasebook/phrasebook.cpp:301
+#: phrasebook/phrasebook.cpp:304
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ikke legg til"
 
-#: phrasebook/phrasebook.cpp:315
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -457,12 +457,12 @@ msgstr ""
 "Filnavnet du valgte <i>%1</i> har <i>.phrasebook</i> som etternavn. Vil du "
 "lagre fila i phrasebook-format?"
 
-#: phrasebook/phrasebook.cpp:316
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Som parlør"
 
-#: phrasebook/phrasebook.cpp:316
+#: phrasebook/phrasebook.cpp:319
 #, kde-format
 msgid "As Plain Text"
 msgstr "Som ren tekst"
@@ -1325,32 +1325,32 @@ msgstr "uten navn"
 msgid "Export Dictionary"
 msgstr "Eksporter ordbok"
 
-#: wordcompletion/wordlist.cpp:79
+#: wordcompletion/wordlist.cpp:77
 #, kde-format
 msgid "Creating Word List"
 msgstr "Oppretter en ordliste"
 
-#: wordcompletion/wordlist.cpp:79 wordcompletion/wordlist.cpp:253
+#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Tolker KDE-dokumentasjon …"
 
-#: wordcompletion/wordlist.cpp:199
+#: wordcompletion/wordlist.cpp:200
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Fletter ordbøker …"
 
-#: wordcompletion/wordlist.cpp:268
+#: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
 msgstr "Tolker fil …"
 
-#: wordcompletion/wordlist.cpp:280
+#: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Tolker mappe …"
 
-#: wordcompletion/wordlist.cpp:471
+#: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Kontrollerer rettskrivning …"
