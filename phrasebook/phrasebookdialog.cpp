@@ -36,6 +36,7 @@
 #include "phrasebook.h"
 
 #include <QDebug>
+#include <kwidgetsaddons_version.h>
 
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;
@@ -421,16 +422,28 @@ void PhraseBookDialog::selectionChanged()
 bool PhraseBookDialog::queryClose()
 {
     if (phrasebookChanged) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        int answer = KMessageBox::questionTwoActionsCancel(this,
+#else
         int answer = KMessageBox::questionYesNoCancel(this,
+#endif
                      i18n("<qt>There are unsaved changes.<br />Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
                      i18n("Closing \"Phrase Book\" Window"),
                      KStandardGuiItem::apply(), KStandardGuiItem::discard(),
                      KStandardGuiItem::cancel(), QStringLiteral("AutomaticSave"));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
         if (answer == KMessageBox::Yes) {
+#endif
             slotSave();
             return true;
         }
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        return (answer == KMessageBox::ButtonCode::SecondaryAction);
+#else
         return (answer == KMessageBox::No);
+#endif
     }
     return true;
 }
