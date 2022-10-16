@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeaccessibility/kmouth.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:40+0000\n"
+"POT-Creation-Date: 2022-10-16 00:39+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -115,12 +115,12 @@ msgstr ""
 "nó cuirfear na habairtí roghnaithe as an stair (más ann) sa ghearrthaisce."
 
 # tooltip text (next) is clearer
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "Greamaigh inneachar na gearrthaisce ag an ionad reatha"
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -191,7 +191,7 @@ msgstr "&Léigh"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Léigh na frásaí atá roghnaithe sa stair faoi láthair"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "&Delete"
 msgstr "&Scrios"
@@ -399,7 +399,7 @@ msgstr "Roghnaigh na frásleabhair atá de dhíth ort:"
 msgid "Book"
 msgstr "Leabhar"
 
-#: phrasebook/phrasebook.cpp:269
+#: phrasebook/phrasebook.cpp:270
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -411,7 +411,7 @@ msgstr ""
 "*.txt|Comhaid Ghnáth-théacs (*.txt)\n"
 "*|Gach Comhad"
 
-#: phrasebook/phrasebook.cpp:271
+#: phrasebook/phrasebook.cpp:272
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -423,23 +423,35 @@ msgstr ""
 "*.phrasebook|Frásleabhair (*.phrasebook)\n"
 "*|Gach Comhad"
 
-#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr ""
 "Tá comhad %1 ann cheana. An bhfuil tú cinnte gur mian leat scríobh air?"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "File Exists"
 msgstr "Tá an comhad ann"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "&Overwrite"
 msgstr "F&orscríobh"
 
-#: phrasebook/phrasebook.cpp:303
+#: phrasebook/phrasebook.cpp:305
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. "
+msgstr ""
+"Níl an iarmhír <i>.phrasebook</i> ar an ainm <i>%1</i> a roghnaigh tú. An "
+"bhfuil fonn ort <i>.phrasebook</i> a chur le hainm an chomhaid?"
+
+#: phrasebook/phrasebook.cpp:307
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -448,22 +460,32 @@ msgstr ""
 "Níl an iarmhír <i>.phrasebook</i> ar an ainm <i>%1</i> a roghnaigh tú. An "
 "bhfuil fonn ort <i>.phrasebook</i> a chur le hainm an chomhaid?"
 
-#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "File Extension"
 msgstr "Iarmhír"
 
-#: phrasebook/phrasebook.cpp:304
+#: phrasebook/phrasebook.cpp:309
 #, kde-format
 msgid "Add"
 msgstr "Cuir Leis"
 
-#: phrasebook/phrasebook.cpp:304
+#: phrasebook/phrasebook.cpp:309
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ná Cuir Leis"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:328
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#| "you wish to save in phrasebook format?"
+msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+msgstr ""
+"Roghnaigh tú ainm <i>%1</i> leis an iarmhír <i>.phrasebook</i> air.  An "
+"bhfuil fonn ort é a shábháil i bhformáid fhrásleabhair?"
+
+#: phrasebook/phrasebook.cpp:330
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -472,98 +494,98 @@ msgstr ""
 "Roghnaigh tú ainm <i>%1</i> leis an iarmhír <i>.phrasebook</i> air.  An "
 "bhfuil fonn ort é a shábháil i bhformáid fhrásleabhair?"
 
-#: phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Mar Fhrásleabhar"
 
-#: phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Plain Text"
 msgstr "Mar Ghnáth-Théacs"
 
-#: phrasebook/phrasebookdialog.cpp:88
+#: phrasebook/phrasebookdialog.cpp:89
 #, kde-format
 msgid "Phrase"
 msgstr "Frása"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:90
 #, kde-format
 msgid "Shortcut"
 msgstr "Aicearra"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Frásleabhar"
 
-#: phrasebook/phrasebookdialog.cpp:228
+#: phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "&New Phrase"
 msgstr "Frása &Nua"
 
-#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Cuir frása nua leis"
 
-#: phrasebook/phrasebookdialog.cpp:235
+#: phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Fráslea&bhar Nua"
 
-#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Úsáid é seo chun frásleabhar nua a chur leis, ar féidir leat leabhair agus "
 "frásaí eile a chur ann"
 
-#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Sábháil an frásleabhar ar an diosca crua"
 
-#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
 #, kde-format
 msgid "&Import..."
 msgstr "&Iompórtáil..."
 
-#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
-#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Iompórtáil comhad agus cuir a inneachar leis an bhfrásleabhar"
 
-#: phrasebook/phrasebookdialog.cpp:259
+#: phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "Io&mpórtáil Frásleabhar Caighdeánach"
 
-#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "Iompórtáil frásleabhar caighdeánach agus cuir a inneachar leis an "
 "bhfrásleabhar"
 
-#: phrasebook/phrasebookdialog.cpp:265
+#: phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "&Export..."
 msgstr "&Easpórtáil..."
 
-#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Easpórtáil na frásaí nó frásleabhair roghnaithe go comhad"
 
-#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
 #, kde-format
 msgid "Closes the window"
 msgstr "Dún an fhuinneog"
 
-#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -572,7 +594,7 @@ msgstr ""
 "Gearr na hiontrálacha roghnaithe as an bhfrásleabhar agus greamaigh iad sa "
 "ghearrthaisce"
 
-#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
@@ -580,24 +602,24 @@ msgstr ""
 "Cóipeáil an iontráil roghnaithe as an bhfrásleabhar agus greamaigh í sa "
 "ghearrthaisce"
 
-#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Scrios na hiontrálacha roghnaithe ón fhrásleabhar"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Téacs an &fhrása:"
 
-#: phrasebook/phrasebookdialog.cpp:404
+#: phrasebook/phrasebookdialog.cpp:405
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "Ainm an &fhrásleabhair:"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:430
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -607,27 +629,27 @@ msgstr ""
 "bhfeidhm sula ndúnfaidh tú an fhuinneog \"fhrásleabhair\", nó na hathruithe "
 "a chaitheamh i gcártaí?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:426
+#: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Fuinneog \"Frásleabhar\" á Dúnadh"
 
-#: phrasebook/phrasebookdialog.cpp:586
+#: phrasebook/phrasebookdialog.cpp:599
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Frásleabhar Nua)"
 
-#: phrasebook/phrasebookdialog.cpp:602
+#: phrasebook/phrasebookdialog.cpp:615
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Frása Nua)"
 
-#: phrasebook/phrasebookdialog.cpp:633
+#: phrasebook/phrasebookdialog.cpp:646
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Iompórtáil Frásleabhar"
 
-#: phrasebook/phrasebookdialog.cpp:634
+#: phrasebook/phrasebookdialog.cpp:647
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -639,7 +661,7 @@ msgstr ""
 "*.txt|Comhaid Ghnáth-théacs (*.txt)\n"
 "*|Gach Comhad"
 
-#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -648,18 +670,18 @@ msgstr ""
 "Tharla earráid agus an comhad á luchtú\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:676
+#: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Easpórtáil Frásleabhar"
 
-#: phrasebook/phrasebookdialog.cpp:676
+#: phrasebook/phrasebookdialog.cpp:689
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&Frásleabhair"
 
-#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
 #, kde-format
 msgid ""
 "There was an error saving file\n"

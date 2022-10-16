@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:40+0000\n"
+"POT-Creation-Date: 2022-10-16 00:39+0000\n"
 "PO-Revision-Date: 2010-11-07 22:37-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -120,13 +120,13 @@ msgstr ""
 "トが選択されている場合は、それをクリップボードにコピーします。そうでなけれ"
 "ば、履歴で選択されている文を (もしあれば) クリップボードにコピーします。"
 
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "クリップボードの内容を現在の位置に貼り付け"
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -196,7 +196,7 @@ msgstr "話す(&S)"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "履歴で現在選択されているフレーズを話す"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:293
+#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "&Delete"
 msgstr "削除(&D)"
@@ -400,7 +400,7 @@ msgstr "必要なフレーズブックを決めてください:"
 msgid "Book"
 msgstr "ブック"
 
-#: phrasebook/phrasebook.cpp:269
+#: phrasebook/phrasebook.cpp:270
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -412,7 +412,7 @@ msgstr ""
 "*.txt|プレーンテキストファイル (*.txt)\n"
 "*|すべてのファイル"
 
-#: phrasebook/phrasebook.cpp:271
+#: phrasebook/phrasebook.cpp:272
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -424,22 +424,34 @@ msgstr ""
 "*.phrasebook|フレーズブック (*.phrasebook)\n"
 "*|すべてのファイル"
 
-#: phrasebook/phrasebook.cpp:287 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "ファイル %1 は既に存在します。上書きしますか？"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "File Exists"
 msgstr "ファイルは存在します"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "&Overwrite"
 msgstr "上書き(&O)"
 
-#: phrasebook/phrasebook.cpp:303
+#: phrasebook/phrasebook.cpp:305
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>."
+"phrasebook</i>. "
+msgstr ""
+"選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ ではありません。‘."
+"phrasebook’ をファイル名に追加しますか？"
+
+#: phrasebook/phrasebook.cpp:307
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -448,22 +460,32 @@ msgstr ""
 "選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ ではありません。‘."
 "phrasebook’ をファイル名に追加しますか？"
 
-#: phrasebook/phrasebook.cpp:304 phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "File Extension"
 msgstr "ファイル拡張子"
 
-#: phrasebook/phrasebook.cpp:304
+#: phrasebook/phrasebook.cpp:309
 #, kde-format
 msgid "Add"
 msgstr "追加"
 
-#: phrasebook/phrasebook.cpp:304
+#: phrasebook/phrasebook.cpp:309
 #, kde-format
 msgid "Do Not Add"
 msgstr "追加しない"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:328
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#| "you wish to save in phrasebook format?"
+msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+msgstr ""
+"選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ です。フレーズブック形式で"
+"保存しますか？"
+
+#: phrasebook/phrasebook.cpp:330
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -472,94 +494,94 @@ msgstr ""
 "選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ です。フレーズブック形式で"
 "保存しますか？"
 
-#: phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Phrasebook"
 msgstr "フレーズブック"
 
-#: phrasebook/phrasebook.cpp:319
+#: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Plain Text"
 msgstr "プレーンテキスト"
 
-#: phrasebook/phrasebookdialog.cpp:88
+#: phrasebook/phrasebookdialog.cpp:89
 #, kde-format
 msgid "Phrase"
 msgstr "フレーズ"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:90
 #, kde-format
 msgid "Shortcut"
 msgstr "ショートカット"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:92 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "フレーズブック"
 
-#: phrasebook/phrasebookdialog.cpp:228
+#: phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "&New Phrase"
 msgstr "新しいフレーズ(&N)"
 
-#: phrasebook/phrasebookdialog.cpp:230 phrasebook/phrasebookdialog.cpp:231
+#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "新しいフレーズを追加"
 
-#: phrasebook/phrasebookdialog.cpp:235
+#: phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "新しいフレーズブック(&B)"
 
-#: phrasebook/phrasebookdialog.cpp:237 phrasebook/phrasebookdialog.cpp:238
+#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "他のブックやフレーズを入れるための新しいフレーズブックを追加"
 
-#: phrasebook/phrasebookdialog.cpp:241 phrasebook/phrasebookdialog.cpp:242
+#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "フレーズブックをハードディスクに保存"
 
-#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:251
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
 #, kde-format
 msgid "&Import..."
 msgstr "インポート(&I)..."
 
-#: phrasebook/phrasebookdialog.cpp:248 phrasebook/phrasebookdialog.cpp:249
-#: phrasebook/phrasebookdialog.cpp:254 phrasebook/phrasebookdialog.cpp:255
+#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "ファイルをインポートしてその内容をフレーズブックに追加"
 
-#: phrasebook/phrasebookdialog.cpp:259
+#: phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "標準フレーズブックをインポート(&M)"
 
-#: phrasebook/phrasebookdialog.cpp:260 phrasebook/phrasebookdialog.cpp:261
+#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "標準フレーズブックをインポートしてその内容をフレーズブックに追加"
 
-#: phrasebook/phrasebookdialog.cpp:265
+#: phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "&Export..."
 msgstr "エクスポート(&E)..."
 
-#: phrasebook/phrasebookdialog.cpp:267 phrasebook/phrasebookdialog.cpp:268
+#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "現在選択されているフレーズまたはフレーズブックをファイルにエクスポート"
 
-#: phrasebook/phrasebookdialog.cpp:275 phrasebook/phrasebookdialog.cpp:276
+#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
 #, kde-format
 msgid "Closes the window"
 msgstr "ウィンドウを閉じる"
 
-#: phrasebook/phrasebookdialog.cpp:280 phrasebook/phrasebookdialog.cpp:281
+#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -567,30 +589,30 @@ msgid ""
 msgstr ""
 "フレーズブックから現在選択されているエントリを切り取ってクリップボードに格納"
 
-#: phrasebook/phrasebookdialog.cpp:284 phrasebook/phrasebookdialog.cpp:285
+#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "フレーズブックから現在選択されているエントリをクリップボードにコピー"
 
-#: phrasebook/phrasebookdialog.cpp:295 phrasebook/phrasebookdialog.cpp:296
+#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "フレーズブックから選択されているエントリを削除"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:372 phrasebook/phrasebookdialog.cpp:386
+#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "フレーズのテキスト(&P):"
 
-#: phrasebook/phrasebookdialog.cpp:404
+#: phrasebook/phrasebookdialog.cpp:405
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "フレーズブックの名前(&P):"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:430
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -599,27 +621,27 @@ msgstr ""
 "<qt>未保存の変更があります。<br/>フレーズブックウィンドウを閉じる前に変更を適"
 "用しますか？それとも変更を破棄しますか？</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:426
+#: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "フレーズブックウィンドウを閉じています"
 
-#: phrasebook/phrasebookdialog.cpp:586
+#: phrasebook/phrasebookdialog.cpp:599
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(新しいフレーズブック)"
 
-#: phrasebook/phrasebookdialog.cpp:602
+#: phrasebook/phrasebookdialog.cpp:615
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(新しいフレーズ)"
 
-#: phrasebook/phrasebookdialog.cpp:633
+#: phrasebook/phrasebookdialog.cpp:646
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "フレーズブックをインポート"
 
-#: phrasebook/phrasebookdialog.cpp:634
+#: phrasebook/phrasebookdialog.cpp:647
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -631,7 +653,7 @@ msgstr ""
 "*.txt|プレーンテキストファイル (*.txt)\n"
 "*|すべてのファイル"
 
-#: phrasebook/phrasebookdialog.cpp:665 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -640,18 +662,18 @@ msgstr ""
 "ファイル読み込み中にエラー\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:676
+#: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "フレーズブックをエクスポート"
 
-#: phrasebook/phrasebookdialog.cpp:676
+#: phrasebook/phrasebookdialog.cpp:689
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "フレーズブック(&P)"
 
-#: phrasebook/phrasebookdialog.cpp:683 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
 #, kde-format
 msgid ""
 "There was an error saving file\n"
