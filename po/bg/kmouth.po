@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-05-21 12:18+0200\n"
+"PO-Revision-Date: 2022-10-16 13:26+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -425,17 +425,13 @@ msgid "&Overwrite"
 msgstr "&Презапис"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
 "Избрахте име на файл <i>%1</i>, което има различно разширение от "
-"стандартното <i>.phrasebook</i>. Искате ли да бъде добавено стандартното "
-"разширение <i>.phrasebook</i> към името на файла?"
+"стандартното <i>.phrasebook</i>."
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -463,15 +459,10 @@ msgid "Do Not Add"
 msgstr "Без добавяне"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"Избрахте име на файл <i>%1</i>, което има стандартно разширение <i>."
-"phrasebook</i>. Искате ли да данните да бъдат записани във формат на книга с "
-"фрази?"
+"Избрахте име на файл <i>%1</i>, което има  разширение <i>.phrasebook</i>."
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format

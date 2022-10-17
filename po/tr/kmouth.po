@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdeaccessibility-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-04-13 10:34+0300\n"
+"PO-Revision-Date: 2022-10-16 11:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -429,16 +429,12 @@ msgid "&Overwrite"
 msgstr "Ü&zerine yaz"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"Seçili dosyanız <i>%1</i> <i>.phrasebook</i>'tan başka bir uzantıya sahip. "
-"Dosya adına <i>.phrasebook</i> eklemek ister misiniz?"
+"Seçili dosyanız <i>%1</i>, <i>.phrasebook</i>'tan başka bir uzantıya sahip."
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -465,14 +461,9 @@ msgid "Do Not Add"
 msgstr "Ekleme"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"Seçili dosya adınız <i>%1</i> <i>.phrasebook</i> uzantısına sahip. "
-"Phrasebook biçiminde kaydetmek ister misiniz?"
+msgstr "Seçili dosya adınız <i>%1</i>, <i>.phrasebook</i> uzantısına sahip."
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format

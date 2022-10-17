@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-03-16 10:18+0100\n"
+"PO-Revision-Date: 2022-10-16 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -370,7 +370,7 @@ msgstr "Consells, llibres ampliats de frases"
 #: main.cpp:53
 #, kde-format
 msgid "History file to open"
-msgstr "Fitxer d'historial que s'obrirà"
+msgstr "Fitxer d'historial que s'ha d'obrir"
 
 #: optionsdialog.cpp:122
 #, kde-format
@@ -432,16 +432,13 @@ msgid "&Overwrite"
 msgstr "S&obreescriu"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"Heu seleccionat el nom de fitxer <i>%1</i> que té una extensió diferent de "
-"<i>.phrasebook</i>. Voleu afegir <i>.phrasebook</i> al nom del fitxer?"
+"El nom de fitxer <i>%1</i> que heu seleccionat té una extensió diferent a "
+"<i>.phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -468,14 +465,11 @@ msgid "Do Not Add"
 msgstr "No l'afiges"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"Heu seleccionat el nom de fitxer <i>%1</i> que té l'extensió <i>.phrasebook</"
-"i>. El voleu guardar en el format de llibre de frases?"
+"El nom de fitxer <i>%1</i> que heu seleccionat té l'extensió <i>.phrasebook</"
+"i>. "
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format

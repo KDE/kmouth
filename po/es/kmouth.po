@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-03-17 16:27+0100\n"
+"PO-Revision-Date: 2022-10-16 11:49+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -446,17 +446,13 @@ msgid "&Overwrite"
 msgstr "S&obrescribir"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"El nombre de archivo que ha elegido <i>%1</i> tiene una extensión diferente "
-"que la de el <i>libro de frases</i>. ¿Desea agregar la extensión <i>."
-"phrasebook</i> al nombre de archivo?"
+"El archivo que ha elegido <i>%1</i> tiene una extensión diferente a la del "
+"<i>libro de frases</i>. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -484,14 +480,10 @@ msgid "Do Not Add"
 msgstr "No añadir"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"El nombre de archivo elegrido <i>%1</i> tiene la extensión <i>.phrasebook</"
-"i>. ¿Desea usted guardarlo con el formato de libro de frases?"
+"El archivo que ha elegido <i>%1</i> tiene la extensión <i>.phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -499,8 +491,8 @@ msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
-"El nombre de archivo elegrido <i>%1</i> tiene la extensión <i>.phrasebook</"
-"i>. ¿Desea usted guardarlo con el formato de libro de frases?"
+"El archivo que ha elegido <i>%1</i> tiene la extensión <i>.phrasebook</i>. "
+"¿Desea guardarlo con el formato de libro de frases?"
 
 #: phrasebook/phrasebook.cpp:332
 #, kde-format
@@ -712,8 +704,8 @@ msgid ""
 "With this line edit you define the name of a sub-phrasebook or the contents "
 "of a phrase."
 msgstr ""
-"Con este campo de entrada usted define el nombre de un sublibro de frases o "
-"el contenido de una frase."
+"En este campo de entrada se define el nombre de un sublibro de frases o el "
+"contenido de una frase."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
 #: phrasebook/phrasebookdialog.ui:52
@@ -722,8 +714,8 @@ msgid ""
 "If you select this option then the selected phrase will not be reachable by "
 "a keyboard shortcut."
 msgstr ""
-"Si usted selecciona esta opción entonces la frase seleccionada no será "
-"accesible por un acceso rápido de teclado."
+"Si selecciona esta opción, no podrá acceder a la frase seleccionada usando "
+"un acceso rápido de teclado."
 
 #. i18n: ectx: property (text), widget (QRadioButton, noKey)
 #: phrasebook/phrasebookdialog.ui:55
@@ -739,9 +731,9 @@ msgid ""
 "keyboard shortcut. You can change the shortcut with the button next to this "
 "option."
 msgstr ""
-"Si usted selecciona esta opción entonces la frase seleccionada será "
-"accesible por un acceso rápido de teclado. Usted puede cambiar el acceso "
-"rápido de teclado con el botón situado al lado de esta opción."
+"Si selecciona esta opción, podrá acceder a la frase seleccionada usando un "
+"acceso rápido de teclado. Puede cambiar el acceso rápido de teclado con el "
+"botón que hay junto a esta opción."
 
 #. i18n: ectx: property (text), widget (QRadioButton, customKey)
 #: phrasebook/phrasebookdialog.ui:65
@@ -1005,9 +997,9 @@ msgid ""
 "With this combo box you select the character encoding used to load text "
 "files. This combo box is not used for XML files or for dictionary files."
 msgstr ""
-"Con esta lista desplegable usted puede seleccionar la codificación de "
-"carácter usada para cargar archivos de texto. Esta lista desplegable no se "
-"usa para archivos tipo XML o para archivos de diccionario."
+"Con esta lista desplegable puede seleccionar la codificación de caracteres "
+"usada para cargar archivos de texto. Esta lista desplegable no se usa para "
+"archivos XML ni para archivos de diccionario."
 
 #. i18n: ectx: property (text), widget (QLabel, encodingLabel)
 #: wordcompletion/creationsourcedetailsui.ui:46
@@ -1024,8 +1016,8 @@ msgid ""
 "With this input field you specify which file you want to load for creating "
 "the new dictionary."
 msgstr ""
-"Con este campo de entrada usted puede especificar el archivo que desea "
-"cargar para crear un diccionario nuevo."
+"Con este campo de entrada puede especificar el archivo que desea cargar para "
+"crear un nuevo diccionario."
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: wordcompletion/creationsourcedetailsui.ui:67
@@ -1041,9 +1033,8 @@ msgid ""
 "With this input field you select the OpenOffice.org directory that will be "
 "used to spellcheck the words of the new dictionary."
 msgstr ""
-"Con este campo de entrada usted puede seleccionar un directorio de "
-"OpenOffice.org para usarlo en la verificación de las palabras de la carpeta "
-"nueva."
+"Con este campo de entrada puede seleccionar un directorio de OpenOffice.org "
+"para usarlo en la verificación de palabras del nuevo diccionario."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:136
@@ -1052,8 +1043,8 @@ msgid ""
 "With this combo box you decide which language should be associated with the "
 "new dictionary."
 msgstr ""
-"Con esta lista desplegable usted decide qué idioma debería ser asociado con "
-"el nuevo diccionario."
+"En esta lista desplegable puede decidir el idioma que se debe asociar con el "
+"nuevo diccionario."
 
 #. i18n: ectx: property (text), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:139
@@ -1075,8 +1066,8 @@ msgid ""
 "If you select this box a new dictionary is created by either loading a "
 "dictionary file or by counting the individual words in a text."
 msgstr ""
-"Si usted selecciona esta casilla se creará un nuevo diccionario para cargar "
-"un archivo de diccionario o para contar palabras individuales en un texto."
+"Si selecciona esta casilla se creará un nuevo diccionario cargando un "
+"archivo de diccionario o contando las palabras individuales de un texto."
 
 #. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
 #: wordcompletion/creationsourceui.ui:29
@@ -1091,7 +1082,7 @@ msgid ""
 "If you select this box a new dictionary is created by merging existing "
 "dictionaries."
 msgstr ""
-"Si usted selecciona esta casilla se creará un diccionario para combinar los "
+"Si selecciona esta casilla se creará un diccionario combinando los "
 "diccionarios existentes."
 
 #. i18n: ectx: property (text), widget (QRadioButton, fileButton)
@@ -1110,12 +1101,11 @@ msgid ""
 "file the frequentness of the individual words is detected by simply counting "
 "the occurrences of each word."
 msgstr ""
-"Si usted selecciona esta casilla se creará un nuevo diccionario cargando un "
-"archivo. Usted podrá escoger un archivo XML, un archivo de texto estándar o "
-"un archivo que contiene un diccionario de completado de palabras. Si usted "
-"selecciona un archivo de texto estándar o un archivo XML la frecuencia de "
-"las palabras individuales se detecta contando las apariciones de cada "
-"palabra."
+"Si selecciona esta casilla se creará un nuevo diccionario cargando un "
+"archivo. Podrá escoger un archivo XML, un archivo de texto estándar o un "
+"archivo que contiene un diccionario de completado de palabras. Si selecciona "
+"un archivo de texto estándar o un archivo XML, la frecuencia de las palabras "
+"individuales se detecta contando las apariciones de cada palabra."
 
 #. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
 #: wordcompletion/creationsourceui.ui:71
@@ -1131,9 +1121,9 @@ msgid ""
 "documentation. The frequentness of the individual words is detect by simply "
 "counting the occurrences of each word."
 msgstr ""
-"Si usted selecciona esta casilla se creará un nuevo diccionario para "
-"analizar la documentación de KDE. La frecuencia de las palabras individuales "
-"se detecta contando las apariciones de cada palabra."
+"Si selecciona esta casilla se creará un nuevo diccionario analizando la "
+"documentación de KDE. La frecuencia de las palabras individuales se detecta "
+"contando las apariciones de cada palabra."
 
 #. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
 #: wordcompletion/creationsourceui.ui:95
@@ -1148,8 +1138,8 @@ msgid ""
 "If you select this box a new dictionary is created by loading all files in a "
 "folder and its subdirectories."
 msgstr ""
-"Si usted selecciona esta casilla se creará un diccionario nuevo cargando "
-"todos los archivos que se encuentren en un carpeta y sus subcarpetas."
+"Si selecciona esta casilla se creará un diccionario nuevo cargando todos los "
+"archivos que se encuentren en un carpeta y sus subcarpetas."
 
 #. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
 #: wordcompletion/creationsourceui.ui:121
@@ -1165,10 +1155,9 @@ msgid ""
 "KMouth automatically adds newly typed words to the dictionaries it will "
 "learn your vocabulary with the time."
 msgstr ""
-"Si usted selecciona esta casilla se creará un diccionario en blanco (sin "
-"ninguna entrada). Como KMouth agrega automáticamente a los diccionarios las "
-"palabras que se tipean por primera vez, con el tiempo aprenderá su "
-"vocabulario."
+"Si selecciona esta casilla se creará un diccionario en blanco (sin ninguna "
+"entrada). Como KMouth añade automáticamente a los diccionarios las palabras "
+"que se escriban por primera vez, con el tiempo aprenderá su vocabulario."
 
 #: wordcompletion/dictionarycreationwizard.cpp:65
 #, kde-format
@@ -1234,8 +1223,8 @@ msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
 msgstr ""
-"Si usted selecciona esta casilla se comprobará la ortografía de las palabras "
-"de la documentación KDE antes de ser añadidas al nuevo diccionario."
+"Si selecciona esta casilla se comprobará la ortografía de las palabras de la "
+"documentación de KDE antes de añadirlas al nuevo diccionario."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
@@ -1245,9 +1234,9 @@ msgid ""
 "creating the new dictionary. KMouth will only parse documentation files of "
 "this language."
 msgstr ""
-"Con esta lista desplegable usted selecciona cuál de los idiomas instalados "
-"se usará para crear el nuevo diccionario. KMouth solo analizará los archivos "
-"de documentación de ese idioma."
+"En esta lista desplegable puede seleccionar el idioma instalado que se usará "
+"para crear el nuevo diccionario. KMouth solo analizará los archivos de "
+"documentación de dicho idioma."
 
 #. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
 #: wordcompletion/wordcompletionui.ui:32
@@ -1262,7 +1251,7 @@ msgid ""
 "With this combo box you select the language associated with the selected "
 "dictionary."
 msgstr ""
-"Con esta lista desplegable usted selecciona el idioma asociado con el "
+"En esta lista desplegable puede seleccionar el idioma asociado con el "
 "diccionario seleccionado."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
@@ -1271,8 +1260,8 @@ msgstr ""
 #, kde-format
 msgid "With this input field you specify the name of the selected dictionary."
 msgstr ""
-"Con esta casilla de entrada usted puede especificar el nombre del "
-"diccionario seleccionado."
+"En esta casilla de entrada puede especificar el nombre del diccionario "
+"seleccionado."
 
 #. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
 #: wordcompletion/wordcompletionui.ui:66
@@ -1287,8 +1276,8 @@ msgid ""
 "With this button you can add a new dictionary to the list of available "
 "dictionaries."
 msgstr ""
-"Con este botón usted puede añadir un nuevo diccionario a la lista de "
-"diccionarios disponibles."
+"Con este botón puede añadir un nuevo diccionario a la lista de diccionarios "
+"disponibles."
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #: wordcompletion/wordcompletionui.ui:103
@@ -1300,7 +1289,7 @@ msgstr "Añadir d&iccionario..."
 #: wordcompletion/wordcompletionui.ui:119
 #, kde-format
 msgid "With this button you delete the selected dictionary."
-msgstr "Con este botón usted puede borrar el diccionario seleccionado."
+msgstr "Con este botón puede borrar el diccionario seleccionado."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: wordcompletion/wordcompletionui.ui:122
@@ -1312,8 +1301,7 @@ msgstr "Eliminar diccionario"
 #: wordcompletion/wordcompletionui.ui:138
 #, kde-format
 msgid "With this button you move the selected dictionary up."
-msgstr ""
-"Con este botón usted puede mover el diccionario seleccionado hacia arriba."
+msgstr "Con este botón puede mover el diccionario seleccionado hacia arriba."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
 #: wordcompletion/wordcompletionui.ui:141
@@ -1325,8 +1313,7 @@ msgstr "Mover y &arriba"
 #: wordcompletion/wordcompletionui.ui:157
 #, kde-format
 msgid "With this button you move the selected dictionary down."
-msgstr ""
-"Con este botón usted puede mover el diccionario seleccionado hacia abajo."
+msgstr "Con este botón puede mover el diccionario seleccionado hacia abajo."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
 #: wordcompletion/wordcompletionui.ui:160
@@ -1339,7 +1326,7 @@ msgstr "&Mover abajo"
 #, kde-format
 msgid "With this button you export the selected dictionary to a file."
 msgstr ""
-"Con este botón usted puede exportar el diccionario seleccionado a un archivo."
+"Con este botón puede exportar el diccionario seleccionado a un archivo."
 
 #. i18n: ectx: property (text), widget (QPushButton, exportButton)
 #: wordcompletion/wordcompletionui.ui:179
@@ -1357,11 +1344,11 @@ msgid ""
 "order to select the dictionary that actually gets used for the word "
 "completion."
 msgstr ""
-"Esta lista contiene todos los diccionarios disponibles para el completado de "
+"Esta lista contiene todos los diccionarios disponibles para completar "
 "palabras. KMouth mostrará una lista desplegable al lado de la casilla de "
-"edición si la lista contiene más de un diccionario. Usted puede utilizar "
-"esta lista desplegable para seleccionar el diccionario que más utiliza para "
-"el completado de palabras."
+"edición si la lista contiene más de un diccionario. Puede usar esta lista "
+"desplegable para seleccionar el diccionario que se debe usar realmente para "
+"completar las palabras."
 
 #: wordcompletion/wordcompletionwidget.cpp:79
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-03-16 10:18+0100\n"
+"PO-Revision-Date: 2022-10-16 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -432,16 +432,13 @@ msgid "&Overwrite"
 msgstr "S&obreescriu"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"Heu seleccionat el nom de fitxer <i>%1</i> que té una extensió diferent de "
-"<i>.phrasebook</i>. Voleu afegir <i>.phrasebook</i> al nom del fitxer?"
+"El nom de fitxer <i>%1</i> que heu seleccionat té una extensió diferent a "
+"<i>.phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -468,14 +465,11 @@ msgid "Do Not Add"
 msgstr "No l'afegeixis"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"Heu seleccionat el nom de fitxer <i>%1</i> que té l'extensió <i>.phrasebook</"
-"i>. El voleu desar en el format de llibre de frases?"
+"El nom de fitxer <i>%1</i> que heu seleccionat té l'extensió <i>.phrasebook</"
+"i>. "
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -1394,79 +1388,3 @@ msgstr "S'està analitzant el directori..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "S'està executant la verificació de l'ortografia..."
-
-#~ msgid ""
-#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
-#~ "system speech service prior to calling the speech synthesizer directly. "
-#~ "The system speech service is a Qt library which wraps speech-dispatcher "
-#~ "on linux, and native speech systems on other platforms.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Aquesta casella de selecció especifica que el "
-#~ "KMouth prova d'usar el servei de veu del sistema abans de cridar "
-#~ "directament al sintetitzador de veu. El servei de veu del sistema és una "
-#~ "biblioteca de les Qt que embolcalla l'«speech-dispatcher» en Linux, i als "
-#~ "sistemes de veu nativa en les altres plataformes.</p></body></html>"
-
-#~ msgid "kmouth"
-#~ msgstr "kmouth"
-
-#~ msgid "https://www.kde.org/applications/utilities/kmouth/"
-#~ msgstr "https://www.kde.org/applications/utilities/kmouth/"
-
-#~ msgid "kmouth@schmi-dt.de"
-#~ msgstr "kmouth@schmi-dt.de"
-
-#~ msgid "Jovie Speech Service"
-#~ msgstr "Servei de sintetització Jovie"
-
-#~ msgid "KDE Text-to-Speech Daemon Configuration"
-#~ msgstr "Configuració del dimoni de síntesi del KDE"
-
-#~ msgid "&Use Jovie speech service if possible"
-#~ msgstr "&Usa el servei de síntesi Jovie si és possible"
-
-#~ msgid "Currently Selected Phrase or Phrase Book"
-#~ msgstr "Frases o llibres de frases seleccionats actualment"
-
-#~ msgid " (%2 of 1 book selected)"
-#~ msgid_plural " (%2 of %1 books selected)"
-#~ msgstr[0] " (%2 d'1 llibre seleccionat)"
-#~ msgstr[1] " (%2 de %1 llibres seleccionats)"
-
-#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
-#~ msgstr "Imprimeix la frase(s) o llibre(s) de frases seleccionats actualment"
-
-#~ msgid ""
-#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
-#~ "Win, Alt, Ctrl, and/or Shift keys."
-#~ msgstr ""
-#~ "Per tal d'usar la tecla «%1» com a drecera, ha de combinar-se amb les "
-#~ "tecles Win, Alt, Ctrl, i/o Maj."
-
-#~ msgid "Invalid Shortcut Key"
-#~ msgstr "Tecla de drecera no vàlida"
-
-#~ msgid ""
-#~ "The '%1' key combination has already been allocated to %2.\n"
-#~ "Please choose a unique key combination."
-#~ msgstr ""
-#~ "La combinació de tecles «%1» ja està assignada a %2.\n"
-#~ "Trieu una combinació de tecles única."
-
-#~ msgid "the standard \"%1\" action"
-#~ msgstr "l'acció estàndard «%1»"
-
-#~ msgid "Conflict with Standard Application Shortcut"
-#~ msgstr "Conflicte amb una drecera d'aplicació estàndard"
-
-#~ msgid "the global \"%1\" action"
-#~ msgstr "l'acció global «%1»"
-
-#~ msgid "Conflict with Global Shortcuts"
-#~ msgstr "Conflicte amb una drecera global"
-
-#~ msgid "an other phrase"
-#~ msgstr "una altra frase"
-
-#~ msgid "Key Conflict"
-#~ msgstr "Conflicte de tecla"
