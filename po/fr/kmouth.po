@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-03-16 19:29+0100\n"
+"PO-Revision-Date: 2022-10-18 07:18+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -441,17 +441,13 @@ msgid "&Overwrite"
 msgstr "&Écraser"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"Le nom de fichier choisi (« <i>%1</i> ») possède une extension autre que "
-"« <i>.phrasebook</i> ». Voulez-vous ajouter « <i>.phrasebook</i> » au nom du "
-"fichier ?"
+"Le nom de fichier choisi « <i>%1</i> » possède une extension autre que « <i>."
+"phrasebook</i> ». "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -479,14 +475,10 @@ msgid "Do Not Add"
 msgstr "Ne pas ajouter"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"Le nom de fichier choisi (<i>%1</i>) possède l'extension <i>.phrasebook</i>. "
-"Voulez-vous l'enregistrer dans le format « phrasebook » ?"
+"Le nom de fichier choisi <i>%1</i> possède l'extension <i>.phrasebook</i>."
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
