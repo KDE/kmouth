@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-10-02 15:49\n"
+"PO-Revision-Date: 2022-10-19 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -415,16 +415,11 @@ msgid "&Overwrite"
 msgstr "覆盖(&O)"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"您所选的文件 <i>%1</i> 的扩展名不是 <i>phrasebook</i>。您想要给此文件添加 "
-"<i>.phrasebook</i> 扩展名吗？"
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -451,14 +446,9 @@ msgid "Do Not Add"
 msgstr "不添加"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"您所选的文件 <i>%1</i> 的扩展名是 <i>phrasebook</i>。您想要以词组本格式保存它"
-"吗？"
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format

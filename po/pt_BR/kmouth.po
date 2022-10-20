@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-03-24 11:23-0300\n"
+"PO-Revision-Date: 2022-10-19 15:44-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -437,16 +437,13 @@ msgid "&Overwrite"
 msgstr "S&obrescrever"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
 "O nome de arquivo escolhido <i>%1</i> tem uma extensão diferente de <i>."
-"phrasebook</i>. Deseja adicionar <i>.phrasebook</i> ao nome do arquivo?"
+"phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -473,14 +470,10 @@ msgid "Do Not Add"
 msgstr "Não adicionar"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
 "O nome de arquivo escolhido <i>%1</i> tem a extensão <i>.phrasebook</i>. "
-"Deseja salvar no formato livro de frases?"
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
