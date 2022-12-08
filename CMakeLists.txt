@@ -17,7 +17,7 @@ endif(NOT MSVC)
 include(FeatureSummary)
 
 set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.90.0")
+set(KF5_MIN_VERSION "5.92.0")
 
 
 find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
@@ -25,12 +25,14 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
+include(ECMDeprecationSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
 include(ECMSetupVersion)
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
+
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
@@ -59,12 +61,7 @@ ecm_setup_version(${kmouth_VERSION}
 )
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
-add_definitions(
-	#-DQT_DISABLE_DEPRECATED_BEFORE=0x050F00
-    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
-    -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055600
-    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
-)
+ecm_set_disabled_deprecation_versions(QT 5.14.0  KF 5.101.0)
 
 add_subdirectory( doc )
 add_subdirectory( icons )
