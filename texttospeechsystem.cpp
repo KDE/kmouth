@@ -47,7 +47,7 @@ TextToSpeechSystem::~TextToSpeechSystem()
 
 void TextToSpeechSystem::speak(const QString &text, const QString &language)
 {
-    if (text.length() > 0) {
+    if (!text.isEmpty()) {
         if (useQtSpeech) {
             m_speech->say(text);
             return;

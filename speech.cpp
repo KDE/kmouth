@@ -47,7 +47,7 @@ QString Speech::prepareCommand(const QString &command, const QString &text,
 
 void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, int encoding, QTextCodec *codec)
 {
-    if (text.length() > 0) {
+    if (!text.isEmpty()) {
         // 1. prepare the text:
         // 1.a) encode the text
         QTextStream ts(&encText, QIODevice::WriteOnly);
