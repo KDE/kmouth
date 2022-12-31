@@ -1,24 +1,25 @@
 # translation of kmouth.po to Chinese Traditional
 # translation of kmouth.po to
 # Copyright (C) 2006, 2007, 2008 Free Software Foundation, Inc.
+#
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2007, 2010.
 # Jeff Huang <s8321414@gmail.com>, 2017.
-#
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2008, 2009.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2017-09-27 08:38+0800\n"
-"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
-"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2022-12-30 19:16+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -420,16 +421,11 @@ msgid "&Overwrite"
 msgstr "覆寫(&O)"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
-msgstr ""
-"您選擇的檔案名稱 <i>%1</i> 延伸檔名與 <i>.phrasebook</i>不同。是否把 <i>."
-"phrasebook</i> 加到檔案名稱？"
+msgstr "您選擇的檔案名稱 <i>%1</i> 延伸檔名並非 <i>.phrasebook</i>。"
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -456,14 +452,9 @@ msgid "Do Not Add"
 msgstr "不要"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"您選擇的檔案名稱 <i>%1</i> 有 <i>.phrasebook</i> 延伸檔名。您是否要以片語書格"
-"式儲存？"
+msgstr "您選擇的檔案名稱 <i>%1</i> 延伸檔名是 <i>.phrasebook</i> 。"
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -835,19 +826,19 @@ msgstr "使用預設的語音系統(&U)"
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "引擎(&E)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
 #, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "聲音(&V)："
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "替代"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -869,10 +860,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
-#, fuzzy, kde-format
-#| msgid "Alternative command for speaking &texts:"
+#, kde-format
 msgid "Command for speaking &texts:"
-msgstr "念出文字的替代指令(&T)："
+msgstr "念出文字的命令(&T)："
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
