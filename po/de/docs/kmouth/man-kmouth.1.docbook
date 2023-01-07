@@ -1,53 +1,76 @@
 <?xml version="1.0" ?>
 <!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-<!ENTITY % English "INCLUDE">
+<!ENTITY % German "INCLUDE">
 ]>
 
 <refentry lang="&language;">
 <refentryinfo>
-<title>KMouth User's Manual</title>
-<author><firstname>Lauri</firstname><surname>Watts</surname>
-<contrib>KMouth man page.</contrib>
-&Lauri.Watts.mail;</author>
-<date>2022-03-18</date>
-<releaseinfo>KMouth 22.04</releaseinfo>
-<productname>KDE Gear</productname>
+<title
+>&kde;-Benutzerhandbuch</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2018-01-03</date>
+<releaseinfo
+>Anwendungen 17.12</releaseinfo>
+<productname
+>KDE-Anwendungen</productname>
 </refentryinfo>
 
 <refmeta>
-<refentrytitle><command>kmouth</command></refentrytitle>
-<manvolnum>1</manvolnum>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
 </refmeta>
 
 <refnamediv>
-<refname><command>kmouth</command></refname>
-<refpurpose>A type-and-say front end for speech synthesizers</refpurpose>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>Ein Texteingabeprogramm für Sprachsynthesizer</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
-<cmdsynopsis>
-<command>kmouth</command>
-<arg choice="opt"><replaceable>filename</replaceable></arg>
-</cmdsynopsis>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>filename</replaceable
+></arg
+> </cmdsynopsis>
 </refsynopsisdiv>
 
 <refsect1>
-<title>Description</title>
-<para>&kmouth; is an application that enables persons that cannot speak to
-let their computers speak. It includes a history of spoken sentences from
-which the user can select sentences to be re-spoken.</para>
-<para>Note that &kmouth; does not include speech synthesizer. Instead it
-requires a speech synthesizer installed in the system.</para> 
+<title
+>Beschreibung</title>
+<para
+>&kmouth; ist eine Anwendung, mit der Menschen, die nicht sprechen können, Text durch den Rechner ausgeben lassen können. Es wird eine Liste bereits gesprochener Sätze gespeichert, die der Anwender immer wieder neu ausgaben lassen kann.</para>
+<para
+>Beachten Sie, dass &kmouth; keinen Sprachsynthesizer beinhaltet. Auf dem Rechner muss ein Sprachsynthesizer installiert sein.</para
+> 
 </refsect1>
 
 <refsect1>
-<title>Options</title>
+<title
+>Optionen</title>
 
 <variablelist>
 <varlistentry>
-<term><option><replaceable>filename</replaceable></option></term>
+<term
+><option
+><replaceable
+>dateiname</replaceable
+></option
+></term>
 <listitem>
-<para>The history file to open.</para>
+<para
+>Die zu öffnende Liste</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -55,25 +78,43 @@ requires a speech synthesizer installed in the system.</para>
 </refsect1>
 
 <refsect1>
-<title>See Also</title>
-<para>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+<title
+>Siehe auch</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
 
-<para>More detailed user documentation is available from <ulink
-url="help:/kmouth">help:/kmouth</ulink>
-(either enter this &URL; into &konqueror;, or run
-<userinput><command>khelpcenter</command>
-<parameter>help:/kmouth</parameter></userinput>).</para>
+<para
+>Ausführlichere Benutzerdokumentation finden Sie mit <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (geben Sie entweder diese <acronym
+>URL</acronym
+> in die Adressleiste von &konqueror; ein oder starten Sie <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
 
-<para>There is also further information available at the <ulink
-url="https://community.kde.org/Accessibility">&kde; Accessibility project web
-site</ulink>.</para>
+<para
+>Weitere Informationen finden Sie außerdem auf der <ulink url="https://community.kde.org/Accessibility"
+>Homepage des Accessibility-Projekts von &kde;</ulink
+>.</para>
 </refsect1>
 
 <refsect1>
-<title>Authors</title>
-<para>&kmouth; was written by
-<personname><firstname>Gunnar</firstname><surname>Schmi
-Dt</surname></personname> <email>kmouth@schmi-dt.de</email>.</para>
+<title
+>Autoren</title>
+<para
+>&kmouth; wurde entwickelt von <personname
+><firstname
+>Gunnar</firstname
+><surname
+>Schmi Dt</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
 </refsect1>
 
 </refentry>
