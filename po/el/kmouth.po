@@ -2,13 +2,13 @@
 #
 # Spiros Georgaras <sng@hellug.gr>, 2005, 2006, 2007, 2008.
 # Toussis Manolis <manolis@koppermind.homelinux.org>, 2005, 2009.
-# Stelios <sstavra@gmail.com>, 2011, 2017.
+# Stelios <sstavra@gmail.com>, 2011, 2017, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2017-09-21 11:16+0200\n"
+"PO-Revision-Date: 2023-01-07 09:42+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -429,17 +429,13 @@ msgid "&Overwrite"
 msgstr "&Αντικατάσταση"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
 "Το επιλεγμένο όνομα αρχείου <i>%1</i> έχει διαφορετική επέκταση από την <i>."
-"phrasebook</i>. Επιθυμείτε την προσθήκη του <i>.phrasebook</i> στο όνομα "
-"αρχείου;"
+"phrasebook</i>."
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -467,14 +463,11 @@ msgid "Do Not Add"
 msgstr "Να μην προστεθεί"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
 "Το επιλεγμένο όνομα αρχείου <i>%1</i> περιέχει την επέκταση <i>.phrasebook</"
-"i>. Επιθυμείτε την αποθήκευση με τη μορφή βιβλίου φράσεων;"
+"i>."
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -877,19 +870,19 @@ msgstr "&Να γίνει χρήση του προκαθορισμένου συσ
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "&Μηχανή:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
 #, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "&Φωνή:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "Εναλλακτική"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -913,10 +906,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
-#, fuzzy, kde-format
-#| msgid "Alternative command for speaking &texts:"
+#, kde-format
 msgid "Command for speaking &texts:"
-msgstr "Εναλλακτική εντολή για υπαγόρευση &κειμένων:"
+msgstr "Εντολή για υπαγόρευση &κειμένων:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
@@ -1082,7 +1074,7 @@ msgid ""
 "dictionaries."
 msgstr ""
 "Αν επιλέξετε αυτό το πλαίσιο ένα νέο λεξικό θα δημιουργηθεί με τη συγχώνευση "
-"των υπάρχοντων λεξικών."
+"των υπαρκτών λεξικών."
 
 #. i18n: ectx: property (text), widget (QRadioButton, fileButton)
 #: wordcompletion/creationsourceui.ui:50
