@@ -11,13 +11,13 @@
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
 # Yıldız Kardeşler <turkishprogram@xposta.com>, 2003.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeaccessibility-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-12-11 20:38+0300\n"
+"PO-Revision-Date: 2023-01-14 22:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,12 +40,12 @@ msgstr "tulliana@gmail.com, emir_sari@icloud.com"
 #: configwizard.cpp:38
 #, kde-format
 msgid "Initial Configuration - KMouth"
-msgstr "İlk Yapılandırma - KMouth"
+msgstr "İlk Yapılandırma - K Ağız"
 
 #: configwizard.cpp:59
 #, kde-format
 msgid "Text-to-Speech Configuration"
-msgstr "Metin Okuma Ayarları"
+msgstr "Konuşma Ayarları"
 
 #: configwizard.cpp:73
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Durum çubuğu açar/kapatır"
 #: kmouth.cpp:177
 #, kde-format
 msgid "&Configure KMouth..."
-msgstr "KMouth'u &Yapılandır..."
+msgstr "K Ağız'ı &Yapılandır..."
 
 #: kmouth.cpp:179 kmouth.cpp:180
 #, kde-format
@@ -324,12 +324,12 @@ msgstr "Ayar&lar"
 #: main.cpp:39
 #, kde-format
 msgid "KMouth"
-msgstr "KMouth"
+msgstr "K Ağız"
 
 #: main.cpp:41
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
-msgstr "Ses sentezleyiciler için arayüz"
+msgstr "Konuşma sentezleyiciler için arayüz"
 
 #: main.cpp:43
 #, kde-format
@@ -384,7 +384,7 @@ msgstr "Te&rcihler"
 #: optionsdialog.cpp:136
 #, kde-format
 msgid "&Text-to-Speech"
-msgstr "Me&tin Okuma"
+msgstr "&Konuşma"
 
 #: optionsdialog.cpp:138 optionsdialog.cpp:139
 #, kde-format
@@ -840,13 +840,13 @@ msgstr "Kaydetmeyi Sor"
 #: texttospeechconfigurationui.ui:14
 #, kde-format
 msgid "Text-to-Speech"
-msgstr "Metin Okuma"
+msgstr "Konuşma"
 
 #. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr "&Varsayılan konuşma sistemini kullan"
+msgstr "&Öntanımlı konuşma sistemini kullan"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
@@ -879,7 +879,7 @@ msgid ""
 "%% -- a percent sign"
 msgstr ""
 "Bu alan konuşma metinleri ve parametrelerinde kullanılan komutları belirler. "
-"KMouth aşağıdaki yer tutucuları anlayabilir:\n"
+"K Ağız, aşağıdaki yer tutucuları anlayabilir:\n"
 "%t -- konuşulacak metin\n"
 "%f -- metin içeren dosyanın adı\n"
 "%l -- dil kodu\n"
@@ -914,7 +914,7 @@ msgstr "Ver&iyi standart girdi olarak gönder"
 msgid ""
 "This combo box specifies which character encoding is used for passing the "
 "text."
-msgstr "Bu açılır menü gönderilen metnin karakter kodlamasını belirler."
+msgstr "Bu açılır menü, gönderilen metnin karakter kodlamasını belirler."
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
@@ -1126,7 +1126,7 @@ msgid ""
 "learn your vocabulary with the time."
 msgstr ""
 "Eğer bu kutuyu seçerseniz içinde girdi olmayan boş bir sözlük "
-"oluşturulacaktır. KMouth yeni yazdığınız sözcükleri otomatik olarak bu "
+"oluşturulacaktır. K Ağız, yeni yazdığınız sözcükleri otomatik olarak bu "
 "sözlüğe ekleyecektir, böylece sözcük dağarcığınızı zamanla öğrenecektir."
 
 #: wordcompletion/dictionarycreationwizard.cpp:65
@@ -1205,7 +1205,7 @@ msgid ""
 "this language."
 msgstr ""
 "Bu açılır kutu ile yani sözlük oluşturulurken hangi yüklü dili "
-"kullanacağınızı seçebilirsiniz. KMouth sadece bu dilin belge dosyalarını "
+"kullanacağınızı seçebilirsiniz. K Ağız, yalnızca bu dilin belge dosyalarını "
 "ayrıştıracaktır."
 
 #. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
@@ -1309,7 +1309,7 @@ msgid ""
 "order to select the dictionary that actually gets used for the word "
 "completion."
 msgstr ""
-"Bu liste sözcük tamamlama için kullanılabilinecek sözlükleri içerir. KMouth "
+"Bu liste sözcük tamamlama için kullanılabilinecek sözlükleri içerir. K Ağız "
 "ana pencerede liste eğer birden fazla sözlük içeriyorsa metin alanının "
 "yanında bir açılır kutu gösterecektir. Hangi sözlüğü sözcük tamamlama için "
 "kullanmak istiyorsanız buradan seçebilirsiniz."
