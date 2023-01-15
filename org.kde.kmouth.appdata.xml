@@ -32,7 +32,7 @@
   <name xml:lang="sk">KMouth</name>
   <name xml:lang="sl">KMouth</name>
   <name xml:lang="sv">Kmouth</name>
-  <name xml:lang="tr">KMouth</name>
+  <name xml:lang="tr">K Ağız</name>
   <name xml:lang="uk">KMouth</name>
   <name xml:lang="x-test">xxKMouthxx</name>
   <name xml:lang="zh-CN">KMouth</name>
@@ -66,7 +66,7 @@
   <summary xml:lang="sk">Rozhranie pre syntezátor reči</summary>
   <summary xml:lang="sl">Začelje generatorja govora</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
-  <summary xml:lang="tr">Ses Sentezleyicisi Ön Yüzü</summary>
+  <summary xml:lang="tr">Konuşma Sentezleyici Ön Yüzü</summary>
   <summary xml:lang="uk">Оболонка для синтезу мовлення з тексту</summary>
   <summary xml:lang="x-test">xxSpeech Synthesizer Frontendxx</summary>
   <summary xml:lang="zh-CN">语音合成器前端</summary>
@@ -101,7 +101,7 @@
     <p xml:lang="sk">KMouth je program, ktorý umožňuje osobám, ktoré nemôžu hovoriť, nechať hovoriť počítač, napr. nemí ľudia alebo ľudia, ktorí stratili hlas. Obsahuje pole na zadávanie textu a vyslovuje vety, ktoré zadáte. Má tiež podporu pre užívateľom definované frázy.</p>
     <p xml:lang="sl">KMouth je program, ki omogoča osebam, ki ne morejo govoriti kot npr. nemi ljudje ali ljudje, ki so izgubili glas, da njihov računalnik govori namesto njih.  Ima polje za vnos besedila in govori stavke, ki jih vnesete. Prav tako ima podporo za uporabniško določene zbirke fraz. Opomba prevajalca: zaenkrat je podprt samo angleški generator govora.</p>
     <p xml:lang="sv">Kmouth är ett program som gör det möjligt för personer som inte kan tala att låta datorn tala, t.ex. stumma eller personer som har förlorat rösten. Det har ett textinmatningsfält och läser upp meningarna som skrivs in. Det har också stöd för användardefinierade parlörer.</p>
-    <p xml:lang="tr">KMouth, konuşamayan kişilerin yerine (örn. dilsiz kişiler veya sesini kaybetmiş kişiler) bilgisayarın konuşmasını sağlayan bir programdır. Bir metin girdi alanı vardır ve girdiğiniz metni konuşur. Kullanıcı tanımlı deyişler için desteği vardır.</p>
+    <p xml:lang="tr">K Ağız, konuşamayan kişilerin yerine (örn. dilsiz kişiler veya sesini kaybetmiş kişiler) bilgisayarın konuşmasını sağlayan bir programdır. Bir metin girdi alanı vardır ve girdiğiniz metni konuşur. Kullanıcı tanımlı deyişler için desteği vardır.</p>
     <p xml:lang="uk">KMouth — програма, яка надає змогу тим, хто не може говорити, спілкуватися за допомогою комп'ютера. У ній передбачено поле для введення тексту, який вимовлятиме комп'ютер. Також можна створювати визначені користувачем набори заздалегідь приготованих фраз.</p>
     <p xml:lang="x-test">xxKMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.xx</p>
     <p xml:lang="zh-CN">KMouth 是为那些不能说话的人发声的程序，比如聋哑人或失声的人。它有一个文本输入框，可以输入您键入的语句。它也支持用户定义的短语集。</p>
