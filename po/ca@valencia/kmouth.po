@@ -40,7 +40,7 @@ msgstr "Configuració inicial - KMouth"
 #: configwizard.cpp:59
 #, kde-format
 msgid "Text-to-Speech Configuration"
-msgstr "Configuració de la síntesi"
+msgstr "Configureu la síntesi"
 
 #: configwizard.cpp:73
 #, kde-format
