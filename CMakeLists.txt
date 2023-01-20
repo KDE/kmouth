@@ -17,10 +17,10 @@ endif(NOT MSVC)
 include(FeatureSummary)
 
 set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.92.0")
+set(KF_MIN_VERSION "5.92.0")
 
 
-find_package(ECM ${KF5_MIN_VERSION} NO_MODULE REQUIRED)
+find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -42,7 +42,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF5  ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF5  ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
     Completion
     Config
