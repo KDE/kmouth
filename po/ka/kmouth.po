@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-10-10 07:06+0200\n"
+"PO-Revision-Date: 2023-01-21 19:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,32 +51,32 @@ msgstr "სიტყვების ავტომატური დასრ�
 #: kmouth.cpp:107
 #, kde-format
 msgid "&Open as History..."
-msgstr ""
+msgstr "&ჟურნალის ჩატვირთვა..."
 
 #: kmouth.cpp:110 kmouth.cpp:111
 #, kde-format
 msgid "Opens an existing file as history"
-msgstr ""
+msgstr "არსებული ფაილის ჟურნალის სახით გახსნა"
 
 #: kmouth.cpp:115
 #, kde-format
 msgid "Save &History As..."
-msgstr ""
+msgstr "ჟურნალის შენახვა, &როგორც..."
 
 #: kmouth.cpp:118 kmouth.cpp:119
 #, kde-format
 msgid "Saves the actual history as..."
-msgstr ""
+msgstr "მიმდინარე ჟურნალის შენახვა, როგორც..."
 
 #: kmouth.cpp:123
 #, kde-format
 msgid "&Print History..."
-msgstr ""
+msgstr "ისტორიის &დაბეჭდვა..."
 
 #: kmouth.cpp:126 kmouth.cpp:127
 #, kde-format
 msgid "Prints out the actual history"
-msgstr ""
+msgstr "მიმდინარე ჟურნალის დაბეჭდვა"
 
 #: kmouth.cpp:130 kmouth.cpp:131
 #, kde-format
@@ -86,7 +86,7 @@ msgstr "აპლიკაციიდან გასვლა"
 #: kmouth.cpp:135
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
-msgstr ""
+msgstr "მონიშნული სექციის ამოჭრა და ბუფერში მოთავსება"
 
 #: kmouth.cpp:136
 #, kde-format
@@ -99,7 +99,7 @@ msgstr ""
 #: kmouth.cpp:139
 #, kde-format
 msgid "Copies the selected section to the clipboard"
-msgstr ""
+msgstr "მონიშნული სექციის ბუფერში კოპირება"
 
 #: kmouth.cpp:140
 #, kde-format
@@ -112,7 +112,7 @@ msgstr ""
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
-msgstr ""
+msgstr "ბუფერის შემცველობის მიმდინარე მდებარეობაზე ჩასმა"
 
 #: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
 #, kde-format
@@ -158,7 +158,7 @@ msgstr ""
 #: kmouth.cpp:172 kmouth.cpp:173
 #, kde-format
 msgid "Enables/disables the statusbar"
-msgstr ""
+msgstr "სტატუსის ზოლის ჩართ/გამორთ"
 
 #: kmouth.cpp:177
 #, kde-format
@@ -215,17 +215,17 @@ msgstr ""
 #: kmouth.cpp:215
 #, kde-format
 msgid "Select &All Entries"
-msgstr ""
+msgstr "&ყველა ჩანაწერის მონიშვნა"
 
 #: kmouth.cpp:217 kmouth.cpp:218
 #, kde-format
 msgid "Selects all phrases in the history"
-msgstr ""
+msgstr "ჟურნალში ყველა ფრაზის მონიშვნა"
 
 #: kmouth.cpp:221
 #, kde-format
 msgid "D&eselect All Entries"
-msgstr ""
+msgstr "&მონიშვნის ყველაფერზე მოხსნა"
 
 #: kmouth.cpp:223 kmouth.cpp:224
 #, kde-format
@@ -263,12 +263,12 @@ msgstr "გასვლა..."
 #: kmouth.cpp:425
 #, kde-format
 msgid "Toggling menubar..."
-msgstr ""
+msgstr "მენიუს ზოლის გადართვა..."
 
 #: kmouth.cpp:437
 #, kde-format
 msgid "Toggling toolbar..."
-msgstr ""
+msgstr "ხელსაწყოების ზოლის გადართვა.."
 
 #: kmouth.cpp:451
 #, kde-format
@@ -278,7 +278,7 @@ msgstr ""
 #: kmouth.cpp:465
 #, kde-format
 msgid "Toggle the statusbar..."
-msgstr ""
+msgstr "სტატუსის ზოლის გადართვა..."
 
 #. i18n: ectx: Menu (file)
 #: kmouthui.rc:5 phrasebookdialogui.rc:6
@@ -352,7 +352,7 @@ msgstr ""
 #: main.cpp:53
 #, kde-format
 msgid "History file to open"
-msgstr ""
+msgstr "ჟურნალის ფაილის გახსნა"
 
 #: optionsdialog.cpp:122
 #, kde-format
@@ -367,7 +367,7 @@ msgstr "&გამართვა"
 #: optionsdialog.cpp:136
 #, kde-format
 msgid "&Text-to-Speech"
-msgstr ""
+msgstr "&ტექსტის-ხმამაღლა-წაკითხვა"
 
 #: optionsdialog.cpp:138 optionsdialog.cpp:139
 #, kde-format
@@ -431,7 +431,7 @@ msgstr "ფაილის გაფართოება"
 #: phrasebook/phrasebook.cpp:309
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "დამატება"
 
 #: phrasebook/phrasebook.cpp:309
 #, kde-format
@@ -453,12 +453,12 @@ msgstr ""
 #: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Phrasebook"
-msgstr ""
+msgstr "როგორც ფრაზების წიგნი"
 
 #: phrasebook/phrasebook.cpp:332
 #, kde-format
 msgid "As Plain Text"
-msgstr ""
+msgstr "უბრალო ტექსტის სახით"
 
 #: phrasebook/phrasebookdialog.cpp:89
 #, kde-format
@@ -474,22 +474,22 @@ msgstr "მალსახმობი"
 #: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
-msgstr ""
+msgstr "ფრაზების წიგნი"
 
 #: phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "&New Phrase"
-msgstr ""
+msgstr "&ახალი ფრაზა"
 
 #: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
 #, kde-format
 msgid "Adds a new phrase"
-msgstr ""
+msgstr "ახალი ფრაზის დამაება"
 
 #: phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "New Phrase &Book"
-msgstr ""
+msgstr "ახალი &ფრაზების წიგნი"
 
 #: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
 #, kde-format
@@ -535,7 +535,7 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
 #, kde-format
 msgid "Closes the window"
-msgstr ""
+msgstr "დახურავს ამ ფანჯარას"
 
 #: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
 #, kde-format
@@ -560,12 +560,12 @@ msgstr ""
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
-msgstr ""
+msgstr "&ფრაზის ტექსტი:"
 
 #: phrasebook/phrasebookdialog.cpp:405
 #, kde-format
 msgid "Name of the &phrase book:"
-msgstr ""
+msgstr "&ფრაზების წიგნის სახელი:"
 
 #: phrasebook/phrasebookdialog.cpp:430
 #, kde-format
@@ -577,27 +577,28 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
-msgstr ""
+msgstr "\"ფრაზების წიგნის\" ფანჯრის დახურვა"
 
 #: phrasebook/phrasebookdialog.cpp:599
 #, kde-format
 msgid "(New Phrase Book)"
-msgstr ""
+msgstr "(ახალი ფრაზების წიგნი)"
 
 #: phrasebook/phrasebookdialog.cpp:615
 #, kde-format
 msgid "(New Phrase)"
-msgstr ""
+msgstr "(ახალი ფრაზა)"
 
 #: phrasebook/phrasebookdialog.cpp:646
 #, kde-format
 msgid "Import Phrasebook"
-msgstr ""
+msgstr "ფრაზების წიგნის შემოტანა"
 
 #: phrasebook/phrasebookdialog.cpp:647
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
+"ფრაზის წიგნები (*.phrasebook);უბრალო ტექსტური ფაილები (*.txt);All Files (*)"
 
 #: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
 #, kde-format
@@ -605,16 +606,18 @@ msgid ""
 "There was an error loading file\n"
 "%1"
 msgstr ""
+"შეცდომა ფაილის ჩატვირთვისას\n"
+"%1"
 
 #: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Export Phrase Book"
-msgstr ""
+msgstr "ფრაზების წიგნის გატანა"
 
 #: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
-msgstr ""
+msgstr "ფრაზის წიგნები (*.phrasebook)"
 
 #: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
 #, kde-format
@@ -622,6 +625,8 @@ msgid ""
 "There was an error saving file\n"
 "%1"
 msgstr ""
+"შეცდომა ფაილის შენახვისას\n"
+"%1"
 
 #. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
 #: phrasebook/phrasebookdialog.ui:26
@@ -673,13 +678,13 @@ msgstr ""
 #: phrasebook/phrasebookdialog.ui:65
 #, kde-format
 msgid "C&ustom"
-msgstr ""
+msgstr "&ხელით"
 
 #. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
 #: phrasebook/phrasebookdialog.ui:72
 #, kde-format
 msgid "Shortcut for the phrase:"
-msgstr ""
+msgstr "მალსახმობი ფრაზისთვის:"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
 #: phrasebook/phrasebookdialog.ui:98
@@ -711,12 +716,14 @@ msgstr ""
 #: phraselist.cpp:481
 #, kde-format
 msgid "Open File as History"
-msgstr ""
+msgstr "ფაილის ჟურნალის სახით გახსნა"
 
 #: phraselist.cpp:482
 #, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
+"ყველა ფაილი (*);;ფრაზის წიგნები (*.phrasebook);;უბრალო ტექსტური ფაილები (*."
+"txt)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
 #: preferencesui.ui:21
@@ -743,13 +750,13 @@ msgstr ""
 #: preferencesui.ui:66
 #, kde-format
 msgid "Speak Immediately"
-msgstr ""
+msgstr "დაუყოვნებლივ თქმა"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
 #: preferencesui.ui:71
 #, kde-format
 msgid "Insert Into Edit Field"
-msgstr ""
+msgstr "ჩასვით ჩასწორების ველში"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
@@ -770,7 +777,7 @@ msgstr ""
 #: preferencesui.ui:114
 #, kde-format
 msgid "Save Phrase Book"
-msgstr ""
+msgstr "ფრაზების წიგნის შენახვა"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
 #: preferencesui.ui:119
@@ -782,7 +789,7 @@ msgstr "ცვლილებების გაუქმება"
 #: preferencesui.ui:124
 #, kde-format
 msgid "Ask Whether to Save"
-msgstr ""
+msgstr "კითხვა შენახვისას"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, texttospeechconfigurationui)
 #: texttospeechconfigurationui.ui:14
@@ -794,13 +801,13 @@ msgstr "ტექსტის-ხმამაღლა-წაკითხვა"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr ""
+msgstr "&ნაგულისხმები საუბრის სისტემის გამოყენება"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "&ძრავა:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
@@ -831,7 +838,7 @@ msgstr ""
 #: texttospeechconfigurationui.ui:123
 #, kde-format
 msgid "Command for speaking &texts:"
-msgstr ""
+msgstr "ბრძანება &ტექსტის წასაკითხად:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
@@ -956,7 +963,7 @@ msgstr "&ენა:"
 #: wordcompletion/creationsourceui.ui:16
 #, kde-format
 msgid "C&reate new dictionary:"
-msgstr ""
+msgstr "&ახალი ლექსიკონის შექმნა:"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
 #: wordcompletion/creationsourceui.ui:22
@@ -1044,7 +1051,7 @@ msgstr ""
 #: wordcompletion/dictionarycreationwizard.cpp:65
 #, kde-format
 msgid "Source of New Dictionary (1)"
-msgstr ""
+msgstr "ახალი ლექსიკონის წყარო (1)"
 
 #: wordcompletion/dictionarycreationwizard.cpp:71
 #: wordcompletion/dictionarycreationwizard.cpp:77
@@ -1052,7 +1059,7 @@ msgstr ""
 #: wordcompletion/dictionarycreationwizard.cpp:94
 #, kde-format
 msgid "Source of New Dictionary (2)"
-msgstr ""
+msgstr "ახალი ლექსიკონის წყარო (2)"
 
 #: wordcompletion/dictionarycreationwizard.cpp:80
 #, kde-format
@@ -1152,7 +1159,7 @@ msgstr ""
 #: wordcompletion/wordcompletionui.ui:103
 #, kde-format
 msgid "Add D&ictionary..."
-msgstr ""
+msgstr "&ლექსიკონის დამატება..."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
 #: wordcompletion/wordcompletionui.ui:119
@@ -1164,7 +1171,7 @@ msgstr ""
 #: wordcompletion/wordcompletionui.ui:122
 #, kde-format
 msgid "&Delete Dictionary"
-msgstr ""
+msgstr "&ლექსიკონის წაშლა"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
 #: wordcompletion/wordcompletionui.ui:138
@@ -1188,7 +1195,7 @@ msgstr ""
 #: wordcompletion/wordcompletionui.ui:160
 #, kde-format
 msgid "&Move Down"
-msgstr ""
+msgstr "&ქვემოთ ჩამოწევა"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
 #: wordcompletion/wordcompletionui.ui:176
@@ -1200,7 +1207,7 @@ msgstr ""
 #: wordcompletion/wordcompletionui.ui:179
 #, kde-format
 msgid "&Export Dictionary..."
-msgstr ""
+msgstr "&ლექსიკონის გატანა..."
 
 #. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
 #: wordcompletion/wordcompletionui.ui:204
