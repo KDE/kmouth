@@ -4,14 +4,14 @@
 # Hongsoo Byun <hsbyun@haansoft.com>, 2005.
 # Youngbin Park <shrike@nate.com>, 2005.
 # Sung-Jae, Cho <jachin@hanafos.com>, 2005.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2011, 2015, 2016, 2017, 2020, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2011, 2015, 2016, 2017, 2020, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-05-07 02:12+0200\n"
+"PO-Revision-Date: 2023-03-01 02:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -423,16 +423,11 @@ msgid "&Overwrite"
 msgstr "덮어쓰기(&O)"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
-msgstr ""
-"선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>이 아닙니다. 파일 이"
-"름에 <i>.phrasebook</i>을 덧붙이시겠습니까?"
+msgstr "선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>이 아닙니다."
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -459,14 +454,9 @@ msgid "Do Not Add"
 msgstr "추가하지 않기"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>입니다. 단어장 형식으"
-"로 저장하시겠습니까?"
+msgstr "선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>입니다."
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
