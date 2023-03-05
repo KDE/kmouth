@@ -1070,7 +1070,7 @@ msgid ""
 "documentation. The frequentness of the individual words is detect by simply "
 "counting the occurrences of each word."
 msgstr ""
-"إذا تحديد مربّع a جديد هو أداء كدي توثيق الـ من هو كشف أداء حدوثات من كلمة."
+"إذا تحديد مربّع a جديد هو أداء كِيدِي توثيق الـ من هو كشف أداء حدوثات من كلمة."
 
 #. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
 #: wordcompletion/creationsourceui.ui:95
@@ -1163,7 +1163,7 @@ msgstr ""
 msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
-msgstr "إذا تحديد تفقّد مربّع من كدي توثيق تهجئة مؤكّد قبل جديد."
+msgstr "إذا تحديد تفقّد مربّع من كِيدِي توثيق تهجئة مؤكّد قبل جديد."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
@@ -1338,7 +1338,7 @@ msgstr ""
 #~ "on linux, and native speech systems on other platforms.</p></body></html>"
 #~ msgstr ""
 #~ "هذا تفقّد مربّع KMouth إلى استخدام KTTSD الكلام خدمة إلى الكلام الـ KTTSD "
-#~ "الكلام خدمة هو a كدي رقيب كدي تطبيقات a واجهة لـ الكلام تكوين ، تأليف ، "
+#~ "الكلام خدمة هو a كِيدِي رقيب كِيدِي تطبيقات a واجهة لـ الكلام تكوين ، تأليف ، "
 #~ "شمولية ، تمثيل، اصطناع ، تخليق و هو بوصة CVS."
 
 #, fuzzy
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "KDE Text-to-Speech Daemon Configuration"
-#~ msgstr "كدي نص إلى خطبة مراقب قرص و تنفيذ إعدادات"
+#~ msgstr "كِيدِي نص إلى خطبة مراقب قرص و تنفيذ إعدادات"
 
 #, fuzzy
 #~ msgid "&Use Jovie speech service if possible"
