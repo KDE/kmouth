@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-03-11 04:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -35,7 +35,7 @@ msgstr "初始化配置 - KMouth"
 #: configwizard.cpp:59
 #, kde-format
 msgid "Text-to-Speech Configuration"
-msgstr "文本到语音配置"
+msgstr "文字转语音配置"
 
 #: configwizard.cpp:73
 #, kde-format
@@ -372,7 +372,7 @@ msgstr "选项(&P)"
 #: optionsdialog.cpp:136
 #, kde-format
 msgid "&Text-to-Speech"
-msgstr "文本转语音(&T)"
+msgstr "文字转语音(&T)"
 
 #: optionsdialog.cpp:138 optionsdialog.cpp:139
 #, kde-format
@@ -807,7 +807,7 @@ msgstr "询问是否保存"
 #: texttospeechconfigurationui.ui:14
 #, kde-format
 msgid "Text-to-Speech"
-msgstr "文本到语音"
+msgstr "文字转语音"
 
 #. i18n: ectx: property (title), widget (QGroupBox, qtspeechGroupBox)
 #: texttospeechconfigurationui.ui:32
@@ -863,7 +863,7 @@ msgstr "朗读文本命令(&T)："
 msgid ""
 "This check box specifies whether the text is sent as standard input to the "
 "speech synthesizer."
-msgstr "这个单选框指定文本是否要以标准输入形式发送给语音合成器。"
+msgstr "这个单选框指定文本是否要以标准输入形式发送给文字转语音。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:155
