@@ -939,7 +939,7 @@ msgstr "Unicode"
 msgid ""
 "If you select this check box the words are spell-checked before they are "
 "inserted into the new dictionary."
-msgstr "إذا تحديد تفقّد مربّع تهجئة مؤكّد قبل جديد."
+msgstr "إذا تحديد تفقّد مربّع تهجية مؤكّد قبل جديد."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
@@ -1163,7 +1163,7 @@ msgstr ""
 msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
-msgstr "إذا تحديد تفقّد مربّع من كِيدِي توثيق تهجئة مؤكّد قبل جديد."
+msgstr "إذا تحديد تفقّد مربّع من كِيدِي توثيق تهجية مؤكّد قبل جديد."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
