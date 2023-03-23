@@ -55,9 +55,9 @@
 
 
   <date
->04/01/2018</date>
+>18/03/2022</date>
   <releaseinfo
->1.2.0 (Applications 17.12)</releaseinfo>
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
 
   <abstract>
     <para
@@ -112,37 +112,20 @@
       </screenshot>
     </para>
     <para
->Com a primeira página do assistente você especifica o comando que deverá ser usado para a conversão de texto para voz. Para mais detalhes veja a <link linkend="tts-config"
+>Com a primeira página do assistente você especifica o mecanismo e voz que deverá ser usado para a conversão de texto para voz. Para mais detalhes veja a <link linkend="tts-config"
 >descrição da janela de configuração.</link
 > </para>
     <para>
       <screenshot>
         <screeninfo
->Livro de Frases Inicial</screeninfo>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
-          </imageobject>
-          <textobject>
-            <phrase
->Livro de Frases Inicial</phrase>
-          </textobject>
-        </mediaobject>
-      </screenshot>
-    </para>
-    <para
->Com a segunda página você seleciona quais livros de frases você necessita. A partir dos livros de frases você poderá selecionar as frases mais usadas para que não tenha que digitá-las de novo. Claro que o &kmouth; também tem uma janela de edição para caso você queira editar os seus livros de frases. </para>
-    <para>
-      <screenshot>
-        <screeninfo
->Completação de Palavras</screeninfo>
+>Completamento de palavras</screeninfo>
         <mediaobject>
           <imageobject>
             <imagedata fileref="kmouthwizard3.png" format="PNG"/>
           </imageobject>
           <textobject>
             <phrase
->Completação de Palavras</phrase>
+>Complemento de palavras</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -194,7 +177,7 @@
 > e <guilabel
 >Sintetizador de voz</guilabel
 > e a página <guilabel
->Complementação de palavras</guilabel
+>Completamento de palavras</guilabel
 >. </para>
     <sect2 id="preferences">
       <title
@@ -208,9 +191,6 @@
           <mediaobject>
             <imageobject>
               <imagedata fileref="kmouthcpref.png" format="PNG"/>
-            </imageobject>
-            <imageobject>
-              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
             </imageobject>
             <textobject>
               <phrase
@@ -291,9 +271,17 @@
 ></note>
       </para>
       <para
->No campo de edição da aba <guilabel
->Sintetizador de voz</guilabel
-> você pode indicar o comando para invocar o sintetizador de voz. Com a lista abaixo do campo de edição você poderá indicar a codificação de caracteres que é usada para passar o texto para o sintetizador de voz. </para>
+>Também é possível selecionar o <guilabel
+>Mecanismo</guilabel
+> e <guilabel
+>Voz</guilabel
+> do sistema de fala. </para>
+      <para
+>Caso o item <guilabel 
+>Usar o sistema de fala padrão</guilabel 
+> não esteja selecionado, você pode digitar o comando para invocar o sintetizador de voz no campo de edição do painel <guilabel
+>Alternativo</guilabel
+>. Com a lista abaixo do campo de edição você poderá indicar a codificação de caracteres que é usada para passar o texto para o sintetizador de voz. </para>
       <para
 >O &kmouth; tem duas formas de passar o texto: Se o comando esperar o texto no entrada padrão você deverá selecionar a opção. </para>
       <para
@@ -330,7 +318,7 @@
 >%l</token
 ></entry>
                    <entry
->O código do idioma associado ao dicionário da complementação de palavras atual</entry>
+>O código do idioma associado ao dicionário do completamento de palavras atual</entry>
               </row>
               <row
 ><entry
@@ -349,12 +337,12 @@
     </sect2>
     <sect2 id="completion-config">
       <title
->Página Completação de palavras</title>
+>A página Completamento de palavras</title>
       <para>
         <screenshot>
           <screeninfo
->Página <guilabel
->Complementação de palavras</guilabel
+>A página <guilabel
+>Completamento de palavras</guilabel
 ></screeninfo>
           <mediaobject>
             <imageobject>
@@ -369,8 +357,8 @@
       </para>
       <para
 >A página <guilabel
->Complementação de palavras</guilabel
-> contém uma lista dos dicionários usados para a complementação de palavras (o &kmouth; irá mostrar uma lista ao lado do campo de edição da janela principal se esta lista contiver mais de um dicionário. Você poderá usar esta lista para poder selecionar o dicionário que é usado atualmente para a complementação de palavras.) </para>
+>Completamento de palavras</guilabel
+> contém uma lista dos dicionários usados para a completamento de palavras (o &kmouth; irá mostrar uma lista ao lado do campo de edição da janela principal se esta lista contiver mais de um dicionário. Você poderá usar esta lista para poder selecionar o dicionário que é usado atualmente para a completamento de palavras.) </para>
       <para
 >Com os botões do lado direito da página você poderá adicionar e remover dicionários, alterar a ordem dos mesmo ou exportar os dicionários para um arquivo. Com o campo de edição e com a caixa combinada, você poderá alterar o nome e o idioma associado ao dicionário. </para>
       <para
@@ -664,9 +652,9 @@
 >Configurações</guimenu
 > e <guimenu
 >Ajuda</guimenu
->, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/ui.html#menus-settings"
+>, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menu Configurações</ulink
-> e o <ulink url="help:/fundamentals/ui.html#menus-help"
+> e o <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menu Ajuda</ulink
 > dos Fundamentos do &kde;. </para>
     </sect2>
