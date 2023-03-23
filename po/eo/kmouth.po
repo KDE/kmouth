@@ -1,12 +1,14 @@
 # translation of kmouth.po to Esperanto
+# Copyright (C) 2004 Free Software Foundation, Inc.
 # David Anema <lassi_surinen@yahoo.ca>, 2004.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2004-07-16 20:22GMT\n"
-"Last-Translator: David Anema <lassi_surinen@yahoo.ca>\n"
+"PO-Revision-Date: 2023-03-22 19:14+01\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +50,7 @@ msgstr "Vorto kompletigo"
 #: kmouth.cpp:107
 #, kde-format
 msgid "&Open as History..."
-msgstr "&Malfermu kiel historion..."
+msgstr "&Malfermi kiel historion..."
 
 #: kmouth.cpp:110 kmouth.cpp:111
 #, kde-format
@@ -113,10 +115,9 @@ msgstr ""
 "la historiujo enpoŝiĝus."
 
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
-#, fuzzy, kde-format
-#| msgid "Pastes the clipboard contents to actual position"
+#, kde-format
 msgid "Pastes the clipboard contents to current position"
-msgstr "Elpoŝigos la poŝan enhavon al la aktuala pozicio"
+msgstr ""
 
 #: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
 #, kde-format
@@ -193,9 +194,9 @@ msgid "&Delete"
 msgstr "&Forigi"
 
 #: kmouth.cpp:197 kmouth.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "Deletes the currently selected phrases from the history"
-msgstr "Forigos la nunajn elektatajn frazojn el la historiujo"
+msgstr ""
 
 #: kmouth.cpp:202
 #, kde-format
@@ -231,9 +232,9 @@ msgid "Selects all phrases in the history"
 msgstr "Elektos ĉiujn frazojn en la historiujo"
 
 #: kmouth.cpp:221
-#, fuzzy, kde-format
+#, kde-format
 msgid "D&eselect All Entries"
-msgstr "&Malelektu ĉiujn frazojn"
+msgstr ""
 
 #: kmouth.cpp:223 kmouth.cpp:224
 #, kde-format
@@ -393,28 +394,14 @@ msgid "Book"
 msgstr "Libro"
 
 #: phrasebook/phrasebook.cpp:270
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
-"*.phrasebook|Frazlibroj (*.phrasebook)\n"
-"*.txt|Plataj Tekstaj Dosieroj (*.txt)\n"
-"*|Ĉiuj Dosieroj"
 
 #: phrasebook/phrasebook.cpp:272
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
-"*.txt|Plataj Tekstaj Dosieroj (*.txt)\n"
-"*.phrasebook|Frazlibroj (*.phrasebook)\n"
-"*|Ĉiuj Dosieroj"
 
 #: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
@@ -432,16 +419,11 @@ msgid "&Overwrite"
 msgstr "&Antstataŭigu"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
-"Via elektata dosiernomo <i>%1</i> havas malsaman finaĵon ol <i>.phrasebook</"
-"i>. Ĉu aldonas <i>.phrasebook</i> al la dosiernomo?"
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -468,14 +450,9 @@ msgid "Do Not Add"
 msgstr "Ne aldoni"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
-"Via elektata dosiernomo <i>%1</i> havas finaĵon <i>.phrasebook</i>. Ĉu vi "
-"volas konservi en frazlibra formato?"
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -605,13 +582,11 @@ msgid "Name of the &phrase book:"
 msgstr "Nomo de la &frazlibro:"
 
 #: phrasebook/phrasebookdialog.cpp:430
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
-"Estas nekonservitaj ŝanĝoj. <br> Ĉu apliki la ŝanĝojn antaŭ fermo de la "
-"\"frazlibro\" fenestro aŭ forĵeti la ŝanĝoj?"
 
 #: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
@@ -634,16 +609,9 @@ msgid "Import Phrasebook"
 msgstr "Importu frazlibron"
 
 #: phrasebook/phrasebookdialog.cpp:647
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
-"*.phrasebook|Frazlibroj (*.phrasebook)\n"
-"*.txt|Plataj Tekstaj Dosieroj (*.txt)\n"
-"*|Ĉiuj Dosieroj"
 
 #: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
 #, kde-format
@@ -660,10 +628,9 @@ msgid "Export Phrase Book"
 msgstr "Eksportu frazlibron"
 
 #: phrasebook/phrasebookdialog.cpp:689
-#, fuzzy, kde-format
-#| msgid "&Phrase Books"
+#, kde-format
 msgid "Phrase Books (*.phrasebook)"
-msgstr "&Frazlibroj"
+msgstr ""
 
 #: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
 #, kde-format
@@ -778,16 +745,9 @@ msgid "Open File as History"
 msgstr "Malfermu dosieron kiel historio"
 
 #: phraselist.cpp:482
-#, fuzzy, kde-format
-#| msgid ""
-#| "*|All Files\n"
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)"
+#, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
-"*|Ĉiuj Dosieron\n"
-"*.phrasebook|Frazlibroj (*.phrasebook)\n"
-"*.txt|Plataj Tekstaj Dosieroj (*.txt)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
 #: preferencesui.ui:21
@@ -910,10 +870,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
-#, fuzzy, kde-format
-#| msgid "C&ommand for speaking texts:"
+#, kde-format
 msgid "Command for speaking &texts:"
-msgstr "&Komando por diri tekstojn:"
+msgstr "Komando por paroli &tekstojn:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
@@ -942,8 +901,7 @@ msgstr "Tiu listo indikas la kodoprezenton kiu uziĝos por paso de la tekston."
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
-#, fuzzy, kde-format
-#| msgid "Character &encoding:"
+#, kde-format
 msgid "Character encodin&g:"
 msgstr "&Kodoprezento:"
 
@@ -979,10 +937,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
 #: wordcompletion/kdedocsourceui.ui:25
-#, fuzzy, kde-format
-#| msgid "&Compare to OpenOffice.org dictionary:"
+#, kde-format
 msgid "C&ompare to OpenOffice.org dictionary:"
-msgstr "&Literumu per OpenOffice.org vortaro:"
+msgstr "K&ompari per OpenOffice.org vortaro:"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
@@ -1392,100 +1349,3 @@ msgstr "Sintakso-analizante vortaron..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Kontrolante literumon..."
-
-#, fuzzy
-#~| msgid ""
-#~| "This check box specifies KMouth tries to use the Jovie speech service "
-#~| "prior to calling the speech synthesizer directly. The Jovie speech "
-#~| "service is a KDE daemon which gives KDE applications a standardized "
-#~| "interface for speech synthesis and is currently developed in SVN."
-#~ msgid ""
-#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
-#~ "system speech service prior to calling the speech synthesizer directly. "
-#~ "The system speech service is a Qt library which wraps speech-dispatcher "
-#~ "on linux, and native speech systems on other platforms.</p></body></html>"
-#~ msgstr ""
-#~ "Tiu markobutono indikas ĉu KMouth provos uzi la Jovie-an diroservon antaŭ "
-#~ "direkta voko de la dirofaran programon. La Jovie diroservo estas KDE-a "
-#~ "demono kiu donas al KDE-aj aplikaĵoj normigatan interfacon por "
-#~ "dirofarado. Ĝi estas nune programata en CVS."
-
-#, fuzzy
-#~| msgid "KMouth"
-#~ msgid "kmouth"
-#~ msgstr "KBuŝo"
-
-#, fuzzy
-#~| msgid "KTTSD Speech Service"
-#~ msgid "Jovie Speech Service"
-#~ msgstr "KTTSD Diro Servo"
-
-#~ msgid "KDE Text-to-Speech Daemon Configuration"
-#~ msgstr "KDE Teksto-al-Diro Demona Agordo"
-
-#~ msgid "&Use Jovie speech service if possible"
-#~ msgstr "&Uzu Jovie diroservo se eblas"
-
-#~ msgid "Currently Selected Phrase or Phrase Book"
-#~ msgstr "Nuna Elektita Frazo aŭ Frazlibro"
-
-#, fuzzy
-#~ msgid " (%2 of 1 book selected)"
-#~ msgid_plural " (%2 of %1 books selected)"
-#~ msgstr[0] " (%1 el %2 libroj elektataj)"
-#~ msgstr[1] " (%1 el %2 libroj elektataj)"
-
-#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
-#~ msgstr "Presas la nune elektata(j)n frazo(j)n aŭ frazlibro(j)n"
-
-#~ msgid ""
-#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
-#~ "Win, Alt, Ctrl, and/or Shift keys."
-#~ msgstr ""
-#~ "Por uzi la '%1' klavon kiel klavosigno, ĝi devas kombiniĝi kun la "
-#~ "Fenestro-, Alt-, Stir-, kaj/aŭ Ŝovklavoj."
-
-#~ msgid "Invalid Shortcut Key"
-#~ msgstr "Nevalida klavosigno"
-
-#~ msgid ""
-#~ "The '%1' key combination has already been allocated to %2.\n"
-#~ "Please choose a unique key combination."
-#~ msgstr ""
-#~ "La '%1' klavo kombinaĵo jam preniĝis de %2.\n"
-#~ "Bonvolu elekti unikan klavosignon."
-
-#~ msgid "the standard \"%1\" action"
-#~ msgstr "la laŭnorma \"%1\" ago"
-
-#~ msgid "Conflict with Standard Application Shortcut"
-#~ msgstr "konflikto kontraŭ Laŭnorma Aplikaĵa Klavosigno"
-
-#~ msgid "the global \"%1\" action"
-#~ msgstr "la universala \"%1\" ago"
-
-#~ msgid "Conflict with Global Shortcuts"
-#~ msgstr "Konflikto kontraŭ Universalaj Klavosignoj"
-
-#~ msgid "an other phrase"
-#~ msgstr "alia frazo"
-
-#~ msgid "Key Conflict"
-#~ msgstr "Klava konflikto"
-
-#, fuzzy
-#~| msgid "&Language:"
-#~ msgid "Language:"
-#~ msgstr "&Lingvo:"
-
-#~ msgid "Other"
-#~ msgstr "Alia"
-
-#~ msgid "Create Custom Language"
-#~ msgstr "Kreu laŭmendan lingvon"
-
-#~ msgid "Please enter the code for the custom language:"
-#~ msgstr "Bonvolu enmetu la kodon por la laŭmendan lingvon:"
-
-#~ msgid "Enables/disables the toolbar"
-#~ msgstr "(Mal)ŝaltas la ilobreto"

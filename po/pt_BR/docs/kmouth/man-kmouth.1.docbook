@@ -6,15 +6,21 @@
 <refentry lang="&language;">
 <refentryinfo>
 <title
->Manual do usuário do &kde;</title>
+>Manual do usuário do KMouth</title>
 <author
->&Lauri.Watts; &Lauri.Watts.mail;</author>
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Página de manual do KMouth.</contrib
+> &Lauri.Watts.mail;</author>
 <date
->03/01/2018</date>
+>18/03/2022</date>
 <releaseinfo
->Applications 17.12</releaseinfo>
+>KMouth 22.04</releaseinfo>
 <productname
->Aplicativos do KDE</productname>
+>KDE Gear</productname>
 </refentryinfo>
 
 <refmeta>
