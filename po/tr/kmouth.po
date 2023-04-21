@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdeaccessibility-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2023-03-09 13:50+0300\n"
+"PO-Revision-Date: 2023-04-20 15:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -780,7 +780,7 @@ msgid ""
 "This combo box specifies whether selected phrases of the phrase book are "
 "immediately spoken or just inserted into the edit field."
 msgstr ""
-"Bu açılır menü, söz kitabından seçilen sözlerin hızlı bir şekilde okunmasını "
+"Bu çoklu kutu, söz kitabından seçilen sözlerin hızlı bir şekilde okunmasını "
 "veya yalnızca düzenleme alanına eklenmesini belirler."
 
 #. i18n: ectx: property (text), widget (QLabel, speakLabel)
@@ -809,7 +809,7 @@ msgid ""
 "This combo box specifies whether the phrase book is automatically saved when "
 "the edit window is closed."
 msgstr ""
-"Bu açılır menü, düzenleme penceresi kapatıldığında söz kitabının otomatik "
+"Bu çoklu kutu, düzenleme penceresi kapatıldığında söz kitabının otomatik "
 "olarak kaydedilip kaydeilmeyeceğini belirler."
 
 #. i18n: ectx: property (text), widget (QLabel, closeLabel)
@@ -914,7 +914,7 @@ msgstr "Ver&iyi standart girdi olarak gönder"
 msgid ""
 "This combo box specifies which character encoding is used for passing the "
 "text."
-msgstr "Bu açılır menü, gönderilen metnin karakter kodlamasını belirler."
+msgstr "Bu çoklu kutu, gönderilen metnin karakter kodlamasını belirler."
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
@@ -967,7 +967,7 @@ msgid ""
 "With this combo box you select the character encoding used to load text "
 "files. This combo box is not used for XML files or for dictionary files."
 msgstr ""
-"Bu açılır kutu ile yüklenen metin dosyalarında kullanılacak olan karakter "
+"Bu çoklu kutu ile yüklenen metin dosyalarında kullanılacak olan karakter "
 "kodlamasını seçersiniz. Bu açılır kutu XML veya sözlük dosyaları için "
 "kullanılmaz."
 
@@ -1013,7 +1013,7 @@ msgid ""
 "With this combo box you decide which language should be associated with the "
 "new dictionary."
 msgstr ""
-"Bu açılır kutu ile, yeni sözlük ile hangi dili ilişkilendireceğinize karar "
+"Bu çoklu kutu ile, yeni sözlük ile hangi dili ilişkilendireceğinize karar "
 "verebilirsiniz."
 
 #. i18n: ectx: property (text), widget (QLabel, languageLabel)
@@ -1204,7 +1204,7 @@ msgid ""
 "creating the new dictionary. KMouth will only parse documentation files of "
 "this language."
 msgstr ""
-"Bu açılır kutu ile yani sözlük oluşturulurken hangi kurulu dili "
+"Bu çoklu kutu ile yani sözlük oluşturulurken hangi kurulu dili "
 "kullanacağınızı seçebilirsiniz. K Ağız, yalnızca bu dilin belge dosyalarını "
 "ayrıştıracaktır."
 
@@ -1220,9 +1220,7 @@ msgstr "&Seçili Sözlük"
 msgid ""
 "With this combo box you select the language associated with the selected "
 "dictionary."
-msgstr ""
-"Bu açılır kutu ile seçili sözlük ile hangi dili ilişkilendireceğinizi "
-"seçebilirsiniz."
+msgstr "Bu çoklu kutuyla, seçili sözlükle ilişkili olan dili seçersiniz."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
@@ -1311,7 +1309,7 @@ msgid ""
 msgstr ""
 "Bu liste sözcük tamamlama için kullanılabilinecek sözlükleri içerir. K Ağız "
 "ana pencerede liste eğer birden fazla sözlük içeriyorsa metin alanının "
-"yanında bir açılır kutu gösterecektir. Hangi sözlüğü sözcük tamamlama için "
+"yanında bir çoklu kutu gösterecektir. Hangi sözlüğü sözcük tamamlama için "
 "kullanmak istiyorsanız buradan seçebilirsiniz."
 
 #: wordcompletion/wordcompletionwidget.cpp:79
