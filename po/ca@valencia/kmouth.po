@@ -1288,25 +1288,25 @@ msgstr "&Elimina el diccionari"
 #: wordcompletion/wordcompletionui.ui:138
 #, kde-format
 msgid "With this button you move the selected dictionary up."
-msgstr "Amb este botó moveu amunt el diccionari seleccionat."
+msgstr "Amb este botó moveu cap amunt el diccionari seleccionat."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
 #: wordcompletion/wordcompletionui.ui:141
 #, kde-format
 msgid "Move &Up"
-msgstr "Mou am&unt"
+msgstr "Mou cap am&unt"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
 #: wordcompletion/wordcompletionui.ui:157
 #, kde-format
 msgid "With this button you move the selected dictionary down."
-msgstr "Amb este botó moveu avall el diccionari seleccionat."
+msgstr "Amb este botó moveu cap avall el diccionari seleccionat."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
 #: wordcompletion/wordcompletionui.ui:160
 #, kde-format
 msgid "&Move Down"
-msgstr "&Mou avall"
+msgstr "&Mou cap avall"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
 #: wordcompletion/wordcompletionui.ui:176
