@@ -162,7 +162,7 @@ msgstr "&Editar…"
 #: kmouth.cpp:166
 #, kde-format
 msgid "Show P&hrasebook Bar"
-msgstr "Mostrar a barra de &Libro de Frases"
+msgstr "Amosar a barra de &Libro de Frases"
 
 #: kmouth.cpp:168 kmouth.cpp:169
 #, kde-format
@@ -1311,9 +1311,9 @@ msgid ""
 "completion."
 msgstr ""
 "Esta lista contén todos os dicionarios dispoñíbeis para a completación de "
-"palabras. KMouth mostrará unha lista a carón do campo de edición na xanela "
+"palabras. KMouth amosará unha lista a carón do campo de edición na xanela "
 "principal se esta lista contivese máis dun dicionario. Pode utilizar esta "
-"lista para escoller o dicionario que quere empregar para a completación de "
+"lista para escoller o dicionario que quere usar para a completación de "
 "palabras."
 
 #: wordcompletion/wordcompletionwidget.cpp:79
