@@ -25,6 +25,7 @@
 #include <QMap>
 #include <QWizard>
 
+#include <kio_version.h>
 #include "ui_creationsourceui.h"
 #include "ui_creationsourcedetailsui.h"
 #include "ui_kdedocsourceui.h"
@@ -80,8 +81,11 @@ public:
         setObjectName(QLatin1String(name));
         languageButton->showLanguageCodes(true);
         languageButton->loadAllLanguages();
-
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 108, 0)
+        ooDictURL->setNameFilter(QStringLiteral("*.dic"));
+#else
         ooDictURL->setFilter(QStringLiteral("*.dic"));
+#endif
     }
     int nextId() const override
     {
