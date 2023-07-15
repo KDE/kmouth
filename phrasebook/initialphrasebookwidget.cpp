@@ -30,8 +30,8 @@
 #include <QVBoxLayout>
 
 // include files for KDE
-#include <QDialog>
 #include <KLocalizedString>
+#include <QDialog>
 #include <QUrl>
 
 #include <QDebug>
@@ -41,7 +41,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *na
 {
     setObjectName(QLatin1String(name));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-//TODO PORT QT5     mainLayout->setSpacing(QDialog::spacingHint());
+    // TODO PORT QT5     mainLayout->setSpacing(QDialog::spacingHint());
     QLabel *label = new QLabel(i18n("Please decide which phrase books you need:"), this);
     label->setObjectName(QStringLiteral("booksTitle"));
     mainLayout->addWidget(label);
@@ -50,7 +50,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *na
     m_model->setHeaderData(0, Qt::Horizontal, i18n("Book"));
     QTreeView *view = new QTreeView(this);
     view->setSortingEnabled(false);
-    //books->setItemsMovable (false);
+    // books->setItemsMovable (false);
     view->setDragEnabled(false);
     view->setRootIsDecorated(true);
     view->setSelectionMode(QAbstractItemView::MultiSelection);
@@ -58,8 +58,7 @@ InitialPhraseBookWidget::InitialPhraseBookWidget(QWidget *parent, const char *na
     mainLayout->addWidget(view);
 
     initStandardPhraseBooks();
-    connect(m_model, &QStandardItemModel::itemChanged,
-            this, &InitialPhraseBookWidget::slotItemChanged);
+    connect(m_model, &QStandardItemModel::itemChanged, this, &InitialPhraseBookWidget::slotItemChanged);
 }
 
 InitialPhraseBookWidget::~InitialPhraseBookWidget()
@@ -91,8 +90,8 @@ void InitialPhraseBookWidget::initStandardPhraseBooks()
 
         QStringList::iterator it1 = currentNamePath.begin();
         QStringList::iterator it2 = dirs.begin();
-        for (; (it1 != currentNamePath.end())
-             && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+        for (; (it1 != currentNamePath.end()) && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2)
+            ;
 
         for (; it1 != currentNamePath.end(); ++it1) {
             parent = stack.pop();

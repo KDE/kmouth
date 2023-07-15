@@ -23,18 +23,18 @@
 #include <QTextCodec>
 #include <QTextToSpeech>
 
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 #include "speech.h"
 
 TextToSpeechSystem::TextToSpeechSystem(QObject *parent)
-    : QObject(parent),
-      codec(Speech::Local),
-      stdIn(true),
-      useQtSpeech(true),
-      ttsEngine(QLatin1String("speechd")),
-      m_speech(new QTextToSpeech(ttsEngine))
+    : QObject(parent)
+    , codec(Speech::Local)
+    , stdIn(true)
+    , useQtSpeech(true)
+    , ttsEngine(QLatin1String("speechd"))
+    , m_speech(new QTextToSpeech(ttsEngine))
 {
     buildCodecList();
 }
@@ -56,8 +56,7 @@ void TextToSpeechSystem::speak(const QString &text, const QString &language)
         if (codec < Speech::UseCodec)
             (new Speech())->speak(ttsCommand, stdIn, text, language, codec, nullptr);
         else
-            (new Speech())->speak(ttsCommand, stdIn, text, language, Speech::UseCodec,
-                                  codecList->at(codec - Speech::UseCodec));
+            (new Speech())->speak(ttsCommand, stdIn, text, language, Speech::UseCodec, codecList->at(codec - Speech::UseCodec));
     }
 }
 
@@ -109,7 +108,7 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
     delete m_speech;
     m_speech = new QTextToSpeech(ttsEngine);
     const QVector<QVoice> voices = m_speech->availableVoices();
-    for (const QVoice &voice: voices) {
+    for (const QVoice &voice : voices) {
         if (voice.name() == ttsVoice) {
             m_speech->setVoice(voice);
         }
@@ -118,11 +117,10 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
 
 void TextToSpeechSystem::buildCodecList()
 {
-    codecList = new QList<QTextCodec*>;
+    codecList = new QList<QTextCodec *>;
     QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
     for (int i = 0; i < availableCodecs.count(); ++i) {
         QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
         codecList->append(codec);
     }
 }
-

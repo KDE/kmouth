@@ -23,8 +23,8 @@
 #include <QtDebug>
 
 PhraseBookReader::PhraseBookReader()
-    :level(0),
-     starting(true)
+    : level(0)
+    , starting(true)
 {
 }
 
@@ -82,8 +82,7 @@ void PhraseBookReader::readbook()
             readphrase();
         } else if (xml.name() == QLatin1String("phrasebook")) {
             readbook();
-        }
-        else
+        } else
             xml.skipCurrentElement();
     }
 
@@ -107,10 +106,7 @@ void PhraseBookReader::readphrase()
 
 QString PhraseBookReader::errorString() const
 {
-    return QLatin1String("%1\nLine %2, column %3")
-            .arg(xml.errorString())
-            .arg(xml.lineNumber())
-            .arg(xml.columnNumber());
+    return QLatin1String("%1\nLine %2, column %3").arg(xml.errorString()).arg(xml.lineNumber()).arg(xml.columnNumber());
 }
 
 PhraseBookEntryList PhraseBookReader::getPhraseList()

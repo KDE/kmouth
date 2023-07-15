@@ -62,7 +62,7 @@ void PreferencesWidget::cancel()
 void PreferencesWidget::ok()
 {
     speak = speakCombo->currentIndex() == 0;
-    save  = closeCombo->currentIndex();
+    save = closeCombo->currentIndex();
 }
 
 void PreferencesWidget::readOptions()
@@ -76,7 +76,7 @@ void PreferencesWidget::readOptions()
     else
         speak = false;
 
-    KConfigGroup cg2(KSharedConfig::openConfig() , "Notification Messages");
+    KConfigGroup cg2(KSharedConfig::openConfig(), "Notification Messages");
     if (cg2.hasKey("AutomaticSave"))
         if (cg2.readEntry("AutomaticSave") == QLatin1String("Yes"))
             save = 0;
@@ -121,10 +121,10 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 {
     setWindowTitle(i18n("Configuration"));
     setFaceType(KPageDialog::List);
-    //setHelp(QLatin1String("config-dialog"));
-    setStandardButtons(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Apply);
+    // setHelp(QLatin1String("config-dialog"));
+    setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help | QDialogButtonBox::Apply);
 
-    //addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
+    // addGridPage (1, Qt::Horizontal, i18n("General Options"), QString(), iconGeneral);
 
     tabCtl = new QTabWidget();
     tabCtl->setObjectName(QStringLiteral("general"));
@@ -156,7 +156,7 @@ OptionsDialog::~OptionsDialog()
 
 void OptionsDialog::slotCancel()
 {
-//   QDialog::slotCancel();
+    //   QDialog::slotCancel();
     commandWidget->cancel();
     behaviourWidget->cancel();
     completionWidget->load();
@@ -164,7 +164,7 @@ void OptionsDialog::slotCancel()
 
 void OptionsDialog::slotOk()
 {
-//   QDialog::slotOk();
+    //   QDialog::slotOk();
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();
@@ -173,7 +173,7 @@ void OptionsDialog::slotOk()
 
 void OptionsDialog::slotApply()
 {
-//   QDialog::slotApply();
+    //   QDialog::slotApply();
     commandWidget->ok();
     behaviourWidget->ok();
     completionWidget->save();
@@ -202,4 +202,3 @@ bool OptionsDialog::isSpeakImmediately()
 {
     return behaviourWidget->isSpeakImmediately();
 }
-

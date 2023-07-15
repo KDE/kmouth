@@ -21,16 +21,16 @@
 #ifndef PHRASEBOOK_H
 #define PHRASEBOOK_H
 
-#include <QObject>
 #include <QIODevice>
 #include <QMenu>
+#include <QObject>
 #include <QPrinter>
 #include <QTextStream>
 
-#include <QAction>
 #include <KActionCollection>
-#include <QIcon>
 #include <KToolBar>
+#include <QAction>
+#include <QIcon>
 
 class QUrl;
 
@@ -73,7 +73,9 @@ class PhraseBookEntry
 public:
     PhraseBookEntry();
     explicit PhraseBookEntry(const Phrase &phrase, int level = 1, bool isPhrase = true);
-    ~PhraseBookEntry() {}
+    ~PhraseBookEntry()
+    {
+    }
 
     void setPhrase(Phrase phrase, int level = 1, bool isPhrase = true);
 
@@ -105,8 +107,13 @@ typedef QList<PhraseBookEntry> PhraseBookEntryList;
 class PhraseBook : public PhraseBookEntryList
 {
 public:
-    PhraseBook() : PhraseBookEntryList() {}
-    ~PhraseBook() {}
+    PhraseBook()
+        : PhraseBookEntryList()
+    {
+    }
+    ~PhraseBook()
+    {
+    }
 
     /** opens a file containing a phrase book. Returns true if successful. */
     bool open(const QUrl &url);
@@ -144,9 +151,7 @@ public:
     /** Adds the entries of the book to both the given popup menu and the given
      * toolbar. The corresponding actions will be inserted into phrases.
      */
-    void addToGUI(QMenu *popup, KToolBar *toolbar,
-                  KActionCollection *phrases,
-                  QObject *receiver, const char *slot) const;
+    void addToGUI(QMenu *popup, KToolBar *toolbar, KActionCollection *phrases, QObject *receiver, const char *slot) const;
 
     /** Inserts book into a new sub phrase book.
      * @param name the name of the new sub phrase book.
@@ -164,7 +169,7 @@ class PhraseAction : public QAction
 {
     Q_OBJECT
 public:
-    PhraseAction(const QString& phrase, const QString& cut, const QObject* receiver, const char* slot, KActionCollection* parent)
+    PhraseAction(const QString &phrase, const QString &cut, const QObject *receiver, const char *slot, KActionCollection *parent)
         : QAction(QIcon::fromTheme(QStringLiteral("phrase")), phrase, parent)
     {
         this->setShortcut(cut);
@@ -180,7 +185,7 @@ public:
 public Q_SLOTS:
     void slotTriggered()
     {
-//      trigger();
+        //      trigger();
         Q_EMIT slotActivated(phrase);
     }
 

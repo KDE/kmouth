@@ -36,8 +36,7 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent
     setupUi(this);
     ttsSystem = new TextToSpeechSystem(this);
 
-    connect(qtspeechGroupBox, &QGroupBox::toggled,
-            this, &TextToSpeechConfigurationWidget::useQtspeechChanged);
+    connect(qtspeechGroupBox, &QGroupBox::toggled, this, &TextToSpeechConfigurationWidget::useQtspeechChanged);
     buildCodecList();
 
     // BEGIN Text-to-speech section
@@ -47,10 +46,8 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent
         engineComboBox->addItem(engine);
     }
 
-    connect(engineComboBox, qOverload<int>(&QComboBox::currentIndexChanged),
-            this, &TextToSpeechConfigurationWidget::slotTTSEngineChanged);
-    connect(voiceComboBox, &QComboBox::currentTextChanged,
-            this, &TextToSpeechConfigurationWidget::slotTTSVoiceChanged);
+    connect(engineComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigurationWidget::slotTTSEngineChanged);
+    connect(voiceComboBox, &QComboBox::currentTextChanged, this, &TextToSpeechConfigurationWidget::slotTTSVoiceChanged);
 
     // Preload voice list
     slotTTSEngineChanged();
@@ -142,4 +139,3 @@ void TextToSpeechConfigurationWidget::saveOptions(const QString &langGroup)
 {
     ttsSystem->saveOptions(langGroup);
 }
-

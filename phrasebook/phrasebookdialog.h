@@ -24,11 +24,11 @@
 #include <QDomNode>
 #include <QStandardItemModel>
 
+#include <KXmlGuiWindow>
 #include <QAction>
 #include <QUrl>
-#include <KXmlGuiWindow>
 
-//#include "phrasebook.h"
+// #include "phrasebook.h"
 #include "ui_phrasebookdialog.h"
 
 class KActionMenu;
@@ -43,7 +43,7 @@ class StandardPhraseBookInsertAction : public QAction
 {
     Q_OBJECT
 public:
-    StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent);
+    StandardPhraseBookInsertAction(const QUrl &url, const QString &name, const QObject *receiver, const char *slot, KActionCollection *parent);
     ~StandardPhraseBookInsertAction() override;
 
 public Q_SLOTS:
@@ -87,7 +87,7 @@ public Q_SLOTS:
     void slotTextChanged(const QString &s);
     void slotNoKey();
     void slotCustomKey();
-    void slotKeySequenceChanged(const QKeySequence& sequence);
+    void slotKeySequenceChanged(const QKeySequence &sequence);
 
     void selectionChanged();
     void contextMenuRequested(const QPoint &pos);
@@ -104,7 +104,7 @@ public Q_SLOTS:
     void slotImportPhrasebook();
     void slotImportPhrasebook(const QUrl &url);
     void slotExportPhrasebook();
-    //void slotPrint ();
+    // void slotPrint ();
 
     void slotModelChanged();
 
@@ -123,7 +123,7 @@ private:
 
     // Deserialize the book from the given QDomNode and under the given parent
     // Return the new QStandardItem so it can get focused.
-    QStandardItem* deserializeBook(const QDomNode &node, QStandardItem *parent);
+    QStandardItem *deserializeBook(const QDomNode &node, QStandardItem *parent);
     // Return a serialized string of the book or phrase at the given index.
     QString serializeBook(const QModelIndex &index);
 
@@ -137,25 +137,25 @@ private:
 
     bool phrasebookChanged;
 
-    QAction* fileNewPhrase;
-    QAction* fileNewBook;
-    QAction* fileSave;
-    QAction* fileImport;
-    KToolBarPopupAction* toolbarImport;
-    KActionMenu* fileImportStandardBook;
-    QAction* fileExport;
-    //QAction* filePrint;
-    QAction* fileClose;
-    QAction* editCut;
-    QAction* editCopy;
-    QAction* editPaste;
-    QAction* editDelete;
+    QAction *fileNewPhrase;
+    QAction *fileNewBook;
+    QAction *fileSave;
+    QAction *fileImport;
+    KToolBarPopupAction *toolbarImport;
+    KActionMenu *fileImportStandardBook;
+    QAction *fileExport;
+    // QAction* filePrint;
+    QAction *fileClose;
+    QAction *editCut;
+    QAction *editCopy;
+    QAction *editPaste;
+    QAction *editDelete;
 
-    QStandardItemModel* m_bookModel;
+    QStandardItemModel *m_bookModel;
     QStandardItem *m_rootItem;
 
     // Keep QPrinter so settings persist
-    //QPrinter *printer;
+    // QPrinter *printer;
 
     Ui::PhraseBookDialog *m_ui;
 };

@@ -39,7 +39,7 @@ WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *p
 WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *pdlg);
 WordMap mergeFiles(const QMap<QString, int> &files, QProgressDialog *pdlg);
 
-WordMap spellCheck(WordMap wordlist,  const QString &dictionary,   QProgressDialog *pdlg);
+WordMap spellCheck(WordMap wordlist, const QString &dictionary, QProgressDialog *pdlg);
 
 bool saveWordList(const WordMap &map, const QString &filename);
 

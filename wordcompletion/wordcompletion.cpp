@@ -32,11 +32,13 @@
 class WordCompletion::WordCompletionPrivate
 {
     friend class WordCompletion;
+
 public:
     WordCompletionPrivate()
-        :blockCurrentListSignal(false),
-          wordsToSave(false)
-    {}
+        : blockCurrentListSignal(false)
+        , wordsToSave(false)
+    {
+    }
 
 private:
     typedef QMap<QString, int> WordMap;
@@ -55,7 +57,8 @@ private:
     bool wordsToSave;
 };
 
-WordCompletion::WordCompletion() : KCompletion()
+WordCompletion::WordCompletion()
+    : KCompletion()
 {
     d = new WordCompletionPrivate();
     configure();
@@ -108,8 +111,7 @@ QStringList WordCompletion::wordLists()
 QStringList WordCompletion::wordLists(const QString &language)
 {
     QStringList result;
-    for (QStringList::const_iterator it = d->dictionaries.constBegin();
-         it != d->dictionaries.constEnd(); ++it)
+    for (QStringList::const_iterator it = d->dictionaries.constBegin(); it != d->dictionaries.constEnd(); ++it)
         if (d->dictDetails[*it].language == language)
             result += *it;
     return result;
@@ -174,7 +176,8 @@ bool WordCompletion::setWordList(const QString &wordlist)
     if (result)
         d->current = wordlist;
     else {
-        if (d->dictionaries.isEmpty()) return false;
+        if (d->dictionaries.isEmpty())
+            return false;
         d->current = d->dictionaries[0];
     }
 
@@ -195,7 +198,7 @@ bool WordCompletion::setWordList(const QString &wordlist)
                         bool ok;
                         int weight = list[1].toInt(&ok);
                         if (ok && (weight > 0))
-                            d->map [list[0]] = weight;
+                            d->map[list[0]] = weight;
                     }
                 }
             }
@@ -258,4 +261,3 @@ void WordCompletion::save()
         d->wordsToSave = false;
     }
 }
-

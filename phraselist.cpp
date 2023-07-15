@@ -35,18 +35,19 @@
 // include files for KDE
 #include <KComboBox>
 #include <KConfigGroup>
-#include <QIcon>
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KXMLGUIFactory>
+#include <QIcon>
 
 #include "kmouth.h"
-#include "texttospeechsystem.h"
 #include "phrasebook/phrasebook.h"
+#include "texttospeechsystem.h"
 #include "wordcompletion/wordcompletion.h"
 
-PhraseList::PhraseList(QWidget *parent, const QString &name) : QWidget(parent)
+PhraseList::PhraseList(QWidget *parent, const QString &name)
+    : QWidget(parent)
 {
     Q_UNUSED(name);
     isInSlot = false;
@@ -85,14 +86,16 @@ PhraseList::PhraseList(QWidget *parent, const QString &name) : QWidget(parent)
     speakButton = new QPushButton(icon, i18n("&Speak"), this);
     speakButton->setFocusPolicy(Qt::NoFocus);
     speakButton->setAutoDefault(false);
-    speakButton->setWhatsThis(i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
+    speakButton->setWhatsThis(
+        i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history "
+             "(if any) are spoken."));
     rowLayout->addWidget(speakButton);
 
     connect(dictionaryCombo, QOverload<const QString &>::of(&KComboBox::textActivated), completion, &WordCompletion::setWordList);
     connect(completion, &WordCompletion::wordListsChanged, this, &PhraseList::configureCompletionCombo);
 
-    connect(m_listView->selectionModel(),  &QItemSelectionModel::selectionChanged, this, &PhraseList::selectionChanged);
-    connect(m_listView,  &QWidget::customContextMenuRequested, this, &PhraseList::contextMenuRequested);
+    connect(m_listView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &PhraseList::selectionChanged);
+    connect(m_listView, &QWidget::customContextMenuRequested, this, &PhraseList::contextMenuRequested);
     connect(lineEdit, &KLineEdit::returnKeyPressed, this, &PhraseList::lineEntered);
     connect(lineEdit, &QLineEdit::textChanged, this, &PhraseList::textChanged);
     connect(speakButton, &QAbstractButton::clicked, this, &PhraseList::speak);
@@ -158,7 +161,7 @@ void PhraseList::enableMenuEntries()
             break;
         }
     }
-    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
+    KMouthApp *theApp = qobject_cast<KMouthApp *>(parentWidget());
     theApp->enableMenuEntries(selected, deselected);
 }
 
@@ -210,8 +213,8 @@ void PhraseList::readCompletionOptions()
 
     if (KSharedConfig::openConfig()->hasGroup("Completion")) {
         KConfigGroup cg2(KSharedConfig::openConfig(), "Completion");
-        //int mode = cg2.readEntry("Mode", int(KGlobalSettings::completionMode()));
-        //lineEdit->setCompletionMode(static_cast<KGlobalSettings::Completion>(mode));
+        // int mode = cg2.readEntry("Mode", int(KGlobalSettings::completionMode()));
+        // lineEdit->setCompletionMode(static_cast<KGlobalSettings::Completion>(mode));
 
         QString current = cg2.readEntry("List", QString());
         const QStringList list = completion->wordLists();
@@ -230,7 +233,6 @@ void PhraseList::saveWordCompletion()
 {
     completion->save();
 }
-
 
 void PhraseList::selectAllEntries()
 {
@@ -322,7 +324,7 @@ void PhraseList::lineEntered(const QString &phrase)
 void PhraseList::speakPhrase(const QString &phrase)
 {
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
+    KMouthApp *theApp = qobject_cast<KMouthApp *>(parentWidget());
     QString language = completion->languageOfWordList(completion->currentWordList());
     theApp->getTTSSystem()->speak(phrase, language);
     QApplication::restoreOverrideCursor();
@@ -353,7 +355,7 @@ void PhraseList::contextMenuRequested(const QPoint &pos)
     else
         name = QStringLiteral("phraselist_popup");
 
-    KMouthApp *theApp = qobject_cast<KMouthApp*>(parentWidget());
+    KMouthApp *theApp = qobject_cast<KMouthApp *>(parentWidget());
     KXMLGUIFactory *factory = theApp->factory();
     QMenu *popup = (QMenu *)factory->container(name, theApp);
     if (popup != nullptr) {
@@ -406,7 +408,7 @@ void PhraseList::keyPressEvent(QKeyEvent *e)
 
         if (!selected) {
             m_listView->setCurrentIndex(m_model->index(m_model->rowCount() - 1, 0));
-            //listBox->ensureCurrentVisible ();
+            // listBox->ensureCurrentVisible ();
         } else {
             int curr = m_listView->currentIndex().row();
 
@@ -416,13 +418,13 @@ void PhraseList::keyPressEvent(QKeyEvent *e)
                 isInSlot = false;
                 curr = m_model->rowCount() - 1;
                 m_listView->setCurrentIndex(m_model->index(curr, 0));
-                //listBox->ensureCurrentVisible ();
+                // listBox->ensureCurrentVisible ();
             } else if (curr != 0) {
                 isInSlot = true;
                 m_listView->clearSelection();
                 isInSlot = false;
                 m_listView->setCurrentIndex(m_model->index(curr - 1, 0));
-                //listBox->ensureCurrentVisible ();
+                // listBox->ensureCurrentVisible ();
             }
         }
 
@@ -440,7 +442,7 @@ void PhraseList::keyPressEvent(QKeyEvent *e)
                 m_listView->clearSelection();
                 isInSlot = false;
                 m_listView->setCurrentIndex(m_model->index(curr + 1, 0));
-                //listBox->ensureCurrentVisible ();
+                // listBox->ensureCurrentVisible ();
             }
         }
         e->accept();
@@ -478,8 +480,8 @@ void PhraseList::save()
 
 void PhraseList::open()
 {
-    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Open File as History"), QUrl(),
-                                           i18n("All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"));
+    QUrl url =
+        QFileDialog::getOpenFileUrl(this, i18n("Open File as History"), QUrl(), i18n("All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"));
 
     if (!url.isEmpty())
         open(url);
@@ -502,4 +504,3 @@ void PhraseList::open(const QUrl &url)
     } else
         KMessageBox::error(this, i18n("There was an error loading file\n%1", url.toDisplayString()));
 }
-

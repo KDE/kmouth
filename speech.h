@@ -26,19 +26,14 @@
 #include <QTemporaryFile>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
-  *@author Gunnar Schmi Dt
-  */
+ *@author Gunnar Schmi Dt
+ */
 
 class Speech : public QObject
 {
     Q_OBJECT
 public:
-    enum CharacterCodec {
-        Local    = 0,
-        Latin1   = 1,
-        Unicode  = 2,
-        UseCodec = 3
-    };
+    enum CharacterCodec { Local = 0, Latin1 = 1, Unicode = 2, UseCodec = 3 };
 
     Speech();
     ~Speech() override;
@@ -57,14 +52,13 @@ public:
      * @param command the command that shall be executed for speaking
      * @param text the quoted text that can be inserted into the command
      */
-    QString prepareCommand(const QString &command, const QString &text,
-                           const QString &filename, const QString &language);
+    QString prepareCommand(const QString &command, const QString &text, const QString &filename, const QString &language);
 
 public Q_SLOTS:
-    //void wroteStdin(K3Process *p);
+    // void wroteStdin(K3Process *p);
     void processExited(int exitCode, QProcess::ExitStatus exitStatus);
-    //void receivedStdout(K3Process *proc, char *buffer, int buflen);
-    //void receivedStderr(K3Process *proc, char *buffer, int buflen);
+    // void receivedStdout(K3Process *proc, char *buffer, int buflen);
+    // void receivedStderr(K3Process *proc, char *buffer, int buflen);
 
 private:
     QProcess m_process;

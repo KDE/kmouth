@@ -31,8 +31,8 @@ class TextToSpeechConfigurationWidget;
 class WordCompletionWidget;
 
 /**This class represents a configuration widget for user preferences.
-  *@author Gunnar Schmi Dt
-  */
+ *@author Gunnar Schmi Dt
+ */
 
 class PreferencesWidget : public QWidget, public Ui::PreferencesUI
 {
@@ -55,8 +55,8 @@ private:
 };
 
 /**This class represents a configuration dialog for the options of KMouth.
-  *@author Gunnar Schmi Dt
-  */
+ *@author Gunnar Schmi Dt
+ */
 
 class OptionsDialog : public KPageDialog
 {

@@ -27,12 +27,13 @@
 class QTextToSpeech;
 
 /**This class represents a text-to-speech system.
-  *@author Gunnar Schmi Dt
-  */
+ *@author Gunnar Schmi Dt
+ */
 class TextToSpeechSystem : public QObject
 {
     Q_OBJECT
     friend class TextToSpeechConfigurationWidget;
+
 public:
     explicit TextToSpeechSystem(QObject *parent = nullptr);
     ~TextToSpeechSystem() override;
@@ -46,7 +47,7 @@ public Q_SLOTS:
 private:
     void buildCodecList();
 
-    QList<QTextCodec*> *codecList;
+    QList<QTextCodec *> *codecList;
     int codec;
     QString ttsCommand;
     bool stdIn;

@@ -59,10 +59,7 @@ bool XMLReader::read(QIODevice *device)
 
 QString XMLReader::errorString() const
 {
-    return QLatin1String("%1\nLine %2, column %3")
-            .arg(xml.errorString())
-            .arg(xml.lineNumber())
-            .arg(xml.columnNumber());
+    return QLatin1String("%1\nLine %2, column %3").arg(xml.errorString()).arg(xml.lineNumber()).arg(xml.columnNumber());
 }
 
 WordMap XMLReader::getList()
@@ -144,7 +141,7 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
 
             if (!stream.atEnd()) {
                 QString line = stream.readLine();
-                if (line == QLatin1String("WPDictFile")) {   // Contains the file a weighted word list?
+                if (line == QLatin1String("WPDictFile")) { // Contains the file a weighted word list?
                     // We can assume that weighted word lists are always UTF8 coded.
                     while (!stream.atEnd()) {
                         QString s = stream.readLine();
@@ -312,20 +309,19 @@ WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *p
 /* Structures used for storing *.aff files (part of OpenOffice.org dictionaries)
  */
 struct AffEntry {
-    bool    cross;
-    int     charsToRemove;
+    bool cross;
+    int charsToRemove;
     QString add;
     QStringList condition;
 };
 
 typedef QList<AffEntry> AffList;
-typedef QMap<QChar, AffList>  AffMap;
+typedef QMap<QChar, AffList> AffMap;
 
 /** Loads an *.aff file (part of OpenOffice.org dictionaries)
  */
 void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
 {
-
     QFile afile(filename);
     if (afile.open(QIODevice::ReadOnly)) {
         QTextStream stream(&afile);
@@ -339,12 +335,12 @@ void loadAffFile(const QString &filename, AffMap &prefixes, AffMap &suffixes)
             } else {
                 if (fields.count() >= 5) {
                     AffEntry e;
-                    e.cross     = cross;
+                    e.cross = cross;
                     if (fields[2] == QLatin1String("0"))
                         e.charsToRemove = 0;
                     else
                         e.charsToRemove = fields[2].length();
-                    e.add       = fields[3];
+                    e.add = fields[3];
 
                     if (fields[4] != QLatin1String(".")) {
                         QString condition = fields[4];
@@ -395,9 +391,7 @@ inline bool checkCondition(const QString &word, const QStringList &condition)
 
     QStringList::ConstIterator it;
     int idx;
-    for (it = condition.constBegin(), idx = word.length() - condition.count();
-         it != condition.constEnd();
-         ++it, ++idx) {
+    for (it = condition.constBegin(), idx = word.length() - condition.count(); it != condition.constEnd(); ++it, ++idx) {
         if ((*it).contains(word[idx]) == ((*it)[0] == QLatin1Char('^')))
             return false;
     }
@@ -417,8 +411,7 @@ inline void checkWord(const QString &word, const QString &modifiers, bool cross,
 
             AffList::ConstIterator sIt;
             for (sIt = sList.constBegin(); sIt != sList.constEnd(); ++sIt) {
-                if (((*sIt).cross || !cross)
-                    && (checkCondition(word, (*sIt).condition))) {
+                if (((*sIt).cross || !cross) && (checkCondition(word, (*sIt).condition))) {
                     QString sWord = word.left(word.length() - (*sIt).charsToRemove) + (*sIt).add;
                     if (map.contains(sWord))
                         checkedMap[sWord] = map[sWord];
@@ -457,7 +450,6 @@ void checkWord(const QString &word, const QString &modifiers, const WordMap &map
 
 WordMap spellCheck(WordMap map, const QString &dictionary, QProgressDialog *pdlg)
 {
-
     if (dictionary.endsWith(QLatin1String(".dic"))) {
         AffMap prefixes;
         AffMap suffixes;
@@ -465,8 +457,8 @@ WordMap spellCheck(WordMap map, const QString &dictionary, QProgressDialog *pdlg
         loadAffFile(dictionary.left(dictionary.length() - 4) + QStringLiteral(".aff"), prefixes, suffixes);
 
         pdlg->reset();
-        //pdlg->setAllowCancel (false);
-        //pdlg->showCancelButton (false);
+        // pdlg->setAllowCancel (false);
+        // pdlg->showCancelButton (false);
         pdlg->setAutoReset(false);
         pdlg->setAutoClose(false);
         pdlg->setLabelText(i18n("Performing spell check..."));
@@ -513,4 +505,3 @@ WordMap spellCheck(WordMap map, const QString &dictionary, QProgressDialog *pdlg
 }
 
 }
-

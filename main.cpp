@@ -28,10 +28,8 @@
 #include "kmouth.h"
 #include "version.h"
 
-
 int main(int argc, char *argv[])
 {
-
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("kmouth");
 
@@ -55,7 +53,6 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-
     if (app.isSessionRestored()) {
         kRestoreMainWindows<KMouthApp>();
     } else {
@@ -65,12 +62,10 @@ int main(int argc, char *argv[])
 
         kmouth->show();
 
-
         if (!parser.positionalArguments().isEmpty()) {
             const QUrl url = QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath());
             kmouth->openDocumentFile(url);
         }
-
     }
     return app.exec();
 }

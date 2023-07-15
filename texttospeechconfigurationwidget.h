@@ -28,12 +28,13 @@
 class TextToSpeechSystem;
 
 /**This class represents a configuration widget for the text-to-speech system.
-  *@author Gunnar Schmi Dt
-  */
+ *@author Gunnar Schmi Dt
+ */
 
 class TextToSpeechConfigurationWidget : public QWizardPage, public Ui::texttospeechconfigurationui
 {
     friend class TextToSpeechConfigurationDialog;
+
 public:
     explicit TextToSpeechConfigurationWidget(QWidget *parent, const QString &name);
     ~TextToSpeechConfigurationWidget() override;

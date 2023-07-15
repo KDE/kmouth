@@ -22,8 +22,8 @@
 #include "wordlist.h"
 
 #include <QCheckBox>
-#include <QLocale>
 #include <QGridLayout>
+#include <QLocale>
 #include <QProgressDialog>
 #include <QSpinBox>
 #include <QStandardPaths>
@@ -55,8 +55,9 @@ void CreationSourceWidget::emptyToggled(bool checked)
 }
 
 DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
-        const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
-        const QStringList &dictionaryLanguages)
+                                                   const QStringList &dictionaryNames,
+                                                   const QStringList &dictionaryFiles,
+                                                   const QStringList &dictionaryLanguages)
     : QWizard(parent)
 {
     buildCodecList();
@@ -65,7 +66,7 @@ DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
     creationSource->setTitle(i18n("Source of New Dictionary (1)"));
     setPage(CreationSourcePage, creationSource);
     setOption(QWizard::HaveHelpButton, false);
-    //setFinishEnabled (creationSource, false);
+    // setFinishEnabled (creationSource, false);
 
     fileWidget = new CreationSourceDetailsWidget(this, QStringLiteral("file source page"));
     fileWidget->setTitle(i18n("Source of New Dictionary (2)"));
@@ -103,7 +104,7 @@ DictionaryCreationWizard::~DictionaryCreationWizard()
 
 void DictionaryCreationWizard::buildCodecList()
 {
-    codecList = new QList<QTextCodec*>;
+    codecList = new QList<QTextCodec *>;
     QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
     for (int i = 0; i < availableCodecs.count(); ++i) {
         QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
@@ -230,11 +231,9 @@ QString DictionaryCreationWizard::language()
 
 /***************************************************************************/
 
-MergeWidget::MergeWidget(QWidget *parent,
-                         const QStringList &dictionaryNames, const QStringList &dictionaryFiles,
-                         const QStringList &dictionaryLanguages)
-    : QWizardPage(parent),
-      scrollArea(nullptr)
+MergeWidget::MergeWidget(QWidget *parent, const QStringList &dictionaryNames, const QStringList &dictionaryFiles, const QStringList &dictionaryLanguages)
+    : QWizardPage(parent)
+    , scrollArea(nullptr)
 {
     QGridLayout *layout = new QGridLayout(this);
     layout->setColumnStretch(0, 0);
@@ -258,7 +257,7 @@ MergeWidget::MergeWidget(QWidget *parent,
 
         dictionaries.insert(*fIt, checkbox);
         weights.insert(*fIt, spinBox);
-        languages [*fIt] = *lIt;
+        languages[*fIt] = *lIt;
         row++;
     }
     setLayout(layout);
@@ -268,10 +267,10 @@ MergeWidget::~MergeWidget()
 {
 }
 
-QMap <QString, int> MergeWidget::mergeParameters()
+QMap<QString, int> MergeWidget::mergeParameters()
 {
-    QMap <QString, int> files;
-    QHashIterator<QString, QCheckBox*> it(dictionaries);
+    QMap<QString, int> files;
+    QHashIterator<QString, QCheckBox *> it(dictionaries);
     while (it.hasNext()) {
         it.next();
         if (it.value()->isChecked()) {
@@ -286,11 +285,11 @@ QMap <QString, int> MergeWidget::mergeParameters()
 
 QString MergeWidget::language()
 {
-    QHashIterator<QString, QCheckBox*> it(dictionaries);
+    QHashIterator<QString, QCheckBox *> it(dictionaries);
     while (it.hasNext()) {
         it.next();
         if (it.value()->isChecked()) {
-            return languages [it.key()];
+            return languages[it.key()];
         }
     }
 
@@ -333,9 +332,8 @@ void CompletionWizardWidget::ok()
     if (WordList::saveWordList(map, dictionaryFile)) {
         KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");
         cg.writeEntry("Filename", "wordcompletion1.dict");
-        cg.writeEntry("Name",     i18nc("Default dictionary", "Default"));
+        cg.writeEntry("Name", i18nc("Default dictionary", "Default"));
         cg.writeEntry("Language", language);
         cg.sync();
     }
 }
-

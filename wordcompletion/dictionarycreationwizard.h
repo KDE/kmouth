@@ -25,10 +25,10 @@
 #include <QMap>
 #include <QWizard>
 
-#include <kio_version.h>
-#include "ui_creationsourceui.h"
 #include "ui_creationsourcedetailsui.h"
+#include "ui_creationsourceui.h"
 #include "ui_kdedocsourceui.h"
+#include <kio_version.h>
 
 class CompletionWizardWidget;
 class KComboBox;
@@ -102,10 +102,7 @@ class DictionaryCreationWizard : public QWizard
 {
     Q_OBJECT
 public:
-    DictionaryCreationWizard(QWidget *parent,
-                             const QStringList &dictionaryNames,
-                             const QStringList &dictionaryFiles,
-                             const QStringList &dictionaryLanguages);
+    DictionaryCreationWizard(QWidget *parent, const QStringList &dictionaryNames, const QStringList &dictionaryFiles, const QStringList &dictionaryLanguages);
     ~DictionaryCreationWizard() override;
 
     QString createDictionary();
@@ -117,7 +114,7 @@ public:
         FilePage,
         DirPage,
         KDEDocPage,
-        MergePage
+        MergePage,
     };
 
 private:
@@ -130,7 +127,7 @@ private:
     KDEDocSourceWidget *kdeDocWidget;
     MergeWidget *mergeWidget;
 
-    QList<QTextCodec*> *codecList;
+    QList<QTextCodec *> *codecList;
 };
 
 /**
@@ -142,19 +139,16 @@ class MergeWidget : public QWizardPage
 {
     Q_OBJECT
 public:
-    MergeWidget(QWidget *parent,
-                const QStringList &dictionaryNames,
-                const QStringList &dictionaryFiles,
-                const QStringList &dictionaryLanguages);
+    MergeWidget(QWidget *parent, const QStringList &dictionaryNames, const QStringList &dictionaryFiles, const QStringList &dictionaryLanguages);
     ~MergeWidget() override;
 
-    QMap <QString, int> mergeParameters();
+    QMap<QString, int> mergeParameters();
     QString language();
 
 private:
     QScrollArea *scrollArea;
-    QHash<QString, QCheckBox*> dictionaries;
-    QHash<QString, QSpinBox*> weights;
+    QHash<QString, QCheckBox *> dictionaries;
+    QHash<QString, QSpinBox *> weights;
     QMap<QString, QString> languages;
 };
 
@@ -167,6 +161,7 @@ class CompletionWizardWidget : public QWizardPage, public Ui::KDEDocSourceUI
 {
     Q_OBJECT
     friend class ConfigWizard;
+
 public:
     CompletionWizardWidget(QWidget *parent, const char *name);
     ~CompletionWizardWidget() override;

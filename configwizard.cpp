@@ -22,15 +22,15 @@
 
 #include <QStandardPaths>
 
-#include <KSharedConfig>
 #include <KConfigGroup>
 #include <KHelpClient>
 #include <KLocalizedString>
+#include <KSharedConfig>
 
-#include "texttospeechconfigurationwidget.h"
 #include "phrasebook/initialphrasebookwidget.h"
-#include "wordcompletion/wordcompletion.h"
+#include "texttospeechconfigurationwidget.h"
 #include "wordcompletion/dictionarycreationwizard.h"
+#include "wordcompletion/wordcompletion.h"
 
 ConfigWizard::ConfigWizard(QWidget *parent)
     : QWizard(parent)
@@ -50,8 +50,10 @@ void ConfigWizard::initCommandPage()
 {
     KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("TTS System"));
     bool displayCommand = false;
-    if (!cg.hasKey("StdIn"))   displayCommand = true;
-    if (!cg.hasKey("Codec"))   displayCommand = true;
+    if (!cg.hasKey("StdIn"))
+        displayCommand = true;
+    if (!cg.hasKey("Codec"))
+        displayCommand = true;
 
     if (displayCommand) {
         commandWidget = new TextToSpeechConfigurationWidget(this, QStringLiteral("ttsPage"));
@@ -87,9 +89,9 @@ void ConfigWizard::initCompletion()
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
             // configuration file, we need to add it there.
-            KConfigGroup cg(KSharedConfig::openConfig() , "Dictionary 0");
+            KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");
             cg.writeEntry("Filename", "dictionary.txt");
-            cg.writeEntry("Name",     "Default");
+            cg.writeEntry("Name", "Default");
             cg.writeEntry("Language", QString());
             cg.sync();
         }
@@ -145,4 +147,3 @@ void ConfigWizard::help()
 {
     KHelpClient::invokeHelp(QStringLiteral("Wizard"));
 }
-

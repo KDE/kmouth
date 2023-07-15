@@ -38,13 +38,14 @@
 #include <KToolBar>
 #include <KXMLGUIFactory>
 
-#include "phraselist.h"
+#include "configwizard.h"
+#include "optionsdialog.h"
 #include "phrasebook/phrasebook.h"
 #include "phrasebook/phrasebookdialog.h"
-#include "optionsdialog.h"
-#include "configwizard.h"
+#include "phraselist.h"
 
-KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(nullptr)
+KMouthApp::KMouthApp(QWidget *, const QString &name)
+    : KXmlGuiWindow(nullptr)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmouth")));
     setObjectName(name);
@@ -56,12 +57,10 @@ KMouthApp::KMouthApp(QWidget* , const QString& name): KXmlGuiWindow(nullptr)
     initPhraseList();
     initActions();
     optionsDialog = new OptionsDialog(this);
-    connect(optionsDialog, &OptionsDialog::configurationChanged,
-            this, &KMouthApp::slotConfigurationChanged);
-    connect(optionsDialog, &OptionsDialog::configurationChanged,
-            phraseList, &PhraseList::configureCompletion);
+    connect(optionsDialog, &OptionsDialog::configurationChanged, this, &KMouthApp::slotConfigurationChanged);
+    connect(optionsDialog, &OptionsDialog::configurationChanged, phraseList, &PhraseList::configureCompletion);
 
-    phrases = new KActionCollection(static_cast<QWidget*>(this));
+    phrases = new KActionCollection(static_cast<QWidget *>(this));
 
     readOptions();
     ConfigWizard *wizard = new ConfigWizard(this);
@@ -101,7 +100,7 @@ bool KMouthApp::configured()
 
 void KMouthApp::initActions()
 {
-// The "File" menu
+    // The "File" menu
     fileOpen = actionCollection()->addAction(QStringLiteral("file_open"));
     fileOpen->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     fileOpen->setText(i18n("&Open as History..."));
@@ -130,14 +129,18 @@ void KMouthApp::initActions()
     fileQuit->setToolTip(i18n("Quits the application"));
     fileQuit->setWhatsThis(i18n("Quits the application"));
 
-// The "Edit" menu
+    // The "Edit" menu
     editCut = KStandardAction::cut(phraseList, SLOT(cut()), actionCollection());
     editCut->setToolTip(i18n("Cuts the selected section and puts it to the clipboard"));
-    editCut->setWhatsThis(i18n("Cuts the selected section and puts it to the clipboard. If there is some text selected in the edit field it is placed it on the clipboard. Otherwise the selected sentences in the history (if any) are placed on the clipboard."));
+    editCut->setWhatsThis(
+        i18n("Cuts the selected section and puts it to the clipboard. If there is some text selected in the edit field it is placed it on the clipboard. "
+             "Otherwise the selected sentences in the history (if any) are placed on the clipboard."));
 
     editCopy = KStandardAction::copy(phraseList, SLOT(copy()), actionCollection());
     editCopy->setToolTip(i18n("Copies the selected section to the clipboard"));
-    editCopy->setWhatsThis(i18n("Copies the selected section to the clipboard. If there is some text selected in the edit field it is copied to the clipboard. Otherwise the selected sentences in the history (if any) are copied to the clipboard."));
+    editCopy->setWhatsThis(
+        i18n("Copies the selected section to the clipboard. If there is some text selected in the edit field it is copied to the clipboard. Otherwise the "
+             "selected sentences in the history (if any) are copied to the clipboard."));
 
     editPaste = KStandardAction::paste(phraseList, SLOT(paste()), actionCollection());
     editPaste->setToolTip(i18n("Pastes the clipboard contents to current position"));
@@ -148,14 +151,16 @@ void KMouthApp::initActions()
     editSpeak->setText(i18nc("Start speaking", "&Speak"));
     connect(editSpeak, &QAction::triggered, phraseList, &PhraseList::speak);
     editSpeak->setToolTip(i18n("Speaks the currently active sentence(s)"));
-    editSpeak->setWhatsThis(i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history (if any) are spoken."));
+    editSpeak->setWhatsThis(
+        i18n("Speaks the currently active sentence(s). If there is some text in the edit field it is spoken. Otherwise the selected sentences in the history "
+             "(if any) are spoken."));
 
-// The "Phrase book" menu
+    // The "Phrase book" menu
     phrasebookEdit = actionCollection()->addAction(QStringLiteral("phrasebook_edit"));
     phrasebookEdit->setText(i18n("&Edit..."));
     connect(phrasebookEdit, &QAction::triggered, this, &KMouthApp::slotEditPhrasebook);
 
-// The "Options" menu
+    // The "Options" menu
     viewMenuBar = KStandardAction::showMenubar(this, SLOT(slotViewMenuBar()), actionCollection());
     // FIXME: Disable so it will compile.
     // viewToolBar = KStandardAction::showToolbar(this, SLOT(slotViewToolBar()), actionCollection());
@@ -179,10 +184,10 @@ void KMouthApp::initActions()
     configureTTS->setToolTip(i18n("Opens the configuration dialog"));
     configureTTS->setWhatsThis(i18n("Opens the configuration dialog"));
 
-// The "Help" menu
+    // The "Help" menu
     // The "Help" menu will automatically get created.
 
-// The popup menu of the list of spoken sentences
+    // The popup menu of the list of spoken sentences
     phraseListSpeak = actionCollection()->addAction(QStringLiteral("phraselist_speak"));
     phraseListSpeak->setIcon(QIcon::fromTheme(QStringLiteral("text-speak")));
     phraseListSpeak->setText(i18n("&Speak"));
@@ -223,7 +228,7 @@ void KMouthApp::initActions()
     phraselistDeselectAll->setToolTip(i18n("Deselects all phrases in the history"));
     phraselistDeselectAll->setWhatsThis(i18n("Deselects all phrases in the history"));
 
-// The popup menu of the edit field
+    // The popup menu of the edit field
     // The popup menu of the edit field will automatically get created.
 
     // use the absolute path to your kmouthui.rc file for testing purpose in createGUI();
@@ -279,7 +284,6 @@ void KMouthApp::saveOptions()
         toolBar(QStringLiteral("phrasebookBar"))->saveSettings(cg);
     }
 }
-
 
 void KMouthApp::readOptions()
 {
@@ -393,13 +397,13 @@ void KMouthApp::slotFileQuit()
         for (int i = 0; i < memberList().size(); ++i) {
             // only close the window if the closeEvent is accepted. If the user presses Cancel on the saveModified() dialog,
             // the window and the application stay open.
-            KMainWindow* w = memberList().at(i);
+            KMainWindow *w = memberList().at(i);
             if (!w->close())
                 break;
 #ifdef __GNUC__
 #warning "kde4: how remove it ?.???"
 #endif
-            //memberList()->removeRef(w);
+            // memberList()->removeRef(w);
         }
     }
 }
@@ -409,10 +413,8 @@ void KMouthApp::slotEditPhrasebook()
     PhraseBookDialog *phraseBookDialog = PhraseBookDialog::get();
     // As we do not know whether the we are already connected to the slot,
     // we first disconnect and then connect again.
-    disconnect(phraseBookDialog, &PhraseBookDialog::phrasebookConfirmed,
-               this, &KMouthApp::slotPhrasebookConfirmed);
-    connect(phraseBookDialog, &PhraseBookDialog::phrasebookConfirmed,
-            this, &KMouthApp::slotPhrasebookConfirmed);
+    disconnect(phraseBookDialog, &PhraseBookDialog::phrasebookConfirmed, this, &KMouthApp::slotPhrasebookConfirmed);
+    connect(phraseBookDialog, &PhraseBookDialog::phrasebookConfirmed, this, &KMouthApp::slotPhrasebookConfirmed);
 
     // As we do not know whether the phrase book edit window is already open,
     // we first open and then raise it, so that it is surely the top window.
@@ -464,7 +466,7 @@ void KMouthApp::slotViewStatusBar()
 {
     slotStatusMsg(i18n("Toggle the statusbar..."));
     ///////////////////////////////////////////////////////////////////
-    //turn Statusbar on or off
+    // turn Statusbar on or off
     if (!viewStatusBar->isChecked()) {
         statusBar()->hide();
     } else {
@@ -479,7 +481,6 @@ void KMouthApp::slotConfigureTTS()
     phraseList->saveWordCompletion();
     optionsDialog->show();
 }
-
 
 void KMouthApp::slotStatusMsg(const QString &text)
 {
@@ -520,4 +521,3 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const
 {
     return optionsDialog->getTTSSystem();
 }
-

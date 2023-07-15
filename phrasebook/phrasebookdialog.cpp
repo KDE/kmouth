@@ -48,15 +48,20 @@ const QString kPhrase = QStringLiteral("phrase");
 
 const QString kPhraseBookXML = QStringLiteral("<phrasebook name=\"%1\">\n%2</phrasebook>\n");
 const QString kPhraseXML = QStringLiteral("<phrase shortcut=\"%2\">%1</phrase>\n");
-const QString kWholeBookXML = QStringLiteral("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-                              "<!DOCTYPE phrasebook>\n"
-                              "<phrasebook>\n%1"
-                              "</phrasebook>");
+const QString kWholeBookXML = QStringLiteral(
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+    "<!DOCTYPE phrasebook>\n"
+    "<phrasebook>\n%1"
+    "</phrasebook>");
 
 const QIcon kPhraseBookIcon = QIcon::fromTheme(kPhraseBook);
 const QIcon kPhraseIcon = QIcon::fromTheme(kPhrase);
 
-StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url, const QString& name, const QObject* receiver, const char* slot, KActionCollection* parent)
+StandardPhraseBookInsertAction::StandardPhraseBookInsertAction(const QUrl &url,
+                                                               const QString &name,
+                                                               const QObject *receiver,
+                                                               const char *slot,
+                                                               KActionCollection *parent)
     : QAction(QIcon::fromTheme(QStringLiteral("phrasebook")), name, parent)
 {
     this->url = url;
@@ -73,7 +78,6 @@ void StandardPhraseBookInsertAction::slotActivated()
 {
     Q_EMIT slotActivated(url);
 }
-
 
 namespace PhraseBookPrivate
 {
@@ -112,17 +116,13 @@ PhraseBookDialog::PhraseBookDialog()
     }
 
     // Watch any changes in the model.
-    connect(m_bookModel, &QAbstractItemModel::dataChanged,
-            this, &PhraseBookDialog::slotModelChanged);
-    connect(m_bookModel, &QAbstractItemModel::rowsInserted,
-            this, &PhraseBookDialog::slotModelChanged);
-    connect(m_bookModel, &QAbstractItemModel::rowsMoved,
-            this, &PhraseBookDialog::slotModelChanged);
-    connect(m_bookModel, &QAbstractItemModel::rowsRemoved,
-            this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::dataChanged, this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsInserted, this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsMoved, this, &PhraseBookDialog::slotModelChanged);
+    connect(m_bookModel, &QAbstractItemModel::rowsRemoved, this, &PhraseBookDialog::slotModelChanged);
 
-    //printer = 0;
-    // i18n("Edit Phrase Book")
+    // printer = 0;
+    //  i18n("Edit Phrase Book")
 }
 
 PhraseBookDialog *PhraseBookDialog::get()
@@ -135,10 +135,10 @@ PhraseBookDialog *PhraseBookDialog::get()
 PhraseBookDialog::~PhraseBookDialog()
 {
     PhraseBookPrivate::instance = nullptr;
-    //delete printer;
+    // delete printer;
 }
 
-QStandardItem* PhraseBookDialog::deserializeBook(const QDomNode &node, QStandardItem *parent)
+QStandardItem *PhraseBookDialog::deserializeBook(const QDomNode &node, QStandardItem *parent)
 {
     QString text;
     QString shortcut;
@@ -153,7 +153,7 @@ QStandardItem* PhraseBookDialog::deserializeBook(const QDomNode &node, QStandard
         item->setDropEnabled(false);
         shortcutItem->setDropEnabled(false);
     }
-    QList<QStandardItem*> items;
+    QList<QStandardItem *> items;
     items << item << shortcutItem;
     if (parent)
         parent->appendRow(items);
@@ -208,10 +208,8 @@ void PhraseBookDialog::initGUI()
     setCentralWidget(page);
 
     m_ui->treeView->setModel(m_bookModel);
-    connect(m_ui->treeView->selectionModel(), &QItemSelectionModel::selectionChanged,
-            this, &PhraseBookDialog::selectionChanged);
-    connect(m_ui->treeView, &QWidget::customContextMenuRequested,
-            this, &PhraseBookDialog::contextMenuRequested);
+    connect(m_ui->treeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &PhraseBookDialog::selectionChanged);
+    connect(m_ui->treeView, &QWidget::customContextMenuRequested, this, &PhraseBookDialog::contextMenuRequested);
     connectEditor();
 }
 
@@ -268,9 +266,9 @@ void PhraseBookDialog::initActions()
     fileExport->setToolTip(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
     fileExport->setWhatsThis(i18n("Exports the currently selected phrase(s) or phrase book(s) into a file"));
 
-    //filePrint = KStandardAction::print(this, SLOT(slotPrint()), actionCollection());
-    //filePrint->setToolTip(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
-    //filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
+    // filePrint = KStandardAction::print(this, SLOT(slotPrint()), actionCollection());
+    // filePrint->setToolTip(i18n("Prints the currently selected phrase(s) or phrase book(s)"));
+    // filePrint->setWhatsThis (i18n("Prints the currently selected phrase(s) or phrase book(s)"));
 
     fileClose = KStandardAction::close(this, SLOT(close()), actionCollection());
     fileClose->setToolTip(i18n("Closes the window"));
@@ -317,8 +315,8 @@ void PhraseBookDialog::initStandardPhraseBooks()
 
         QStringList::iterator it1 = currentNamePath.begin();
         QStringList::iterator it2 = dirs.begin();
-        for (; (it1 != currentNamePath.end())
-             && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2);
+        for (; (it1 != currentNamePath.end()) && (it2 != dirs.end()) && (*it1 == *it2); ++it1, ++it2)
+            ;
 
         for (; it1 != currentNamePath.end(); ++it1)
             parent = stack.pop();
@@ -333,8 +331,7 @@ void PhraseBookDialog::initStandardPhraseBooks()
         }
         currentNamePath = dirs;
 
-        QAction *book = new StandardPhraseBookInsertAction(
-            url, (*it).name, this, SLOT(slotImportPhrasebook(QUrl)), actionCollection());
+        QAction *book = new StandardPhraseBookInsertAction(url, (*it).name, this, SLOT(slotImportPhrasebook(QUrl)), actionCollection());
         parent->addAction(book);
         if (parent == fileImportStandardBook)
             toolbarImport->menu()->addAction(book);
@@ -346,20 +343,15 @@ void PhraseBookDialog::connectEditor()
     connect(m_ui->lineEdit, &QLineEdit::textChanged, this, &PhraseBookDialog::slotTextChanged);
     connect(m_ui->noKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotNoKey);
     connect(m_ui->customKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotCustomKey);
-    connect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged,
-            this, &PhraseBookDialog::slotKeySequenceChanged);
+    connect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged, this, &PhraseBookDialog::slotKeySequenceChanged);
 }
 
 void PhraseBookDialog::disconnectEditor()
 {
-    disconnect(m_ui->lineEdit, &QLineEdit::textChanged,
-               this, &PhraseBookDialog::slotTextChanged);
-    disconnect(m_ui->noKey, &QAbstractButton::clicked,
-               this, &PhraseBookDialog::slotNoKey);
-    disconnect(m_ui->customKey, &QAbstractButton::clicked,
-               this, &PhraseBookDialog::slotCustomKey);
-    disconnect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged,
-               this, &PhraseBookDialog::slotKeySequenceChanged);
+    disconnect(m_ui->lineEdit, &QLineEdit::textChanged, this, &PhraseBookDialog::slotTextChanged);
+    disconnect(m_ui->noKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotNoKey);
+    disconnect(m_ui->customKey, &QAbstractButton::clicked, this, &PhraseBookDialog::slotCustomKey);
+    disconnect(m_ui->keyButton, &KKeySequenceWidget::keySequenceChanged, this, &PhraseBookDialog::slotKeySequenceChanged);
 }
 
 void PhraseBookDialog::selectionChanged()
@@ -423,14 +415,18 @@ bool PhraseBookDialog::queryClose()
 {
     if (phrasebookChanged) {
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
-        int answer = KMessageBox::questionTwoActionsCancel(this,
+        int answer = KMessageBox::questionTwoActionsCancel(
+            this,
 #else
-        int answer = KMessageBox::questionYesNoCancel(this,
+        int answer = KMessageBox::questionYesNoCancel(
+            this,
 #endif
-                     i18n("<qt>There are unsaved changes.<br />Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
-                     i18n("Closing \"Phrase Book\" Window"),
-                     KStandardGuiItem::apply(), KStandardGuiItem::discard(),
-                     KStandardGuiItem::cancel(), QStringLiteral("AutomaticSave"));
+            i18n("<qt>There are unsaved changes.<br />Do you want to apply the changes before closing the \"phrase book\" window or discard the changes?</qt>"),
+            i18n("Closing \"Phrase Book\" Window"),
+            KStandardGuiItem::apply(),
+            KStandardGuiItem::discard(),
+            KStandardGuiItem::cancel(),
+            QStringLiteral("AutomaticSave"));
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (answer == KMessageBox::ButtonCode::PrimaryAction) {
 #else
@@ -460,7 +456,7 @@ void PhraseBookDialog::slotTextChanged(const QString &s)
 void PhraseBookDialog::slotNoKey()
 {
     m_ui->noKey->setChecked(true);
-    m_ui->customKey->setChecked(false);  // This shouldn't be needed because of the groupbox... FIXME
+    m_ui->customKey->setChecked(false); // This shouldn't be needed because of the groupbox... FIXME
 
     QModelIndex selected = m_ui->treeView->selectionModel()->currentIndex();
     QModelIndex shortcutIndex = selected.sibling(selected.row(), kShortcutColumn);
@@ -474,7 +470,7 @@ void PhraseBookDialog::slotCustomKey()
     m_ui->keyButton->captureKeySequence();
 }
 
-void PhraseBookDialog::slotKeySequenceChanged(const QKeySequence& sequence)
+void PhraseBookDialog::slotKeySequenceChanged(const QKeySequence &sequence)
 {
     if (sequence.isEmpty()) {
         slotNoKey();
@@ -482,28 +478,28 @@ void PhraseBookDialog::slotKeySequenceChanged(const QKeySequence& sequence)
         setShortcut(sequence);
 }
 
-void PhraseBookDialog::setShortcut(const QKeySequence& sequence)
+void PhraseBookDialog::setShortcut(const QKeySequence &sequence)
 {
     // Check whether the shortcut is valid
-//   const QList<QKeySequence> cutList = cut.toList();
-//   for (int i = 0; i < cutList.count(); i++) {
-//      const QKeySequence& seq = cutList[i];
-//      //const KKey& key = seq.key(0);
-//#ifdef __GNUC__
-//#warning "kde 4 port it";
-//#endif
-//#if 0
-//      if (key.modFlags() == 0 && key.sym() < 0x3000
-//          && QChar(key.sym()).isLetterOrNumber())
-//      {
-//         QString s = i18n("In order to use the '%1' key as a shortcut, "
-//                          "it must be combined with the "
-//                          "Win, Alt, Ctrl, and/or Shift keys.", QChar(key.sym()));
-//         KMessageBox::error( this, s, i18n("Invalid Shortcut Key") );
-//         return;
-//      }
-//#endif
-//   }
+    //   const QList<QKeySequence> cutList = cut.toList();
+    //   for (int i = 0; i < cutList.count(); i++) {
+    //      const QKeySequence& seq = cutList[i];
+    //      //const KKey& key = seq.key(0);
+    // #ifdef __GNUC__
+    // #warning "kde 4 port it";
+    // #endif
+    // #if 0
+    //      if (key.modFlags() == 0 && key.sym() < 0x3000
+    //          && QChar(key.sym()).isLetterOrNumber())
+    //      {
+    //         QString s = i18n("In order to use the '%1' key as a shortcut, "
+    //                          "it must be combined with the "
+    //                          "Win, Alt, Ctrl, and/or Shift keys.", QChar(key.sym()));
+    //         KMessageBox::error( this, s, i18n("Invalid Shortcut Key") );
+    //         return;
+    //      }
+    // #endif
+    //   }
     QModelIndex selected = m_ui->treeView->selectionModel()->currentIndex();
     QModelIndex shortcutIndex = selected.sibling(selected.row(), kShortcutColumn);
     if (shortcutIndex.isValid())
@@ -599,7 +595,7 @@ void PhraseBookDialog::slotAddPhrasebook()
     QStandardItem *item = new QStandardItem(kPhraseBookIcon, i18n("(New Phrase Book)"));
     QStandardItem *shortcutItem = new QStandardItem();
 
-    QList<QStandardItem*> items;
+    QList<QStandardItem *> items;
     items << item << shortcutItem;
     if (parent)
         parent->appendRow(items);
@@ -618,7 +614,7 @@ void PhraseBookDialog::slotAddPhrase()
     item->setDropEnabled(false);
     shortcutItem->setDropEnabled(false);
 
-    QList<QStandardItem*> items;
+    QList<QStandardItem *> items;
     items << item << shortcutItem;
     if (parent)
         parent->appendRow(items);
@@ -643,8 +639,7 @@ void PhraseBookDialog::slotSave()
 
 void PhraseBookDialog::slotImportPhrasebook()
 {
-    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Import Phrasebook"), QUrl(),
-                                       i18n("Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"));
+    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Import Phrasebook"), QUrl(), i18n("Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"));
 
     slotImportPhrasebook(url);
 }
@@ -697,11 +692,11 @@ void PhraseBookDialog::slotExportPhrasebook()
     }
 }
 
-//void PhraseBookDialog::slotPrint()
+// void PhraseBookDialog::slotPrint()
 //{
-//   if (printer == 0) {
-//     printer = new QPrinter();
-//   }
+//    if (printer == 0) {
+//      printer = new QPrinter();
+//    }
 
 //   QPrintDialog *printDialog = KdePrint::createPrintDialog(printer, this);
 
@@ -713,4 +708,3 @@ void PhraseBookDialog::slotExportPhrasebook()
 //   }
 //   delete printDialog;
 //}
-

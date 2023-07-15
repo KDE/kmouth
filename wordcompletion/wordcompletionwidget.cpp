@@ -25,12 +25,11 @@
 #include <QStandardPaths>
 #include <QUrl>
 
-
 #include <KConfigGroup>
+#include <KIO/FileCopyJob>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSharedConfig>
-#include <KIO/FileCopyJob>
 
 #include "dictionarycreationwizard.h"
 #include "wordcompletion.h"
@@ -53,8 +52,7 @@ WordCompletionWidget::WordCompletionWidget(QWidget *parent, const char *name)
     connect(moveDownButton, &QAbstractButton::clicked, this, &WordCompletionWidget::moveDown);
     connect(exportButton, &QAbstractButton::clicked, this, &WordCompletionWidget::exportDictionary);
 
-    connect(dictionaryView->selectionModel(), &QItemSelectionModel::selectionChanged,
-            this, &WordCompletionWidget::selectionChanged);
+    connect(dictionaryView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &WordCompletionWidget::selectionChanged);
     connect(dictionaryName, &QLineEdit::textChanged, this, &WordCompletionWidget::nameChanged);
     connect(languageButton, &KLanguageButton::activated, this, &WordCompletionWidget::languageSelected);
 
@@ -89,7 +87,7 @@ void WordCompletionWidget::load()
             QStandardItem *nameItem = new QStandardItem(cg.readEntry("Name"));
             nameItem->setData(filename);
             QStandardItem *languageItem = new QStandardItem(languageTag);
-            QList<QStandardItem*> items;
+            QList<QStandardItem *> items;
             items.append(nameItem);
             items.append(languageItem);
             model->appendRow(items);
@@ -118,7 +116,7 @@ void WordCompletionWidget::save()
         const QStandardItem *languageItem = model->item(row, 1);
         KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Dictionary %1").arg(row));
         cg.writeEntry("Filename", nameItem->data().toString());
-        cg.writeEntry("Name",     nameItem->text());
+        cg.writeEntry("Name", nameItem->text());
         cg.writeEntry("Language", languageItem->text());
     }
     KSharedConfig::openConfig()->sync();
@@ -157,7 +155,7 @@ void WordCompletionWidget::addDictionary()
         QStandardItem *nameItem = new QStandardItem(wizard->name());
         nameItem->setData(filename);
         QStandardItem *languageItem = new QStandardItem(languageTag);
-        QList<QStandardItem*> items;
+        QList<QStandardItem *> items;
         items.append(nameItem);
         items.append(languageItem);
         model->appendRow(items);
@@ -180,7 +178,7 @@ void WordCompletionWidget::moveUp()
 {
     int row = dictionaryView->currentIndex().row();
     if (row > 0) {
-        QList<QStandardItem*> items = model->takeRow(row);
+        QList<QStandardItem *> items = model->takeRow(row);
         model->insertRow(row - 1, items);
         dictionaryView->setCurrentIndex(model->index(row - 1, 0));
     }
@@ -190,7 +188,7 @@ void WordCompletionWidget::moveDown()
 {
     int row = dictionaryView->currentIndex().row();
     if (row < model->rowCount() - 1) {
-        QList<QStandardItem*> items = model->takeRow(row);
+        QList<QStandardItem *> items = model->takeRow(row);
         model->insertRow(row + 1, items);
         dictionaryView->setCurrentIndex(model->index(row + 1, 0));
     }
@@ -206,8 +204,14 @@ void WordCompletionWidget::exportDictionary()
             return;
 
         if (url.isLocalFile() && QFile::exists(url.toLocalFile())) {
-            if (KMessageBox::warningContinueCancel(nullptr, QStringLiteral("<qt>%1</qt>").arg(i18n("The file %1 already exists. "
-                                                   "Do you want to overwrite it?", url.url())), i18n("File Exists"), KGuiItem(i18n("&Overwrite"))) == KMessageBox::Cancel) {
+            if (KMessageBox::warningContinueCancel(nullptr,
+                                                   QStringLiteral("<qt>%1</qt>")
+                                                       .arg(i18n("The file %1 already exists. "
+                                                                 "Do you want to overwrite it?",
+                                                                 url.url())),
+                                                   i18n("File Exists"),
+                                                   KGuiItem(i18n("&Overwrite")))
+                == KMessageBox::Cancel) {
                 return;
             }
         }
@@ -269,4 +273,3 @@ void WordCompletionWidget::languageSelected()
         }
     }
 }
-
