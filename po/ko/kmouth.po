@@ -84,7 +84,7 @@ msgstr "실제 과거 기록을 인쇄합니다"
 #: kmouth.cpp:130 kmouth.cpp:131
 #, kde-format
 msgid "Quits the application"
-msgstr "프로그램을 종료합니다"
+msgstr "앱을 종료합니다"
 
 #: kmouth.cpp:135
 #, kde-format
