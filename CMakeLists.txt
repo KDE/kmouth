@@ -89,7 +89,10 @@ target_sources(kmouth PRIVATE
     speech.cpp
     texttospeechsystem.cpp
     kmouth.cpp
-    main.cpp )
+    main.cpp
+
+    kmouth.qrc
+)
 
 ki18n_wrap_ui(kmouth
     ./phrasebook/phrasebookdialog.ui
@@ -122,8 +125,6 @@ install(TARGETS kmouth  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install( PROGRAMS org.kde.kmouth.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES kmouthrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
-install( FILES kmouthui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
-install( FILES phrasebookdialogui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kmouth )
 install(FILES org.kde.kmouth.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ki18n_install(po)

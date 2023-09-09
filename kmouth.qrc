@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/kxmlgui5/kmouth">
+        <file>kmouthui.rc</file>
+        <file>phrasebookdialogui.rc</file>
+    </qresource>
+</RCC>
