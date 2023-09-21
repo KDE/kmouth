@@ -6,17 +6,17 @@
 <refentry lang="&language;">
 <refentryinfo>
 <title
->KMouth User's Manual</title>
+>Manuel de l'utilisateur de KMouth</title>
 <author
 ><firstname
 >Lauri</firstname
 ><surname
 >Watts</surname
 > <contrib
->KMouth man page.</contrib
+>Page de manuel de KMouth.</contrib
 > &Lauri.Watts.mail;</author>
 <date
->2022-03-18</date>
+>18-03-2022</date>
 <releaseinfo
 >KMouth 22.04</releaseinfo>
 <productname

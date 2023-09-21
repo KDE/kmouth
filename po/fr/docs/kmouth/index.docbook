@@ -41,7 +41,7 @@
 
 
   <date
->2022-03-18</date>
+>18-03-2022</date>
   <releaseinfo
 >1.2.0 (KDE Gear 22.04)</releaseinfo>
 
@@ -98,8 +98,8 @@
       </screenshot>
     </para>
     <para
->With the first page of the wizard you specify the engine and voice that shall be used for the text-to-speech conversion. For more details look into the <link linkend="tts-config"
->description of the configuration dialog.</link
+>Avec la première page de l'assistant, vous spécifiez le moteur et la voix à utiliser pour la synthèse vocale. Pour plus de détails, veuillez consulter la <link linkend="tts-config"
+>description de la boîte de dialogue de configuration.</link
 > </para>
     <para>
       <screenshot>
@@ -257,17 +257,17 @@
 ></note>
       </para>
       <para
->It is also possible to select the <guilabel
->Engine</guilabel
-> and <guilabel
->Voice</guilabel
-> for the speech system. </para>
+>Il est également possible de sélectionner <guilabel
+>Moteur</guilabel
+> et <guilabel
+>Voix</guilabel
+> pour le système de synthèse vocale. </para>
       <para
->Should the <guilabel
->Use default speech system</guilabel
-> item is not selected you can enter the command for calling the speech synthesize into the edit field of the <guilabel
+>Lorsque l'élément <guilabel
+>Utiliser un système de synthèse vocale par défaut</guilabel
+> est non sélectionné, vous pouvez saisir la commande d'appel au synthétiseur vocal, dans le champ de saisie du panneau <guilabel
 >Alternative</guilabel
-> panel. With the combo box below the edit field you specify the character encoding that is used for passing the text to the speech synthesizer. </para>
+>. Avec la liste déroulante en dessous de la zone de saisie, vous pouvez spécifier l'encodage des caractères qui est utilisé pour passer le texte au synthétiseur vocal. </para>
       <para
 >&kmouth; connaît deux manières de passer du texte. Si la commande attend du texte dans l'entrée standard, vous devez cocher la case. </para>
       <para
@@ -354,7 +354,7 @@
           <para
 >Créer un nouveau dictionnaire à partir de la documentation de &kde;</para>
           <para
->SI vous utilisez cette source, &kmouth; vous demandera une choix de langage et après il parcourra la documentation &kde;. La fréquence de chaque mot est déterminée tout simplement en comptant sa présence. De manière optionnelle vous pouvez comparer la liste des mots à un dictionnaire de OpenOffice.org pour ajouter uniquement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
+>Si vous utilisez cette source, &kmouth; vous demandera une choix de langage et après il parcourra la documentation &kde;. La fréquence de chaque mot est déterminée tout simplement en comptant sa présence. De manière optionnelle vous pouvez comparer la liste des mots à un dictionnaire de OpenOffice.org pour ajouter uniquement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
         </listitem>
         <listitem>
           <para
