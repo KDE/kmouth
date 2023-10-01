@@ -257,12 +257,12 @@ msgstr "Listo."
 #: kmouth.cpp:254 kmouth.cpp:353
 #, kde-format
 msgid "Opening file..."
-msgstr "Estase a abrir o ficheiro…"
+msgstr "Abrindo o ficheiro…"
 
 #: kmouth.cpp:362
 #, kde-format
 msgid "Saving history with a new filename..."
-msgstr "Estase a gardar o historial cun nome de ficheiro novo…"
+msgstr "Gardando o historial cun nome de ficheiro novo…"
 
 #: kmouth.cpp:371
 #, kde-format
@@ -278,17 +278,17 @@ msgstr "Estase a saír…"
 #: kmouth.cpp:425
 #, kde-format
 msgid "Toggling menubar..."
-msgstr "Estase a conmutar a barra de menú…"
+msgstr "Conmutando a barra de menú…"
 
 #: kmouth.cpp:437
 #, kde-format
 msgid "Toggling toolbar..."
-msgstr "Estase a conmutar a barra de ferramentas…"
+msgstr "Conmutando a barra de ferramentas…"
 
 #: kmouth.cpp:451
 #, kde-format
 msgid "Toggling phrasebook bar..."
-msgstr "Estase a conmutar a barra de libro de frases…"
+msgstr "Conmutando a barra de libro de frases…"
 
 #: kmouth.cpp:465
 #, kde-format
@@ -607,7 +607,7 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
-msgstr "Estase a pechar a xanela do «Libro de frases»"
+msgstr "Pechando a xanela do «Libro de frases»"
 
 #: phrasebook/phrasebookdialog.cpp:599
 #, kde-format
@@ -972,9 +972,8 @@ msgid ""
 "With this combo box you select the character encoding used to load text "
 "files. This combo box is not used for XML files or for dictionary files."
 msgstr ""
-"Nesta lista escóllese a codificación de caracteres utilizada para cargar os "
-"ficheiros de texto. A lista non se utiliza en ficheiros XML nin en "
-"dicionarios."
+"Nesta lista escóllese a codificación de caracteres usada para cargar os "
+"ficheiros de texto. A lista non se usa en ficheiros XML nin en dicionarios."
 
 #. i18n: ectx: property (text), widget (QLabel, encodingLabel)
 #: wordcompletion/creationsourcedetailsui.ui:46
@@ -1205,7 +1204,7 @@ msgid ""
 "creating the new dictionary. KMouth will only parse documentation files of "
 "this language."
 msgstr ""
-"Nesta lista pode escoller que idioma instalado utilizar para crear o novo "
+"Nesta lista pode escoller que idioma instalado usar para crear o novo "
 "dicionario. KMouth só procesará ficheiros de documentación neste idioma."
 
 #. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
@@ -1312,9 +1311,8 @@ msgid ""
 msgstr ""
 "Esta lista contén todos os dicionarios dispoñíbeis para a completación de "
 "palabras. KMouth amosará unha lista a carón do campo de edición na xanela "
-"principal se esta lista contivese máis dun dicionario. Pode utilizar esta "
-"lista para escoller o dicionario que quere usar para a completación de "
-"palabras."
+"principal se esta lista contivese máis dun dicionario. Pode usar esta lista "
+"para escoller o dicionario que quere usar para a completación de palabras."
 
 #: wordcompletion/wordcompletionwidget.cpp:79
 #, kde-format
@@ -1340,12 +1338,12 @@ msgstr "Exportar o dicionario"
 #: wordcompletion/wordlist.cpp:77
 #, kde-format
 msgid "Creating Word List"
-msgstr "Estase a crear a lista de palabras"
+msgstr "Creando a lista de palabras"
 
 #: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
-msgstr "Estase a procesar a documentación de KDE…"
+msgstr "Procesando a documentación de KDE…"
 
 #: wordcompletion/wordlist.cpp:200
 #, kde-format
@@ -1355,17 +1353,17 @@ msgstr "Estanse a xuntar os dicionarios…"
 #: wordcompletion/wordlist.cpp:269
 #, kde-format
 msgid "Parsing file..."
-msgstr "Estase a procesar o ficheiro…"
+msgstr "Procesando o ficheiro…"
 
 #: wordcompletion/wordlist.cpp:281
 #, kde-format
 msgid "Parsing directory..."
-msgstr "Estase a procesar o directorio…"
+msgstr "Procesando o directorio…"
 
 #: wordcompletion/wordlist.cpp:472
 #, kde-format
 msgid "Performing spell check..."
-msgstr "Estase a comprobar a ortografía…"
+msgstr "Comprobando a ortografía…"
 
 #~ msgid ""
 #~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
