@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop-kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:39+0000\n"
+"POT-Creation-Date: 2023-10-02 00:36+0000\n"
 "PO-Revision-Date: 2009-02-07 16:42-0800\n"
 "Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -33,57 +33,57 @@ msgstr "snalledam@dataone.in, pravi.a@gmail.com"
 msgid "Initial Configuration - KMouth"
 msgstr "പ്രാഥമിക ക്രമീകരണം - കെമൌത്ത്"
 
-#: configwizard.cpp:59
+#: configwizard.cpp:61
 #, kde-format
 msgid "Text-to-Speech Configuration"
 msgstr "ലേഖനം - വായനയാക്കാന്‍ ക്രമീകരണം"
 
-#: configwizard.cpp:73
+#: configwizard.cpp:75
 #, kde-format
 msgid "Initial Phrase Book"
 msgstr "പ്രാഥമിക വാക്യാംശ പുസ്തകം"
 
-#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#: configwizard.cpp:107 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
 msgstr "പദ പൂര്‍ത്തീകരണം"
 
-#: kmouth.cpp:107
+#: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
 msgstr "&നാള്‍വഴിയായി തുറക്കുക..."
 
-#: kmouth.cpp:110 kmouth.cpp:111
+#: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
 msgid "Opens an existing file as history"
 msgstr "നിലവിലുള്ള ഒരു ഫയല്‍ നാള്‍വഴിയായി തുറക്കുക"
 
-#: kmouth.cpp:115
+#: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
 msgstr "&നാള്‍വഴി പേരു് മാറ്റി സൂക്ഷിക്കുക..."
 
-#: kmouth.cpp:118 kmouth.cpp:119
+#: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
 msgstr "യഥാര്‍ത്ഥ നാള്‍വഴി പേരു് മാറ്റ് സൂക്ഷിക്കുക..."
 
-#: kmouth.cpp:123
+#: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
 msgstr "&നാള്‍വഴി അച്ചടിക്കുക..."
 
-#: kmouth.cpp:126 kmouth.cpp:127
+#: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
 msgid "Prints out the actual history"
 msgstr "യഥാര്‍ത്ഥ നാള്‍വഴി അച്ചടിക്കുന്നു"
 
-#: kmouth.cpp:130 kmouth.cpp:131
+#: kmouth.cpp:129 kmouth.cpp:130
 #, kde-format
 msgid "Quits the application"
 msgstr "പ്രയോഗം വിടുന്നു"
 
-#: kmouth.cpp:135
+#: kmouth.cpp:134
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
 msgstr "തെരഞ്ഞെടുത്ത ഭാഗം മുറിച്ചെടുത്ത് ഓര്‍മ്മച്ചെപ്പില്‍ വെയ്ക്കുന്നു"
@@ -99,12 +99,12 @@ msgstr ""
 "പാഠഭാഗങ്ങള്‍ ഉണ്ടെങ്കില്‍ ഓര്‍മ്മച്ചെപ്പില്‍ നിക്ഷേപിക്കപ്പെടും. അല്ലാത്തപക്ഷം നാള്‍വഴിയിലുള്ള "
 "വാക്യ‌ങ്ങള്‍ (വല്ല‌തും ഉണ്ടെങ്കില്‍) ഓര്‍മ്മച്ചെപ്പില്‍ വെയ്ക്കുന്നതാണ്."
 
-#: kmouth.cpp:139
+#: kmouth.cpp:140
 #, kde-format
 msgid "Copies the selected section to the clipboard"
 msgstr "തെരഞ്ഞെടുത്ത ഭാഗം ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് പകര്‍ത്തുന്നു"
 
-#: kmouth.cpp:140
+#: kmouth.cpp:142
 #, kde-format
 msgid ""
 "Copies the selected section to the clipboard. If there is some text selected "
@@ -115,31 +115,31 @@ msgstr ""
 "പാഠഭാഗങ്ങള്‍ ഉണ്ടെങ്കില്‍ ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് പകര്‍ത്തപ്പെടും. അല്ലാത്തപക്ഷം നാള്‍വഴിയിലുള്ള "
 "വാക്യ‌ങ്ങള്‍ (വല്ല‌തും ഉണ്ടെങ്കില്‍) ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് പകര്‍ത്തപ്പെടും."
 
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "ഓര്‍മ്മത്തട്ടിലെ ഉള്ളടക്കം യഥാസ്ഥാനത്ത് പതിക്കുന്നു."
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
 "field."
 msgstr "ചൂണ്ടി നില്‍ക്കുന്നിടത്തെ ഓര്‍മ്മത്തട്ടിന്റെ ഉള്ളടക്കം ചിട്ടപ്പെടുത്തല്‍ സ്ഥാനത്ത് പതിക്കപ്പെടുന്നു."
 
-#: kmouth.cpp:148
+#: kmouth.cpp:151
 #, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
 msgstr "&സംസാരിയ്ക്കുക"
 
-#: kmouth.cpp:150
+#: kmouth.cpp:153
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
 msgstr "നിലവില്‍ സജീവമായ വാക്യം (ങ്ങള്‍) ഉച്ചരിക്കുന്നു."
 
-#: kmouth.cpp:151 phraselist.cpp:88
+#: kmouth.cpp:155 phraselist.cpp:90
 #, kde-format
 msgid ""
 "Speaks the currently active sentence(s). If there is some text in the edit "
@@ -150,62 +150,62 @@ msgstr ""
 "അവ സംസാരിക്കപ്പെടുന്നു. അല്ലാത്തപക്ഷം, നാള്‍വഴിയിലെ തെരഞ്ഞെടുക്കപ്പെട്ട വാക്യ‌ങ്ങള്‍ (വല്ല‌തും "
 "ഉണ്ടെങ്കില്‍) അവ സംസാരിക്കപ്പെടുന്നു."
 
-#: kmouth.cpp:155
+#: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
 msgstr "&ചിട്ടപ്പെടുത്തുക..."
 
-#: kmouth.cpp:166
+#: kmouth.cpp:171
 #, kde-format
 msgid "Show P&hrasebook Bar"
 msgstr "വാ&ക്യാംശപുസ്തക പട്ട കാണിയ്ക്കുക"
 
-#: kmouth.cpp:168 kmouth.cpp:169
+#: kmouth.cpp:173 kmouth.cpp:174
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
 msgstr "വാക്യാംശപുസ്തക പട്ട പ്രവര്‍ത്തനസജ്ജമാക്കുന്നു / പ്രവര്‍ത്തനരഹിതമാക്കുന്നു"
 
-#: kmouth.cpp:172 kmouth.cpp:173
+#: kmouth.cpp:177 kmouth.cpp:178
 #, kde-format
 msgid "Enables/disables the statusbar"
 msgstr "സ്ഥിതി കാണിയ്ക്കുന്ന പട്ട പ്രവര്‍ത്തനസജ്ജമാക്കുന്നു / പ്രവര്‍ത്തനരഹിതമാക്കുന്നു"
 
-#: kmouth.cpp:177
+#: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
 msgstr "&കെമൌത്ത് ക്രമീകരിക്കുക..."
 
-#: kmouth.cpp:179 kmouth.cpp:180
+#: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
 msgid "Opens the configuration dialog"
 msgstr "ക്രമീകരണസംവാദം തുടങ്ങുന്നു"
 
-#: kmouth.cpp:188 phraselist.cpp:85
+#: kmouth.cpp:193 phraselist.cpp:86
 #, kde-format
 msgid "&Speak"
 msgstr "&സംസാരിയ്ക്കുക"
 
-#: kmouth.cpp:189 kmouth.cpp:191
+#: kmouth.cpp:194 kmouth.cpp:196
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
 msgstr "നാള്‍വഴിയിലെ‍ നിലവില്‍ തെരഞ്ഞെടുക്കപ്പെട്ട വാക്യാംശങ്ങള്‍ സംസാരിയ്ക്കപ്പെടുന്നു"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
 #, kde-format
 msgid "&Delete"
 msgstr "&മായ്ക്കുക"
 
-#: kmouth.cpp:197 kmouth.cpp:198
+#: kmouth.cpp:202 kmouth.cpp:203
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
 msgstr "നാള്‍വഴിയിലെ നിലവില്‍ തെരഞ്ഞെടുക്കപ്പെട്ട വാക്യാംശങ്ങള്‍ മായ്ക്കുന്നു"
 
-#: kmouth.cpp:202
+#: kmouth.cpp:207
 #, kde-format
 msgid "Cu&t"
 msgstr "മുറി&യ്ക്കുക"
 
-#: kmouth.cpp:204 kmouth.cpp:205
+#: kmouth.cpp:209 kmouth.cpp:210
 #, kde-format
 msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
@@ -213,80 +213,80 @@ msgid ""
 msgstr ""
 "നാള്‍വഴിയിലെ നിലവില്‍ തെരഞ്ഞെടുക്കപ്പെട്ട വാക്യാംശങ്ങള്‍ മുറിച്ചെടുത്ത് ഓര്‍മ്മച്ചെപ്പില്‍ ‍വെക്കുന്നു"
 
-#: kmouth.cpp:209
+#: kmouth.cpp:214
 #, kde-format
 msgid "&Copy"
 msgstr "&പകര്‍ത്തുക"
 
-#: kmouth.cpp:211 kmouth.cpp:212
+#: kmouth.cpp:216 kmouth.cpp:217
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
 msgstr "നാള്‍വഴിയിലെ നിലവില്‍ തെരഞ്ഞെടുക്കപ്പെട്ട വാക്യാംശങ്ങള്‍ ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് പകര്‍ത്തുന്നു"
 
-#: kmouth.cpp:215
+#: kmouth.cpp:220
 #, kde-format
 msgid "Select &All Entries"
 msgstr "എഴുതിച്ചേര്‍ത്തത് &എല്ലാം തെരഞ്ഞെടുക്കുക"
 
-#: kmouth.cpp:217 kmouth.cpp:218
+#: kmouth.cpp:222 kmouth.cpp:223
 #, kde-format
 msgid "Selects all phrases in the history"
 msgstr "നാള്‍വഴിയിലെ എല്ലാ വാക്യാംശങ്ങളും തെരഞ്ഞെടുക്കുന്നു "
 
-#: kmouth.cpp:221
+#: kmouth.cpp:226
 #, kde-format
 msgid "D&eselect All Entries"
 msgstr "തെരഞ്ഞെടുത്തതെല്ലാം ഒ&ഴിവാക്കുന്നു"
 
-#: kmouth.cpp:223 kmouth.cpp:224
+#: kmouth.cpp:228 kmouth.cpp:229
 #, kde-format
 msgid "Deselects all phrases in the history"
 msgstr "നാള്‍വഴിയിലെ എല്ലാ വാക്യാംശങ്ങളും ഒഴിവാക്കുന്നു"
 
-#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
-#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#: kmouth.cpp:243 kmouth.cpp:262 kmouth.cpp:361 kmouth.cpp:370 kmouth.cpp:387
+#: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
 #, kde-format
 msgctxt "The job is done"
 msgid "Ready."
 msgstr "തയ്യാര്‍."
 
-#: kmouth.cpp:254 kmouth.cpp:353
+#: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
 msgstr "ഫയല്‍ തുറക്കുന്നു..."
 
-#: kmouth.cpp:362
+#: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
 msgstr "നാള്‍വഴി ഒരു പുതിയ പേരില്‍ സംരക്ഷിക്കുന്നു..."
 
-#: kmouth.cpp:371
+#: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
 msgstr "അച്ചടിക്കുന്നു..."
 
-#: kmouth.cpp:388
+#: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
 msgstr "പുറത്തുകടക്കുന്നു..."
 
-#: kmouth.cpp:425
+#: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
 msgstr "വിഭവപ്പട്ട ടോഗ്ഗിള്‍ ചെയ്യുന്നു..."
 
-#: kmouth.cpp:437
+#: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
 msgstr "ഉപകരണപ്പട്ട ടോഗ്ഗിള്‍ ചെയ്യുന്നു..."
 
-#: kmouth.cpp:451
+#: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
 msgstr "വാക്യാംശപുസ്തകപ്പട്ട ടോഗ്ഗിള്‍ ചെയ്യുന്നു..."
 
-#: kmouth.cpp:465
+#: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
 msgstr "സ്ഥിതി കാണിയ്ക്കുന്ന പട്ട ടോഗ്ഗിള്‍ ചെയ്യുന്നു..."
@@ -315,52 +315,52 @@ msgstr "&വാക്യാംശപുസ്തകങ്ങള്‍"
 msgid "&Settings"
 msgstr "&സജ്ജീകരണങ്ങള്‍"
 
-#: main.cpp:39
+#: main.cpp:37
 #, kde-format
 msgid "KMouth"
 msgstr "കെമൌത്ത്"
 
-#: main.cpp:41
+#: main.cpp:39
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
 msgstr "കൃത്രിമ ശബ്ദമിശ്രണത്തിനായുള്ള ഒരു എഴുതി-വായനയുടെ പ്രത്യ‌ക്ഷതലം"
 
-#: main.cpp:43
+#: main.cpp:41
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
 msgstr "(c) 2002/2003, ഗുണ്ണാര്‍ ഷ്മി Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Gunnar Schmi Dt"
 msgstr "ഗുണ്ണാര്‍ ഷ്മി Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Original Author"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
 msgstr ""
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Olaf Schmidt"
 msgstr "ഒളാഫ് ഷ്മിത്"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Tips, extended phrase books"
 msgstr "വിജ്ഞാനശകലം, വിസ്തൃത വാക്യാംശപുസ്തകം"
 
-#: main.cpp:53
+#: main.cpp:51
 #, kde-format
 msgid "History file to open"
 msgstr "നാള്‍വഴി ഫയല്‍ തുറക്കാന്‍"
@@ -395,7 +395,7 @@ msgstr "ഏത് വാക്യാംശപുസ്തകമാണ് നി�
 msgid "Book"
 msgstr "പുസ്തകം"
 
-#: phrasebook/phrasebook.cpp:270
+#: phrasebook/phrasebook.cpp:274
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -407,7 +407,7 @@ msgstr ""
 "*.txt|സാധാരണ പദാവലി ഫയലുകള്‍ (*.txt)\n"
 "*|എല്ലാ ഫയലുകളും"
 
-#: phrasebook/phrasebook.cpp:272
+#: phrasebook/phrasebook.cpp:276
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -419,22 +419,22 @@ msgstr ""
 "‍ *.phrasebook|വാക്യാംശപുസ്തകങ്ങള്‍ (*.phrasebook)\n"
 "*|എല്ലാ ഫയലുകളും"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "%1 ഫയല്‍ നിലവിലുണ്ട്. അത് മാച്ചെഴുതണോ?"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "ഫയല്‍ നിലവിലുണ്ട്"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&മാച്ചെഴുത്ത്"
 
-#: phrasebook/phrasebook.cpp:305
+#: phrasebook/phrasebook.cpp:318
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -446,7 +446,7 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയലായ <i>%1</i>ന് <i>phrasebook</i>നെ അപേക്ഷിച്ച് വ്യ‌ത്യ‌സ്തമായ "
 "അനുബന്ധമാണുള്ളത്. ഫയല്‍ നാമത്തോടൊപ്പം <i>.phrasebook</i> ചേര്‍ക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:307
+#: phrasebook/phrasebook.cpp:322
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -455,22 +455,22 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയലായ <i>%1</i>ന് <i>phrasebook</i>നെ അപേക്ഷിച്ച് വ്യ‌ത്യ‌സ്തമായ "
 "അനുബന്ധമാണുള്ളത്. ഫയല്‍ നാമത്തോടൊപ്പം <i>.phrasebook</i> ചേര്‍ക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
 #, kde-format
 msgid "File Extension"
 msgstr "ഫയല്‍ അനുബന്ധം"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:327
 #, kde-format
 msgid "Add"
 msgstr "ചേര്‍ക്കുക"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:328
 #, kde-format
 msgid "Do Not Add"
 msgstr "ചേര്‍ക്കണ്ട"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:349
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
@@ -480,7 +480,7 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയല്‍ നാമം <i>%1</i>ന് <i>.phrasebook</i> അനുബന്ധമുണ്ട്. phrasebook "
 "ഘടനയില്‍ സൂക്ഷിക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:330
+#: phrasebook/phrasebook.cpp:353
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -489,96 +489,96 @@ msgstr ""
 "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത ഫയല്‍ നാമം <i>%1</i>ന് <i>.phrasebook</i> അനുബന്ധമുണ്ട്. phrasebook "
 "ഘടനയില്‍ സൂക്ഷിക്കാന്‍ താല്പര്യ‌മുണ്ടോ?"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:358
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Phrasebook ആയി"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:359
 #, kde-format
 msgid "As Plain Text"
 msgstr "സാധാരണ പദാവലി ഫയലായി"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Phrase"
 msgstr "വാക്യാംശം"
 
-#: phrasebook/phrasebookdialog.cpp:90
+#: phrasebook/phrasebookdialog.cpp:94
 #, kde-format
 msgid "Shortcut"
 msgstr "കുറുക്കുവഴി"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "വാക്യാംശപുസ്തകം"
 
-#: phrasebook/phrasebookdialog.cpp:229
+#: phrasebook/phrasebookdialog.cpp:227
 #, kde-format
 msgid "&New Phrase"
 msgstr "&പുതിയ വാക്യാംശം"
 
-#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
+#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "പുതിയ വാക്യാംശം ചേര്‍ക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:236
+#: phrasebook/phrasebookdialog.cpp:234
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "പുതിയ വാക്യാംശ &പുസ്തകം"
 
-#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
+#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "മറ്റു വാക്യാംശ‍ങ്ങളും പുസ്തകങ്ങളും ചേര്‍ക്കാവുന്ന വിധം ഒരു പുതിയ വാക്യാംശപുസ്തകം കൂട്ടിച്ചേര്‍"
 "ക്കപ്പെടുന്നു  "
 
-#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
+#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "വാക്യാംശപുസ്തകം ഹാര്‍ഡ് ഡിസ്കില്‍ സൂക്ഷിക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
+#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
 #, kde-format
 msgid "&Import..."
 msgstr "&അകത്തെടുക്കുക..."
 
-#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
-#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
+#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "ഒരു ഫയല്‍ അകത്തെടുത്തു് അതിലെ ഉള്ളടക്കം മുഴുവന്‍ വാക്യാംശപുസ്തകത്തില്‍ ചേര്‍ക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "അംഗീകൃത വാക്യാംശപുസ്തകം ഇ&റക്കുമതി ചെയ്യുക"
 
-#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
+#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "ഒരു അംഗീകൃത വാക്യാംശപുസ്തകം അകത്തെടുത്തു് അതിലെ ഉള്ളടക്കംവാക്യാംശ പുസ്തകത്തില്‍ ചേര്‍ക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:266
+#: phrasebook/phrasebookdialog.cpp:264
 #, kde-format
 msgid "&Export..."
 msgstr "&പുറത്തുവയ്ക്കുക..."
 
-#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
+#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "ഇപ്പോള്‍ തെരഞ്ഞെടുത്ത വാക്യ‌വും (ങ്ങളും) വാക്യാംശപുസ്തകവും (ങ്ങളും) ഒരു ഫയലിലേക്ക് വയ്ക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
+#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
 #, kde-format
 msgid "Closes the window"
 msgstr "ജാലകം അടക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
+#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -587,31 +587,31 @@ msgstr ""
 "‍വാക്യാംശപുസ്തകത്തില്‍ ചേര്‍ക്കപ്പെട്ടവയില്‍നിന്ന് ഇപ്പോള്‍ തെരഞ്ഞെടുത്തവ മുറിച്ചെടുത്ത് ഓര്‍മ്മച്ചെപ്പില്‍ "
 "നിക്ഷേപിക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
+#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr ""
 "വാക്യാംശപുസ്തകത്തില്‍ ചേര്‍ക്കപ്പെട്ടവയില്‍നിന്ന് ഇപ്പോള്‍ തെരഞ്ഞെടുത്തവ ഓര്‍മ്മപ്പലകയിലേക്ക്‍ പകര്‍ത്തുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
+#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "വാക്യാംശപുസ്തകത്തില്‍ ചേര്‍ക്കപ്പെട്ടവയില്‍നിന്ന് തെരഞ്ഞെടുത്തവ മായ്ക്കുന്നു"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
+#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "&വാക്യാംശത്തിന്റെ പദാവലി:"
 
-#: phrasebook/phrasebookdialog.cpp:405
+#: phrasebook/phrasebookdialog.cpp:397
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "&വാക്യാംശ പുസ്തകത്തിന്റെ പേര്:"
 
-#: phrasebook/phrasebookdialog.cpp:430
+#: phrasebook/phrasebookdialog.cpp:424
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -620,27 +620,27 @@ msgstr ""
 "<qt>സംരക്ഷിക്കപ്പെടാത്ത ഭേദഗതികളുണ്ട്.<br />\"വാക്യാംശപുസ്തക\"ജാലകം അടക്കുന്നതിന് മുമ്പ് "
 "ഭേദഗതികള്‍ പ്രയോഗിക്കണോ അതോ ഭേദഗതികള്‍ ഉപേക്ഷിക്കണോ?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:431
+#: phrasebook/phrasebookdialog.cpp:425
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "\"വാക്യാംശപുസ്തക\"ജാലകം അടക്കുന്നു"
 
-#: phrasebook/phrasebookdialog.cpp:599
+#: phrasebook/phrasebookdialog.cpp:595
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(പുതിയ വാക്യാംശപുസ്തകം)"
 
-#: phrasebook/phrasebookdialog.cpp:615
+#: phrasebook/phrasebookdialog.cpp:611
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(പുതിയ വാക്യാംശം)"
 
-#: phrasebook/phrasebookdialog.cpp:646
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "വാക്യാംശപുസ്തകം അകത്തെടുക്കുക"
 
-#: phrasebook/phrasebookdialog.cpp:647
+#: phrasebook/phrasebookdialog.cpp:642
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -652,7 +652,7 @@ msgstr ""
 "*.txt|സാധാരണ പദാവലി ഫയലുകള്‍ (*.txt)\n"
 "*|എല്ലാ ഫയലുകളും"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -661,18 +661,18 @@ msgstr ""
 "താഴെയുള്ള ഫയല്‍ കയറ്റുമ്പോള്‍ ഒരു പിശകുപറ്റി\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "വാക്യാംശ പുസ്തകം പുറത്തുവയ്ക്കുക"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&വാക്യാംശപുസ്തകങ്ങള്‍"
 
-#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -755,7 +755,7 @@ msgstr ""
 "ഇപ്പോഴത്തെ വാക്യാംശപുസ്തകം ഒരു വൃക്ഷഘടനയായി‍ ഈ പട്ടികയിലുണ്ട്. ഒറ്റപ്പെട്ട വാക്യാംശങ്ങളും "
 "വാക്യാംശപുസ്തകം തന്നെയും തെരഞ്ഞെടുത്ത് ഭേദഗതികള്‍ വരുത്താന്‍ നിങ്ങള്‍ക്കാവും"
 
-#: phraselist.cpp:62
+#: phraselist.cpp:63
 #, kde-format
 msgid ""
 "This list contains the history of spoken sentences. You can select sentences "
@@ -764,7 +764,7 @@ msgstr ""
 "വായിക്കപ്പെട്ട വാക്യങ്ങളുടെ നാള്‍വഴി ഈ പട്ടികയില്‍ ഉള്‍‌പ്പെട്ടിട്ടുണ്ട്. പുനര്‍വായനക്കായി വാക്യങ്ങള്‍ "
 "തെരഞ്ഞെടുത്ത് വായന ബട്ടണില്‍ അമര്‍ത്തിയാല്‍ മതി."
 
-#: phraselist.cpp:80
+#: phraselist.cpp:81
 #, kde-format
 msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
@@ -773,17 +773,17 @@ msgstr ""
 "ചിട്ടപ്പെടുത്തല്‍ സ്ഥാനത്ത് നിങ്ങള്‍ക്ക് ഒരു വാക്യാംശം അടിച്ചു ചേര്‍ക്കാം. അങ്ങനെ അടിച്ചുചേര്‍ത്ത "
 "വാക്യാംശം വായിക്കാന്‍ വായന ബട്ടണില്‍ അമര്‍ത്തിയാല്‍ മതി."
 
-#: phraselist.cpp:475
+#: phraselist.cpp:477
 #, kde-format
 msgid "Save As"
 msgstr "പേരു് മാറ്റി സൂക്ഷിക്കുക"
 
-#: phraselist.cpp:481
+#: phraselist.cpp:484
 #, kde-format
 msgid "Open File as History"
 msgstr "നാള്‍വഴിയായി ഫയല്‍ തുറക്കുക"
 
-#: phraselist.cpp:482
+#: phraselist.cpp:484
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -955,21 +955,21 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "അക്ഷരങ്ങളുടെ &കോഡീകരണം:"
 
-#: texttospeechconfigurationwidget.cpp:65
-#: wordcompletion/dictionarycreationwizard.cpp:116
+#: texttospeechconfigurationwidget.cpp:62
+#: wordcompletion/dictionarycreationwizard.cpp:117
 #, kde-format
 msgctxt "Local characterset"
 msgid "Local"
 msgstr "തദ്ദേശീയം"
 
-#: texttospeechconfigurationwidget.cpp:68
+#: texttospeechconfigurationwidget.cpp:65
 #, kde-format
 msgctxt "Latin1 characterset"
 msgid "Latin1"
 msgstr "ലാറ്റിന്‍1"
 
-#: texttospeechconfigurationwidget.cpp:69
-#: wordcompletion/dictionarycreationwizard.cpp:120
+#: texttospeechconfigurationwidget.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:121
 #, kde-format
 msgid "Unicode"
 msgstr "യൂണികോഡ്"
@@ -1160,27 +1160,27 @@ msgstr ""
 "വാക്കുകള്‍ കെമൌത്ത് യാന്ത്രികമായിത്തന്നെ നിഘണ്ടുവില്‍ ചേര്‍ക്കും എന്നതിനാല്‍ കുറച്ചു് സമയം കൊണ്ടു് തന്നെ "
 "ഇത് നിങ്ങളുടെ പദസമ്പത്ത് പഠിച്ചിരിക്കും."
 
-#: wordcompletion/dictionarycreationwizard.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:66
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "പുതിയ നിഘണ്ടുവിന്റെ സ്രോതസ്സ് (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:71
-#: wordcompletion/dictionarycreationwizard.cpp:77
-#: wordcompletion/dictionarycreationwizard.cpp:87
-#: wordcompletion/dictionarycreationwizard.cpp:94
+#: wordcompletion/dictionarycreationwizard.cpp:72
+#: wordcompletion/dictionarycreationwizard.cpp:78
+#: wordcompletion/dictionarycreationwizard.cpp:88
+#: wordcompletion/dictionarycreationwizard.cpp:95
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "പുതിയ നിഘണ്ടുവിന്റെ സ്രോതസ്സ് (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:80
+#: wordcompletion/dictionarycreationwizard.cpp:81
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&തട്ടു്:"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
-#: wordcompletion/dictionarycreationwizard.cpp:83
+#: wordcompletion/dictionarycreationwizard.cpp:82
+#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1189,29 +1189,29 @@ msgstr ""
 "പുതിയ നിഘണ്ടുവിന്റെ നിര്‍മ്മാണത്തിനായി ഏത് തട്ടു് കയറ്റാനാണ് നിങ്ങളാവശ്യ‌പ്പെടുന്നത് എന്ന് ഈ "
 "നിക്ഷേപസ്ഥാനത്ത് വ്യ‌ക്തമാക്കുക."
 
-#: wordcompletion/dictionarycreationwizard.cpp:119
+#: wordcompletion/dictionarycreationwizard.cpp:120
 #, kde-format
 msgctxt "Latin characterset"
 msgid "Latin1"
 msgstr "ലാറ്റിന്‍1"
 
-#: wordcompletion/dictionarycreationwizard.cpp:204
+#: wordcompletion/dictionarycreationwizard.cpp:205
 #, kde-format
 msgid "Merge result"
 msgstr "ഫലം തുന്നിച്ചേര്‍ക്കുക"
 
-#: wordcompletion/dictionarycreationwizard.cpp:206
+#: wordcompletion/dictionarycreationwizard.cpp:207
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "കാലിയായ പട്ടിക"
 
-#: wordcompletion/dictionarycreationwizard.cpp:212
+#: wordcompletion/dictionarycreationwizard.cpp:213
 #, kde-format
 msgid "KDE Documentation"
 msgstr "കെഡിഇ സഹായക്കുറിപ്പുകള്‍"
 
-#: wordcompletion/dictionarycreationwizard.cpp:336
+#: wordcompletion/dictionarycreationwizard.cpp:335
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1342,53 +1342,53 @@ msgstr ""
 "ചിട്ടപ്പെടുത്തല്‍ സ്ഥാനത്തിനടുത്ത് കെമൌത്ത് ഒരു കോംബോ ബോക്സ് പ്രദര്‍ശിപ്പിക്കും. പദപൂരണത്തിന് യഥാര്‍"
 "ത്ഥത്തില്‍ ആവശ്യ‌മായ നിഘണ്ടു തെരഞ്ഞെടുക്കാന്‍ ഈ കോംബോ ബോക്സ് നിങ്ങള്‍ക്ക് ഉപകരിക്കും"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Dictionary"
 msgstr "നിഘണ്ടു"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Language"
 msgstr "ഭാഷ"
 
-#: wordcompletion/wordcompletionwidget.cpp:97
-#: wordcompletion/wordcompletionwidget.cpp:155
+#: wordcompletion/wordcompletionwidget.cpp:95
+#: wordcompletion/wordcompletionwidget.cpp:153
 #, kde-format
 msgid "without name"
 msgstr "പേരില്ലാതെ"
 
-#: wordcompletion/wordcompletionwidget.cpp:204
+#: wordcompletion/wordcompletionwidget.cpp:202
 #, kde-format
 msgid "Export Dictionary"
 msgstr "നിഘണ്ടു പുറത്തുവയ്ക്കുക"
 
-#: wordcompletion/wordlist.cpp:77
+#: wordcompletion/wordlist.cpp:74
 #, kde-format
 msgid "Creating Word List"
 msgstr "വാക്കുകളുടെ പട്ടിക ഉണ്ടാക്കുന്നു"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
+#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "കെഡിഇ സഹായക്കുറിപ്പുകള്‍ മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:200
+#: wordcompletion/wordlist.cpp:197
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "നിഘണ്ടുക്കള്‍ തുന്നിച്ചേര്‍ത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:269
+#: wordcompletion/wordlist.cpp:266
 #, kde-format
 msgid "Parsing file..."
 msgstr " ഫയല്‍ മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:281
+#: wordcompletion/wordlist.cpp:278
 #, kde-format
 msgid "Parsing directory..."
 msgstr "തട്ടു് മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:472
+#: wordcompletion/wordlist.cpp:464
 #, kde-format
 msgid "Performing spell check..."
 msgstr "അക്ഷരപിശക് പരിശോധന നടത്തുന്നു...."

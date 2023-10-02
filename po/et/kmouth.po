@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:39+0000\n"
+"POT-Creation-Date: 2023-10-02 00:36+0000\n"
 "PO-Revision-Date: 2019-10-30 00:35+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -33,57 +33,57 @@ msgstr "qiilaq69@gmail.com"
 msgid "Initial Configuration - KMouth"
 msgstr "Esialgne seadistus - KMouth"
 
-#: configwizard.cpp:59
+#: configwizard.cpp:61
 #, kde-format
 msgid "Text-to-Speech Configuration"
 msgstr "Teksti ettelugemise seadistamine"
 
-#: configwizard.cpp:73
+#: configwizard.cpp:75
 #, kde-format
 msgid "Initial Phrase Book"
 msgstr "Esialgne väljendiraamat"
 
-#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#: configwizard.cpp:107 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
 msgstr "Sõnalõpetus"
 
-#: kmouth.cpp:107
+#: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
 msgstr "&Ava ajaloona..."
 
-#: kmouth.cpp:110 kmouth.cpp:111
+#: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
 msgid "Opens an existing file as history"
 msgstr "Avab olemasoleva faili ajaloona"
 
-#: kmouth.cpp:115
+#: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
 msgstr "Salvesta a&jaloona..."
 
-#: kmouth.cpp:118 kmouth.cpp:119
+#: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
 msgstr "Salvestab käesoleva ajaloo kui..."
 
-#: kmouth.cpp:123
+#: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
 msgstr "&Trüki ajalugu..."
 
-#: kmouth.cpp:126 kmouth.cpp:127
+#: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
 msgid "Prints out the actual history"
 msgstr "Trükib käesoleva ajaloo"
 
-#: kmouth.cpp:130 kmouth.cpp:131
+#: kmouth.cpp:129 kmouth.cpp:130
 #, kde-format
 msgid "Quits the application"
 msgstr "Väljub rakendusest"
 
-#: kmouth.cpp:135
+#: kmouth.cpp:134
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
 msgstr "Lõikab valiku ja asetab selle lõikepuhvrisse"
@@ -99,12 +99,12 @@ msgstr ""
 "redigeerimisalal, asetatakse see lõikepuhvrisse, vastasel juhul asetatakse "
 "sinna valitud laused ajaloost (kui neid on)."
 
-#: kmouth.cpp:139
+#: kmouth.cpp:140
 #, kde-format
 msgid "Copies the selected section to the clipboard"
 msgstr "Kopeerib valiku lõikepuhvrisse"
 
-#: kmouth.cpp:140
+#: kmouth.cpp:142
 #, kde-format
 msgid ""
 "Copies the selected section to the clipboard. If there is some text selected "
@@ -115,30 +115,30 @@ msgstr ""
 "asetatakse see lõikepuhvrisse, vastasel juhul asetatakse sinna valitud "
 "laused ajaloost (kui neid on)."
 
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "Lõikepuhvri sisu asetamine praegusesse asukohta"
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
 "field."
 msgstr "Asetab lõikepuhvri sisu kursori praegusesse asukohta redigeerimisalal."
 
-#: kmouth.cpp:148
+#: kmouth.cpp:151
 #, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
 msgstr "Loe e&tte"
 
-#: kmouth.cpp:150
+#: kmouth.cpp:153
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
 msgstr "Loeb ette parajasti aktiivse(d) lause(d)"
 
-#: kmouth.cpp:151 phraselist.cpp:88
+#: kmouth.cpp:155 phraselist.cpp:90
 #, kde-format
 msgid ""
 "Speaks the currently active sentence(s). If there is some text in the edit "
@@ -149,142 +149,142 @@ msgstr ""
 "tekst, loetakse see ette, vastasel juhul loetakse ette valitud laused "
 "ajaloos (kui neid on)."
 
-#: kmouth.cpp:155
+#: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
 msgstr "&Muuda..."
 
-#: kmouth.cpp:166
+#: kmouth.cpp:171
 #, kde-format
 msgid "Show P&hrasebook Bar"
 msgstr "Väljendi&raamaturiba näitamine"
 
-#: kmouth.cpp:168 kmouth.cpp:169
+#: kmouth.cpp:173 kmouth.cpp:174
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
 msgstr "Lülitab väljendiraamaturiba näitamise sisse/välja"
 
-#: kmouth.cpp:172 kmouth.cpp:173
+#: kmouth.cpp:177 kmouth.cpp:178
 #, kde-format
 msgid "Enables/disables the statusbar"
 msgstr "Lülitab olekuriba näitamise sisse/välja"
 
-#: kmouth.cpp:177
+#: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
 msgstr "KMouthi &seadistamine..."
 
-#: kmouth.cpp:179 kmouth.cpp:180
+#: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
 msgid "Opens the configuration dialog"
 msgstr "Avab seadistustedialoogi"
 
-#: kmouth.cpp:188 phraselist.cpp:85
+#: kmouth.cpp:193 phraselist.cpp:86
 #, kde-format
 msgid "&Speak"
 msgstr "Loe e&tte"
 
-#: kmouth.cpp:189 kmouth.cpp:191
+#: kmouth.cpp:194 kmouth.cpp:196
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Loeb ette parajasti valitud laused ajaloos"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
 #, kde-format
 msgid "&Delete"
 msgstr "&Kustuta"
 
-#: kmouth.cpp:197 kmouth.cpp:198
+#: kmouth.cpp:202 kmouth.cpp:203
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
 msgstr "Kustutab parajasti valitud laused ajaloost"
 
-#: kmouth.cpp:202
+#: kmouth.cpp:207
 #, kde-format
 msgid "Cu&t"
 msgstr "&Lõika"
 
-#: kmouth.cpp:204 kmouth.cpp:205
+#: kmouth.cpp:209 kmouth.cpp:210
 #, kde-format
 msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
 "clipboard"
 msgstr "Lõikab parajasti valitud laused ajaloost ja asetab need lõikepuhvrisse"
 
-#: kmouth.cpp:209
+#: kmouth.cpp:214
 #, kde-format
 msgid "&Copy"
 msgstr "&Kopeeri"
 
-#: kmouth.cpp:211 kmouth.cpp:212
+#: kmouth.cpp:216 kmouth.cpp:217
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
 msgstr "Kopeerib parajasti valitud laused ajaloost lõikepuhvrise"
 
-#: kmouth.cpp:215
+#: kmouth.cpp:220
 #, kde-format
 msgid "Select &All Entries"
 msgstr "Vali &kõik kirjed"
 
-#: kmouth.cpp:217 kmouth.cpp:218
+#: kmouth.cpp:222 kmouth.cpp:223
 #, kde-format
 msgid "Selects all phrases in the history"
 msgstr "Valib ajaloo kõik laused"
 
-#: kmouth.cpp:221
+#: kmouth.cpp:226
 #, kde-format
 msgid "D&eselect All Entries"
 msgstr "Tühista kõigi kirjete va&lik"
 
-#: kmouth.cpp:223 kmouth.cpp:224
+#: kmouth.cpp:228 kmouth.cpp:229
 #, kde-format
 msgid "Deselects all phrases in the history"
 msgstr "Tühistab kõigi ajalookirjete valiku"
 
-#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
-#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#: kmouth.cpp:243 kmouth.cpp:262 kmouth.cpp:361 kmouth.cpp:370 kmouth.cpp:387
+#: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
 #, kde-format
 msgctxt "The job is done"
 msgid "Ready."
 msgstr "Valmis."
 
-#: kmouth.cpp:254 kmouth.cpp:353
+#: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
 msgstr "Faili avamine..."
 
-#: kmouth.cpp:362
+#: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
 msgstr "Ajaloo salvestamine uue nimega..."
 
-#: kmouth.cpp:371
+#: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
 msgstr "Trükkimine..."
 
-#: kmouth.cpp:388
+#: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
 msgstr "Väljumine..."
 
-#: kmouth.cpp:425
+#: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
 msgstr "Menüüriba lülitamine..."
 
-#: kmouth.cpp:437
+#: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
 msgstr "Tööriistariba lülitamine..."
 
-#: kmouth.cpp:451
+#: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
 msgstr "Väljendiraamaturiba lülitamine..."
 
-#: kmouth.cpp:465
+#: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
 msgstr "Olekuriba lülitamine..."
@@ -313,52 +313,52 @@ msgstr "&Väljendiraamatud"
 msgid "&Settings"
 msgstr "&Seadistused"
 
-#: main.cpp:39
+#: main.cpp:37
 #, kde-format
 msgid "KMouth"
 msgstr "KMouth"
 
-#: main.cpp:41
+#: main.cpp:39
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
 msgstr "Kõnesüntesaatorite kirjuta-ja-kõnele kasutajaliides"
 
-#: main.cpp:43
+#: main.cpp:41
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
 msgstr "(c) 2002/2003: Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Gunnar Schmi Dt"
 msgstr "Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Original Author"
 msgstr "Algne autor"
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
 msgstr "Jeremy Whiting"
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
 msgstr "Praegune hooldaja"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Olaf Schmidt"
 msgstr "Olaf Schmidt"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Tips, extended phrase books"
 msgstr "Kohtspikrid, laiendatud väljendiraamatud"
 
-#: main.cpp:53
+#: main.cpp:51
 #, kde-format
 msgid "History file to open"
 msgstr "Avatav ajaloofail"
@@ -393,34 +393,34 @@ msgstr "Palun vali, millist väljendiraamatut soovid kasutada:"
 msgid "Book"
 msgstr "Raamat"
 
-#: phrasebook/phrasebook.cpp:270
+#: phrasebook/phrasebook.cpp:274
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
 "Väljendiraamatud (*.phrasebook);;Lihttekstifailid (*.txt);;Kõik failid (*)"
 
-#: phrasebook/phrasebook.cpp:272
+#: phrasebook/phrasebook.cpp:276
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
 "Lihttekstifailid (*.txt);;Väljendiraamatud (*.phrasebook);;Kõik failid (*)"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Fail %1 on juba olemas. Kas kirjutada see üle?"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Fail on olemas"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Kirjuta üle"
 
-#: phrasebook/phrasebook.cpp:305
+#: phrasebook/phrasebook.cpp:318
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -432,7 +432,7 @@ msgstr ""
 "Soovitud failinime <i>%1</i> laiend ei ole <i>.phrasebook</i>. Kas lisada "
 "failinimele laiend <i>.phrasebook</i>?"
 
-#: phrasebook/phrasebook.cpp:307
+#: phrasebook/phrasebook.cpp:322
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -441,22 +441,22 @@ msgstr ""
 "Soovitud failinime <i>%1</i> laiend ei ole <i>.phrasebook</i>. Kas lisada "
 "failinimele laiend <i>.phrasebook</i>?"
 
-#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
 #, kde-format
 msgid "File Extension"
 msgstr "Faililaiend"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:327
 #, kde-format
 msgid "Add"
 msgstr "Lisa"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:328
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ära lisa"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:349
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
@@ -466,7 +466,7 @@ msgstr ""
 "Soovitud failinimel <i>%1</i> on laiend <i>.phrasebook</i>. Kas salvestada "
 "see väljendiraamatu vormingus?"
 
-#: phrasebook/phrasebook.cpp:330
+#: phrasebook/phrasebook.cpp:353
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -475,96 +475,96 @@ msgstr ""
 "Soovitud failinimel <i>%1</i> on laiend <i>.phrasebook</i>. Kas salvestada "
 "see väljendiraamatu vormingus?"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:358
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Väljendiraamatuna"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:359
 #, kde-format
 msgid "As Plain Text"
 msgstr "Puhta tekstina"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Phrase"
 msgstr "Väljend"
 
-#: phrasebook/phrasebookdialog.cpp:90
+#: phrasebook/phrasebookdialog.cpp:94
 #, kde-format
 msgid "Shortcut"
 msgstr "Kiirklahv"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Väljendiraamat"
 
-#: phrasebook/phrasebookdialog.cpp:229
+#: phrasebook/phrasebookdialog.cpp:227
 #, kde-format
 msgid "&New Phrase"
 msgstr "&Uus väljend"
 
-#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
+#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Lisab uue väljendi"
 
-#: phrasebook/phrasebookdialog.cpp:236
+#: phrasebook/phrasebookdialog.cpp:234
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Uus &väljendiraamat"
 
-#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
+#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Lisab uue väljendiraamatu, kuhu saab lisada muid raamatuid ja väljendeid"
 
-#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
+#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Salvestab väljendiraamatu kõvakettale"
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
+#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
 #, kde-format
 msgid "&Import..."
 msgstr "&Impordi..."
 
-#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
-#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
+#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Impordib faili ja lisab selle sisu väljendiraamatule"
 
-#: phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "I&mpordi standardväljendiraamat"
 
-#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
+#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "Impordib standardse väljendiraamatu ja lisab selle sisu väljendiraamatule"
 
-#: phrasebook/phrasebookdialog.cpp:266
+#: phrasebook/phrasebookdialog.cpp:264
 #, kde-format
 msgid "&Export..."
 msgstr "&Ekspordi..."
 
-#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
+#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Ekspordib parajasti valitud väljendi(d) või väljendiraamatu(d) faili"
 
-#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
+#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
 #, kde-format
 msgid "Closes the window"
 msgstr "Sulgeb akna"
 
-#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
+#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -572,30 +572,30 @@ msgid ""
 msgstr ""
 "Lõikab parajasti valitud kirjed väljendiraamatust ja asetab lõikepuhvrisse"
 
-#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
+#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Kopeerib parajasti valitud kirje väljendiraamatust lõikepuhvrisse"
 
-#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
+#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Kustutab valitud kirjed väljendiraamatust"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
+#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Välj&endi tekst:"
 
-#: phrasebook/phrasebookdialog.cpp:405
+#: phrasebook/phrasebookdialog.cpp:397
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "&Väljendiraamatu nimi:"
 
-#: phrasebook/phrasebookdialog.cpp:430
+#: phrasebook/phrasebookdialog.cpp:424
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -604,33 +604,33 @@ msgstr ""
 "<qt>Mõned muudatused on salvestamata.<br />Kas soovid need rakendada enne "
 "\"väljendiraamatu\" akna sulgemist või unustada?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:431
+#: phrasebook/phrasebookdialog.cpp:425
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Väljendiraamatu akna sulgemine"
 
-#: phrasebook/phrasebookdialog.cpp:599
+#: phrasebook/phrasebookdialog.cpp:595
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Uus väljendiraamat)"
 
-#: phrasebook/phrasebookdialog.cpp:615
+#: phrasebook/phrasebookdialog.cpp:611
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Uus väljend)"
 
-#: phrasebook/phrasebookdialog.cpp:646
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Väljendiraamatu import"
 
-#: phrasebook/phrasebookdialog.cpp:647
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
 "Väljendiraamatud (*.phrasebook);Lihttekstifailid (*.txt);Kõik failid (*)"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -639,17 +639,17 @@ msgstr ""
 "Tekkis viga, kui püüti laadida faili\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Väljendiraamatu eksport"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Väljendiraamatud (*.phrasebook)"
 
-#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -728,7 +728,7 @@ msgstr ""
 "See nimekiri näitab aktiivset väljendiraamatut puuna. Siin saab valida ja "
 "muuta konkreetseid väljendeid või alam-väljendiraamatuid."
 
-#: phraselist.cpp:62
+#: phraselist.cpp:63
 #, kde-format
 msgid ""
 "This list contains the history of spoken sentences. You can select sentences "
@@ -737,7 +737,7 @@ msgstr ""
 "See nimekiri sisaldab ette loetud väljendite ajalugu. Siin võib valida lause "
 "ja vajutada ettelugemisnuppu selle kordamiseks."
 
-#: phraselist.cpp:80
+#: phraselist.cpp:81
 #, kde-format
 msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
@@ -746,17 +746,17 @@ msgstr ""
 "Sellele väljale saab kirjutada väljendi. Selle ettelugemiseks vajuta "
 "ettelugemisnuppu."
 
-#: phraselist.cpp:475
+#: phraselist.cpp:477
 #, kde-format
 msgid "Save As"
 msgstr "Salvestamine"
 
-#: phraselist.cpp:481
+#: phraselist.cpp:484
 #, kde-format
 msgid "Open File as History"
 msgstr "Faili avamine ajaloona"
 
-#: phraselist.cpp:482
+#: phraselist.cpp:484
 #, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
@@ -919,21 +919,21 @@ msgstr "See liitkast määrab, millist kooditabelit teksti puhul kasutatakse."
 msgid "Character encodin&g:"
 msgstr "K&ooditabel:"
 
-#: texttospeechconfigurationwidget.cpp:65
-#: wordcompletion/dictionarycreationwizard.cpp:116
+#: texttospeechconfigurationwidget.cpp:62
+#: wordcompletion/dictionarycreationwizard.cpp:117
 #, kde-format
 msgctxt "Local characterset"
 msgid "Local"
 msgstr "Kohalik"
 
-#: texttospeechconfigurationwidget.cpp:68
+#: texttospeechconfigurationwidget.cpp:65
 #, kde-format
 msgctxt "Latin1 characterset"
 msgid "Latin1"
 msgstr "Latin1"
 
-#: texttospeechconfigurationwidget.cpp:69
-#: wordcompletion/dictionarycreationwizard.cpp:120
+#: texttospeechconfigurationwidget.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:121
 #, kde-format
 msgid "Unicode"
 msgstr "Unicode"
@@ -1122,27 +1122,27 @@ msgstr ""
 "lisab kirjutatud sõnad automaatselt sõnaraamatusse ja nii omandab rakendus "
 "tasapisi sinu sõnavara."
 
-#: wordcompletion/dictionarycreationwizard.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:66
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Uue sõnaraamatu allikas (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:71
-#: wordcompletion/dictionarycreationwizard.cpp:77
-#: wordcompletion/dictionarycreationwizard.cpp:87
-#: wordcompletion/dictionarycreationwizard.cpp:94
+#: wordcompletion/dictionarycreationwizard.cpp:72
+#: wordcompletion/dictionarycreationwizard.cpp:78
+#: wordcompletion/dictionarycreationwizard.cpp:88
+#: wordcompletion/dictionarycreationwizard.cpp:95
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Uue sõnaraamatu allikas (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:80
+#: wordcompletion/dictionarycreationwizard.cpp:81
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Kataloog:"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
-#: wordcompletion/dictionarycreationwizard.cpp:83
+#: wordcompletion/dictionarycreationwizard.cpp:82
+#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1151,29 +1151,29 @@ msgstr ""
 "Sellel väljal saab määrata, milline kataloog laadida uue sõnaraamatu "
 "loomiseks."
 
-#: wordcompletion/dictionarycreationwizard.cpp:119
+#: wordcompletion/dictionarycreationwizard.cpp:120
 #, kde-format
 msgctxt "Latin characterset"
 msgid "Latin1"
 msgstr "Latin1"
 
-#: wordcompletion/dictionarycreationwizard.cpp:204
+#: wordcompletion/dictionarycreationwizard.cpp:205
 #, kde-format
 msgid "Merge result"
 msgstr "Liida tulemus"
 
-#: wordcompletion/dictionarycreationwizard.cpp:206
+#: wordcompletion/dictionarycreationwizard.cpp:207
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Tühi nimekiri"
 
-#: wordcompletion/dictionarycreationwizard.cpp:212
+#: wordcompletion/dictionarycreationwizard.cpp:213
 #, kde-format
 msgid "KDE Documentation"
 msgstr "KDE dokumentatsioon"
 
-#: wordcompletion/dictionarycreationwizard.cpp:336
+#: wordcompletion/dictionarycreationwizard.cpp:335
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1308,53 +1308,53 @@ msgstr ""
 "nimekirjas on üle ühe sõnaraamatu. Liitkastiga saab valida sõnaraamatu, mida "
 "tegelikult sõnalõpetusel kasutada."
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Dictionary"
 msgstr "Sõnaraamat"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Language"
 msgstr "Keel"
 
-#: wordcompletion/wordcompletionwidget.cpp:97
-#: wordcompletion/wordcompletionwidget.cpp:155
+#: wordcompletion/wordcompletionwidget.cpp:95
+#: wordcompletion/wordcompletionwidget.cpp:153
 #, kde-format
 msgid "without name"
 msgstr "nimetu"
 
-#: wordcompletion/wordcompletionwidget.cpp:204
+#: wordcompletion/wordcompletionwidget.cpp:202
 #, kde-format
 msgid "Export Dictionary"
 msgstr "Ekspordi sõnaraamat"
 
-#: wordcompletion/wordlist.cpp:77
+#: wordcompletion/wordlist.cpp:74
 #, kde-format
 msgid "Creating Word List"
 msgstr "Sõnade nimekirja loomine"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
+#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "KDE dokumentatsiooni parsimine..."
 
-#: wordcompletion/wordlist.cpp:200
+#: wordcompletion/wordlist.cpp:197
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Sõnaraamatute liitmine..."
 
-#: wordcompletion/wordlist.cpp:269
+#: wordcompletion/wordlist.cpp:266
 #, kde-format
 msgid "Parsing file..."
 msgstr "Faili parsimine..."
 
-#: wordcompletion/wordlist.cpp:281
+#: wordcompletion/wordlist.cpp:278
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Sõnaraamatu parsimine..."
 
-#: wordcompletion/wordlist.cpp:472
+#: wordcompletion/wordlist.cpp:464
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Õigekirja kontrollimine..."

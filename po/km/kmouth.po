@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:39+0000\n"
+"POT-Creation-Date: 2023-10-02 00:36+0000\n"
 "PO-Revision-Date: 2009-06-03 15:22+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -35,57 +35,57 @@ msgstr "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.in
 msgid "Initial Configuration - KMouth"
 msgstr "ការកំណត់​រចនាសម្ព័ន្ធដើម - KMouth"
 
-#: configwizard.cpp:59
+#: configwizard.cpp:61
 #, kde-format
 msgid "Text-to-Speech Configuration"
 msgstr "ការកំណត់​​រចនា​សម្ព័ន្ធ អត្ថបទ​ទៅ​ការ​និយាយ"
 
-#: configwizard.cpp:73
+#: configwizard.cpp:75
 #, kde-format
 msgid "Initial Phrase Book"
 msgstr "សៀវភៅ​ឃ្លា​ដើម"
 
-#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#: configwizard.cpp:107 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
 msgstr "​ការ​បំពេញ​ពាក្យ"
 
-#: kmouth.cpp:107
+#: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
 msgstr "បើក​ជា​ប្រវត្តិ...​"
 
-#: kmouth.cpp:110 kmouth.cpp:111
+#: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
 msgid "Opens an existing file as history"
 msgstr "បើក​ឯកសារ​ដែល​មាន​រួច​ជា​ប្រវត្តិ"
 
-#: kmouth.cpp:115
+#: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
 msgstr "រក្សាទុក​ប្រវត្តិ​ជា..."
 
-#: kmouth.cpp:118 kmouth.cpp:119
+#: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
 msgstr "រក្សាទុក​ប្រវត្តិ​ពិត​ជា..."
 
-#: kmouth.cpp:123
+#: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
 msgstr "បោះពុម្ព​ប្រវត្តិ..."
 
-#: kmouth.cpp:126 kmouth.cpp:127
+#: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
 msgid "Prints out the actual history"
 msgstr "បោះពុម្ព​ប្រវត្តិ​ពិត​ចេញ"
 
-#: kmouth.cpp:130 kmouth.cpp:131
+#: kmouth.cpp:129 kmouth.cpp:130
 #, kde-format
 msgid "Quits the application"
 msgstr "ចេញ​ពី​កម្មវិធី"
 
-#: kmouth.cpp:135
+#: kmouth.cpp:134
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
 msgstr "​កាត់​ផ្នែក​​ដែល​បាន​ជ្រើស​ ហើយ​ដាក់​វា​នៅ​ក្នុង​ក្ដារ​តម្បៀត​ខ្ទាស់"
@@ -101,12 +101,12 @@ msgstr ""
 "កែសម្រួល នោះ​វាត្រូវបាន​ដាក់​នៅលើ​ក្តារ​តម្បៀត​ខ្ទាស់ ។ មិន​ដូច្នោះ​ទេ ប្រយោគ​ដែល​បាន​ជ្រើស​នៅ​ក្នុង​ប្រវត្តិ "
 "(បើ​មាន)​​ នឹង​​ត្រូវ​បាន​ដាក់​នៅលើ​ក្តារ​តម្បៀត​ខ្ទាស់ ។​​​"
 
-#: kmouth.cpp:139
+#: kmouth.cpp:140
 #, kde-format
 msgid "Copies the selected section to the clipboard"
 msgstr "​ចម្លង​ផ្នែក​ដែល​បាន​រើស​ទៅ​កាន់​ក្ដារ​តម្បៀត​ខ្ទាស់"
 
-#: kmouth.cpp:140
+#: kmouth.cpp:142
 #, kde-format
 msgid ""
 "Copies the selected section to the clipboard. If there is some text selected "
@@ -117,31 +117,31 @@ msgstr ""
 "សម្រួល វា​ត្រូវ​បាន​ចម្លង​ទៅ​កាន់​ក្តារ​​តម្បៀត​​ខ្ទាស់ ។ មិន​ដូច្នោះ​ទេ ប្រយោគ​ដែល​បាន​ជ្រើស​​នៅ​ក្នុង​ប្រវត្តិ (បើ​"
 "មាន) ត្រូវ​បាន​ចម្លង​ទៅ​កាន់​ក្តារ​តម្បៀត​ខ្ទាស់ ។"
 
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "បិទ​ភ្ជាប់​មាតិកា​ក្ដារ​តម្បៀត​ខ្ទាស់ ទៅ​កាន់​ទីតាំង​ពិត​មួយ"
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
 "field."
 msgstr "បិទ​ភ្ជាប់​មាតិកា​ក្តារ​តម្បៀត​ខ្ទាស់​នៅ​ត្រង់​ទីតាំង​ទស្សន៏​ទ្រនិច​បច្ចុប្បន្ន ​​​ចូល​ទៅ​​ក្នុង​វាល​កែ​សម្រួល ។​"
 
-#: kmouth.cpp:148
+#: kmouth.cpp:151
 #, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
 msgstr "និយាយ"
 
-#: kmouth.cpp:150
+#: kmouth.cpp:153
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
 msgstr "និយាយ​ប្រយោគ​សកម្ម​បច្ចុប្បន្ន​"
 
-#: kmouth.cpp:151 phraselist.cpp:88
+#: kmouth.cpp:155 phraselist.cpp:90
 #, kde-format
 msgid ""
 "Speaks the currently active sentence(s). If there is some text in the edit "
@@ -151,142 +151,142 @@ msgstr ""
 "និយាយ​ប្រយោគ​សកម្ម​បច្ចុប្បន្ន ។ បើ​មាន​អត្ថបទ​ខ្លះ​ក្នុង​វាល​កែ​សម្រួល វា​ត្រូវ​បាន​និយាយ ។ មិន​ដូច្នោះ​ទេ "
 "ប្រយោគ​ដែល​បាន​ជ្រើស​ក្នុង​ប្រវត្តិ (បើ​មាន) ត្រូវ​បាន​និយាយ ។"
 
-#: kmouth.cpp:155
+#: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
 msgstr "​កែ​សម្រួល..."
 
-#: kmouth.cpp:166
+#: kmouth.cpp:171
 #, kde-format
 msgid "Show P&hrasebook Bar"
 msgstr "បង្ហាញ​របារ​សៀវភៅ​ឃ្លា"
 
-#: kmouth.cpp:168 kmouth.cpp:169
+#: kmouth.cpp:173 kmouth.cpp:174
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
 msgstr "បើក/បិទ របារ​សៀវភៅ​ឃ្លា"
 
-#: kmouth.cpp:172 kmouth.cpp:173
+#: kmouth.cpp:177 kmouth.cpp:178
 #, kde-format
 msgid "Enables/disables the statusbar"
 msgstr "បើក/បិទ របារ​ស្ថានភាព"
 
-#: kmouth.cpp:177
+#: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
 msgstr "កំណត់​រចនាសម្ព័ន្ធ​ KMouth..."
 
-#: kmouth.cpp:179 kmouth.cpp:180
+#: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
 msgid "Opens the configuration dialog"
 msgstr "បើក​ប្រអប់​កំណត់​រចនាសម្ព័ន្ធ"
 
-#: kmouth.cpp:188 phraselist.cpp:85
+#: kmouth.cpp:193 phraselist.cpp:86
 #, kde-format
 msgid "&Speak"
 msgstr "និយាយ"
 
-#: kmouth.cpp:189 kmouth.cpp:191
+#: kmouth.cpp:194 kmouth.cpp:196
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
 msgstr "និយាយ​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​​នៅក្នុង​ប្រវត្តិ"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
 #, kde-format
 msgid "&Delete"
 msgstr "លុប"
 
-#: kmouth.cpp:197 kmouth.cpp:198
+#: kmouth.cpp:202 kmouth.cpp:203
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
 msgstr "លុប​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​​ចេញ​ពី​ប្រវត្តិ"
 
-#: kmouth.cpp:202
+#: kmouth.cpp:207
 #, kde-format
 msgid "Cu&t"
 msgstr "​កាត់"
 
-#: kmouth.cpp:204 kmouth.cpp:205
+#: kmouth.cpp:209 kmouth.cpp:210
 #, kde-format
 msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
 "clipboard"
 msgstr "កាត់​ឃ្លា​​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ​ពី​ប្រវត្តិ​ ហើយ​ដាក់​វា​នៅ​ក្នុង​ក្ដារ​តម្បៀត​ខ្ទាស់"
 
-#: kmouth.cpp:209
+#: kmouth.cpp:214
 #, kde-format
 msgid "&Copy"
 msgstr "ចម្លង"
 
-#: kmouth.cpp:211 kmouth.cpp:212
+#: kmouth.cpp:216 kmouth.cpp:217
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
 msgstr "ចម្លង​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ពី​ប្រវត្តិ​ទៅ​ក្ដារ​តម្បៀត​ខ្ទាស់"
 
-#: kmouth.cpp:215
+#: kmouth.cpp:220
 #, kde-format
 msgid "Select &All Entries"
 msgstr "ជ្រើស​ធាតុ​បញ្ចូល​ទាំងអស់"
 
-#: kmouth.cpp:217 kmouth.cpp:218
+#: kmouth.cpp:222 kmouth.cpp:223
 #, kde-format
 msgid "Selects all phrases in the history"
 msgstr "ជ្រើស​ឃ្លា​ទាំងអស់​ក្នុង​ប្រវត្តិ"
 
-#: kmouth.cpp:221
+#: kmouth.cpp:226
 #, kde-format
 msgid "D&eselect All Entries"
 msgstr "ដោះ​ជ្រើស​ធាតុ​ទាំងអស់"
 
-#: kmouth.cpp:223 kmouth.cpp:224
+#: kmouth.cpp:228 kmouth.cpp:229
 #, kde-format
 msgid "Deselects all phrases in the history"
 msgstr "ដោះ​ជ្រើស​ឃ្លា​ទាំងអស់​​ក្នុង​ប្រវត្តិ"
 
-#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
-#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#: kmouth.cpp:243 kmouth.cpp:262 kmouth.cpp:361 kmouth.cpp:370 kmouth.cpp:387
+#: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
 #, kde-format
 msgctxt "The job is done"
 msgid "Ready."
 msgstr "​រួចរាល់ ។"
 
-#: kmouth.cpp:254 kmouth.cpp:353
+#: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
 msgstr "កំពុង​បើក​ឯកសារ..."
 
-#: kmouth.cpp:362
+#: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
 msgstr "កំពុង​រក្សា​ទុក​​ប្រវត្តិ​ជាមួយ​ឈ្មោះ​ឯកសារ​ថ្មី​មួយ..."
 
-#: kmouth.cpp:371
+#: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
 msgstr "​កំពុង​បោះពុម្ព..."
 
-#: kmouth.cpp:388
+#: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
 msgstr "កំពុង​ចេញ..."
 
-#: kmouth.cpp:425
+#: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
 msgstr "កំពុង​បិទ​បើក​របារ​ម៉ឺនុយ..."
 
-#: kmouth.cpp:437
+#: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
 msgstr "កំពុង​បិទ​បើក​របារ​ឧបករណ៏"
 
-#: kmouth.cpp:451
+#: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
 msgstr "កំពុង​បិទ​បើក​របារ​សៀវភៅ​ឃ្លា..."
 
-#: kmouth.cpp:465
+#: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
 msgstr "បិទ​បើក​របារ​ស្ថានភាព..."
@@ -315,52 +315,52 @@ msgstr "សៀវភៅ​ឃ្លា"
 msgid "&Settings"
 msgstr "ការ​កំណត់"
 
-#: main.cpp:39
+#: main.cpp:37
 #, kde-format
 msgid "KMouth"
 msgstr "KMouth"
 
-#: main.cpp:41
+#: main.cpp:39
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
 msgstr "កម្មវិធី​ខាងមុខ វាយ​និង​និយាយ សម្រាប់​កម្មវិធី​សំយោគ​ការ​និយាយ"
 
-#: main.cpp:43
+#: main.cpp:41
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
 msgstr "រក្សា​សិទ្ធិ​ឆ្នាំ ២០០២/២០០៣ ដោយ Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Gunnar Schmi Dt"
 msgstr "Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Original Author"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
 msgstr ""
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Olaf Schmidt"
 msgstr "Olaf Schmidt"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Tips, extended phrase books"
 msgstr "ព័ត៌មាន​ជំនួយ​ សៀវភៅ​ឃ្លា​បន្ថែម"
 
-#: main.cpp:53
+#: main.cpp:51
 #, kde-format
 msgid "History file to open"
 msgstr "ឯកសារ​ប្រវត្តិ​ដែល​ត្រូវ​បើក"
@@ -395,7 +395,7 @@ msgstr "សូម​សម្រេចចិត្ត​ថាតើ​សៀវ
 msgid "Book"
 msgstr "សៀវភៅ"
 
-#: phrasebook/phrasebook.cpp:270
+#: phrasebook/phrasebook.cpp:274
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -407,7 +407,7 @@ msgstr ""
 "*.txt|ឯកសារ​អត្ថបទ​ធម្មតា (*.txt)\n"
 "*|ឯកសារ​ទាំង​អស់"
 
-#: phrasebook/phrasebook.cpp:272
+#: phrasebook/phrasebook.cpp:276
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -419,22 +419,22 @@ msgstr ""
 "*.phrasebook|សៀវភៅ​ឃ្លា (*.phrasebook)\n"
 "*|ឯកសារ​ទាំងអស់"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "មាន​ឯកសារ %1 មាន​រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​លើ​វា​ឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "មាន​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "សរសេរ​ជាន់លើ"
 
-#: phrasebook/phrasebook.cpp:305
+#: phrasebook/phrasebook.cpp:318
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -446,7 +446,7 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:307
+#: phrasebook/phrasebook.cpp:322
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -455,22 +455,22 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
 #, kde-format
 msgid "File Extension"
 msgstr "ផ្នែក​បន្ថែម​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:327
 #, kde-format
 msgid "Add"
 msgstr "បន្ថែម"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:328
 #, kde-format
 msgid "Do Not Add"
 msgstr "កុំបន្ថែម"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:349
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
@@ -480,7 +480,7 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
 
-#: phrasebook/phrasebook.cpp:330
+#: phrasebook/phrasebook.cpp:353
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -489,124 +489,124 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:358
 #, kde-format
 msgid "As Phrasebook"
 msgstr "ជា​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:359
 #, kde-format
 msgid "As Plain Text"
 msgstr "ជាអត្ថបទ​ធម្មតា"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Phrase"
 msgstr "​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:90
+#: phrasebook/phrasebookdialog.cpp:94
 #, kde-format
 msgid "Shortcut"
 msgstr "ផ្លូវកាត់"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:229
+#: phrasebook/phrasebookdialog.cpp:227
 #, kde-format
 msgid "&New Phrase"
 msgstr "ឃ្លា​ថ្មី"
 
-#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
+#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "បន្ថែម​ឃ្លា​ថ្មី​មួយ"
 
-#: phrasebook/phrasebookdialog.cpp:236
+#: phrasebook/phrasebookdialog.cpp:234
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "សៀវភៅ​ឃ្លា​ថ្មី"
 
-#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
+#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "បន្ថែម​សៀវភៅ​ឃ្លា​ថ្មី​ទៅ​សៀវភៅ និង​ឃ្លា​ផ្សេង​ទៀត​ដែល​អាច​ត្រូវ​បាន​ដាក់​"
 
-#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
+#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "រក្សាទុក​សៀវភៅ​ឃ្លា​ទៅក្នុង​ថាស​រឹង"
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
+#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
 #, kde-format
 msgid "&Import..."
 msgstr "នាំចូល..."
 
-#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
-#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
+#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "នាំចូល​ឯកសារ និង​បន្ថែម​​មាតិកា​របស់​វា​ទៅ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា​ស្តង់ដារ"
 
-#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
+#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា​ស្តង់ដារ និងបន្ថែម​​មាតិកា​របស់វា​ទៅ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:266
+#: phrasebook/phrasebookdialog.cpp:264
 #, kde-format
 msgid "&Export..."
 msgstr "នាំចូល..."
 
-#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
+#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "នាំចេញ​ទៅឃ្លា ឬ​សៀវភៅ​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ទៅ​ឯកសារ​​មួយ"
 
-#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
+#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
 #, kde-format
 msgid "Closes the window"
 msgstr "បិទ​បង្អួច"
 
-#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
+#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
 msgstr "កាត់​ធាតុ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ពី​សៀវភៅ​ឃ្លា ហើយ​ដាក់វា​ទៅ​ក្ដារតម្បៀត​ខ្ទាស់"
 
-#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
+#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "ចម្លង​ធាតុ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​​ពី​សៀវភៅ​ឃ្លា​ទៅ​ក្ដារតម្បៀត​ខ្ទាស់"
 
-#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
+#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "លុប​ធាតុ​ដែល​បាន​ជ្រើស​​ពី​សៀវភៅ​ឃ្លា"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
+#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "អត្ថបទ​របស់​​ឃ្លា ៖"
 
-#: phrasebook/phrasebookdialog.cpp:405
+#: phrasebook/phrasebookdialog.cpp:397
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "ឈ្មោះ​របស់​សៀវភៅ​ឃ្លា ៖"
 
-#: phrasebook/phrasebookdialog.cpp:430
+#: phrasebook/phrasebookdialog.cpp:424
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -615,27 +615,27 @@ msgstr ""
 "<qt>មាន​ការ​ផ្លាស់ប្ដូរ​ដែល​មិន​បាន​រក្សាទុក ។<br />តើ​អ្នក​ចង់​អនុវត្ត​កា​រផ្លាស់ប្ដូរ​មុន​នឹង​បិទ​បង្អួច "
 "\"phrase book\" ឬ​បោះបង់​ការ​ផ្លាស់ប្ដូរ ?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:431
+#: phrasebook/phrasebookdialog.cpp:425
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "បិទ​បង្អួច \"សៀវភៅ​ឃ្លា\""
 
-#: phrasebook/phrasebookdialog.cpp:599
+#: phrasebook/phrasebookdialog.cpp:595
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(សៀវភៅ​ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:615
+#: phrasebook/phrasebookdialog.cpp:611
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:646
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:647
+#: phrasebook/phrasebookdialog.cpp:642
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -647,7 +647,7 @@ msgstr ""
 "*.txt|ឯកសារ​អត្ថបទ​ធម្មតា (*.txt)\n"
 "*|ឯកសារ​ទាំង​អស់"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -656,18 +656,18 @@ msgstr ""
 "​មាន​កំហុស​មួ​យ ក្នុង​ពេល​ផ្ទុក​ឯកសារ\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "នាំចេញ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -746,7 +746,7 @@ msgstr ""
 "បញ្ជី​នេះ​មាន​សៀវភៅ​ឃ្លា​នៅ​ក្នុង​រចនាសម្ព័ន្ធ​មែកធាង ។ អ្នក​អាច​ជ្រើស និង​កែសម្រួល​ឃ្លា​ និង​ង​សៀវភៅ​ឃ្លា​រង​"
 "នីមួយៗ"
 
-#: phraselist.cpp:62
+#: phraselist.cpp:63
 #, kde-format
 msgid ""
 "This list contains the history of spoken sentences. You can select sentences "
@@ -755,7 +755,7 @@ msgstr ""
 "បញ្ជី​នេះ​មាន​ប្រវត្តិ​នៃ​ប្រយោគ​ដែល​បាន​និយាយ ។ អ្នក​អាច​ជ្រើស​ប្រយោគ ហើយ​ចុច​​​ប៊ូតុង​និយាយ​សម្រាប់​និយាយ​"
 "ម្តងទៀត ។"
 
-#: phraselist.cpp:80
+#: phraselist.cpp:81
 #, kde-format
 msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
@@ -763,17 +763,17 @@ msgid ""
 msgstr ""
 "ចូល​ទៅ​ក្នុង​វាល​កែ​សម្រួល​នេះ អ្នក​អាច​វាយ​ឃ្លា​មួយ ។​ ចុច​លើ​ប៊ូតុង​និយាយ ដើម្បី​និយាយ​នូវ​ឃ្លា​ដែល​បាន​បញ្ចូល ។"
 
-#: phraselist.cpp:475
+#: phraselist.cpp:477
 #, kde-format
 msgid "Save As"
 msgstr "រក្សា​ទុក​ជា"
 
-#: phraselist.cpp:481
+#: phraselist.cpp:484
 #, kde-format
 msgid "Open File as History"
 msgstr "បើក​ឯកសារ​ជា​ប្រវត្តិ"
 
-#: phraselist.cpp:482
+#: phraselist.cpp:484
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -941,21 +941,21 @@ msgstr "ប្រអប់​បន្សំ​នេះ​បញ្ជាក់
 msgid "Character encodin&g:"
 msgstr "សំណុំ​តួ​អក្សរ ៖"
 
-#: texttospeechconfigurationwidget.cpp:65
-#: wordcompletion/dictionarycreationwizard.cpp:116
+#: texttospeechconfigurationwidget.cpp:62
+#: wordcompletion/dictionarycreationwizard.cpp:117
 #, kde-format
 msgctxt "Local characterset"
 msgid "Local"
 msgstr "មូលដ្ឋាន"
 
-#: texttospeechconfigurationwidget.cpp:68
+#: texttospeechconfigurationwidget.cpp:65
 #, kde-format
 msgctxt "Latin1 characterset"
 msgid "Latin1"
 msgstr "ឡាតាំង ១"
 
-#: texttospeechconfigurationwidget.cpp:69
-#: wordcompletion/dictionarycreationwizard.cpp:120
+#: texttospeechconfigurationwidget.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:121
 #, kde-format
 msgid "Unicode"
 msgstr "​យូនីកូដ"
@@ -1139,56 +1139,56 @@ msgstr ""
 "បើ​អ្នក​ជ្រើស​ប្រអប់​ធីក​នេះ វចនានុក្រម​ទទេ​មួយ​ដែល​គ្មាន​អ្វី​សោះ​នឹង​ត្រូវ​បាន​បង្កើត ។ ពេល KMouth បន្ថែម​"
 "ពាក្យ​ដែល​បាន​វាយ​ថ្មី​ដោយ​ស្វ័យប្រវត្តិ ទៅ​វចនានុក្រម​វា​នឹង​រៀន​វាក្យសព្ទ​របស់​អ្នក​នៅ​ពេល​នោះ ។"
 
-#: wordcompletion/dictionarycreationwizard.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:66
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "ប្រភព​របស់​វចនានុក្រម​ថ្មី (១)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:71
-#: wordcompletion/dictionarycreationwizard.cpp:77
-#: wordcompletion/dictionarycreationwizard.cpp:87
-#: wordcompletion/dictionarycreationwizard.cpp:94
+#: wordcompletion/dictionarycreationwizard.cpp:72
+#: wordcompletion/dictionarycreationwizard.cpp:78
+#: wordcompletion/dictionarycreationwizard.cpp:88
+#: wordcompletion/dictionarycreationwizard.cpp:95
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "ប្រភព​របស់​វចនានុក្រម​ថ្មី (២)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:80
+#: wordcompletion/dictionarycreationwizard.cpp:81
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "ថត ៖"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
-#: wordcompletion/dictionarycreationwizard.cpp:83
+#: wordcompletion/dictionarycreationwizard.cpp:82
+#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
 "creating the new dictionary."
 msgstr "ជា​មួយ​នឹង​វាល​បញ្ចូល​នេះ អ្នក​បញ្ជាក់​ថត​មួយ​ណា​ដែល​អ្នក​ចង់​ផ្ទុក ដើម្បី​បង្កើត​វចនានុក្រម​ថ្មី ។"
 
-#: wordcompletion/dictionarycreationwizard.cpp:119
+#: wordcompletion/dictionarycreationwizard.cpp:120
 #, kde-format
 msgctxt "Latin characterset"
 msgid "Latin1"
 msgstr "ឡាតាំង ១"
 
-#: wordcompletion/dictionarycreationwizard.cpp:204
+#: wordcompletion/dictionarycreationwizard.cpp:205
 #, kde-format
 msgid "Merge result"
 msgstr "បញ្ចូល​លទ្ធផល​ចូលគ្នា"
 
-#: wordcompletion/dictionarycreationwizard.cpp:206
+#: wordcompletion/dictionarycreationwizard.cpp:207
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "បញ្ជីទទេ"
 
-#: wordcompletion/dictionarycreationwizard.cpp:212
+#: wordcompletion/dictionarycreationwizard.cpp:213
 #, kde-format
 msgid "KDE Documentation"
 msgstr "ឯកសារ​របស់ KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:336
+#: wordcompletion/dictionarycreationwizard.cpp:335
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1318,53 +1318,53 @@ msgstr ""
 "នៅ​ជាប់​នឹង​វាល​កែ​សម្រួល​ក្នុង​បង្អួច​មេ បើ​បញ្ជី​នេះ​មាន​វចនានុក្រម​ច្រើន​ជាង​មួយ ។ អ្នក​អាច​ប្រើ​ប្រអប់​បន្សំ​នេះ​ "
 "ដើម្បី​ជ្រើស​វចនានុក្រម​ដែល​ងាយស្រួល​ក្នុង​ការ​បំពេញ​ពាក្យ ។"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Dictionary"
 msgstr "វចនានុក្រម"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Language"
 msgstr "​ភាសា"
 
-#: wordcompletion/wordcompletionwidget.cpp:97
-#: wordcompletion/wordcompletionwidget.cpp:155
+#: wordcompletion/wordcompletionwidget.cpp:95
+#: wordcompletion/wordcompletionwidget.cpp:153
 #, kde-format
 msgid "without name"
 msgstr "គ្មាន​ឈ្មោះ"
 
-#: wordcompletion/wordcompletionwidget.cpp:204
+#: wordcompletion/wordcompletionwidget.cpp:202
 #, kde-format
 msgid "Export Dictionary"
 msgstr "នាំចេញ​ថត​"
 
-#: wordcompletion/wordlist.cpp:77
+#: wordcompletion/wordlist.cpp:74
 #, kde-format
 msgid "Creating Word List"
 msgstr "បង្កើត​បញ្ជី​ពាក្យ"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
+#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "កំពុង​ញែក​ឯកសារ​របស់ KDE..."
 
-#: wordcompletion/wordlist.cpp:200
+#: wordcompletion/wordlist.cpp:197
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "កំពុង​បញ្ចូល​វចនានុក្រម​ចូល​គ្នា..."
 
-#: wordcompletion/wordlist.cpp:269
+#: wordcompletion/wordlist.cpp:266
 #, kde-format
 msgid "Parsing file..."
 msgstr "កំពុង​ញែក​ឯកសារ..."
 
-#: wordcompletion/wordlist.cpp:281
+#: wordcompletion/wordlist.cpp:278
 #, kde-format
 msgid "Parsing directory..."
 msgstr "កំពុង​ញែក​ថត​..."
 
-#: wordcompletion/wordlist.cpp:472
+#: wordcompletion/wordlist.cpp:464
 #, kde-format
 msgid "Performing spell check..."
 msgstr "កំពុង​អនុវត្ត​ការ​ពិនិត្យ​អក្ខរាវិរុទ្ធ..."

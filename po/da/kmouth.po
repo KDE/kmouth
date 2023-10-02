@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:39+0000\n"
+"POT-Creation-Date: 2023-10-02 00:36+0000\n"
 "PO-Revision-Date: 2022-08-08 17:39+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -34,57 +34,57 @@ msgstr "erik@binghamton.edu"
 msgid "Initial Configuration - KMouth"
 msgstr "Oprindelig indstilling - KMouth"
 
-#: configwizard.cpp:59
+#: configwizard.cpp:61
 #, kde-format
 msgid "Text-to-Speech Configuration"
 msgstr "Tekst-til-tale indstilling"
 
-#: configwizard.cpp:73
+#: configwizard.cpp:75
 #, kde-format
 msgid "Initial Phrase Book"
 msgstr "Oprindelig udtryksbog"
 
-#: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
+#: configwizard.cpp:107 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
 msgstr "Ord-fuldstændiggørelse"
 
-#: kmouth.cpp:107
+#: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
 msgstr "Å&bn som historik..."
 
-#: kmouth.cpp:110 kmouth.cpp:111
+#: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
 msgid "Opens an existing file as history"
 msgstr "Åbner en eksisterende fil som historik"
 
-#: kmouth.cpp:115
+#: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
 msgstr "Gem &historik som..."
 
-#: kmouth.cpp:118 kmouth.cpp:119
+#: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
 msgstr "Gemmer denne historik som..."
 
-#: kmouth.cpp:123
+#: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
 msgstr "&Udskriv historik..."
 
-#: kmouth.cpp:126 kmouth.cpp:127
+#: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
 msgid "Prints out the actual history"
 msgstr "Udskriver denne historik"
 
-#: kmouth.cpp:130 kmouth.cpp:131
+#: kmouth.cpp:129 kmouth.cpp:130
 #, kde-format
 msgid "Quits the application"
 msgstr "Afslutter programmet"
 
-#: kmouth.cpp:135
+#: kmouth.cpp:134
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
 msgstr "Udklipper den markerede sektion og lægger det i udklipsholderen"
@@ -101,12 +101,12 @@ msgstr ""
 "Ellers placeres de valgte sætninger i historikken (om nogen) på "
 "udklipsholderen."
 
-#: kmouth.cpp:139
+#: kmouth.cpp:140
 #, kde-format
 msgid "Copies the selected section to the clipboard"
 msgstr "Kopierer det valgte udsnit til udklipsholderen"
 
-#: kmouth.cpp:140
+#: kmouth.cpp:142
 #, kde-format
 msgid ""
 "Copies the selected section to the clipboard. If there is some text selected "
@@ -118,12 +118,12 @@ msgstr ""
 "Ellers kopieres de valgte sætninger i historikken (om nogen) i "
 "udklipsholderen."
 
-#: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "Indsætter udklipsholderens indhold på den aktuelle position"
 
-#: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -131,18 +131,18 @@ msgid ""
 msgstr ""
 "Indsætter udklipsholderens indhold ved markørens position i redigeringsfelt."
 
-#: kmouth.cpp:148
+#: kmouth.cpp:151
 #, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
 msgstr "&Tal"
 
-#: kmouth.cpp:150
+#: kmouth.cpp:153
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
 msgstr "Siger de valgte sætninger"
 
-#: kmouth.cpp:151 phraselist.cpp:88
+#: kmouth.cpp:155 phraselist.cpp:90
 #, kde-format
 msgid ""
 "Speaks the currently active sentence(s). If there is some text in the edit "
@@ -152,62 +152,62 @@ msgstr ""
 "Siger de aktive sætninger. Hvis der er noget tekst i redigeringsfeltet siges "
 "dette. Ellers siges de valgte sætninger (om nogen) i historikken."
 
-#: kmouth.cpp:155
+#: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
 msgstr "&Redigér..."
 
-#: kmouth.cpp:166
+#: kmouth.cpp:171
 #, kde-format
 msgid "Show P&hrasebook Bar"
 msgstr "Vis &udtryksbogslinje"
 
-#: kmouth.cpp:168 kmouth.cpp:169
+#: kmouth.cpp:173 kmouth.cpp:174
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
 msgstr "Slå udtryksbogslinjen til/fra"
 
-#: kmouth.cpp:172 kmouth.cpp:173
+#: kmouth.cpp:177 kmouth.cpp:178
 #, kde-format
 msgid "Enables/disables the statusbar"
 msgstr "Slår statuslinjen til/fra"
 
-#: kmouth.cpp:177
+#: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
 msgstr "&Indstil KMouth..."
 
-#: kmouth.cpp:179 kmouth.cpp:180
+#: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
 msgid "Opens the configuration dialog"
 msgstr "Åbner indstillingsdialogen"
 
-#: kmouth.cpp:188 phraselist.cpp:85
+#: kmouth.cpp:193 phraselist.cpp:86
 #, kde-format
 msgid "&Speak"
 msgstr "&Tal"
 
-#: kmouth.cpp:189 kmouth.cpp:191
+#: kmouth.cpp:194 kmouth.cpp:196
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Siger de aktuelt valgte udtryk i historikken"
 
-#: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
 #, kde-format
 msgid "&Delete"
 msgstr "&Slet"
 
-#: kmouth.cpp:197 kmouth.cpp:198
+#: kmouth.cpp:202 kmouth.cpp:203
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
 msgstr "Sletter de aktuelt valgte udtryk fra historikken"
 
-#: kmouth.cpp:202
+#: kmouth.cpp:207
 #, kde-format
 msgid "Cu&t"
 msgstr "K&lip"
 
-#: kmouth.cpp:204 kmouth.cpp:205
+#: kmouth.cpp:209 kmouth.cpp:210
 #, kde-format
 msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
@@ -216,80 +216,80 @@ msgstr ""
 "Klipper de aktuelt valgte udtryk fra historikken og putter dem ind i "
 "udklipsholderen"
 
-#: kmouth.cpp:209
+#: kmouth.cpp:214
 #, kde-format
 msgid "&Copy"
 msgstr "&Kopiér"
 
-#: kmouth.cpp:211 kmouth.cpp:212
+#: kmouth.cpp:216 kmouth.cpp:217
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
 msgstr "Kopierer aktuelt markerede udtryk fra historikken til udklipsholderen"
 
-#: kmouth.cpp:215
+#: kmouth.cpp:220
 #, kde-format
 msgid "Select &All Entries"
 msgstr "Vælg &alle indgange"
 
-#: kmouth.cpp:217 kmouth.cpp:218
+#: kmouth.cpp:222 kmouth.cpp:223
 #, kde-format
 msgid "Selects all phrases in the history"
 msgstr "Vælger alle udtryk i historikken"
 
-#: kmouth.cpp:221
+#: kmouth.cpp:226
 #, kde-format
 msgid "D&eselect All Entries"
 msgstr "&Fravælg alle indgange"
 
-#: kmouth.cpp:223 kmouth.cpp:224
+#: kmouth.cpp:228 kmouth.cpp:229
 #, kde-format
 msgid "Deselects all phrases in the history"
 msgstr "Fravælger alle udtryk i historikken"
 
-#: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
-#: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
+#: kmouth.cpp:243 kmouth.cpp:262 kmouth.cpp:361 kmouth.cpp:370 kmouth.cpp:387
+#: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
 #, kde-format
 msgctxt "The job is done"
 msgid "Ready."
 msgstr "Klar."
 
-#: kmouth.cpp:254 kmouth.cpp:353
+#: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
 msgstr "Åbner fil..."
 
-#: kmouth.cpp:362
+#: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
 msgstr "Gemmer historik under et nyt filnavn..."
 
-#: kmouth.cpp:371
+#: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
 msgstr "Udskriver..."
 
-#: kmouth.cpp:388
+#: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
 msgstr "Afslutter..."
 
-#: kmouth.cpp:425
+#: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
 msgstr "Slår menulinje til og fra..."
 
-#: kmouth.cpp:437
+#: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
 msgstr "Slår værktøjslinje til/fra..."
 
-#: kmouth.cpp:451
+#: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
 msgstr "Slår udtryksbogslinje til/fra..."
 
-#: kmouth.cpp:465
+#: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
 msgstr "Slå statuslinje til/fra..."
@@ -318,52 +318,52 @@ msgstr "&Udtrykbøger"
 msgid "&Settings"
 msgstr "&Indstillinger"
 
-#: main.cpp:39
+#: main.cpp:37
 #, kde-format
 msgid "KMouth"
 msgstr "KMouth"
 
-#: main.cpp:41
+#: main.cpp:39
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
 msgstr "En skriv-og-sig forende for tale-synthesizere"
 
-#: main.cpp:43
+#: main.cpp:41
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
 msgstr "(c) 2002/2003, Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Gunnar Schmi Dt"
 msgstr "Gunnar Schmi Dt"
 
-#: main.cpp:47
+#: main.cpp:45
 #, kde-format
 msgid "Original Author"
 msgstr "Oprindelig forfatter"
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
 msgstr "Jeremy Whiting"
 
-#: main.cpp:48
+#: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
 msgstr "Nuværende vedligeholder"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Olaf Schmidt"
 msgstr "Olaf Schmidt"
 
-#: main.cpp:49
+#: main.cpp:47
 #, kde-format
 msgid "Tips, extended phrase books"
 msgstr "Tip, udvidede udtrykbøger"
 
-#: main.cpp:53
+#: main.cpp:51
 #, kde-format
 msgid "History file to open"
 msgstr "Historik fil der skal åbnes"
@@ -398,34 +398,34 @@ msgstr "Afgør venligst hvilke udtryksbøger du har brug for:"
 msgid "Book"
 msgstr "Bog"
 
-#: phrasebook/phrasebook.cpp:270
+#: phrasebook/phrasebook.cpp:274
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
 "Udtryksbøger (*.phrasebook);;Almindelige tekstfiler (*.txt);;*|Alle filer (*)"
 
-#: phrasebook/phrasebook.cpp:272
+#: phrasebook/phrasebook.cpp:276
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
 "Almindelige tekstfiler (*.txt);;Udtryksbøger (*.phrasebook);;Alle filer (*)"
 
-#: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Filen %1 eksisterer allerede. Ønsker du at overskrive den?"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Fil eksisterer"
 
-#: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
+#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Overskriv"
 
-#: phrasebook/phrasebook.cpp:305
+#: phrasebook/phrasebook.cpp:318
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -437,7 +437,7 @@ msgstr ""
 "Dit valgte filnavn <i>%1</i> har en anden endelse end <i>.phrasebook</i>. "
 "Ønsker du at tilføje <i>.phrasebook</i> til filnavnet?"
 
-#: phrasebook/phrasebook.cpp:307
+#: phrasebook/phrasebook.cpp:322
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -446,22 +446,22 @@ msgstr ""
 "Dit valgte filnavn <i>%1</i> har en anden endelse end <i>.phrasebook</i>. "
 "Ønsker du at tilføje <i>.phrasebook</i> til filnavnet?"
 
-#: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
 #, kde-format
 msgid "File Extension"
 msgstr "Filendelse"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:327
 #, kde-format
 msgid "Add"
 msgstr "Tilføj"
 
-#: phrasebook/phrasebook.cpp:309
+#: phrasebook/phrasebook.cpp:328
 #, kde-format
 msgid "Do Not Add"
 msgstr "Tilføj ikke"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:349
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
@@ -471,7 +471,7 @@ msgstr ""
 "Dit valgte filnavn <i>%1</i> har endelsen <i>.phrasebook</i>. Ønsker du at "
 "gemme i udtryksbogsformat?"
 
-#: phrasebook/phrasebook.cpp:330
+#: phrasebook/phrasebook.cpp:353
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -480,95 +480,95 @@ msgstr ""
 "Dit valgte filnavn <i>%1</i> har endelsen <i>.phrasebook</i>. Ønsker du at "
 "gemme i udtryksbogsformat?"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:358
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Som udtryksbog"
 
-#: phrasebook/phrasebook.cpp:332
+#: phrasebook/phrasebook.cpp:359
 #, kde-format
 msgid "As Plain Text"
 msgstr "Som almindelig tekst"
 
-#: phrasebook/phrasebookdialog.cpp:89
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Phrase"
 msgstr "Udtryk"
 
-#: phrasebook/phrasebookdialog.cpp:90
+#: phrasebook/phrasebookdialog.cpp:94
 #, kde-format
 msgid "Shortcut"
 msgstr "Genvej"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:93 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Udtryksbog"
 
-#: phrasebook/phrasebookdialog.cpp:229
+#: phrasebook/phrasebookdialog.cpp:227
 #, kde-format
 msgid "&New Phrase"
 msgstr "&Nyt udtryk"
 
-#: phrasebook/phrasebookdialog.cpp:231 phrasebook/phrasebookdialog.cpp:232
+#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Tilføjer et nyt udtryk"
 
-#: phrasebook/phrasebookdialog.cpp:236
+#: phrasebook/phrasebookdialog.cpp:234
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Ny udtryks&bog"
 
-#: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
+#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "Tilføjer en ny udtryksbog i hvilken andre bøger og udtryk kan placeres"
 
-#: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
+#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Gemmer udtryksbogen til harddisken"
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
+#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
 #, kde-format
 msgid "&Import..."
 msgstr "&Importér..."
 
-#: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
-#: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
+#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
+#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Importerer en fil og tilføjer dens indhold til udtryksbogen"
 
-#: phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "&Importér standard-udtryksbog"
 
-#: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
+#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "Importerer en standard-udtryksbog og tilføjer dens indhold til udtryksbogen"
 
-#: phrasebook/phrasebookdialog.cpp:266
+#: phrasebook/phrasebookdialog.cpp:264
 #, kde-format
 msgid "&Export..."
 msgstr "&Eksportér..."
 
-#: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
+#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Eksporterer de valgte udtryk eller udtryksbøger til en fil"
 
-#: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
+#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
 #, kde-format
 msgid "Closes the window"
 msgstr "Lukker vinduet"
 
-#: phrasebook/phrasebookdialog.cpp:281 phrasebook/phrasebookdialog.cpp:282
+#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -577,30 +577,30 @@ msgstr ""
 "Klipper de valgte indgange fra udtryksbogen og putter dem ind på "
 "udklipsholderen"
 
-#: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
+#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Kopierer den valgte indgang fra udtryksbogen til udklipsholderen"
 
-#: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
+#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Sletter de valgte indgange fra udtryksbogen"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
+#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Tekst for &udtrykket:"
 
-#: phrasebook/phrasebookdialog.cpp:405
+#: phrasebook/phrasebookdialog.cpp:397
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "Navn på &udtryksbog:"
 
-#: phrasebook/phrasebookdialog.cpp:430
+#: phrasebook/phrasebookdialog.cpp:424
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -609,33 +609,33 @@ msgstr ""
 "<qt>Der er ikke gemte ændringer.<br />Ønsker du at anvende ændringerne før "
 "du lukker \"udtryksbogs\"-vinduet eller at kassere ændringerne?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:431
+#: phrasebook/phrasebookdialog.cpp:425
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Lukker \"Udtryksbog\"-vindue"
 
-#: phrasebook/phrasebookdialog.cpp:599
+#: phrasebook/phrasebookdialog.cpp:595
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Ny udtryksbog)"
 
-#: phrasebook/phrasebookdialog.cpp:615
+#: phrasebook/phrasebookdialog.cpp:611
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Nyt udtryk)"
 
-#: phrasebook/phrasebookdialog.cpp:646
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Importér udtryksbog"
 
-#: phrasebook/phrasebookdialog.cpp:647
+#: phrasebook/phrasebookdialog.cpp:642
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
 "Udtryksbøger (*.phrasebook);;Almindelige tekstfiler (*.txt);;Alle filer (*)"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
+#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -644,17 +644,17 @@ msgstr ""
 "Der skete en fejl ved indlæsning af filen\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Eksportér udtryksbog"
 
-#: phrasebook/phrasebookdialog.cpp:689
+#: phrasebook/phrasebookdialog.cpp:684
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Udtrykbøger (*.phrasebook)"
 
-#: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
+#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -739,7 +739,7 @@ msgstr ""
 "Denne liste indeholder den nuværende udtryksbog i en træstruktur. Du kan "
 "vælge og ændre individuelle udtryks- og deludtryksbøger"
 
-#: phraselist.cpp:62
+#: phraselist.cpp:63
 #, kde-format
 msgid ""
 "This list contains the history of spoken sentences. You can select sentences "
@@ -748,7 +748,7 @@ msgstr ""
 "Listen indeholder historikken af udtalte sætninger. Du kan vælge sætninger "
 "og trykke på taleknappen for at sige det igen."
 
-#: phraselist.cpp:80
+#: phraselist.cpp:81
 #, kde-format
 msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
@@ -757,17 +757,17 @@ msgstr ""
 "I dette redigeringsfelt kan du skrive et udtryk. Klik på taleknappen for at "
 "oplæse det indtastede udtryk."
 
-#: phraselist.cpp:475
+#: phraselist.cpp:477
 #, kde-format
 msgid "Save As"
 msgstr "Gem som"
 
-#: phraselist.cpp:481
+#: phraselist.cpp:484
 #, kde-format
 msgid "Open File as History"
 msgstr "Åbn fil som historik"
 
-#: phraselist.cpp:482
+#: phraselist.cpp:484
 #, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
@@ -931,21 +931,21 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "&Tegnkodning:"
 
-#: texttospeechconfigurationwidget.cpp:65
-#: wordcompletion/dictionarycreationwizard.cpp:116
+#: texttospeechconfigurationwidget.cpp:62
+#: wordcompletion/dictionarycreationwizard.cpp:117
 #, kde-format
 msgctxt "Local characterset"
 msgid "Local"
 msgstr "Lokal"
 
-#: texttospeechconfigurationwidget.cpp:68
+#: texttospeechconfigurationwidget.cpp:65
 #, kde-format
 msgctxt "Latin1 characterset"
 msgid "Latin1"
 msgstr "Latin1"
 
-#: texttospeechconfigurationwidget.cpp:69
-#: wordcompletion/dictionarycreationwizard.cpp:120
+#: texttospeechconfigurationwidget.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:121
 #, kde-format
 msgid "Unicode"
 msgstr "Unicode"
@@ -1138,27 +1138,27 @@ msgstr ""
 "oprettet. Da KMouth automatisk tilføjer nyligt skrevne ord til ordbøgerne "
 "vil den lære dit ordforråd med tiden."
 
-#: wordcompletion/dictionarycreationwizard.cpp:65
+#: wordcompletion/dictionarycreationwizard.cpp:66
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Kilde for ny ordbog (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:71
-#: wordcompletion/dictionarycreationwizard.cpp:77
-#: wordcompletion/dictionarycreationwizard.cpp:87
-#: wordcompletion/dictionarycreationwizard.cpp:94
+#: wordcompletion/dictionarycreationwizard.cpp:72
+#: wordcompletion/dictionarycreationwizard.cpp:78
+#: wordcompletion/dictionarycreationwizard.cpp:88
+#: wordcompletion/dictionarycreationwizard.cpp:95
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Kilde for ny ordbog (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:80
+#: wordcompletion/dictionarycreationwizard.cpp:81
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Mappe:"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
-#: wordcompletion/dictionarycreationwizard.cpp:83
+#: wordcompletion/dictionarycreationwizard.cpp:82
+#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1167,29 +1167,29 @@ msgstr ""
 "Med dette felt angiver du hvilken mappe du ønsker at indlæse for at oprette "
 "den nye ordbog."
 
-#: wordcompletion/dictionarycreationwizard.cpp:119
+#: wordcompletion/dictionarycreationwizard.cpp:120
 #, kde-format
 msgctxt "Latin characterset"
 msgid "Latin1"
 msgstr "Latin1"
 
-#: wordcompletion/dictionarycreationwizard.cpp:204
+#: wordcompletion/dictionarycreationwizard.cpp:205
 #, kde-format
 msgid "Merge result"
 msgstr "Indflet resultat"
 
-#: wordcompletion/dictionarycreationwizard.cpp:206
+#: wordcompletion/dictionarycreationwizard.cpp:207
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Tom liste"
 
-#: wordcompletion/dictionarycreationwizard.cpp:212
+#: wordcompletion/dictionarycreationwizard.cpp:213
 #, kde-format
 msgid "KDE Documentation"
 msgstr "KDE-dokumentation"
 
-#: wordcompletion/dictionarycreationwizard.cpp:336
+#: wordcompletion/dictionarycreationwizard.cpp:335
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1325,53 +1325,53 @@ msgstr ""
 "kombinationsfelt til at vælge ordbogen der rent faktisk bruges til "
 "ordkompletteringen."
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Dictionary"
 msgstr "Ordbog"
 
-#: wordcompletion/wordcompletionwidget.cpp:79
+#: wordcompletion/wordcompletionwidget.cpp:77
 #, kde-format
 msgid "Language"
 msgstr "Sprog"
 
-#: wordcompletion/wordcompletionwidget.cpp:97
-#: wordcompletion/wordcompletionwidget.cpp:155
+#: wordcompletion/wordcompletionwidget.cpp:95
+#: wordcompletion/wordcompletionwidget.cpp:153
 #, kde-format
 msgid "without name"
 msgstr "uden navn"
 
-#: wordcompletion/wordcompletionwidget.cpp:204
+#: wordcompletion/wordcompletionwidget.cpp:202
 #, kde-format
 msgid "Export Dictionary"
 msgstr "Eksportér ordbog"
 
-#: wordcompletion/wordlist.cpp:77
+#: wordcompletion/wordlist.cpp:74
 #, kde-format
 msgid "Creating Word List"
 msgstr "Opretter ordliste"
 
-#: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
+#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Analyserer KDE-dokumentation..."
 
-#: wordcompletion/wordlist.cpp:200
+#: wordcompletion/wordlist.cpp:197
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Fletter ordbøger..."
 
-#: wordcompletion/wordlist.cpp:269
+#: wordcompletion/wordlist.cpp:266
 #, kde-format
 msgid "Parsing file..."
 msgstr "Fortolker fil..."
 
-#: wordcompletion/wordlist.cpp:281
+#: wordcompletion/wordlist.cpp:278
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Fortolker mappe..."
 
-#: wordcompletion/wordlist.cpp:472
+#: wordcompletion/wordlist.cpp:464
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Udfører stavekontrol..."
