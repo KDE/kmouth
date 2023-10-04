@@ -16,25 +16,25 @@ endif(NOT MSVC)
 
 include(FeatureSummary)
 
-set(QT_MIN_VERSION "5.15.2")
-set(KF_MIN_VERSION "5.92.0")
-
-
-find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
-
+find_package(ECM 5.91.0 NO_MODULE REQUIRED)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
+include(ECMAddAppIcon)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(ECMDeprecationSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+include(ECMInstallIcons)
+include(ECMSetupVersion)
+include(ECMDeprecationSettings)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(QT_REQUIRED_VERSION "6.4.0")
+    set(KF_MIN_VERSION "5.240.0")
+    set(KF_MAJOR_VERSION "6")
+else()
+    set(KF_MAJOR_VERSION "5")
+endif()
+
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
-
-include(ECMSetupVersion)
-include(ECMAddAppIcon)
-include(ECMInstallIcons)
-include(ECMAddAppIcon)
-
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
@@ -44,7 +44,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF5  ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF${KF_MAJOR_VERSION}  ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
     Completion
     Config
@@ -107,14 +107,14 @@ ki18n_wrap_ui(kmouth
 
 
 target_link_libraries(kmouth
-                      KF5::Completion
-                      KF5::ConfigCore
-                      KF5::Crash
-                      KF5::KIOCore
-                      KF5::KIOWidgets
-                      KF5::I18n
-                      KF5::WidgetsAddons
-                      KF5::XmlGui
+                      KF${KF_MAJOR_VERSION}::Completion
+                      KF${KF_MAJOR_VERSION}::ConfigCore
+                      KF${KF_MAJOR_VERSION}::Crash
+                      KF${KF_MAJOR_VERSION}::KIOCore
+                      KF${KF_MAJOR_VERSION}::KIOWidgets
+                      KF${KF_MAJOR_VERSION}::I18n
+                      KF${KF_MAJOR_VERSION}::WidgetsAddons
+                      KF${KF_MAJOR_VERSION}::XmlGui
                       Qt::PrintSupport
                       Qt::TextToSpeech
                       Qt::Widgets

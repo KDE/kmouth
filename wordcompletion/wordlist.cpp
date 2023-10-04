@@ -26,7 +26,6 @@
 #include <QProgressDialog>
 #include <QRegularExpression>
 #include <QStandardPaths>
-#include <QTextCodec>
 #include <QTextStream>
 
 #include <KLocalizedString>
@@ -50,8 +49,8 @@ bool XMLReader::read(QIODevice *device)
     list.clear();
 
     while (xml.readNextStartElement()) {
-        const QString *word = xml.name().string();
-        addWords(list, *word);
+        const QString word = xml.name().toString();
+        addWords(list, word);
     }
 
     return !xml.error();
@@ -124,7 +123,7 @@ void addWords(WordMap &map, const WordMap &add)
             map[it.key()] = it.value();
 }
 
-void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
+void addWordsFromFile(WordMap &map, const QString &filename, QStringConverter::Encoding encoding)
 {
     QFile xmlfile(filename);
     XMLReader reader;
@@ -161,8 +160,7 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
                     QFile file(filename);
                     if (file.open(QIODevice::ReadOnly)) {
                         QTextStream plainstream(&file);
-                        Q_ASSERT(codec != nullptr);
-                        plainstream.setCodec(codec);
+                        plainstream.setEncoding(encoding);
                         while (!plainstream.atEnd())
                             addWords(map, plainstream.readLine());
                     }
@@ -172,7 +170,7 @@ void addWordsFromFile(WordMap &map, const QString &filename, QTextCodec *codec)
     }
 }
 
-WordMap parseFiles(const QStringList &files, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseFiles(const QStringList &files, QStringConverter::Encoding encoding, QProgressDialog *pdlg)
 {
     int progress = 0;
     int steps = files.count();
@@ -181,7 +179,7 @@ WordMap parseFiles(const QStringList &files, QTextCodec *codec, QProgressDialog 
     WordMap map;
     QStringList::ConstIterator it;
     for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
-        addWordsFromFile(map, *it, codec);
+        addWordsFromFile(map, *it, encoding);
 
         if (steps != 0 && progress * 100 / steps > percent) {
             percent = progress * 100 / steps;
@@ -208,7 +206,7 @@ WordMap mergeFiles(const QMap<QString, int> &files, QProgressDialog *pdlg)
     QMap<QString, int>::ConstIterator it;
     for (progress = 1, it = files.constBegin(); it != files.constEnd(); ++progress, ++it) {
         WordMap fileMap;
-        addWordsFromFile(fileMap, it.key(), QTextCodec::codecForName("UTF-8"));
+        addWordsFromFile(fileMap, it.key(), QStringConverter::Utf8);
 
         long long weight = 0;
         WordMap::ConstIterator iter;
@@ -258,10 +256,10 @@ WordMap parseKDEDoc(QString language, QProgressDialog *pdlg)
         files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("html/") + language + QStringLiteral("/*.docbook"));
     }
 
-    return parseFiles(files, QTextCodec::codecForName("UTF-8"), pdlg);
+    return parseFiles(files, QStringConverter::Utf8, pdlg);
 }
 
-WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseFile(const QString &filename, QStringConverter::Encoding encoding, QProgressDialog *pdlg)
 {
     pdlg->setLabelText(i18n("Parsing file..."));
     pdlg->show();
@@ -270,10 +268,10 @@ WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *p
     QStringList files;
     files.append(filename);
 
-    return parseFiles(files, codec, pdlg);
+    return parseFiles(files, encoding, pdlg);
 }
 
-WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *pdlg)
+WordMap parseDir(const QString &directory, QStringConverter::Encoding encoding, QProgressDialog *pdlg)
 {
     pdlg->setLabelText(i18n("Parsing directory..."));
     pdlg->show();
@@ -301,7 +299,7 @@ WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *p
         directories.removeAt(dirNdx);
     }
 
-    return parseFiles(files, codec, pdlg);
+    return parseFiles(files, encoding, pdlg);
 }
 
 /***************************************************************************/

@@ -21,7 +21,6 @@
 #include "speech.h"
 
 #include <QHash>
-#include <QTextCodec>
 #include <QTextStream>
 
 #define macroExpander
@@ -44,34 +43,20 @@ QString Speech::prepareCommand(const QString &command, const QString &text, cons
     return KMacroExpander::expandMacrosShellQuote(command, map);
 }
 
-void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, int encoding, QTextCodec *codec)
+void Speech::speak(QString command, bool stdIn, const QString &text, const QString &language, QStringConverter::Encoding encoding)
 {
     if (!text.isEmpty()) {
         // 1. prepare the text:
         // 1.a) encode the text
         QTextStream ts(&encText, QIODevice::WriteOnly);
-        if (encoding == Local)
-            ts.setCodec(QTextCodec::codecForLocale());
-        else if (encoding == Latin1)
-            ts.setCodec("ISO-8859-1");
-        else if (encoding == Unicode)
-            ts.setCodec("UTF-16");
-        else
-            ts.setCodec(codec);
+        ts.setEncoding(encoding);
         ts << text;
         ts.flush();
 
         // 1.b) create a temporary file for the text
         tempFile.open();
         QTextStream fs(&tempFile);
-        if (encoding == Local)
-            fs.setCodec(QTextCodec::codecForLocale());
-        else if (encoding == Latin1)
-            fs.setCodec("ISO-8859-1");
-        else if (encoding == Unicode)
-            fs.setCodec("UTF-16");
-        else
-            fs.setCodec(codec);
+        fs.setEncoding(encoding);
         fs << text;
         fs << "\n";
         QString filename = tempFile.fileName();

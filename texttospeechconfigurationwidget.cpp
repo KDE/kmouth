@@ -20,8 +20,6 @@
 
 #include "texttospeechconfigurationwidget.h"
 
-#include <QTextCodec>
-
 #include <KLocalizedString>
 
 #include "speech.h"
@@ -59,20 +57,17 @@ TextToSpeechConfigurationWidget::~TextToSpeechConfigurationWidget()
 
 void TextToSpeechConfigurationWidget::buildCodecList()
 {
-    QString local = i18nc("Local characterset", "Local") + QStringLiteral(" (");
-    local += QLatin1String(QTextCodec::codecForLocale()->name()) + QLatin1Char(')');
-    characterCodingBox->addItem(local, Speech::Local);
-    characterCodingBox->addItem(i18nc("Latin1 characterset", "Latin1"), Speech::Latin1);
-    characterCodingBox->addItem(i18n("Unicode"), Speech::Unicode);
-    for (int i = 0; i < ttsSystem->codecList->count(); i++)
-        characterCodingBox->addItem(QLatin1String(ttsSystem->codecList->at(i)->name()), Speech::UseCodec + i);
+    for (int encoding = QStringConverter::System; encoding <= QStringConverter::System; ++encoding) {
+        QString name = QLatin1String(QStringConverter::nameForEncoding(QStringConverter::Encoding(encoding)));
+        characterCodingBox->addItem(name, encoding);
+    }
 }
 
 void TextToSpeechConfigurationWidget::cancel()
 {
     urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
-    characterCodingBox->setCurrentIndex(ttsSystem->codec);
+    characterCodingBox->setCurrentIndex(ttsSystem->encoding);
     qtspeechGroupBox->setChecked(ttsSystem->useQtSpeech);
 }
 
@@ -112,7 +107,7 @@ void TextToSpeechConfigurationWidget::ok()
 {
     ttsSystem->ttsCommand = urlReq->url().toLocalFile();
     ttsSystem->stdIn = stdInButton->isChecked();
-    ttsSystem->codec = characterCodingBox->currentIndex();
+    ttsSystem->encoding = QStringConverter::Encoding(characterCodingBox->currentIndex());
     ttsSystem->useQtSpeech = qtspeechGroupBox->isChecked();
 }
 
@@ -126,7 +121,7 @@ void TextToSpeechConfigurationWidget::readOptions(const QString &langGroup)
     ttsSystem->readOptions(langGroup);
     urlReq->setUrl(QUrl::fromLocalFile(ttsSystem->ttsCommand));
     stdInButton->setChecked(ttsSystem->stdIn);
-    characterCodingBox->setCurrentIndex(ttsSystem->codec);
+    characterCodingBox->setCurrentIndex(ttsSystem->encoding);
     qtspeechGroupBox->setChecked(ttsSystem->useQtSpeech);
     engineComboBox->setCurrentText(ttsSystem->ttsEngine);
 

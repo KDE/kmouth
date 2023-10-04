@@ -23,6 +23,7 @@
 
 #include <QList>
 #include <QObject>
+#include <QStringConverter>
 
 class QTextToSpeech;
 
@@ -45,10 +46,7 @@ public Q_SLOTS:
     void speak(const QString &text, const QString &language);
 
 private:
-    void buildCodecList();
-
-    QList<QTextCodec *> *codecList;
-    int codec;
+    int encoding;
     QString ttsCommand;
     bool stdIn;
     bool useQtSpeech;

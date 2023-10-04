@@ -35,7 +35,6 @@ class KComboBox;
 class MergeWidget;
 class QScrollArea;
 class QSpinBox;
-class QTextCodec;
 
 class CreationSourceWidget : public QWizardPage, public Ui::CreationSourceUI
 {
@@ -118,7 +117,6 @@ public:
     };
 
 private:
-    void buildCodecList();
     void buildCodecCombo(KComboBox *combo);
 
     CreationSourceWidget *creationSource;
@@ -126,8 +124,6 @@ private:
     CreationSourceDetailsWidget *dirWidget;
     KDEDocSourceWidget *kdeDocWidget;
     MergeWidget *mergeWidget;
-
-    QList<QTextCodec *> *codecList;
 };
 
 /**

@@ -20,7 +20,6 @@
 
 #include "texttospeechsystem.h"
 
-#include <QTextCodec>
 #include <QTextToSpeech>
 
 #include <KConfigGroup>
@@ -30,18 +29,16 @@
 
 TextToSpeechSystem::TextToSpeechSystem(QObject *parent)
     : QObject(parent)
-    , codec(Speech::Local)
+    , encoding(QStringConverter::System)
     , stdIn(true)
     , useQtSpeech(true)
     , ttsEngine(QLatin1String("speechd"))
     , m_speech(new QTextToSpeech(ttsEngine))
 {
-    buildCodecList();
 }
 
 TextToSpeechSystem::~TextToSpeechSystem()
 {
-    delete codecList;
     delete m_speech;
 }
 
@@ -53,10 +50,7 @@ void TextToSpeechSystem::speak(const QString &text, const QString &language)
             return;
         }
 
-        if (codec < Speech::UseCodec)
-            (new Speech())->speak(ttsCommand, stdIn, text, language, codec, nullptr);
-        else
-            (new Speech())->speak(ttsCommand, stdIn, text, language, Speech::UseCodec, codecList->at(codec - Speech::UseCodec));
+        (new Speech())->speak(ttsCommand, stdIn, text, language, QStringConverter::Encoding(encoding));
     }
 }
 
@@ -71,19 +65,9 @@ void TextToSpeechSystem::readOptions(const QString &langGroup)
     // select first voice if none set by user.
     ttsVoice = cg.readEntry("ttsVoice", "");
 
-    QString codecString = cg.readEntry("Codec", "Local");
-    if (codecString == QLatin1String("Local"))
-        codec = Speech::Local;
-    else if (codecString == QLatin1String("Latin1"))
-        codec = Speech::Latin1;
-    else if (codecString == QLatin1String("Unicode"))
-        codec = Speech::Unicode;
-    else {
-        codec = Speech::Local;
-        for (int i = 0; i < codecList->count(); i++)
-            if (codecString == QLatin1String(codecList->at(i)->name()))
-                codec = Speech::UseCodec + i;
-    }
+    // Get encoding from settings, but default to system encoding, which
+    // is what "Local" used to be
+    encoding = QStringConverter::Encoding(cg.readEntry("encoding", int(QStringConverter::System)));
 }
 
 void TextToSpeechSystem::saveOptions(const QString &langGroup)
@@ -94,16 +78,7 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
     cg.writeEntry("useQtSpeech", useQtSpeech);
     cg.writeEntry("ttsEngine", ttsEngine);
     cg.writeEntry("ttsVoice", ttsVoice);
-    if (codec == Speech::Local)
-        cg.writeEntry("Codec", "Local");
-    else if (codec == Speech::Latin1)
-        cg.writeEntry("Codec", "Latin1");
-    else if (codec == Speech::Unicode)
-        cg.writeEntry("Codec", "Unicode");
-    else {
-        QString codeName = QLatin1String(codecList->at(codec - Speech::UseCodec)->name());
-        cg.writeEntry("Codec", codeName);
-    }
+    cg.writeEntry("encoding", encoding);
 
     delete m_speech;
     m_speech = new QTextToSpeech(ttsEngine);
@@ -112,15 +87,5 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
         if (voice.name() == ttsVoice) {
             m_speech->setVoice(voice);
         }
-    }
-}
-
-void TextToSpeechSystem::buildCodecList()
-{
-    codecList = new QList<QTextCodec *>;
-    QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
-    for (int i = 0; i < availableCodecs.count(); ++i) {
-        QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
-        codecList->append(codec);
     }
 }

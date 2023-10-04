@@ -23,6 +23,7 @@
 
 #include <QObject>
 #include <QProcess>
+#include <QStringConverter>
 #include <QTemporaryFile>
 
 /**This class is used internally by TextToSpeechSystem in order to do the actual speaking.
@@ -43,8 +44,10 @@ public:
      * @param command the program that shall be executed for speaking
      * @param stdin true if the program shall receive its data via standard input
      * @param text The text that shall be spoken
+     * @param language the language to use when speaking
+     * @param encoding the encoding to use to decode the text
      */
-    void speak(QString command, bool use_stdin, const QString &text, const QString &language, int encoding, QTextCodec *codec);
+    void speak(QString command, bool use_stdin, const QString &text, const QString &language, QStringConverter::Encoding encoding);
 
     /**
      * Prepares a command for being executed. During the preparation the

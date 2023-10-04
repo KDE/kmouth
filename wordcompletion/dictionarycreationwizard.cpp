@@ -27,7 +27,7 @@
 #include <QProgressDialog>
 #include <QSpinBox>
 #include <QStandardPaths>
-#include <QTextCodec>
+#include <QStringConverter>
 
 #include <QDebug>
 
@@ -60,8 +60,6 @@ DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
                                                    const QStringList &dictionaryLanguages)
     : QWizard(parent)
 {
-    buildCodecList();
-
     creationSource = new CreationSourceWidget(this, QStringLiteral("source page"));
     creationSource->setTitle(i18n("Source of New Dictionary (1)"));
     setPage(CreationSourcePage, creationSource);
@@ -99,29 +97,14 @@ DictionaryCreationWizard::DictionaryCreationWizard(QWidget *parent,
 
 DictionaryCreationWizard::~DictionaryCreationWizard()
 {
-    delete codecList;
-}
-
-void DictionaryCreationWizard::buildCodecList()
-{
-    codecList = new QList<QTextCodec *>;
-    QList<QByteArray> availableCodecs = QTextCodec::availableCodecs();
-    for (int i = 0; i < availableCodecs.count(); ++i) {
-        QTextCodec *codec = QTextCodec::codecForName(availableCodecs[i]);
-        codecList->append(codec);
-    }
 }
 
 void DictionaryCreationWizard::buildCodecCombo(KComboBox *combo)
 {
-    QString local = i18nc("Local characterset", "Local") + QStringLiteral(" (");
-    local += QLatin1String(QTextCodec::codecForLocale()->name()) + QLatin1Char(')');
-    combo->addItem(local, 0);
-    combo->addItem(i18nc("Latin characterset", "Latin1"), 1);
-    combo->addItem(i18n("Unicode"), 2);
-
-    for (int i = 0; i < codecList->count(); i++)
-        combo->addItem(QLatin1String(codecList->at(i)->name()), i + 3);
+    for (int encoding = QStringConverter::System; encoding <= QStringConverter::System; ++encoding) {
+        QString name = QLatin1String(QStringConverter::nameForEncoding(QStringConverter::Encoding(encoding)));
+        combo->addItem(name, encoding);
+    }
 }
 
 QString DictionaryCreationWizard::createDictionary()
@@ -137,40 +120,16 @@ QString DictionaryCreationWizard::createDictionary()
         dicFile.clear();
     } else if (creationSource->fileButton->isChecked()) {
         QString filename = fileWidget->url->url().path();
-        int encoding = fileWidget->encodingCombo->currentIndex();
+        QStringConverter::Encoding encoding = QStringConverter::Encoding(fileWidget->encodingCombo->currentIndex());
         if (fileWidget->spellCheckBox->isChecked())
             dicFile = fileWidget->ooDictURL->url().path();
-        switch (encoding) {
-        case 0:
-            map = WordList::parseFile(filename, QTextCodec::codecForLocale(), pdlg);
-            break;
-        case 1:
-            map = WordList::parseFile(filename, QTextCodec::codecForName("ISO-8859-1"), pdlg);
-            break;
-        case 2:
-            map = WordList::parseFile(filename, QTextCodec::codecForName("UTF-16"), pdlg);
-            break;
-        default:
-            map = WordList::parseFile(filename, codecList->at(encoding - 3), pdlg);
-        }
+        map = WordList::parseFile(filename, encoding, pdlg);
     } else if (creationSource->directoryButton->isChecked()) {
         QString directory = dirWidget->url->url().path();
-        int encoding = dirWidget->encodingCombo->currentIndex();
+        QStringConverter::Encoding encoding = QStringConverter::Encoding(fileWidget->encodingCombo->currentIndex());
         if (dirWidget->spellCheckBox->isChecked())
             dicFile = dirWidget->ooDictURL->url().path();
-        switch (encoding) {
-        case 0:
-            map = WordList::parseDir(directory, QTextCodec::codecForLocale(), pdlg);
-            break;
-        case 1:
-            map = WordList::parseDir(directory, QTextCodec::codecForName("ISO-8859-1"), pdlg);
-            break;
-        case 2:
-            map = WordList::parseDir(directory, QTextCodec::codecForName("UTF-16"), pdlg);
-            break;
-        default:
-            map = WordList::parseDir(directory, codecList->at(encoding - 3), pdlg);
-        }
+        map = WordList::parseDir(directory, encoding, pdlg);
     } else { // creationSource->kdeDocButton must be checked
         QString language = kdeDocWidget->languageButton->current();
         if (kdeDocWidget->spellCheckBox->isChecked())

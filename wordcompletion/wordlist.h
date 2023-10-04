@@ -22,9 +22,9 @@
 #define WORDLIST_H
 
 #include <QMap>
+#include <QStringConverter>
 #include <QXmlStreamReader>
 
-class QTextCodec;
 class QProgressDialog;
 
 namespace WordList
@@ -35,8 +35,8 @@ typedef QMap<QString, int> WordMap;
 QProgressDialog *progressDialog();
 
 WordMap parseKDEDoc(QString language, QProgressDialog *pdlg);
-WordMap parseFile(const QString &filename, QTextCodec *codec, QProgressDialog *pdlg);
-WordMap parseDir(const QString &directory, QTextCodec *codec, QProgressDialog *pdlg);
+WordMap parseFile(const QString &filename, QStringConverter::Encoding encoding, QProgressDialog *pdlg);
+WordMap parseDir(const QString &directory, QStringConverter::Encoding encoding, QProgressDialog *pdlg);
 WordMap mergeFiles(const QMap<QString, int> &files, QProgressDialog *pdlg);
 
 WordMap spellCheck(WordMap wordlist, const QString &dictionary, QProgressDialog *pdlg);
