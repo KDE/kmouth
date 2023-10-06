@@ -84,9 +84,7 @@ bool saveWordList(const WordMap &map, const QString &filename)
         return false;
 
     QTextStream stream(&file);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    stream.setCodec("UTF-8");
-#endif
+    stream.setEncoding(QStringConverter::Utf8);
     stream << "WPDictFile\n";
     WordMap::ConstIterator it;
     for (it = map.constBegin(); it != map.constEnd(); ++it)
@@ -134,9 +132,7 @@ void addWordsFromFile(WordMap &map, const QString &filename, QStringConverter::E
         QFile wpdfile(filename);
         if (wpdfile.open(QIODevice::ReadOnly)) {
             QTextStream stream(&wpdfile);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            stream.setCodec("UTF-8");
-#endif
+            stream.setEncoding(QStringConverter::Utf8);
 
             if (!stream.atEnd()) {
                 QString line = stream.readLine();

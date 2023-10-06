@@ -306,11 +306,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
         if (url.fileName(QUrl::PrettyDecoded).contains(QLatin1Char('.')) == 0) {
             url = url.adjusted(QUrl::RemoveFilename);
             url.setPath(url.path() + url.fileName(QUrl::PrettyDecoded) + QStringLiteral(".phrasebook"));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        } else if (url.fileName(QUrl::PrettyDecoded).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-#else
         } else if (url.fileName(QUrl::PrettyDecoded).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-#endif
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             int filetype =
                 KMessageBox::questionTwoActionsCancel(nullptr,
@@ -340,11 +336,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
         }
         result = save(url, true);
     } else if (fdlg.selectedNameFilter() == QLatin1String("*.txt")) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        if (url.fileName(QUrl::PrettyDecoded).rightRef(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-#else
         if (url.fileName(QUrl::PrettyDecoded).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-#endif
             result = save(url, false);
         } else {
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
