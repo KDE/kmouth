@@ -307,16 +307,10 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
             url = url.adjusted(QUrl::RemoveFilename);
             url.setPath(url.path() + url.fileName(QUrl::PrettyDecoded) + QStringLiteral(".phrasebook"));
         } else if (url.fileName(QUrl::PrettyDecoded).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             int filetype =
                 KMessageBox::questionTwoActionsCancel(nullptr,
                                                       QStringLiteral("<qt>%1</qt>")
                                                           .arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
-#else
-            int filetype = KMessageBox::questionYesNoCancel(nullptr,
-                                                            QStringLiteral("<qt>%1</qt>")
-                                                                .arg(i18n("Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>. "
-#endif
                                                                     "Do you wish to add <i>.phrasebook</i> to the filename?",
                                                                     url.fileName())),
                                                       i18n("File Extension"),
@@ -325,11 +319,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
             if (filetype == KMessageBox::Cancel) {
                 return 0;
             }
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (filetype == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-            if (filetype == KMessageBox::Yes) {
-#endif
                 url = url.adjusted(QUrl::RemoveFilename);
                 url.setPath(url.path() + url.fileName(QUrl::PrettyDecoded) + QStringLiteral(".phrasebook"));
             }
@@ -339,15 +329,9 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
         if (url.fileName(QUrl::PrettyDecoded).right(11).contains(QLatin1String(".phrasebook"), Qt::CaseInsensitive) == 0) {
             result = save(url, false);
         } else {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             int filetype = KMessageBox::questionTwoActionsCancel(nullptr,
                                                                  QStringLiteral("<qt>%1</qt>")
                                                                      .arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#else
-            int filetype = KMessageBox::questionYesNoCancel(nullptr,
-                                                            QStringLiteral("<qt>%1</qt>")
-                                                                .arg(i18n("Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#endif
                                                                                "Do you wish to save in phrasebook format?",
                                                                                url.fileName())),
                                                                  i18n("File Extension"),
@@ -356,11 +340,7 @@ int PhraseBook::save(QWidget *parent, const QString &title, QUrl &url, bool phra
             if (filetype == KMessageBox::Cancel) {
                 return 0;
             }
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (filetype == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-            if (filetype == KMessageBox::Yes) {
-#endif
                 result = save(url, true);
             } else {
                 result = save(url, false);
