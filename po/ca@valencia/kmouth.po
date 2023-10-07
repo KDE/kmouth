@@ -117,9 +117,9 @@ msgid ""
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
 "Copia la secció seleccionada i la posa al porta-retalls. Si hi ha cap text "
-"seleccionat en el camp d'edició, este serà copiat al porta-retalls. D'altra "
-"manera, les frases seleccionades en l'historial (si n'hi ha cap) seran "
-"ubicades en el porta-retalls."
+"seleccionat en el camp d'edició, este serà copiat a dins del porta-retalls. "
+"D'altra manera, les frases seleccionades en l'historial (si n'hi ha cap) "
+"seran ubicades en el porta-retalls."
 
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
