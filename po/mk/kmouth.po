@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2006-07-15 21:06+0200\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -442,20 +442,7 @@ msgstr "Датотеката постои"
 msgid "&Overwrite"
 msgstr "&Запиши"
 
-#: phrasebook/phrasebook.cpp:318
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"Избравте име на датотека <i>%1</i> што има различна наставка од<i>."
-"phrasebook</i>. Дали сакате да додадете <i>.phrasebook</i> на името на "
-"датотеката?"
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -465,32 +452,22 @@ msgstr ""
 "phrasebook</i>. Дали сакате да додадете <i>.phrasebook</i> на името на "
 "датотеката?"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "Наставка на датотека"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "Не додавај"
 
-#: phrasebook/phrasebook.cpp:349
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"Избравте име на датотека <i>%1</i> со наставка <i>.phrasebook</i>. Дали "
-"сакате да зачувате во формат на разговорник?"
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -499,12 +476,12 @@ msgstr ""
 "Избравте име на датотека <i>%1</i> со наставка <i>.phrasebook</i>. Дали "
 "сакате да зачувате во формат на разговорник?"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Како разговорник"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "Како обичен текст"
@@ -620,7 +597,7 @@ msgstr "Текст на &фразата:"
 msgid "Name of the &phrase book:"
 msgstr "Има на &разговорникот:"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>There are unsaved changes.<br>Do you want to apply the changes before "
@@ -632,27 +609,27 @@ msgstr ""
 "<qt>Има незачувани промени.<br>Дали саате да ги примените промените пред да "
 "го затворите „разговорникот“ или ги отфрлате промените?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Го затворам „разговорникот“"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Нов разговорник)"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Нова фраза)"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Внесување разговорник"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -664,7 +641,7 @@ msgstr ""
 "*.txt|Датотеки со текст (*.txt)\n"
 "*|Сите датотеки"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -673,18 +650,18 @@ msgstr ""
 "Имаше грешка при вчитување на датотеката\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Изнесување разговорник"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&Разговорници"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -966,27 +943,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "Кодирање на &знаци:"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, fuzzy, kde-format
-#| msgid "Local"
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "Локално"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "Латиница1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "Уникод"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1175,28 +1131,28 @@ msgstr ""
 "што KMouth автоматски ги додава новонапишаните зборови во речниците, така со "
 "време ќе го научи Вашиот речник."
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Извор за нов речник (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Извор за нов речник (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, fuzzy, kde-format
 #| msgid "&Directory:"
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Папка:"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1205,30 +1161,23 @@ msgstr ""
 "Со оваа листа за внес наведувате која папка сакате да се вчита за креирање "
 "на новиот речник."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "Латиница1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "Резултат на соединувањето"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Празна листа"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "Документација за KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1383,35 +1332,78 @@ msgstr "Без име"
 msgid "Export Dictionary"
 msgstr "Изнесување речник"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "Креирање листа на зборови"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Анализирање на документацијата на KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Спојувам речници..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "Анализирам датотека..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Анализирам папка..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Извршувам проверка на правопис..."
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "Избравте име на датотека <i>%1</i> што има различна наставка од<i>."
+#~ "phrasebook</i>. Дали сакате да додадете <i>.phrasebook</i> на името на "
+#~ "датотеката?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#~| "you wish to save in phrasebook format?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr ""
+#~ "Избравте име на датотека <i>%1</i> со наставка <i>.phrasebook</i>. Дали "
+#~ "сакате да зачувате во формат на разговорник?"
+
+#, fuzzy
+#~| msgid "Local"
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "Локално"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "Латиница1"
+
+#~ msgid "Unicode"
+#~ msgstr "Уникод"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "Латиница1"
 
 #, fuzzy
 #~| msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2009-06-03 15:22+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -434,19 +434,7 @@ msgstr "មាន​ឯកសារ"
 msgid "&Overwrite"
 msgstr "សរសេរ​ជាន់លើ"
 
-#: phrasebook/phrasebook.cpp:318
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
-"បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -455,32 +443,22 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "ផ្នែក​បន្ថែម​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr "បន្ថែម"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "កុំបន្ថែម"
 
-#: phrasebook/phrasebook.cpp:349
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
-"រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -489,12 +467,12 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "ជា​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "ជាអត្ថបទ​ធម្មតា"
@@ -606,7 +584,7 @@ msgstr "អត្ថបទ​របស់​​ឃ្លា ៖"
 msgid "Name of the &phrase book:"
 msgstr "ឈ្មោះ​របស់​សៀវភៅ​ឃ្លា ៖"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -615,27 +593,27 @@ msgstr ""
 "<qt>មាន​ការ​ផ្លាស់ប្ដូរ​ដែល​មិន​បាន​រក្សាទុក ។<br />តើ​អ្នក​ចង់​អនុវត្ត​កា​រផ្លាស់ប្ដូរ​មុន​នឹង​បិទ​បង្អួច "
 "\"phrase book\" ឬ​បោះបង់​ការ​ផ្លាស់ប្ដូរ ?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "បិទ​បង្អួច \"សៀវភៅ​ឃ្លា\""
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(សៀវភៅ​ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -647,7 +625,7 @@ msgstr ""
 "*.txt|ឯកសារ​អត្ថបទ​ធម្មតា (*.txt)\n"
 "*|ឯកសារ​ទាំង​អស់"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -656,18 +634,18 @@ msgstr ""
 "​មាន​កំហុស​មួ​យ ក្នុង​ពេល​ផ្ទុក​ឯកសារ\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "នាំចេញ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -941,25 +919,6 @@ msgstr "ប្រអប់​បន្សំ​នេះ​បញ្ជាក់
 msgid "Character encodin&g:"
 msgstr "សំណុំ​តួ​អក្សរ ៖"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, kde-format
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "មូលដ្ឋាន"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, kde-format
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "ឡាតាំង ១"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "​យូនីកូដ"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1139,56 +1098,50 @@ msgstr ""
 "បើ​អ្នក​ជ្រើស​ប្រអប់​ធីក​នេះ វចនានុក្រម​ទទេ​មួយ​ដែល​គ្មាន​អ្វី​សោះ​នឹង​ត្រូវ​បាន​បង្កើត ។ ពេល KMouth បន្ថែម​"
 "ពាក្យ​ដែល​បាន​វាយ​ថ្មី​ដោយ​ស្វ័យប្រវត្តិ ទៅ​វចនានុក្រម​វា​នឹង​រៀន​វាក្យសព្ទ​របស់​អ្នក​នៅ​ពេល​នោះ ។"
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "ប្រភព​របស់​វចនានុក្រម​ថ្មី (១)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "ប្រភព​របស់​វចនានុក្រម​ថ្មី (២)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "ថត ៖"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
 "creating the new dictionary."
 msgstr "ជា​មួយ​នឹង​វាល​បញ្ចូល​នេះ អ្នក​បញ្ជាក់​ថត​មួយ​ណា​ដែល​អ្នក​ចង់​ផ្ទុក ដើម្បី​បង្កើត​វចនានុក្រម​ថ្មី ។"
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, kde-format
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "ឡាតាំង ១"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "បញ្ចូល​លទ្ធផល​ចូលគ្នា"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "បញ្ជីទទេ"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "ឯកសារ​របស់ KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1339,35 +1292,71 @@ msgstr "គ្មាន​ឈ្មោះ"
 msgid "Export Dictionary"
 msgstr "នាំចេញ​ថត​"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "បង្កើត​បញ្ជី​ពាក្យ"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "កំពុង​ញែក​ឯកសារ​របស់ KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "កំពុង​បញ្ចូល​វចនានុក្រម​ចូល​គ្នា..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "កំពុង​ញែក​ឯកសារ..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "កំពុង​ញែក​ថត​..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "កំពុង​អនុវត្ត​ការ​ពិនិត្យ​អក្ខរាវិរុទ្ធ..."
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​"
+#~ "ចង់​បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#~| "you wish to save in phrasebook format?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr ""
+#~ "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​"
+#~ "អ្នក​ចង់​រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
+
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "មូលដ្ឋាន"
+
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "ឡាតាំង ១"
+
+#~ msgid "Unicode"
+#~ msgstr "​យូនីកូដ"
+
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "ឡាតាំង ១"
 
 #, fuzzy
 #~| msgid ""

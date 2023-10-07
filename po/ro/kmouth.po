@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2020-09-29 22:02+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -438,19 +438,7 @@ msgstr "Fișierul există"
 msgid "&Overwrite"
 msgstr "&Suprascrie"
 
-#: phrasebook/phrasebook.cpp:318
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"Ați ales numele de fișier <i>%1</i> care nu are extensia <i>.phrasebook</i>. "
-"Doriți să adaug <i>.phrasebook</i> la numele de fișier?"
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -459,32 +447,22 @@ msgstr ""
 "Ați ales numele de fișier <i>%1</i> care nu are extensia <i>.phrasebook</i>. "
 "Doriți să adaug <i>.phrasebook</i> la numele de fișier?"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "Extensie de fișier"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr "Adaugă"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nu adăuga"
 
-#: phrasebook/phrasebook.cpp:349
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"Ați ales numele de fișier <i>%1</i> care are extensia <i>.phrasebook</i>. "
-"Doriți să-l salvați în formatul de carte de fraze?"
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -493,12 +471,12 @@ msgstr ""
 "Ați ales numele de fișier <i>%1</i> care are extensia <i>.phrasebook</i>. "
 "Doriți să-l salvați în formatul de carte de fraze?"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Ca și carte de fraze"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "Ca text obișnuit"
@@ -614,7 +592,7 @@ msgstr "Textul &frazei:"
 msgid "Name of the &phrase book:"
 msgstr "Numele &cărții de fraze:"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, fuzzy, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -623,27 +601,27 @@ msgstr ""
 "Există modificări nesalvate.<br>Doriți să aplicați modificările înainte de a "
 "închide fereastra \"Cartea de fraze\" sau le elimin?"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Închidere fereastră \"Carte de fraze\""
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Carte de fraze nouă)"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Frază nouă)"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Importă carte de fraze"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -655,7 +633,7 @@ msgstr ""
 "*.txt|Fișiere textuale (*.txt)\n"
 "*|Toate fișierele"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -664,18 +642,18 @@ msgstr ""
 "A apărut o eroare la încărcarea fișierului\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Exportă carte de fraze"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Cărți de &fraze"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -949,25 +927,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "Codare &caractere:"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, kde-format
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "Local"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, kde-format
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "Unicod"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1130,27 +1089,27 @@ msgid ""
 "learn your vocabulary with the time."
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Sursa noului dicționar (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Sursa noului dicționar (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Director:"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1159,29 +1118,23 @@ msgstr ""
 "Cu acest cîmp de intrare specificați ce director doriți să încărcați pentru "
 "crearea noului dicționar."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, kde-format
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "Combină rezultatul"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Listă goală"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "Documentația KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1325,35 +1278,71 @@ msgstr "fără nume"
 msgid "Export Dictionary"
 msgstr "Exportă dicționarul"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "Creez lista de cuvinte"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Analizez documentația KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Combin dicționarele..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "Analizez fișierul..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Parcurgere dosar..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Execut verificarea ortografică..."
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "Ați ales numele de fișier <i>%1</i> care nu are extensia <i>.phrasebook</"
+#~ "i>. Doriți să adaug <i>.phrasebook</i> la numele de fișier?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#~| "you wish to save in phrasebook format?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr ""
+#~ "Ați ales numele de fișier <i>%1</i> care are extensia <i>.phrasebook</i>. "
+#~ "Doriți să-l salvați în formatul de carte de fraze?"
+
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "Local"
+
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
+
+#~ msgid "Unicode"
+#~ msgstr "Unicod"
+
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
 
 #, fuzzy
 #~| msgid "KMouth"

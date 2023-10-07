@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2007-06-10 15:32+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -438,19 +438,7 @@ msgstr "پرونده موجود است"
 msgid "&Overwrite"
 msgstr "&جای‌نوشت‌"
 
-#: phrasebook/phrasebook.cpp:318
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"نام پرونده انتخابی <i>%1</i> شما دارای پسوندی متفاوت از <i>.phrasebook</i> "
-"است. می‌خواهید <i>.phrasebook</i> را به نام پرونده اضافه کنید؟"
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -459,32 +447,22 @@ msgstr ""
 "نام پرونده انتخابی <i>%1</i> شما دارای پسوندی متفاوت از <i>.phrasebook</i> "
 "است. می‌خواهید <i>.phrasebook</i> را به نام پرونده اضافه کنید؟"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "پسوند پرونده"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr "افزودن"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "اضافه نشود"
 
-#: phrasebook/phrasebook.cpp:349
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"نام پرونده انتخابی <i>%1</i> شما پسوند <i>.phrasebook</i>دارد. می‌خواهید در "
-"قالب عبارت‌نامه ذخیره کنید؟"
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -493,12 +471,12 @@ msgstr ""
 "نام پرونده انتخابی <i>%1</i> شما پسوند <i>.phrasebook</i>دارد. می‌خواهید در "
 "قالب عبارت‌نامه ذخیره کنید؟"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "به عنوان عبارت‌نامه"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "به عنوان متن ساده"
@@ -613,7 +591,7 @@ msgstr "متن &عبارت:‌"
 msgid "Name of the &phrase book:"
 msgstr "نام &عبارت‌نامه:‌"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, fuzzy, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -622,27 +600,27 @@ msgstr ""
 "<qt>تغییراتی هست که ذخیره نشده‌اند. <br>آیا می‌خواهید که تغییرات را پیش از "
 "بستن پنجره »عبارت‌نامه« اعمال کنید، یا تغییرات را دور می‌ریزید؟</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "بستن پنجره »عبارت‌نامه«"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr ")عبارت‌نامه جدید("
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr ")عبارت جدید("
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "واردات عبارت‌نامه"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -654,7 +632,7 @@ msgstr ""
 "*.txt|پرونده‌های متن ساده(*.txt)\n"
 "*|همه پرونده‌ها"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -663,18 +641,18 @@ msgstr ""
 "خطای بارگیری پرونده وجود داشت\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "صادرات عبارت‌نامه"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&عبارت‌نامه‌ها‌"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -957,27 +935,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "&کدبندی نویسه:‌"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, fuzzy, kde-format
-#| msgid "Local"
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "محلی"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "لاتین۱"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "یونی‌کد"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1164,28 +1121,28 @@ msgstr ""
 "که KMouth به صورت خودکار واژه‌هایی که جدیداً تحریر شده‌اند را اضافه می‌کند، در "
 "همان زمان واژه شما را یاد می‌گیرد."
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "متن واژه‌نامه جدید )۱("
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "متن واژه‌نامه جدید )۲("
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, fuzzy, kde-format
 #| msgid "&Directory:"
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&فهرست راهنما:‌"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1194,30 +1151,23 @@ msgstr ""
 "با این حوزه ورودی، مشخص می‌کنید که کدام فهرست را می‌خواهید برای ایجاد واژه‌نامه "
 "جدید بار کنید."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "لاتین۱"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "ادغام نتیجه"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "فهرست خالی"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "مستندات KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "Default dictionary"
@@ -1374,35 +1324,77 @@ msgstr "بدون نام"
 msgid "Export Dictionary"
 msgstr "صادرات واژه‌نامه"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "ایجاد فهرست واژه"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "تجزیه مستندات KDE..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "ادغام واژه‌نامه‌ها..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "تجزیه پرونده..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "تجزیه فهرست راهنما..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "انجام غلط‌یابی..."
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "نام پرونده انتخابی <i>%1</i> شما دارای پسوندی متفاوت از <i>.phrasebook</"
+#~ "i> است. می‌خواهید <i>.phrasebook</i> را به نام پرونده اضافه کنید؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#~| "you wish to save in phrasebook format?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr ""
+#~ "نام پرونده انتخابی <i>%1</i> شما پسوند <i>.phrasebook</i>دارد. می‌خواهید "
+#~ "در قالب عبارت‌نامه ذخیره کنید؟"
+
+#, fuzzy
+#~| msgid "Local"
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "محلی"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "لاتین۱"
+
+#~ msgid "Unicode"
+#~ msgstr "یونی‌کد"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "لاتین۱"
 
 #, fuzzy
 #~| msgid ""

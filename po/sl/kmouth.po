@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2022-10-17 07:51+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -427,15 +427,7 @@ msgstr "Datoteka obstaja"
 msgid "&Overwrite"
 msgstr "&Prepiši"
 
-#: phrasebook/phrasebook.cpp:318
-#, kde-format
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"Izbrano ime datoteke <i>%1</i> ima drugačno pripono kot <i>.phrasebook</i>. "
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -444,27 +436,22 @@ msgstr ""
 "Izbrano ime datoteke <i>%1</i> ima drugačno pripono kot <i>.phrasebook</i>. "
 "Ali želite dodati <i>.phrasebook</i> k imenu datoteke?"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "Pripona datoteke"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ne dodaj"
 
-#: phrasebook/phrasebook.cpp:349
-#, kde-format
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr "Izbrano ime datoteke <i>%1</i> ima pripono <i>.phrasebook</i>. "
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -473,12 +460,12 @@ msgstr ""
 "Izbrano ime datoteke <i>%1</i> ima pripono <i>.phrasebook</i>. Ali želite "
 "shraniti v obliki knjige s frazami?"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Kot knjiga s frazami"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "Kot navadno besedilo"
@@ -592,7 +579,7 @@ msgstr "Besedilo &fraze:"
 msgid "Name of the &phrase book:"
 msgstr "Ime &knjige s frazami:"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -601,33 +588,33 @@ msgstr ""
 "<qt>Obstajajo neshranjene spremembe.<br />Ali želite uveljaviti spremembe "
 "pred zapiranjem »knjige s frazami« ali jih zavreči?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Zapiranje okna »Knjiga s frazami«"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Nova knjiga s frazami)"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Nova fraza)"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Uvozi knjigo s frazami"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
 "Knjige s frazami (*.phrasebook);Besedilne datoteke (*.txt);Vse datoteke (*)"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -636,17 +623,17 @@ msgstr ""
 "Prišlo je do napake med nalaganjem datoteke\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Izvozi knjigo s frazami"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Knjige s frazami (*.phrasebook)"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -921,25 +908,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "Kodiranje &znakov:"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, kde-format
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "Krajevni"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, kde-format
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "Latinsko1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "Unicode"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1128,27 +1096,27 @@ msgstr ""
 "Ker KMouth samodejno doda na novo natipkane besede v slovarje, se bo vašega "
 "besedišča s časom tudi naučil."
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Vir novega slovarja (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Vir novega slovarja (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Mapa:"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
@@ -1157,29 +1125,23 @@ msgstr ""
 "S tem vnosnim poljem navedete, katero mapo želite naložiti za ustvarjanje "
 "novega slovarja."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, kde-format
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "Latinsko1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "Združi rezultate"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Prazen seznam"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "KDE-jeva dokumentacija"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1334,35 +1296,61 @@ msgstr "brez imena"
 msgid "Export Dictionary"
 msgstr "Izvozi slovar"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "Ustvarjanje seznama besed"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Razčlenjevanje KDE-jeve dokumentacije ..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Združevanje slovarjev ..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "Razčlenjevanje datoteke ..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Razčlenjevanje mape ..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Preverjanje črkovanja ..."
+
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "Izbrano ime datoteke <i>%1</i> ima drugačno pripono kot <i>.phrasebook</"
+#~ "i>. "
+
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr "Izbrano ime datoteke <i>%1</i> ima pripono <i>.phrasebook</i>. "
+
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "Krajevni"
+
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latinsko1"
+
+#~ msgid "Unicode"
+#~ msgstr "Unicode"
+
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latinsko1"
 
 #~ msgid ""
 #~ "<html><head/><body><p>This check box specifies KMouth tries to use the "

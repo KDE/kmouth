@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2021-08-21 16:25+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -428,54 +428,42 @@ msgstr ""
 msgid "&Overwrite"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:318
-#, kde-format
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:349
-#, kde-format
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "As Phrasebook"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr ""
@@ -600,37 +588,37 @@ msgstr "वाक्यांश का पाठ (&p):"
 msgid "Name of the &phrase book:"
 msgstr "वाक्यांश का पाठ (&p):"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, fuzzy, kde-format
 #| msgid "Closing the phrase &book edit window:"
 msgid "Closing \"Phrase Book\" Window"
 msgstr "वाक्यांश पुस्तक संपादन विंडो बन्द करना: (&b)"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, fuzzy, kde-format
 #| msgid "Save Phrase Book"
 msgid "(New Phrase Book)"
 msgstr "वाक्यांश पुस्तक सहेजें"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid "Initial Phrase Book"
 msgid "Import Phrasebook"
 msgstr "आरंभिक फ्रेज बुक"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -642,7 +630,7 @@ msgstr ""
 "*.phrasebook|फ़्रेजबुक्स (*.phrasebook)\n"
 "*.txt|सादा पाठ फ़ाइलें (*.txt)"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -651,19 +639,19 @@ msgstr ""
 "फ़ाइल लोड करने में त्रुटि हुई\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Export Phrase Book"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -936,27 +924,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "अक्षर एनकोडिंग: (&e)"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, fuzzy, kde-format
-#| msgid "Local"
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "स्थानीय"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "लेटिन1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "युनिकोड"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1125,28 +1092,28 @@ msgid ""
 "learn your vocabulary with the time."
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, fuzzy, kde-format
 #| msgid "Dictionary"
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "शब्दकोश"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, fuzzy, kde-format
 #| msgid ""
 #| "With this input field you specify the name of the selected dictionary."
@@ -1155,31 +1122,24 @@ msgid ""
 "creating the new dictionary."
 msgstr "इस इनपुट क्षेत्र के साथ आप चयनित शब्दकोश का नाम निर्धारित करते हैं."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, fuzzy, kde-format
-#| msgid "Latin1"
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "लेटिन1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, fuzzy, kde-format
 #| msgid "From &KDE documentation"
 msgid "KDE Documentation"
 msgstr "केडीई दस्तावेज़ीकरण से (&K)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1326,40 +1286,61 @@ msgstr "रविशंकर श्रीवास्तव, जी. करू�
 msgid "Export Dictionary"
 msgstr "शब्दकोश निर्यात करें (&E)..."
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, fuzzy, kde-format
 #| msgid "Create an &empty wordlist"
 msgid "Creating Word List"
 msgstr "एक रिक्त शब्द सूची बनाएँ (&e)"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, fuzzy, kde-format
 #| msgid "From &KDE documentation"
 msgid "Parsing the KDE documentation..."
 msgstr "केडीई दस्तावेज़ीकरण से (&K)"
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, fuzzy, kde-format
 #| msgid "&Merge dictionaries"
 msgid "Merging dictionaries..."
 msgstr "शब्दकोशों को ं मिलाएँ (&M)"
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, fuzzy, kde-format
 #| msgid "Opening file..."
 msgid "Parsing file..."
 msgstr "फ़ाइल खोला जा रहा है..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, fuzzy, kde-format
 #| msgid "&Print History..."
 msgid "Parsing directory..."
 msgstr "इतिहास छापें... (&P)"
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Local"
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "स्थानीय"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "लेटिन1"
+
+#~ msgid "Unicode"
+#~ msgstr "युनिकोड"
+
+#, fuzzy
+#~| msgid "Latin1"
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "लेटिन1"
 
 #, fuzzy
 #~| msgid "KMouth"

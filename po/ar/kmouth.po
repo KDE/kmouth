@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2007-10-14 15:30+0000\n"
 "Last-Translator: Youssef Chahibi <chahibi@gmail.com>\n"
 "Language-Team: <en@li.org>\n"
@@ -426,53 +426,41 @@ msgstr ""
 msgid "&Overwrite"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:318
-#, kde-format
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:349
-#, kde-format
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, fuzzy, kde-format
 msgid "As Phrasebook"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr ""
@@ -584,34 +572,34 @@ msgstr "نص &التَّعبير:"
 msgid "Name of the &phrase book:"
 msgstr "نص &التَّعبير:"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, fuzzy, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "إغلاق نافذة تحرير &دفتر التَّعابير:"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, fuzzy, kde-format
 msgid "(New Phrase Book)"
 msgstr "حفظ دفتر التَّعابير"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 msgid "Import Phrasebook"
 msgstr "دفتر التَّعابير الأوليّ"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
@@ -619,7 +607,7 @@ msgstr ""
 "*.phrasebook|دفاتر تعابير (*.phrasebook)\n"
 "*.txt|ملفات نص خام (*.txt)"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -628,18 +616,18 @@ msgstr ""
 "طرأ خطأ عند تعبئة ملف\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 msgid "Export Phrase Book"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -914,25 +902,6 @@ msgstr "مربع التَّراكيب هذا يُحدِّد أي تشفير لل
 msgid "Character encodin&g:"
 msgstr "&تشفير الحروف:"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, fuzzy, kde-format
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "المحلي"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, fuzzy, kde-format
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "Unicode"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, fuzzy, kde-format
@@ -1102,56 +1071,50 @@ msgid ""
 msgstr ""
 "إذا تحديد مربّع a فارغ أي منها خانات هو ك KMouth إلى الإيطالية تعلم مع وقت."
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, fuzzy, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "القاموس"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, fuzzy, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
 "creating the new dictionary."
 msgstr "مع دَخْل حقل تحديد ملفّ إلى التحميل لـ إنشاء جديد."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, fuzzy, kde-format
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr ""
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, fuzzy, kde-format
 msgid "KDE Documentation"
 msgstr " من توثيق &KDE"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1300,35 +1263,53 @@ msgstr "Mohamed SAAD محمد سعد"
 msgid "Export Dictionary"
 msgstr "&تصدير القاموس..."
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, fuzzy, kde-format
 msgid "Creating Word List"
 msgstr "إنشاء فارغ"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, fuzzy, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr " من توثيق &KDE"
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, fuzzy, kde-format
 msgid "Merging dictionaries..."
 msgstr "&دمج القواميس"
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, fuzzy, kde-format
 msgid "Parsing file..."
 msgstr "جاري فتح الملف..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, fuzzy, kde-format
 msgid "Parsing directory..."
 msgstr "&طباعة التّأريخ..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "المحلي"
+
+#, fuzzy
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
+
+#~ msgid "Unicode"
+#~ msgstr "Unicode"
+
+#, fuzzy
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
 
 #, fuzzy
 #~ msgid ""

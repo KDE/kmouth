@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 00:36+0000\n"
+"POT-Creation-Date: 2023-10-07 01:39+0000\n"
 "PO-Revision-Date: 2009-05-16 09:01+0300\n"
 "Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -435,19 +435,7 @@ msgstr "Fails pastāv"
 msgid "&Overwrite"
 msgstr "&Pārrakstīt"
 
-#: phrasebook/phrasebook.cpp:318
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-msgid ""
-"Your chosen filename <i>%1</i> has a different extension than <i>."
-"phrasebook</i>. "
-msgstr ""
-"Jūsu norādītā faila nosaukuma <i>%1</i> paplašinājums nav <i>.phrasebook</"
-"i>. Vai vēlaties pievievienot nosaukumam <i>.phrasebook</i> paplašinājumu?"
-
-#: phrasebook/phrasebook.cpp:322
+#: phrasebook/phrasebook.cpp:313
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -456,32 +444,22 @@ msgstr ""
 "Jūsu norādītā faila nosaukuma <i>%1</i> paplašinājums nav <i>.phrasebook</"
 "i>. Vai vēlaties pievievienot nosaukumam <i>.phrasebook</i> paplašinājumu?"
 
-#: phrasebook/phrasebook.cpp:326 phrasebook/phrasebook.cpp:357
+#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "File Extension"
 msgstr "Faila paplašinājums"
 
-#: phrasebook/phrasebook.cpp:327
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Add"
 msgstr "Pievienot"
 
-#: phrasebook/phrasebook.cpp:328
+#: phrasebook/phrasebook.cpp:318
 #, kde-format
 msgid "Do Not Add"
 msgstr "Nepievienot"
 
-#: phrasebook/phrasebook.cpp:349
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
-msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"Jūs norādītā faila nosaukuma <i>%1</i> paplašinājums ir <i>.phrasebook</i>. "
-"Vai vēlaties to saglabāt phrasebook formātā?"
-
-#: phrasebook/phrasebook.cpp:353
+#: phrasebook/phrasebook.cpp:334
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -490,12 +468,12 @@ msgstr ""
 "Jūs norādītā faila nosaukuma <i>%1</i> paplašinājums ir <i>.phrasebook</i>. "
 "Vai vēlaties to saglabāt phrasebook formātā?"
 
-#: phrasebook/phrasebook.cpp:358
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Kā frāžu grāmata"
 
-#: phrasebook/phrasebook.cpp:359
+#: phrasebook/phrasebook.cpp:339
 #, kde-format
 msgid "As Plain Text"
 msgstr "Kā vienkāršs teksts"
@@ -610,7 +588,7 @@ msgstr "Frāzes &teksts:"
 msgid "Name of the &phrase book:"
 msgstr "&Frāžu grāmatas nosaukums:"
 
-#: phrasebook/phrasebookdialog.cpp:424
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -619,27 +597,27 @@ msgstr ""
 "<qt>Palikušas nesaglabātas izmaiņas.<br />Vai vēlaties pielietot tās pirms "
 "\"frāžu grāmatas\" loga aizvēršanas vai izmest tās?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:425
+#: phrasebook/phrasebookdialog.cpp:420
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "AIzver \"Frāžu grāmatas\" logu"
 
-#: phrasebook/phrasebookdialog.cpp:595
+#: phrasebook/phrasebookdialog.cpp:582
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Jauna frāžu grāmata)"
 
-#: phrasebook/phrasebookdialog.cpp:611
+#: phrasebook/phrasebookdialog.cpp:598
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Jauna frāze)"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Importēt frāžu grāmatu"
 
-#: phrasebook/phrasebookdialog.cpp:642
+#: phrasebook/phrasebookdialog.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -651,7 +629,7 @@ msgstr ""
 "*.txt|Teksta faili (*.txt)\n"
 "*|Visi faili"
 
-#: phrasebook/phrasebookdialog.cpp:673 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -660,18 +638,18 @@ msgstr ""
 "Gadījās kļūda faila ielādē\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Eksportēt frāžu grāmatu"
 
-#: phrasebook/phrasebookdialog.cpp:684
+#: phrasebook/phrasebookdialog.cpp:671
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&Frāžu grāmatas"
 
-#: phrasebook/phrasebookdialog.cpp:691 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -954,25 +932,6 @@ msgstr ""
 msgid "Character encodin&g:"
 msgstr "Rakstzīmju &kodējums:"
 
-#: texttospeechconfigurationwidget.cpp:62
-#: wordcompletion/dictionarycreationwizard.cpp:117
-#, kde-format
-msgctxt "Local characterset"
-msgid "Local"
-msgstr "Lokālais"
-
-#: texttospeechconfigurationwidget.cpp:65
-#, kde-format
-msgctxt "Latin1 characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: texttospeechconfigurationwidget.cpp:66
-#: wordcompletion/dictionarycreationwizard.cpp:121
-#, kde-format
-msgid "Unicode"
-msgstr "Unikods"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
 #, kde-format
@@ -1156,56 +1115,50 @@ msgstr ""
 "pievieno vārdnīcai visus ievadītos jaunos vārdus un tādējādi ar laiku "
 "vārdnīca tiks aizpildīta."
 
-#: wordcompletion/dictionarycreationwizard.cpp:66
+#: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
 msgstr "Jaunās vārdnīcas avots (1)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:72
-#: wordcompletion/dictionarycreationwizard.cpp:78
-#: wordcompletion/dictionarycreationwizard.cpp:88
-#: wordcompletion/dictionarycreationwizard.cpp:95
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:76
+#: wordcompletion/dictionarycreationwizard.cpp:86
+#: wordcompletion/dictionarycreationwizard.cpp:93
 #, kde-format
 msgid "Source of New Dictionary (2)"
 msgstr "Jaunās vārdnīcas avots (2)"
 
-#: wordcompletion/dictionarycreationwizard.cpp:81
+#: wordcompletion/dictionarycreationwizard.cpp:79
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
 msgstr "&Mape:"
 
+#: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
-#: wordcompletion/dictionarycreationwizard.cpp:84
 #, kde-format
 msgid ""
 "With this input field you specify which directory you want to load for "
 "creating the new dictionary."
 msgstr "Šajā ievades laukā norāda kuru vārdnīcu ielādēt jaunajā vārdnīcā."
 
-#: wordcompletion/dictionarycreationwizard.cpp:120
-#, kde-format
-msgctxt "Latin characterset"
-msgid "Latin1"
-msgstr "Latin1"
-
-#: wordcompletion/dictionarycreationwizard.cpp:205
+#: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
 msgid "Merge result"
 msgstr "Apvienot rezultātu"
 
-#: wordcompletion/dictionarycreationwizard.cpp:207
+#: wordcompletion/dictionarycreationwizard.cpp:166
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
 msgstr "Tukšs saraksts"
 
-#: wordcompletion/dictionarycreationwizard.cpp:213
+#: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
 msgid "KDE Documentation"
 msgstr "KDE dokumentācija"
 
-#: wordcompletion/dictionarycreationwizard.cpp:335
+#: wordcompletion/dictionarycreationwizard.cpp:294
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
@@ -1358,35 +1311,71 @@ msgstr "bez nosaukuma"
 msgid "Export Dictionary"
 msgstr "Eksportēt vārdnīcu"
 
-#: wordcompletion/wordlist.cpp:74
+#: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
 msgstr "Veido vārdu sarakstu"
 
-#: wordcompletion/wordlist.cpp:74 wordcompletion/wordlist.cpp:251
+#: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
 msgstr "Analizē KDE dokumentāciju..."
 
-#: wordcompletion/wordlist.cpp:197
+#: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
 msgstr "Sapludina vārdnīcas..."
 
-#: wordcompletion/wordlist.cpp:266
+#: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
 msgstr "Analizē failu..."
 
-#: wordcompletion/wordlist.cpp:278
+#: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
 msgstr "Analizē vārdnīcu..."
 
-#: wordcompletion/wordlist.cpp:464
+#: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Veic pareizrakstības pārbaudi..."
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
+#~ "phrasebook</i>. "
+#~ msgstr ""
+#~ "Jūsu norādītā faila nosaukuma <i>%1</i> paplašinājums nav <i>.phrasebook</"
+#~ "i>. Vai vēlaties pievievienot nosaukumam <i>.phrasebook</i> paplašinājumu?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
+#~| "you wish to save in phrasebook format?"
+#~ msgid ""
+#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
+#~ msgstr ""
+#~ "Jūs norādītā faila nosaukuma <i>%1</i> paplašinājums ir <i>.phrasebook</"
+#~ "i>. Vai vēlaties to saglabāt phrasebook formātā?"
+
+#~ msgctxt "Local characterset"
+#~ msgid "Local"
+#~ msgstr "Lokālais"
+
+#~ msgctxt "Latin1 characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
+
+#~ msgid "Unicode"
+#~ msgstr "Unikods"
+
+#~ msgctxt "Latin characterset"
+#~ msgid "Latin1"
+#~ msgstr "Latin1"
 
 #, fuzzy
 #~| msgid ""
