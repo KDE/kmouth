@@ -41,7 +41,9 @@ TextToSpeechConfigurationWidget::TextToSpeechConfigurationWidget(QWidget *parent
     // Populate tts engines and use their names directly as key and item text:
     const QStringList engines = QTextToSpeech::availableEngines();
     for (const QString &engine : engines) {
-        engineComboBox->addItem(engine);
+        if (engine != QLatin1String("mock")) {
+            engineComboBox->addItem(engine);
+        }
     }
 
     connect(engineComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigurationWidget::slotTTSEngineChanged);
