@@ -7,6 +7,9 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 
 project(kmouth VERSION ${RELEASE_SERVICE_VERSION})
+set(QT_REQUIRED_VERSION "6.4.0")
+set(KF_MIN_VERSION "5.240.0")
+
 
 if(NOT MSVC)
     set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -O2 -g")
@@ -16,7 +19,7 @@ endif(NOT MSVC)
 
 include(FeatureSummary)
 
-find_package(ECM 5.91.0 NO_MODULE REQUIRED)
+find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
 include(ECMAddAppIcon)
 include(KDEInstallDirs)
@@ -25,18 +28,11 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     PrintSupport
     TextToSpeech
@@ -44,7 +40,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF${KF_MAJOR_VERSION}  ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6  ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
     Completion
     Config
@@ -107,14 +103,14 @@ ki18n_wrap_ui(kmouth
 
 
 target_link_libraries(kmouth
-                      KF${KF_MAJOR_VERSION}::Completion
-                      KF${KF_MAJOR_VERSION}::ConfigCore
-                      KF${KF_MAJOR_VERSION}::Crash
-                      KF${KF_MAJOR_VERSION}::KIOCore
-                      KF${KF_MAJOR_VERSION}::KIOWidgets
-                      KF${KF_MAJOR_VERSION}::I18n
-                      KF${KF_MAJOR_VERSION}::WidgetsAddons
-                      KF${KF_MAJOR_VERSION}::XmlGui
+                      KF6::Completion
+                      KF6::ConfigCore
+                      KF6::Crash
+                      KF6::KIOCore
+                      KF6::KIOWidgets
+                      KF6::I18n
+                      KF6::WidgetsAddons
+                      KF6::XmlGui
                       Qt::PrintSupport
                       Qt::TextToSpeech
                       Qt::Widgets
