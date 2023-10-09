@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2023-01-21 09:19+0100\n"
+"PO-Revision-Date: 2023-10-08 06:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,6 +95,9 @@ msgid ""
 "text selected in the edit field it is placed it on the clipboard. Otherwise "
 "the selected sentences in the history (if any) are placed on the clipboard."
 msgstr ""
+"ამოჭრის მითითებულ ქმედებას და მას ბუფერში მოათავსებს. თუ შეყვანის ველში "
+"მონიშნული ტექსტი არსებობს, ბუფერში ის დაკოპირდება. წინააღმდეგ შემთხვევაში, "
+"ბუფერში, ისტორიიდან მონიშნული წინადადებები (თუ არსებობს) დაკოპირდება."
 
 #: kmouth.cpp:139
 #, kde-format
@@ -108,6 +111,9 @@ msgid ""
 "in the edit field it is copied to the clipboard. Otherwise the selected "
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
+"მონიშნულს ბუფერში აკოპირებს. თუ მონიშნულია ტექსტი, ის დაკოპირდება. "
+"წინააღმდეგ შემთხვევაში, ისტორიის არჩეული წინადადებები (თუ არსებობს) "
+"დაკოპირდება."
 
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
@@ -120,6 +126,7 @@ msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
 "field."
 msgstr ""
+"ბუფერის შემცველობის, ტექსტურ ველში, კურსორის მიმდინარე პოზიციაზე ჩასმა."
 
 #: kmouth.cpp:148
 #, kde-format
@@ -130,7 +137,7 @@ msgstr "&თქმა"
 #: kmouth.cpp:150
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
-msgstr ""
+msgstr "წარმოთქვამს ამჟამად აქტიურ წინადადებებს"
 
 #: kmouth.cpp:151 phraselist.cpp:88
 #, kde-format
@@ -139,6 +146,9 @@ msgid ""
 "field it is spoken. Otherwise the selected sentences in the history (if any) "
 "are spoken."
 msgstr ""
+"ამჟამად აქტიური წინადადებების წარმოთქმა. თუ ტექსტურ ველში ტექსტი არსებობს, "
+"მოხდება მისი წარმოთქმა. წინააღმდეგ შემთხვევაში წარმოითქმება ისტორიაში "
+"არსებული წინადადებები (არსებობის შემთხვევაში)."
 
 #: kmouth.cpp:155
 #, kde-format
@@ -153,12 +163,12 @@ msgstr "ფრაზების &წიგნის ზოლის ჩვე�
 #: kmouth.cpp:168 kmouth.cpp:169
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
-msgstr ""
+msgstr "სალაპარაკო სახელმძღვანელოს ზოლის ჩართვა/გამორთვა"
 
 #: kmouth.cpp:172 kmouth.cpp:173
 #, kde-format
 msgid "Enables/disables the statusbar"
-msgstr ""
+msgstr "სტატუსის ზოლის ჩართ/გამორთ"
 
 #: kmouth.cpp:177
 #, kde-format
@@ -178,7 +188,7 @@ msgstr "&თქმა"
 #: kmouth.cpp:189 kmouth.cpp:191
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
-msgstr ""
+msgstr "წარმოთქვამს ამჟამად ისტორიიდან არჩეულ ფრაზებს"
 
 #: kmouth.cpp:195 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
@@ -188,7 +198,7 @@ msgstr "&წაშლა"
 #: kmouth.cpp:197 kmouth.cpp:198
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
-msgstr ""
+msgstr "წაშლის ამჟამად ისტორიიდან არჩეულ ფრაზებს"
 
 #: kmouth.cpp:202
 #, kde-format
@@ -200,7 +210,7 @@ msgstr "ამ&ოჭრა"
 msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
 "clipboard"
-msgstr ""
+msgstr "ამოჭრის ამჟამად მონიშნულ ფრაზებს ისტორიიდან და მათ ბუფერში მოათავსებს"
 
 #: kmouth.cpp:209
 #, kde-format
@@ -211,6 +221,7 @@ msgstr "&კოპირება"
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
 msgstr ""
+"დააკოპირებს ამჟამად მონიშნულ ფრაზებს ისტორიიდან და მათ ბუფერში მოათავსებს"
 
 #: kmouth.cpp:215
 #, kde-format
@@ -230,7 +241,7 @@ msgstr "&მონიშვნის ყველაფერზე მოხს
 #: kmouth.cpp:223 kmouth.cpp:224
 #, kde-format
 msgid "Deselects all phrases in the history"
-msgstr ""
+msgstr "ისტორიაში ყველა ფრაზის მონიშვნის მოხსნა"
 
 #: kmouth.cpp:238 kmouth.cpp:257 kmouth.cpp:357 kmouth.cpp:366 kmouth.cpp:383
 #: kmouth.cpp:432 kmouth.cpp:446 kmouth.cpp:460 kmouth.cpp:474
@@ -247,7 +258,7 @@ msgstr "ფაილის გახსნა..."
 #: kmouth.cpp:362
 #, kde-format
 msgid "Saving history with a new filename..."
-msgstr ""
+msgstr "ისტორიის შენახვა ახალი სახელით..."
 
 #: kmouth.cpp:371
 #, kde-format
@@ -273,7 +284,7 @@ msgstr "ხელსაწყოების ზოლის გადართ�
 #: kmouth.cpp:451
 #, kde-format
 msgid "Toggling phrasebook bar..."
-msgstr ""
+msgstr "სალაპარაკო სახელმძღვანელოს ზოლის გადართვა..."
 
 #: kmouth.cpp:465
 #, kde-format
@@ -312,7 +323,7 @@ msgstr "KMouth"
 #: main.cpp:41
 #, kde-format
 msgid "A type-and-say front end for speech synthesizers"
-msgstr ""
+msgstr "აკრიფეთ-და-წარმოთქვით წინაბოლო საუბრის სინთეზატორებისთვის"
 
 #: main.cpp:43
 #, kde-format
@@ -347,7 +358,7 @@ msgstr "Olaf Schmidt"
 #: main.cpp:49
 #, kde-format
 msgid "Tips, extended phrase books"
-msgstr ""
+msgstr "მინიშნებები, გაფართოებული ფრაზის წიგნები"
 
 #: main.cpp:53
 #, kde-format
@@ -377,7 +388,7 @@ msgstr "ზოგადი პარამეტრები"
 #: phrasebook/initialphrasebookwidget.cpp:45
 #, kde-format
 msgid "Please decide which phrase books you need:"
-msgstr ""
+msgstr "გადაწყვიტეთ, რომელი ფრაზების წიგნი გჭირდებათ:"
 
 #: phrasebook/initialphrasebookwidget.cpp:50
 #, kde-format
@@ -388,16 +399,20 @@ msgstr "წიგნი"
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
+"ფრაზის წიგნები (*.phrasebook);;უბრალო ტექსტური ფაილები (*.txt);;ყველა ფაილი "
+"(*)"
 
 #: phrasebook/phrasebook.cpp:272
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
+"უბრალო ტექსტური ფაილები (*.txt);;ფრაზის წიგნები (*.phrasebook);;ყველა ფაილი "
+"(*)"
 
 #: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
-msgstr ""
+msgstr "%1 უკვე არსებობს. გნებავთ გადააწეროთ?"
 
 #: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
@@ -415,6 +430,8 @@ msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
+"თქვენი არჩეული ფაილის სახელს <i>%1</i> <i>.phrasebook</i>-სგან განსხვავებული "
+"გაფართოება გააჩნია. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -422,6 +439,8 @@ msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
+"თქვენს არჩეულ ფაილის სახელს <i>%1</i> <i>.phrasebook</i>-სგან განსხვავებული "
+"გაფართოება გააჩნია. გნებავთ, მივამატო <i>.phrasebook</i> ფაილის სახელს?"
 
 #: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
 #, kde-format
@@ -442,6 +461,7 @@ msgstr "არ დაამატოთ"
 #, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
 msgstr ""
+"თქვენი არჩეული ფაილის სახელს <i>%1</i> აქვს გაფართოება <i>.phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
@@ -449,6 +469,8 @@ msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
+"თქვენი არჩეული ფაილის სახელს <i>%1</i> აქვს გაფართოება <i>.phrasebook</i>. "
+"გნებავთ ფრაზების წიგნის ფორმატში შენახვა?"
 
 #: phrasebook/phrasebook.cpp:332
 #, kde-format
@@ -495,11 +517,13 @@ msgstr "ახალი &ფრაზების წიგნი"
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
+"ამატებს ახალ ფრაზების წიგნს, რომელშიც სხვა წიგნები და ფრაზებიც შეგიძლიათ, "
+"მოათავსოთ"
 
 #: phrasebook/phrasebookdialog.cpp:242 phrasebook/phrasebookdialog.cpp:243
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
-msgstr ""
+msgstr "ფრაზების წიგნს დისკზე ინახავს"
 
 #: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
 #, kde-format
@@ -510,17 +534,19 @@ msgstr "&შემოტანა..."
 #: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
-msgstr ""
+msgstr "შემოიტანს ფაილს და მის შემცველობას ფრაზების წიგნში ჩაამატებს"
 
 #: phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "I&mport Standard Phrase Book"
-msgstr ""
+msgstr "სტანდარტული ფრაზების წიგნის შ&ემოტანა"
 
 #: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
+"შემოიტანს სტანდარტულ ფრაზების წიგნს და მის შემცველობას ფრაზების წიგნში "
+"ჩაამატებს"
 
 #: phrasebook/phrasebookdialog.cpp:266
 #, kde-format
@@ -530,7 +556,7 @@ msgstr "&გატანა..."
 #: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
-msgstr ""
+msgstr "ამჟამად არჩეული ფრაზების ან ფრაზის წიგნების გატანა ფაილში"
 
 #: phrasebook/phrasebookdialog.cpp:276 phrasebook/phrasebookdialog.cpp:277
 #, kde-format
@@ -543,17 +569,20 @@ msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
 msgstr ""
+"ამოჭრის ამჟამად მონიშნულ ჩანაწერებს ფრაზის წიგნიდან და მას ბუფერში მოათავსებს"
 
 #: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr ""
+"დააკოპირებს ამჟამად მონიშნულ ჩანაწერებს ფრაზის წიგნიდან და მას ბუფერში "
+"მოათავსებს"
 
 #: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
-msgstr ""
+msgstr "წაშლის მონიშნულ ჩანაწერებს ფრაზების წიგნიდან"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: phrasebook/phrasebookdialog.cpp:373 phrasebook/phrasebookdialog.cpp:387
@@ -573,6 +602,8 @@ msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
+"<qt>არსებობს შეუნახავი ცვლილებები.<br />გნებავთ, გადაატაროთ ცვლილებები "
+"\"ფრაზების წიგნის\" დახურვამდე, თუ მოვაცილო ცვლილებები?</qt>"
 
 #: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
@@ -632,7 +663,7 @@ msgstr ""
 #: phrasebook/phrasebookdialog.ui:26
 #, kde-format
 msgid "&Currently Selected Phrase or Phrase Book"
-msgstr ""
+msgstr "&ამჟამად არჩეული ფრაზა ან ფრაზების წიგნი"
 
 #. i18n: ectx: property (whatsThis), widget (KKeySequenceWidget, keyButton)
 #: phrasebook/phrasebookdialog.ui:38
@@ -641,6 +672,8 @@ msgid ""
 "By clicking on this button you can select the keyboard shortcut associated "
 "with the selected phrase."
 msgstr ""
+"ამ ღილაკზე დაწკაპუნებით, შეგიძლიათ, აირჩიოთ კლავიატურის მალსახმობი, რომელიც "
+"მონიშნულ ფრაზასთან იქნება ასოცირებული."
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
@@ -650,6 +683,8 @@ msgid ""
 "With this line edit you define the name of a sub-phrasebook or the contents "
 "of a phrase."
 msgstr ""
+"ამ ხაზით, შეგიძლიათ, ფრაზების ქვეწიგნის სახელი ან ფრაზის შემცველობა "
+"განსაზღვროთ."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
 #: phrasebook/phrasebookdialog.ui:52
@@ -658,6 +693,8 @@ msgid ""
 "If you select this option then the selected phrase will not be reachable by "
 "a keyboard shortcut."
 msgstr ""
+"თუ ამ პარამეტრს აირჩევთ, მონიშნული ფრაზა კლავიატურის მალსახმობით მიუწვდომელი "
+"იქნება."
 
 #. i18n: ectx: property (text), widget (QRadioButton, noKey)
 #: phrasebook/phrasebookdialog.ui:55
@@ -673,6 +710,9 @@ msgid ""
 "keyboard shortcut. You can change the shortcut with the button next to this "
 "option."
 msgstr ""
+"თუ ამ პარამეტრს აირჩევთ, მონიშნული ფრაზა წვდომადი იქნება კლავიატურის "
+"მალსახმობით. მალსახმობის შეცვლა ამ პარამეტრის გვერდზე არსებული ღილაკით "
+"შეგიძლიათ."
 
 #. i18n: ectx: property (text), widget (QRadioButton, customKey)
 #: phrasebook/phrasebookdialog.ui:65
@@ -693,6 +733,8 @@ msgid ""
 "This list contains the current phrase book in a tree structure. You can "
 "select and modify individual phrases and sub phrase books"
 msgstr ""
+"ეს სია მიმდინარე ფრაზების წიგნს ხის სტრუქტურაში შეიცავს. შეგიძლიათ, აირჩიოთ "
+"და შეცვალოთ ინდივიდუალური ფრაზები ან ფრაზის ქვეწიგნები"
 
 #: phraselist.cpp:62
 #, kde-format
@@ -700,6 +742,8 @@ msgid ""
 "This list contains the history of spoken sentences. You can select sentences "
 "and press the speak button for re-speaking."
 msgstr ""
+"ეს სია წარმოთქმული წინადადებების ისტორიას შეიცავს. შეგიძლიათ, აირჩიოთ "
+"წინადადება და დააწვეთ ლაპარაკის ღილაკს, რათა ის მეორედ წარმოითქვას."
 
 #: phraselist.cpp:80
 #, kde-format
@@ -707,6 +751,8 @@ msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
 "order to speak the entered phrase."
 msgstr ""
+"ამ ველში, შეგიძლიათ, ფრაზა აკრიფოთ. იმისთვის, რომ შეყვანილი ფრაზა "
+"წარმოითქვას, წარმოთქმის ღილაკს დააწექით."
 
 #: phraselist.cpp:475
 #, kde-format
@@ -739,12 +785,14 @@ msgid ""
 "This combo box specifies whether selected phrases of the phrase book are "
 "immediately spoken or just inserted into the edit field."
 msgstr ""
+"ეს ჩამოსაშლელი სია მიუთითებს, ფრაზის წიგნში მონიშნული ფრაზები მაშინვე "
+"წარმოითქმება თუ ჩასწორების ველში ჩაისმება."
 
 #. i18n: ectx: property (text), widget (QLabel, speakLabel)
 #: preferencesui.ui:52
 #, kde-format
 msgid "&Selection of phrases in the phrase book:"
-msgstr ""
+msgstr "ფრაზების &წიგნში მონიშნული ფრაზები:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
 #: preferencesui.ui:66
@@ -766,12 +814,14 @@ msgid ""
 "This combo box specifies whether the phrase book is automatically saved when "
 "the edit window is closed."
 msgstr ""
+"ჩამოსაშლელი სია მიუთითებს, შეინახება თუ არა ავტომატურად ფრაზების წიგნი, როცა "
+"ჩასწორების ფანჯარას დახურავთ."
 
 #. i18n: ectx: property (text), widget (QLabel, closeLabel)
 #: preferencesui.ui:100
 #, kde-format
 msgid "Closing the phrase &book edit window:"
-msgstr ""
+msgstr "\"ფრაზების წიგნის\" ჩასწორების ფანჯრის &დახურვა:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
 #: preferencesui.ui:114
@@ -833,6 +883,12 @@ msgid ""
 "%l -- the language code\n"
 "%% -- a percent sign"
 msgstr ""
+"ეს ველი ორივე, ტექსტების წარმოთქმის ბრძანებას და მის პარამეტრებს შეიცავს. "
+"KMouth-მა შემდეგი ადგილმჭერები იცის:\n"
+"%t -- ტექსტი, რომლის წარმოთქმაც გნებავთ\n"
+"%f -- ფაილის სახელი, რომელიც ტექსტს შეიცავს\n"
+"%l -- ენის კოდი\n"
+"%% -- პროცენტის ნიშანი"
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
@@ -847,12 +903,14 @@ msgid ""
 "This check box specifies whether the text is sent as standard input to the "
 "speech synthesizer."
 msgstr ""
+"ეს თოლია მიუთითებს, გადაეცემა თუ არა საუბრის სინთეზატორს ტექსტი სტანდარტულ "
+"შეყვანაზე."
 
 #. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:155
 #, kde-format
 msgid "Send the data as standard &input"
-msgstr ""
+msgstr "მონაცემების სტანდარტულ შეყვანაზე გაგზავნა"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
@@ -862,6 +920,8 @@ msgid ""
 "This combo box specifies which character encoding is used for passing the "
 "text."
 msgstr ""
+"ეს ჩამოსაშლელი მიუთითებს, რომელი სიმბოლოების კოდირება გამოიყენება ტექსტის "
+"გადასაცემად."
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
@@ -895,13 +955,15 @@ msgid ""
 "If you select this check box the words are spell-checked before they are "
 "inserted into the new dictionary."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალ ლექსიკონში ჩასმამდე სიტყვების მართლწერა "
+"შემოწმდება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
 #: wordcompletion/kdedocsourceui.ui:25
 #, kde-format
 msgid "C&ompare to OpenOffice.org dictionary:"
-msgstr ""
+msgstr "OpenOffice.org-ის ლექსიკონთან შ&ედარება:"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, encodingLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, encodingCombo)
@@ -912,6 +974,9 @@ msgid ""
 "With this combo box you select the character encoding used to load text "
 "files. This combo box is not used for XML files or for dictionary files."
 msgstr ""
+"ამ ჩამოსაშლელი, შეგიძლიათ, აირჩიოთ სიმბოლოების კოდირება, რომელიც ტექსტური "
+"ფაილების ჩატვირთვისას გამოიყენება. ეს ჩამოსაშლელი ლექსიკონის ან XML "
+"ფაილებისთვის არ გამოიყენება."
 
 #. i18n: ectx: property (text), widget (QLabel, encodingLabel)
 #: wordcompletion/creationsourcedetailsui.ui:46
@@ -928,6 +993,8 @@ msgid ""
 "With this input field you specify which file you want to load for creating "
 "the new dictionary."
 msgstr ""
+"ამ შეყვანის ველში, შეგიძლიათ, მიუთითოთ, რომელი ფაილი გნებავთ ჩატვირთოთ, "
+"ახალი ლექსიკონის შესაქმნელად."
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: wordcompletion/creationsourcedetailsui.ui:67
@@ -943,6 +1010,8 @@ msgid ""
 "With this input field you select the OpenOffice.org directory that will be "
 "used to spellcheck the words of the new dictionary."
 msgstr ""
+"ამ შეყვანის ველით, შეგიძლიათ, აირჩიოთ OpenOffice.org-ის საქაღალდე, რომელიც "
+"ახალი ლექსიკონის მართლწერის შესამოწმებლად იქნება, გამოყენებული."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:136
@@ -951,6 +1020,8 @@ msgid ""
 "With this combo box you decide which language should be associated with the "
 "new dictionary."
 msgstr ""
+"ამ ჩამოსაშლელით შეგიძლიათ აირჩიოთ, რომელი ენა იქნება ასოცირებული ახალ "
+"ლექსიკონთან."
 
 #. i18n: ectx: property (text), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:139
@@ -972,6 +1043,8 @@ msgid ""
 "If you select this box a new dictionary is created by either loading a "
 "dictionary file or by counting the individual words in a text."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალი ლექსიკონი შეიქმნება ან ლექსიკონის ფაილის "
+"ჩავტვირთვით, ან ტექსტში სიტყვების დათვლით."
 
 #. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
 #: wordcompletion/creationsourceui.ui:29
@@ -986,6 +1059,8 @@ msgid ""
 "If you select this box a new dictionary is created by merging existing "
 "dictionaries."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალი ლექსიკონი არსებული ლექსიკონების შერწყმით "
+"შეიქნმნება."
 
 #. i18n: ectx: property (text), widget (QRadioButton, fileButton)
 #: wordcompletion/creationsourceui.ui:50
@@ -1003,6 +1078,11 @@ msgid ""
 "file the frequentness of the individual words is detected by simply counting "
 "the occurrences of each word."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალი ლექსიკონი ფაილის ჩატვირთვით შეიქმნება. "
+"შეგიძლიათ, აირჩიოთ XML ფაილი, სტანდარტული ტექსტური ფაილი ან ფაილი, რომელიც "
+"სიტყვის დასრულების ლექსიკონს შეიცავს. თუ აირჩევთ სტანდარტულ ტექსტურ ფაილს ან "
+"XML ფაილს, სიხშირე, რომლითაც სიტყვების არჩევა მოხდება ტექსტში ამ სიტყვის "
+"გამოჩენის რაოდენობაა."
 
 #. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
 #: wordcompletion/creationsourceui.ui:71
@@ -1018,6 +1098,9 @@ msgid ""
 "documentation. The frequentness of the individual words is detect by simply "
 "counting the occurrences of each word."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალი ლექსიკონი KDE-ის დოკუმენტაციის დამუშავებით "
+"შეიქმნება. თითოეული სიტყვის სიხშირე ამ სიტყვის ტექსტში გამოჩენის რაოდენობით "
+"დაითვლება."
 
 #. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
 #: wordcompletion/creationsourceui.ui:95
@@ -1032,12 +1115,14 @@ msgid ""
 "If you select this box a new dictionary is created by loading all files in a "
 "folder and its subdirectories."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, ახალი ლექსიკონი საქაღალდეში და მის ქვესაქაღალდეში "
+"არსებული ყველა ფაილის ჩატვირთვით შეიქმნება."
 
 #. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
 #: wordcompletion/creationsourceui.ui:121
 #, kde-format
 msgid "Create an &empty wordlist"
-msgstr ""
+msgstr "&ცარიელი სიტყვების სიის შექმნა"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
 #: wordcompletion/creationsourceui.ui:124
@@ -1047,6 +1132,9 @@ msgid ""
 "KMouth automatically adds newly typed words to the dictionaries it will "
 "learn your vocabulary with the time."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, შეიქმნება ცარიელი ლექსიკონი, ჩანაწერების გარეშე. "
+"რადგანაც KMouth აკრეფილ ახალ სიტყვებს ლექსიკონებში ავტომატურად ამატებს, ის "
+"თქვენს ლექსიკონსაც ისწავლის."
 
 #: wordcompletion/dictionarycreationwizard.cpp:65
 #, kde-format
@@ -1074,6 +1162,8 @@ msgid ""
 "With this input field you specify which directory you want to load for "
 "creating the new dictionary."
 msgstr ""
+"ამ შეყვანის ველში მიუთითეთ, რომელი საქაღალდის ჩატვირთვა გნებავთ ახალი "
+"ლექსიკონის შესაქმნელად."
 
 #: wordcompletion/dictionarycreationwizard.cpp:119
 #, kde-format
@@ -1110,6 +1200,8 @@ msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
 msgstr ""
+"თუ ამ თოლიას დასვამთ, სიტყვები KDE-ის დოკუმენტაციიდან ახალ ლექსიკონში "
+"ჩამატებამდე მართლწერაზე შემოწმდება."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
@@ -1119,6 +1211,9 @@ msgid ""
 "creating the new dictionary. KMouth will only parse documentation files of "
 "this language."
 msgstr ""
+"ამ ჩამოსაშლელიდან, შეგიძლიათ აირჩიოთ, დაყენებული ენებიდან, რომლის გამოყენება "
+"გნებვთ, ახალი ლექსიკონის შესაქმნელად. KMouth დოკუმენტაციას, მხოლოდ, ამ "
+"ენისთვის დაამუშავებს."
 
 #. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
 #: wordcompletion/wordcompletionui.ui:32
@@ -1133,13 +1228,14 @@ msgid ""
 "With this combo box you select the language associated with the selected "
 "dictionary."
 msgstr ""
+"ამ ჩამოსაშლელი სიიდან შეგიძლიათ არჩეულ ლექსიკონთან ასოცირებული ენა აირჩიოთ."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, dictionaryNameLabel)
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, dictionaryName)
 #: wordcompletion/wordcompletionui.ui:63 wordcompletion/wordcompletionui.ui:76
 #, kde-format
 msgid "With this input field you specify the name of the selected dictionary."
-msgstr ""
+msgstr "ამ შეყვანის ველში არჩეული ლექსიკონის სახელი უნდა მიუთითოთ."
 
 #. i18n: ectx: property (text), widget (QLabel, dictionaryNameLabel)
 #: wordcompletion/wordcompletionui.ui:66
@@ -1153,7 +1249,7 @@ msgstr "&სახელი:"
 msgid ""
 "With this button you can add a new dictionary to the list of available "
 "dictionaries."
-msgstr ""
+msgstr "ამ ღილაკით შეგიძლიათ ხელმისაწვდომი ლექსიკონების სიაში ახალი ჩაამატოთ."
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #: wordcompletion/wordcompletionui.ui:103
@@ -1165,7 +1261,7 @@ msgstr "&ლექსიკონის დამატება..."
 #: wordcompletion/wordcompletionui.ui:119
 #, kde-format
 msgid "With this button you delete the selected dictionary."
-msgstr ""
+msgstr "ამ ღილაკით, შეგიძლიათ, მონიშნული ლექსიკონი წაშალოთ."
 
 #. i18n: ectx: property (text), widget (QPushButton, deleteButton)
 #: wordcompletion/wordcompletionui.ui:122
@@ -1177,7 +1273,7 @@ msgstr "&ლექსიკონის წაშლა"
 #: wordcompletion/wordcompletionui.ui:138
 #, kde-format
 msgid "With this button you move the selected dictionary up."
-msgstr ""
+msgstr "ამ ღილაკით, შეგიძლიათ, მონიშნული მაღლა ასწიოთ."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
 #: wordcompletion/wordcompletionui.ui:141
@@ -1189,7 +1285,7 @@ msgstr "აწევა"
 #: wordcompletion/wordcompletionui.ui:157
 #, kde-format
 msgid "With this button you move the selected dictionary down."
-msgstr ""
+msgstr "ამ ღილაკით, შეგიძლიათ, მონიშნული ლექსიკონი დაბლა ჩამოწიოთ."
 
 #. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
 #: wordcompletion/wordcompletionui.ui:160
@@ -1201,7 +1297,7 @@ msgstr "&ქვემოთ ჩამოწევა"
 #: wordcompletion/wordcompletionui.ui:176
 #, kde-format
 msgid "With this button you export the selected dictionary to a file."
-msgstr ""
+msgstr "ამ ღილაკის მონიშნული ლექსიკონის ფაილში გატანა შეგიძლიათ."
 
 #. i18n: ectx: property (text), widget (QPushButton, exportButton)
 #: wordcompletion/wordcompletionui.ui:179
@@ -1219,6 +1315,10 @@ msgid ""
 "order to select the dictionary that actually gets used for the word "
 "completion."
 msgstr ""
+"ეს სია შეიცავს ლექსიკონებს სიტყვების დასრულებისთვის. თუ სია ერთზე მეტ "
+"ლექსიკონს შეიცავს, KMouth, მთავარ ფანჯარაში, ჩასწორების ველის გვერდით "
+"ჩამოსაშლელ სიას გაჩვენებებთ მის ასარჩევად. ეს ჩამოსაშლელი, შეგიძლიათ, "
+"სიტყვების დასრულებისთვის გამოყენებული ლექსიკონის ასარჩევად გამოიყენოთ."
 
 #: wordcompletion/wordcompletionwidget.cpp:79
 #, kde-format
@@ -1249,7 +1349,7 @@ msgstr "სიტყვების სიის შექმნა"
 #: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
 msgid "Parsing the KDE documentation..."
-msgstr ""
+msgstr "KDE-ის დოკუმენტაციის დამუსავება..."
 
 #: wordcompletion/wordlist.cpp:200
 #, kde-format
