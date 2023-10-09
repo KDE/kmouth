@@ -1342,39 +1342,3 @@ msgstr "ディレクトリを解析中..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "スペルチェック中..."
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ ではありません。‘."
-#~ "phrasebook’ をファイル名に追加しますか？"
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#~| "you wish to save in phrasebook format?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "選択されたファイル名 ‘%1’ の拡張子は ‘.phrasebook’ です。フレーズブック形"
-#~ "式で保存しますか？"
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "ローカル"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"

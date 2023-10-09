@@ -1329,18 +1329,3 @@ msgstr "Tolker mappe …"
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Kontrollerer rettskrivning …"
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Lokal"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
