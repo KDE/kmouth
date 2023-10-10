@@ -953,7 +953,7 @@ msgid ""
 msgstr ""
 "Amb este quadro combinat seleccioneu la codificació de caràcters utilitzada "
 "per a carregar fitxers de text. Este quadro combinat no s'utilitza per a "
-"fitxers XML o per a fitxers de diccionari."
+"fitxers en XML o per a fitxers de diccionari."
 
 #. i18n: ectx: property (text), widget (QLabel, encodingLabel)
 #: wordcompletion/creationsourcedetailsui.ui:46
@@ -1056,10 +1056,10 @@ msgid ""
 "the occurrences of each word."
 msgstr ""
 "Si seleccioneu esta casella, es crea un diccionari nou carregant un fitxer. "
-"Podeu seleccionar un fitxer XML, un fitxer de text estàndard o un fitxer que "
-"continga un diccionari de compleció de paraules. Si seleccioneu un fitxer de "
-"text estàndard o un fitxer XML, la freqüència de les paraules individuals es "
-"detecta senzillament comptant les ocurrències de cada paraula."
+"Podeu seleccionar un fitxer en XML, un fitxer de text estàndard o un fitxer "
+"que continga un diccionari de compleció de paraules. Si seleccioneu un "
+"fitxer de text estàndard o un fitxer en XML, la freqüència de les paraules "
+"individuals es detecta senzillament comptant les ocurrències de cada paraula."
 
 #. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
 #: wordcompletion/creationsourceui.ui:71
@@ -1345,31 +1345,3 @@ msgstr "S'està analitzant el directori..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "S'està executant la verificació de l'ortografia..."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "El nom de fitxer <i>%1</i> que heu seleccionat té una extensió diferent "
-#~ "de <i>.phrasebook</i>. "
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "El nom de fitxer <i>%1</i> que heu seleccionat té l'extensió <i>."
-#~ "phrasebook</i>. "
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Local"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
