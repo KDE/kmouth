@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-07 01:39+0000\n"
-"PO-Revision-Date: 2023-09-16 10:08\n"
+"PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/kmouth/kmouth.pot\n"
-"X-Crowdin-File-ID: 6378\n"
+"X-Crowdin-File: /kf6-trunk/messages/kmouth/kmouth.pot\n"
+"X-Crowdin-File-ID: 46522\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1269,27 +1269,3 @@ msgstr "正在解析目录..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "正在执行拼写检查..."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr "您选择的文件名 <i>%1</i> 具有与 <i>.phrasebook</i> 不同的扩展名。 "
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr "您选择的文件名 <i>%1</i> 具有 <i>.phrasebook</i> 扩展名。 "
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "本地"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"

@@ -1299,28 +1299,3 @@ msgstr "Analyzuje se adresář..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Provádění kontroly pravopisu..."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "Vámi zvolený soubor <i>%1</i> má jinou příponu než <i>.phrasebook</i>. "
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr "Vámi zvolený soubor <i>%1</i> má příponu <i>.phrasebook</i>. "
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Místní"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
