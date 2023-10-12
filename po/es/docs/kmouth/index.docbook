@@ -468,7 +468,7 @@
     <para
 >La ventana principal de edición del libro de frases, está dividida en dos partes. En la parte superior, las frases aparecen en una estructura de árbol. </para>
     <para
->En la parte inferior puede modificar el elemento que haya seleccionado. Si ha seleccionado una frase, puede modificar el contenido de la frase, así como el acceso rápido. Si ha seleccionado un libro de frases, solo puede cambiarle el nombre. </para>
+>En la parte inferior puede modificar el elemento que haya seleccionado. Si ha seleccionado una frase, puede modificar el contenido de la frase, así como su atajo de teclado. Si ha seleccionado un libro de frases, solo puede cambiarle el nombre. </para>
     <para
 >Para ejecutar acciones como añadir libros de frases, frases nuevas y borrar las frases seleccionadas o los libros de frases, puede o bien seleccionar dichas acciones en la barra de menús, en la barra de herramientas o en un menú de contexto. </para>
     <para
