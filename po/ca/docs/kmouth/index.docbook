@@ -243,7 +243,7 @@
 ><para
 >Utilitzeu l'eina de la línia d'ordres <command
 >spd-conf</command
-> (paquet python3-speechd a la Debian) per ajustar les opcions com la velocitat, el to, el volum, el tipus de veu, l'idioma, &etc; per al sistema de síntesi per omissió. De manera addicional, l'<command
+> (paquet python3-speechd a la Debian) per a ajustar les opcions com la velocitat, el to, el volum, el tipus de veu, l'idioma, &etc; per al sistema de síntesi per omissió. De manera addicional, l'<command
 >spd-conf</command
 > permet triar entre tots els mòduls instal·lats del speech-dispatcher, &ead;, <application
 >espeak</application
@@ -265,9 +265,9 @@
       <para
 >Si l'element <guilabel
 >Usa el sistema de veu per omissió</guilabel
-> no està seleccionat, podeu introduir l'ordre per cridar la síntesi de veu en el camp d'edició del plafó <guilabel
+> no està seleccionat, podeu introduir l'ordre per a cridar la síntesi de veu en el camp d'edició del plafó <guilabel
 >Alternativa</guilabel
->. Amb el quadre combinat a sota del camp d'edició especifiqueu la codificació de caràcters que s'utilitza per passar el text al sintetitzador de veu. </para>
+>. Amb el quadre combinat a sota del camp d'edició especifiqueu la codificació de caràcters que s'utilitza per a passar el text al sintetitzador de veu. </para>
       <para
 >El &kmouth; coneix dues maneres de passar el text. Si l'ordre espera el text des de l'entrada estàndard, seleccioneu la casella de selecció. </para>
       <para
