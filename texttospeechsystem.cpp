@@ -82,7 +82,7 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
 
     delete m_speech;
     m_speech = new QTextToSpeech(ttsEngine);
-    const QVector<QVoice> voices = m_speech->availableVoices();
+    const QList<QVoice> voices = m_speech->availableVoices();
     for (const QVoice &voice : voices) {
         if (voice.name() == ttsVoice) {
             m_speech->setVoice(voice);

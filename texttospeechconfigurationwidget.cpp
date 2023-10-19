@@ -85,7 +85,7 @@ void TextToSpeechConfigurationWidget::slotTTSEngineChanged()
 
     // Get list of voices and repopulate voice tts combobox
     QTextToSpeech *ttsEngine = new QTextToSpeech(engine);
-    const QVector<QVoice> voices = ttsEngine->availableVoices();
+    const QList<QVoice> voices = ttsEngine->availableVoices();
     voiceComboBox->blockSignals(true);
     voiceComboBox->clear();
     for (const QVoice &voice : voices) {
