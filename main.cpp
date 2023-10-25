@@ -31,7 +31,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("kmouth");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kmouth"));
 
     KAboutData aboutData(QStringLiteral("kmouth"),
                          i18n("KMouth"),
