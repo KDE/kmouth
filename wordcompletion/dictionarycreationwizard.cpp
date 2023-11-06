@@ -289,7 +289,7 @@ void CompletionWizardWidget::ok()
     dictionaryFile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + QStringLiteral("/");
     qDebug() << "dictionaryFile is " << dictionaryFile;
     if (WordList::saveWordList(map, dictionaryFile)) {
-        KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");
+        KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("Dictionary 0"));
         cg.writeEntry("Filename", "wordcompletion1.dict");
         cg.writeEntry("Name", i18nc("Default dictionary", "Default"));
         cg.writeEntry("Language", language);

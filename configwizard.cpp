@@ -89,7 +89,7 @@ void ConfigWizard::initCompletion()
         if (file.exists()) {
             // If there is a word completion dictionary but no entry in the
             // configuration file, we need to add it there.
-            KConfigGroup cg(KSharedConfig::openConfig(), "Dictionary 0");
+            KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("Dictionary 0"));
             cg.writeEntry("Filename", "dictionary.txt");
             cg.writeEntry("Name", "Default");
             cg.writeEntry("Language", QString());
@@ -97,7 +97,7 @@ void ConfigWizard::initCompletion()
         }
     }
 
-    if (KSharedConfig::openConfig()->hasGroup("Completion")) {
+    if (KSharedConfig::openConfig()->hasGroup(QLatin1String("Completion"))) {
         completionWidget = nullptr;
         return;
     }

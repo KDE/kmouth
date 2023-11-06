@@ -265,7 +265,7 @@ void KMouthApp::openDocumentFile(const QUrl &url)
 void KMouthApp::saveOptions()
 {
     if (isConfigured) {
-        KConfigGroup cg(KSharedConfig::openConfig(), "General Options");
+        KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("General Options"));
         cg.writeEntry("Geometry", size());
         cg.writeEntry("Show Menubar", viewMenuBar->isChecked());
         // FIXME: Toolbar disabled so it will compile.
@@ -278,16 +278,16 @@ void KMouthApp::saveOptions()
         if (phraseList != nullptr)
             phraseList->saveCompletionOptions();
         optionsDialog->saveOptions();
-        KConfigGroup cg2(KSharedConfig::openConfig(), "mainToolBar");
+        KConfigGroup cg2(KSharedConfig::openConfig(), QLatin1String("mainToolBar"));
         toolBar(QStringLiteral("mainToolBar"))->saveSettings(cg2);
-        KConfigGroup cg3(KSharedConfig::openConfig(), "phrasebookBar");
+        KConfigGroup cg3(KSharedConfig::openConfig(), QLatin1String("phrasebookBar"));
         toolBar(QStringLiteral("phrasebookBar"))->saveSettings(cg);
     }
 }
 
 void KMouthApp::readOptions()
 {
-    KConfigGroup cg(KSharedConfig::openConfig(), "General Options");
+    KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("General Options"));
 
     // bar status settings
     bool bViewMenubar = cg.readEntry("Show Menubar", true);
@@ -319,8 +319,8 @@ void KMouthApp::readOptions()
 
     optionsDialog->readOptions();
 
-    toolBar(QStringLiteral("mainToolBar"))->applySettings(KSharedConfig::openConfig()->group("mainToolBar"));
-    toolBar(QStringLiteral("phrasebookBar"))->applySettings(KSharedConfig::openConfig()->group("phrasebookBar"));
+    toolBar(QStringLiteral("mainToolBar"))->applySettings(KSharedConfig::openConfig()->group(QStringLiteral("mainToolBar")));
+    toolBar(QStringLiteral("phrasebookBar"))->applySettings(KSharedConfig::openConfig()->group(QStringLiteral("phrasebookBar")));
 
     slotPhrasebookConfirmed();
     if (phraseList != nullptr)

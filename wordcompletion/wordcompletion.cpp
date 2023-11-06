@@ -132,7 +132,7 @@ QString WordCompletion::currentWordList()
 
 bool WordCompletion::isConfigured()
 {
-    bool result = KSharedConfig::openConfig()->hasGroup("Dictionary 0");
+    bool result = KSharedConfig::openConfig()->hasGroup(QLatin1String("Dictionary 0"));
 
     return result;
 }
