@@ -67,7 +67,7 @@ void PreferencesWidget::ok()
 
 void PreferencesWidget::readOptions()
 {
-    KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("Preferences"));
+    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Preferences"));
     if (cg.hasKey("AutomaticSpeak"))
         if (cg.readEntry("AutomaticSpeak") == QLatin1String("Yes"))
             speak = true;
@@ -76,7 +76,7 @@ void PreferencesWidget::readOptions()
     else
         speak = false;
 
-    KConfigGroup cg2(KSharedConfig::openConfig(), QLatin1String("Notification Messages"));
+    KConfigGroup cg2(KSharedConfig::openConfig(), QStringLiteral("Notification Messages"));
     if (cg2.hasKey("AutomaticSave"))
         if (cg2.readEntry("AutomaticSave") == QLatin1String("Yes"))
             save = 0;
@@ -94,13 +94,13 @@ void PreferencesWidget::readOptions()
 
 void PreferencesWidget::saveOptions()
 {
-    KConfigGroup cg(KSharedConfig::openConfig(), QLatin1String("Preferences"));
+    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Preferences"));
     if (speak)
         cg.writeEntry("AutomaticSpeak", "Yes");
     else
         cg.writeEntry("AutomaticSpeak", "No");
 
-    KConfigGroup cg2(KSharedConfig::openConfig(), QLatin1String("Notification Messages"));
+    KConfigGroup cg2(KSharedConfig::openConfig(), QStringLiteral("Notification Messages"));
     if (save == 0)
         cg2.writeEntry("AutomaticSave", "Yes");
     else if (save == 1)
