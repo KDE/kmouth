@@ -170,12 +170,12 @@ msgstr "Mostra la barra dels llibres de &frases"
 #: kmouth.cpp:168 kmouth.cpp:169
 #, kde-format
 msgid "Enables/disables the phrasebook bar"
-msgstr "Activa/desactiva la barra dels llibres de frases"
+msgstr "Activa o desactiva la barra dels llibres de frases"
 
 #: kmouth.cpp:172 kmouth.cpp:173
 #, kde-format
 msgid "Enables/disables the statusbar"
-msgstr "Activa/desactiva la barra d'estat"
+msgstr "Activa o desactiva la barra d'estat"
 
 #: kmouth.cpp:177
 #, kde-format
@@ -967,8 +967,8 @@ msgid ""
 "If you select this check box the words are spell-checked before they are "
 "inserted into the new dictionary."
 msgstr ""
-"Si marqueu esta casella de selecció, es comprovarà l'ortografia abans que "
-"les paraules s'inserisquen al diccionari nou."
+"Si seleccioneu esta casella de selecció, es comprovarà l'ortografia abans "
+"que les paraules s'inserisquen al diccionari nou."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
