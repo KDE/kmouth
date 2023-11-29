@@ -1,13 +1,14 @@
 # translation of kmouth.po to Esperanto
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # David Anema <lassi_surinen@yahoo.ca>, 2004.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2023-03-22 19:14+01\n"
+"PO-Revision-Date: 2023-11-25 09:31+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -20,17 +21,17 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "David Anema"
+msgstr "David Anema,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "lassi_surinen@yahoo.ca"
+msgstr "lassi_surinen@yahoo.ca,okellogg@users.sourceforge.net"
 
 #: configwizard.cpp:38
 #, kde-format
 msgid "Initial Configuration - KMouth"
-msgstr "Komenca Agordo─ KMouth"
+msgstr "Komenca Agordo - KMouth"
 
 #: configwizard.cpp:59
 #, kde-format
@@ -45,7 +46,7 @@ msgstr "Komenca Frazlibro"
 #: configwizard.cpp:105 optionsdialog.cpp:144 optionsdialog.cpp:145
 #, kde-format
 msgid "Word Completion"
-msgstr "Vorto kompletigo"
+msgstr "Vortkompletigo"
 
 #: kmouth.cpp:107
 #, kde-format
@@ -55,12 +56,12 @@ msgstr "&Malfermi kiel historion..."
 #: kmouth.cpp:110 kmouth.cpp:111
 #, kde-format
 msgid "Opens an existing file as history"
-msgstr "Malferma ekzistan dosieron kiel historion"
+msgstr "Malfermas ekzistan dosieron kiel historion"
 
 #: kmouth.cpp:115
 #, kde-format
 msgid "Save &History As..."
-msgstr "Sekurigu &historion kiel..."
+msgstr "Konservi &Historion Kiel..."
 
 #: kmouth.cpp:118 kmouth.cpp:119
 #, kde-format
@@ -70,7 +71,7 @@ msgstr "Sekurigas la aktualan historion kiel..."
 #: kmouth.cpp:123
 #, kde-format
 msgid "&Print History..."
-msgstr "&Presu historion..."
+msgstr "&Presi Historion..."
 
 #: kmouth.cpp:126 kmouth.cpp:127
 #, kde-format
@@ -117,7 +118,7 @@ msgstr ""
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
-msgstr ""
+msgstr "Algluas la enhavon de la tonujo al la aktuala pozicio"
 
 #: kmouth.cpp:144 phrasebook/phrasebookdialog.cpp:290
 #, kde-format
@@ -151,12 +152,12 @@ msgstr ""
 #: kmouth.cpp:155
 #, kde-format
 msgid "&Edit..."
-msgstr "&Redaktu..."
+msgstr "&Redakti..."
 
 #: kmouth.cpp:166
 #, kde-format
 msgid "Show P&hrasebook Bar"
-msgstr "Montru &Frazlibran breton"
+msgstr "Montri &Frazlibran breton"
 
 #: kmouth.cpp:168 kmouth.cpp:169
 #, kde-format
@@ -171,7 +172,7 @@ msgstr "(Mal)ŝaltos la statbreton"
 #: kmouth.cpp:177
 #, kde-format
 msgid "&Configure KMouth..."
-msgstr "&Agordu KMouth-n..."
+msgstr "&Agordi KMouth..."
 
 #: kmouth.cpp:179 kmouth.cpp:180
 #, kde-format
@@ -196,12 +197,12 @@ msgstr "&Forigi"
 #: kmouth.cpp:197 kmouth.cpp:198
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
-msgstr ""
+msgstr "Forigas la aktuale elektitaj frazoj el la historio"
 
 #: kmouth.cpp:202
 #, kde-format
 msgid "Cu&t"
-msgstr "El&tondu"
+msgstr "El&tondi"
 
 #: kmouth.cpp:204 kmouth.cpp:205
 #, kde-format
@@ -224,7 +225,7 @@ msgstr "Kopios la nunajn elektatajn frazojn en la historiujo al la poŝo"
 #: kmouth.cpp:215
 #, kde-format
 msgid "Select &All Entries"
-msgstr "&Elektu ĉiujn frazojn"
+msgstr "&Elekti ĉiujn frazojn"
 
 #: kmouth.cpp:217 kmouth.cpp:218
 #, kde-format
@@ -234,7 +235,7 @@ msgstr "Elektos ĉiujn frazojn en la historiujo"
 #: kmouth.cpp:221
 #, kde-format
 msgid "D&eselect All Entries"
-msgstr ""
+msgstr "Mal&elekti Ĉiujn Enirojn"
 
 #: kmouth.cpp:223 kmouth.cpp:224
 #, kde-format
@@ -299,7 +300,7 @@ msgstr "&Dosiero"
 #: kmouthui.rc:12 phrasebookdialogui.rc:20
 #, kde-format
 msgid "&Edit"
-msgstr "&Redakti"
+msgstr "R&edakti"
 
 #. i18n: ectx: Menu (phrasebooks)
 #: kmouthui.rc:15
@@ -316,7 +317,7 @@ msgstr "A&gordo"
 #: main.cpp:39
 #, kde-format
 msgid "KMouth"
-msgstr "KBuŝo"
+msgstr "KMouth"
 
 #: main.cpp:41
 #, kde-format
@@ -326,7 +327,7 @@ msgstr "Fasado por tajpo-kaj-diro por dirofaraj programoj"
 #: main.cpp:43
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
-msgstr ""
+msgstr "(c) 2002/2003, Gunnar Schmi Dt"
 
 #: main.cpp:47
 #, kde-format
@@ -336,17 +337,17 @@ msgstr "Gunnar Schmi Dt"
 #: main.cpp:47
 #, kde-format
 msgid "Original Author"
-msgstr ""
+msgstr "Origina Aŭtoro"
 
 #: main.cpp:48
 #, kde-format
 msgid "Jeremy Whiting"
-msgstr ""
+msgstr "Jeremy Whiting"
 
 #: main.cpp:48
 #, kde-format
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Aktuala Prizorganto"
 
 #: main.cpp:49
 #, kde-format
@@ -397,11 +398,13 @@ msgstr "Libro"
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
+"Frazlibroj (*.phrasebook);;Plataj Tekstdosieroj (*.txt);;Ĉiuj Dosieroj (*)"
 
 #: phrasebook/phrasebook.cpp:272
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
+"Plataj Tekstdosieroj (*.txt);;Frazlibroj (*.phrasebook);;Ĉiuj Dosieroj (*)"
 
 #: phrasebook/phrasebook.cpp:288 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
@@ -416,7 +419,7 @@ msgstr "Dosiero ekzistas"
 #: phrasebook/phrasebook.cpp:289 wordcompletion/wordcompletionwidget.cpp:210
 #, kde-format
 msgid "&Overwrite"
-msgstr "&Antstataŭigu"
+msgstr "&Antstataŭigi"
 
 #: phrasebook/phrasebook.cpp:305
 #, kde-format
@@ -432,7 +435,7 @@ msgid ""
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 "Via elektata dosiernomo <i>%1</i> havas malsaman finaĵon ol <i>.phrasebook</"
-"i>. Ĉu aldonas <i>.phrasebook</i> al la dosiernomo?"
+"i>. Ĉu vi ŝatas aldoni <i>.phrasebook</i> al la dosiernomo?"
 
 #: phrasebook/phrasebook.cpp:309 phrasebook/phrasebook.cpp:332
 #, kde-format
@@ -502,7 +505,7 @@ msgstr "Aldonas novan frazon"
 #: phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "New Phrase &Book"
-msgstr "Novan &frazlibron"
+msgstr "Novan Frazli&bron"
 
 #: phrasebook/phrasebookdialog.cpp:238 phrasebook/phrasebookdialog.cpp:239
 #, kde-format
@@ -517,7 +520,7 @@ msgstr "Sekurigas la frazlibron en la fiksita disko"
 #: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:252
 #, kde-format
 msgid "&Import..."
-msgstr "&Importu..."
+msgstr "&Importi..."
 
 #: phrasebook/phrasebookdialog.cpp:249 phrasebook/phrasebookdialog.cpp:250
 #: phrasebook/phrasebookdialog.cpp:255 phrasebook/phrasebookdialog.cpp:256
@@ -528,7 +531,7 @@ msgstr "Importas dosieron kaj aldonas ĝian enhavon al la frazlibron"
 #: phrasebook/phrasebookdialog.cpp:260
 #, kde-format
 msgid "I&mport Standard Phrase Book"
-msgstr "I&mportu laŭnorman frazlibron"
+msgstr "I&mporti laŭnorman frazlibron"
 
 #: phrasebook/phrasebookdialog.cpp:261 phrasebook/phrasebookdialog.cpp:262
 #, kde-format
@@ -539,7 +542,7 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "&Export..."
-msgstr "E&ksportu..."
+msgstr "&Eksporti..."
 
 #: phrasebook/phrasebookdialog.cpp:268 phrasebook/phrasebookdialog.cpp:269
 #, kde-format
@@ -587,6 +590,8 @@ msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
+"<qt>Estas nekonservitaj ŝanĝoj.<br />Ĉu vi volas apliki la ŝanĝojn antaŭ ol "
+"fermi la \"frazolibro\"-fenestron aŭ forĵeti la ŝanĝojn?</qt>"
 
 #: phrasebook/phrasebookdialog.cpp:431
 #, kde-format
@@ -606,12 +611,13 @@ msgstr "(nova frazo)"
 #: phrasebook/phrasebookdialog.cpp:646
 #, kde-format
 msgid "Import Phrasebook"
-msgstr "Importu frazlibron"
+msgstr "Importi Frazlibron"
 
 #: phrasebook/phrasebookdialog.cpp:647
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
+"Frazlibroj (*.phrasebook);Plataj Tekstdosieroj (*.txt);Ĉiuj Dosieroj (*)"
 
 #: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:503
 #, kde-format
@@ -625,12 +631,12 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Export Phrase Book"
-msgstr "Eksportu frazlibron"
+msgstr "Eksporti Frazlibron"
 
 #: phrasebook/phrasebookdialog.cpp:689
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
-msgstr ""
+msgstr "Frazlibroj (*.phrasebook)"
 
 #: phrasebook/phrasebookdialog.cpp:696 phraselist.cpp:476
 #, kde-format
@@ -723,7 +729,7 @@ msgid ""
 "and press the speak button for re-speaking."
 msgstr ""
 "Tiu listo enhavas la historion de la diritajn frazojn. Oni povas elekti "
-"frazojn kaj premi la \"Diru\" butonon por rediri."
+"frazojn kaj premi la \"Diri\" butonon por rediri."
 
 #: phraselist.cpp:80
 #, kde-format
@@ -742,12 +748,13 @@ msgstr "Konservi kiel"
 #: phraselist.cpp:481
 #, kde-format
 msgid "Open File as History"
-msgstr "Malfermu dosieron kiel historio"
+msgstr "Malfermi dosieron kiel historio"
 
 #: phraselist.cpp:482
 #, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
+"Ĉiuj Dosieroj (*);;Frazlibroj (*.phrasebook);;Plataj Tekstdosieroj (*.txt)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
 #: preferencesui.ui:21
@@ -776,13 +783,13 @@ msgstr "&Elekto de frazojn en la frazlibro:"
 #: preferencesui.ui:66
 #, kde-format
 msgid "Speak Immediately"
-msgstr "Tuj diru"
+msgstr "Tuj Diri"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
 #: preferencesui.ui:71
 #, kde-format
 msgid "Insert Into Edit Field"
-msgstr "Enmetu en redakta kampo"
+msgstr "Enmeti en redakta kampo"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, closeLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, closeCombo)
@@ -805,13 +812,13 @@ msgstr "Fermo de la &frazlibra redaktofenestro:"
 #: preferencesui.ui:114
 #, kde-format
 msgid "Save Phrase Book"
-msgstr "Konservu frazlibron"
+msgstr "Konservi Frazlibron"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
 #: preferencesui.ui:119
 #, kde-format
 msgid "Discard Changes"
-msgstr "Forĵetu ŝanĝojn"
+msgstr "Forĵeti Ŝanĝojn"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, closeCombo)
 #: preferencesui.ui:124
@@ -829,25 +836,25 @@ msgstr "Teksto-al-diro"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr ""
+msgstr "&Uzi defaŭltan parolsistemon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "&Motoro:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
 #, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "&Voĉo:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "Alternativo"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -881,14 +888,14 @@ msgid ""
 "This check box specifies whether the text is sent as standard input to the "
 "speech synthesizer."
 msgstr ""
-"Tiu markobutono indikas ĉu la teksto sendiĝos kiel ĉefenujo al la dirofaraj "
-"programoj."
+"Tiu markobutono indikas ĉu la teksto sendiĝos kiel ĉefenujo al la parola "
+"sintezilo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:155
 #, kde-format
 msgid "Send the data as standard &input"
-msgstr "Sendu datumojn kiel ĉef&enigujon"
+msgstr "Sendi datumojn kiel ĉef&enigujon"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, characterCodingLabel)
 #. i18n: ectx: property (whatsThis), widget (KComboBox, characterCodingBox)
@@ -1010,7 +1017,7 @@ msgstr "&Lingvo:"
 #: wordcompletion/creationsourceui.ui:16
 #, kde-format
 msgid "C&reate new dictionary:"
-msgstr "&Kreu novan vortaron:"
+msgstr "&Krei novan vortaron:"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
 #: wordcompletion/creationsourceui.ui:22
@@ -1026,7 +1033,7 @@ msgstr ""
 #: wordcompletion/creationsourceui.ui:29
 #, kde-format
 msgid "&Merge dictionaries"
-msgstr "&Unuigu vortarojn"
+msgstr "&Unuigi vortarojn"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mergeButton)
 #: wordcompletion/creationsourceui.ui:32
@@ -1098,7 +1105,7 @@ msgstr ""
 #: wordcompletion/creationsourceui.ui:121
 #, kde-format
 msgid "Create an &empty wordlist"
-msgstr "Kreu &malplenan vortliston"
+msgstr "Krei malpl&enan vortliston"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, emptyButton)
 #: wordcompletion/creationsourceui.ui:124
@@ -1150,7 +1157,7 @@ msgstr "Latin1"
 #: wordcompletion/dictionarycreationwizard.cpp:204
 #, kde-format
 msgid "Merge result"
-msgstr "Unuigu rezulton"
+msgstr "Unuigi rezulton"
 
 #: wordcompletion/dictionarycreationwizard.cpp:206
 #, kde-format
@@ -1246,7 +1253,7 @@ msgstr "Per tiu butono, oni forĵetas la elektatan vortaron."
 #: wordcompletion/wordcompletionui.ui:122
 #, kde-format
 msgid "&Delete Dictionary"
-msgstr "&Forigu vortaro"
+msgstr "&Forigi Vortaron"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, moveUpButton)
 #: wordcompletion/wordcompletionui.ui:138
@@ -1258,7 +1265,7 @@ msgstr "Per tiu butono, oni movas la elektatan vortaron supren."
 #: wordcompletion/wordcompletionui.ui:141
 #, kde-format
 msgid "Move &Up"
-msgstr "Movu s&upren"
+msgstr "Movi S&upren"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, moveDownButton)
 #: wordcompletion/wordcompletionui.ui:157
@@ -1270,7 +1277,7 @@ msgstr "Per tiu butono, oni movas la elektatan vortaron malsupren."
 #: wordcompletion/wordcompletionui.ui:160
 #, kde-format
 msgid "&Move Down"
-msgstr "Movu &Malsupren"
+msgstr "Movi &Malsupren"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, exportButton)
 #: wordcompletion/wordcompletionui.ui:176
@@ -1282,7 +1289,7 @@ msgstr "Per tiu butono, oni eksportas la elektatan vortaron al dosiero."
 #: wordcompletion/wordcompletionui.ui:179
 #, kde-format
 msgid "&Export Dictionary..."
-msgstr "&Eksportu vortaron..."
+msgstr "&Eksporti Vortaron..."
 
 #. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
 #: wordcompletion/wordcompletionui.ui:204
@@ -1318,12 +1325,12 @@ msgstr "sen nomo"
 #: wordcompletion/wordcompletionwidget.cpp:204
 #, kde-format
 msgid "Export Dictionary"
-msgstr "Eksportu vortaron"
+msgstr "Eksporti vortaron"
 
 #: wordcompletion/wordlist.cpp:77
 #, kde-format
 msgid "Creating Word List"
-msgstr "Kreu vortliston"
+msgstr "Krei vortliston"
 
 #: wordcompletion/wordlist.cpp:77 wordcompletion/wordlist.cpp:254
 #, kde-format
