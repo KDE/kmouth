@@ -1,21 +1,21 @@
 # translation of kmouth.po to Slovak
 # Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
 # Richard Fric <Richard.Fric@kdemail.net>, 2006, 2009.
-# Roman Paholik <wizzardsk@gmail.com>, 2015, 2017, 2022.
+# SPDX-FileCopyrightText: 2015, 2017, 2022, 2023 Roman Paholik <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:39+0000\n"
-"PO-Revision-Date: 2022-04-15 19:09+0200\n"
+"PO-Revision-Date: 2023-12-04 17:24+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -420,16 +420,13 @@ msgid "&Overwrite"
 msgstr "&Prepísať"
 
 #: phrasebook/phrasebook.cpp:305
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
+#, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. "
 msgstr ""
 "Vybrali ste meno súboru <i>%1</i>, ktoré má inú príponu ako <i>.phrasebook</"
-"i>. Chcete k názvu pridať príponu <i>.phrasebook</i>?"
+"i>. "
 
 #: phrasebook/phrasebook.cpp:307
 #, kde-format
@@ -456,14 +453,9 @@ msgid "Do Not Add"
 msgstr "Nepridať"
 
 #: phrasebook/phrasebook.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#| "you wish to save in phrasebook format?"
+#, kde-format
 msgid "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-msgstr ""
-"Zadané meno súboru <i>%1</i> má príponu <i>.phrasebook</i>. Chcete ho uložiť "
-"vo formáte knihy frázy?"
+msgstr "Zadané meno súboru <i>%1</i> má príponu <i>.phrasebook</i>. "
 
 #: phrasebook/phrasebook.cpp:330
 #, kde-format
