@@ -47,7 +47,7 @@
 >kmouth</command
 > <arg choice="opt"
 ><replaceable
->nom_fichier</replaceable
+>nom-fichier</replaceable
 ></arg
 > </cmdsynopsis>
 </refsynopsisdiv>
