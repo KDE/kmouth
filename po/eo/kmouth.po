@@ -132,7 +132,7 @@ msgstr ""
 #, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
-msgstr "&Diru"
+msgstr "&Diri"
 
 #: kmouth.cpp:150
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "Malfermos la agordan dialogon"
 #: kmouth.cpp:188 phraselist.cpp:85
 #, kde-format
 msgid "&Speak"
-msgstr "&Diru"
+msgstr "&Diri"
 
 #: kmouth.cpp:189 kmouth.cpp:191
 #, kde-format
