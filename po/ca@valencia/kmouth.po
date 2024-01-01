@@ -90,7 +90,7 @@ msgstr "Ix de l'aplicació"
 #: kmouth.cpp:135
 #, kde-format
 msgid "Cuts the selected section and puts it to the clipboard"
-msgstr "Retalla la secció seleccionada i la posa al porta-retalls"
+msgstr "Retalla la secció seleccionada i la posa a dins del porta-retalls"
 
 #: kmouth.cpp:136
 #, kde-format
@@ -99,15 +99,15 @@ msgid ""
 "text selected in the edit field it is placed it on the clipboard. Otherwise "
 "the selected sentences in the history (if any) are placed on the clipboard."
 msgstr ""
-"Retalla la secció seleccionada i la posa al porta-retalls. Si hi ha cap text "
-"seleccionat en el camp d'edició, este serà ubicat en el porta-retalls. "
-"D'altra manera, les frases seleccionades en l'historial (si n'hi ha cap) "
-"seran ubicades en el porta-retalls."
+"Retalla la secció seleccionada i la posa a dins del porta-retalls. Si hi ha "
+"cap text seleccionat en el camp d'edició, este serà ubicat en el porta-"
+"retalls. D'altra manera, les frases seleccionades en l'historial (si n'hi ha "
+"cap) seran ubicades en el porta-retalls."
 
 #: kmouth.cpp:139
 #, kde-format
 msgid "Copies the selected section to the clipboard"
-msgstr "Copia la secció seleccionada al porta-retalls"
+msgstr "Copia la secció seleccionada a dins del porta-retalls"
 
 #: kmouth.cpp:140
 #, kde-format
@@ -116,10 +116,10 @@ msgid ""
 "in the edit field it is copied to the clipboard. Otherwise the selected "
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
-"Copia la secció seleccionada i la posa al porta-retalls. Si hi ha cap text "
-"seleccionat en el camp d'edició, este serà copiat a dins del porta-retalls. "
-"D'altra manera, les frases seleccionades en l'historial (si n'hi ha cap) "
-"seran ubicades en el porta-retalls."
+"Copia la secció seleccionada i la posa a dins del porta-retalls. Si hi ha "
+"cap text seleccionat en el camp d'edició, este serà copiat a dins del porta-"
+"retalls. D'altra manera, les frases seleccionades en l'historial (si n'hi ha "
+"cap) seran ubicades en el porta-retalls."
 
 #: kmouth.cpp:143 phrasebook/phrasebookdialog.cpp:289
 #, kde-format
@@ -218,7 +218,8 @@ msgid ""
 "Cuts the currently selected phrases from the history and puts them to the "
 "clipboard"
 msgstr ""
-"Retalla les frases seleccionades de l'historial i les posa al porta-retalls"
+"Retalla les frases seleccionades de l'historial i les posa a dins del porta-"
+"retalls"
 
 #: kmouth.cpp:209
 #, kde-format
@@ -228,7 +229,7 @@ msgstr "&Copia"
 #: kmouth.cpp:211 kmouth.cpp:212
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
-msgstr "Copia les frases seleccionades de l'historial al porta-retalls"
+msgstr "Copia les frases seleccionades de l'historial a dins del porta-retalls"
 
 #: kmouth.cpp:215
 #, kde-format
@@ -579,15 +580,15 @@ msgid ""
 "clipboard"
 msgstr ""
 "Retalla les frases seleccionades actualment del llibre de frases i les posa "
-"al porta-retalls"
+"a dins del porta-retalls"
 
 #: phrasebook/phrasebookdialog.cpp:285 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr ""
-"Copia les entrades seleccionades actualment des del llibre de frases al "
-"porta-retalls"
+"Copia les entrades seleccionades actualment des del llibre de frases a dins "
+"del porta-retalls"
 
 #: phrasebook/phrasebookdialog.cpp:296 phrasebook/phrasebookdialog.cpp:297
 #, kde-format
