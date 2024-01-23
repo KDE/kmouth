@@ -237,7 +237,7 @@
       <para
 >En sélectionnant <guilabel
 >Utiliser le service de synthétiseur par défaut</guilabel
->, vous indiquez à &kmouth; d'essayer d'utiliser d'abord le service de synthétiseur vocal avant d'appeler le synthétiseur vocal directement. Si cela réussit, les autres entrées de configuration sur cet onglet sont ignorées. Le service de synthèse vocal est une bibliothèque &Qt; intégrant le synthétiseur vocal dans &Linux; et les systèmes vocaux natifs sur d'autres plate-formes. Sur un système conçu à partir de Debian, vous devez installer les paquets « speech-dispatcher », « libqt5texttospeech5 » et un des modules de synthèse vocale, en général <application
+>, vous indiquez à &kmouth; d'essayer d'utiliser d'abord le service de synthétiseur vocal avant d'appeler le synthétiseur vocal directement. Si cela réussit, les autres entrées de configuration sur cet onglet sont ignorées. Le service de synthèse vocale est une bibliothèque &Qt; intégrant le synthétiseur vocal dans &Linux; et les systèmes vocaux natifs sur d'autres plate-formes. Sur un système conçu à partir de Debian, vous devez installer les paquets « speech-dispatcher », « libqt5texttospeech5 » et un des modules de synthèse vocale, en général <application
 >espeak</application
 >. <note
 ><para
@@ -360,7 +360,7 @@
           <para
 >Créer un nouveau dictionnaire à partir d'un fichier</para>
           <para
->SI vous utilisez cette source &kmouth; vous demandera le fichier en question. Vous pouvez sélectionner soit un fichier &XML;, un fichier de texte usuel ou bien un dictionnaire de complètement créé par&kmouth; ou GOK (le clavier GNOME en écran). Si vous sélectionnez un fichier de texte ou un fichier &XML; la fréquence de chaque mot est déterminée en comptant le nombre de fois qu'il apparaît. De manière optionnelle, vous pouvez comparer la liste des mots avec un dictionnaire OpenOffice.org pour ajouter seulement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
+>Si vous utilisez cette source, &kmouth; vous demandera le fichier en question. Vous pouvez sélectionner soit un fichier &XML;, un fichier de texte usuel ou bien un dictionnaire de complètement créé par&kmouth; ou le clavier GNOME GOK en plein écran). Si vous sélectionnez un fichier de texte ou un fichier &XML; la fréquence de chaque mot est déterminée en comptant le nombre de fois qu'il apparaît. De manière optionnelle, vous pouvez comparer la liste des mots avec un dictionnaire OpenOffice.org pour ajouter seulement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
         </listitem>
         <listitem>
           <para
