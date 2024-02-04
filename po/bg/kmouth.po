@@ -1306,30 +1306,3 @@ msgstr "Обработка на папка..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Проверка на правописа..."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "Избрахте име на файл <i>%1</i>, което има различно разширение от "
-#~ "стандартното <i>.phrasebook</i>."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "Избрахте име на файл <i>%1</i>, което има  разширение <i>.phrasebook</i>."
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Локално"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Уникод"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
