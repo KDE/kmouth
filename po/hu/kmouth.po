@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-07 01:39+0000\n"
-"PO-Revision-Date: 2024-02-13 11:42+0100\n"
+"PO-Revision-Date: 2024-03-07 09:59+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -326,7 +326,7 @@ msgstr "Szövegfelolvasási kezelőfelület beszédszintetizátorokhoz"
 #: main.cpp:41
 #, kde-format
 msgid "(c) 2002/2003, Gunnar Schmi Dt"
-msgstr "(C) Gunnar Schmi Dt, 2002-2003."
+msgstr "© Gunnar Schmi Dt, 2002-2003."
 
 #: main.cpp:45
 #, kde-format
@@ -336,17 +336,17 @@ msgstr "Gunnar Schmi Dt"
 #: main.cpp:45
 #, kde-format
 msgid "Original Author"
-msgstr ""
+msgstr "Eredeti szerző"
 
 #: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
-msgstr ""
+msgstr "Jeremy Whiting"
 
 #: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Jelenlegi karbantartó"
 
 #: main.cpp:47
 #, kde-format
@@ -835,25 +835,25 @@ msgstr "Szövegfelolvasás"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr ""
+msgstr "Alapértelmezett beszédrendszer &használata"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "&Motor:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
 #, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "&Hang:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "Alternatíva"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
