@@ -32,7 +32,7 @@ include(ECMDeprecationSettings)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
     Core
     PrintSupport
     TextToSpeech
