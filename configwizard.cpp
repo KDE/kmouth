@@ -147,3 +147,5 @@ void ConfigWizard::help()
 {
     KHelpClient::invokeHelp(QStringLiteral("Wizard"));
 }
+
+#include "moc_configwizard.cpp"

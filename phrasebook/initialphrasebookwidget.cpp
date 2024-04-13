@@ -141,3 +141,5 @@ void InitialPhraseBookWidget::addChildrenToBook(PhraseBook &book, QStandardItem 
             addChildrenToBook(book, child);
     }
 }
+
+#include "moc_initialphrasebookwidget.cpp"

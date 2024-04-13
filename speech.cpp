@@ -103,3 +103,5 @@ void Speech::processExited(int exitCode, QProcess::ExitStatus exitStatus)
     Q_UNUSED(exitStatus);
     delete this;
 }
+
+#include "moc_speech.cpp"

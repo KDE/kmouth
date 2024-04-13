@@ -695,3 +695,5 @@ void PhraseBookDialog::slotExportPhrasebook()
 //   }
 //   delete printDialog;
 //}
+
+#include "moc_phrasebookdialog.cpp"

@@ -504,3 +504,5 @@ void PhraseList::open(const QUrl &url)
     } else
         KMessageBox::error(this, i18n("There was an error loading file\n%1", url.toDisplayString()));
 }
+
+#include "moc_phraselist.cpp"

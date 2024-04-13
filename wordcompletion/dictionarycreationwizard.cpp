@@ -296,3 +296,5 @@ void CompletionWizardWidget::ok()
         cg.sync();
     }
 }
+
+#include "moc_dictionarycreationwizard.cpp"

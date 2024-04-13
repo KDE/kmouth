@@ -521,3 +521,5 @@ TextToSpeechSystem *KMouthApp::getTTSSystem() const
 {
     return optionsDialog->getTTSSystem();
 }
+
+#include "moc_kmouth.cpp"

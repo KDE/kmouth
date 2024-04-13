@@ -511,3 +511,5 @@ void PhraseBook::insert(const QString &name, const PhraseBook &book)
         *this += PhraseBookEntry((*it).getPhrase(), (*it).getLevel() + 1, (*it).isPhrase());
     }
 }
+
+#include "moc_phrasebook.cpp"

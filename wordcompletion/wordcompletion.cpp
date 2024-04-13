@@ -257,3 +257,5 @@ void WordCompletion::save()
         d->wordsToSave = false;
     }
 }
+
+#include "moc_wordcompletion.cpp"

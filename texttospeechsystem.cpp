@@ -89,3 +89,5 @@ void TextToSpeechSystem::saveOptions(const QString &langGroup)
         }
     }
 }
+
+#include "moc_texttospeechsystem.cpp"

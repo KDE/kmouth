@@ -202,3 +202,5 @@ bool OptionsDialog::isSpeakImmediately()
 {
     return behaviourWidget->isSpeakImmediately();
 }
+
+#include "moc_optionsdialog.cpp"
