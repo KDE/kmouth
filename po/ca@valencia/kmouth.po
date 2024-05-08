@@ -55,7 +55,7 @@ msgstr "Compleció de paraules"
 #: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
-msgstr "O&bri com a historial..."
+msgstr "O&bri com a historial…"
 
 #: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
@@ -65,17 +65,17 @@ msgstr "Obri un fitxer existent com a historial"
 #: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
-msgstr "Guarda l'&historial com a..."
+msgstr "Anomena i guarda l'&historial…"
 
 #: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
-msgstr "Guarda l'historial real com a..."
+msgstr "Anomena i guarda l'historial real…"
 
 #: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
-msgstr "Im&primix l'historial..."
+msgstr "Im&primix l'historial…"
 
 #: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
@@ -160,7 +160,7 @@ msgstr ""
 #: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
-msgstr "&Edita..."
+msgstr "&Edita…"
 
 #: kmouth.cpp:171
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Activa o desactiva la barra d'estat"
 #: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
-msgstr "&Configura KMouth..."
+msgstr "&Configura KMouth…"
 
 #: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
@@ -261,43 +261,43 @@ msgstr "Llest."
 #: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
-msgstr "S'està obrint el fitxer..."
+msgstr "S'està obrint el fitxer…"
 
 #: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
-msgstr "S'està guardant l'historial amb un nom nou..."
+msgstr "S'està guardant l'historial amb un nom nou…"
 
 #: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
-msgstr "S'està imprimint..."
+msgstr "S'està imprimint…"
 
 #: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
-msgstr "S'està eixint..."
+msgstr "S'està eixint…"
 
 #: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
-msgstr "S'està canviant la barra de menús..."
+msgstr "S'està canviant la barra de menús…"
 
 #: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
-msgstr "S'està canviant la barra d'eines..."
+msgstr "S'està canviant la barra d'eines…"
 
 #: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
-msgstr "S'està canviant la barra del llibre de frases..."
+msgstr "S'està canviant la barra del llibre de frases…"
 
 #: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
-msgstr "S'està canviant la barra d'estat..."
+msgstr "S'està canviant la barra d'estat…"
 
 #. i18n: ectx: Menu (file)
 #: kmouthui.rc:5 phrasebookdialogui.rc:6
@@ -521,7 +521,7 @@ msgstr "Guarda el llibre de frases en el disc dur"
 #: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
 #, kde-format
 msgid "&Import..."
-msgstr "&Importa..."
+msgstr "&Importa…"
 
 #: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
 #: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
@@ -544,7 +544,7 @@ msgstr ""
 #: phrasebook/phrasebookdialog.cpp:264
 #, kde-format
 msgid "&Export..."
-msgstr "&Exporta..."
+msgstr "&Exporta…"
 
 #: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
 #, kde-format
@@ -933,8 +933,8 @@ msgid ""
 "If you select this check box the words are spell-checked before they are "
 "inserted into the new dictionary."
 msgstr ""
-"Si seleccioneu esta casella de selecció, es comprovarà l'ortografia abans "
-"que les paraules s'inserisquen al diccionari nou."
+"Si marqueu esta casella de selecció, es comprovarà l'ortografia abans que "
+"les paraules s'inserisquen al diccionari nou."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
@@ -1230,7 +1230,7 @@ msgstr ""
 #: wordcompletion/wordcompletionui.ui:103
 #, kde-format
 msgid "Add D&ictionary..."
-msgstr "Afig un d&iccionari..."
+msgstr "Afig un d&iccionari…"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
 #: wordcompletion/wordcompletionui.ui:119
@@ -1278,7 +1278,7 @@ msgstr "Amb este botó exporteu el diccionari seleccionat a un fitxer."
 #: wordcompletion/wordcompletionui.ui:179
 #, kde-format
 msgid "&Export Dictionary..."
-msgstr "&Exporta el diccionari..."
+msgstr "&Exporta el diccionari…"
 
 #. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
 #: wordcompletion/wordcompletionui.ui:204
@@ -1325,24 +1325,24 @@ msgstr "S'està creant una llista de paraules"
 #: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
-msgstr "S'està analitzant la documentació de KDE..."
+msgstr "S'està analitzant la documentació de KDE…"
 
 #: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
-msgstr "S'estan fusionant diccionaris..."
+msgstr "S'estan fusionant diccionaris…"
 
 #: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
-msgstr "S'està analitzant el fitxer..."
+msgstr "S'està analitzant el fitxer…"
 
 #: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
-msgstr "S'està analitzant el directori..."
+msgstr "S'està analitzant el directori…"
 
 #: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
-msgstr "S'està executant la verificació de l'ortografia..."
+msgstr "S'està executant la verificació de l'ortografia…"
