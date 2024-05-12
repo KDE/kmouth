@@ -36,7 +36,6 @@
 #include "phrasebook.h"
 
 #include <QDebug>
-#include <kwidgetsaddons_version.h>
 
 const int kTextColumn = 0;
 const int kShortcutColumn = 1;

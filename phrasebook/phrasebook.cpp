@@ -36,7 +36,6 @@
 #include <KMessageBox>
 
 #include <QtDebug>
-#include <kwidgetsaddons_version.h>
 
 Phrase::Phrase()
 {
