@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2006-10-06 21:52+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -112,13 +112,13 @@ msgstr ""
 "dipilih dalam medan edit, ia disalin ke dalam klipbod. Jika tidak, ayat yang "
 "dipilih dalam sejarah (jika ada) disalin ke dalam klipbod."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "Menampal kandungan klipbod ke posisi sebenar"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -189,7 +189,7 @@ msgstr "&Tutur"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Menuturkan frasa semasa yang dipilih dalam sejarah"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr ""
@@ -397,7 +397,7 @@ msgstr "Putuskan buku frasa mana yang anda perlu:"
 msgid "Book"
 msgstr "Buku"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -409,7 +409,7 @@ msgstr ""
 "*.txt|Plain Text Files (*.txt)\n"
 "*|All Files"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -421,22 +421,22 @@ msgstr ""
 "*.phrasebook|Phrase Books (*.phrasebook)\n"
 "*|Semua Fail"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Fail %1 sudah wujud. Anda ingin tulis gantikan fail ini?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Fail Wujud"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Tulis Ganti"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -446,22 +446,22 @@ msgstr ""
 "daripada <i>.buku frasa</i>. Anda ingin menambah <i>.buku frasa</i> kepada "
 "nama fail?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "Sambungan Fail"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -470,97 +470,97 @@ msgstr ""
 "Nama fail <i>%1</i> yang anda pilih mempunyai sambungan <i>.buku frasa</i>. "
 "Anda ingin simpan dalam format buku frasa?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Sebagai Buku Frasa"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "Sebagai Teks Biasa"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "Frasa"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "Kekunci Pintas"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Buku Frasa"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "Frasa &Baru"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Tambah frasa baru"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Buku &Frasa Baru"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Menambah buku frasa baru yang di dalamnya buku dan frasa lain boleh "
 "ditempatkan"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Menyimpan buku frasa pada cakera keras"
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "&Import..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Mengimport fail dan menambah kandungannya ke dalam buku frasa"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "&Import Buku Frasa Standard"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "Mengimport buku frasa standard dan menambah kandungannya ke dalam buku frasa"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "&Eksport..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Mengeksport frasa semasa atau buku frasa yang dipilih ke dalam fail"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "Menutup tetingkap"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -569,30 +569,30 @@ msgstr ""
 "Memotong entri semasa yang dipilih dari buku frasa dan meletakkannya dalam "
 "klipbod"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Menyalin entri semasa yang dipilih dari buku frasa ke dalam klipbod"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Menghapuskan entri yang dipilih dari buku frasa"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Teks &frasa:"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "Nama buku &frasa:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>There are unsaved changes.<br>Do you want to apply the changes before "
@@ -605,27 +605,27 @@ msgstr ""
 "perubahan sebelum menutup tetingkap \"phrase book\" atau membuang perubahan "
 "tersebut?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Menutup tetingkap \"Phrase Book\""
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Buku Frasa Baru)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Frasa Baru)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Import Buku Frasa"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -637,7 +637,7 @@ msgstr ""
 "*.txt|Plain Text Files (*.txt)\n"
 "*|All Files"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -646,18 +646,18 @@ msgstr ""
 "Terdapat ralat semasa memuatkan fail\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Eksport Buku Frasa"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&Buku Frasa"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

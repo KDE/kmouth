@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2022-10-16 13:26+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -116,12 +116,12 @@ msgstr ""
 "ще бъде поставен в системния буфер. Ако няма, ще се използва последното "
 "изречение в историята."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "Поставяне съдържанието на системния буфер"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -190,7 +190,7 @@ msgstr "&Изговаряне"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Изговаряне на избраните фрази от историята"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "&Изтриване"
@@ -395,36 +395,36 @@ msgstr "Изберете от кои книги с фрази се нуждае�
 msgid "Book"
 msgstr "Книга"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
 "Книга с фрази (*.phrasebook);;Обикновен текстов файл (*.txt);;Всички файлове "
 "(*)"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
 "Обикновен текстов файл (*.txt);;Книга с фрази (*.phrasebook);;Всички файлове "
 "(*)"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Вече има файл \"%1\". Искате ли да бъде презаписан?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Файлът съществува"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Презапис"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -434,22 +434,22 @@ msgstr ""
 "стандартното <i>.phrasebook</i>. Искате ли да бъде добавено стандартното "
 "разширение <i>.phrasebook</i> към името на файла?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "Файлово разширение"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr "Добавяне"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr "Без добавяне"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -459,96 +459,96 @@ msgstr ""
 "phrasebook</i>. Искате ли да данните да бъдат записани във формат на книга с "
 "фрази?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Като книга с фрази"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "Като обикновен текст"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "Фраза"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "Бърз клавиш"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Книга с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "Нова &фраза"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Добавяне на нова фраза"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Нова &книга с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Добавяне на нова книга с фрази, в която могат да се поставят фрази и други "
 "книги"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Запис на книгата с фрази на диска"
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "&Внасяне..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Внасяне на файл и добавяне на съдържанието му към книгата с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "В&насяне на стандартна книга с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "Внасяне на стандартна книга с фрази и добавяне към книгата с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "&Изнасяне..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Изнасяне на избраните фрази или книги с фрази във файл"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "Затваряне на прозореца"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -556,30 +556,30 @@ msgid ""
 msgstr ""
 "Изрязване на избраните елементи от списъка и поставяне в системния буфер"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Копиране на избраните елементи от списъка в системния буфер"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Изтриване на избраните елементи от книгата с фрази"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Т&екст на фразата:"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "&Име на книгата с фрази:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -588,34 +588,34 @@ msgstr ""
 "<qt>Незаписани промени.<br />Искате ли промените да бъдат записани преди да "
 "затворите книгата с фрази или да бъдат отхвърлени?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Затваряне на прозореца \"Книга с фрази\""
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Нова книга с фрази)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Нова фраза)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Внасяне на книга с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
 "Книга с фрази (*.phrasebook);Обикновен текстов файл (*.txt);Всички файлове "
 "(*)"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -624,17 +624,17 @@ msgstr ""
 "Грешка при зареждане на файла\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Изнасяне на книга с фрази"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Книга с фрази (*.phrasebook);;Всички файлове"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

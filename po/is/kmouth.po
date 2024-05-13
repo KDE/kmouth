@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2009-07-28 20:08+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -120,13 +120,13 @@ msgstr ""
 "textasvæðinu er hann afritaður yfir á klippispjaldið. Annars er valda "
 "setningin í ferliskránni (ef nokkur) afrituð yfir á klippispjaldið."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "Límir innihaldi klemmuspjaldsins á núverandi stað"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -196,7 +196,7 @@ msgstr "&Tala"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Segir núverandi setningu í sögunni"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "E&yða"
@@ -402,7 +402,7 @@ msgstr "Vinsamlegast veldu hvaða setningabók þú vilt:"
 msgid "Book"
 msgstr "Bók"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -414,7 +414,7 @@ msgstr ""
 "*.txt|Venjulegar textaskrár (*.txt)\n"
 "*|Allar skrár"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -426,22 +426,22 @@ msgstr ""
 "*.phrasebook|Setningabækur (*.phrasebook)\n"
 "*|Allar skrár"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Skráin %1 er þegar til staðar. Viltu skrifa yfir hana?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Skrá þegar til staðar"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "Skr&ifa yfir"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -450,22 +450,22 @@ msgstr ""
 "Valið skráarheiti<i>%1</i> hefur aðra endingu <i>.phrasebook</i>. Viltu bæta "
 "<i>.phrasebook</i> við heitið?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "Skráarending"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr "Bæta við"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ekki bæta við"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -474,96 +474,96 @@ msgstr ""
 "Valið skráarheiti <i>%1</i> hefur endinguna <i>.phrasebook</i>. Viltu vista "
 "hana á setningarbókarsniði?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Sem setningabók"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "Sem texti"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "Setning"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "Flýtihnappur"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Setningabók"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "&Ný setning"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Bætir við nýrri setningu"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Ný setninga&bók"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Bætir við nýrri setningabók sem hægt er að setja aðrar bækur og setningar í"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Vistar setninganókina á harða diskinn."
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "Fl&ytja inn..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Flytur inn skrá og bætir innihaldi hennar við setningabókina"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "Flytja &inn staðlaða setningabók"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "Flytur inn staðlaða setningabók og bætir innihaldi hennar við setningabókina"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "&Flytja út..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Flytur út valdar setningar eða setningabækur í skrá"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "Lokar glugganum"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -571,30 +571,30 @@ msgid ""
 msgstr ""
 "Klippir valdar færslur út úr setningabókinni og setur þær á klippispjaldið"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Afritar valdar færslur í setningabókinni yfir á klippispjaldið"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Eyðir völdum færslum úr setningabókinni"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Te&xti í setningunni:"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "Heiti setninga&bókarinnar:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -603,27 +603,27 @@ msgstr ""
 "<qt>Breytingar hafa ekki verið vistaðar.<br />Viltu bæta við breytingunum "
 "áður en þú lokar \"setningabókar\"-glugganum eða henda þeim?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Loka \"setningabók\" "
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Ný setningabók)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Ný setning)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Flytja inn setningabók"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -635,7 +635,7 @@ msgstr ""
 "*.txt|Venjulegar textaskrár (*.txt)\n"
 "*|Allar skrár"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -644,18 +644,18 @@ msgstr ""
 "Það kom upp villa við lestur skráarinnar\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Flytja út setningabók"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Se&tningabækur"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2021-08-21 16:25+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -110,13 +110,13 @@ msgid ""
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "क्लिपबोर्ड अवयवों को सही स्थान पर चिपकाता है"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -183,7 +183,7 @@ msgstr "बोलें (&S)"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "इतिहास में वर्तमान चयनित वाक्यांश को बोलता है"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "मिटाएँ (&D)"
@@ -389,7 +389,7 @@ msgstr ""
 msgid "Book"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -401,7 +401,7 @@ msgstr ""
 "*.phrasebook|फ़्रेजबुक्स (*.phrasebook)\n"
 "*.txt|सादा पाठ फ़ाइलें (*.txt)"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -413,145 +413,145 @@ msgstr ""
 "*.phrasebook|फ़्रेजबुक्स (*.phrasebook)\n"
 "*.txt|सादा पाठ फ़ाइलें (*.txt)"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "As Phrasebook"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Book"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, fuzzy, kde-format
 #| msgid "Save Phrase Book"
 msgid "New Phrase &Book"
 msgstr "वाक्यांश पुस्तक सहेजें"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, fuzzy, kde-format
 #| msgid "Initial Phrase Book"
 msgid "I&mport Standard Phrase Book"
 msgstr "आरंभिक फ्रेज बुक"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, fuzzy, kde-format
 #| msgid "&Edit..."
 msgid "&Export..."
 msgstr "संपादन... (&E)"
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, fuzzy, kde-format
 #| msgid "Speaks the currently selected phrases in the history"
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "इतिहास में वर्तमान चयनित वाक्यांश को बोलता है"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cuts the currently selected phrases from the history and puts them to the "
@@ -561,7 +561,7 @@ msgid ""
 "clipboard"
 msgstr "वर्तमान में चयनित वाक्यांशों को इतिहास से काटता है और उन्हें क्लिपबोर्ड में रखता है"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, fuzzy, kde-format
 #| msgid ""
 #| "Copies the currently selected phrases from the history to the clipboard"
@@ -569,56 +569,56 @@ msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "वर्तमान में चयनित वाक्यांशों को इतिहास से नक़ल कर क्लिपबोर्ड में रखता है"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, fuzzy, kde-format
 #| msgid "Deletes the currently selected phrases from the history"
 msgid "Deletes the selected entries from the phrase book"
 msgstr "इतिहास में वर्तमान चयनित वाक्यांश को मिटाता है"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "वाक्यांश का पाठ (&p):"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, fuzzy, kde-format
 #| msgid "Text of the &phrase:"
 msgid "Name of the &phrase book:"
 msgstr "वाक्यांश का पाठ (&p):"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, fuzzy, kde-format
 #| msgid "Closing the phrase &book edit window:"
 msgid "Closing \"Phrase Book\" Window"
 msgstr "वाक्यांश पुस्तक संपादन विंडो बन्द करना: (&b)"
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, fuzzy, kde-format
 #| msgid "Save Phrase Book"
 msgid "(New Phrase Book)"
 msgstr "वाक्यांश पुस्तक सहेजें"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid "Initial Phrase Book"
 msgid "Import Phrasebook"
 msgstr "आरंभिक फ्रेज बुक"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid ""
 #| "*|All Files\n"
@@ -630,7 +630,7 @@ msgstr ""
 "*.phrasebook|फ़्रेजबुक्स (*.phrasebook)\n"
 "*.txt|सादा पाठ फ़ाइलें (*.txt)"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -639,19 +639,19 @@ msgstr ""
 "फ़ाइल लोड करने में त्रुटि हुई\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Export Phrase Book"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "वाक्यांश पुस्तिकाएँ (&P)"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

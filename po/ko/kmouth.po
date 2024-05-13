@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2023-03-01 02:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -118,12 +118,12 @@ msgstr ""
 "보드에 복사합니다. 선택하지 않았을 경우, 과거 기록에 저장되었던 문장이 클립보"
 "드에 복사됩니다."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "현재 위치에 클립보드 내용 붙여넣기"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -191,7 +191,7 @@ msgstr "읽기(&S)"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "과거 기록에서 현재 선택된 어구를 발음"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "삭제(&D)"
@@ -395,34 +395,34 @@ msgstr "필요한 단어장을 선택하십시오:"
 msgid "Book"
 msgstr "책"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr "단어장 (*.phrasebook);;일반 텍스트 파일 (*.txt);;모든 파일 (*)"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr "일반 텍스트 파일 (*.txt);;단어장 (*.phrasebook);;모든 파일 (*)"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr ""
 "파일 %1이(가) 이미 존재합니다. 덮어쓰시겠습니까?|/|파일 %1$[이가 %1] 이미 존"
 "재합니다. 덮어쓰시겠습니까?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "파일이 존재함"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "덮어쓰기(&O)"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -431,22 +431,22 @@ msgstr ""
 "선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>이 아닙니다. 파일 이"
 "름에 <i>.phrasebook</i>을 덧붙이시겠습니까?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "파일 확장자"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr "추가하지 않기"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -455,124 +455,124 @@ msgstr ""
 "선택한 파일 이름 <i>%1</i>의 확장자가 <i>.phrasebook</i>입니다. 단어장 형식으"
 "로 저장하시겠습니까?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "단어장으로"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "일반 텍스트로"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "구문"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "단축키"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "단어장"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "새 구문(&N)"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "새 구문을 추가합니다"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "새 단어장(&B)"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "하위 단어장이나 단어를 추가할 수 있는 단어장 추가"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "단어장을 하드디스크에 저장합니다"
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "가져오기(&I)..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "파일을 가져오고 내용을 단어장에 추가합니다"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "표준 단어장 가져오기(&M)"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "표준 단어장을 가져와서 현재 단어장에 합치기"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "내보내기(&E)..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "현재 선택한 구문이나 단어장을 파일로 내보냅니다"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "창을 닫습니다"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
 msgstr "현재 선택한 항목을 단어장에서 잘라내고 클립보드에 붙입니다"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "현재 선택한 항목을 단어장에서 클립보드에 복사합니다"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "현재 선택한 항목을 단어장에서 삭제합니다"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "어구의 텍스트(&P):"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "단어장의 이름(&P):"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -581,32 +581,32 @@ msgstr ""
 "<qt>저장하지 않은 변경 사항이 있습니다.<br />\"단어장\" 창을 닫기 전에 변경 "
 "사항을 저장하거나 무시하시겠습니까?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "\"단어장\" 창 닫기"
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(새 단어장)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(새 구문)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "단어장 가져오기"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr "단어장 (*.phrasebook);일반 텍스트 파일 (*.txt);모든 파일 (*)"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -615,17 +615,17 @@ msgstr ""
 "파일을 불러오는 중 오류가 발생했습니다:\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "단어장 내보내기"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "단어장 (*.phrasebook)"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

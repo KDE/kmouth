@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2022-11-13 00:15+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -115,12 +115,12 @@ msgstr ""
 "campo di modifica, viene copiato negli appunti. Altrimenti le frasi "
 "selezionate nella cronologia (se ce ne sono) sono messe negli appunti."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "Incolla i contenuti degli appunti alla posizione attuale"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -191,7 +191,7 @@ msgstr "&Pronuncia"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "Pronuncia le frasi attualmente selezionate nella cronologia"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "&Elimina"
@@ -397,34 +397,34 @@ msgstr "Decidi di quali frasari hai bisogno:"
 msgid "Book"
 msgstr "Libro"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
 "Frasari (*.phrasebook);;File di testo semplice (*.txt);;Tutti i file (*)"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
 "File di testo semplice (*.txt);;Frasari (*.phrasebook);;Tutti i file (*)"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "Il file %1 esiste già. Vuoi sovrascriverlo?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "Il file esiste"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&Sovrascrivi"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -433,22 +433,22 @@ msgstr ""
 "Il tuo nome file selezionato <i>%1</i> ha un'estensione diversa da <i>."
 "phrasebook</i>. Vuoi aggiungere <i>.phrasebook</i> al nome file?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "Estensione file"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr "Aggiungi"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr "Non aggiungere"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -457,96 +457,96 @@ msgstr ""
 "Il tuo nome file scelto <i>%1</i> ha l'estensione <i>.phrasebook</i>. Vuoi "
 "salvarlo nel formato phrasebook?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "Come frasario"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "Come testo semplice"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "Frase"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "Scorciatoia"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "Frasario"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "&Nuova frase"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "Aggiunge una nuova frase"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "Nuovo &frasario"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 "Aggiungi un nuovo frasario nel quale possano essere inseriti altri frasari e "
 "frasi"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "Salva il frasario sul disco rigido"
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "&Importa..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "Importa un file e aggiunge il suo contenuto al frasario"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "I&mporta frasario standard"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "Importa un frasario standard e ne aggiunge i contenuti al frasario"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "&Esporta..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "Esporta le frasi o frasari attualmente selezionati in un file"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "Chiude la finestra"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -554,30 +554,30 @@ msgid ""
 msgstr ""
 "Taglia le voci attualmente selezionate dal frasario e le mette negli appunti"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "Copia le voci attualmente selezionate dal frasario agli appunti"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "Cancella le voci originali dal frasario"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "Testo della &frase:"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "Nome del &frasario:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -586,32 +586,32 @@ msgstr ""
 "<qt>Ci sono modifiche non salvate.<br/>Vuoi applicare le modifiche prima di "
 "chiudere la finestra «frasario» o le vuoi scartare?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "Chiusura finestra «Frasario»"
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(Nuovo frasario)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(Nuova frase)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "Importa frasario"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr "Frasari (*.phrasebook);File di testo semplice (*.txt);Tutti i file (*)"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -620,17 +620,17 @@ msgstr ""
 "Si è verificato un errore durante il caricamento del file\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "Esporta frasario"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Phrase Books (*.phrasebook)"
 msgstr "Frasari (*.phrasebook)"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"

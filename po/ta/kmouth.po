@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2005-03-09 20:55-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -123,13 +123,13 @@ msgstr ""
 "அல்லது தேர்ந்தெடுக்கப்பட்ட வாக்கியத்திற்கான சரித்திரம் ஏதேனும் இருந்தால் அவை "
 "இடைநிலைப்பலகையில் நகலெடுக்கப்படும்."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "இடைநிலைபலகையின் உள்ளடக்கத்தை சரியான இடத்தில் ஒட்டும்"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -199,7 +199,7 @@ msgstr "பேசு"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "சரித்திரத்தில் நடப்பில் தேர்ந்தெடுக்கப்பட்ட சொற்றொடரை கூறும்"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr ""
@@ -409,7 +409,7 @@ msgstr "எந்த சொற்றொடர் கையேடு வேண்
 msgid "Book"
 msgstr "புத்தகம்"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -421,7 +421,7 @@ msgstr ""
 "*.txt|Plain Text Files (*.txt)\n"
 "*|All Files"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -433,22 +433,22 @@ msgstr ""
 "*.சொற்றொடர் கையெடு|சொற்றொடர் கையேடுகள் (*.சொற்றொடர் கையேடு)\n"
 "*|All Files"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "%1 கோப்பு உள்ளது. அதை மேலெழுத வேண்டுமா?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "கோப்பு ஏற்கனவே உள்ளது"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "&மேல் எழுது"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -457,22 +457,22 @@ msgstr ""
 "நீங்கள் தேர்ந்தெடுத்த கோப்பு பெயர் %1 சொற்றொடர் .phrasebook வேறு விரிவாக்கம் கொண்டுள்ளது. ."
 "phrasebook ஐ கோப்பில் சேர்க்க நீங்கள் விரும்புகிறீர்களா?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "கோப்பு விரிவுகள்"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -481,98 +481,98 @@ msgstr ""
 "நீங்கள் தேர்ந்தெடுத்த கோப்பு பெயர் <i>%1</i> சொற்றொடர்<i>.phrasebook</i>  என விரிவாக்கம் "
 "கொண்டுள்ளது. .phrasebook  வடிவத்தை சேமிக்க நீங்கள் விரும்புகிறீர்களா?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "சொற்றொடர் கையேடாக"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "சாதா உரை "
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "வாக்கியம்"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "குறுக்குவழி"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "வாக்கிய புத்தகம்"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "புதிய வாக்கியம்"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "புதிய வாக்கியத்தை சேர்க்கவும்"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "New Phrase &Book"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "புதிய சொற்றொடர் கையேட்டை சேர்க்கும் ,அதில் மற்ற சொற்றொடரும் கையேடும் வைக்க இயலும்"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "வாக்கியத்தை  சேமி  "
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "இறக்குமதி..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "ஒரு கோப்பினை இறக்குமதி செய்து அதன் உள்ளடக்கங்களை சொற்றொடர் கையேட்டுடன் சேர்க்கும்"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "இறக்குமதி நிரந்தரவாக்கிய புத்தகம் "
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 "ஒரு இயல்பு சொற்றொடர் கையேட்டை இறக்குமதி செய்து அதன் உள்ளடக்கங்களை சொற்றொடர் கையேட்டுடன் "
 "சேர்க்கும்"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "ஏற்றுமதி..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr ""
 "நடப்பில் தேர்ந்தெடுக்கப்பட்ட சொற்றொடரை(களை) அல்லது சொற்றொடர் கையேடை(களை) ஒரு கோப்பிற்குள் "
 "ஏற்றுமதி செய்யும்"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "சாளரத்தை மூடு "
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
@@ -581,7 +581,7 @@ msgstr ""
 "நடப்பில் தேர்ந்தெடுக்கப்பட்ட உள்ளீடுகளை சொற்றொடர் கையேட்டிலிருந்து வெட்டி இடைநிலைப்பலகையில் "
 "போடும்"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
@@ -589,24 +589,24 @@ msgstr ""
 "நடப்பில் தேர்ந்தெடுக்கப்பட்ட உள்ளீட்டை சொற்றொடர் கையேட்டிலிருந்து இடைநிலைப்பலகைக்கு "
 "நகலெடுக்கும்"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "தேர்ந்தெடுக்கப்பட்ட உள்ளீடுகளை சொற்றொடர் கையேட்டிலிருந்து அழிக்கும்"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "வாக்கியத்தின் உரை :"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "வாக்கிய புத்தகத்தன் பெயர்:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>There are unsaved changes.<br>Do you want to apply the changes before "
@@ -618,27 +618,27 @@ msgstr ""
 "<qt>சேமிக்கப்படாத மாற்றங்கள் உள்ளது. <br>இந்த மாற்றங்களை \"சொற்றொடர் புத்தகம்\" சாளரத்தை "
 "மூடுமுன் சேமிக்கலாமா அல்லது நிராகரிக்கலாமா?</qt?"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "மூடு\"வாக்கியப் புத்தகம்\" சாளரம்"
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "([புதிய சொற்றொடர் &புத்தகம்)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(புதிய சொற்றொடர்)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "இறக்குமதி "
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -650,7 +650,7 @@ msgstr ""
 "*.txt|Plain Text Files (*.txt)\n"
 "*|All Files"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -659,18 +659,18 @@ msgstr ""
 "கோப்பு ஏற்றலில் பிழை\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "சொற்றொடர் கையேட்டை ஏற்றுமதி செய்"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "வாக்கிய புத்தகம் "
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
