@@ -7,8 +7,8 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 
 project(kmouth VERSION ${RELEASE_SERVICE_VERSION})
-set(QT_REQUIRED_VERSION "6.4.0")
-set(KF_MIN_VERSION "5.240.0")
+set(QT_REQUIRED_VERSION "6.6.0")
+set(KF_MIN_VERSION "6.3.0")
 
 
 if(NOT MSVC)
@@ -59,7 +59,7 @@ ecm_setup_version(${kmouth_VERSION}
 )
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
-ecm_set_disabled_deprecation_versions(QT 6.6  KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.7  KF 6.4.0)
 
 add_subdirectory( doc )
 add_subdirectory( icons )
