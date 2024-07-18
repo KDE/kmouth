@@ -16,8 +16,6 @@ apps:
         command: usr/bin/kmouth
         plugs:
         - audio-record
-        command-chain:
-        - snap/command-chain/desktop-launch6
 slots:
     session-dbus-interface:
         interface: dbus
@@ -49,14 +47,13 @@ parts:
         - libspeechd2
         - libaudio2
         - speech-dispatcher
-        - oxygen-sounds
         - speech-dispatcher-audio-plugins
         - speech-dispatcher-espeak
         - speech-dispatcher-espeak-ng
         - espeakup
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
-        - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        - -DCMAKE_BUILD_TYPE=Release
         - -DQT_MAJOR_VERSION=6
         - -DBUILD_WITH_QT6=ON
         - -DBUILD_TESTING=OFF
@@ -68,15 +65,14 @@ parts:
         - -DCMAKE_INSTALL_RUNSTATEDIR=/run
         - -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
         - -DCMAKE_VERBOSE_MAKEFILE=ON
-        - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET
+        - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
         - --log-level=STATUS
-        - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET
+        - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
         prime:
         - -usr/lib/*/cmake/*
         - -usr/include/*
         - -usr/share/ECM/*
         - -usr/share/man/*
-        - -usr/share/icons/breeze-dark*
         - -usr/bin/X11
         - -usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
@@ -88,9 +84,10 @@ parts:
         build-snaps:
         - core22
         - kf6-core22
+        - qt-common-themes
         override-prime: |
             set -eux
-            for snap in "core22" "kf6-core22"; do
+            for snap in "core22" "kf6-core22" "qt-common-themes"; do
                 cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
             done
 
