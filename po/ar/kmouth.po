@@ -5,26 +5,26 @@
 # Ammar Tabbaa <atabba@kacst.edu.sa>, 2004.
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
-"PO-Revision-Date: 2007-10-14 15:30+0000\n"
-"Last-Translator: Youssef Chahibi <chahibi@gmail.com>\n"
-"Language-Team: <en@li.org>\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
+"PO-Revision-Date: 2024-05-02 12:10+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #, fuzzy, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Mohamed SAAD محمد سعد"
+msgstr "زايد السعيدي"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -118,12 +118,12 @@ msgstr ""
 "فإنَّه يتم نسخه في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المُنتقاة في التَّأريخ "
 "(إن وُجدت) يتم نسخها في حافظة القُصاصات."
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 msgid "Pastes the clipboard contents to current position"
 msgstr "يُلصِق محتويات حافظة القُصاصات عند الموضع الحاليّ"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -131,7 +131,7 @@ msgid ""
 msgstr "يُلصِق محتويات حافظة القُصاصات عند الموضع الحاليّ للمؤشر داخل حقل التَّحرير."
 
 #: kmouth.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Start speaking"
 msgid "&Speak"
 msgstr "&نُطق"
@@ -191,7 +191,7 @@ msgstr "&نُطق"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "ينطق التَّعابير المنتقاة حالياً بالتَّأريخ"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "ا&حذف"
@@ -245,7 +245,7 @@ msgstr "يُزيلُ إنتقاء كافة التَّعابير في التَّ�
 
 #: kmouth.cpp:243 kmouth.cpp:262 kmouth.cpp:361 kmouth.cpp:370 kmouth.cpp:387
 #: kmouth.cpp:434 kmouth.cpp:448 kmouth.cpp:462 kmouth.cpp:476
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "The job is done"
 msgid "Ready."
 msgstr "جاهز."
@@ -266,10 +266,10 @@ msgid "Printing..."
 msgstr "جاري الطِّباعة..."
 
 #: kmouth.cpp:392
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
-msgstr "جاري الخروج..."
+msgstr "يخرج…"
 
 #: kmouth.cpp:427
 #, fuzzy, kde-format
@@ -301,7 +301,7 @@ msgstr "&ملف"
 #: kmouthui.rc:12 phrasebookdialogui.rc:20
 #, fuzzy, kde-format
 msgid "&Edit"
-msgstr "&حرّر"
+msgstr "ت&حرير"
 
 #. i18n: ectx: Menu (phrasebooks)
 #: kmouthui.rc:15
@@ -336,24 +336,24 @@ msgid "Gunnar Schmi Dt"
 msgstr "جونر"
 
 #: main.cpp:45
-#, kde-format
+#, fuzzy, kde-format
 msgid "Original Author"
-msgstr ""
+msgstr "المؤلف الأصلي"
 
 #: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
-msgstr ""
+msgstr "Jeremy Whiting"
 
 #: main.cpp:46
-#, kde-format
+#, fuzzy, kde-format
 msgid "Current Maintainer"
-msgstr ""
+msgstr "المنسّق الحالي"
 
 #: main.cpp:47
 #, fuzzy, kde-format
 msgid "Olaf Schmidt"
-msgstr "أولاف شميت"
+msgstr "Olaf Schmidt"
 
 #: main.cpp:47
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "ملف التَّأريخ الواجب فتحه"
 #: optionsdialog.cpp:122
 #, fuzzy, kde-format
 msgid "Configuration"
-msgstr "إعدادات"
+msgstr "الضّبط"
 
 #: optionsdialog.cpp:133
 #, kde-format
@@ -391,11 +391,11 @@ msgid "Please decide which phrase books you need:"
 msgstr ""
 
 #: phrasebook/initialphrasebookwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
 msgid "Book"
-msgstr ""
+msgstr "كتاب"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
@@ -403,7 +403,7 @@ msgstr ""
 "*.phrasebook|دفاتر تعابير (*.phrasebook)\n"
 "*.txt|ملفات نص خام (*.txt)"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
@@ -411,195 +411,195 @@ msgstr ""
 "*.phrasebook|دفاتر تعابير (*.phrasebook)\n"
 "*.txt|ملفات نص خام (*.txt)"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
-msgstr ""
+msgstr "الملفّ %1 موجود بالفعل. أتريد الكتابة فوقه؟"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
-#, kde-format
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
+#, fuzzy, kde-format
 msgid "File Exists"
-msgstr ""
+msgstr "الملف موجود"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
-msgstr ""
+msgstr "ا&ستبدل"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
-msgstr ""
+msgstr "امتداد الملفّ"
+
+#: phrasebook/phrasebook.cpp:316
+#, fuzzy, kde-format
+msgid "Add"
+msgstr "أضف"
 
 #: phrasebook/phrasebook.cpp:317
-#, kde-format
-msgid "Add"
-msgstr ""
-
-#: phrasebook/phrasebook.cpp:318
-#, kde-format
+#, fuzzy, kde-format
 msgid "Do Not Add"
-msgstr ""
+msgstr "لا تضف"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
 "wish to save in phrasebook format?"
 msgstr ""
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, fuzzy, kde-format
 msgid "As Phrasebook"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr ""
 
+#: phrasebook/phrasebookdialog.cpp:92
+#, kde-format
+msgid "Phrase"
+msgstr "عبارة"
+
 #: phrasebook/phrasebookdialog.cpp:93
 #, fuzzy, kde-format
-msgid "Phrase"
-msgstr "&دفاتر تعابير"
-
-#: phrasebook/phrasebookdialog.cpp:94
-#, kde-format
 msgid "Shortcut"
-msgstr ""
+msgstr "الاختصار"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, fuzzy, kde-format
 msgid "Phrase Book"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, fuzzy, kde-format
 msgid "New Phrase &Book"
 msgstr "حفظ دفتر التَّعابير"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
-#, kde-format
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
+#, fuzzy, kde-format
 msgid "&Import..."
-msgstr ""
+msgstr "ا&ستورد..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, fuzzy, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "دفتر التَّعابير الأوليّ"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, fuzzy, kde-format
 msgid "&Export..."
-msgstr "&تحرير..."
+msgstr "&صدّر..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, fuzzy, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "ينطق التَّعابير المنتقاة حالياً بالتَّأريخ"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, fuzzy, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
 msgstr "يقُص التَّعابير المنتقاة حاليا من التَّأريخ ويضعها في حافظة القُصاصات"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, fuzzy, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "ينسخ التَّعابير المنتقاة حالياً من التَّأريخ باتجاه حافظة القُصاصات"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, fuzzy, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "يحذف مُنتقى من تاريخ"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "نص &التَّعبير:"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, fuzzy, kde-format
 msgid "Name of the &phrase book:"
 msgstr "نص &التَّعبير:"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, fuzzy, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "إغلاق نافذة تحرير &دفتر التَّعابير:"
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, fuzzy, kde-format
 msgid "(New Phrase Book)"
 msgstr "حفظ دفتر التَّعابير"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr ""
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 msgid "Import Phrasebook"
 msgstr "دفتر التَّعابير الأوليّ"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
@@ -607,7 +607,7 @@ msgstr ""
 "*.phrasebook|دفاتر تعابير (*.phrasebook)\n"
 "*.txt|ملفات نص خام (*.txt)"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -616,18 +616,18 @@ msgstr ""
 "طرأ خطأ عند تعبئة ملف\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 msgid "Export Phrase Book"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "&دفاتر تعابير"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
@@ -727,7 +727,7 @@ msgstr ""
 #: phraselist.cpp:477
 #, fuzzy, kde-format
 msgid "Save As"
-msgstr "احفظ كـ"
+msgstr "احفظ كَ‍"
 
 #: phraselist.cpp:484
 #, kde-format
@@ -830,21 +830,21 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
-#, kde-format
+#, fuzzy, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "المحرّك:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
-#, kde-format
+#, fuzzy, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "الصّوت"
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "بديل"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -1088,7 +1088,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
-msgstr "القاموس"
+msgstr "الدّليل"
 
 #: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
@@ -1107,7 +1107,7 @@ msgstr ""
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
-msgstr ""
+msgstr "قائمة خالية"
 
 #: wordcompletion/dictionarycreationwizard.cpp:172
 #, fuzzy, kde-format
@@ -1115,10 +1115,10 @@ msgid "KDE Documentation"
 msgstr " من توثيق &KDE"
 
 #: wordcompletion/dictionarycreationwizard.cpp:294
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
-msgstr ""
+msgstr "المبدئيّ"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/kdedocsourceui.ui:22
@@ -1254,9 +1254,9 @@ msgstr "اللُّغة"
 
 #: wordcompletion/wordcompletionwidget.cpp:95
 #: wordcompletion/wordcompletionwidget.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgid "without name"
-msgstr "Mohamed SAAD محمد سعد"
+msgstr "بلا اسم"
 
 #: wordcompletion/wordcompletionwidget.cpp:202
 #, fuzzy, kde-format

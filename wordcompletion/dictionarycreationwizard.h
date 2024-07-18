@@ -28,7 +28,6 @@
 #include "ui_creationsourcedetailsui.h"
 #include "ui_creationsourceui.h"
 #include "ui_kdedocsourceui.h"
-#include <kio_version.h>
 
 class CompletionWizardWidget;
 class KComboBox;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 01:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:35+0000\n"
 "PO-Revision-Date: 2009-06-03 15:22+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -117,13 +117,13 @@ msgstr ""
 "សម្រួល វា​ត្រូវ​បាន​ចម្លង​ទៅ​កាន់​ក្តារ​​តម្បៀត​​ខ្ទាស់ ។ មិន​ដូច្នោះ​ទេ ប្រយោគ​ដែល​បាន​ជ្រើស​​នៅ​ក្នុង​ប្រវត្តិ (បើ​"
 "មាន) ត្រូវ​បាន​ចម្លង​ទៅ​កាន់​ក្តារ​តម្បៀត​ខ្ទាស់ ។"
 
-#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:287
+#: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
 #| msgid "Pastes the clipboard contents to actual position"
 msgid "Pastes the clipboard contents to current position"
 msgstr "បិទ​ភ្ជាប់​មាតិកា​ក្ដារ​តម្បៀត​ខ្ទាស់ ទៅ​កាន់​ទីតាំង​ពិត​មួយ"
 
-#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:288
+#: kmouth.cpp:147 phrasebook/phrasebookdialog.cpp:287
 #, kde-format
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
@@ -191,7 +191,7 @@ msgstr "និយាយ"
 msgid "Speaks the currently selected phrases in the history"
 msgstr "និយាយ​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​​នៅក្នុង​ប្រវត្តិ"
 
-#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:292
+#: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
 msgid "&Delete"
 msgstr "លុប"
@@ -395,7 +395,7 @@ msgstr "សូម​សម្រេចចិត្ត​ថាតើ​សៀវ
 msgid "Book"
 msgstr "សៀវភៅ"
 
-#: phrasebook/phrasebook.cpp:274
+#: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -407,7 +407,7 @@ msgstr ""
 "*.txt|ឯកសារ​អត្ថបទ​ធម្មតា (*.txt)\n"
 "*|ឯកសារ​ទាំង​អស់"
 
-#: phrasebook/phrasebook.cpp:276
+#: phrasebook/phrasebook.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.txt|Plain Text Files (*.txt)\n"
@@ -419,22 +419,22 @@ msgstr ""
 "*.phrasebook|សៀវភៅ​ឃ្លា (*.phrasebook)\n"
 "*|ឯកសារ​ទាំងអស់"
 
-#: phrasebook/phrasebook.cpp:294 wordcompletion/wordcompletionwidget.cpp:209
+#: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "មាន​ឯកសារ %1 មាន​រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​លើ​វា​ឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:212
+#: phrasebook/phrasebook.cpp:296 wordcompletion/wordcompletionwidget.cpp:212
 #, kde-format
 msgid "File Exists"
 msgstr "មាន​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:298 wordcompletion/wordcompletionwidget.cpp:213
+#: phrasebook/phrasebook.cpp:297 wordcompletion/wordcompletionwidget.cpp:213
 #, kde-format
 msgid "&Overwrite"
 msgstr "សរសេរ​ជាន់លើ"
 
-#: phrasebook/phrasebook.cpp:313
+#: phrasebook/phrasebook.cpp:312
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
@@ -443,22 +443,22 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់ <i>%1</i> មាន​ផ្នែក​បន្ថែម​ខុស​ពី <i>phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "បន្ថែម <i>.phrasebook</i> ទៅ​ឈ្មោះ​ឯកសារ​ដែរឬទេ ?"
 
-#: phrasebook/phrasebook.cpp:316 phrasebook/phrasebook.cpp:337
+#: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
 #, kde-format
 msgid "File Extension"
 msgstr "ផ្នែក​បន្ថែម​ឯកសារ"
 
-#: phrasebook/phrasebook.cpp:317
+#: phrasebook/phrasebook.cpp:316
 #, kde-format
 msgid "Add"
 msgstr "បន្ថែម"
 
-#: phrasebook/phrasebook.cpp:318
+#: phrasebook/phrasebook.cpp:317
 #, kde-format
 msgid "Do Not Add"
 msgstr "កុំបន្ថែម"
 
-#: phrasebook/phrasebook.cpp:334
+#: phrasebook/phrasebook.cpp:333
 #, kde-format
 msgid ""
 "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do you "
@@ -467,124 +467,124 @@ msgstr ""
 "ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​របស់​អ្នក <i>%1</i> មាន​ផ្នែក​បន្ថែម <i>.phrasebook</i> ។ តើ​អ្នក​ចង់​"
 "រក្សាទុក​វា​ក្នុង​ទ្រង់ទ្រាយ phrasebook ?"
 
-#: phrasebook/phrasebook.cpp:338
+#: phrasebook/phrasebook.cpp:337
 #, kde-format
 msgid "As Phrasebook"
 msgstr "ជា​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebook.cpp:339
+#: phrasebook/phrasebook.cpp:338
 #, kde-format
 msgid "As Plain Text"
 msgstr "ជាអត្ថបទ​ធម្មតា"
 
-#: phrasebook/phrasebookdialog.cpp:93
+#: phrasebook/phrasebookdialog.cpp:92
 #, kde-format
 msgid "Phrase"
 msgstr "​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:94
+#: phrasebook/phrasebookdialog.cpp:93
 #, kde-format
 msgid "Shortcut"
 msgstr "ផ្លូវកាត់"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PhraseBookDialog)
-#: phrasebook/phrasebookdialog.cpp:97 phrasebook/phrasebookdialog.ui:14
+#: phrasebook/phrasebookdialog.cpp:96 phrasebook/phrasebookdialog.ui:14
 #, kde-format
 msgid "Phrase Book"
 msgstr "សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:227
+#: phrasebook/phrasebookdialog.cpp:226
 #, kde-format
 msgid "&New Phrase"
 msgstr "ឃ្លា​ថ្មី"
 
-#: phrasebook/phrasebookdialog.cpp:229 phrasebook/phrasebookdialog.cpp:230
+#: phrasebook/phrasebookdialog.cpp:228 phrasebook/phrasebookdialog.cpp:229
 #, kde-format
 msgid "Adds a new phrase"
 msgstr "បន្ថែម​ឃ្លា​ថ្មី​មួយ"
 
-#: phrasebook/phrasebookdialog.cpp:234
+#: phrasebook/phrasebookdialog.cpp:233
 #, kde-format
 msgid "New Phrase &Book"
 msgstr "សៀវភៅ​ឃ្លា​ថ្មី"
 
-#: phrasebook/phrasebookdialog.cpp:236 phrasebook/phrasebookdialog.cpp:237
+#: phrasebook/phrasebookdialog.cpp:235 phrasebook/phrasebookdialog.cpp:236
 #, kde-format
 msgid "Adds a new phrase book into which other books and phrases can be placed"
 msgstr "បន្ថែម​សៀវភៅ​ឃ្លា​ថ្មី​ទៅ​សៀវភៅ និង​ឃ្លា​ផ្សេង​ទៀត​ដែល​អាច​ត្រូវ​បាន​ដាក់​"
 
-#: phrasebook/phrasebookdialog.cpp:240 phrasebook/phrasebookdialog.cpp:241
+#: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
 msgstr "រក្សាទុក​សៀវភៅ​ឃ្លា​ទៅក្នុង​ថាស​រឹង"
 
-#: phrasebook/phrasebookdialog.cpp:245 phrasebook/phrasebookdialog.cpp:250
+#: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
 msgstr "នាំចូល..."
 
-#: phrasebook/phrasebookdialog.cpp:247 phrasebook/phrasebookdialog.cpp:248
-#: phrasebook/phrasebookdialog.cpp:253 phrasebook/phrasebookdialog.cpp:254
+#: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
+#: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
 msgstr "នាំចូល​ឯកសារ និង​បន្ថែម​​មាតិកា​របស់​វា​ទៅ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:258
+#: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
 msgid "I&mport Standard Phrase Book"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា​ស្តង់ដារ"
 
-#: phrasebook/phrasebookdialog.cpp:259 phrasebook/phrasebookdialog.cpp:260
+#: phrasebook/phrasebookdialog.cpp:258 phrasebook/phrasebookdialog.cpp:259
 #, kde-format
 msgid "Imports a standard phrase book and adds its contents to the phrase book"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា​ស្តង់ដារ និងបន្ថែម​​មាតិកា​របស់វា​ទៅ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:264
+#: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
 msgstr "នាំចូល..."
 
-#: phrasebook/phrasebookdialog.cpp:266 phrasebook/phrasebookdialog.cpp:267
+#: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr "នាំចេញ​ទៅឃ្លា ឬ​សៀវភៅ​ឃ្លា​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ទៅ​ឯកសារ​​មួយ"
 
-#: phrasebook/phrasebookdialog.cpp:274 phrasebook/phrasebookdialog.cpp:275
+#: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
 #, kde-format
 msgid "Closes the window"
 msgstr "បិទ​បង្អួច"
 
-#: phrasebook/phrasebookdialog.cpp:279 phrasebook/phrasebookdialog.cpp:280
+#: phrasebook/phrasebookdialog.cpp:278 phrasebook/phrasebookdialog.cpp:279
 #, kde-format
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
 msgstr "កាត់​ធាតុ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ពី​សៀវភៅ​ឃ្លា ហើយ​ដាក់វា​ទៅ​ក្ដារតម្បៀត​ខ្ទាស់"
 
-#: phrasebook/phrasebookdialog.cpp:283 phrasebook/phrasebookdialog.cpp:284
+#: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
 msgstr "ចម្លង​ធាតុ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​​ពី​សៀវភៅ​ឃ្លា​ទៅ​ក្ដារតម្បៀត​ខ្ទាស់"
 
-#: phrasebook/phrasebookdialog.cpp:294 phrasebook/phrasebookdialog.cpp:295
+#: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
 msgid "Deletes the selected entries from the phrase book"
 msgstr "លុប​ធាតុ​ដែល​បាន​ជ្រើស​​ពី​សៀវភៅ​ឃ្លា"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: phrasebook/phrasebookdialog.cpp:365 phrasebook/phrasebookdialog.cpp:379
+#: phrasebook/phrasebookdialog.cpp:364 phrasebook/phrasebookdialog.cpp:378
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
 msgstr "អត្ថបទ​របស់​​ឃ្លា ៖"
 
-#: phrasebook/phrasebookdialog.cpp:397
+#: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
 msgstr "ឈ្មោះ​របស់​សៀវភៅ​ឃ្លា ៖"
 
-#: phrasebook/phrasebookdialog.cpp:419
+#: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
 msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
@@ -593,27 +593,27 @@ msgstr ""
 "<qt>មាន​ការ​ផ្លាស់ប្ដូរ​ដែល​មិន​បាន​រក្សាទុក ។<br />តើ​អ្នក​ចង់​អនុវត្ត​កា​រផ្លាស់ប្ដូរ​មុន​នឹង​បិទ​បង្អួច "
 "\"phrase book\" ឬ​បោះបង់​ការ​ផ្លាស់ប្ដូរ ?</qt>"
 
-#: phrasebook/phrasebookdialog.cpp:420
+#: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
 msgstr "បិទ​បង្អួច \"សៀវភៅ​ឃ្លា\""
 
-#: phrasebook/phrasebookdialog.cpp:582
+#: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
 msgstr "(សៀវភៅ​ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:598
+#: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
 msgstr "(ឃ្លា​ថ្មី)"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
 msgid "Import Phrasebook"
 msgstr "នាំចូល​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:629
+#: phrasebook/phrasebookdialog.cpp:628
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.phrasebook|Phrase Books (*.phrasebook)\n"
@@ -625,7 +625,7 @@ msgstr ""
 "*.txt|ឯកសារ​អត្ថបទ​ធម្មតា (*.txt)\n"
 "*|ឯកសារ​ទាំង​អស់"
 
-#: phrasebook/phrasebookdialog.cpp:660 phraselist.cpp:505
+#: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
 msgid ""
 "There was an error loading file\n"
@@ -634,18 +634,18 @@ msgstr ""
 "​មាន​កំហុស​មួ​យ ក្នុង​ពេល​ផ្ទុក​ឯកសារ\n"
 "%1"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, kde-format
 msgid "Export Phrase Book"
 msgstr "នាំចេញ​សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:671
+#: phrasebook/phrasebookdialog.cpp:670
 #, fuzzy, kde-format
 #| msgid "&Phrase Books"
 msgid "Phrase Books (*.phrasebook)"
 msgstr "សៀវភៅ​ឃ្លា"
 
-#: phrasebook/phrasebookdialog.cpp:678 phraselist.cpp:478
+#: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
 msgid ""
 "There was an error saving file\n"
