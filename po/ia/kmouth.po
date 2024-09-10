@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2016, 2018, 2021, 2022.
+# SPDX-FileCopyrightText: 2016, 2018, 2021, 2022, 2024 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:35+0000\n"
-"PO-Revision-Date: 2022-12-18 22:50+0100\n"
+"PO-Revision-Date: 2024-09-09 12:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -677,7 +677,7 @@ msgid ""
 "If you select this option then the selected phrase will not be reachable by "
 "a keyboard shortcut."
 msgstr ""
-"Si tu selige iste option alora le phrase seligite nonn esser attingibile per "
+"Si tu selige iste option alora le phrase seligite non esser attingibile per "
 "un via breve de claviero."
 
 #. i18n: ectx: property (text), widget (QRadioButton, noKey)
