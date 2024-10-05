@@ -46,6 +46,7 @@ parts:
       - libxt-dev
       - libxtst-dev
       - libspeechd-dev
+      - libpulse0
     stage-packages:
       - libxt6
       - libxtst6
@@ -58,6 +59,7 @@ parts:
       - speech-dispatcher-espeak
       - speech-dispatcher-espeak-ng
       - espeakup
+      - libpulse0
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
