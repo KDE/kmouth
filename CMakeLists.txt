@@ -59,7 +59,7 @@ ecm_setup_version(${kmouth_VERSION}
 )
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
-ecm_set_disabled_deprecation_versions(QT 6.7  KF 6.5.0)
+ecm_set_disabled_deprecation_versions(QT 6.8.0  KF 6.5.0)
 
 add_subdirectory( doc )
 add_subdirectory( icons )
