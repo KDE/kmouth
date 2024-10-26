@@ -34,7 +34,12 @@ class Speech : public QObject
 {
     Q_OBJECT
 public:
-    enum CharacterCodec { Local = 0, Latin1 = 1, Unicode = 2, UseCodec = 3 };
+    enum CharacterCodec {
+        Local = 0,
+        Latin1 = 1,
+        Unicode = 2,
+        UseCodec = 3
+    };
 
     Speech();
     ~Speech() override;
