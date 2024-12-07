@@ -72,21 +72,21 @@ include_directories(./wordcompletion/  )
 add_executable(kmouth)
 
 target_sources(kmouth PRIVATE
-    ./phrasebook/phrasebookreader.cpp
-    ./phrasebook/phrasebookdialog.cpp
-    ./phrasebook/initialphrasebookwidget.cpp
-    ./phrasebook/phrasebook.cpp
-    ./wordcompletion/wordlist.cpp
-    ./wordcompletion/wordcompletion.cpp
-    ./wordcompletion/wordcompletionwidget.cpp
-    ./wordcompletion/dictionarycreationwizard.cpp
-    texttospeechconfigurationwidget.cpp
-    optionsdialog.cpp
-    configwizard.cpp
-    phraselist.cpp
-    speech.cpp
-    texttospeechsystem.cpp
-    kmouth.cpp
+    ./phrasebook/phrasebookreader.cpp ./phrasebook/phrasebookreader.h
+    ./phrasebook/phrasebookdialog.cpp ./phrasebook/phrasebookdialog.h
+    ./phrasebook/initialphrasebookwidget.cpp ./phrasebook/initialphrasebookwidget.h
+    ./phrasebook/phrasebook.cpp ./phrasebook/phrasebook.h
+    ./wordcompletion/wordlist.cpp ./wordcompletion/wordlist.h
+    ./wordcompletion/wordcompletion.cpp ./wordcompletion/wordcompletion.h
+    ./wordcompletion/wordcompletionwidget.cpp ./wordcompletion/wordcompletionwidget.h
+    ./wordcompletion/dictionarycreationwizard.cpp ./wordcompletion/dictionarycreationwizard.h
+    texttospeechconfigurationwidget.cpp texttospeechconfigurationwidget.h
+    optionsdialog.cpp optionsdialog.h
+    configwizard.cpp configwizard.h
+    phraselist.cpp phraselist.h
+    speech.cpp speech.h
+    texttospeechsystem.cpp texttospeechsystem.h
+    kmouth.cpp kmouth.h
     main.cpp
 
     kmouth.qrc
