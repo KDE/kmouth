@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: configwizard.cpp:38
 #, kde-format
@@ -243,7 +243,7 @@ msgstr "इतिहासे सर्वाणि वाक्यानि अ
 #, kde-format
 msgctxt "The job is done"
 msgid "Ready."
-msgstr ""
+msgstr "आत्त।"
 
 #: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
@@ -264,7 +264,7 @@ msgstr "मुद्रण..."
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
-msgstr ""
+msgstr "निर्गच्छन्..."
 
 #: kmouth.cpp:427
 #, kde-format
@@ -1089,7 +1089,7 @@ msgstr "नवीन शब्दकोशस्य स्रोतः (2) ."
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
-msgstr ""
+msgstr "&निर्देशिका : १."
 
 #: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
@@ -1110,7 +1110,7 @@ msgstr "विलय परिणाम"
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
-msgstr ""
+msgstr "रिक्तसूची"
 
 #: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
@@ -1121,7 +1121,7 @@ msgstr "KDE दस्तावेजीकरणम्"
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
-msgstr ""
+msgstr "मूलभूतम्‌"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/kdedocsourceui.ui:22
