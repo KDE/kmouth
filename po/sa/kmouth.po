@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the kmouth package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:35+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -559,12 +561,12 @@ msgstr "वाक्यपुस्तकात् चयनितप्रव�
 #: phrasebook/phrasebookdialog.ui:82
 #, kde-format
 msgid "Text of the &phrase:"
-msgstr "&वाक्यस्य पाठः- १."
+msgstr "&वाक्यस्य पाठः-"
 
 #: phrasebook/phrasebookdialog.cpp:396
 #, kde-format
 msgid "Name of the &phrase book:"
-msgstr "&वाक्यपुस्तकस्य नाम: १."
+msgstr "&वाक्यपुस्तकस्य नाम:"
 
 #: phrasebook/phrasebookdialog.cpp:418
 #, kde-format
@@ -583,12 +585,12 @@ msgstr "\"वाक्यांशपुस्तक\" विण्डो सम
 #: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
 msgid "(New Phrase Book)"
-msgstr "(नव वाक्य पुस्तक) २."
+msgstr "(नव वाक्य पुस्तक)"
 
 #: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
 msgid "(New Phrase)"
-msgstr "(नव वाक्यम्) २."
+msgstr "(नव वाक्यम्)"
 
 #: phrasebook/phrasebookdialog.cpp:628
 #, kde-format
@@ -687,7 +689,7 @@ msgstr "C&mouth"
 #: phrasebook/phrasebookdialog.ui:72
 #, kde-format
 msgid "Shortcut for the phrase:"
-msgstr "वाक्यस्य लघुमार्गः : १."
+msgstr "वाक्यस्य लघुमार्गः :"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeView, treeView)
 #: phrasebook/phrasebookdialog.ui:98
@@ -754,7 +756,7 @@ msgstr ""
 #: preferencesui.ui:52
 #, kde-format
 msgid "&Selection of phrases in the phrase book:"
-msgstr "&वाक्यपुस्तके वाक्यानां चयनम् : १."
+msgstr "&वाक्यपुस्तके वाक्यानां चयनम् :"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
 #: preferencesui.ui:66
@@ -922,7 +924,7 @@ msgstr ""
 #: wordcompletion/creationsourcedetailsui.ui:46
 #, kde-format
 msgid "Character &encoding:"
-msgstr "वर्ण & एन्कोडिंग : १."
+msgstr "वर्ण & एन्कोडिंग :"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
@@ -940,7 +942,7 @@ msgstr ""
 #: wordcompletion/creationsourcedetailsui.ui:67
 #, kde-format
 msgid "&Filename:"
-msgstr "&सञ्चिकानाम: १."
+msgstr "&सञ्चिकानाम:"
 
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, ooDictURL)
 #: wordcompletion/creationsourcedetailsui.ui:118
@@ -973,7 +975,7 @@ msgstr "&भाषा:"
 #: wordcompletion/creationsourceui.ui:16
 #, kde-format
 msgid "C&reate new dictionary:"
-msgstr "C&reate new dictionary: १."
+msgstr "C&reate new dictionary:"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, createButton)
 #: wordcompletion/creationsourceui.ui:22
@@ -1076,7 +1078,7 @@ msgstr ""
 #: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
 msgid "Source of New Dictionary (1)"
-msgstr "नवीन शब्दकोशस्य स्रोतः (१) २."
+msgstr "नवीन शब्दकोशस्य स्रोतः (१)"
 
 #: wordcompletion/dictionarycreationwizard.cpp:70
 #: wordcompletion/dictionarycreationwizard.cpp:76
@@ -1090,7 +1092,7 @@ msgstr "नवीन शब्दकोशस्य स्रोतः (2) ."
 #, kde-format
 msgctxt "In which directory is the file located?"
 msgid "&Directory:"
-msgstr "&निर्देशिका : १."
+msgstr "&निर्देशिका :"
 
 #: wordcompletion/dictionarycreationwizard.cpp:80
 #: wordcompletion/dictionarycreationwizard.cpp:82
