@@ -10,6 +10,7 @@ project(kmouth VERSION ${RELEASE_SERVICE_VERSION})
 set(QT_REQUIRED_VERSION "6.6.0")
 set(KF_MIN_VERSION "6.3.0")
 
+option(BUILD_DOC "Whether to build the documentation" ON)
 
 if(NOT MSVC)
     set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -Wno-switch -O2 -g")
@@ -40,18 +41,25 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF6  ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
     Completion
     Config
     ConfigWidgets
     CoreAddons
-    DocTools
     I18n
     KIO
     WidgetsAddons
     XmlGui
 )
+
+if(BUILD_DOC)
+    find_package(KF6DocTools ${KF_MIN_VERSION})
+    set_package_properties(KF6DocTools PROPERTIES
+        DESCRIPTION "Tools to generate documentation"
+        TYPE REQUIRED
+    )
+endif()
 
 ecm_setup_version(${kmouth_VERSION}
     VARIABLE_PREFIX KMOUTH
@@ -61,7 +69,6 @@ ecm_setup_version(${kmouth_VERSION}
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
 ecm_set_disabled_deprecation_versions(QT 6.8.0  KF 6.5.0)
 
-add_subdirectory( doc )
 add_subdirectory( icons )
 add_subdirectory( books )
 
@@ -126,7 +133,11 @@ install( FILES kmouthrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 install(FILES org.kde.kmouth.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ki18n_install(po)
-kdoctools_install(po)
+
+if(BUILD_DOC)
+    add_subdirectory(doc)
+    kdoctools_install(po)
+endif()
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
