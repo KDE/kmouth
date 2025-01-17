@@ -5,13 +5,13 @@
 # Ammar Tabbaa <atabba@kacst.edu.sa>, 2004.
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:35+0000\n"
-"PO-Revision-Date: 2024-12-14 12:02+0400\n"
+"PO-Revision-Date: 2025-01-16 16:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -22,7 +22,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "زايد السعيدي"
@@ -30,7 +30,7 @@ msgstr "زايد السعيدي"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ghosn@php4arab.info"
+msgstr "zayed.alsaidi@gmail.com"
 
 #: configwizard.cpp:38
 #, kde-format
@@ -342,7 +342,8 @@ msgid "Original Author"
 msgstr "المؤلف الأصلي"
 
 #: main.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jeremy Whiting"
 msgid "Jeremy Whiting"
 msgstr "Jeremy Whiting"
 
@@ -367,7 +368,7 @@ msgid "History file to open"
 msgstr "ملف التَّأريخ الواجب فتحه"
 
 #: optionsdialog.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Configuration"
 msgstr "الضّبط"
 
@@ -392,9 +393,9 @@ msgid "Please decide which phrase books you need:"
 msgstr ""
 
 #: phrasebook/initialphrasebookwidget.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgid "Book"
-msgstr "كتاب"
+msgstr "الكتاب"
 
 #: phrasebook/phrasebook.cpp:273
 #, fuzzy, kde-format
@@ -586,9 +587,9 @@ msgid "Closing \"Phrase Book\" Window"
 msgstr "إغلاق نافذة تحرير &دفتر التَّعابير:"
 
 #: phrasebook/phrasebookdialog.cpp:581
-#, fuzzy, kde-format
+#, kde-format
 msgid "(New Phrase Book)"
-msgstr "حفظ دفتر التَّعابير"
+msgstr "(دفتر التعبير جديد)"
 
 #: phrasebook/phrasebookdialog.cpp:597
 #, kde-format
@@ -618,15 +619,14 @@ msgstr ""
 "%1"
 
 #: phrasebook/phrasebookdialog.cpp:670
-#, fuzzy, kde-format
+#, kde-format
 msgid "Export Phrase Book"
-msgstr "&دفاتر تعابير"
+msgstr "صدر دفاتر تعابير"
 
 #: phrasebook/phrasebookdialog.cpp:670
-#, fuzzy, kde-format
-#| msgid "&Phrase Books"
+#, kde-format
 msgid "Phrase Books (*.phrasebook)"
-msgstr "&دفاتر تعابير"
+msgstr "دفاتر تعابير (*.phrasebook)"
 
 #: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
