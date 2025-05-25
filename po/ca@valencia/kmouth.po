@@ -668,8 +668,8 @@ msgid ""
 "By clicking on this button you can select the keyboard shortcut associated "
 "with the selected phrase."
 msgstr ""
-"Clicant en este botó podeu seleccionar la drecera de teclat associada amb la "
-"frase seleccionada."
+"Clicant damunt d'este botó podeu seleccionar la drecera de teclat associada "
+"amb la frase seleccionada."
 
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, lineEdit)
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel)
@@ -747,8 +747,8 @@ msgid ""
 "Into this edit field you can type a phrase. Click on the speak button in "
 "order to speak the entered phrase."
 msgstr ""
-"En este camp d'edició podeu escriure una frase. Feu un clic damunt del botó "
-"de síntesi per a escoltar la frase introduïda."
+"En este camp d'edició podeu escriure una frase. Cliqueu damunt del botó de "
+"síntesi per a escoltar la frase introduïda."
 
 #: phraselist.cpp:477
 #, kde-format
