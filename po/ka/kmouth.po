@@ -836,7 +836,7 @@ msgstr "ტექსტის-ხმამაღლა-წაკითხვა"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr "&ნაგულისხმები საუბრის სისტემის გამოყენება"
+msgstr "&ნაგულისხმევი საუბრის სისტემის გამოყენება"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
@@ -1151,7 +1151,7 @@ msgstr "KDE -ის დოკუმენტაცია"
 #, kde-format
 msgctxt "Default dictionary"
 msgid "Default"
-msgstr "ნაგულისხმები"
+msgstr "ნაგულისხმევი"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/kdedocsourceui.ui:22
