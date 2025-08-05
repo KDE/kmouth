@@ -350,7 +350,7 @@ msgstr "Jeremy Whiting"
 #: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
-msgstr "المصين الحاليّ"
+msgstr "الصائن الحاليّ"
 
 #: main.cpp:47
 #, kde-format
@@ -790,7 +790,7 @@ msgid ""
 "This combo box specifies whether the phrase book is automatically saved when "
 "the edit window is closed."
 msgstr ""
-"مربع التَّراكيب هذا يُحدِّد إذا ما يتم حفظ دفتر التَّعابير آليا عند إغلاق نافذة "
+"مربع التَّراكيب هذا يُحدِّد إذا ما يتم حفظ دفتر التَّعابير آليّا عند إغلاق نافذة "
 "التَّحرير."
 
 #. i18n: ectx: property (text), widget (QLabel, closeLabel)
