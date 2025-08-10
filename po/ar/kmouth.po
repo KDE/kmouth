@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:35+0000\n"
-"PO-Revision-Date: 2025-08-03 15:20+0400\n"
+"PO-Revision-Date: 2025-08-09 18:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -99,9 +99,9 @@ msgid ""
 "text selected in the edit field it is placed it on the clipboard. Otherwise "
 "the selected sentences in the history (if any) are placed on the clipboard."
 msgstr ""
-"يقُصُ المقطع المُنتقَى ويضعه في حافظة القُصاصات. إن وُجد بعض نصٍ مُنتقى في حقل "
-"التَّحرير، فإنَّه يتم وضعه في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المُنتقاة "
-"في التَّأريخ (إن وُجدت) يتم وضعها في حافظة القُصاصات."
+"يقُصُ المقطع المُنتقَى ويضعه في حافظة القُصاصات. إن وُجد بعض النصوص المحددة في حقل "
+"التَّحرير، فإنَّه توضع في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المحددة في "
+"التَّأريخ (إن وُجدت) توضع في حافظة القُصاصات."
 
 #: kmouth.cpp:140
 #, kde-format
@@ -115,9 +115,9 @@ msgid ""
 "in the edit field it is copied to the clipboard. Otherwise the selected "
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
-"ينسخ المقطع المُنتقى إلى حافظة القُصاصات. إن وُجد بعض نصٍ مُنتقى في حقل التَّحرير، "
-"فإنَّه يتم نسخه في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المُنتقاة في التَّأريخ "
-"(إن وُجدت) يتم نسخها في حافظة القُصاصات."
+"ينسخ المقطع المحدد إلى حافظة القُصاصات. إن وُجد بعض النصوص المحددة في حقل "
+"التَّحرير، فإنَّه سينسخها في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المحددة في "
+"التَّأريخ (إن وُجدت) ستُنسخ في حافظة القُصاصات."
 
 #: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, fuzzy, kde-format
@@ -149,8 +149,8 @@ msgid ""
 "field it is spoken. Otherwise the selected sentences in the history (if any) "
 "are spoken."
 msgstr ""
-"ينطق الجملة/الجمل النّشطة حالياً. إن كان هناك بعض نصٍ في حقل التَّحرير، فإنّه "
-"يُنْطَق. فيما عدا ذلك، فإنّ الجمل المنتقاة بالتَّأريخ (إن وُجِدَت) يتم نطقها."
+"ينطق الجملة/الجمل النّشطة حالياً. إن كان هناك بعض النصوص في حقل التَّحرير، فإنّه "
+"ستُنْطَق. فيما عدا ذلك، فإنّ الجمل المحددة بالتَّأريخ (إن وُجِدَت) ستُنطق."
 
 #: kmouth.cpp:160
 #, kde-format
@@ -761,8 +761,8 @@ msgid ""
 "This combo box specifies whether selected phrases of the phrase book are "
 "immediately spoken or just inserted into the edit field."
 msgstr ""
-"مربع التَّراكيب هذا يُحدِّد إذا ما يتم نطق التَّعابير المنتقاة من دفتر التَّعابير في "
-"الحال أو يتم فقط إدراجها ضمن حقل التَّحرير."
+"مربع التَّراكيب هذا يُحدِّد إذا ما ستُنطق التَّعابير المحددة من دفتر التَّعابير في "
+"الحال أو تُدرج ضمن حقل التَّحرير."
 
 #. i18n: ectx: property (text), widget (QLabel, speakLabel)
 #: preferencesui.ui:52
@@ -790,7 +790,7 @@ msgid ""
 "This combo box specifies whether the phrase book is automatically saved when "
 "the edit window is closed."
 msgstr ""
-"مربع التَّراكيب هذا يُحدِّد إذا ما يتم حفظ دفتر التَّعابير آليّا عند إغلاق نافذة "
+"مربع التَّراكيب هذا يُحدِّد إذا ما سيحفظ دفتر التَّعابير آليّا عند إغلاق نافذة "
 "التَّحرير."
 
 #. i18n: ectx: property (text), widget (QLabel, closeLabel)
@@ -878,8 +878,7 @@ msgid ""
 "This check box specifies whether the text is sent as standard input to the "
 "speech synthesizer."
 msgstr ""
-"مربع التَّراكيب هذا يُحدِّد إذا ما يتم إرسال النَّص على أنَّه مُدْخَل ممعياريّ إلى موالف "
-"النُّطق."
+"مربع التَّراكيب هذا يُحدِّد إذا ما سيرسل النَّص على أنَّه مُدْخَل معياريّ إلى مؤلف النُّطق."
 
 #. i18n: ectx: property (text), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:155
@@ -894,7 +893,7 @@ msgstr "إرسال البيانات على أنّها &مُدْخَل ممعيا
 msgid ""
 "This combo box specifies which character encoding is used for passing the "
 "text."
-msgstr "مربع التَّراكيب هذا يُحدِّد أي تشفير للحروف يتم استخدامه بغرض تمرير النَّص."
+msgstr "مربع التَّراكيب هذا يُحدِّد أي ترميز للحروف سيُستخدم بغرض تمرير النَّص."
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
