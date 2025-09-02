@@ -234,12 +234,12 @@ msgstr "Copia les frases seleccionades de l'historial a dins del porta-retalls"
 #: kmouth.cpp:220
 #, kde-format
 msgid "Select &All Entries"
-msgstr "&Selecciona totes les entrades"
+msgstr "&Tria totes les entrades"
 
 #: kmouth.cpp:222 kmouth.cpp:223
 #, kde-format
 msgid "Selects all phrases in the history"
-msgstr "Selecciona totes les frases de l'historial"
+msgstr "Tria totes les frases de l'historial"
 
 #: kmouth.cpp:226
 #, kde-format
@@ -689,8 +689,8 @@ msgid ""
 "If you select this option then the selected phrase will not be reachable by "
 "a keyboard shortcut."
 msgstr ""
-"Si seleccioneu esta opció, llavors la frase seleccionada no es podrà accedir "
-"amb una drecera de teclat."
+"Si trieu esta opció, llavors la frase seleccionada no es podrà accedir amb "
+"una drecera de teclat."
 
 #. i18n: ectx: property (text), widget (QRadioButton, noKey)
 #: phrasebook/phrasebookdialog.ui:55
@@ -706,9 +706,8 @@ msgid ""
 "keyboard shortcut. You can change the shortcut with the button next to this "
 "option."
 msgstr ""
-"Si seleccioneu esta opció, llavors la frase seleccionada serà accessible amb "
-"una drecera de teclat. Podeu canviar la drecera amb el botó a la vora de "
-"l'opció."
+"Si trieu esta opció, llavors la frase seleccionada serà accessible amb una "
+"drecera de teclat. Podeu canviar la drecera amb el botó a la vora de l'opció."
 
 #. i18n: ectx: property (text), widget (QRadioButton, customKey)
 #: phrasebook/phrasebookdialog.ui:65
@@ -789,7 +788,7 @@ msgstr ""
 #: preferencesui.ui:52
 #, kde-format
 msgid "&Selection of phrases in the phrase book:"
-msgstr "&Seleccioneu les frases en el llibre de frases:"
+msgstr "&Trieu les frases en el llibre de frases:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, speakCombo)
 #: preferencesui.ui:66
@@ -1021,8 +1020,8 @@ msgid ""
 "If you select this box a new dictionary is created by either loading a "
 "dictionary file or by counting the individual words in a text."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari nou, bé carregant un "
-"fitxer de diccionari o bé contant les paraules individuals en un text."
+"Si trieu esta casella, es crea un diccionari nou, bé carregant un fitxer de "
+"diccionari o bé contant les paraules individuals en un text."
 
 #. i18n: ectx: property (text), widget (QRadioButton, mergeButton)
 #: wordcompletion/creationsourceui.ui:29
@@ -1037,7 +1036,7 @@ msgid ""
 "If you select this box a new dictionary is created by merging existing "
 "dictionaries."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari nou barrejant diccionaris "
+"Si trieu esta casella, es crea un diccionari nou barrejant diccionaris "
 "existents."
 
 #. i18n: ectx: property (text), widget (QRadioButton, fileButton)
@@ -1056,11 +1055,11 @@ msgid ""
 "file the frequentness of the individual words is detected by simply counting "
 "the occurrences of each word."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari nou carregant un fitxer. "
-"Podeu seleccionar un fitxer en XML, un fitxer de text estàndard o un fitxer "
-"que continga un diccionari de compleció de paraules. Si seleccioneu un "
-"fitxer de text estàndard o un fitxer en XML, la freqüència de les paraules "
-"individuals es detecta senzillament comptant les ocurrències de cada paraula."
+"Si trieu esta casella, es crea un diccionari nou carregant un fitxer. Podeu "
+"seleccionar un fitxer en XML, un fitxer de text estàndard o un fitxer que "
+"continga un diccionari de compleció de paraules. Si trieu un fitxer de text "
+"estàndard o un fitxer en XML, la freqüència de les paraules individuals es "
+"detecta senzillament comptant les ocurrències de cada paraula."
 
 #. i18n: ectx: property (text), widget (QRadioButton, kdeDocButton)
 #: wordcompletion/creationsourceui.ui:71
@@ -1076,9 +1075,9 @@ msgid ""
 "documentation. The frequentness of the individual words is detect by simply "
 "counting the occurrences of each word."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari nou analitzant la "
-"documentació KDE. La freqüència de les paraules individuals es detecta "
-"senzillament contant les ocurrències de cada paraula."
+"Si trieu esta casella, es crea un diccionari nou analitzant la documentació "
+"KDE. La freqüència de les paraules individuals es detecta senzillament "
+"contant les ocurrències de cada paraula."
 
 #. i18n: ectx: property (text), widget (QRadioButton, directoryButton)
 #: wordcompletion/creationsourceui.ui:95
@@ -1093,8 +1092,8 @@ msgid ""
 "If you select this box a new dictionary is created by loading all files in a "
 "folder and its subdirectories."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari nou carregant tots els "
-"fitxers d'una carpeta i els seus subdirectoris."
+"Si trieu esta casella, es crea un diccionari nou carregant tots els fitxers "
+"d'una carpeta i els seus subdirectoris."
 
 #. i18n: ectx: property (text), widget (QRadioButton, emptyButton)
 #: wordcompletion/creationsourceui.ui:121
@@ -1110,9 +1109,9 @@ msgid ""
 "KMouth automatically adds newly typed words to the dictionaries it will "
 "learn your vocabulary with the time."
 msgstr ""
-"Si seleccioneu esta casella, es crea un diccionari en blanc, sense cap "
-"entrada. Com que KMouth afig automàticament al diccionari les paraules "
-"novament teclejades, aprendrà el vocabulari amb el temps."
+"Si trieu esta casella, es crea un diccionari en blanc, sense cap entrada. "
+"Com que KMouth afig automàticament al diccionari les paraules novament "
+"teclejades, aprendrà el vocabulari amb el temps."
 
 #: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
@@ -1172,8 +1171,8 @@ msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
 msgstr ""
-"Si seleccioneu esta casella de selecció, es comprova l'ortografia de les "
-"paraules de la documentació KDE abans d'inserir-les al diccionari nou."
+"Si trieu esta casella de selecció, es comprova l'ortografia de les paraules "
+"de la documentació KDE abans d'inserir-les al diccionari nou."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
