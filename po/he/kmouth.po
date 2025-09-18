@@ -15,21 +15,22 @@
 # Diego Iastrubni <elcuco@kdemail.net>, 2004.
 # Diego Iastrubni <elcuco@kdemai.net>, 2004.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2014.
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:35+0000\n"
-"PO-Revision-Date: 2024-01-26 10:15+0200\n"
+"PO-Revision-Date: 2025-09-17 14:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -124,9 +125,9 @@ msgid ""
 "in the edit field it is copied to the clipboard. Otherwise the selected "
 "sentences in the history (if any) are copied to the clipboard."
 msgstr ""
-"העתקת החלק הנבחר אל לוח העריכה. אם יש טקסט כלשהו שנבחר בשדה העריכה, הוא "
-"יועתק אל לוח העריכה. אחרת יועתקו אל לוח העריכה המשפטים שנבחרו בהיסטוריה (אם "
-"ישנם כאלה)."
+"העתקת החלק הנבחר אל לוח הגזירים. אם יש טקסט כלשהו שנבחר בשדה העריכה, הוא "
+"יועתק אל לוח הגזירים. אחרת יועתקו אל לוח הגזירים המשפטים שנבחרו בהיסטוריה "
+"(אם ישנם כאלה)."
 
 #: kmouth.cpp:146 phrasebook/phrasebookdialog.cpp:286
 #, kde-format
@@ -138,7 +139,7 @@ msgstr "הדבקת תוכן לוח הגזירים במקום הנוכחי"
 msgid ""
 "Pastes the clipboard contents at the current cursor position into the edit "
 "field."
-msgstr "הדבקת תוכן לוח העריכה לתוך שדה העריכה, במיקום הנוכחי של הסמן."
+msgstr "הדבקת תוכן לוח הגזירים לתוך שדה העריכה, במקום הנוכחי של הסמן."
 
 #: kmouth.cpp:151
 #, kde-format
