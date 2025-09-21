@@ -33,8 +33,6 @@
 #include <KToolBarPopupAction>
 #include <KXMLGUIFactory>
 
-#include "phrasebook.h"
-
 #include <QDebug>
 
 const int kTextColumn = 0;
