@@ -210,7 +210,7 @@
 > <guimenu
 >Preferencias</guimenu
 ><guimenuitem
->Configurar &kmouth;...</guimenuitem
+>Configurar &kmouth;…</guimenuitem
 > </menuchoice
 > aparece el diálogo de configuración de &kmouth;. Este diálogo está formado por las páginas <guilabel
 >Opciones generales</guilabel
@@ -447,7 +447,7 @@
 > <guimenu
 >Libros de frases</guimenu
 ><guimenuitem
->Editar ...</guimenuitem
+>Editar …</guimenuitem
 > </menuchoice
 >, se abre la ventana de edición del libro de frases. </para>
     <para>
@@ -500,7 +500,7 @@
 > <guimenu
 >Archivo</guimenu
 > <guimenuitem
->Abrir como historial...</guimenuitem
+>Abrir como historial…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -522,7 +522,7 @@
 > <guimenu
 >Archivo</guimenu
 > <guimenuitem
->Guardar historial como...</guimenuitem
+>Guardar historial como…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -544,7 +544,7 @@
 > <guimenu
 >Archivo</guimenu
 > <guimenuitem
->Imprimir historial...</guimenuitem
+>Imprimir historial…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -678,7 +678,7 @@
 ><guimenu
 > Libros de frases</guimenu
 > <guimenuitem
->Editar...</guimenuitem
+>Editar…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -770,7 +770,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Importar...</guimenuitem
+>Importar…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -802,7 +802,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Exportar...</guimenuitem
+>Exportar…</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -969,7 +969,7 @@
             <term
 ><menuchoice>
               <guimenuitem
->Importar...</guimenuitem>
+>Importar…</guimenuitem>
             </menuchoice
 ></term>
             <listitem
@@ -997,7 +997,7 @@
             <term
 ><menuchoice>
               <guimenuitem
->Exportar...</guimenuitem>
+>Exportar…</guimenuitem>
             </menuchoice
 ></term>
             <listitem
