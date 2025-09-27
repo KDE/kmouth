@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <name>KMouth</name>
+  <name xml:lang="ar">ناطق</name>
   <name xml:lang="ast">KMouth</name>
   <name xml:lang="bg">KMouth</name>
   <name xml:lang="ca">KMouth</name>
@@ -43,6 +44,7 @@
   <name xml:lang="zh-CN">KMouth</name>
   <name xml:lang="zh-TW">KMouth</name>
   <summary>Speech Synthesizer Frontend</summary>
+  <summary xml:lang="ar">واجهة برنامج تركيب الكلام</summary>
   <summary xml:lang="bg">Програма за синтезиране на говор</summary>
   <summary xml:lang="ca">Frontal del sintetitzador de veu</summary>
   <summary xml:lang="ca-valencia">Frontal del sintetitzador de veu</summary>
@@ -84,6 +86,7 @@
     <p>
      KMouth is a program which enables persons that cannot speak to let their computer speak, e.g. mute people or people who have lost their voice. It has a text input field and speaks the sentences that you enter. It also has support for user defined phrasebooks.
     </p>
+    <p xml:lang="ar">ناطق هو برنامج يمكّن الأشخاص الذين لا يستطيعون التحدث من جعل حاسوبهم تتحدث نيابة عنهم، مثل الأشخاص الصم أو الذين فقدوا صوتهم. يحتوي البرنامج على حقل لإدخال النص ويقوم بنطق الجمل التي تدخلها. كما يتيح كتب العبارات المحددة من قبل المستخدم.</p>
     <p xml:lang="bg">KMouth е програма, която дава възможност на хората, които не могат да говорят, например хора, които са загубили гласа си, да говорят чрез компютъра Тя има поле за въвеждане на текст и произнася въведените от вас изречения. Тя също така има поддръжка на зададени от потребителя разговорници.</p>
     <p xml:lang="ca">El KMouth és un programa que habilita a les persones que no poden parlar a què ho faci el seu ordinador, p. ex., la gent muda o la gent que ha perdut la seva veu. Té un camp d'entrada de text i pronuncia les frases que s'introdueixen. També permet llibres de frases definits per l'usuari.</p>
     <p xml:lang="ca-valencia">KMouth és un programa que habilita a les persones que no poden parlar a què ho faça el seu ordinador, p. ex., la gent muda o la gent que ha perdut la seua veu. Té un camp d'entrada de text i llig les frases que s'introduïxen. També permet llibres de frases definits per l'usuari.</p>
