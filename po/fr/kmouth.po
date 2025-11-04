@@ -190,7 +190,7 @@ msgstr "&Configurer KMouth..."
 #: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
 msgid "Opens the configuration dialog"
-msgstr "Ouvre la boîte de dialogue de configuration"
+msgstr "Ouvre la boite de dialogue de configuration"
 
 #: kmouth.cpp:193 phraselist.cpp:86
 #, kde-format
@@ -1010,7 +1010,7 @@ msgid ""
 "With this combo box you decide which language should be associated with the "
 "new dictionary."
 msgstr ""
-"Cette boîte de dialogue à choix multiple vous permet de choisir la langue à "
+"Cette boite de dialogue à choix multiple vous permet de choisir la langue à "
 "associer au nouveau dictionnaire."
 
 #. i18n: ectx: property (text), widget (QLabel, languageLabel)
@@ -1313,7 +1313,7 @@ msgid ""
 msgstr ""
 "Cette liste contient la liste des dictionnaires de complètement de mots "
 "disponibles. Si cette liste contient plus d'un dictionnaire, KMouth "
-"affichera alors une boîte à choix multiple côté du champ d'édition. Celle-ci "
+"affichera alors une boite à choix multiple côté du champ d'édition. Celle-ci "
 "vous permettra de sélectionner le dictionnaire utilisé actuellement pour le "
 "complètement."
 
