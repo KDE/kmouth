@@ -81,7 +81,7 @@
     <title
 >Le paramétrage pour le premier démarrage</title>
     <para
->Lors du premier lancement de &kmouth;, un assistant apparaît, dans lequel vous pouvez le configurer. </para>
+>Lors du premier lancement de &kmouth;, un assistant apparait, dans lequel vous pouvez le configurer. </para>
     <para>
       <screenshot>
         <screeninfo
@@ -99,7 +99,7 @@
     </para>
     <para
 >Avec la première page de l'assistant, vous spécifiez le moteur et la voix à utiliser pour la synthèse vocale. Pour plus de détails, veuillez consulter la <link linkend="tts-config"
->description de la boîte de dialogue de configuration.</link
+>description de la boite de dialogue de configuration.</link
 > </para>
     <para>
       <screenshot>
@@ -148,7 +148,7 @@
   </sect1>
   <sect1 id="config-dialog">
     <title
->La boîte de dialogue de configuration</title>
+>La boite de dialogue de configuration</title>
     <para
 >En utilisant l'entrée de menu <menuchoice
 ><guimenu
@@ -156,7 +156,7 @@
 > <guimenuitem
 >Configurer &kmouth;...</guimenuitem
 ></menuchoice
->, vous pouvez ouvrir la boîte de dialogue de configuration de &kmouth;. Cette boîte de configuration contient les pages <guilabel
+>, vous pouvez ouvrir la boite de dialogue de configuration de &kmouth;. Cette boite de configuration contient les pages <guilabel
 >Options générales</guilabel
 > contenant deux onglets <guilabel
 >Préférences</guilabel
@@ -344,9 +344,9 @@
       <para
 >La page de <guilabel
 >l'auto-complètement des mots</guilabel
-> contient une liste de dictionnaires qui sont utilisés pour le complètement des mots. (&kmouth;affichera une boîte de dialogue à côté du champ d'édition de la fenêtre principale si la liste contient plus d'un seul dictionnaire. Vous pouvez utiliser cette boîte de dialogue pour sélectionner le dictionnaire qui est utilisé pour le complètement des mots). </para>
+> contient une liste de dictionnaires qui sont utilisés pour le complètement des mots. (&kmouth;affichera une boite de dialogue à côté du champ d'édition de la fenêtre principale si la liste contient plus d'un seul dictionnaire. Vous pouvez utiliser cette boite de dialogue pour sélectionner le dictionnaire qui est utilisé pour le complètement des mots). </para>
       <para
->Avec les boutons à la droite de la page vous pouvez ajouter et éliminer des dictionnaires, changer l'ordre des dictionnaires ou exporter des dictionnaires vers un fichier. Avec le champ édition et la boîte de dialogue en dessous de la liste vous pouvez changer le nom et la langue associés au dictionnaire. </para>
+>Avec les boutons à la droite de la page vous pouvez ajouter et éliminer des dictionnaires, changer l'ordre des dictionnaires ou exporter des dictionnaires vers un fichier. Avec le champ édition et la boite de dialogue en dessous de la liste vous pouvez changer le nom et la langue associés au dictionnaire. </para>
       <para
 >Quand vous ajoutez un nouveau dictionnaire vous pouvez choisir entre plusieurs sources : </para>
       <itemizedlist>
@@ -360,7 +360,7 @@
           <para
 >Créer un nouveau dictionnaire à partir d'un fichier</para>
           <para
->Si vous utilisez cette source, &kmouth; vous demandera le fichier en question. Vous pouvez sélectionner soit un fichier &XML;, un fichier de texte usuel ou bien un dictionnaire de complètement créé par&kmouth; ou le clavier GNOME GOK en plein écran). Si vous sélectionnez un fichier de texte ou un fichier &XML; la fréquence de chaque mot est déterminée en comptant le nombre de fois qu'il apparaît. De manière optionnelle, vous pouvez comparer la liste des mots avec un dictionnaire OpenOffice.org pour ajouter seulement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
+>Si vous utilisez cette source, &kmouth; vous demandera le fichier en question. Vous pouvez sélectionner soit un fichier &XML;, un fichier de texte usuel ou bien un dictionnaire de complètement créé par&kmouth; ou le clavier GNOME GOK en plein écran). Si vous sélectionnez un fichier de texte ou un fichier &XML; la fréquence de chaque mot est déterminée en comptant le nombre de fois qu'il apparait. De manière optionnelle, vous pouvez comparer la liste des mots avec un dictionnaire OpenOffice.org pour ajouter seulement les mots qui ont une écriture correcte au nouveau dictionnaire. </para>
         </listitem>
         <listitem>
           <para
