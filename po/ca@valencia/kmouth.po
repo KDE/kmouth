@@ -633,7 +633,7 @@ msgid ""
 "There was an error loading file\n"
 "%1"
 msgstr ""
-"S'ha produït un error en carregar el fitxer\n"
+"S'ha produït un error mentre es carregava el fitxer\n"
 "%1"
 
 #: phrasebook/phrasebookdialog.cpp:670
@@ -652,7 +652,7 @@ msgid ""
 "There was an error saving file\n"
 "%1"
 msgstr ""
-"S'ha produït un error en guardar el fitxer\n"
+"S'ha produït un error mentre es guardava el fitxer\n"
 "%1"
 
 #. i18n: ectx: property (title), widget (QGroupBox, phrasebox)
