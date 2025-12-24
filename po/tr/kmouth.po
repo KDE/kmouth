@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: kdeaccessibility-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2025-10-03 10:10+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"PO-Revision-Date: 2025-12-23 12:40+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,7 +40,7 @@ msgstr "tulliana@gmail.com, emir_sari@icloud.com"
 #: configwizard.cpp:38
 #, kde-format
 msgid "Initial Configuration - KMouth"
-msgstr "İlk Yapılandırma - K Ağız"
+msgstr "İlk Yapılandırma — K Ağız"
 
 #: configwizard.cpp:61
 #, kde-format
@@ -60,7 +60,7 @@ msgstr "Sözcük Tamamlama"
 #: kmouth.cpp:106
 #, kde-format
 msgid "&Open as History..."
-msgstr "&Geçmiş Olarak Aç..."
+msgstr "&Geçmiş Olarak Aç…"
 
 #: kmouth.cpp:109 kmouth.cpp:110
 #, kde-format
@@ -70,17 +70,17 @@ msgstr "Mevcut bir dosyayı geçmiş olarak açar"
 #: kmouth.cpp:114
 #, kde-format
 msgid "Save &History As..."
-msgstr "&Geçmişi Farklı Kaydet..."
+msgstr "&Geçmişi Farklı Kaydet…"
 
 #: kmouth.cpp:117 kmouth.cpp:118
 #, kde-format
 msgid "Saves the actual history as..."
-msgstr "Gerçek geçmişi farklı kaydet..."
+msgstr "Gerçek Geçmişi Farklı Kaydet…"
 
 #: kmouth.cpp:122
 #, kde-format
 msgid "&Print History..."
-msgstr "&Geçmişi Kaydet..."
+msgstr "&Geçmişi Kaydet…"
 
 #: kmouth.cpp:125 kmouth.cpp:126
 #, kde-format
@@ -160,7 +160,7 @@ msgstr ""
 #: kmouth.cpp:160
 #, kde-format
 msgid "&Edit..."
-msgstr "Dü&zenle..."
+msgstr "Dü&zenle…"
 
 #: kmouth.cpp:171
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Durum çubuğu açar/kapatır"
 #: kmouth.cpp:182
 #, kde-format
 msgid "&Configure KMouth..."
-msgstr "K Ağız’ı &Yapılandır..."
+msgstr "K Ağız’ı &Yapılandır…"
 
 #: kmouth.cpp:184 kmouth.cpp:185
 #, kde-format
@@ -259,43 +259,43 @@ msgstr "Hazır."
 #: kmouth.cpp:259 kmouth.cpp:357
 #, kde-format
 msgid "Opening file..."
-msgstr "Dosya açılıyor..."
+msgstr "Dosya açılıyor…"
 
 #: kmouth.cpp:366
 #, kde-format
 msgid "Saving history with a new filename..."
-msgstr "Geçmiş dosyası yeni bir adla kaydediliyor..."
+msgstr "Geçmiş dosyası yeni bir adla kaydediliyor…"
 
 #: kmouth.cpp:375
 #, kde-format
 msgid "Printing..."
-msgstr "Yazdırılıyor..."
+msgstr "Yazdırılıyor…"
 
 #: kmouth.cpp:392
 #, kde-format
 msgctxt "Shutting down the application"
 msgid "Exiting..."
-msgstr "Çıkılıyor..."
+msgstr "Çıkılıyor…"
 
 #: kmouth.cpp:427
 #, kde-format
 msgid "Toggling menubar..."
-msgstr "Araç çubuğu açılıyor/kapatılıyor..."
+msgstr "Araç çubuğu açılıyor/kapatılıyor…"
 
 #: kmouth.cpp:439
 #, kde-format
 msgid "Toggling toolbar..."
-msgstr "Araç çubuğu açılıyor/kapatılıyor..."
+msgstr "Araç çubuğu açılıyor/kapatılıyor…"
 
 #: kmouth.cpp:453
 #, kde-format
 msgid "Toggling phrasebook bar..."
-msgstr "Söz Kitabı araç çubuğu değiştiriliyor..."
+msgstr "Söz Kitabı araç çubuğu açılıyor/kapatılıyor…"
 
 #: kmouth.cpp:467
 #, kde-format
 msgid "Toggle the statusbar..."
-msgstr "Durum çubuğu açılıyor/kapatılıyor..."
+msgstr "Durum çubuğu açılıyor/kapatılıyor…"
 
 #. i18n: ectx: Menu (file)
 #: kmouthui.rc:5 phrasebookdialogui.rc:6
@@ -394,7 +394,7 @@ msgstr "Genel Seçenekler"
 #: phrasebook/initialphrasebookwidget.cpp:45
 #, kde-format
 msgid "Please decide which phrase books you need:"
-msgstr "Lütfen hangi söz kitablarını istediğinizi seçin:"
+msgstr "Lütfen hangi söz kitaplarını istediğinizi seçin:"
 
 #: phrasebook/initialphrasebookwidget.cpp:50
 #, kde-format
@@ -434,7 +434,7 @@ msgid ""
 "Your chosen filename <i>%1</i> has a different extension than <i>."
 "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
 msgstr ""
-"Seçili dosyanız <i>%1</i> <i>.phrasebook</i>'tan başka bir uzantıya sahip. "
+"Seçili dosyanız <i>%1</i> <i>.phrasebook</i>’tan başka bir uzantıya sahip. "
 "Dosya adına <i>.phrasebook</i> eklemek ister misiniz?"
 
 #: phrasebook/phrasebook.cpp:315 phrasebook/phrasebook.cpp:336
@@ -516,7 +516,7 @@ msgstr "Söz kitabını sabit diske kayıt eder"
 #: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
 msgid "&Import..."
-msgstr "İçe &Aktar..."
+msgstr "İçe &Aktar…"
 
 #: phrasebook/phrasebookdialog.cpp:246 phrasebook/phrasebookdialog.cpp:247
 #: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
@@ -537,7 +537,7 @@ msgstr "Standart bir söz kitabını içe aktarır ve içeriğini söz kitabına
 #: phrasebook/phrasebookdialog.cpp:263
 #, kde-format
 msgid "&Export..."
-msgstr "Dışa &Aktar..."
+msgstr "Dışa &Aktar…"
 
 #: phrasebook/phrasebookdialog.cpp:265 phrasebook/phrasebookdialog.cpp:266
 #, kde-format
@@ -585,14 +585,14 @@ msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
-"<qt>Kayıt edilmemiş değişiklikler var.<br />\"Söz kitabı\" penceresini "
+"<qt>Kaydedilmemiş değişiklikler var.<br />“Söz Kitabı” penceresini "
 "kapatmadan önce değişiklikleri kaydetmek mi, yoksa yapılan tüm "
-"değişiklikleri silmek mi istersiniz?</qt>"
+"değişiklikleri silmek mi istiyorsunuz?</qt>"
 
 #: phrasebook/phrasebookdialog.cpp:419
 #, kde-format
 msgid "Closing \"Phrase Book\" Window"
-msgstr "\"Söz Kitabı\" Penceresi Kapatılıyor"
+msgstr "“Söz Kitabı” Penceresi Kapatılıyor"
 
 #: phrasebook/phrasebookdialog.cpp:581
 #, kde-format
@@ -667,7 +667,7 @@ msgid ""
 "With this line edit you define the name of a sub-phrasebook or the contents "
 "of a phrase."
 msgstr ""
-"Bu satır düzenleyici ile bir alt-sözkitabının adını veya içeriğini "
+"Bu satır düzenleyicisi ile bir alt söz kitabının adını veya içeriğini "
 "belirtebilirsiniz."
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, noKey)
@@ -867,10 +867,10 @@ msgid ""
 msgstr ""
 "Bu alan konuşma metinleri ve parametrelerinde kullanılan komutları belirler. "
 "K Ağız, aşağıdaki yer tutucuları anlayabilir:\n"
-"%t -- konuşulacak metin\n"
-"%f -- metin içeren dosyanın adı\n"
-"%l -- dil kodu\n"
-"%% -- yüzde işareti"
+"%t — konuşulacak metin\n"
+"%f — metin içeren dosyanın adı\n"
+"%l — dil kodu\n"
+"%% — yüzde işareti"
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
@@ -943,7 +943,7 @@ msgstr ""
 #: wordcompletion/creationsourcedetailsui.ui:46
 #, kde-format
 msgid "Character &encoding:"
-msgstr "&Karakter kodlama:"
+msgstr "&Karakter kodlaması:"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, url)
@@ -1209,7 +1209,7 @@ msgstr "Bu düğme ile sözlük listesine yeni sözlük ekleyebilirsiniz."
 #: wordcompletion/wordcompletionui.ui:103
 #, kde-format
 msgid "Add D&ictionary..."
-msgstr "&Sözlük Ekle..."
+msgstr "&Sözlük Ekle…"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, deleteButton)
 #: wordcompletion/wordcompletionui.ui:119
@@ -1257,7 +1257,7 @@ msgstr "Bu düğme ile seçili sözlük bir dosyaya aktarılır."
 #: wordcompletion/wordcompletionui.ui:179
 #, kde-format
 msgid "&Export Dictionary..."
-msgstr "&Sözlüğü Dışa Aktar..."
+msgstr "&Sözlüğü Dışa Aktar…"
 
 #. i18n: ectx: property (whatsThis), widget (QTableView, dictionaryView)
 #: wordcompletion/wordcompletionui.ui:204
@@ -1303,27 +1303,27 @@ msgstr "Sözcük listesi oluşturuluyor"
 #: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
 msgid "Parsing the KDE documentation..."
-msgstr "KDE belgeleri ayrıştırılıyor..."
+msgstr "KDE belgelendirmesi ayrıştırılıyor…"
 
 #: wordcompletion/wordlist.cpp:191
 #, kde-format
 msgid "Merging dictionaries..."
-msgstr "Sözlükler birleştiriliyor..."
+msgstr "Sözlükler birleştiriliyor…"
 
 #: wordcompletion/wordlist.cpp:260
 #, kde-format
 msgid "Parsing file..."
-msgstr "Dosya ayrıştırılıyor..."
+msgstr "Dosya ayrıştırılıyor…"
 
 #: wordcompletion/wordlist.cpp:272
 #, kde-format
 msgid "Parsing directory..."
-msgstr "Dizin ayrıştırılıyor..."
+msgstr "Dizin ayrıştırılıyor…"
 
 #: wordcompletion/wordlist.cpp:458
 #, kde-format
 msgid "Performing spell check..."
-msgstr "Yazım denetimi yapılıyor..."
+msgstr "Yazım denetimi yapılıyor…"
 
 #~ msgid ""
 #~ "Your chosen filename <i>%1</i> has a different extension than <i>."
