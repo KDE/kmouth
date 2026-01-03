@@ -143,7 +143,8 @@ OptionsDialog::OptionsDialog(QWidget *parent)
     completionWidget = new WordCompletionWidget(nullptr, "Word Completion widget");
     KPageWidgetItem *pageCompletion = new KPageWidgetItem(completionWidget, i18n("Word Completion"));
     pageCompletion->setHeader(i18n("Word Completion"));
-    pageCompletion->setIcon(QIcon::fromTheme(QStringLiteral("keyboard")));
+    // TODO: get a better icon for dictionary
+    pageCompletion->setIcon(QIcon::fromTheme(QStringLiteral("kmouth-phrasebook")));
     addPage(pageCompletion);
     connect(button(QDialogButtonBox::Ok), &QAbstractButton::clicked, this, &OptionsDialog::slotOk);
     connect(button(QDialogButtonBox::Cancel), &QAbstractButton::clicked, this, &OptionsDialog::slotCancel);
