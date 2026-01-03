@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kmouth")));
+
     parser.addPositionalArgument(QStringLiteral("[File]"), i18n("History file to open"));
     aboutData.setupCommandLine(&parser);
     parser.process(app);
