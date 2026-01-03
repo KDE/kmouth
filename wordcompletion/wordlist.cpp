@@ -279,18 +279,16 @@ WordMap parseDir(const QString &directory, QStringConverter::Encoding encoding, 
     int dirNdx = 0;
     while (dirNdx < directories.count()) {
         QDir dir(directories.at(dirNdx));
-        const QFileInfoList entries = dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoSymLinks | QDir::Readable);
+        const QFileInfoList entries = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Files | QDir::NoSymLinks | QDir::Readable);
 
         for (int i = 0; i < entries.size(); ++i) {
             QFileInfo fileInfo = entries.at(i);
 
             QString name = fileInfo.fileName();
-            if (name != QLatin1String(".") && name != QLatin1String("..")) {
-                if (fileInfo.isDir())
-                    directories += fileInfo.filePath();
-                else
-                    files += fileInfo.filePath();
-            }
+            if (fileInfo.isDir())
+                directories += fileInfo.filePath();
+            else
+                files += fileInfo.filePath();
         }
         directories.removeAt(dirNdx);
     }
