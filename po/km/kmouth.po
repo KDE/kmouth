@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2009-06-03 15:22+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -360,7 +360,7 @@ msgstr "Olaf Schmidt"
 msgid "Tips, extended phrase books"
 msgstr "ព័ត៌មាន​ជំនួយ​ សៀវភៅ​ឃ្លា​បន្ថែម"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "ឯកសារ​ប្រវត្តិ​ដែល​ត្រូវ​បើក"
@@ -1317,7 +1317,7 @@ msgstr "កំពុង​ញែក​ឯកសារ..."
 msgid "Parsing directory..."
 msgstr "កំពុង​ញែក​ថត​..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "កំពុង​អនុវត្ត​ការ​ពិនិត្យ​អក្ខរាវិរុទ្ធ..."

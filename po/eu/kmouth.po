@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 09:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -366,7 +366,7 @@ msgstr "Olaf Schmidt"
 msgid "Tips, extended phrase books"
 msgstr "Argibideak, zabaldutako esaldi-liburuak"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Irekitzeko historia fitxategia"
@@ -1335,7 +1335,7 @@ msgstr "Fitxategia prozesatzen..."
 msgid "Parsing directory..."
 msgstr "Direktorioa prozesatzen..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Ortografia egiaztatzen..."

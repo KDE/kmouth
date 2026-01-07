@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -365,7 +365,7 @@ msgstr "Олаф Јан Шмит"
 msgid "Tips, extended phrase books"
 msgstr "Савети, проширене књиге израза"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Фајл историјата за отварање"
@@ -1330,7 +1330,7 @@ msgstr "Рашчлањујем фајл..."
 msgid "Parsing directory..."
 msgstr "Рашчлањујем из фасцикле..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Проверавам правопис..."

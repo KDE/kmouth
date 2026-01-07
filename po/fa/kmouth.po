@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2007-06-10 15:32+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Tips, extended phrase books"
 msgstr "نکات، عبارت‌نامه‌های گسترده"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "باز کردن پرونده تاریخچه"
@@ -1349,7 +1349,7 @@ msgstr "تجزیه پرونده..."
 msgid "Parsing directory..."
 msgstr "تجزیه فهرست راهنما..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "انجام غلط‌یابی..."

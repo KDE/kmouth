@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2006-10-06 21:52+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Tips, extended phrase books"
 msgstr "Tips, buku frasa lanjutan"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Sejarah fail yang hendak dibuka"
@@ -1358,7 +1358,7 @@ msgstr "Mengkaji hurai fail..."
 msgid "Parsing directory..."
 msgstr "Mengkaji hurai direktori..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Melaksanakan semak eja..."

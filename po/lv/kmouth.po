@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2024-04-09 10:12+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -361,7 +361,7 @@ msgstr "Olaf Schmidt"
 msgid "Tips, extended phrase books"
 msgstr "Padomi, papildu frāžu grāmatas"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Atveramā vēstures datne"
@@ -1311,7 +1311,7 @@ msgstr "Analizē datni..."
 msgid "Parsing directory..."
 msgstr "Analizē vārdnīcu..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Veic pareizrakstības pārbaudi..."

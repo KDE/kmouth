@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages/kdeaccessibility/kmouth.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2004-09-20 15:44+0200\n"
 "Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
 "Language-Team: br <LL@li.org>\n"
@@ -348,7 +348,7 @@ msgstr ""
 msgid "Tips, extended phrase books"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Restr an istorig da zigeriñ"
@@ -1236,7 +1236,7 @@ msgstr "Emaon o lenn ar restr ..."
 msgid "Parsing directory..."
 msgstr "Emaon o lenn ar renkell ..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Emaon o gwiriekaat ar skritur ..."

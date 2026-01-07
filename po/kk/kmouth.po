@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2013-04-13 03:03+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -357,7 +357,7 @@ msgstr "Olaf Schmidt"
 msgid "Tips, extended phrase books"
 msgstr "Кеңестер, кенейтілген тілашарлары"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "Ашатын журнал файлы"
@@ -1329,7 +1329,7 @@ msgstr "Файлды талдау..."
 msgid "Parsing directory..."
 msgstr "Каталогты талдау..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Емлені тексеру..."

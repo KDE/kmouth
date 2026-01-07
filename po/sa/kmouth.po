@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -358,7 +358,7 @@ msgstr "ओलाफ श्मिट"
 msgid "Tips, extended phrase books"
 msgstr "युक्तयः, विस्तारिताः वाक्यपुस्तकानि"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "इतिहाससञ्चिकां उद्घाटयितुं"
@@ -1297,7 +1297,7 @@ msgstr "सञ्चिकायाः विश्लेषणम्..."
 msgid "Parsing directory..."
 msgstr "निर्देशिकां विश्लेषणं करोति..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "वर्तनीपरीक्षां कुर्वन्..."

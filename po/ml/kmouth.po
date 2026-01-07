@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop-kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:48+0000\n"
+"POT-Creation-Date: 2026-01-07 00:39+0000\n"
 "PO-Revision-Date: 2009-02-07 16:42-0800\n"
 "Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -360,7 +360,7 @@ msgstr "ഒളാഫ് ഷ്മിത്"
 msgid "Tips, extended phrase books"
 msgstr "വിജ്ഞാനശകലം, വിസ്തൃത വാക്യാംശപുസ്തകം"
 
-#: main.cpp:51
+#: main.cpp:53
 #, kde-format
 msgid "History file to open"
 msgstr "നാള്‍വഴി ഫയല്‍ തുറക്കാന്‍"
@@ -1341,7 +1341,7 @@ msgstr " ഫയല്‍ മനസ്സിലാക്കിക്കൊണ്�
 msgid "Parsing directory..."
 msgstr "തട്ടു് മനസ്സിലാക്കിക്കൊണ്ടിരിയ്ക്കുന്നു..."
 
-#: wordcompletion/wordlist.cpp:458
+#: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
 msgstr "അക്ഷരപിശക് പരിശോധന നടത്തുന്നു...."
