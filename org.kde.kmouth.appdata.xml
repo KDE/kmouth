@@ -25,6 +25,7 @@
   <name xml:lang="hu">KMouth</name>
   <name xml:lang="ia">KMouth</name>
   <name xml:lang="id">KMouth</name>
+  <name xml:lang="is">KMunnur</name>
   <name xml:lang="it">KMouth</name>
   <name xml:lang="ka">KMouth</name>
   <name xml:lang="ko">KMouth</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="hu">Beszédszintetizátor előtétprogram</summary>
   <summary xml:lang="ia">Fronte anterior de synthetisator de parola</summary>
   <summary xml:lang="id">Frontend Synthesizer Lisan</summary>
+  <summary xml:lang="is">Viðmót á talgervil</summary>
   <summary xml:lang="it">Interfaccia al sintetizzatore vocale</summary>
   <summary xml:lang="ka">საუბრის სინთეზატორის წინაბოლო</summary>
   <summary xml:lang="ko">음성 합성 프론트엔드</summary>
@@ -105,6 +107,7 @@
     <p xml:lang="hu">A KMouth egy olyan program, amely lehetővé teszi, hogy a beszélni nem tudó személyek, például néma emberek vagy olyanok, akik elvesztették a hangjukat, hagyják, hogy a számítógép beszéljen. A program rendelkezik egy szövegbeviteli mezővel, és az Ön által beírt mondatokat felolvassa. Támogatja a felhasználó által definiált kifezejéstárakat is.</p>
     <p xml:lang="ia">KMouth es un programma que habilita personas qui non pote parlar a lassar parlar lor computator, p.e. gente mute o que ha perdite lor voce. Il ha un campo de entrata de texto e pronuncia le phrases que tu inserta. Illo anque ha supporto per un phrasario definite per le usator.</p>
     <p xml:lang="id">KMouth adalah program yang memungkinkan orang yang tidak bisa berbicara untuk membiarkan komputernya yang berbicara, misal orang bisu atau orang yang kehilangan suaranya. Ia memiliki bidang input teks dan mengucapkan kalimat yang kamu masukkan. Ia juga memiliki dukungan untuk buku ungkapan yang ditentukan pengguna.</p>
+    <p xml:lang="is">KMunnur - KMouth er forrit sem gerir fólki sem getur ekki talað kleift að láta tölvuna tala, nú eða þá sem vilja hlusta á texta. í forritinu er innsláttarreitur fyrir texta og les það upp þann texta sem þar er settur inn. Einnig er stuðningur við setningabækur frá notandanum.</p>
     <p xml:lang="it">KMouth è un programma che permette alle persone che non possono parlare di farlo attraverso il computer, ad esempio le persone mute o quelle che hanno perso la voce. Ha un campo di inserimento testuale, e pronuncia le frasi che inserisci. Ha anche il supporto ad un frasario definito dall'utente.</p>
     <p xml:lang="ka">KMouth პროგრამაა, რომელიც მათ, ვისაც ლაპარაკი არ შეუძლია, ამისთვის კომპიუტერის გამოყენების საშუალებას აძლევს. ანუ, მუნჯი ხალხი, რომლებსაც ხმა არ აქვთ. მას აქვს ტექსტის შესაყვანი ველი და წარმოთქვამს წინადადებას, რომელსაც შეიყვანთ. ასევე გააჩნია მომხმარებლის ფრაზების მხარდაჭერაც.</p>
     <p xml:lang="ko">KMouth는 청각 장애인이나 목소리를 잃은 사람이 하고 싶은 말을 컴퓨터가 대신 할 수 있도록 도와 줍니다. 입력하는 텍스트를 말해 주는 인터페이스를 가지고 있으며 사용자 정의 상용구를 설정할 수 있습니다.</p>
