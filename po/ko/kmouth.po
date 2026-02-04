@@ -504,7 +504,7 @@ msgstr "하위 단어장이나 단어를 추가할 수 있는 단어장 추가"
 #: phrasebook/phrasebookdialog.cpp:239 phrasebook/phrasebookdialog.cpp:240
 #, kde-format
 msgid "Saves the phrase book onto the hard disk"
-msgstr "단어장을 하드디스크에 저장합니다"
+msgstr "단어장을 하드 디스크에 저장합니다"
 
 #: phrasebook/phrasebookdialog.cpp:244 phrasebook/phrasebookdialog.cpp:249
 #, kde-format
