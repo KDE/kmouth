@@ -400,28 +400,14 @@ msgid "Book"
 msgstr "Leabhar"
 
 #: phrasebook/phrasebook.cpp:273
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Phrase Books (*.phrasebook);;Plain Text Files (*.txt);;All Files (*)"
 msgstr ""
-"*.phrasebook|Frásleabhair (*.phrasebook)\n"
-"*.txt|Comhaid Ghnáth-théacs (*.txt)\n"
-"*|Gach Comhad"
 
 #: phrasebook/phrasebook.cpp:275
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Plain Text Files (*.txt);;Phrase Books (*.phrasebook);;All Files (*)"
 msgstr ""
-"*.txt|Comhaid Ghnáth-théacs (*.txt)\n"
-"*.phrasebook|Frásleabhair (*.phrasebook)\n"
-"*|Gach Comhad"
 
 #: phrasebook/phrasebook.cpp:293 wordcompletion/wordcompletionwidget.cpp:209
 #, kde-format
@@ -628,16 +614,9 @@ msgid "Import Phrasebook"
 msgstr "Iompórtáil Frásleabhar"
 
 #: phrasebook/phrasebookdialog.cpp:628
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)\n"
-#| "*|All Files"
+#, kde-format
 msgid "Phrase Books (*.phrasebook);Plain Text Files (*.txt);All Files (*)"
 msgstr ""
-"*.phrasebook|Frásleabhair (*.phrasebook)\n"
-"*.txt|Comhaid Ghnáth-théacs (*.txt)\n"
-"*|Gach Comhad"
 
 #: phrasebook/phrasebookdialog.cpp:659 phraselist.cpp:505
 #, kde-format
@@ -654,10 +633,9 @@ msgid "Export Phrase Book"
 msgstr "Easpórtáil Frásleabhar"
 
 #: phrasebook/phrasebookdialog.cpp:670
-#, fuzzy, kde-format
-#| msgid "&Phrase Books"
+#, kde-format
 msgid "Phrase Books (*.phrasebook)"
-msgstr "&Frásleabhair"
+msgstr ""
 
 #: phrasebook/phrasebookdialog.cpp:677 phraselist.cpp:478
 #, kde-format
@@ -772,16 +750,9 @@ msgid "Open File as History"
 msgstr "Oscail mar Stair"
 
 #: phraselist.cpp:484
-#, fuzzy, kde-format
-#| msgid ""
-#| "*|All Files\n"
-#| "*.phrasebook|Phrase Books (*.phrasebook)\n"
-#| "*.txt|Plain Text Files (*.txt)"
+#, kde-format
 msgid "All Files (*);;Phrase Books (*.phrasebook);;Plain Text Files (*.txt)"
 msgstr ""
-"*|Gach Comhad\n"
-"*.phrasebook|Frásleabhair (*.phrasebook)\n"
-"*.txt|Comhaid Ghnáth-Théacs (*.txt)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PreferencesUI)
 #: preferencesui.ui:21
@@ -905,10 +876,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
-#, fuzzy, kde-format
-#| msgid "C&ommand for speaking texts:"
+#, kde-format
 msgid "Command for speaking &texts:"
-msgstr "&Ordú a léann téacsanna:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
@@ -939,10 +909,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, characterCodingLabel)
 #: texttospeechconfigurationui.ui:188
-#, fuzzy, kde-format
-#| msgid "Character &encoding:"
+#, kde-format
 msgid "Character encodin&g:"
-msgstr "Ionchódú &carachtar:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:22
@@ -1364,135 +1333,3 @@ msgstr "Comhadlann á parsáil..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Litriú á sheiceáil..."
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "Níl an iarmhír <i>.phrasebook</i> ar an ainm <i>%1</i> a roghnaigh tú. An "
-#~ "bhfuil fonn ort <i>.phrasebook</i> a chur le hainm an chomhaid?"
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#~| "you wish to save in phrasebook format?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "Roghnaigh tú ainm <i>%1</i> leis an iarmhír <i>.phrasebook</i> air.  An "
-#~ "bhfuil fonn ort é a shábháil i bhformáid fhrásleabhair?"
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Logánta"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "ISO 8859-1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "ISO 8859-1"
-
-#, fuzzy
-#~| msgid ""
-#~| "This check box specifies KMouth tries to use the Jovie speech service "
-#~| "prior to calling the speech synthesizer directly. The Jovie speech "
-#~| "service is a KDE daemon which gives KDE applications a standardized "
-#~| "interface for speech synthesis and is currently developed in SVN."
-#~ msgid ""
-#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
-#~ "system speech service prior to calling the speech synthesizer directly. "
-#~ "The system speech service is a Qt library which wraps speech-dispatcher "
-#~ "on linux, and native speech systems on other platforms.</p></body></html>"
-#~ msgstr ""
-#~ "Cuir tic sa bhosca seo más mian leat go mbainfidh KMouth triail as "
-#~ "seirbhís cainte Jovie sula nglaofaidh sé an sintéiseoir cainte go "
-#~ "díreach. Is éard atá i Jovie ná deamhan KDE a thugann comhéadan "
-#~ "caighdeánaithe sintéise cainte d'fheidhmchláir KDE.  Tá sé á fhorbairt i "
-#~ "SVN faoi láthair."
-
-#, fuzzy
-#~| msgid "KMouth"
-#~ msgid "kmouth"
-#~ msgstr "KMouth"
-
-#~ msgid "Jovie Speech Service"
-#~ msgstr "Seirbhís Chainte Jovie"
-
-#~ msgid "KDE Text-to-Speech Daemon Configuration"
-#~ msgstr "Cumraíocht an Deamhain Téacs-go-Caint KDE"
-
-#~ msgid "&Use Jovie speech service if possible"
-#~ msgstr "Ú&sáid an tseirbhís chainte Jovie más féidir"
-
-#~ msgid "Currently Selected Phrase or Phrase Book"
-#~ msgstr "Frása nó Frásleabhar Roghnaithe Faoi Láthair"
-
-#~ msgid " (%2 of 1 book selected)"
-#~ msgid_plural " (%2 of %1 books selected)"
-#~ msgstr[0] " (%2 as %1 leabhar roghnaithe)"
-#~ msgstr[1] " (%2 as %1 leabhar roghnaithe)"
-#~ msgstr[2] " (%2 as %1 leabhar roghnaithe)"
-#~ msgstr[3] " (%2 as %1 leabhar roghnaithe)"
-#~ msgstr[4] " (%2 as %1 leabhar roghnaithe)"
-
-#~ msgid "Prints the currently selected phrase(s) or phrase book(s)"
-#~ msgstr "Priontáil na frásaí nó frásleabhair roghnaithe"
-
-#~ msgid ""
-#~ "In order to use the '%1' key as a shortcut, it must be combined with the "
-#~ "Win, Alt, Ctrl, and/or Shift keys."
-#~ msgstr ""
-#~ "Chun eochair '%1' a úsáid mar aicearra, ní mór í a chur le chéile leis na "
-#~ "heochracha Win, Alt, Ctrl agus/nó an eochair iomlaoide."
-
-#~ msgid "Invalid Shortcut Key"
-#~ msgstr "Eochair Aicearra Neamhbhailí"
-
-#~ msgid ""
-#~ "The '%1' key combination has already been allocated to %2.\n"
-#~ "Please choose a unique key combination."
-#~ msgstr ""
-#~ "Tá '%1' comhcheangailte leis an ngníomh %2 cheana.\n"
-#~ "Roghnaigh teaglaim eochracha uathúil, le do thoil."
-
-#~ msgid "the standard \"%1\" action"
-#~ msgstr "an gníomh \"%1\" caighdeánach"
-
-#~ msgid "Conflict with Standard Application Shortcut"
-#~ msgstr "Coimhlint le hAicearra Feidhmchláir Chaighdeánaithe"
-
-#~ msgid "the global \"%1\" action"
-#~ msgstr "an gníomh \"%1\" comhchoiteann"
-
-#~ msgid "Conflict with Global Shortcuts"
-#~ msgstr "Coimhlint le hAicearraí Comhchoiteanna"
-
-#~ msgid "an other phrase"
-#~ msgstr "frása eile"
-
-#~ msgid "Key Conflict"
-#~ msgstr "Coimhlint Eochrach"
-
-#~ msgid "Language:"
-#~ msgstr "Teanga:"
-
-#~ msgid "Other"
-#~ msgstr "Eile"
-
-#~ msgid "Create Custom Language"
-#~ msgstr "Cruthaigh Teanga Shaincheaptha"
-
-#~ msgid "Please enter the code for the custom language:"
-#~ msgstr "Iontráil an cód le haghaidh an teanga shaincheaptha:"
-
-#~ msgid "Enables/disables the toolbar"
-#~ msgstr "Cumasaigh/díchumasaigh an barra uirlisí"
