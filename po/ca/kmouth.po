@@ -1347,31 +1347,3 @@ msgstr "S'està analitzant el directori..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "S'està executant la verificació de l'ortografia..."
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "El nom de fitxer <i>%1</i> que heu seleccionat té una extensió diferent "
-#~ "de <i>.phrasebook</i>. "
-
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "El nom de fitxer <i>%1</i> que heu seleccionat té l'extensió <i>."
-#~ "phrasebook</i>. "
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "Local"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
-
-#~ msgid "Unicode"
-#~ msgstr "Unicode"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "Latin1"
