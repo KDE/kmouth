@@ -123,7 +123,7 @@
     <title
 >La fenêtre principale</title>
     <para
->La fenêtre principale de &kmouth; est plutôt simple. Elle consiste en un champ d'édition dans lequel vous saisissez vos phrases (le champ blanc le plus bas dans la copie d'écran) et un historique de phrases prononcées (la zone blanche supérieure dans la copie d'écran). </para>
+>La fenêtre principale de &kmouth; est plutôt simple. Elle consiste en un champ d'édition dans lequel vous saisissez vos phrases (Le champ blanc le plus bas dans la capture d'écran) et un historique de phrases prononcées (La zone blanche supérieure dans la capture d'écran). </para>
     <para>
       <screenshot>
         <screeninfo
@@ -180,7 +180,7 @@
             </imageobject>
             <textobject>
               <phrase
->Copie d'écran</phrase>
+>Capture d'écran</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
@@ -229,7 +229,7 @@
             </imageobject>
             <textobject>
               <phrase
->Copie d'écran</phrase>
+>Capture d'écran</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
@@ -336,7 +336,7 @@
             </imageobject>
             <textobject>
               <phrase
->Copie d'écran</phrase>
+>Capture d'écran</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
@@ -404,7 +404,7 @@
           </imageobject>
           <textobject>
             <phrase
->Copie d'écran</phrase>
+>Capture d'écran</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
