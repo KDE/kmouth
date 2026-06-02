@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:39+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 19:05-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: configwizard.cpp:38
 #, kde-format
@@ -80,7 +81,7 @@ msgstr ""
 #: kmouth.cpp:129 kmouth.cpp:130
 #, kde-format
 msgid "Quits the application"
-msgstr "پروگراممىنى ئاخىرلاشتۇرىدۇ"
+msgstr "پىروگراممىنى ئاخىرلاشتۇرىدۇ"
 
 #: kmouth.cpp:134
 #, kde-format
@@ -306,7 +307,7 @@ msgstr "تەڭشەك(&S)"
 #: main.cpp:37
 #, kde-format
 msgid "KMouth"
-msgstr "KMouth"
+msgstr "K ئېغىز"
 
 #: main.cpp:39
 #, kde-format
@@ -321,22 +322,22 @@ msgstr ""
 #: main.cpp:45
 #, kde-format
 msgid "Gunnar Schmi Dt"
-msgstr "Gunnar Schmi Dt"
+msgstr ""
 
 #: main.cpp:45
 #, kde-format
 msgid "Original Author"
-msgstr ""
+msgstr "ئەسلى يازغۇچى"
 
 #: main.cpp:46
 #, kde-format
 msgid "Jeremy Whiting"
-msgstr ""
+msgstr "Jeremy Whiting"
 
 #: main.cpp:46
 #, kde-format
 msgid "Current Maintainer"
-msgstr ""
+msgstr "نۆۋەتتىكى ئاسرىغۇچى"
 
 #: main.cpp:47
 #, kde-format
@@ -371,7 +372,7 @@ msgstr ""
 #: optionsdialog.cpp:138 optionsdialog.cpp:139
 #, kde-format
 msgid "General Options"
-msgstr "ئادەتتىكى تاللانمىلار"
+msgstr "ئادەتتىكى تاللانما"
 
 #: phrasebook/initialphrasebookwidget.cpp:45
 #, kde-format
@@ -799,7 +800,7 @@ msgstr ""
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "زاپاس"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -1045,7 +1046,7 @@ msgstr ""
 #, kde-format
 msgctxt "In the sense of a blank word list"
 msgid "Empty list"
-msgstr ""
+msgstr "بوش تىزىم"
 
 #: wordcompletion/dictionarycreationwizard.cpp:172
 #, kde-format
@@ -1199,7 +1200,7 @@ msgstr ""
 #: wordcompletion/wordlist.cpp:73
 #, kde-format
 msgid "Creating Word List"
-msgstr "Creating Word List"
+msgstr ""
 
 #: wordcompletion/wordlist.cpp:73 wordcompletion/wordlist.cpp:245
 #, kde-format
@@ -1241,7 +1242,6 @@ msgstr ""
 #~ msgid "Latin1"
 #~ msgstr "Latin1"
 
-#, fuzzy
 #~| msgid "KMouth"
 #~ msgid "kmouth"
 #~ msgstr "KMouth"
