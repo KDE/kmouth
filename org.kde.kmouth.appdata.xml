@@ -41,6 +41,7 @@
   <name xml:lang="sl">KMouth</name>
   <name xml:lang="sv">Kmouth</name>
   <name xml:lang="tr">K Ağız</name>
+  <name xml:lang="ug">K ئېغىز</name>
   <name xml:lang="uk">KMouth</name>
   <name xml:lang="zh-CN">KMouth</name>
   <name xml:lang="zh-TW">KMouth</name>
@@ -81,6 +82,7 @@
   <summary xml:lang="sl">Začelje generatorja govora</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
   <summary xml:lang="tr">Konuşma Sentezleyici Ön Yüzü</summary>
+  <summary xml:lang="ug">ئاۋاز بىرىكتۈرگۈچ ئالدى ئۇچى</summary>
   <summary xml:lang="uk">Оболонка для синтезу мовлення з тексту</summary>
   <summary xml:lang="zh-CN">语音合成器前端</summary>
   <summary xml:lang="zh-TW">語音合成器前端</summary>
