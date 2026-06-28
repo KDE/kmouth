@@ -35,7 +35,7 @@ msgstr "antonibella5@yahoo.com,sps@sastia.com"
 #: configwizard.cpp:38
 #, kde-format
 msgid "Initial Configuration - KMouth"
-msgstr "Configuració inicial - KMouth"
+msgstr "Configuració inicial – KMouth"
 
 #: configwizard.cpp:61
 #, kde-format
@@ -847,7 +847,7 @@ msgstr "Síntesi"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr "Utilit&za el sistema de veu predeterminat"
+msgstr "&Utilitza el sistema de veu predeterminat"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
