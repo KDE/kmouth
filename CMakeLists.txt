@@ -21,7 +21,7 @@ endif(NOT MSVC)
 include(FeatureSummary)
 
 find_package(ECM ${KF_MIN_VERSION} NO_MODULE REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} )
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} )
 include(ECMAddAppIcon)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
