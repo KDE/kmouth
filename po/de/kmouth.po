@@ -962,7 +962,7 @@ msgid ""
 msgstr ""
 "Mit dieser Einstellung wird der Zeichensatz zum Laden von Textdateien "
 "gewählt. Diese Einstellung wird nicht bei XML-Dateien oder Wörterbüchern "
-"benutzt."
+"verwendet."
 
 #. i18n: ectx: property (text), widget (QLabel, encodingLabel)
 #: wordcompletion/creationsourcedetailsui.ui:46
@@ -996,8 +996,9 @@ msgid ""
 "With this input field you select the OpenOffice.org directory that will be "
 "used to spellcheck the words of the new dictionary."
 msgstr ""
-"Mit dieser Einstellung wählen Sie das OpenOffice.org-Wörterbuch, das benutzt "
-"wird, um die Rechtschreibprüfung für das neu Wörterbuch durchzuführen."
+"Mit dieser Einstellung wählen Sie das OpenOffice.org-Wörterbuch, das "
+"verwendet wird, um die Rechtschreibprüfung für das neu Wörterbuch "
+"durchzuführen."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:136
@@ -1150,7 +1151,7 @@ msgid ""
 "creating the new dictionary."
 msgstr ""
 "Mit diesem Feld bestimmen Sie, welchen Ordner Sie zum Erstellen des neuen "
-"Wörterbuchs benutzen möchten."
+"Wörterbuchs verwenden möchten."
 
 #: wordcompletion/dictionarycreationwizard.cpp:164
 #, kde-format
@@ -1194,7 +1195,7 @@ msgid ""
 "this language."
 msgstr ""
 "Mit dieser Einstellung wählen Sie, welche der installierten Sprachen zum "
-"Erstellen des neuen Wörterbuchs benutzt werden. KMouth wird nur "
+"Erstellen des neuen Wörterbuchs verwendet werden. KMouth wird nur "
 "Dokumentationsdateien dieser Sprache analysieren."
 
 #. i18n: ectx: property (title), widget (QGroupBox, selectedDictionaryDetails)
@@ -1305,7 +1306,7 @@ msgstr ""
 "Diese Liste enthält alle verfügbaren Wörterbücher für die "
 "Wortvervollständigung. KMouth zeigt eine Auswahlliste neben dem Eingabefeld "
 "an, wenn die Liste mehr als ein Wörterbuch enthält. Sie können diese "
-"Auswahlliste benutzen, um das Wörterbuch auszuwählen, das aktuell zur "
+"Auswahlliste verwenden, um das Wörterbuch auszuwählen, das aktuell zur "
 "Wortvervollständigung genutzt werden soll."
 
 #: wordcompletion/wordcompletionwidget.cpp:77
