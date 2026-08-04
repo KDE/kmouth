@@ -202,7 +202,7 @@ void PhraseBookDialog::initGUI()
 {
     QWidget *page = new QWidget(this);
 
-    m_ui = new Ui::PhraseBookDialog();
+    m_ui = std::make_unique<Ui::PhraseBookDialog>();
     m_ui->setupUi(page);
     setCentralWidget(page);
 

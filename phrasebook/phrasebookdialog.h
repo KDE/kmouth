@@ -28,6 +28,8 @@
 #include <QAction>
 #include <QUrl>
 
+#include <memory>
+
 // #include "phrasebook.h"
 #include "ui_phrasebookdialog.h"
 
@@ -157,7 +159,7 @@ private:
     // Keep QPrinter so settings persist
     // QPrinter *printer;
 
-    Ui::PhraseBookDialog *m_ui;
+    std::unique_ptr<Ui::PhraseBookDialog> m_ui;
 };
 
 #endif
