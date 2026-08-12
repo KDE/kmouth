@@ -140,7 +140,7 @@ msgstr "&نُطق"
 #: kmouth.cpp:153
 #, kde-format
 msgid "Speaks the currently active sentence(s)"
-msgstr "ينطق الجملة/الجمل النّشطة حالياً"
+msgstr "ينطق الجملة/الجمل النّشطة حاليًا"
 
 #: kmouth.cpp:155 phraselist.cpp:90
 #, kde-format
@@ -149,7 +149,7 @@ msgid ""
 "field it is spoken. Otherwise the selected sentences in the history (if any) "
 "are spoken."
 msgstr ""
-"ينطق الجملة/الجمل النّشطة حالياً. إن كان هناك بعض النصوص في حقل التَّحرير، فإنّه "
+"ينطق الجملة/الجمل النّشطة حاليًا. إن كان هناك بعض النصوص في حقل التَّحرير، فإنّه "
 "ستُنْطَق. فيما عدا ذلك، فإنّ الجمل المحددة بالتَّأريخ (إن وُجِدَت) ستُنطق."
 
 #: kmouth.cpp:160
@@ -190,7 +190,7 @@ msgstr "ا&نطق"
 #: kmouth.cpp:194 kmouth.cpp:196
 #, kde-format
 msgid "Speaks the currently selected phrases in the history"
-msgstr "ينطق التَّعابير المحددة حالياً بالتَّأريخ"
+msgstr "ينطق التَّعابير المحددة حاليًا بالتَّأريخ"
 
 #: kmouth.cpp:200 phrasebook/phrasebookdialog.cpp:291
 #, kde-format
@@ -200,7 +200,7 @@ msgstr "ا&حذف"
 #: kmouth.cpp:202 kmouth.cpp:203
 #, kde-format
 msgid "Deletes the currently selected phrases from the history"
-msgstr "احذف التَّعابير المحددة حالياً من التَّأريخ"
+msgstr "احذف التَّعابير المحددة حاليًا من التَّأريخ"
 
 #: kmouth.cpp:207
 #, kde-format
@@ -222,7 +222,7 @@ msgstr "ا&نسخ"
 #: kmouth.cpp:216 kmouth.cpp:217
 #, kde-format
 msgid "Copies the currently selected phrases from the history to the clipboard"
-msgstr "ينسخ التَّعابير المحددة حالياً من التَّأريخ باتجاه حافظة القُصاصات"
+msgstr "ينسخ التَّعابير المحددة حاليًا من التَّأريخ باتجاه حافظة القُصاصات"
 
 #: kmouth.cpp:220
 #, kde-format
@@ -389,7 +389,7 @@ msgstr "خيارات عامة"
 #: phrasebook/initialphrasebookwidget.cpp:45
 #, kde-format
 msgid "Please decide which phrase books you need:"
-msgstr "فضلاً قرِّر أي دفاتر تعابير تحتاجها:"
+msgstr "فضلًا قرِّر أي دفاتر تعابير تحتاجها:"
 
 #: phrasebook/initialphrasebookwidget.cpp:50
 #, kde-format
@@ -514,7 +514,7 @@ msgstr "ا&ستورد..."
 #: phrasebook/phrasebookdialog.cpp:252 phrasebook/phrasebookdialog.cpp:253
 #, kde-format
 msgid "Imports a file and adds its contents to the phrase book"
-msgstr "يستورد ملفاً ويضيف محتوياته إلى دفتر التعابير"
+msgstr "يستورد ملفًا ويضيف محتوياته إلى دفتر التعابير"
 
 #: phrasebook/phrasebookdialog.cpp:257
 #, kde-format
@@ -535,7 +535,7 @@ msgstr "&صدّر..."
 #, kde-format
 msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
 msgstr ""
-"يصدّر العبارة (العبارات) أو دفتر التعابير (دفاتر التعابير) المحددة حالياً إلى "
+"يصدّر العبارة (العبارات) أو دفتر التعابير (دفاتر التعابير) المحددة حاليًا إلى "
 "ملف"
 
 #: phrasebook/phrasebookdialog.cpp:273 phrasebook/phrasebookdialog.cpp:274
@@ -548,13 +548,13 @@ msgstr "اغلق النافذة"
 msgid ""
 "Cuts the currently selected entries from the phrase book and puts it to the "
 "clipboard"
-msgstr "اقطع المُدْخَلات المحددة حالياً من دفتر التعابير وضعها في حافظة القصاصات"
+msgstr "اقطع المُدْخَلات المحددة حاليًا من دفتر التعابير وضعها في حافظة القصاصات"
 
 #: phrasebook/phrasebookdialog.cpp:282 phrasebook/phrasebookdialog.cpp:283
 #, kde-format
 msgid ""
 "Copies the currently selected entry from the phrase book to the clipboard"
-msgstr "انسخ المُدْخَل المحدد حالياً من دفتر التعابير إلى حافظة القصاصات"
+msgstr "انسخ المُدْخَل المحدد حاليًا من دفتر التعابير إلى حافظة القصاصات"
 
 #: phrasebook/phrasebookdialog.cpp:293 phrasebook/phrasebookdialog.cpp:294
 #, kde-format
@@ -855,7 +855,7 @@ msgid ""
 "%l -- the language code\n"
 "%% -- a percent sign"
 msgstr ""
-"هذا الحقل يحدد كلاً من الأمر المستخدم لنطق النصوص ومعاملاته. ناطق يعرف "
+"هذا الحقل يحدد كلًا من الأمر المستخدم لنطق النصوص ومعاملاته. ناطق يعرف "
 "العلامات التالية:\n"
 "%t -- النص الذي يجب نطقه\n"
 "%f -- اسم ملف يحتوي على النص\n"
@@ -905,7 +905,7 @@ msgid ""
 "If you select this check box the words are spell-checked before they are "
 "inserted into the new dictionary."
 msgstr ""
-"إذا اخترت هذا المربع، تُفحص الكلمات إملائياً قبل إدراجها في القاموس الجديد."
+"إذا اخترت هذا المربع، تُفحص الكلمات إملائيًا قبل إدراجها في القاموس الجديد."
 
 #. i18n: ectx: property (text), widget (QCheckBox, spellCheckBox)
 #: wordcompletion/creationsourcedetailsui.ui:25
@@ -958,7 +958,7 @@ msgid ""
 "used to spellcheck the words of the new dictionary."
 msgstr ""
 "باستخدام حقل الإدخال هذا، اختر دليل OpenOffice.org الذي سيُستخدم لفحص الكلمات "
-"إملائياً في القاموس الجديد."
+"إملائيًا في القاموس الجديد."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/creationsourcedetailsui.ui:136
@@ -1009,7 +1009,7 @@ msgstr "إذا اخترت هذا المربع، يُنشأ قاموس جديد �
 #: wordcompletion/creationsourceui.ui:50
 #, kde-format
 msgid "From &file"
-msgstr "إنطلاقاً من &الملف"
+msgstr "إنطلاقًا من &الملف"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, fileButton)
 #: wordcompletion/creationsourceui.ui:53
@@ -1073,8 +1073,8 @@ msgid ""
 "KMouth automatically adds newly typed words to the dictionaries it will "
 "learn your vocabulary with the time."
 msgstr ""
-"إذا اخترت هذا المربع، يُنشأ قاموس فارغ بدون أي مُدْخَلات. بما أن ناطق يضيف آلياً "
-"الكلمات المرقونة حديثاً إلى القواميس، فسوف يتعلم مفرداتك مع مرور الوقت."
+"إذا اخترت هذا المربع، يُنشأ قاموس فارغ بدون أي مُدْخَلات. بما أن ناطق يضيف آليًا "
+"الكلمات المرقونة حديثًا إلى القواميس، فسوف يتعلم مفرداتك مع مرور الوقت."
 
 #: wordcompletion/dictionarycreationwizard.cpp:64
 #, kde-format
@@ -1133,7 +1133,7 @@ msgid ""
 "If you select this check box the words from the KDE documentation are spell-"
 "checked before they are inserted into the new dictionary."
 msgstr ""
-"إذا اخترت هذا المربع، تُفحص الكلمات من توثيق كيدي إملائياً قبل إدراجها في "
+"إذا اخترت هذا المربع، تُفحص الكلمات من توثيق كيدي إملائيًا قبل إدراجها في "
 "القاموس الجديد."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
@@ -1300,7 +1300,7 @@ msgstr "يُحلّل الدليل..."
 #: wordcompletion/wordlist.cpp:456
 #, kde-format
 msgid "Performing spell check..."
-msgstr "يُجري فحصاً إملائياً..."
+msgstr "يُجري فحصًا إملائيًا..."
 
 #, fuzzy
 #~ msgctxt "Local characterset"
