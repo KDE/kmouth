@@ -134,6 +134,9 @@
   <url type="donation">https://www.kde.org/community/donations/?app=kmouth&amp;source=appdata</url>
   <url type="help">https://docs.kde.org/?application=kmouth</url>
   <url type="homepage">https://apps.kde.org/kmouth/</url>
+  <custom>
+    <value key="KDE::mailinglist">kde-accessibility@kde.org</value>
+  </custom>
   <content_rating type="oars-1.1"/>
   <screenshots>
     <screenshot type="default">
