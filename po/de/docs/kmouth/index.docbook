@@ -55,9 +55,9 @@
 
 
   <date
->2018-01-04</date>
+>2022-03-18</date>
   <releaseinfo
->1.2.0 (Anwendungen 17.12)</releaseinfo>
+>1.2.0 (KDE Gear 22.04)</releaseinfo>
 
   <abstract>
     <para
@@ -112,26 +112,9 @@
       </screenshot>
     </para>
     <para
->Auf der ersten Seite des Assistenten geben Sie den Befehl ein, der für die Sprachausgabe von Text verwendet wird. Weitere Einzelheiten finden Sie in der <link linkend="tts-config"
+>Auf der ersten Seite des Assistenten geben Sie das Modul und die Stimme ein, die für die Sprachausgabe von Text verwendet werden sollen. Weitere Einzelheiten finden Sie in der <link linkend="tts-config"
 >Beschreibung des Einrichtungsdialogs.</link
 > </para>
-    <para>
-      <screenshot>
-        <screeninfo
->Erstes Textpassagen-Buch</screeninfo>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="kmouthwizard2.png" format="PNG"/>
-          </imageobject>
-          <textobject>
-            <phrase
->Erstes Textpassagen-Buch</phrase>
-          </textobject>
-        </mediaobject>
-      </screenshot>
-    </para>
-    <para
->Auf der zweiten Seite wählen Sie das Standard-Textpassagen-Buch. Aus den Textpassagen-Büchern können Sie oft verwendete Textpassagen wählen, ohne sie eintippen zu müssen. Die Textpassagen können natürlich bearbeitet werden. </para>
     <para>
       <screenshot>
         <screeninfo
@@ -173,9 +156,9 @@
     <para
 >Wenn Sie <link linkend="config-dialog"
 >&kmouth; richtig einrichtet</link
-> haben, können Sie im Eingabefeld die Sätze eingeben, die Sie hören wollen. Jeder gesprochene Satz wird an den Verlaufsspeicher angehängt. Sie können daraus Sätze auswählen, die erneut gesprochen werden sollen. </para>
+> haben, können Sie im Eingabefeld die Sätze eingeben, die Sie hören möchten. Jeder gesprochene Satz wird an den Verlaufsspeicher angehängt. Sie können daraus Sätze auswählen, die erneut gesprochen werden sollen. </para>
     <para
->Im Textpassagen-Buch (in der Zeile unter der Werkzeugleiste) können Sie oft benutzte Textpassagen wählen. </para>
+>Im Textpassagen-Buch (in der Zeile unter der Werkzeugleiste) können Sie oft verwendete Textpassagen wählen. </para>
   </sect1>
   <sect1 id="config-dialog">
     <title
@@ -185,7 +168,7 @@
 ><guimenu
 >Einstellungen</guimenu
 ><guimenuitem
->&kmouth; einrichten ...</guimenuitem
+>&kmouth; einrichten …</guimenuitem
 ></menuchoice
 > öffnen Sie den Einstellungsdialog von &kmouth;. Dieser Dialog besteht aus der Seite <guilabel
 >Allgemeine Einstellungen</guilabel
@@ -208,9 +191,6 @@
           <mediaobject>
             <imageobject>
               <imagedata fileref="kmouthcpref.png" format="PNG"/>
-            </imageobject>
-            <imageobject>
-              <imagedata fileref="kmouthcpref.eps" format="EPS"/>
             </imageobject>
             <textobject>
               <phrase
@@ -271,7 +251,7 @@
       <para
 >Mit <guilabel
 >Voreingestelltes Sprachausgabesystem verwenden</guilabel
-> wird als erstes versucht, den Sprachausgabedienst des Systems zu benutzen, dann erst direkt den Sprachsynthesizer. Wenn das erfolgreich ist, werden die weiteren Einstellungen auf dieser Seite ignoriert. Der Sprachausgabedienst des Systems ist eine &Qt;-Bibliothek, die eine standardisierte Schnittstelle für Sprachausgabe zu speech-dispatcher unter &Linux; und zu den nativen Sprachausgabesystemen auf anderen Plattformen zur Verfügung stellt. Auf einen Debian basierten System benötigen Sie die Pakete speech-dispatcher, libqt5texttospeech5 und ein Modul für speech-dispatcher wie normalerweise <application
+> wird als erstes versucht, den Sprachausgabedienst des Systems zu verwenden, dann erst direkt den Sprachsynthesizer. Wenn das erfolgreich ist, werden die weiteren Einstellungen auf dieser Seite ignoriert. Der Sprachausgabedienst des Systems ist eine &Qt;-Bibliothek, die eine standardisierte Schnittstelle für Sprachausgabe zu speech-dispatcher unter &Linux; und zu den nativen Sprachausgabesystemen auf anderen Plattformen zur Verfügung stellt. Auf einen Debian basierten System benötigen Sie die Pakete speech-dispatcher, libqt5texttospeech5 und ein Modul für speech-dispatcher wie normalerweise <application
 >espeak</application
 >. <note
 ><para
@@ -291,9 +271,17 @@
 ></note>
       </para>
       <para
->Im Eingabefeld der Karteikarte <guilabel
->Sprachausgabe</guilabel
-> geben Sie den Befehl zum Aufruf des Sprachgenerators ein. Im Auswahlfeld unter dem Eingabefeld legen Sie die Zeichenkodierung fest, mit der Text an den Sprachgenerator weitergegeben wird.  </para>
+>Es ist auch möglich, das <guilabel
+>Modul</guilabel
+> und die <guilabel
+>Stimme</guilabel
+> für die Sprachausgabe auszuwählen. </para>
+      <para
+>Wenn <guilabel
+>Voreingestelltes Sprachausgabesystem verwenden</guilabel
+> nicht ausgewählt ist, können Sie den Befehl zum Aufruf des Sprachgenerators in das Eingabefeld der <guilabel
+>Alternativ</guilabel
+>-Leiste eingeben. Im Auswahlfeld unter dem Eingabefeld legen Sie die Zeichenkodierung fest, mit der Text an den Sprachgenerator weitergegeben wird. </para>
       <para
 >&kmouth; kennt zwei Arten, den Text weiterzugeben. Wählen Sie das Ankreuzfeld, wenn der Text unverändert als Standardeingabe an den Sprachgenerator weitergegeben werden soll. </para>
       <para
@@ -370,11 +358,11 @@
       <para
 >Die Seite <guilabel
 >Wortergänzung</guilabel
-> enthält eine Liste von Wörterbüchern für die Wortergänzung. Im Hauptfenster neben dem Eingabefeld zeigt &kmouth; ein Auswahlfeld an, wenn diese Liste mehr als ein Wörterbuch enthält. Mit diesem Auswahlfeld können Sie das aktuell benutzte Wörterbuch zur Wortergänzung wählen. </para>
+> enthält eine Liste von Wörterbüchern für die Wortergänzung. Im Hauptfenster neben dem Eingabefeld zeigt &kmouth; ein Auswahlfeld an, wenn diese Liste mehr als ein Wörterbuch enthält. Mit diesem Auswahlfeld können Sie das aktuell verwendete Wörterbuch zur Wortergänzung wählen. </para>
       <para
 >Mit den Knöpfen rechts auf der Seite können Sie Wörterbücher löschen oder hinzufügen, die Reihenfolge der Bücher ändern oder sie in eine Datei exportieren. Unterhalb der Liste können Sie im Eingabefeld den Namen und im Auswahlfeld die Sprache für das Wörterbuch einstellen. </para>
       <para
->Wenn Sie ein neues Wörterbuch einfügen, können Sie dafür mehrere Quellen benutzen: </para>
+>Wenn Sie ein neues Wörterbuch einfügen, können Sie dafür mehrere Quellen verwenden: </para>
       <itemizedlist>
         <listitem>
           <para
@@ -417,7 +405,7 @@
 > <guimenu
 >Textpassagen-Buch</guimenu
 > <guimenuitem
->Bearbeiten ...</guimenuitem
+>Bearbeiten …</guimenuitem
 ></menuchoice
 > öffnen Sie das Bearbeitungsfenster für Textpassagen-Bücher. </para>
     <para>
@@ -470,7 +458,7 @@
 > <guimenu
 >Datei</guimenu
 > <guimenuitem
->Öffnen als Verlauf ...</guimenuitem
+>Öffnen als Verlauf …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -492,7 +480,7 @@
 > <guimenu
 >Datei</guimenu
 > <guimenuitem
->Verlauf speichern unter ...</guimenuitem
+>Verlauf speichern unter …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -514,7 +502,7 @@
 > <guimenu
 >Datei</guimenu
 > <guimenuitem
->Verlauf drucken ...</guimenuitem
+>Verlauf drucken …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -648,7 +636,7 @@
 ><guimenu
 >Textpassagen-Bücher</guimenu
 > <guimenuitem
->Bearbeiten ...</guimenuitem
+>Bearbeiten …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -660,7 +648,7 @@
           </varlistentry>
         </variablelist>
 <para
->&kmouth; benutzt die bekannten &kde;-Menüeinträge <guimenu
+>&kmouth; verwendet die bekannten &kde;-Menüeinträge <guimenu
 >Einstellungen</guimenu
 > und <guimenu
 >Hilfe</guimenu
@@ -740,7 +728,7 @@
 ><guimenu
 >Datei</guimenu
 > <guimenuitem
->Importieren ...</guimenuitem
+>Importieren …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -772,7 +760,7 @@
 ><guimenu
 >Datei</guimenu
 > <guimenuitem
->Exportieren ...</guimenuitem
+>Exportieren …</guimenuitem
 > </menuchoice
 ></term>
             <listitem
@@ -939,7 +927,7 @@
             <term
 ><menuchoice>
               <guimenuitem
->Importieren ...</guimenuitem>
+>Importieren …</guimenuitem>
             </menuchoice
 ></term>
             <listitem
@@ -967,7 +955,7 @@
             <term
 ><menuchoice>
               <guimenuitem
->Exportieren ...</guimenuitem>
+>Exportieren …</guimenuitem>
             </menuchoice
 ></term>
             <listitem
@@ -1064,11 +1052,11 @@
   <para
 >&kmouth; </para>
   <para
->Programm Copyright 2002-2004 Gunnar Schmi Dt <email
+>Programm-Copyright 2002–2004 Gunnar Schmi Dt <email
 >gunnar@schmi-dt.de</email
 > </para>
   <para
->Copyright der Dokumentation 2002-2004 Gunnar Schmi Dt <email
+>Copyright der Dokumentation 2002–2004 Gunnar Schmi Dt <email
 >gunnar@schmi-dt.de</email
 > </para>
 
