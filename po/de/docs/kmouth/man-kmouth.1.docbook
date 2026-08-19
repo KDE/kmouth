@@ -6,15 +6,21 @@
 <refentry lang="&language;">
 <refentryinfo>
 <title
->&kde;-Benutzerhandbuch</title>
+>KMouth-Benutzerhandbuch</title>
 <author
->&Lauri.Watts; &Lauri.Watts.mail;</author>
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>KMouth-Handbuchseite.</contrib
+> &Lauri.Watts.mail;</author>
 <date
->2018-01-03</date>
+>2022-03-18</date>
 <releaseinfo
->Anwendungen 17.12</releaseinfo>
+>KMouth 22.04</releaseinfo>
 <productname
->KDE-Anwendungen</productname>
+>KDE Gear</productname>
 </refentryinfo>
 
 <refmeta>
@@ -50,7 +56,7 @@
 <title
 >Beschreibung</title>
 <para
->&kmouth; ist eine Anwendung, mit der Menschen, die nicht sprechen können, Text durch den Rechner ausgeben lassen können. Es wird eine Liste bereits gesprochener Sätze gespeichert, die der Anwender immer wieder neu ausgaben lassen kann.</para>
+>&kmouth; ist eine Anwendung, mit der Menschen, die nicht sprechen können, Text durch den Rechner ausgeben lassen können. Es wird eine Liste bereits gesprochener Sätze gespeichert, die der Anwender immer wieder neu ausgeben lassen kann.</para>
 <para
 >Beachten Sie, dass &kmouth; keinen Sprachsynthesizer beinhaltet. Auf dem Rechner muss ein Sprachsynthesizer installiert sein.</para
 > 
