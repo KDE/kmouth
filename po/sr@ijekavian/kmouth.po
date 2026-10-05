@@ -4,13 +4,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2004, 2005, 2009.
 # Mladen Pejakovic <pejakm@gmail.com>, 2009.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmouth\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:39+0000\n"
-"PO-Revision-Date: 2017-09-28 17:58+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-04 23:13+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +27,13 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Часлав Илић,Слободан Симић,Младен Пејаковић"
+msgstr "Часлав Илић,Слободан Симић,Младен Пејаковић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "caslav.ilic@gmx.net,slsimic@gmail.com,pejakm@gmail.com"
+msgstr ""
+"caslav.ilic@gmx.net,slsimic@gmail.com,pejakm@gmail.com,nemhirsl@gmail.com"
 
 #: configwizard.cpp:38
 #, kde-format
@@ -592,7 +594,7 @@ msgid ""
 "<qt>There are unsaved changes.<br />Do you want to apply the changes before "
 "closing the \"phrase book\" window or discard the changes?</qt>"
 msgstr ""
-"<qt>Има несачуваних измена.<br />Желите ли да примијените измене прије "
+"<qt>Има несачуваних измијена.<br />Желите ли да примијените измјене прије "
 "затварања прозора књиге израза, или да их одбаците?</qt>"
 
 # >> @title:window
@@ -846,25 +848,25 @@ msgstr "Текст‑у‑говор"
 #: texttospeechconfigurationui.ui:32
 #, kde-format
 msgid "&Use default speech system"
-msgstr "&Подразумевани говорни систем"
+msgstr "&Подразумијевани говорни систем"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr ""
+msgstr "&Мотор:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
 #, kde-format
 msgid "&Voice:"
-msgstr ""
+msgstr "&Глас:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, alternativeGroupBox)
 #: texttospeechconfigurationui.ui:87
 #, kde-format
 msgid "Alternative"
-msgstr ""
+msgstr "Алтернатива"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, urlLabel)
 #. i18n: ectx: property (whatsThis), widget (KUrlRequester, urlReq)
@@ -886,10 +888,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, urlLabel)
 #: texttospeechconfigurationui.ui:123
-#, fuzzy, kde-format
-#| msgid "Alternative command for speaking &texts:"
+#, kde-format
 msgid "Command for speaking &texts:"
-msgstr "&Алтернативна наредба за изговарање текста:"
+msgstr "&Наредба за изговарање текста:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, stdInButton)
 #: texttospeechconfigurationui.ui:152
@@ -1166,7 +1167,7 @@ msgid ""
 "checked before they are inserted into the new dictionary."
 msgstr ""
 "Ако попуните ову кућицу, биће провјерен правопис ријечи из документације "
-"КДЕ‑а пре него што се унесу у нови рјечник."
+"КДЕ‑а прије него што се унесу у нови рјечник."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, languageLabel)
 #: wordcompletion/kdedocsourceui.ui:64
@@ -1335,51 +1336,3 @@ msgstr "Рашчлањујем из фасцикле..."
 #, kde-format
 msgid "Performing spell check..."
 msgstr "Провјеравам правопис..."
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~| "phrasebook</i>. Do you wish to add <i>.phrasebook</i> to the filename?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has a different extension than <i>."
-#~ "phrasebook</i>. "
-#~ msgstr ""
-#~ "<html>Изабрано име фајла <tt>%1</tt> има наставак другачији од <tt>."
-#~ "phrasebook</tt>. Желите ли да додате овај наставак имену?</html>"
-
-#, fuzzy
-#~| msgid ""
-#~| "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. Do "
-#~| "you wish to save in phrasebook format?"
-#~ msgid ""
-#~ "Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>. "
-#~ msgstr ""
-#~ "<html>Изабрано име фајла <tt>%1</tt> има наставак <tt>.phrasebook</tt>. "
-#~ "Желите ли да га сачувате као фајл књиге израза?</html>"
-
-#~ msgctxt "Local characterset"
-#~ msgid "Local"
-#~ msgstr "локално"
-
-#~ msgctxt "Latin1 characterset"
-#~ msgid "Latin1"
-#~ msgstr "латиница‑1"
-
-#~ msgid "Unicode"
-#~ msgstr "уникод"
-
-#~ msgctxt "Latin characterset"
-#~ msgid "Latin1"
-#~ msgstr "латиница‑1"
-
-#~ msgid ""
-#~ "<html><head/><body><p>This check box specifies KMouth tries to use the "
-#~ "system speech service prior to calling the speech synthesizer directly. "
-#~ "The system speech service is a Qt library which wraps speech-dispatcher "
-#~ "on linux, and native speech systems on other platforms.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Ова кућица одређује К‑устима да покуша да "
-#~ "употријеби системски говорни сервис прије директног позивања "
-#~ "синтетизатора говора. Системски говорни сервис је КуТ библиотека која "
-#~ "омотава Отправник говора на Линуксу, а самосвојне говорне системе на "
-#~ "другим платформама.</p></body></html>"
