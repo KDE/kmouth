@@ -39,6 +39,10 @@
   <name xml:lang="sa">केमुखम्</name>
   <name xml:lang="sk">KMouth</name>
   <name xml:lang="sl">KMouth</name>
+  <name xml:lang="sr">К‑уста</name>
+  <name xml:lang="sr-Latn">K‑usta</name>
+  <name xml:lang="sr-ijekavian">К‑уста</name>
+  <name xml:lang="sr-ijekavianlatin">K‑usta</name>
   <name xml:lang="sv">Kmouth</name>
   <name xml:lang="tr">K Ağız</name>
   <name xml:lang="ug">K ئېغىز</name>
@@ -80,6 +84,10 @@
   <summary xml:lang="sa">वाक् संश्लेषक Frontend</summary>
   <summary xml:lang="sk">Rozhranie pre syntezátor reči</summary>
   <summary xml:lang="sl">Začelje generatorja govora</summary>
+  <summary xml:lang="sr">Прочеље за синтетизаторе говора</summary>
+  <summary xml:lang="sr-Latn">Pročelje za sintetizatore govora</summary>
+  <summary xml:lang="sr-ijekavian">Прочеље за синтетизаторе говора</summary>
+  <summary xml:lang="sr-ijekavianlatin">Pročelje za sintetizatore govora</summary>
   <summary xml:lang="sv">Gränssnitt för talsyntes</summary>
   <summary xml:lang="tr">Konuşma Sentezleyici Ön Yüzü</summary>
   <summary xml:lang="ug">ئاۋاز بىرىكتۈرگۈچ ئالدى ئۇچى</summary>
@@ -124,6 +132,10 @@
     <p xml:lang="sa">KMouth इति एकः कार्यक्रमः यः वक्तुं न शक्नुवन्ति ये व्यक्तिः तेषां सङ्गणकं वक्तुं शक्नुवन्ति, यथा- मूकाः जनाः वा स्वरं नष्टाः जनाः वा। अस्य पाठनिवेशक्षेत्रं भवति तथा च भवान् यत् वाक्यं प्रविशति तानि वाक्यानि वदति । अस्मिन् उपयोक्तृनिर्धारितवाक्यपुस्तकानां समर्थनम् अपि अस्ति ।</p>
     <p xml:lang="sk">KMouth je program, ktorý umožňuje osobám, ktoré nemôžu hovoriť, nechať hovoriť počítač, napr. nemí ľudia alebo ľudia, ktorí stratili hlas. Obsahuje pole na zadávanie textu a vyslovuje vety, ktoré zadáte. Má tiež podporu pre užívateľom definované frázy.</p>
     <p xml:lang="sl">KMouth je program, ki omogoča osebam, ki ne morejo govoriti kot npr. nemi ljudje ali ljudje, ki so izgubili glas, da njihov računalnik govori namesto njih.  Ima polje za vnos besedila in govori stavke, ki jih vnesete. Prav tako ima podporo za uporabniško določene zbirke fraz. Opomba prevajalca: zaenkrat je podprt samo angleški generator govora.</p>
+    <p xml:lang="sr">К‑уста је програм који омогућава особама које не могу да говоре да пусте рачунар да говори уместо њих, нпр. немим особама или особама које су изгубиле глас. Има поље за унос текста и изговара реченице које унесете. Подржава и корисничке књиге израза.</p>
+    <p xml:lang="sr-Latn">K‑usta je program koji omogućava osobama koje ne mogu da govore da puste računar da govori umesto njih, npr. nemim osobama ili osobama koje su izgubile glas. Ima polje za unos teksta i izgovara rečenice koje unesete. Podržava i korisničke knjige izraza.</p>
+    <p xml:lang="sr-ijekavian">К‑уста је програм који омогућава особама које не могу да говоре да пусте рачунар да говори умјесто њих, нпр. нијемим особама или особама које су изгубиле глас. Има поље за унос текста и изговара реченице које унесете. Подржава и корисничке књиге израза.</p>
+    <p xml:lang="sr-ijekavianlatin">K‑usta je program koji omogućava osobama koje ne mogu da govore da puste računar da govori umjesto njih, npr. nijemim osobama ili osobama koje su izgubile glas. Ima polje za unos teksta i izgovara rečenice koje unesete. Podržava i korisničke knjige izraza.</p>
     <p xml:lang="sv">Kmouth är ett program som gör det möjligt för personer som inte kan tala att låta datorn tala, t.ex. stumma eller personer som har förlorat rösten. Det har ett textinmatningsfält och läser upp meningarna som skrivs in. Det har också stöd för användardefinierade parlörer.</p>
     <p xml:lang="tr">K Ağız, konuşamayan kişilerin yerine (örn. dilsiz kişiler veya sesini kaybetmiş kişiler) bilgisayarın konuşmasını sağlayan bir programdır. Bir metin girdi alanı vardır ve girdiğiniz metni konuşur. Kullanıcı tanımlı deyişler için desteği vardır.</p>
     <p xml:lang="uk">KMouth — програма, яка надає змогу тим, хто не може говорити, спілкуватися за допомогою комп'ютера. У ній передбачено поле для введення тексту, який вимовлятиме комп'ютер. Також можна створювати визначені користувачем набори заздалегідь приготованих фраз.</p>
