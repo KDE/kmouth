@@ -853,7 +853,7 @@ msgstr "&Использовать систему синтеза речи по у
 #: texttospeechconfigurationui.ui:41
 #, kde-format
 msgid "&Engine:"
-msgstr "&Движок:"
+msgstr "&Модуль:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: texttospeechconfigurationui.ui:61
