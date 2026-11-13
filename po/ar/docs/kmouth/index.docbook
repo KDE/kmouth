@@ -1,0 +1,1204 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kmouth" lang="&language;">
+<bookinfo>
+  <title
+>دليل ناطق</title>
+
+  <authorgroup>
+    <author
+><firstname
+>Gunnar</firstname
+> <surname
+>Schmi Dt</surname
+> <affiliation
+> <address
+><email
+>gunnar@schmi-dt.de</email
+></address>
+      </affiliation>
+    </author>
+  <othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+  </authorgroup>
+
+
+  <copyright>
+    <year
+>2002</year
+><year
+>2003</year>
+    <holder
+>غونار شمي دت</holder>
+  </copyright>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <legalnotice
+>&FDLNotice;</legalnotice>
+
+
+  <date
+>2022-03-18</date>
+  <releaseinfo
+>1.2.0 (ترس كيدي 22.04)</releaseinfo>
+
+  <abstract>
+    <para
+>ناطق هو تطبيق يمكّن الأشخاص الذين لا يستطيعون الكلام من جعل حواسيبهم تتحدث. </para>
+  </abstract>
+
+  <keywordset>
+    <keyword
+>كيدي</keyword>
+    <keyword
+>إمكانية الوصول في كيدي</keyword>
+    <keyword
+>ناطق</keyword>
+    <keyword
+>تحويل النص إلى كلام</keyword>
+    <keyword
+>الأشخاص البكم</keyword>
+  </keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+  <title
+>مقدمة</title>
+
+  <para
+>ناطق هو برنامج يمكّن الأشخاص الذين لا يستطيعون الكلام من جعل حواسيبهم تتحدث. يتضمن سجلًا للجمل المنطوقة يمكن للمستخدم اختيار جمل منها لإعادة نطقها. </para>
+  <para
+>لاحظ أن ناطق لا يتضمن أي مركبات كلام. بدلًا من ذلك، يتطلب وجود مركب كلام مثبت في النظام. </para>
+</chapter>
+
+<chapter id="using-kmouth">
+  <title
+>استخدام ناطق</title>
+  <sect1 id="Wizard">
+    <title
+>الإعداد الأول</title>
+    <para
+>أثناء الاستخدام الأول لـ ناطق، يُعرض معالج يمكنك من ضبطه. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>ضبط نطق النّص</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard1.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>ضبط نطق النّص</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>بالصفحة الأولى من المعالج، تحدد المحرك والصوت اللذين سيُستخدمان لتحويل النص إلى كلام. لمزيد من التفاصيل، انظر إلى <link linkend="tts-config"
+>وصف حوار الضبط.</link
+> </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>إكمال الكلمات</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthwizard3.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>إكمال الكلمات</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>بالصفحة الثالثة، تعرّف القاموس لإكمال الكلمات. سيعالج ناطق وثائق كيدي للغة المختارة ليكتشف انتظام الكلمات الفردية. اختياريًا، يمكنك مقارنة قائمة الكلمات بقالب قاموس OpenOffice.org لإضافة الكلمات المكتوبة بشكل صحيح فقط إلى إكمال الكلمات. </para>
+  </sect1>
+  <sect1 id="main-window">
+    <title
+>النافذة الرئيسة</title>
+    <para
+>النافذة الرئيسة لـ ناطق بسيطة إلى حد ما. تتكون أساسًا من حقل تحرير تكتب فيه جملتك (الحقل الأبيض السفلي في لقطة الشاشة) وسجل للجمل المنطوقة (الحقل الأبيض العلوي في لقطة الشاشة). </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>النافذة الرئيسة لـ ناطق</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthmain.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>النافذة الرئيسة لـ ناطق</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>بافتراض أنك ضبطت ناطق بشكل صحيح <link linkend="config-dialog"
+>ضبط ناطق</link
+> يمكنك استخدام حقل التحرير لإدخال الجمل التي تريد سماعها. بمجرد نطق جملة، ستُضاف إلى السجل. من السجل يمكنك اختيار جمل لإعادة نطقها. </para>
+    <para
+>من دفاتر العبارات (الموجودة في السطر أسفل شريط الأدوات) يمكنك اختيار العبارات المستخدمة بكثرة. </para>
+  </sect1>
+  <sect1 id="config-dialog">
+    <title
+>حواريّ الضّبط</title>
+    <para
+>باستخدام إدخال القائمة <menuchoice
+> <guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>ضبط ناطق...</guimenuitem
+> </menuchoice
+> تفتح حوار ضبط ناطق. يتكون هذا الحوار من الصفحات <guilabel
+>خيارات عامة</guilabel
+> مع اللسانين <guilabel
+>التفضيلات</guilabel
+> و<guilabel
+>تحويل النص إلى كلام</guilabel
+> والصفحة <guilabel
+>إكمال الكلمات</guilabel
+>. </para>
+    <sect2 id="preferences">
+      <title
+>لسان التفضيلات</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>لسان <guilabel
+>التفضيلات</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcpref.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>لقطة شاشة</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>يحتوي لسان <guilabel
+>التفضيلات</guilabel
+> على خيارات تغير سلوك ناطق في حالات معينة. </para>
+      <para
+>بمربع التحرير والسرد الأول <guilabel
+>اختيار العبارات في دفتر العبارات</guilabel
+> تحدد الإجراء الذي يُطلق بكتابة اختصار عبارة أو باختيار عبارة في قائمة <guimenu
+>دفتر العبارات</guimenu
+> أو في شريط دفتر العبارات. </para>
+      <para
+>باختيار <guilabel
+>نطق فورًا</guilabel
+> تُنطق العبارة المختارة فورًا وتُدخل في السجل. إذا اخترت <guilabel
+>إدراج في حقل التحرير</guilabel
+> تُدرج العبارة المختارة فقط في حقل التحرير. </para>
+      <para
+>بمربع التحرير والسرد الثاني، <guilabel
+>إغلاق نافذة تحرير دفتر العبارات</guilabel
+>، تحدد ما إذا كان دفتر العبارات سيُحفظ إذا أغلقت نافذة تحرير دفتر العبارات فقط. </para>
+      <para
+>باختيار <guilabel
+>حفظ دفتر العبارات</guilabel
+> يُحفظ دفتر العبارات. إذا اخترت <guilabel
+>تجاهل التغييرات</guilabel
+> تُتجاهل التغييرات ولا يُحفظ دفتر العبارات. إذا اخترت <guilabel
+>اسأل عما إذا كان سيُحفظ</guilabel
+> سيسألك ناطق عما إذا كان سيحفظ دفتر العبارات. </para>
+    </sect2>
+    <sect2 id="tts-config">
+      <title
+>لسان تحويل النص إلى كلام</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>لسان <guilabel
+>تحويل النص إلى كلام</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthctts.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>لقطة شاشة</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>باختيار <guilabel
+>استخدام نظام الكلام المبدئي</guilabel
+> تخبر ناطق بمحاولة استخدام خدمة الكلام النظامية أولًا قبل استدعاء مركب الكلام مباشرة. إذا نجح ذلك، تُتجاهل إدخالات الضبط الأخرى على هذا اللسان. خدمة الكلام النظامية هي مكتبة &Qt; تغلف speech-dispatcher على &Linux;، وأنظمة الكلام الأصلية على المنصات الأخرى. على نظام قائم على دبيان، تحتاج الحزم speech-dispatcher وlibqt5texttospeech5 وأحد وحدات speech-dispatcher، عادةً <application
+>espeak</application
+>. <note
+><para
+>استخدم أداة سطر الأوامر <command
+>spd-conf</command
+> (حزمة دبيان python3-speechd) لضبط إعدادات مثل المعدل وطبقة الصوت والحجم ونوع الصوت واللغة &etc; لنظام الكلام المبدئي. بالإضافة إلى ذلك، ستتيح لك <command
+>spd-conf</command
+> الاختيار بين جميع وحدات speech-dispatcher المثبتة، &ie; <application
+>espeak</application
+> و<application
+>festival</application
+> و<application
+>flite</application
+> و<application
+>mbrola</application
+> &etc; </para
+></note>
+      </para>
+      <para
+>من الممكن أيضًا اختيار <guilabel
+>المحرك</guilabel
+> و<guilabel
+>الصوت</guilabel
+> لنظام الكلام. </para>
+      <para
+>إذا لم يُحدد خيار <guilabel
+>استخدام نظام النطق المبدئي</guilabel
+>، يمكنك إدخال الأمر لاستدعاء مركب النطق في حقل التحرير بلوحة <guilabel
+>البديل</guilabel
+>. باستخدام المربع المنسدل أسفل حقل التحرير، تحدد ترميز المحارف المستخدم لتمرير النص إلى مركب النطق. </para>
+      <para
+>يعرف ناطق طريقتين لتمرير النص: إذا كان الأمر يتوقع النص كمدخل قياسي، فحدد مربع الاختيار. </para>
+      <para
+>الطريقة الأخرى هي تمرير النص كمعامل: قبل استدعاء الأمر، يستبدل ناطق بعض العناصر النائبة بالمحتوى الفعلي: <informaltable frame="topbot"
+> <tgroup cols="2">
+          <thead>
+          <row
+><entry
+>عنصر نائب</entry
+><entry
+>يُستبدل بـ</entry
+></row>
+          </thead>
+            <tbody>
+              <row
+><entry
+><token
+>%t</token
+></entry>
+                   <entry
+>النص الفعلي الذي يجب نطقه</entry>
+              </row>
+              <row
+><entry
+><token
+>%f</token
+></entry>
+                   <entry
+>اسم ملف مؤقت يحتوي على النص الذي يجب نطقه</entry>
+              </row>
+              <row
+><entry
+><token
+>%l</token
+></entry>
+                   <entry
+>رمز اللغة المرتبط بقاموس إكمال الكلمات الحالي</entry>
+              </row>
+              <row
+><entry
+><token
+>%%</token
+></entry
+><entry
+>علامة النسبة المئوية</entry
+></row>
+           </tbody>
+          </tgroup>
+        </informaltable>
+      </para>
+      <para
+>بالطبع، الأمر لنطق النصوص يعتمد على مركب النطق الذي تستخدمه. يُرجى الاطلاع على وثائق مركب النطق الخاص بك لمعرفة الأمر المناسب لنطق النصوص. </para>
+    </sect2>
+    <sect2 id="completion-config">
+      <title
+>صفحة إكمال الكلمات</title>
+      <para>
+        <screenshot>
+          <screeninfo
+>صفحة <guilabel
+>إكمال الكلمات</guilabel
+></screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="kmouthcwcp.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>لقطة شاشة</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>تحتوي صفحة <guilabel
+>إكمال الكلمات</guilabel
+> على قائمة بالقواميس المستخدمة لإكمال الكلمات. (سيعرض ناطق مربعًا منسدلًا بجوار حقل التحرير في النافذة الرئيسة إذا احتوت هذه القائمة على أكثر من قاموس واحد. يمكنك استخدام هذا المربع المنسدل لتحديد القاموس المستخدم فعليًا لإكمال الكلمات.) </para>
+      <para
+>باستخدام الأزرار على الجانب الأيمن من الصفحة، يمكنك إضافة القواميس وحذفها، وتغيير ترتيب القواميس، أو تصدير القواميس إلى ملف. باستخدام حقل التحرير والمربع المنسدل أسفل القائمة، يمكنك تغيير الاسم واللغة المرتبطين بالقاموس. </para>
+      <para
+>عند إضافة قاموس جديد، يمكنك الاختيار بين عدة مصادر: </para>
+      <itemizedlist>
+        <listitem>
+          <para
+>إنشاء قاموس جديد من وثائق &kde;</para>
+          <para
+>إذا استخدمت هذا المصدر، سيطلب ناطق منك اللغة المقصودة ثم يحلل وثائق &kde;. يُكتشف تكرار الكلمات الفردية ببساطة عن طريق عد مرات ظهور كل كلمة. اختياريًا، يمكنك مقارنة قائمة الكلمات بقاموس OpenOffice.org لإضافة الكلمات الصحيحة إملائيًا فقط إلى القاموس الجديد. </para>
+        </listitem>
+        <listitem>
+          <para
+>إنشاء قاموس جديد من ملف</para>
+          <para
+>إذا استخدمت هذا المصدر، سيطلب ناطق منك الملف المقصود. يمكنك إما تحديد ملف &XML;، أو ملف نصي قياسي، أو ملف يحتوي على قاموس إكمال كلمات منشأ بواسطة ناطق أو GOK (لوحة المفاتيح الشاشية لجنوم). إذا حددت ملفًا نصيًا قياسيًا أو ملف &XML;، يُكتشف تكرار الكلمات الفردية ببساطة عن طريق عد مرات ظهور كل كلمة. اختياريًا، يمكنك مقارنة قائمة الكلمات بقاموس OpenOffice.org لإضافة الكلمات الصحيحة إملائيًا فقط إلى القاموس الجديد. </para>
+        </listitem>
+        <listitem>
+          <para
+>إنشاء قاموس جديد من مجلد</para>
+          <para
+>إذا استخدمت هذا المصدر، سيطلب ناطق منك المجلد المقصود. سيفتح ناطق جميع الملفات في ذلك المجلد ومجلداته الفرعية. يُحمّل كل ملف إما كقاموس إكمال، أو كملف &XML;، أو كملف نصي قياسي. في الحالتين الأخيرتين، يُحسب عدد مرات ظهور كل كلمة فردية في الملف. اختياريًا، يمكنك مقارنة قائمة الكلمات بقاموس OpenOffice.org لإضافة الكلمات الصحيحة إملائيًا فقط إلى القاموس الجديد. </para>
+        </listitem>
+        <listitem>
+          <para
+>ادمج القواميس</para>
+          <para
+>يمكنك استخدام هذا الخيار لدمج القواميس المتاحة. سيطلب ناطق منك القواميس التي يجب دمجها وكيفية ترجيح كل قاموس. </para>
+        </listitem>
+        <listitem>
+          <para
+>إنشاء قائمة كلمات فارغة</para>
+          <para
+>يمكنك استخدام هذا الخيار لإنشاء قاموس فارغ دون أي مدخلات. نظرًا لأن ناطق يضيف تلقائيًا الكلمات المكتوبة حديثًا إلى القواميس، فسيتعلم مفرداتك مع الوقت. </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+  </sect1>
+  <sect1 id="phrasebook-editor">
+    <title
+>نافذة تحرير دفتر العبارات</title>
+    <para
+>باستخدام إدخال القائمة <menuchoice
+> <guimenu
+>دفاتر العبارات</guimenu
+><guimenuitem
+>تحرير...</guimenuitem
+> </menuchoice
+> تفتح نافذة تحرير دفتر العبارات. </para>
+    <para>
+      <screenshot>
+        <screeninfo
+>نافذة تحرير دفتر العبارات</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kmouthedit.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>لقطة شاشة</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+    <para
+>تنقسم المساحة الرئيسة لنافذة تحرير دفتر العبارات إلى جزأين. في الجزء العلوي، تُعرض دفاتر العبارات في بنية شجرية. </para>
+    <para
+>في الجزء السفلي، يمكنك تعديل عنصر محدد. إذا حددت عبارة، يمكنك تعديل محتويات العبارة بالإضافة إلى اختصارها. إذا حددت دفتر عبارات، يمكنك فقط تغيير اسمه. </para>
+    <para
+>يمكن تنفيذ إجراءات مثل إضافة عبارات ودفاتر عبارات جديدة، وحذف العبارات ودفاتر العبارات المحددة عن طريق تحديدها إما في شريط القوائم، أو شريط الأدوات، أو قائمة منبثقة. </para>
+    <para
+>يمكنك تغيير ترتيب دفاتر العبارات والعبارات بسحبها إلى أماكنها الجديدة أو باستخدام مفاتيح الأسهم أثناء الضغط على مفتاح &Alt;. </para>
+  </sect1>
+
+</chapter>
+
+<chapter id="commands">
+  <title
+>مرجع الأوامر</title>
+
+  <sect1 id="main-commands">
+    <title
+>الأوامر داخل النافذة الرئيسة</title>
+    <sect2 id="file-menu">
+      <title
+>قائمة ملف</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>افتح كتاريخ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يفتح ملفًا نصيًا كتاريخ للجمل المنطوقة.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>احفظ التاريخ باسم...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يحفظ التاريخ في ملف نصي.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>اطبع التاريخ...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يطبع التاريخ.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يخرج من ناطق</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="edit-menu">
+      <title
+>قائمة حرر</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>قصّ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يقص المقطع المحدد ويضعه في الحافظة. إذا كان هناك نص محدد في حقل التحرير، يوضع في الحافظة. وإلا، توضع الجمل المحددة في التاريخ (إن وُجدت) في الحافظة. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>انسخ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>ينسخ المقطع المحدد إلى حافظة القُصاصات. إن وُجد بعض النصوص المحددة في حقل التَّحرير، فإنَّه سينسخها في حافظة القُصاصات. فيما عدا ذلك، فإنّ الجُمَل المحددة في التَّأريخ (إن وُجدت) ستُنسخ في حافظة القُصاصات. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>ألصق</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يُلصِق محتويات حافظة القُصاصات عند الموضع الحاليّ للمؤشر داخل حقل التَّحرير. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>تحدث</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>ينطق الجملة/الجمل النّشطة حاليًا. إن كان هناك بعض النصوص في حقل التَّحرير، فإنّه ستُنْطَق. فيما عدا ذلك، فإنّ الجمل المحددة بالتَّأريخ (إن وُجِدَت) ستُنطق. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="phrasebooks-menu">
+      <title
+>قائمة دفاتر العبارات</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>دفاتر العبارات</guimenu
+> <guimenuitem
+>حرر...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+>يفتح <link linkend="phrasebook-editor"
+>نافذة تحرير دفتر العبارات</link
+>. </para
+></listitem>
+          </varlistentry>
+        </variablelist>
+<para
+>ناطق يحتوي على عناصر قائمة <guimenu
+>إعدادات</guimenu
+> و<guimenu
+>مساعدة</guimenu
+> الشائعة في &kde;، لمزيد من المعلومات اقرأ الأقسام حول <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و<ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> من أساسيات &kde;. </para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="pb-editor-commands">
+    <title
+>الأوامر داخل نافذة تحرير دفتر العبارات</title>
+    <sect2 id="pbe-file-menu">
+      <title
+>قائمة ملف</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>عبارة جديدة</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>أضف عبارة جديدة.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>دفتر عبارات جديد</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يضيف دفتر عبارات جديد.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>احفظ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يحفظ دفتر العبارات.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>استورد...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يستورد ملفًا ويضيف محتوياته إلى دفتر التعابير</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>استورد دفتر العبارات القياسي</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يستورد دفتر تعابير قياسي ويضيف محتوياته إلى دفتر التعابير</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>صَدِّر...</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يُصدر العبارة(العبارات) أو دفتر(دفاتر) العبارات المحددة حاليًا إلى ملف</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>أغلق</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>اغلق النافذة</action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-edit-menu">
+      <title
+>قائمة حرر</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>قصّ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يقص العناصر المحددة ويضعها في الحافظة. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>انسخ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>ينسخ العناصر المحددة إلى الحافظة. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>ألصق</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يلصق محتويات الحافظة في دفتر العبارات. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><guimenu
+> حرر</guimenu
+> <guimenuitem
+>احذف</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يحذف العناصر المحددة. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="pbe-help-menu">
+      <title
+>قائمة مساعدة</title>
+      <para
+>العناصر في هذه القائمة هي نفسها الموجودة في النافذة الرئيسة.</para>
+    </sect2>
+
+    <sect2 id="pbe-popup-menu">
+      <title
+>القائمة المنبثقة</title>
+        <variablelist>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>عبارة جديدة</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>أضف عبارة جديدة.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>دفتر التعبير جديد</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يضيف دفتر عبارات جديد.</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>استورد...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يستورد ملفًا ويضيف محتوياته إلى دفتر التعابير</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>استورد دفتر تعابير قياسي</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يستورد دفتر تعابير قياسي ويضيف محتوياته إلى دفتر التعابير</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>صدّر...</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يُصدر العبارة(العبارات) أو دفتر(دفاتر) العبارات المحددة حاليًا إلى ملف</action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>قص</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يقص العناصر المحددة ويضعها في الحافظة. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>انسخ</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>ينسخ العناصر المحددة إلى الحافظة. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenuitem
+>ألصق</guimenuitem
+> </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يلصق محتويات الحافظة في هذا الموضع داخل دفتر العبارات. </action
+></para
+></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term
+><menuchoice>
+              <guimenuitem
+>احذف</guimenuitem>
+            </menuchoice
+></term>
+            <listitem
+><para
+><action
+>يحذف العناصر المحددة. </action
+></para
+></listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+  </sect1>
+
+</chapter>
+
+<chapter id="credits">
+  <title
+>الحقوق والترخيص</title>
+
+  <para
+>ناطق </para>
+  <para
+>حقوق برنامج 2002-2004 غونار شمي دت <email
+>gunnar@schmi-dt.de</email
+> </para>
+  <para
+>حقوق التوثيق 2002-2004 غونار شمي دت <email
+>gunnar@schmi-dt.de</email
+> </para>
+
+  <para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<!--
+<appendix id="tts">
+  <title
+>Examples for the text-to-speech configuration</title>
+  <qandaset id="ttslist">
+      <qandaentry>
+      <question>
+        <para
+>Festival</para>
+      </question>
+      <answer>
+        <para>
+          Festival is a text-to-speech system written from the University of
+          Edinburgh. It currently supports English, Spanish and Welsh speech.
+          Its license allows to use and distribute Festival free of charge
+          without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that Festival is installed in the directory
+          <filename class="directory"
+>/usr/local/festival/</filename
+>. The
+          command for speaking texts then is as follows:
+        </para>
+        <para>
+          <screen
+><userinput><command>/usr/local/festival/bin/festival</command> <option>- -tts</option></userinput></screen>
+        </para>
+        <para>
+          The option <guilabel
+>Send the data as standard input</guilabel
+> must
+          be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>FreeTTS</para>
+      </question>
+      <answer>
+        <para>
+          FreeTTS is a speech synthesizer written entirely in the &Java;™
+          programming language. It currently only has support for English
+          pronounciation. Its license allows to use and distribute FreeTTS
+          free of charge without restrictions.
+        </para>
+        <para>
+          In order to create the command line example for the text-to-speech
+          configuration we assume that FreeTTS is installed in the directory
+          <filename class="directory"
+>/usr/local/freetts/</filename
+>. The
+          command for speaking texts then one of the following three examples:
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-text %t</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option> <option>-file %f</option></userinput></screen>
+        </para>
+        <para>
+          <screen
+><userinput><command>java</command> <option>-jar /usr/local/freetts/lib/freetts.jar</option></userinput></screen>
+        </para>
+        <para>
+          For the third example the option <guilabel
+>Send the data as standard
+          input</guilabel
+> must be enabled. (This one is the preferred example
+          for the use with FreeTTS.)
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para
+>MBROLA</para>
+      </question>
+      <answer>
+        <para>
+          MBROLA is a speech synthesizer for a large number of languages. It
+          converts a list of phonemes to a wave file, so you need some other
+          tool to convert the text into a list of phonemes. The license of
+          MBROLA allows to use and MBROLA free of charge for non-commercial,
+          non-military applications.
+        </para>
+        <para>
+          For our example we will use Hadifax in order to convert German texts
+          into a list of phonemes suitable for MBROLA. We will assume that
+          Hadifax and MBROLA are installed to
+          <filename class="directory"
+>/usr/local/hadifax/</filename
+> and
+          <filename class="directory"
+>/usr/local/mbrola/</filename
+>.
+        </para>
+        <para>
+          Unfortunately Hadifax tends to swallow the last character of the text,
+          so we may want to add an additional character to the text. The complete
+          command is therefore more complex than the previous examples:
+        </para>
+        <para>
+          <screen
+><userinput>(<command>cat</command> <option>-</option>; <command>echo</command> <option>&quot; &quot;</option>) | <command>/usr/local/hadifax/txt2pho</command> <option>-f</option>
+          | <command>/usr/local/mbrola/mbrola</command> <option>-e</option>
+          <option>/usr/local/mbrola/de1/de1 - /tmp/tmp.wav</option>;
+          <command>paplay</command> <option>/tmp/tmp.wav</option>; <command>rm</command> <option>/tmp/tmp.wav</option></userinput></screen>
+        </para>
+        <para>
+          All parts of this command need to be written into one line. The option
+          <guilabel
+>Send the data as standard input</guilabel
+> must be enabled.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+</appendix>
+-->
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
