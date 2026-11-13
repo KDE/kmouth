@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Arabic "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>دليل مستخدم ناطق</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>KMouth man page.</contrib
+> &Lauri.Watts.mail;</author>
+<date
+>2022-03-18</date>
+<releaseinfo
+>ناطق 22.04</releaseinfo>
+<productname
+>ترس كيدي</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kmouth</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kmouth</command
+></refname>
+<refpurpose
+>واجهة أمامية من نوع اكتب-وقل لمُركِّبات الكلام</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kmouth</command
+> <arg choice="opt"
+><replaceable
+>اسم ملف</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>الوصف</title>
+<para
+>ناطق هو تطبيق يمكّن الأشخاص الذين لا يستطيعون الكلام من جعل حواسيبهم تتحدث. يتضمن سجلًا للجمل المنطوقة يمكن للمستخدم اختيار جمل منها لإعادة نطقها.</para>
+<para
+>لاحظ أن ناطق لا يتضمن مُركِّب كلام. بل يتطلب وجود مُركِّب كلام مثبت في النظام.</para
+> 
+</refsect1>
+
+<refsect1>
+<title
+>خيارات</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+><replaceable
+>اسم الملفّ</replaceable
+></option
+></term>
+<listitem>
+<para
+>ملف السجل المطلوب فتحه.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>انظر أيضًا</title>
+<para
+>espeak(1), festival(1), mbrola(1), freetts(1)</para>
+
+<para
+>وثائق المستخدم الأكثر تفصيلًا متاحة من <ulink url="help:/kmouth"
+>help:/kmouth</ulink
+> (إما أدخل هذا &URL; في &konqueror;، أو شغّل <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kmouth</parameter
+></userinput
+>).</para>
+
+<para
+>تتوفر أيضًا معلومات إضافية في <ulink url="https://community.kde.org/Accessibility"
+>موقع مشروع إمكانية الوصول في &kde;</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>المؤلفون</title>
+<para
+>ناطق كُتب بواسطة <personname
+><firstname
+>غونار</firstname
+><surname
+>شمي دت</surname
+></personname
+> <email
+>kmouth@schmi-dt.de</email
+>.</para>
+</refsect1>
+
+</refentry>
