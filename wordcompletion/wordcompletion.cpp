@@ -29,6 +29,8 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+#include <utility>
+
 class WordCompletion::WordCompletionPrivate
 {
     friend class WordCompletion;
@@ -70,7 +72,7 @@ WordCompletion::~WordCompletion()
     delete d;
 }
 
-typedef QPair<int, QString> Match;
+typedef std::pair<int, QString> Match;
 typedef QList<Match> MatchList;
 
 QString WordCompletion::makeCompletion(const QString &text)
